@@ -1,0 +1,18 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnagraficheServizi_Prospetto_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="TotaleDaFatturare" IsNull="Y" Type="money" />
+      <Field Column="AnagraficheServizi_MeseScadenza" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.AnagraficheServizi_Prospetto_Vw
+AS
+SELECT        SUM(dbo.AnagraficheServizi.AnagraficheServizi_Importo) AS TotaleDaFatturare, MONTH(dbo.AnagraficheServizi.AnagraficheServizi_Scadenza) AS AnagraficheServizi_MeseScadenza
+FROM            dbo.AnagraficheServizi LEFT OUTER JOIN
+                         dbo.Anagrafiche ON dbo.AnagraficheServizi.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky
+WHERE        (dbo.AnagraficheServizi.AnagraficheServizi_Chiuso = 0) AND (dbo.Anagrafiche.Anagrafiche_Disdetto = 0) OR
+                         (dbo.AnagraficheServizi.AnagraficheServizi_Chiuso IS NULL) AND (dbo.Anagrafiche.Anagrafiche_Disdetto IS NULL)
+GROUP BY MONTH(dbo.AnagraficheServizi.AnagraficheServizi_Scadenza)
+</SqlScriptCreate>
+</SqlTable>

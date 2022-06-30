@@ -1,0 +1,139 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Immobili_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Immobili_Ky" IsNull="N" Type="int" />
+      <Field Column="Immobili_Riferimento" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Immobili_fArchiviato" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_fImportato" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_Annuncio" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Immobili_AnnuncioEN" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="Immobili_AnnuncioFR" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="Immobili_AnnuncioES" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="Immobili_AnnuncioDE" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="Immobili_AnnuncioAuto" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_DataScadenza" IsNull="Y" Type="datetime" />
+      <Field Column="Immobili_Indirizzo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Immobili_IndirizzoNascondi" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_NumeroCivico" IsNull="Y" Type="varchar" Lenght="120" />
+      <Field Column="Immobili_NumeroCivicoNascondi" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_CmnKy" IsNull="Y" Type="smallint" />
+      <Field Column="ImmobiliZona_Ky" IsNull="Y" Type="int" />
+      <Field Column="Immobili_PrvKy" IsNull="Y" Type="tinyint" />
+      <Field Column="Nazioni_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Immobili_Prestigio" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_Turistico" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_Asta" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_NuovaCostruzione" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_Ecologico" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_Mq" IsNull="Y" Type="money" />
+      <Field Column="Immobili_Valore" IsNull="Y" Type="money" />
+      <Field Column="Immobili_ValoreNascondi" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_AnnoCostruzione" IsNull="Y" Type="int" />
+      <Field Column="Immobili_NumeroLocali" IsNull="Y" Type="smallint" />
+      <Field Column="Immobili_NumeroBagni" IsNull="Y" Type="smallint" />
+      <Field Column="Immobili_NumeroPostiAuto" IsNull="Y" Type="smallint" />
+      <Field Column="Immobili_NumeroCamereLetto" IsNull="Y" Type="smallint" />
+      <Field Column="Immobili_DataInizioIncarico" IsNull="Y" Type="datetime" />
+      <Field Column="Immobili_DataFineIncarico" IsNull="Y" Type="datetime" />
+      <Field Column="Immobili_PubblicaWEB" IsNull="Y" Type="bit" />
+      <Field Column="ImmobiliCategoria_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="ImmobiliTipologia_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="ImmobiliSottotipologia_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="ImmobiliTipologia2_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="ImmobiliSottotipologia2_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="ImmobiliCondizione_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Immobil_Ammobiliato" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_Notifica" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_DistanzaMare" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Immobili_NumeroMaxPersone" IsNull="Y" Type="tinyint" />
+      <Field Column="Immobili_AnimaliDomestici" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_Giardino" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_Piscina" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_LettoAggiunto" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_LettoBambini" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_NumeroInterno" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="Immobili_PubblicaVetrina" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_Visite" IsNull="Y" Type="smallint" />
+      <Field Column="Immobili_Video" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Immobili_ImportazioneData" IsNull="Y" Type="datetime" />
+      <Field Column="Immobili_ImportazioneRiferimento" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Immobili_ImportazioneRiferimentoAgenzia" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Immobili_Coordinate" IsNull="Y" Type="varchar" Lenght="60" />
+      <Field Column="Comuni_CodiceRetecasa" IsNull="Y" Type="int" />
+      <Field Column="Immobili_Foto" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_Foto1" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto1s" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto1b" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto2" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto2s" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto2b" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto3" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto3s" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto3b" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto4" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto4s" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto4b" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto5" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto5s" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto5b" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto6" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto6s" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto6b" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto7" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto7s" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto7b" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto8" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto8s" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto8b" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto9" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto9s" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto9b" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto10" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto10s" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto10b" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Note" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Utenti_InsertKy" IsNull="Y" Type="int" />
+      <Field Column="Utenti_InsertDt" IsNull="Y" Type="datetime" />
+      <Field Column="Utenti_UpdateKy" IsNull="Y" Type="int" />
+      <Field Column="Utenti_UpdateDt" IsNull="Y" Type="datetime" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="UtentiGruppi_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Immobili_CodiceGestionale" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="Immobili_Arredato" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_Inevidenza" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_VirtualTour" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Planimetria" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Immobili_Latitudine" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Immobili_Longitudine" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Immobili_Password" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Cantieri_Ky" IsNull="Y" Type="int" />
+      <Field Column="Immobili_Progetto" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_Ordine" IsNull="Y" Type="int" />
+      <Field Column="Immobili_Lusso" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_ClasseEnergetica" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Immobili_Ipe" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Immobili_Eliminato" IsNull="Y" Type="bit" />
+      <Field Column="ComuniZone_Ky" IsNull="Y" Type="int" />
+      <Field Column="Immobili_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Immobili_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Immobili_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Immobili_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Immobili_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Immobili_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="CoreResponseCode_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Immobili_RedirectUrl" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="ImmobiliCategoria_Descrizione" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="ImmobiliTipologia_Descrizione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="ImmobiliCondizione_Descrizione" IsNull="Y" Type="varchar" Lenght="20" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Immobili_Vw
+AS
+SELECT        dbo.Immobili.*, dbo.ImmobiliCategoria.ImmobiliCategoria_Descrizione, dbo.ImmobiliTipologia.ImmobiliTipologia_Descrizione, dbo.ImmobiliCondizione.ImmobiliCondizione_Descrizione
+FROM            dbo.Immobili LEFT OUTER JOIN
+                         dbo.ImmobiliCondizione ON dbo.Immobili.ImmobiliCondizione_Ky = dbo.ImmobiliCondizione.ImmobiliCondizione_Ky LEFT OUTER JOIN
+                         dbo.ImmobiliTipologia ON dbo.Immobili.ImmobiliTipologia_Ky = dbo.ImmobiliTipologia.ImmobiliTipologia_Ky LEFT OUTER JOIN
+                         dbo.ImmobiliCategoria ON dbo.Immobili.ImmobiliCategoria_Ky = dbo.ImmobiliCategoria.ImmobiliCategoria_Ky
+</SqlScriptCreate>
+</SqlTable>

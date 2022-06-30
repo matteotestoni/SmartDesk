@@ -1,0 +1,182 @@
+<div class="grid-x grid-padding-x">
+	<div class="large-1 medium-1 small-4 cell">
+		<label class="large-text-right small-text-left middle">Titolo</label>
+	</div>
+	<div class="large-3 medium-3 small-8 cell">
+		<input type="text" name="Spese_Titolo" id="Spese_Titolo" placeholder="Titolo spesa" title="Titolo spesa" value="<%=GetFieldValue(dtFormsData, "Spese_Titolo")%>" size="35" required="required">
+		<span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="large-1 medium-1 small-4 cell">
+		<label class="large-text-right small-text-left middle">Conto <i class="fa-duotone fa-credit-card fa-fw"></i></label>
+	</div>
+	<div class="large-3 medium-3 small-8 cell end">
+      <select name="Conti_Ky" id="Conti_Ky" value="1" required="required">
+        <!--#include file="/var/cache/Conti-options.htm"--> 
+      </select>
+      <span class="form-error">Obbligatorio</span>
+      <script type="text/javascript">
+        selectSet('Conti_Ky', '<%=GetFieldValue(dtFormsData, "Conti_Ky")%>');
+      </script>
+	</div>
+	<div class="large-1 medium-1 small-4 cell">
+		<label class="large-text-right small-text-left middle">Azienda <i class="fa-duotone fa-credit-card fa-fw"></i></label>
+	</div>
+	<div class="large-3 medium-3 small-8 cell end">
+    <select name="Aziende_Ky" id="Aziende_Ky" required="required" value="<%=GetFieldValue(dtFormsData, "Aziende_Ky")%>">
+      <!--#include file="/var/cache/Aziende-options.htm"--> 
+    </select>
+    <span class="form-error">Obbligatorio</span>
+    <script type="text/javascript">
+      selectSet('Aziende_Ky', '<%=GetFieldValue(dtFormsData, "Aziende_Ky")%>');
+    </script>
+	</div>
+</div>        
+<div class="grid-x grid-padding-x">
+	<div class="large-1 medium-1 small-4 cell">
+		<label for="Anagrafiche_RagioneSociale" class="large-text-right small-text-left middle">Fornitore <i class="fa-duotone fa-user fa-fw"></i></label>
+	</div>
+	<div class="large-1 medium-1 small-0 cell hide-for-small-only shrink">
+		<input type="text" name="Anagrafiche_Ky" id="Anagrafiche_Ky" value="<%=GetFieldValue(dtFormsData, "Anagrafiche_Ky")%>" size="3" required="required" onchange="loadCentriDiCR();">
+		<span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="large-9 medium-9 small-8 cell">
+		<input type="text" name="Anagrafiche_RagioneSociale" id="Anagrafiche_RagioneSociale" placeholder="Ragione Sociale" value="<%=GetFieldValue(dtFormsData, "Anagrafiche_RagioneSociale")%>" required="required">
+		<span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="large-1 medium-1 small-0 hide-for-small-only shrink cell">
+    <% if (GetFieldValue(dtFormsData, "Anagrafiche_Ky")!=null && GetFieldValue(dtFormsData, "Anagrafiche_Ky").Length>0){ %>
+			<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=GetFieldValue(dtFormsData, "Anagrafiche_Ky")%>" style="margin-top:4px"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw fa-lg"></i></a>
+		<% } %>
+	</div>
+</div>
+<script type="text/javascript">
+		jQuery("#Anagrafiche_RagioneSociale" ).autocomplete({
+			source: "/admin/app/anagrafiche/autosuggest-GetAnagrafiche-json.aspx",
+			minLength: 2,
+			select: function( event, ui ) {
+				jQuery("#Anagrafiche_Ky").val(ui.item.value);
+				jQuery("#Anagrafiche_RagioneSociale").val(ui.item.label);
+        loadCentriDiCR();
+				return false;
+			}
+		});
+</script>
+<div class="grid-x grid-padding-x">
+	<div class="large-1 medium-1 small-4 cell">
+		<label for="Anagrafiche_RagioneSociale" class="large-text-right small-text-left middle">Cliente <i class="fa-duotone fa-user fa-fw"></i></label>
+	</div>
+	<div class="large-1 medium-1 small-0 cell hide-for-small-only shrink">
+		<input type="text" name="Anagrafiche_ClienteKy" id="Anagrafiche_ClienteKy" value="<%=GetFieldValue(dtFormsData, "Anagrafiche_ClienteKy")%>" size="3" required="required">
+		<span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="large-9 medium-9 small-8 cell">
+		<input type="text" name="Anagrafiche_ClienteRagioneSociale" id="Anagrafiche_ClienteRagioneSociale" placeholder="Ragione Sociale" value="<%=GetFieldValue(dtFormsData, "Anagrafiche_ClienteRagioneSociale")%>" required="required">
+		<span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="large-1 medium-1 small-0 hide-for-small-only shrink cell">
+    <% if (GetFieldValue(dtFormsData, "Anagrafiche_ClienteKy")!=null && GetFieldValue(dtFormsData, "Anagrafiche_ClienteKy").Length>0){ %>
+			<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=GetFieldValue(dtFormsData, "Anagrafiche_ClienteKy")%>" style="margin-top:4px"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw fa-lg"></i></a>
+		<% } %>
+	</div>
+</div>
+<script type="text/javascript">
+		jQuery("#Anagrafiche_ClienteRagioneSociale" ).autocomplete({
+			source: "/admin/app/anagrafiche/autosuggest-GetAnagrafiche-json.aspx",
+			minLength: 2,
+			select: function( event, ui ) {
+				jQuery("#Anagrafiche_ClienteKy").val(ui.item.value);
+				jQuery("#Anagrafiche_ClienteRagioneSociale").val(ui.item.label);
+				return false;
+			}
+		});
+</script>
+<div class="grid-x grid-padding-x">
+	<div class="large-1 medium-1 small-4 cell">
+		<label class="large-text-right small-text-left middle">Progetto <i class="fa-duotone fa-building fa-fw"></i></label>
+	</div>
+	<div class="large-3 medium-3 small-8 cell">
+	  	<% if (dtCommesse!=null && dtCommesse.Rows.Count>0){ %>
+	      <select name="Commesse_Ky" id="Commesse_Ky" value="<%=GetFieldValue(dtFormsData, "Commesse_Ky")%>">
+	      <option value=""></option>
+					<%
+					for (int i = 0; i < dtCommesse.Rows.Count; i++){
+						Response.Write("<option value=\"" + dtCommesse.Rows[i]["Commesse_Ky"].ToString() + "\">" + dtCommesse.Rows[i]["Commesse_Riferimenti"].ToString() + "-" + dtCommesse.Rows[i]["Commesse_Titolo"].ToString() + "</option>");
+					}
+					%>
+	      </select>
+	      <script type="text/javascript">
+	        selectSet('Commesse_Ky', '<%=GetFieldValue(dtFormsData, "Commesse_Ky")%>');
+	      </script>
+	    <% }else{ %>
+	    	Nessun progetto attivo sull'anagrafica
+	    <% } %>
+	</div>
+	<div class="large-1 medium-1 small-4 cell">
+		<label class="large-text-right small-text-left middle">Centro di c. <i class="fa-duotone fa-file-lines fa-fw"></i></label>
+	</div>
+	<div class="large-3 medium-3 small-8 cell">
+    	<select name="CentridiCR_Ky" id="CentridiCR_Ky" required="required" placeholder="Centro di costo" value="<%=GetFieldValue(dtFormsData, "CentridiCR_Ky")%>">
+        <!--#include file="/var/cache/CentridiCR-options.htm"--> 
+      </select>
+    	<span class="form-error">Obbligatorio.</span>
+      <script type="text/javascript">
+        selectSet('CentridiCR_Ky', '<%=GetFieldValue(dtFormsData, "CentridiCR_Ky")%>');
+      </script>
+	</div>
+
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-1 medium-1 small-4 cell">
+		<label class="large-text-right small-text-left middle">Totale &euro;:</label>
+	</div>
+	<div class="large-3 medium-3 small-8 cell">
+    <input type="text" name="Spese_Totale" id="Spese_Totale" size="10" required="required" pattern="number" min="1" max="1000000" value="<%=GetMoneyValue("Spese_Totale")%>" onchange="aggTotale();" />
+    <span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="large-1 medium-1 small-4 cell">
+		<label class="large-text-right small-text-left middle">Imponibile &euro;:</label>
+	</div>
+	<div class="large-2 medium-2 small-8 cell">
+    <input type="text" name="Spese_TotaleRighe" id="Spese_TotaleRighe" size="10" required="required" pattern="number" min="1" max="1000000" value="<%=GetMoneyValue("Spese_TotaleRighe")%>" onchange="aggTotaleRighe();" />
+    <span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="large-1 medium-1 small-4 cell">
+		<label class="large-text-right small-text-left middle">Totale IVA &euro;:</label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+    <input type="text" name="Spese_TotaleIVA" id="Spese_TotaleIVA" size="10" required="required" pattern="number" min="1" max="1000000" value="<%=GetMoneyValue("Spese_TotaleIVA")%>" onchange="aggTotaleIVA();" />
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+<div class="grid-x grid-padding-x">
+	<div class="large-1 medium-1 small-4 cell">
+		<label class="large-text-right small-text-left middle">Data: <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+	</div>
+	<div class="large-3 medium-3 small-8 cell">
+    <input type="text" name="Spese_Data" id="Spese_Data" class="fdatepicker" size="10" required="required" value="<%=GetFieldValue(dtFormsData, "Spese_Data_IT")%>">
+    <span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="large-1 medium-1 small-4 cell">
+		<label class="large-text-right small-text-left middle">Documento n&deg;:</label>
+	</div>
+	<div class="large-2 medium-2 small-8 cell">
+    <input type="text" name="Spese_DocumentoNumero" id="Spese_DocumentoNumero" size="10" required="required" value="<%=GetFieldValue(dtFormsData, "Spese_DocumentoNumero")%>">
+    <span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="large-1 medium-1 small-4 cell">
+		<label class="large-text-right small-text-left middle">Data: <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+    <input type="text" name="Spese_DocumentoData" id="Spese_DocumentoData" class="fdatepicker" size="10" required="required" value="<%=GetFieldValue(dtFormsData, "Spese_DocumentoData_IT")%>">
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+<div class="grid-x grid-padding-x">
+	<div class="large-1 medium-1 small-4 cell">
+		<label class="large-text-right small-text-left middle">Note:</label>
+	</div>
+	<div class="large-11 medium-11 small-8 cell">
+		<textarea name="Spese_Note" id="Spese_Note" rows="2" cols="100"><%=GetFieldValue(dtFormsData, "Spese_Note")%></textarea>
+  </div>
+</div>

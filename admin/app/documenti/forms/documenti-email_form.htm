@@ -1,0 +1,69 @@
+<div class="grid-x grid-padding-x">
+    <div class="large-2 medium-2 small-4 cell">
+        <label for="A" class="large-text-right small-text-left middle">A</label>
+    </div>
+    <div class="large-10 medium-10 small-8 cell">
+        <input type="text" name="A" id="A" value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_EmailAmministrazione")%>" required="required">
+        <p class="help-text" id="A">Destinatari multipli separati da ,</p>
+        <span class="form-error">Obbligatorio</span>
+    </div>
+</div>
+
+<div class="grid-x grid-padding-x">
+    <div class="large-2 medium-2 small-4 cell">
+        <label for="Da" class="large-text-right small-text-left middle">Da</label>
+    </div>
+    <div class="large-10 medium-10 small-8 cell">
+        <input type="text" name="Da" id="Da" value="" required="required">
+        <span class="form-error">Obbligatorio</span>
+    </div>
+</div>
+
+<div class="grid-x grid-padding-x">
+    <div class="large-2 medium-2 small-4 cell">
+        <label for="Oggetto" class="large-text-right small-text-left middle">Oggetto</label>
+    </div>
+    <div class="large-10 medium-10 small-8 cell">
+        <input type="text" name="Oggetto" id="Oggetto" value="<%=GetFieldValue(dtDocumenti, "DocumentiTipo_Descrizione")%> per <%=GetFieldValue(dtDocumenti, "Documenti_Descrizione")%>" required="required">
+        <span class="form-error">Obbligatorio</span>
+    </div>
+</div>
+
+<div class="grid-x grid-padding-x">
+    <div class="large-2 medium-2 small-4 cell">
+        <label for="Corpo" class="large-text-right small-text-left middle">Corpo del messaggio</label>
+    </div>
+    <div class="large-10 medium-10 small-8 cell">
+        <textarea class="ckeditor" name="Corpo" id="Corpo" required="required">
+        Buongiorno,<br><br>
+
+
+
+
+
+
+
+        in allegato alla presente siamo a trasmettere fattura per <strong><%=dtDocumenti.Rows[0]["Documenti_Descrizione"].ToString()%></strong><br>
+
+
+
+        Vi preghiamo di controllare i dati e di comunicarci eventuali errori.<br /><br />
+
+        L'occasione è gradita per porgere cordiali saluti.<br>
+
+        <strong>Martina Paluan</strong><br />
+        <em>Ufficio Amministrazione</em>
+        <%=GetFieldValue(dtAziende, "Aziende_FirmaEmail")%>
+        </textarea>
+        <span class="form-error">Obbligatorio</span>
+    </div>
+</div>
+
+<div class="grid-x grid-padding-x">
+    <div class="large-2 medium-2 small-4 cell">
+        <label for="Allegati" class="large-text-right small-text-left middle">Allegati</label>
+    </div>
+    <div class="large-10 medium-10 small-8 cell">
+        <a href="/uploads/documenti<%=dtDocumenti.Rows[0]["Documenti_PDF"].ToString()%>" target="_blank"><i class="fa-duotone fa-file-pdf fa-fw fa-lg"></i><%=dtDocumenti.Rows[0]["Documenti_PDF"].ToString()%></a>
+    </div>
+</div>

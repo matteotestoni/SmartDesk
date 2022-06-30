@@ -1,0 +1,83 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Aziende" Type="TABLE">
+    <Keys>
+      <Key Column="Aziende_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Aziende_Ky" IsNull="N" Type="int" />
+      <Field Column="AliquoteIVA_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Aziende_Codice" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Aziende_RagioneSociale" IsNull="Y" Type="varchar" Lenght="250" />
+      <Field Column="Aziende_CodiceFiscale" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Aziende_PartitaIVA" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Aziende_NumeroREA" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Aziende_Logo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aziende_Slogan" IsNull="Y" Type="varchar" Lenght="250" />
+      <Field Column="Aziende_NomeBanca" IsNull="Y" Type="varchar" Lenght="250" />
+      <Field Column="Aziende_FilialeBanca" IsNull="Y" Type="varchar" Lenght="250" />
+      <Field Column="Aziende_IBANBanca" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Aziende_Email" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aziende_SitoWeb" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aziende_Telefono" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aziende_FAX" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aziende_BancaAppoggio" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Aziende_Footer" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Aziende_Header" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Aziende_ServerSMTP" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aziende_ServerSMTPPorta" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="Aziende_ServerSMTPUtente" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aziende_ServerSMTPPassword" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aziende_ServerSMTPSSL" IsNull="Y" Type="bit" />
+      <Field Column="Aziende_FirmaEmail" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Aziende_PagamentiScaduti" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Aziende_PagamentiFuturi" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Aziende_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Aziende_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Aziende_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Aziende_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Aziende_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Aziende_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Aziende_Attiva" IsNull="Y" Type="bit" />
+      <Field Column="Aziende_Default" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Aziende] (
+  [Aziende_Ky] int IDENTITY(1,1) NOT NULL , 
+  [AliquoteIVA_Ky] smallint  NULL , 
+  [Aziende_Codice] varchar(20)  NULL , 
+  [Aziende_RagioneSociale] varchar(250)  NULL , 
+  [Aziende_CodiceFiscale] varchar(50)  NULL , 
+  [Aziende_PartitaIVA] varchar(50)  NULL , 
+  [Aziende_NumeroREA] varchar(50)  NULL , 
+  [Aziende_Logo] varchar(200)  NULL , 
+  [Aziende_Slogan] varchar(250)  NULL , 
+  [Aziende_NomeBanca] varchar(250)  NULL , 
+  [Aziende_FilialeBanca] varchar(250)  NULL , 
+  [Aziende_IBANBanca] varchar(50)  NULL , 
+  [Aziende_Email] varchar(200)  NULL , 
+  [Aziende_SitoWeb] varchar(200)  NULL , 
+  [Aziende_Telefono] varchar(200)  NULL , 
+  [Aziende_FAX] varchar(200)  NULL , 
+  [Aziende_BancaAppoggio] varchar(MAX)  NULL , 
+  [Aziende_Footer] varchar(MAX)  NULL , 
+  [Aziende_Header] varchar(MAX)  NULL , 
+  [Aziende_ServerSMTP] varchar(200)  NULL , 
+  [Aziende_ServerSMTPPorta] varchar(10)  NULL , 
+  [Aziende_ServerSMTPUtente] varchar(200)  NULL , 
+  [Aziende_ServerSMTPPassword] varchar(200)  NULL , 
+  [Aziende_ServerSMTPSSL] bit  NULL , 
+  [Aziende_FirmaEmail] varchar(MAX)  NULL , 
+  [Aziende_PagamentiScaduti] varchar(MAX)  NULL , 
+  [Aziende_PagamentiFuturi] varchar(MAX)  NULL , 
+  [Aziende_UserInsert] int  NULL , 
+  [Aziende_UserUpdate] int  NULL , 
+  [Aziende_UserDelete] int  NULL , 
+  [Aziende_DateInsert] datetime  NULL , 
+  [Aziende_DateUpdate] datetime  NULL , 
+  [Aziende_DateDelete] datetime  NULL , 
+  [Aziende_Attiva] bit  NULL DEFAULT ((1)), 
+  [Aziende_Default] bit  NULL  )
+ALTER TABLE [dbo].[Aziende] ADD CONSTRAINT PK_Aziende PRIMARY KEY  ([Aziende_Ky])
+</SqlScriptCreate>
+</SqlTable>

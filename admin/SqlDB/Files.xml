@@ -1,0 +1,47 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Files" Type="TABLE">
+    <Keys>
+      <Key Column="Files_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Files_Ky" IsNull="N" Type="int" />
+      <Field Column="Files_PadreKy" IsNull="Y" Type="int" />
+      <Field Column="Chiave_Ky" IsNull="Y" Type="int" />
+      <Field Column="Chiave_Tabella" IsNull="Y" Type="varchar" Lenght="90" />
+      <Field Column="FilesTipo_Ky" IsNull="Y" Type="int" />
+      <Field Column="Files_Titolo" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Files_Path" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Files_Data" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Files_Contenttype" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Files_Extension" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="Files_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Files_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Files_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Files_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Files_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Files_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Files] (
+  [Files_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Files_PadreKy] int  NULL , 
+  [Chiave_Ky] int  NULL , 
+  [Chiave_Tabella] varchar(90)  NULL , 
+  [FilesTipo_Ky] int  NULL , 
+  [Files_Titolo] varchar(MAX)  NULL , 
+  [Files_Path] varchar(MAX)  NULL , 
+  [Files_Data] smalldatetime  NULL , 
+  [Lingue_Ky] tinyint  NULL , 
+  [Files_Contenttype] varchar(MAX)  NULL , 
+  [Files_Extension] varchar(10)  NULL , 
+  [Files_UserInsert] int  NULL , 
+  [Files_UserUpdate] int  NULL , 
+  [Files_UserDelete] int  NULL , 
+  [Files_DateInsert] datetime  NULL , 
+  [Files_DateUpdate] datetime  NULL , 
+  [Files_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[Files] ADD CONSTRAINT PK_Files PRIMARY KEY  ([Files_Ky])
+</SqlScriptCreate>
+</SqlTable>

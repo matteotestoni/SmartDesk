@@ -1,0 +1,35 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AsteEsperimentiEsiti" Type="TABLE">
+    <Keys>
+      <Key Column="AsteEsperimentiEsiti_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AsteEsperimentiEsiti_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="AsteEsperimentiEsiti_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="AsteEsperimentiEsiti_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AsteEsperimentiEsiti_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AsteEsperimentiEsiti_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AsteEsperimentiEsiti_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AsteEsperimentiEsiti_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AsteEsperimentiEsiti_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="AsteEsperimentiEsiti_Icona" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AsteEsperimentiEsiti_Colore" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="AsteEsperimentiEsiti_Ordine" IsNull="Y" Type="tinyint" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AsteEsperimentiEsiti] (
+  [AsteEsperimentiEsiti_Ky] tinyint IDENTITY(1,1) NOT NULL , 
+  [AsteEsperimentiEsiti_Titolo] varchar(150)  NULL , 
+  [AsteEsperimentiEsiti_UserInsert] int  NULL , 
+  [AsteEsperimentiEsiti_UserUpdate] int  NULL , 
+  [AsteEsperimentiEsiti_UserDelete] int  NULL , 
+  [AsteEsperimentiEsiti_DateInsert] datetime  NULL , 
+  [AsteEsperimentiEsiti_DateUpdate] datetime  NULL , 
+  [AsteEsperimentiEsiti_DateDelete] datetime  NULL , 
+  [AsteEsperimentiEsiti_Icona] varchar(100)  NULL , 
+  [AsteEsperimentiEsiti_Colore] varchar(50)  NULL , 
+  [AsteEsperimentiEsiti_Ordine] tinyint  NULL  )
+ALTER TABLE [dbo].[AsteEsperimentiEsiti] ADD CONSTRAINT PK_AsteEsperimentiEsiti PRIMARY KEY  ([AsteEsperimentiEsiti_Ky])
+</SqlScriptCreate>
+</SqlTable>

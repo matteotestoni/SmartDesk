@@ -1,0 +1,35 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CoreFormsTabs" Type="TABLE">
+    <Keys>
+      <Key Column="CoreFormsTabs_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CoreFormsTabs_Ky" IsNull="N" Type="int" />
+      <Field Column="CoreForms_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsTabs_Title" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreFormsTabs_Icon" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreFormsTabs_Order" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsTabs_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsTabs_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsTabs_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsTabs_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CoreFormsTabs_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CoreFormsTabs_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CoreFormsTabs] (
+  [CoreFormsTabs_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CoreForms_Ky] int  NULL , 
+  [CoreFormsTabs_Title] varchar(MAX)  NULL , 
+  [CoreFormsTabs_Icon] varchar(MAX)  NULL , 
+  [CoreFormsTabs_Order] int  NULL , 
+  [CoreFormsTabs_UserInsert] int  NULL , 
+  [CoreFormsTabs_UserUpdate] int  NULL , 
+  [CoreFormsTabs_UserDelete] int  NULL , 
+  [CoreFormsTabs_DateInsert] datetime  NULL , 
+  [CoreFormsTabs_DateUpdate] datetime  NULL , 
+  [CoreFormsTabs_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[CoreFormsTabs] ADD CONSTRAINT PK_CoreFormsTabs PRIMARY KEY  ([CoreFormsTabs_Ky])
+</SqlScriptCreate>
+</SqlTable>

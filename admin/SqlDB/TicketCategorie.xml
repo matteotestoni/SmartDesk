@@ -1,0 +1,31 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="TicketCategorie" Type="TABLE">
+    <Keys>
+      <Key Column="TicketCategorie_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="TicketCategorie_Ky" IsNull="N" Type="smallint" />
+      <Field Column="TicketCategorie_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="TicketCategorie_Padre" IsNull="Y" Type="int" />
+      <Field Column="TicketCategorie_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="TicketCategorie_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="TicketCategorie_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="TicketCategorie_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="TicketCategorie_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="TicketCategorie_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[TicketCategorie] (
+  [TicketCategorie_Ky] smallint IDENTITY(1,1) NOT NULL , 
+  [TicketCategorie_Titolo] varchar(200)  NULL , 
+  [TicketCategorie_Padre] int  NULL , 
+  [TicketCategorie_UserInsert] int  NULL , 
+  [TicketCategorie_UserUpdate] int  NULL , 
+  [TicketCategorie_UserDelete] int  NULL , 
+  [TicketCategorie_DateInsert] datetime  NULL , 
+  [TicketCategorie_DateUpdate] datetime  NULL , 
+  [TicketCategorie_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[TicketCategorie] ADD CONSTRAINT PK_TicketCategorie PRIMARY KEY  ([TicketCategorie_Ky])
+</SqlScriptCreate>
+</SqlTable>

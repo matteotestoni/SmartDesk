@@ -1,0 +1,49 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CMSBlocchi" Type="TABLE">
+    <Keys>
+      <Key Column="CMSBlocchi_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CMSBlocchi_Ky" IsNull="N" Type="int" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="CMSCategorie_Ky" IsNull="Y" Type="int" />
+      <Field Column="CMSBlocchi_Categorie" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CMSBlocchi_Tags" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CMSBlocchi_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSBlocchi_Contenuto" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CMSBlocchi_Data" IsNull="Y" Type="datetime" />
+      <Field Column="CMSBlocchi_Ordine" IsNull="Y" Type="int" />
+      <Field Column="CMSBlocchi_PubblicaWEB" IsNull="Y" Type="bit" />
+      <Field Column="CMSBlocchi_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CMSBlocchi_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CMSBlocchi_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CMSBlocchi_DateInsert" IsNull="N" Type="datetime" />
+      <Field Column="CMSBlocchi_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CMSBlocchi_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="CMSBlocchi_Codice" IsNull="Y" Type="varchar" Lenght="200" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CMSBlocchi] (
+  [CMSBlocchi_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Utenti_Ky] int  NULL , 
+  [Lingue_Ky] tinyint  NULL , 
+  [CMSCategorie_Ky] int  NULL , 
+  [CMSBlocchi_Categorie] varchar(MAX)  NULL , 
+  [CMSBlocchi_Tags] varchar(MAX)  NULL , 
+  [CMSBlocchi_Titolo] varchar(200)  NULL , 
+  [CMSBlocchi_Contenuto] varchar(MAX)  NULL , 
+  [CMSBlocchi_Data] datetime  NULL , 
+  [CMSBlocchi_Ordine] int  NULL , 
+  [CMSBlocchi_PubblicaWEB] bit  NULL , 
+  [CMSBlocchi_UserInsert] int  NULL , 
+  [CMSBlocchi_UserUpdate] int  NULL , 
+  [CMSBlocchi_UserDelete] int  NULL , 
+  [CMSBlocchi_DateInsert] datetime  NOT NULL , 
+  [CMSBlocchi_DateUpdate] datetime  NULL , 
+  [CMSBlocchi_DateDelete] datetime  NULL , 
+  [CMSBlocchi_Codice] varchar(200)  NULL  )
+ALTER TABLE [dbo].[CMSBlocchi] ADD CONSTRAINT PK_CMSBlocchi PRIMARY KEY  ([CMSBlocchi_Ky])
+</SqlScriptCreate>
+</SqlTable>

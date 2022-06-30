@@ -1,0 +1,17 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnnunciOfferte_ValoreAttuale_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Annunci_Ky" IsNull="Y" Type="int" />
+      <Field Column="AnnunciOfferte_ValoreAttuale" IsNull="Y" Type="money" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE VIEW [dbo].[AnnunciOfferte_ValoreAttuale_Vw]
+AS
+SELECT        Annunci_Ky, MAX(AnnunciOfferte_Valore) AS AnnunciOfferte_ValoreAttuale
+FROM            dbo.AnnunciOfferte
+GROUP BY Annunci_Ky
+
+</SqlScriptCreate>
+</SqlTable>

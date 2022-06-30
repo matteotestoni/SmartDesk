@@ -1,0 +1,59 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Pagamenti" Type="TABLE">
+    <Keys>
+      <Key Column="Pagamenti_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Pagamenti_Ky" IsNull="N" Type="int" />
+      <Field Column="PagamentiTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Pagamenti_Data" IsNull="Y" Type="datetime" />
+      <Field Column="Pagamenti_Importo" IsNull="Y" Type="money" />
+      <Field Column="Pagamenti_Riferimenti" IsNull="Y" Type="nvarchar" Lenght="500" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Pagamenti_Pagato" IsNull="Y" Type="bit" />
+      <Field Column="Pagamenti_NumeroPromemoria" IsNull="Y" Type="tinyint" />
+      <Field Column="Pagamenti_NumeroChiamate" IsNull="Y" Type="tinyint" />
+      <Field Column="Pagamenti_AttivaPromemoria" IsNull="Y" Type="bit" />
+      <Field Column="Documenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Pagamenti_UltimoPromemoria" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Pagamenti_DataPagato" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Commesse_Ky" IsNull="Y" Type="int" />
+      <Field Column="PagamentiMetodo_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Spese_Ky" IsNull="Y" Type="int" />
+      <Field Column="Pagamenti_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Pagamenti_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Pagamenti_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Pagamenti_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Pagamenti_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Pagamenti_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Conti_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Pagamenti] (
+  [Pagamenti_Ky] int IDENTITY(1,1) NOT NULL , 
+  [PagamentiTipo_Ky] tinyint  NULL , 
+  [Pagamenti_Data] datetime  NULL , 
+  [Pagamenti_Importo] money  NULL , 
+  [Pagamenti_Riferimenti] nvarchar(500)  NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [Pagamenti_Pagato] bit  NULL DEFAULT ((0)), 
+  [Pagamenti_NumeroPromemoria] tinyint  NULL DEFAULT ((0)), 
+  [Pagamenti_NumeroChiamate] tinyint  NULL DEFAULT ((0)), 
+  [Pagamenti_AttivaPromemoria] bit  NULL DEFAULT ((1)), 
+  [Documenti_Ky] int  NULL , 
+  [Pagamenti_UltimoPromemoria] smalldatetime  NULL , 
+  [Pagamenti_DataPagato] smalldatetime  NULL , 
+  [Commesse_Ky] int  NULL , 
+  [PagamentiMetodo_Ky] smallint  NULL , 
+  [Spese_Ky] int  NULL , 
+  [Pagamenti_UserInsert] int  NULL , 
+  [Pagamenti_UserUpdate] int  NULL , 
+  [Pagamenti_UserDelete] int  NULL , 
+  [Pagamenti_DateInsert] datetime  NULL , 
+  [Pagamenti_DateUpdate] datetime  NULL , 
+  [Pagamenti_DateDelete] datetime  NULL , 
+  [Conti_Ky] int  NULL DEFAULT ((1)) )
+ALTER TABLE [dbo].[Pagamenti] ADD CONSTRAINT PK_Pagamenti PRIMARY KEY  ([Pagamenti_Ky])
+</SqlScriptCreate>
+</SqlTable>

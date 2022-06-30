@@ -1,0 +1,51 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliMarca" Type="TABLE">
+    <Keys>
+      <Key Column="VeicoliMarca_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="VeicoliMarca_Ky" IsNull="N" Type="smallint" />
+      <Field Column="VeicoliMarca_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliMarca_DescrizioneHTML" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliMarca_DescrizioneUTF" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliMarca_Stemma" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="VeicoliMarca_Importante" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliMarca_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="VeicoliMarca_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="VeicoliMarca_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="VeicoliMarca_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliMarca_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliMarca_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliMarca_UrlKey" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliMarca_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliMarca_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliMarca_Description" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliMarca_Robots" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliMarca_MesiGaranzia" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[VeicoliMarca] (
+  [VeicoliMarca_Ky] smallint IDENTITY(1,1) NOT NULL , 
+  [VeicoliMarca_Descrizione] varchar(100)  NULL , 
+  [VeicoliMarca_DescrizioneHTML] varchar(100)  NULL , 
+  [VeicoliMarca_DescrizioneUTF] varchar(100)  NULL , 
+  [VeicoliTipo_Ky] tinyint  NULL , 
+  [VeicoliMarca_Stemma] varchar(150)  NULL , 
+  [VeicoliMarca_Importante] bit  NULL , 
+  [VeicoliMarca_UserInsert] int  NULL , 
+  [VeicoliMarca_UserUpdate] int  NULL , 
+  [VeicoliMarca_UserDelete] int  NULL , 
+  [VeicoliMarca_DateInsert] datetime  NULL , 
+  [VeicoliMarca_DateUpdate] datetime  NULL , 
+  [VeicoliMarca_DateDelete] datetime  NULL , 
+  [VeicoliMarca_UrlKey] varchar(100)  NULL , 
+  [VeicoliMarca_Titolo] varchar(100)  NULL , 
+  [VeicoliMarca_Title] varchar(200)  NULL , 
+  [VeicoliMarca_Description] varchar(200)  NULL , 
+  [VeicoliMarca_Robots] varchar(200)  NULL , 
+  [VeicoliMarca_MesiGaranzia] int  NULL  )
+ALTER TABLE [dbo].[VeicoliMarca] ADD CONSTRAINT PK_VeicoliMarca PRIMARY KEY  ([VeicoliMarca_Ky])
+</SqlScriptCreate>
+</SqlTable>

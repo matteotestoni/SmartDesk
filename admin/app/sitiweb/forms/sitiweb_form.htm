@@ -1,0 +1,160 @@
+<div class="grid-x grid-padding-x">
+	<div class="small-4 medium-1 large-1 cell">
+		<label class="prefix large-text-right small-text-left middle">Url</label>
+	</div>
+	<div class="small-8 medium-4 large-4 cell">
+		<input type="url" name="SitiWeb_Url" id="SitiWeb_Url" placeholder="http:// o https://" value="<%=GetFieldValue(dtSitiWeb, "SitiWeb_Url")%>" size="64" required="required" title="Url">
+		<span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="small-0 hide-for-small-only medium-1 large-1 cell">
+		<a href="<%=GetFieldValue(dtSitiWeb, "SitiWeb_Url")%>" target="_blank" class="postfix"><i class="fa-duotone fa-up-right-from-square fa-fw"></i></a>
+	</div>
+
+	<div class="small-4 medium-1 large-1 cell">
+		<label class="large-text-right small-text-left middle">Tipo</label>
+	</div>
+	<div class="small-8 medium-5 large-5 cell">
+		<select name="SitiWebTipo_Ky" id="SitiWebTipo_Ky" placeholder="Tipo" required="required">
+			<option value=""></option>
+			<!--#include file="/var/cache/SitiWebTipo-options.htm"-->
+		</select>
+		<script type="text/javascript">
+			selectSet('SitiWebTipo_Ky', '<%=GetFieldValue(dtSitiWeb, "SitiWebTipo_Ky")%>');
+		</script>
+		<span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="small-4 medium-1 large-1 cell">
+		<label class="large-text-right small-text-left middle">Dominio</label>
+	</div>
+	<div class="small-8 medium-5 large-5 cell">
+		<input type="text" name="SitiWeb_Dominio" id="SitiWeb_Dominio" placeholder="" value="<%=GetFieldValue(dtSitiWeb, "SitiWeb_Dominio")%>" size="64" required="required" title="Dominio">
+		<span class="form-error">Obbligatorio</span>
+	</div>
+
+	<div class="small-4 medium-1 large-1 cell">
+		<label class="large-text-right small-text-left middle">Redirect</label>
+	</div>
+	<div class="small-8 medium-5 large-5 cell">
+		<input type="text" name="SitiWeb_Redirect" id="SitiWeb_Redirect" placeholder="http://" value="<%=GetFieldValue(dtSitiWeb, "SitiWeb_Redirect")%>" size="64" title="Reindirizzamento">
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-1 medium-1 medium-1 small-4 cell">
+		<label class="large-text-right small-text-left middle">Anagrafica</label>
+	</div>
+	<div class="large-1 medium-1 small-0 hide-for-small-only cell">
+		<input type="text" name="Anagrafiche_Ky" id="Anagrafiche_Ky" value="<%=GetFieldValue(dtSitiWeb, "Anagrafiche_Ky")%>" size="3" required="required">
+		<span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="large-3 medium-3 small-8 cell">
+		<input type="text" name="Anagrafiche_RagioneSociale" id="Anagrafiche_RagioneSociale" placeholder="Ragione Sociale" value="<%=GetFieldValue(dtSitiWeb, "Anagrafiche_RagioneSociale")%>" size="50" required="required">
+		<span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="large-1 medium-1 small-0 hide-for-small-only shrink cell">
+		<% if (GetFieldValue(dtSitiWeb, "Anagrafiche_Ky")!=null && GetFieldValue(dtSitiWeb, "Anagrafiche_Ky").Length>0){ %>
+		<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=GetFieldValue(dtSitiWeb, "Anagrafiche_Ky")%>" style="margin-top:4px"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw fa-lg"></i></a>
+		<% } %>
+	</div>
+	<script type="text/javascript">
+		jQuery("#Anagrafiche_RagioneSociale").autocomplete({
+			source: "/admin/app/anagrafiche/autosuggest-GetAnagrafiche-json.aspx",
+			minLength: 2,
+			select: function (event, ui) {
+				jQuery("#Anagrafiche_Ky").val(ui.item.value);
+				jQuery("#Anagrafiche_RagioneSociale").val(ui.item.label);
+				return false;
+			}
+		});
+	</script>
+
+	<div class="small-4 medium-1 large-1 cell">
+		<label class="large-text-right small-text-left middle">Provider</label>
+	</div>
+	<div class="large-5 medium-5 small-8 cell">
+		<select name="Providers_Ky" id="Providers_Ky" value="<%=GetFieldValue(dtSitiWeb, "Providers_Ky")%>
+			" required="required">
+			<!--#include file="/var/cache/Providers-options.htm"-->
+		</select>
+		<script type="text/javascript">
+			selectSet('Providers_Ky', '<%=GetFieldValue(dtSitiWeb, "Providers_Ky")%>');
+		</script>
+		<span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="small-4 medium-2 large-1 cell">
+		<label class="large-text-right small-text-left middle">Versione</label>
+	</div>
+	<div class="small-8 medium-4 large-5 cell">
+		<%
+		if (GetFieldValue(dtSitiWeb, "SitiWeb_VersioneData").Length>0){
+		Response.Write(GetFieldValue(dtSitiWeb, "SitiWeb_Versione") + " rilevata il " + GetFieldValue(dtSitiWeb, "SitiWeb_VersioneData"));
+		}
+		%>
+		<a href="/admin/app/sitiweb/sitiweb-generator.aspx?SitiWeb_Ky=<%=GetFieldValue(dtSitiWeb, "SitiWeb_Ky")%>" class="funzione-small"><i class="fa-duotone fa-sync fa-fw"></i>Rileva</a>
+	</div>
+	<div class="small-4 medium-2 large-1 cell">
+		<label class="large-text-right small-text-left middle">Path</label>
+	</div>
+	<div class="small-8 medium-5 large-5 cell">
+		<input type="text" name="SitiWeb_Path" id="SitiWeb_Path" placeholder="Percorso su server" value="<%=GetFieldValue(dtSitiWeb, "SitiWeb_Path")%>" size="64" title="Path">
+	</div>
+</div>
+
+
+<div class="grid-x grid-padding-x">
+	<div class="small-4 medium-1 large-1 cell">
+		<label class="large-text-right small-text-left middle">Servizi SEO</label>
+	</div>
+	<div class="small-8 medium-5 large-5 cell">
+		<input type="checkbox" name="SitiWeb_SEO" id="SitiWeb_SEO" value="on" <% if (GetCheckValue("SitiWeb_SEO")){ Response.Write("checked");} %> />
+		<span class="label tiny">Se attivato verranno attivati i tool SEO</span>
+	</div>
+
+	<div class="small-4 medium-1 large-1 cell">
+		<label class="large-text-right small-text-left middle">Statistiche</label>
+	</div>
+	<div class="small-8 medium-5 large-5 cell">
+		<select name="SitiWeb_ReportAnalytics" id="SitiWeb_ReportAnalytics" placeholder="Frequenza report">
+			<option value=""></option>
+			<option value="1">settimanale</option>
+			<option value="2">mensile</option>
+			<option value="3">ogni 2 mesi</option>
+			<option value="4">ogni 3 mesi</option>
+			<option value="5">ogni 4 mesi</option>
+			<option value="6">ogni 6 mesi</option>
+		</select>
+		<span class="form-error">Obbligatorio</span>
+		<script type="text/javascript">
+			selectSet('SitiWeb_ReportAnalytics', '<%=GetFieldValue(dtSitiWeb, "SitiWeb_ReportAnalytics")%>');
+		</script>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="small-4 medium-1 large-1 cell">
+		<label class="large-text-right small-text-left bottom">Server</label>
+	</div>
+	<div class="small-8 medium-11 large-11 cell">
+		Server: <%=GetFieldValue(dtSitiWeb, "SitiWeb_IP")%>
+		<% if (GetFieldValue(dtSitiWeb, "SitiWeb_IPCountry").Length>1){ %>
+		<img src="/img/flags/<%=GetFieldValue(dtSitiWeb, "SitiWeb_IPCountry")%>.png" alt="<%=GetFieldValue(dtSitiWeb, "SitiWeb_IPCountry").ToLower()%>">
+		<% } %>
+		<a href="/admin/app/sitiweb/sitiweb-ip.aspx?SitiWeb_Ky=<%=GetFieldValue(dtSitiWeb, "SitiWeb_Ky")%>" class="funzione-small"><i class="fa-duotone fa-sync fa-fw"></i>Rileva</a>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="small-4 medium-1 large-1 cell">
+		<label class="large-text-right small-text-left middle">Note</label>
+	</div>
+	<div class="small-8 medium-11 large-11 cell">
+		<textarea name="SitiWeb_Note" id="SitiWeb_Note" rows="2" cols="140"><%=GetFieldValue(dtSitiWeb, "SitiWeb_Note")%></textarea>
+	</div>
+</div>
+

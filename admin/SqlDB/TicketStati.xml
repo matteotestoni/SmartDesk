@@ -1,0 +1,33 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="TicketStati" Type="TABLE">
+    <Keys>
+      <Key Column="TicketStati_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="TicketStati_Ky" IsNull="N" Type="smallint" />
+      <Field Column="TicketStati_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="TicketStati_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="TicketStati_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="TicketStati_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="TicketStati_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="TicketStati_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="TicketStati_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="TicketStati_Icona" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="TicketStati_Colore" IsNull="Y" Type="varchar" Lenght="200" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[TicketStati] (
+  [TicketStati_Ky] smallint IDENTITY(1,1) NOT NULL , 
+  [TicketStati_Titolo] varchar(200)  NULL , 
+  [TicketStati_UserInsert] int  NULL , 
+  [TicketStati_UserUpdate] int  NULL , 
+  [TicketStati_UserDelete] int  NULL , 
+  [TicketStati_DateInsert] datetime  NULL , 
+  [TicketStati_DateUpdate] datetime  NULL , 
+  [TicketStati_DateDelete] datetime  NULL , 
+  [TicketStati_Icona] varchar(200)  NULL , 
+  [TicketStati_Colore] varchar(200)  NULL  )
+ALTER TABLE [dbo].[TicketStati] ADD CONSTRAINT PK_TicketStati PRIMARY KEY  ([TicketStati_Ky])
+</SqlScriptCreate>
+</SqlTable>

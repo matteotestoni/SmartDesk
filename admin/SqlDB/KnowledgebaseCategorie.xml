@@ -1,0 +1,29 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="KnowledgebaseCategorie" Type="TABLE">
+    <Keys>
+      <Key Column="KnowledgebaseCategorie_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="KnowledgebaseCategorie_Ky" IsNull="N" Type="int" />
+      <Field Column="KnowledgebaseCategorie_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="KnowledgebaseCategorie_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="KnowledgebaseCategorie_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="KnowledgebaseCategorie_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="KnowledgebaseCategorie_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="KnowledgebaseCategorie_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="KnowledgebaseCategorie_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[KnowledgebaseCategorie] (
+  [KnowledgebaseCategorie_Ky] int IDENTITY(1,1) NOT NULL , 
+  [KnowledgebaseCategorie_Titolo] varchar(200)  NULL , 
+  [KnowledgebaseCategorie_UserInsert] int  NULL , 
+  [KnowledgebaseCategorie_UserUpdate] int  NULL , 
+  [KnowledgebaseCategorie_UserDelete] int  NULL , 
+  [KnowledgebaseCategorie_DateInsert] datetime  NULL , 
+  [KnowledgebaseCategorie_DateUpdate] datetime  NULL , 
+  [KnowledgebaseCategorie_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[KnowledgebaseCategorie] ADD CONSTRAINT PK_KnowledgebaseCategorie PRIMARY KEY  ([KnowledgebaseCategorie_Ky])
+</SqlScriptCreate>
+</SqlTable>

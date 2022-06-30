@@ -1,0 +1,41 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="OfficinaStati" Type="TABLE">
+    <Keys>
+      <Key Column="OfficinaStati_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="OfficinaStati_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="OfficinaStati_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="OfficinaStati_Colore" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="OfficinaStati_Icona" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="OfficinaStati_Aperta" IsNull="Y" Type="bit" />
+      <Field Column="OfficinaStati_Chiusa" IsNull="Y" Type="bit" />
+      <Field Column="OfficinaStati_Ordine" IsNull="Y" Type="int" />
+      <Field Column="OfficinaStati_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="OfficinaStati_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="OfficinaStati_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="OfficinaStati_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="OfficinaStati_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="OfficinaStati_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="OfficinaStati_Email" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[OfficinaStati] (
+  [OfficinaStati_Ky] tinyint IDENTITY(1,1) NOT NULL , 
+  [OfficinaStati_Titolo] varchar(100)  NULL , 
+  [OfficinaStati_Colore] varchar(100)  NULL , 
+  [OfficinaStati_Icona] varchar(200)  NULL , 
+  [OfficinaStati_Aperta] bit  NULL , 
+  [OfficinaStati_Chiusa] bit  NULL , 
+  [OfficinaStati_Ordine] int  NULL , 
+  [OfficinaStati_UserInsert] int  NULL , 
+  [OfficinaStati_UserUpdate] int  NULL , 
+  [OfficinaStati_UserDelete] int  NULL , 
+  [OfficinaStati_DateInsert] datetime  NULL , 
+  [OfficinaStati_DateUpdate] datetime  NULL , 
+  [OfficinaStati_DateDelete] datetime  NULL , 
+  [OfficinaStati_Email] varchar(MAX)  NULL  )
+ALTER TABLE [dbo].[OfficinaStati] ADD CONSTRAINT PK_OfficinaStati PRIMARY KEY  ([OfficinaStati_Ky])
+</SqlScriptCreate>
+</SqlTable>

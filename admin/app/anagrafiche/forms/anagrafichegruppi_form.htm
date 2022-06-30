@@ -1,0 +1,21 @@
+	<div class="grid-x grid-padding-x">
+		<div class="large-2 medium-2 small-4 cell">
+	    <label for="AnagraficheGruppi_Titolo" aria-describedby="AnagraficheGruppi_TitoloHelpText" class="large-text-right small-text-left middle"><i class="fa-duotone fa-tag fa-fw"></i> Titolo</label>
+		</div>
+		<div class="large-10 medium-10 small-8 cell">
+	    <input type="text" required="required" name="AnagraficheGruppi_Titolo" id="AnagraficheGruppi_Titolo" title="Titolo" value="<%=GetFieldValue(dtAnagraficheGruppi, "AnagraficheGruppi_Titolo")%>" size="60" maxlength="60">
+			<span class="form-error">Obbligatorio.</span>
+			<p class="help-text" id="AnagraficheGruppi_TitoloHelpText">(max 60 caratteri)</p>
+		</div>
+	</div>	
+	
+  <div class="grid-x grid-padding-x">
+		<div class="large-2 medium-2 small-4 cell">
+	    <label for="AnagraficheGruppi_Ordine" aria-describedby="AnagraficheGruppi_Ordine" class="large-text-right small-text-left middle"><i class="fa-duotone fa-tag fa-fw"></i> Ordine</label>
+		</div>
+		<div class="large-10 medium-10 small-8 cell">
+	    <input type="text" required="required" name="AnagraficheGruppi_Ordine" id="AnagraficheGruppi_Ordine" title="ordine" value="<%=GetFieldValue(dtAnagraficheGruppi, "AnagraficheGruppi_Ordine")%>" size="2" maxlength="2">
+			<span class="form-error">Obbligatorio.</span>
+			<p class="help-text" id="AnagraficheGruppi_OrdineHelpText">(ordine di visualizzazione 1..n)</p>
+		</div>
+	</div>	

@@ -1,0 +1,39 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="PersoneAssenze_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="PersoneAssenze_Ky" IsNull="N" Type="int" />
+      <Field Column="PersoneAssenze_Data" IsNull="Y" Type="smalldatetime" />
+      <Field Column="PersoneAssenze_Descrizione" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="Persone_Ky" IsNull="Y" Type="int" />
+      <Field Column="PersoneAssenze_Ore" IsNull="Y" Type="float" />
+      <Field Column="PersoneAssenzeTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Persone_Nome" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Persone_Cognome" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Persone_Sigla" IsNull="Y" Type="varchar" Lenght="4" />
+      <Field Column="PersoneAssenzeTipo_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="PersoneAssenze_Data_IT" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="PersoneAssenze_Data_EN" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="PersoneAssenzeTipo_Segno" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="PersoneAssenze_Lock" IsNull="Y" Type="bit" />
+      <Field Column="Persone_Colore" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="PersoneAssenze_Anno" IsNull="Y" Type="int" />
+      <Field Column="Persone_OreFerie" IsNull="Y" Type="int" />
+      <Field Column="ggTrascorsi" IsNull="Y" Type="int" />
+      <Field Column="Persone_Foto" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Persone_OreGiornaliere" IsNull="Y" Type="float" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.PersoneAssenze_Vw
+AS
+SELECT        dbo.PersoneAssenze.PersoneAssenze_Ky, dbo.PersoneAssenze.PersoneAssenze_Data, dbo.PersoneAssenze.PersoneAssenze_Descrizione, dbo.PersoneAssenze.Persone_Ky, 
+                         dbo.PersoneAssenze.PersoneAssenze_Ore, dbo.PersoneAssenze.PersoneAssenzeTipo_Ky, dbo.Persone.Persone_Nome, dbo.Persone.Persone_Cognome, dbo.Persone.Persone_Sigla, 
+                         dbo.PersoneAssenzeTipo.PersoneAssenzeTipo_Descrizione, CONVERT(varchar, dbo.PersoneAssenze.PersoneAssenze_Data, 105) AS PersoneAssenze_Data_IT, CONVERT(varchar, 
+                         dbo.PersoneAssenze.PersoneAssenze_Data, 101) AS PersoneAssenze_Data_EN, dbo.PersoneAssenzeTipo.PersoneAssenzeTipo_Segno, dbo.PersoneAssenze.PersoneAssenze_Lock, 
+                         dbo.Persone.Persone_Colore, dbo.PersoneAssenze.PersoneAssenze_Anno, dbo.Persone.Persone_OreFerie, DATEDIFF(day, dbo.PersoneAssenze.PersoneAssenze_Data, GETDATE()) AS ggTrascorsi, 
+                         dbo.Persone.Persone_Foto, dbo.Persone.Persone_OreGiornaliere
+FROM            dbo.PersoneAssenze LEFT OUTER JOIN
+                         dbo.Persone ON dbo.PersoneAssenze.Persone_Ky = dbo.Persone.Persone_Ky LEFT OUTER JOIN
+                         dbo.PersoneAssenzeTipo ON dbo.PersoneAssenze.PersoneAssenzeTipo_Ky = dbo.PersoneAssenzeTipo.PersoneAssenzeTipo_Ky
+</SqlScriptCreate>
+</SqlTable>

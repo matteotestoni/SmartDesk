@@ -1,0 +1,26 @@
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="AttributiGruppi_Titolo" class="large-text-right small-text-left middle">Titolo</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="AttributiGruppi_Titolo" id="AttributiGruppi_Titolo" title="Titolo" value="<%=GetFieldValue(dtAttributiGruppi, "AttributiGruppi_Titolo")%>" size="60" required="required">
+		<span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle">Attributi</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+		<select id="AttributiGruppi_Attributi" class="" multiple="multiple" name="AttributiGruppi_Attributi" size="20" value="<%=GetFieldValue(dtAttributiGruppi, "AttributiGruppi_Attributi")%>">
+			<%
+			for (int i = 0; i < dtAttributi.Rows.Count; i++){
+				Response.Write("<option value=\"" + dtAttributi.Rows[i]["Attributi_Ky"].ToString() + "\"" + strSelected + ">" + dtAttributi.Rows[i]["Attributi_Titolo"].ToString() + " (" + dtAttributi.Rows[i]["AttributiTipo_Codice"].ToString() + ")</option>");
+			}
+			%>
+		</select>
+		<script type="text/javascript">
+			selectSetMultiple('AttributiGruppi_Attributi', '<%=GetFieldValue(dtAttributiGruppi, "AttributiGruppi_Attributi")%>');
+		</script>
+	</div>
+</div>

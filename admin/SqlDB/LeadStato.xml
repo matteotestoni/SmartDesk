@@ -1,0 +1,53 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="LeadStato" Type="TABLE">
+    <Keys>
+      <Key Column="LeadStato_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="LeadStato_Ky" IsNull="N" Type="int" />
+      <Field Column="LeadStato_Titolo" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="LeadStato_Default" IsNull="Y" Type="bit" />
+      <Field Column="LeadStato_Codice" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="LeadStato_Colore" IsNull="Y" Type="varchar" Lenght="8" />
+      <Field Column="LeadStato_Icona" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="LeadStato_Ordine" IsNull="Y" Type="int" />
+      <Field Column="LeadStato_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="LeadStato_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="LeadStato_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="LeadStato_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="LeadStato_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="LeadStato_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="LeadStato_Aperta" IsNull="Y" Type="bit" />
+      <Field Column="LeadStato_Chiusa" IsNull="Y" Type="bit" />
+      <Field Column="LeadStato_Probabilita" IsNull="Y" Type="tinyint" />
+      <Field Column="PreventiviAutoStati_Ky" IsNull="Y" Type="int" />
+      <Field Column="DocumentiStato_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="AnagraficheStati_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="OpportunitaStati_Ky" IsNull="Y" Type="tinyint" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[LeadStato] (
+  [LeadStato_Ky] int IDENTITY(1,1) NOT NULL , 
+  [LeadStato_Titolo] varchar(MAX)  NULL , 
+  [LeadStato_Default] bit  NULL , 
+  [LeadStato_Codice] varchar(MAX)  NULL , 
+  [LeadStato_Colore] varchar(8)  NULL , 
+  [LeadStato_Icona] varchar(MAX)  NULL , 
+  [LeadStato_Ordine] int  NULL , 
+  [LeadStato_UserInsert] int  NULL , 
+  [LeadStato_UserUpdate] int  NULL , 
+  [LeadStato_UserDelete] int  NULL , 
+  [LeadStato_DateInsert] datetime  NULL , 
+  [LeadStato_DateUpdate] datetime  NULL , 
+  [LeadStato_DateDelete] datetime  NULL , 
+  [LeadStato_Aperta] bit  NULL , 
+  [LeadStato_Chiusa] bit  NULL , 
+  [LeadStato_Probabilita] tinyint  NULL , 
+  [PreventiviAutoStati_Ky] int  NULL , 
+  [DocumentiStato_Ky] smallint  NULL , 
+  [AnagraficheStati_Ky] smallint  NULL , 
+  [OpportunitaStati_Ky] tinyint  NULL  )
+ALTER TABLE [dbo].[LeadStato] ADD CONSTRAINT PK_LeadStato PRIMARY KEY  ([LeadStato_Ky])
+</SqlScriptCreate>
+</SqlTable>

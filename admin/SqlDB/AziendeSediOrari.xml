@@ -1,0 +1,33 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AziendeSediOrari" Type="TABLE">
+    <Keys>
+      <Key Column="AziendeSediOrari_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AziendeSediOrari_Ky" IsNull="N" Type="int" />
+      <Field Column="Aziende_Ky" IsNull="Y" Type="int" />
+      <Field Column="AziendeSedi_Ky" IsNull="Y" Type="int" />
+      <Field Column="AziendeSediOrari_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AziendeSediOrari_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AziendeSediOrari_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AziendeSediOrari_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AziendeSediOrari_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AziendeSediOrari_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AziendeSediOrari_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AziendeSediOrari] (
+  [AziendeSediOrari_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Aziende_Ky] int  NULL , 
+  [AziendeSedi_Ky] int  NULL , 
+  [AziendeSediOrari_Titolo] varchar(200)  NULL , 
+  [AziendeSediOrari_UserInsert] int  NULL , 
+  [AziendeSediOrari_UserUpdate] int  NULL , 
+  [AziendeSediOrari_UserDelete] int  NULL , 
+  [AziendeSediOrari_DateInsert] datetime  NULL , 
+  [AziendeSediOrari_DateUpdate] datetime  NULL , 
+  [AziendeSediOrari_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[AziendeSediOrari] ADD CONSTRAINT PK_AziendeSediOrari PRIMARY KEY  ([AziendeSediOrari_Ky])
+</SqlScriptCreate>
+</SqlTable>

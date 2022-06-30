@@ -1,0 +1,37 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliNormativeEuro" Type="TABLE">
+    <Keys>
+      <Key Column="VeicoliNormativeEuro_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="VeicoliNormativeEuro_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="VeicoliNormativeEuro_Descrizione" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="VeicoliNormativeEuro_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="VeicoliNormativeEuro_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="VeicoliNormativeEuro_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="VeicoliNormativeEuro_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliNormativeEuro_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliNormativeEuro_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliNormativeEuro_Ecoincentivi" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliNormativeEuro_Ordine" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliNormativeEuro_Attiva" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliNormativeEuro_Predefinita" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[VeicoliNormativeEuro] (
+  [VeicoliNormativeEuro_Ky] tinyint IDENTITY(1,1) NOT NULL , 
+  [VeicoliNormativeEuro_Descrizione] varchar(20)  NULL , 
+  [VeicoliNormativeEuro_UserInsert] int  NULL , 
+  [VeicoliNormativeEuro_UserUpdate] int  NULL , 
+  [VeicoliNormativeEuro_UserDelete] int  NULL , 
+  [VeicoliNormativeEuro_DateInsert] datetime  NULL , 
+  [VeicoliNormativeEuro_DateUpdate] datetime  NULL , 
+  [VeicoliNormativeEuro_DateDelete] datetime  NULL , 
+  [VeicoliNormativeEuro_Ecoincentivi] bit  NULL , 
+  [VeicoliNormativeEuro_Ordine] tinyint  NULL , 
+  [VeicoliNormativeEuro_Attiva] bit  NULL , 
+  [VeicoliNormativeEuro_Predefinita] bit  NULL  )
+ALTER TABLE [dbo].[VeicoliNormativeEuro] ADD CONSTRAINT PK_VeicoliNormativeEuro PRIMARY KEY  ([VeicoliNormativeEuro_Ky])
+</SqlScriptCreate>
+</SqlTable>

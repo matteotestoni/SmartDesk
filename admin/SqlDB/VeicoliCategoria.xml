@@ -1,0 +1,53 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliCategoria" Type="TABLE">
+    <Keys>
+      <Key Column="VeicoliCategoria_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="VeicoliCategoria_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="VeicoliCategoria_Descrizione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="VeicoliCategoria_UrlKey" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliCategoria_DescrizioneWEB" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="VeicoliCategoria_DescrizioneHTML" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliCategoria_DescrizioneWEBHTML" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="VeicoliCategoria_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="VeicoliCategoria_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="VeicoliCategoria_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="VeicoliCategoria_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliCategoria_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliCategoria_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliCategoria_Attiva" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliCategoria_Ordine" IsNull="Y" Type="int" />
+      <Field Column="VeicoliCategoria_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliCategoria_Foto" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliCategoria_Description" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliCategoria_Robots" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliCategoria_Title" IsNull="Y" Type="varchar" Lenght="200" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[VeicoliCategoria] (
+  [VeicoliCategoria_Ky] tinyint IDENTITY(1,1) NOT NULL , 
+  [VeicoliCategoria_Descrizione] varchar(50)  NULL , 
+  [VeicoliCategoria_UrlKey] varchar(100)  NULL , 
+  [VeicoliTipo_Ky] tinyint  NULL , 
+  [VeicoliCategoria_DescrizioneWEB] varchar(20)  NULL , 
+  [VeicoliCategoria_DescrizioneHTML] varchar(100)  NULL , 
+  [VeicoliCategoria_DescrizioneWEBHTML] varchar(20)  NULL , 
+  [VeicoliCategoria_UserInsert] int  NULL , 
+  [VeicoliCategoria_UserUpdate] int  NULL , 
+  [VeicoliCategoria_UserDelete] int  NULL , 
+  [VeicoliCategoria_DateInsert] datetime  NULL , 
+  [VeicoliCategoria_DateUpdate] datetime  NULL , 
+  [VeicoliCategoria_DateDelete] datetime  NULL , 
+  [VeicoliCategoria_Attiva] bit  NULL DEFAULT ((1)), 
+  [VeicoliCategoria_Ordine] int  NULL DEFAULT ((1)), 
+  [VeicoliCategoria_Titolo] varchar(200)  NULL , 
+  [VeicoliCategoria_Foto] varchar(200)  NULL , 
+  [VeicoliCategoria_Description] varchar(200)  NULL , 
+  [VeicoliCategoria_Robots] varchar(200)  NULL , 
+  [VeicoliCategoria_Title] varchar(200)  NULL  )
+ALTER TABLE [dbo].[VeicoliCategoria] ADD CONSTRAINT PK_VeicoliCategoria PRIMARY KEY  ([VeicoliCategoria_Ky])
+</SqlScriptCreate>
+</SqlTable>

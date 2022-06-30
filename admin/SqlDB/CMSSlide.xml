@@ -1,0 +1,49 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CMSSlide" Type="TABLE">
+    <Keys>
+      <Key Column="CMSSlide_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CMSSlide_Ky" IsNull="N" Type="int" />
+      <Field Column="CMSSlide_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSSlide_Data" IsNull="Y" Type="datetime" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="CMSSlide_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CMSSlide_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CMSSlide_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CMSSlide_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CMSSlide_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CMSSlide_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="CMSSlide_Url" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSSlide_Codice" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSSlide_Foto" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSCategorie_Ky" IsNull="Y" Type="int" />
+      <Field Column="CMSSlide_Tags" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="CMSSlide_PubblicaWEB" IsNull="Y" Type="bit" />
+      <Field Column="CMSSlide_Ordine" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CMSSlide] (
+  [CMSSlide_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CMSSlide_Titolo] varchar(200)  NULL , 
+  [CMSSlide_Data] datetime  NULL , 
+  [Utenti_Ky] int  NULL , 
+  [CMSSlide_UserInsert] int  NULL , 
+  [CMSSlide_UserUpdate] int  NULL , 
+  [CMSSlide_UserDelete] int  NULL , 
+  [CMSSlide_DateInsert] datetime  NULL , 
+  [CMSSlide_DateUpdate] datetime  NULL , 
+  [CMSSlide_DateDelete] datetime  NULL , 
+  [CMSSlide_Url] varchar(200)  NULL , 
+  [CMSSlide_Codice] varchar(200)  NULL , 
+  [CMSSlide_Foto] varchar(200)  NULL , 
+  [CMSCategorie_Ky] int  NULL , 
+  [CMSSlide_Tags] varchar(MAX)  NULL , 
+  [Lingue_Ky] tinyint  NULL , 
+  [CMSSlide_PubblicaWEB] bit  NULL , 
+  [CMSSlide_Ordine] int  NULL  )
+ALTER TABLE [dbo].[CMSSlide] ADD CONSTRAINT PK_CMSSlide PRIMARY KEY  ([CMSSlide_Ky])
+</SqlScriptCreate>
+</SqlTable>

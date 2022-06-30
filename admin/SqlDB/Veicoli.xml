@@ -1,0 +1,361 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Veicoli" Type="TABLE">
+    <Keys>
+      <Key Column="Veicoli_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Veicoli_Ky" IsNull="N" Type="int" />
+      <Field Column="VeicoliMarca_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="VeicoliModello_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="VeicoliGruppi_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="VeicoliMateriale_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Veicoli_Motore" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Veicoli_Modello" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Veicoli_Allestimento" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="ImposizioniIVA_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="VeicoliCarburante_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliTipologia_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliTipologie_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliCategoria_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliNormativeEuro_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_Annuncio" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Veicoli_Metallizzato" IsNull="Y" Type="bit" />
+      <Field Column="Veicoli_ImmatricolazioneMese" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_ImmatricolazioneAnno" IsNull="Y" Type="smallint" />
+      <Field Column="Veicoli_PrvKy" IsNull="Y" Type="smallint" />
+      <Field Column="Veicoli_CmnKy" IsNull="Y" Type="int" />
+      <Field Column="VeicoliContratto_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliCambio_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliCarrozzeria_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_CVKW" IsNull="Y" Type="float" />
+      <Field Column="Veicoli_KM" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_HP" IsNull="Y" Type="smallint" />
+      <Field Column="Veicoli_Valore" IsNull="Y" Type="money" />
+      <Field Column="Veicoli_ValoreNascondi" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliColore_InterniKy" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliColore_EsterniKy" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_RevisioneAnno" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_RevisioneMese" IsNull="Y" Type="smallint" />
+      <Field Column="Veicoli_PesoKg" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_Cilindrata" IsNull="Y" Type="smallint" />
+      <Field Column="Veicoli_NumeroCilindri" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_NumeroSedili" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_NumeroRapporti" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_NumeroPorte" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_PubblicaWEB" IsNull="Y" Type="bit" />
+      <Field Column="Veicoli_fArchiviato" IsNull="Y" Type="bit" />
+      <Field Column="Veicoli_Foto" IsNull="Y" Type="bit" />
+      <Field Column="Veicoli_Foto1" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto1s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto1b" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto2" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto2s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto2b" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto3" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto3s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto3b" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto4" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto4s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto4b" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto5" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto5s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto5b" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto6" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto6s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto6b" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto7" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto7s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto7b" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto8" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto8s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto8b" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto9" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto9s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto9b" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto10" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto10s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto10b" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Utenti_InsertKy" IsNull="Y" Type="int" />
+      <Field Column="Utenti_InsertDt" IsNull="Y" Type="datetime" />
+      <Field Column="Utenti_UpdateKy" IsNull="Y" Type="int" />
+      <Field Column="Utenti_UpdateDt" IsNull="Y" Type="datetime" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="UtentiGruppi_Ky" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_Inevidenza" IsNull="Y" Type="bit" />
+      <Field Column="Veicoli_Riferimento" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Veicoli_ImportazioneRiferimento" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Veicoli_fImportato" IsNull="Y" Type="bit" />
+      <Field Column="Veicoli_Notifica" IsNull="Y" Type="bit" />
+      <Field Column="Nazioni_Ky" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_NumeroPosti" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_NumeroMarce" IsNull="Y" Type="int" />
+      <Field Column="VeicoliColore_Ky" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_ImportazioneData" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Veicoli_DataPrimaImmatricolazione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Veicoli_Optional" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Veicoli_Strumentazione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Veicoli_Trazione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Veicoli_Carrozzeria" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Veicoli_Garanzia" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Veicoli_TipoCambio" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Veicoli_CV" IsNull="Y" Type="smallint" />
+      <Field Column="VeicoliMarcaSpazioGroup_Marca" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliModelloSpazioGroup_Modello" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Veicoli_Targa" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Veicoli_Lunghezza" IsNull="Y" Type="float" />
+      <Field Column="Veicoli_Larghezza" IsNull="Y" Type="float" />
+      <Field Column="Veicoli_VelocitaMax" IsNull="Y" Type="smallint" />
+      <Field Column="Veicoli_VelocitaCrociera" IsNull="Y" Type="smallint" />
+      <Field Column="Veicoli_Altezza" IsNull="Y" Type="smallint" />
+      <Field Column="Veicoli_Autonomia" IsNull="Y" Type="smallint" />
+      <Field Column="Veicoli_MotoreTipo" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Veicoli_NumeroCabine" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_Equipaggio" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_Passegeri" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_NumeroProprietari" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_Visite" IsNull="Y" Type="smallint" />
+      <Field Column="Veicoli_PostiLetto" IsNull="Y" Type="smallint" />
+      <Field Column="Veicoli_Bagni" IsNull="Y" Type="smallint" />
+      <Field Column="Veicoli_Cucina" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Veicoli_SerbatoioAcqua" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Veicoli_Assi" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_Ore" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_Serbatoio" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="Veicoli_Note" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="Comuni_Ky" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_fElimina" IsNull="Y" Type="bit" />
+      <Field Column="Veicoli_PersonaRiferimento" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Veicoli_TelefonoPersonaRiferimento" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Veicoli_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Veicoli_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Veicoli_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Veicoli_Foto11" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto11s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Province_Ky" IsNull="Y" Type="int" />
+      <Field Column="Regioni_Ky" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_Sede" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Veicoli_Indirizzo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Veicoli_EmailPersonaRiferimento" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Veicoli_Foto12" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto12s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto13" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto13s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto14" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto14s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto15" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto15s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto16" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto16s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto17" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto17s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto18" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto18s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto19" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto19s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto20" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto20s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Premium" IsNull="Y" Type="bit" />
+      <Field Column="Veicoli_Autodasti" IsNull="Y" Type="bit" />
+      <Field Column="Veicoli_Neopatentati" IsNull="Y" Type="bit" />
+      <Field Column="Veicoli_Vetrina" IsNull="Y" Type="bit" />
+      <Field Column="Veicoli_fDrivek" IsNull="Y" Type="bit" />
+      <Field Column="Veicoli_Drivek" IsNull="Y" Type="bit" />
+      <Field Column="CoreResponseCode_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Veicoli_RedirectUrl" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Veicoli_ValoreIniziale" IsNull="Y" Type="money" />
+      <Field Column="Veicoli_BestPrice" IsNull="Y" Type="bit" />
+      <Field Column="Veicoli_EmissioniCO2" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Veicoli_ConsumoUrbano" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Veicoli_ConsumoExtraUrbano" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Veicoli_ConsumoCombinato" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Veicoli_Tags" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_CostoKm" IsNull="Y" Type="money" />
+      <Field Column="Veicoli_CostoGiornaliero" IsNull="Y" Type="money" />
+      <Field Column="Veicoli_Prime" IsNull="Y" Type="bit" />
+      <Field Column="Veicoli_LastMinute" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Veicoli] (
+  [Veicoli_Ky] int IDENTITY(1,1) NOT NULL , 
+  [VeicoliMarca_Ky] smallint  NULL , 
+  [VeicoliModello_Ky] smallint  NULL , 
+  [VeicoliGruppi_Ky] smallint  NULL , 
+  [VeicoliMateriale_Ky] smallint  NULL , 
+  [Veicoli_Motore] varchar(300)  NULL , 
+  [Veicoli_Modello] varchar(200)  NULL , 
+  [Veicoli_Allestimento] varchar(300)  NULL , 
+  [ImposizioniIVA_Ky] smallint  NULL , 
+  [VeicoliCarburante_Ky] tinyint  NULL , 
+  [VeicoliTipo_Ky] tinyint  NULL , 
+  [VeicoliTipologia_Ky] tinyint  NULL , 
+  [VeicoliTipologie_Ky] tinyint  NULL , 
+  [VeicoliCategoria_Ky] tinyint  NULL , 
+  [VeicoliNormativeEuro_Ky] tinyint  NULL , 
+  [Veicoli_Annuncio] varchar(MAX)  NULL , 
+  [Veicoli_Metallizzato] bit  NULL , 
+  [Veicoli_ImmatricolazioneMese] tinyint  NULL , 
+  [Veicoli_ImmatricolazioneAnno] smallint  NULL , 
+  [Veicoli_PrvKy] smallint  NULL , 
+  [Veicoli_CmnKy] int  NULL , 
+  [VeicoliContratto_Ky] tinyint  NULL , 
+  [VeicoliCambio_Ky] tinyint  NULL , 
+  [VeicoliCarrozzeria_Ky] tinyint  NULL , 
+  [Veicoli_CVKW] float  NULL , 
+  [Veicoli_KM] int  NULL , 
+  [Veicoli_HP] smallint  NULL , 
+  [Veicoli_Valore] money  NULL DEFAULT ((0)), 
+  [Veicoli_ValoreNascondi] bit  NULL DEFAULT ((0)), 
+  [VeicoliColore_InterniKy] tinyint  NULL , 
+  [VeicoliColore_EsterniKy] tinyint  NULL , 
+  [Veicoli_RevisioneAnno] int  NULL , 
+  [Veicoli_RevisioneMese] smallint  NULL , 
+  [Veicoli_PesoKg] int  NULL , 
+  [Veicoli_Cilindrata] smallint  NULL , 
+  [Veicoli_NumeroCilindri] tinyint  NULL , 
+  [Veicoli_NumeroSedili] tinyint  NULL , 
+  [Veicoli_NumeroRapporti] tinyint  NULL , 
+  [Veicoli_NumeroPorte] tinyint  NULL , 
+  [Veicoli_PubblicaWEB] bit  NULL DEFAULT ((1)), 
+  [Veicoli_fArchiviato] bit  NULL DEFAULT ((0)), 
+  [Veicoli_Foto] bit  NULL DEFAULT ((0)), 
+  [Veicoli_Foto1] varchar(150)  NULL , 
+  [Veicoli_Foto1s] varchar(150)  NULL , 
+  [Veicoli_Foto1b] varchar(150)  NULL , 
+  [Veicoli_Foto2] varchar(150)  NULL , 
+  [Veicoli_Foto2s] varchar(150)  NULL , 
+  [Veicoli_Foto2b] varchar(150)  NULL , 
+  [Veicoli_Foto3] varchar(150)  NULL , 
+  [Veicoli_Foto3s] varchar(150)  NULL , 
+  [Veicoli_Foto3b] varchar(150)  NULL , 
+  [Veicoli_Foto4] varchar(150)  NULL , 
+  [Veicoli_Foto4s] varchar(150)  NULL , 
+  [Veicoli_Foto4b] varchar(150)  NULL , 
+  [Veicoli_Foto5] varchar(150)  NULL , 
+  [Veicoli_Foto5s] varchar(150)  NULL , 
+  [Veicoli_Foto5b] varchar(150)  NULL , 
+  [Veicoli_Foto6] varchar(150)  NULL , 
+  [Veicoli_Foto6s] varchar(150)  NULL , 
+  [Veicoli_Foto6b] varchar(150)  NULL , 
+  [Veicoli_Foto7] varchar(150)  NULL , 
+  [Veicoli_Foto7s] varchar(150)  NULL , 
+  [Veicoli_Foto7b] varchar(150)  NULL , 
+  [Veicoli_Foto8] varchar(150)  NULL , 
+  [Veicoli_Foto8s] varchar(150)  NULL , 
+  [Veicoli_Foto8b] varchar(150)  NULL , 
+  [Veicoli_Foto9] varchar(150)  NULL , 
+  [Veicoli_Foto9s] varchar(150)  NULL , 
+  [Veicoli_Foto9b] varchar(150)  NULL , 
+  [Veicoli_Foto10] varchar(150)  NULL , 
+  [Veicoli_Foto10s] varchar(150)  NULL , 
+  [Veicoli_Foto10b] varchar(150)  NULL , 
+  [Utenti_InsertKy] int  NULL , 
+  [Utenti_InsertDt] datetime  NULL , 
+  [Utenti_UpdateKy] int  NULL , 
+  [Utenti_UpdateDt] datetime  NULL , 
+  [Utenti_Ky] int  NULL , 
+  [UtentiGruppi_Ky] int  NULL , 
+  [Veicoli_Inevidenza] bit  NULL , 
+  [Veicoli_Riferimento] varchar(50)  NULL , 
+  [Veicoli_ImportazioneRiferimento] varchar(200)  NULL , 
+  [Veicoli_fImportato] bit  NULL , 
+  [Veicoli_Notifica] bit  NULL , 
+  [Nazioni_Ky] int  NULL , 
+  [Veicoli_NumeroPosti] int  NULL , 
+  [Veicoli_NumeroMarce] int  NULL , 
+  [VeicoliColore_Ky] int  NULL , 
+  [Veicoli_ImportazioneData] smalldatetime  NULL , 
+  [Veicoli_DataPrimaImmatricolazione] varchar(50)  NULL , 
+  [Veicoli_Optional] varchar(MAX)  NULL , 
+  [Veicoli_Strumentazione] varchar(MAX)  NULL , 
+  [Veicoli_Trazione] varchar(50)  NULL , 
+  [Veicoli_Carrozzeria] varchar(50)  NULL , 
+  [Veicoli_Garanzia] varchar(50)  NULL , 
+  [Veicoli_TipoCambio] varchar(100)  NULL , 
+  [Veicoli_CV] smallint  NULL , 
+  [VeicoliMarcaSpazioGroup_Marca] varchar(200)  NULL , 
+  [VeicoliModelloSpazioGroup_Modello] varchar(200)  NULL , 
+  [Veicoli_Targa] varchar(50)  NULL , 
+  [Veicoli_Lunghezza] float  NULL , 
+  [Veicoli_Larghezza] float  NULL , 
+  [Veicoli_VelocitaMax] smallint  NULL , 
+  [Veicoli_VelocitaCrociera] smallint  NULL , 
+  [Veicoli_Altezza] smallint  NULL , 
+  [Veicoli_Autonomia] smallint  NULL , 
+  [Veicoli_MotoreTipo] varchar(50)  NULL , 
+  [Veicoli_NumeroCabine] tinyint  NULL , 
+  [Veicoli_Equipaggio] tinyint  NULL , 
+  [Veicoli_Passegeri] tinyint  NULL , 
+  [Veicoli_NumeroProprietari] tinyint  NULL , 
+  [Veicoli_Visite] smallint  NULL DEFAULT ((0)), 
+  [Veicoli_PostiLetto] smallint  NULL , 
+  [Veicoli_Bagni] smallint  NULL , 
+  [Veicoli_Cucina] varchar(50)  NULL , 
+  [Veicoli_SerbatoioAcqua] varchar(50)  NULL , 
+  [Veicoli_Assi] tinyint  NULL , 
+  [Veicoli_Ore] int  NULL , 
+  [Veicoli_Serbatoio] varchar(500)  NULL , 
+  [Veicoli_Note] varchar(500)  NULL , 
+  [Comuni_Ky] int  NULL , 
+  [Veicoli_fElimina] bit  NULL , 
+  [Veicoli_PersonaRiferimento] varchar(100)  NULL , 
+  [Veicoli_TelefonoPersonaRiferimento] varchar(100)  NULL , 
+  [Veicoli_UserInsert] int  NULL , 
+  [Veicoli_UserUpdate] int  NULL , 
+  [Veicoli_UserDelete] int  NULL , 
+  [Veicoli_DateInsert] datetime  NULL , 
+  [Veicoli_DateUpdate] datetime  NULL , 
+  [Veicoli_DateDelete] datetime  NULL , 
+  [Veicoli_Foto11] varchar(150)  NULL , 
+  [Veicoli_Foto11s] varchar(150)  NULL , 
+  [Province_Ky] int  NULL , 
+  [Regioni_Ky] int  NULL , 
+  [Veicoli_Sede] varchar(200)  NULL , 
+  [Veicoli_Indirizzo] varchar(200)  NULL , 
+  [Veicoli_EmailPersonaRiferimento] varchar(100)  NULL , 
+  [Veicoli_Foto12] varchar(150)  NULL , 
+  [Veicoli_Foto12s] varchar(150)  NULL , 
+  [Veicoli_Foto13] varchar(150)  NULL , 
+  [Veicoli_Foto13s] varchar(150)  NULL , 
+  [Veicoli_Foto14] varchar(150)  NULL , 
+  [Veicoli_Foto14s] varchar(150)  NULL , 
+  [Veicoli_Foto15] varchar(150)  NULL , 
+  [Veicoli_Foto15s] varchar(150)  NULL , 
+  [Veicoli_Foto16] varchar(150)  NULL , 
+  [Veicoli_Foto16s] varchar(150)  NULL , 
+  [Veicoli_Foto17] varchar(150)  NULL , 
+  [Veicoli_Foto17s] varchar(150)  NULL , 
+  [Veicoli_Foto18] varchar(150)  NULL , 
+  [Veicoli_Foto18s] varchar(150)  NULL , 
+  [Veicoli_Foto19] varchar(150)  NULL , 
+  [Veicoli_Foto19s] varchar(150)  NULL , 
+  [Veicoli_Foto20] varchar(150)  NULL , 
+  [Veicoli_Foto20s] varchar(150)  NULL , 
+  [Veicoli_Premium] bit  NULL , 
+  [Veicoli_Autodasti] bit  NULL , 
+  [Veicoli_Neopatentati] bit  NULL , 
+  [Veicoli_Vetrina] bit  NULL DEFAULT ((0)), 
+  [Veicoli_fDrivek] bit  NULL , 
+  [Veicoli_Drivek] bit  NULL , 
+  [CoreResponseCode_Ky] smallint  NULL DEFAULT ((200)), 
+  [Veicoli_RedirectUrl] varchar(MAX)  NULL , 
+  [Veicoli_ValoreIniziale] money  NULL , 
+  [Veicoli_BestPrice] bit  NULL , 
+  [Veicoli_EmissioniCO2] varchar(20)  NULL , 
+  [Veicoli_ConsumoUrbano] varchar(20)  NULL , 
+  [Veicoli_ConsumoExtraUrbano] varchar(20)  NULL , 
+  [Veicoli_ConsumoCombinato] varchar(20)  NULL , 
+  [Veicoli_Tags] varchar(MAX)  NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [Veicoli_CostoKm] money  NULL , 
+  [Veicoli_CostoGiornaliero] money  NULL , 
+  [Veicoli_Prime] bit  NULL , 
+  [Veicoli_LastMinute] bit  NULL  )
+ALTER TABLE [dbo].[Veicoli] ADD CONSTRAINT PK_Veicoli PRIMARY KEY  ([Veicoli_Ky])
+</SqlScriptCreate>
+</SqlTable>

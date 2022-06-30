@@ -1,0 +1,35 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnagraficheStati" Type="TABLE">
+    <Keys>
+      <Key Column="AnagraficheStati_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AnagraficheStati_Ky" IsNull="N" Type="smallint" />
+      <Field Column="AnagraficheStati_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnagraficheStati_Colore" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="AnagraficheStati_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheStati_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheStati_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheStati_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheStati_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheStati_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheStati_Default" IsNull="Y" Type="bit" />
+      <Field Column="AnagraficheStati_Icona" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AnagraficheStati] (
+  [AnagraficheStati_Ky] smallint IDENTITY(1,1) NOT NULL , 
+  [AnagraficheStati_Titolo] varchar(200)  NULL , 
+  [AnagraficheStati_Colore] varchar(50)  NULL , 
+  [AnagraficheStati_UserInsert] int  NULL , 
+  [AnagraficheStati_UserUpdate] int  NULL , 
+  [AnagraficheStati_UserDelete] int  NULL , 
+  [AnagraficheStati_DateInsert] datetime  NULL , 
+  [AnagraficheStati_DateUpdate] datetime  NULL , 
+  [AnagraficheStati_DateDelete] datetime  NULL , 
+  [AnagraficheStati_Default] bit  NULL , 
+  [AnagraficheStati_Icona] varchar(MAX)  NULL  )
+ALTER TABLE [dbo].[AnagraficheStati] ADD CONSTRAINT PK_AnagraficheStati PRIMARY KEY  ([AnagraficheStati_Ky])
+</SqlScriptCreate>
+</SqlTable>

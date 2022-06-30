@@ -1,0 +1,29 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="PagamentiTipo" Type="TABLE">
+    <Keys>
+      <Key Column="PagamentiTipo_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="PagamentiTipo_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="PagamentiTipo_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="PagamentiTipo_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="PagamentiTipo_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="PagamentiTipo_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="PagamentiTipo_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="PagamentiTipo_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="PagamentiTipo_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[PagamentiTipo] (
+  [PagamentiTipo_Ky] tinyint  NOT NULL , 
+  [PagamentiTipo_Descrizione] varchar(100)  NULL , 
+  [PagamentiTipo_UserInsert] int  NULL , 
+  [PagamentiTipo_UserUpdate] int  NULL , 
+  [PagamentiTipo_UserDelete] int  NULL , 
+  [PagamentiTipo_DateInsert] datetime  NULL , 
+  [PagamentiTipo_DateUpdate] datetime  NULL , 
+  [PagamentiTipo_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[PagamentiTipo] ADD CONSTRAINT PK_PagamentiTipo PRIMARY KEY  ([PagamentiTipo_Ky])
+</SqlScriptCreate>
+</SqlTable>

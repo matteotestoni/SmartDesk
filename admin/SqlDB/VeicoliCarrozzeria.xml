@@ -1,0 +1,41 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliCarrozzeria" Type="TABLE">
+    <Keys>
+      <Key Column="VeicoliCarrozzeria_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="VeicoliCarrozzeria_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="VeicoliCarrozzeria_Descrizione" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="VeicoliCarrozzeria_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="VeicoliCarrozzeria_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="VeicoliCarrozzeria_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="VeicoliCarrozzeria_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliCarrozzeria_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliCarrozzeria_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliCarrozzeria_Ordine" IsNull="Y" Type="int" />
+      <Field Column="VeicoliCarrozzeria_UrlKey" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliCarrozzeria_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliCarrozzeria_Description" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliCarrozzeria_Robots" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliTipo_Ky" IsNull="Y" Type="tinyint" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[VeicoliCarrozzeria] (
+  [VeicoliCarrozzeria_Ky] tinyint IDENTITY(1,1) NOT NULL , 
+  [VeicoliCarrozzeria_Descrizione] varchar(20)  NULL , 
+  [VeicoliCarrozzeria_UserInsert] int  NULL , 
+  [VeicoliCarrozzeria_UserUpdate] int  NULL , 
+  [VeicoliCarrozzeria_UserDelete] int  NULL , 
+  [VeicoliCarrozzeria_DateInsert] datetime  NULL , 
+  [VeicoliCarrozzeria_DateUpdate] datetime  NULL , 
+  [VeicoliCarrozzeria_DateDelete] datetime  NULL , 
+  [VeicoliCarrozzeria_Ordine] int  NULL , 
+  [VeicoliCarrozzeria_UrlKey] varchar(100)  NULL , 
+  [VeicoliCarrozzeria_Title] varchar(200)  NULL , 
+  [VeicoliCarrozzeria_Description] varchar(200)  NULL , 
+  [VeicoliCarrozzeria_Robots] varchar(200)  NULL , 
+  [VeicoliTipo_Ky] tinyint  NULL  )
+ALTER TABLE [dbo].[VeicoliCarrozzeria] ADD CONSTRAINT PK_VeicoliCarrozzeria PRIMARY KEY  ([VeicoliCarrozzeria_Ky])
+</SqlScriptCreate>
+</SqlTable>

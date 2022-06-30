@@ -1,0 +1,260 @@
+<div class="grid-x grid-padding-x">
+	<div class="large-8 medium-8 small-12 cell">
+		<div class="grid-x grid-padding-x">
+			<div class="large-2 medium-2 small-4 cell">
+				<label for="Anagrafiche_RagioneSociale" class="large-text-right">Anagrafica <i class="fa-duotone fa-users fa-fw"></i></label>
+			</div>
+			<div class="shrink cell hide-for-small-only">
+				<input type="text" name="Anagrafiche_Ky" id="Anagrafiche_Ky" value="<%=GetFieldValue(dtCommesse, "Anagrafiche_Ky")%>" size="3" required="required">
+				<span class="form-error">Obbligatorio</span>
+			</div>
+			<div class="auto cell">
+				<input type="text" name="Anagrafiche_RagioneSociale" id="Anagrafiche_RagioneSociale" placeholder="Ragione Sociale" value="<%=GetFieldValue(dtCommesse, "Anagrafiche_RagioneSociale")%>" required="required">
+				<span class="form-error">Obbligatorio</span>
+			</div>
+			<div class="shrink cell">
+				<% if (GetFieldValue(dtCommesse, "Anagrafiche_Ky")!=null && GetFieldValue(dtCommesse, "Anagrafiche_Ky").Length>0){ %>
+				<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=GetFieldValue(dtCommesse, "Anagrafiche_Ky")%>" style="margin-top:4px"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw fa-lg"></i></a>
+				<% } %>
+			</div>
+		</div>
+		<script type="text/javascript">
+			jQuery("#Anagrafiche_RagioneSociale").autocomplete({
+				source: "/admin/app/anagrafiche/autosuggest-GetAnagrafiche-json.aspx",
+				minLength: 2,
+				select: function (event, ui) {
+					jQuery("#Anagrafiche_Ky").val(ui.item.value);
+					jQuery("#Anagrafiche_RagioneSociale").val(ui.item.label);
+					return false;
+				}
+			});
+		</script>
+
+		<div class="grid-x grid-padding-x">
+			<div class="large-2 medium-2 small-4 cell">
+				<label for="Commesse_Titolo" class="large-text-right">Titolo <i class="fa-duotone fa-tag fa-fw"></i></label>
+			</div>
+			<div class="large-10 medium-10 small-8 cell">
+				<input type="text" name="Commesse_Titolo" id="Commesse_Titolo" title="Titolo progetto" value="<%=GetFieldValue(dtCommesse, "Commesse_Titolo")%>" size="50" required="required">
+				<span class="form-error">Obbligatorio</span>
+			</div>
+		</div>
+    
+		<div class="grid-x grid-padding-x">
+			<div class="large-2 medium-2 small-4 cell">
+				<label for="Commesse_Descrizione" class="large-text-right">Descrizione <i class="fa-duotone fa-tag fa-fw"></i></label>
+			</div>
+			<div class="large-10 medium-10 small-8 cell">
+				<input type="text" name="Commesse_Descrizione" id="Commesse_Descrizione" title="Descrizione" value="<%=GetFieldValue(dtCommesse, "Commesse_Descrizione")%>" size="200">
+			</div>
+		</div>
+    
+  	<div class="grid-x grid-padding-x">
+  		<div class="large-2 medium-2 small-4 cell">
+  			<label for="CommesseTipo_Ky" class="text-right middle">Tipo</label>
+  		</div>
+  		<div class="large-10 medium-10 small-8 cell">
+  			<select name="CommesseTipo_Ky" id="CommesseTipo_Ky" value="<%=GetFieldValue(dtCommesse, "CommesseTipo_Ky")%>">
+					<option value=""></option>
+					<!--#include file="/var/cache/CommesseTipo-options.htm"-->
+  			</select>
+  			<script type="text/javascript">
+					selectSet('CommesseTipo_Ky', '<%=GetFieldValue(dtCommesse, "CommesseTipo_Ky")%>');
+  			</script>
+  			<span class="form-error">Obbligatorio</span>
+  		</div>
+  	</div>	
+    
+		<div class="grid-x grid-padding-x">
+      	<div class="large-2 medium-2 small-4 cell">
+      		<label for="Utenti_Ky" class="large-text-right small-text-left middle">Assegnata <i class="fa-duotone fa-user fa-fw"></i></label>
+      	</div>
+      	<div class="large-10 medium-10 small-8 cell contenuto">
+          <select name="Utenti_Ky" id="Utenti_Ky" value="<%=GetFieldValue(dtOpportunita, "Utenti_Ky")%>" required="required">
+          <!--#include file="/var/cache/Utenti-options.htm"--> 
+          </select>
+          <script type="text/javascript">
+            selectSet('Utenti_Ky', '<%=GetFieldValue(dtOpportunita, "Utenti_Ky")%>');
+          </script>
+      	</div>
+  	</div>	
+    
+
+		<div class="grid-x grid-padding-x">
+			<div class="large-2 medium-2 small-4 cell">
+				<label class="large-text-right">Riferimenti <i class="fa-duotone fa-file-lines fa-fw"></i></label>
+			</div>
+			<div class="large-4 medium-4 small-8 cell">
+				<input type="text" name="Commesse_Riferimenti" id="Commesse_Riferimenti" title="Riferimenti progetto" value="<%=GetFieldValue(dtCommesse, "Commesse_Riferimenti")%>" size="36" required="required">
+				<span class="form-error">Obbligatorio</span>
+			</div>
+		</div>
+		<% if (boolAdmin && dtLogin.Rows[0]["UtentiGruppi_Amministrazione"].Equals(true)){ %>
+		<div class="grid-x grid-padding-x">
+			<div class="large-2 medium-2 small-4 cell">
+				<label for="Commesse_Valore" class="large-text-right">Valore <i class="fa-duotone fa-euro-sign fa-fw"></i></label>
+			</div>
+			<div class="large-10 medium-10 small-8 cell">
+				<input type="text" name="Commesse_Valore" id="Commesse_Valore" title="Valore" value="<%=GetFieldValueMoney("Commesse_Valore")%>" size="10" required="required" pattern="number">
+				<span class="form-error">Obbligatorio e solo numeri.</span>
+			</div>
+		</div>
+
+		<% if (dtLogin.Rows[0]["UtentiGruppi_Opportunita"].Equals(true) || boolAdmin==true){ %>
+		<div class="grid-x grid-padding-x">
+			<div class="large-2 medium-2 small-4 cell">
+				<label for="Opportunita_Ky" class="lbl text-right">Trattativa <i class="fa-duotone fa-euro-sign fa-fw"></i></label>
+			</div>
+			<div class="large-10 medium-10 small-8 cell large-text-left">
+				<% if (dtOpportunita!=null && dtOpportunita.Rows.Count>0){ %>
+				<select name="Opportunita_Ky" id="Opportunita_Ky">
+					<option value=""></option>
+					<%
+					for (int i = 0; i < dtOpportunita.Rows.Count; i++){
+					Response.Write("<option value=\"" + dtOpportunita.Rows[i]["Opportunita_Ky"].ToString() + "\">" + dtOpportunita.Rows[i]["Opportunita_Titolo"].ToString() + "&nbsp;-&nbsp;" + dtOpportunita.Rows[i]["OpportunitaStati_Titolo"].ToString() + "</option>");
+					}
+					%>
+				</select>
+				<script type="text/javascript">
+					selectSet('Opportunita_Ky', '<%=GetFieldValue(dtCommesse, "Opportunita_Ky")%>');
+				</script>
+				<% }else{ %>
+				Nessuna trattativa attiva sull'anagrafica
+				<% } %>
+			</div>
+		</div>
+		<% } %>
+
+		<div class="grid-x grid-padding-x">
+			<div class="large-2 medium-2 small-4 cell">
+				<label class="large-text-right small-text-left middle" for="Commesse_NoteAmministrative">Note amm. <i class="fa-duotone fa-file-lines fa-fw"></i></label>
+			</div>
+			<div class="auto cell">
+				<textarea name="Commesse_NoteAmministrative" id="Commesse_NoteAmministrative" place-holder="Note amministrative" rows="2" cols="100"><%=GetFieldValue(dtCommesse, "Commesse_NoteAmministrative")%></textarea>
+			</div>
+		</div>
+		<% } %>
+		<div class="grid-x grid-padding-x">
+			<div class="large-2 medium-2 small-4 cell">
+				<label for="Commesse_Note" class="large-text-right small-text-left middle">Note <i class="fa-duotone fa-tag fa-fw"></i></label>
+			</div>
+			<div class="auto cell">
+				<textarea name="Commesse_Note" id="Commesse_Note" rows="2" cols="100"><%=GetFieldValue(dtCommesse, "Commesse_Note")%></textarea>
+			</div>
+		</div>
+    
+  	<div class="grid-x grid-padding-x">
+  		<div class="large-2 medium-2 small-4 cell">
+  			<label for="Commesse_Tags" class="text-right middle">Tags <i class="fa-duotone fa-list fa-fw"></i></label>
+  		</div>
+  		<div class="large-8 medium-8 small-6 cell">
+  			<select name="Commesse_Tags" id="Commesse_Tags" multiple class="select2" value="<%=GetFieldValue(dtCommesse, "Commesse_Tags")%>">
+  				<option value=""></option>
+  		    <%
+  				if (dtCommesseTags!=null && dtCommesseTags.Rows.Count>0){
+            for (int i = 0; i < dtCommesseTags.Rows.Count; i++){
+    					Response.Write("<option value=\"" + dtCommesseTags.Rows[i]["CommesseTags_Titolo"].ToString() + "\">" + dtCommesseTags.Rows[i]["CommesseTags_Titolo"].ToString() + "</option>");
+    				}
+          }
+  				%>
+  			</select>
+  			<script type="text/javascript">
+  				selectSetMultiple('Commesse_Tags', '<%=GetFieldValue(dtCommesse, "Commesse_Tags")%>');
+  			</script>
+  			<span class="form-error">Obbligatorio</span>
+  		</div>
+		<% if (boolAdmin && dtLogin.Rows[0]["UtentiGruppi_Amministrazione"].Equals(true)){ %>
+  		<div class="large-2 medium-2 small-2 cell">
+        <a href="/admin/view.aspx?CoreModules_Ky=24&CoreEntities_Ky=243&CoreGrids_Ky=258" class="tiny button secondary">gestisci <i class="fa-duotone fa-pen-to-square fa-fw"></i></a>
+  		</div>
+    <% } %>
+  	</div>	
+    
+    
+	</div>					
+	<div class="large-4 medium-4 small-12 cell">
+			<div class="grid-x grid-padding-x">
+		  	<div class="large-4 medium-4 small-4 cell">
+					<label for="CommesseStato_Ky" class="large-text-right small-text-left middle">Stato <i class="fa-duotone fa-file-lines fa-fw"></i></label>
+				</div>
+				<div class="auto cell end">
+          <select name="CommesseStato_Ky" id="CommesseStato_Ky" value="<%=GetFieldValue(dtCommesse, "CommesseStato_Ky")%>" required="required">
+            <!--#include file="/var/cache/CommesseStato-options.htm"--> 
+          </select>
+      		<span class="form-error">Obbligatorio</span>
+          <script type="text/javascript">
+            selectSet('CommesseStato_Ky', '<%=GetFieldValue(dtCommesse, "CommesseStato_Ky")%>');
+          </script>
+				</div>
+		  </div> 
+
+			<div class="grid-x grid-padding-x">
+				<div class="large-4 medium-4 small-4 cell">
+					<label for="Commesse_Data" class="large-text-right small-text-left middle">Data <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+				</div>
+				<div class="auto cell end">
+            		<input type="text" name="Commesse_Data" id="Commesse_Data" value="<%=GetFieldValue(dtCommesse, "Commesse_Data_IT")%>" size="10" required="required">
+            		<span class="form-error">Obbligatorio</span>
+				</div>
+			</div>
+			<div class="grid-x grid-padding-x">
+				<div class="large-4 medium-4 small-4 cell">
+					<label for="Commesse_DataInizioLavori" class="large-text-right small-text-left middle">Inizio lavori <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+				</div>
+				<div class="auto cell">
+      		<input type="text" name="Commesse_DataInizioLavori" id="Commesse_DataInizioLavori" value="<%=GetFieldValue(dtCommesse, "Commesse_DataInizioLavori_IT")%>" class="fdatepicker" size="10">
+      		<span class="form-error">Obbligatorio</span>
+				</div>
+				<div class="large-2 medium-2 small-2 cell">
+      		 <%=Smartdesk.Functions.getGG(GetFieldValue(dtCommesse, "ggTrascorsi"))%>
+				</div>
+			</div>
+			<div class="grid-x grid-padding-x">
+				<div class="large-4 medium-4 small-4 cell">
+					<label for="Commesse_DataConsegna" class="large-text-right small-text-left middle">Consegna <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+				</div>
+				<div class="auto cell">
+      		<input type="text" name="Commesse_DataConsegna" id="Commesse_DataConsegna" value="<%=GetFieldValue(dtCommesse, "Commesse_DataConsegna_IT")%>" class="fdatepicker" size="10">
+      		<span class="form-error">Obbligatorio</span>
+				</div>
+				<div class="large-2 medium-2 small-12 cell">
+      		 <%=Smartdesk.Functions.getGG(GetFieldValue(dtCommesse, "ggRitardo"))%>
+				</div>
+			</div>
+			<div class="grid-x grid-padding-x">
+				<div class="large-4 medium-4 small-4 cell">
+					<label for="Commesse_DataChiusura" class="large-text-right small-text-left middle">Chiusura <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+				</div>
+				<div class="large-8 medium-8 small-8 cell">
+      		<input type="text" name="Commesse_DataChiusura" id="Commesse_DataChiusura" value="<%=GetFieldValue(dtCommesse, "Commesse_DataChiusura_IT")%>" class="fdatepicker" size="10">
+      		<span class="form-error">Obbligatorio</span>
+				</div>
+			</div>
+      <hr>
+			<div class="grid-x grid-padding-x">
+				<div class="large-4 medium-4 small-4 cell">
+					<label for="Commesse_OrePreviste" class="large-text-right small-text-left middle">Ore Previste <i class="fa-duotone fa-clock fa-fw"></i></label>
+				</div>
+				<div class="large-8 medium-8 small-8 cell">
+      		<input type="text" name="Commesse_OrePreviste" id="Commesse_OrePreviste" value="<%=GetFieldValue(dtCommesse, "Commesse_OrePreviste")%>" size="10">
+      		<span class="form-error">Obbligatorio</span>
+				</div>
+			</div>
+			<div class="grid-x grid-padding-x">
+				<div class="large-4 medium-4 small-4 cell">
+					<label for="Commesse_OreImpiegate" class="large-text-right small-text-left middle">Ore Impiegate <i class="fa-duotone fa-clock fa-fw"></i></label>
+				</div>
+				<div class="large-8 medium-8 small-8 cell">
+      		<%=GetFieldValue(dtCommesse, "Commesse_OreImpiegate")%>
+				</div>
+			</div>
+			<div class="grid-x grid-padding-x">
+				<div class="large-4 medium-4 small-4 cell">
+					<label for="Commesse_OreResidue" class="large-text-right small-text-left middle">Ore Residue <i class="fa-duotone fa-clock fa-fw"></i></label>
+				</div>
+				<div class="large-8 medium-8 small-8 cell">
+      		<%=GetFieldValue(dtCommesse, "Commesse_OreResidue")%>
+				</div>
+			</div>
+	</div>		
+</div>

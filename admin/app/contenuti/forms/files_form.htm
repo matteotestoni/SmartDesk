@@ -1,0 +1,84 @@
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Files_Titolo" class="text-right middle">Titolo <i class="fa-duotone fa-tag fa-fw"></i></label>
+    </div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Files_Titolo" id="Files_Titolo" value="<%=GetFieldValue(dtFiles, "Files_Titolo")%>" size="80" required="required">
+      <span class="form-error">Obbligatorio</span>
+  	  <p class="help-text">max 100 carateri</p>
+    </div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Files_Data" class="text-right middle">Data <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+    </div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Files_Data" id="Files_Data" class="fdatepicker" value="<%=GetFieldValue(dtFiles, "Files_Data")%>" size="80" required="required">
+      <span class="form-error">Obbligatorio</span>
+    </div>
+  </div>	
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Chiave_Tabella" class="text-right middle">Tabella</i></label>
+    </div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Chiave_Tabella" id="Chiave_Tabella" value="<%=GetFieldValue(dtFiles, "Chiave_Tabella")%>" size="80">
+      <span class="form-error">Obbligatorio</span>
+    </div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Chiave_Ky" class="text-right middle">Chiave <i class="fa-duotone fa-key fa-fw"></i></label>
+    </div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Chiave_Ky" id="Chiave_Ky" value="<%=GetFieldValue(dtFiles, "Chiave_Ky")%>" size="80">
+      <span class="form-error">Obbligatorio</span>
+    </div>
+  </div>	
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="FilesTipo_Ky" class="text-right middle">Tipo di file</i></label>
+    </div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <select name="FilesTipo_Ky" id="FilesTipo_Ky" required="required" value="<%=GetFieldValue(dtFiles, "FilesTipo_Ky")%>">
+        <!--#include file="/var/cache/FilesTipo-options.htm"--> 
+      </select>
+      <span class="form-error">Obbligatorio.</span>
+      <script type="text/javascript">
+        selectSet('FilesTipo_Ky', '<%=GetFieldValue(dtFiles, "FilesTipo_Ky")%>');
+      </script>
+      <span class="form-error">Obbligatorio</span>
+    </div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Lingue_Ky" class="text-right middle">Lingue <i class="fa-duotone fa-language fa-fw"></i></label>
+    </div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <select name="Lingue_Ky" id="Lingue_Ky" required="required" value="<%=GetFieldValue(dtFiles, "Lingue_Ky")%>">
+        <!--#include file="/var/cache/Lingue-options.htm"--> 
+      </select>
+      <span class="form-error">Obbligatorio.</span>
+      <script type="text/javascript">
+        selectSet('Lingue_Ky', '<%=GetFieldValue(dtFiles, "Lingue_Ky")%>');
+      </script>
+      <span class="form-error">Obbligatorio</span>
+    </div>
+  </div>	
+
+	<div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="allegato" class="large-text-right small-text-left middle">File allegato</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <p>Allega documenti<br></p>
+      <label for="allegato" class="button small">Carica allegato</label>
+      <input type="file" class="show-for-sr fileupload" placeholder="Allegato" id="allegato" name="allegato" />
+      <small class="form-error">obbligatorio.</small>
+  	</div>
+  </div>
+  
+	<div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="anteprima" class="large-text-right small-text-left middle">File</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+        <% if (GetFieldValue(dtFiles, "Files_Path").Length>0){ %>
+          <a href="<%=GetFieldValue(dtFiles, "Files_Path")%>" target="blank"><i class="fa-duotone fa-up-right-from-square fa-fw"></i>Clicca per aprire</a>
+        <% } %>
+    </div>
+  </div> 

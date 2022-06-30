@@ -1,0 +1,43 @@
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="CoreAttributes_Attributi" class="large-text-right small-text-left middle">Seleziona le colonne <i class="fa-duotone fa-tag fa-fw"></i></label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+		<select id="CoreAttributes_Attributi" multiple="multiple" name="CoreAttributes_Attributi" size="40">
+			<%
+			Response.Write("<optgroup label=\"" + dtCoreGrids.Rows[0]["CoreEntities_Code"].ToString() + "\">");
+      for (int i = 0; i < dtCoreAttributes.Rows.Count; i++){
+        Response.Write("<option value=\"" + dtCoreAttributes.Rows[i]["CoreAttributes_Ky"].ToString() + "\"" + strSelected + ">" + dtCoreAttributes.Rows[i]["CoreAttributes_Title"].ToString() + " (" + dtCoreAttributes.Rows[i]["CoreAttributes_Code"].ToString() + ")</option>");
+        if (dtCoreAttributes.Rows[i]["CoreAttributesType_Ky"].ToString()=="7"){
+          strWHERENet = "CoreAttributes_System<>1 AND CoreAttributes_Code<>'" + dtCoreAttributes.Rows[i]["CoreAttributes_Code"].ToString() + "' AND CoreEntities_Code='" + dtCoreAttributes.Rows[i]["CoreAttributes_Join"].ToString() + "'";
+	        strORDERNet = "CoreAttributes_Code";
+	        strFROMNet = "CoreAttributes_Vw";
+	        dtJoin = Smartdesk.Sql.getTablePage(strFROMNet, null, "CoreAttributes_Ky", strWHERENet, strORDERNet, 1, 1000,Smartdesk.Config.Sql.ConnectionReadOnly);
+			    for (int j = 0; j < dtJoin.Rows.Count; j++){
+				    Response.Write("<option value=\"" + dtJoin.Rows[j]["CoreAttributes_Ky"].ToString() + "\"" + strSelected + ">" + dtJoin.Rows[j]["CoreAttributes_Title"].ToString() + " (" + dtJoin.Rows[j]["CoreAttributes_Code"].ToString() + ")</option>");
+          }
+          
+        }
+			}  
+			Response.Write("</optgroup>");
+      
+      
+      for (int i = 0; i < dtCoreAttributesJoin.Rows.Count; i++){
+			  Response.Write("<optgroup label=\"" + dtCoreAttributesJoin.Rows[i]["CoreAttributes_Join"].ToString() + "\">");
+          strWHERENet = "CoreAttributesType_Ky<>7 AND CoreAttributes_System<>1 AND CoreAttributes_Code<>'" + dtCoreAttributesJoin.Rows[i]["CoreAttributes_Code"].ToString() + "' AND CoreEntities_Code='" + dtCoreAttributesJoin.Rows[i]["CoreAttributes_Join"].ToString() + "'";
+	        strORDERNet = "CoreAttributes_Code";
+	        strFROMNet = "CoreAttributes_Vw";
+	        dtJoin = Smartdesk.Sql.getTablePage(strFROMNet, null, "CoreAttributes_Ky", strWHERENet, strORDERNet, 1, 1000,Smartdesk.Config.Sql.ConnectionReadOnly);
+			    for (int j = 0; j < dtJoin.Rows.Count; j++){
+				    Response.Write("<option value=\"" + dtJoin.Rows[j]["CoreAttributes_Ky"].ToString() + "\"" + strSelected + ">" + dtJoin.Rows[j]["CoreAttributes_Title"].ToString() + " (" + dtJoin.Rows[j]["CoreAttributes_Code"].ToString() + ")</option>");
+          }
+			  Response.Write("</optgroup>");
+			}  
+			%>
+		</select>
+		<script type="text/javascript">
+			selectSetMultiple('CoreAttributes_Attributi', '<%=strCoreAttributes_Attributi%>');
+		</script>
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>

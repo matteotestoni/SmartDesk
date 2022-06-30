@@ -1,0 +1,79 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliOfferte" Type="TABLE">
+    <Keys>
+      <Key Column="VeicoliOfferte_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="VeicoliOfferte_Ky" IsNull="N" Type="int" />
+      <Field Column="Veicoli_Riferimento" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="VeicoliOfferte_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="VeicoliOfferte_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="VeicoliOfferte_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="VeicoliOfferte_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliOfferte_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliOfferte_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliOfferte_Titolo" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="VeicoliOfferte_DataInizio" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliOfferte_DataFine" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliOfferte_Abilitata" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliOfferte_Colore" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="VeicoliOfferte_ColoreTesto" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="VeicoliOfferte_ColoreSfondo" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="VeicoliOfferte_BannerMobile" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="VeicoliOfferte_BannerDesktop" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="VeicoliOfferte_BannerTopMobile" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="VeicoliOfferte_BannerTopDesktop" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="VeicoliOfferte_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="VeicoliOfferte_Etichetta" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="utm_campaign" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="VeicoliOfferte_BannerTopSfondo" IsNull="Y" Type="varchar" Lenght="8" />
+      <Field Column="Veicoli_Targa" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Veicoli_ValoreInOfferta" IsNull="Y" Type="money" />
+      <Field Column="Veicoli_Sconto" IsNull="Y" Type="money" />
+      <Field Column="WD_Numero_del_Veicolo" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="VeicoliOfferte_Aggiornamento" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliOfferte_Banner1" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="VeicoliOfferte_Banner2" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="VeicoliOfferte_Banner3" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="VeicoliOfferte_Banner4" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="VeicoliOfferte_MostraEtichetta" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[VeicoliOfferte] (
+  [VeicoliOfferte_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Veicoli_Riferimento] varchar(50)  NULL , 
+  [VeicoliOfferte_UserInsert] int  NULL , 
+  [VeicoliOfferte_UserUpdate] int  NULL , 
+  [VeicoliOfferte_UserDelete] int  NULL , 
+  [VeicoliOfferte_DateInsert] datetime  NULL , 
+  [VeicoliOfferte_DateUpdate] datetime  NULL , 
+  [VeicoliOfferte_DateDelete] datetime  NULL , 
+  [VeicoliOfferte_Titolo] varchar(MAX)  NULL , 
+  [VeicoliOfferte_DataInizio] datetime  NULL , 
+  [VeicoliOfferte_DataFine] datetime  NULL , 
+  [VeicoliOfferte_Abilitata] bit  NULL , 
+  [VeicoliOfferte_Colore] varchar(10)  NULL , 
+  [VeicoliOfferte_ColoreTesto] varchar(10)  NULL , 
+  [VeicoliOfferte_ColoreSfondo] varchar(10)  NULL , 
+  [VeicoliOfferte_BannerMobile] varchar(MAX)  NULL , 
+  [VeicoliOfferte_BannerDesktop] varchar(MAX)  NULL , 
+  [VeicoliOfferte_BannerTopMobile] varchar(MAX)  NULL , 
+  [VeicoliOfferte_BannerTopDesktop] varchar(MAX)  NULL , 
+  [VeicoliOfferte_Descrizione] varchar(MAX)  NULL , 
+  [VeicoliOfferte_Etichetta] varchar(50)  NULL , 
+  [utm_campaign] varchar(MAX)  NULL , 
+  [VeicoliOfferte_BannerTopSfondo] varchar(8)  NULL , 
+  [Veicoli_Targa] varchar(50)  NULL , 
+  [Veicoli_ValoreInOfferta] money  NULL , 
+  [Veicoli_Sconto] money  NULL , 
+  [WD_Numero_del_Veicolo] varchar(50)  NULL , 
+  [VeicoliOfferte_Aggiornamento] bit  NULL , 
+  [VeicoliOfferte_Banner1] varchar(10)  NULL , 
+  [VeicoliOfferte_Banner2] varchar(10)  NULL , 
+  [VeicoliOfferte_Banner3] varchar(10)  NULL , 
+  [VeicoliOfferte_Banner4] varchar(10)  NULL , 
+  [VeicoliOfferte_MostraEtichetta] bit  NULL DEFAULT ((1)) )
+ALTER TABLE [dbo].[VeicoliOfferte] ADD CONSTRAINT PK_VeicoliOfferte PRIMARY KEY  ([VeicoliOfferte_Ky])
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,33 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ProdottiGruppi" Type="TABLE">
+    <Keys>
+      <Key Column="ProdottiGruppi_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="ProdottiGruppi_Ky" IsNull="N" Type="int" />
+      <Field Column="ProdottiGruppi_Titolo" IsNull="Y" Type="varchar" Lenght="1000" />
+      <Field Column="ProdottiGruppi_Ordine" IsNull="Y" Type="int" />
+      <Field Column="ProdottiGruppi_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="ProdottiGruppi_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="ProdottiGruppi_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="ProdottiGruppi_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiGruppi_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiGruppi_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiGruppi_Default" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[ProdottiGruppi] (
+  [ProdottiGruppi_Ky] int IDENTITY(1,1) NOT NULL , 
+  [ProdottiGruppi_Titolo] varchar(1000)  NULL , 
+  [ProdottiGruppi_Ordine] int  NULL , 
+  [ProdottiGruppi_UserInsert] int  NULL , 
+  [ProdottiGruppi_UserUpdate] int  NULL , 
+  [ProdottiGruppi_UserDelete] int  NULL , 
+  [ProdottiGruppi_DateInsert] datetime  NULL , 
+  [ProdottiGruppi_DateUpdate] datetime  NULL , 
+  [ProdottiGruppi_DateDelete] datetime  NULL , 
+  [ProdottiGruppi_Default] bit  NULL  )
+ALTER TABLE [dbo].[ProdottiGruppi] ADD CONSTRAINT PK_ProdottiGruppi PRIMARY KEY  ([ProdottiGruppi_Ky])
+</SqlScriptCreate>
+</SqlTable>

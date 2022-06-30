@@ -1,0 +1,33 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnagraficheTipologia" Type="TABLE">
+    <Keys>
+      <Key Column="AnagraficheTipologia_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AnagraficheTipologia_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="AnagraficheTipologia_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnagraficheTipologia_Ordine" IsNull="Y" Type="tinyint" />
+      <Field Column="AnagraficheTipologia_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheTipologia_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheTipologia_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheTipologia_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheTipologia_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheTipologia_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheTipologia_Default" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AnagraficheTipologia] (
+  [AnagraficheTipologia_Ky] tinyint IDENTITY(1,1) NOT NULL , 
+  [AnagraficheTipologia_Titolo] varchar(200)  NULL , 
+  [AnagraficheTipologia_Ordine] tinyint  NULL , 
+  [AnagraficheTipologia_UserInsert] int  NULL , 
+  [AnagraficheTipologia_UserUpdate] int  NULL , 
+  [AnagraficheTipologia_UserDelete] int  NULL , 
+  [AnagraficheTipologia_DateInsert] datetime  NULL , 
+  [AnagraficheTipologia_DateUpdate] datetime  NULL , 
+  [AnagraficheTipologia_DateDelete] datetime  NULL , 
+  [AnagraficheTipologia_Default] bit  NULL  )
+ALTER TABLE [dbo].[AnagraficheTipologia] ADD CONSTRAINT PK_AnagraficheTipologia PRIMARY KEY  ([AnagraficheTipologia_Ky])
+</SqlScriptCreate>
+</SqlTable>

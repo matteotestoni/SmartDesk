@@ -1,0 +1,37 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Regioni" Type="TABLE">
+    <Keys>
+      <Key Column="Regioni_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Regioni_Ky" IsNull="N" Type="int" />
+      <Field Column="Nazioni_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Regioni_Codice" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="Regioni_Regione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Regioni_Zona" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Regioni_UrlKey" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Regioni_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Regioni_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Regioni_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Regioni_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Regioni_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Regioni_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Regioni] (
+  [Regioni_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Nazioni_Ky] tinyint  NULL , 
+  [Regioni_Codice] varchar(10)  NULL , 
+  [Regioni_Regione] varchar(MAX)  NULL , 
+  [Regioni_Zona] varchar(50)  NULL , 
+  [Regioni_UrlKey] varchar(20)  NULL , 
+  [Regioni_UserInsert] int  NULL , 
+  [Regioni_UserUpdate] int  NULL , 
+  [Regioni_UserDelete] int  NULL , 
+  [Regioni_DateInsert] datetime  NULL , 
+  [Regioni_DateUpdate] datetime  NULL , 
+  [Regioni_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[Regioni] ADD CONSTRAINT PK_Regioni PRIMARY KEY  ([Regioni_Ky])
+</SqlScriptCreate>
+</SqlTable>

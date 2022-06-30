@@ -1,0 +1,46 @@
+    <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-3 small-4 cell">
+    		<label for="ProdottiMateriale_Titolo" class="text-right middle">Titolo <i class="fa-duotone fa-tag fa-fw"></i></label>
+		</div>
+    	<div class="large-10 medium-9 small-8 cell">
+        <input type="text" name="ProdottiMateriale_Titolo" id="ProdottiMateriale_Titolo" value="<%=GetFieldValue(dtProdottiMateriale, "ProdottiMateriale_Titolo")%>" size="80" required="required">
+        <span class="form-error">Obbligatorio</span>
+			  <p class="help-text">max 100 carateri</p>
+    	</div>
+	</div>	
+
+  <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-3 small-4 cell">
+    		<label for="ProdottiMateriale_Descrizione" class="text-right middle">Descrizione <i class="fa-duotone fa-file-lines fa-fw"></i></label>
+		</div>
+    	<div class="large-10 medium-9 small-8 cell">
+              <textarea name="ProdottiMateriale_Descrizione" id="ProdottiMateriale_Descrizione" cols="76" rows="2" required="required"><%=GetFieldValue(dtProdottiMateriale, "ProdottiMateriale_Descrizione")%></textarea>
+              <span class="form-error">Obbligatorio</span>
+    	</div>
+	</div>
+
+	<div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-12 cell text-right">
+   		<label class="large-text-right small-text-left middle" for="ProdottiMateriale_Default">Predefinita</label>
+ 	  </div>
+  	<div class="large-10 medium-10 small-12 cell">
+			<select name="ProdottiMateriale_Default" id="ProdottiMateriale_Default" value="<%=GetCheckValue(dtProdottiMateriale, "ProdottiMateriale_Default")%>">
+	      <option value="True">si</option>
+	      <option value="False">no</option>
+	    </select>
+	    <span class="form-error">Obbligatorio</span>
+	    <script type="text/javascript">
+	      selectSet('ProdottiMateriale_Default', '<%=GetCheckValue(dtProdottiMateriale, "ProdottiMateriale_Default")%>');
+	    </script>
+  	</div>
+	</div>        
+
+    <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-3 small-4 cell">
+    		<label for="ProdottiMateriale_Ordine" class="text-right middle">Ordine <i class="fa-duotone fa-sort fa-fw"></i></label>
+		</div>
+    	<div class="large-10 medium-9 small-8 cell">
+              <input type="text" name="ProdottiMateriale_Ordine" id="ProdottiMateriale_Ordine" value="<%=GetFieldValue(dtProdottiMateriale, "ProdottiMateriale_Ordine")%>" size="3" required="required" pattern="number" />
+		    <span class="form-error">Obbligatorio</span>
+    	</div>
+	</div>

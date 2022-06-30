@@ -1,0 +1,25 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VehiclesEquipments" Type="TABLE">
+    <Keys>
+      <Key Column="VehiclesEquipments_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="VehiclesEquipments_Ky" IsNull="N" Type="int" />
+      <Field Column="id" IsNull="Y" Type="int" />
+      <Field Column="externalId" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="equipment" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="type" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Veicoli_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[VehiclesEquipments] (
+  [VehiclesEquipments_Ky] int IDENTITY(1,1) NOT NULL , 
+  [id] int  NULL , 
+  [externalId] varchar(100)  NULL , 
+  [equipment] varchar(MAX)  NULL , 
+  [type] varchar(MAX)  NULL , 
+  [Veicoli_Ky] int  NULL  )
+ALTER TABLE [dbo].[VehiclesEquipments] ADD CONSTRAINT PK_VehiclesEquipments PRIMARY KEY  ([VehiclesEquipments_Ky])
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,39 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnnunciSorgenti" Type="TABLE">
+    <Keys>
+      <Key Column="AnnunciSorgenti_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AnnunciSorgenti_Ky" IsNull="N" Type="int" />
+      <Field Column="AnnunciSorgenti_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnnunciSorgenti_Ordine" IsNull="Y" Type="int" />
+      <Field Column="AnnunciSorgenti_Icona" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AnnunciSorgenti_Colore" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="AnnunciSorgenti_Default" IsNull="Y" Type="bit" />
+      <Field Column="AnnunciSorgenti_Attivo" IsNull="Y" Type="bit" />
+      <Field Column="AnnunciSorgenti_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AnnunciSorgenti_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AnnunciSorgenti_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AnnunciSorgenti_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AnnunciSorgenti_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AnnunciSorgenti_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AnnunciSorgenti] (
+  [AnnunciSorgenti_Ky] int IDENTITY(1,1) NOT NULL , 
+  [AnnunciSorgenti_Titolo] varchar(200)  NULL , 
+  [AnnunciSorgenti_Ordine] int  NULL , 
+  [AnnunciSorgenti_Icona] varchar(100)  NULL , 
+  [AnnunciSorgenti_Colore] varchar(50)  NULL , 
+  [AnnunciSorgenti_Default] bit  NULL , 
+  [AnnunciSorgenti_Attivo] bit  NULL DEFAULT ((1)), 
+  [AnnunciSorgenti_UserInsert] int  NULL , 
+  [AnnunciSorgenti_UserUpdate] int  NULL , 
+  [AnnunciSorgenti_UserDelete] int  NULL , 
+  [AnnunciSorgenti_DateInsert] datetime  NULL , 
+  [AnnunciSorgenti_DateUpdate] datetime  NULL , 
+  [AnnunciSorgenti_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[AnnunciSorgenti] ADD CONSTRAINT PK_AnnunciSorgenti PRIMARY KEY  ([AnnunciSorgenti_Ky])
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,35 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="OfficinaAvanzamenti" Type="TABLE">
+    <Keys>
+      <Key Column="OfficinaAvanzamenti_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="OfficinaAvanzamenti_Ky" IsNull="N" Type="int" />
+      <Field Column="OfficinaAvanzamenti_Data" IsNull="Y" Type="datetime" />
+      <Field Column="Officina_Ky" IsNull="Y" Type="int" />
+      <Field Column="OfficinaStati_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="OfficinaAvanzamenti_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="OfficinaAvanzamenti_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="OfficinaAvanzamenti_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="OfficinaAvanzamenti_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="OfficinaAvanzamenti_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="OfficinaAvanzamenti_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[OfficinaAvanzamenti] (
+  [OfficinaAvanzamenti_Ky] int IDENTITY(1,1) NOT NULL , 
+  [OfficinaAvanzamenti_Data] datetime  NULL , 
+  [Officina_Ky] int  NULL , 
+  [OfficinaStati_Ky] tinyint  NULL , 
+  [OfficinaAvanzamenti_UserInsert] int  NULL , 
+  [OfficinaAvanzamenti_UserUpdate] int  NULL , 
+  [OfficinaAvanzamenti_UserDelete] int  NULL , 
+  [OfficinaAvanzamenti_DateInsert] datetime  NULL , 
+  [OfficinaAvanzamenti_DateUpdate] datetime  NULL , 
+  [OfficinaAvanzamenti_DateDelete] datetime  NULL , 
+  [Utenti_Ky] int  NULL  )
+ALTER TABLE [dbo].[OfficinaAvanzamenti] ADD CONSTRAINT PK_OfficinaAvanzamenti PRIMARY KEY  ([OfficinaAvanzamenti_Ky])
+</SqlScriptCreate>
+</SqlTable>

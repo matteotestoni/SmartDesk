@@ -1,0 +1,35 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ProdottiVisibilita" Type="TABLE">
+    <Keys>
+      <Key Column="ProdottiVisibilita_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="ProdottiVisibilita_Ky" IsNull="N" Type="smallint" />
+      <Field Column="ProdottiVisibilita_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="ProdottiVisibilita_Default" IsNull="Y" Type="bit" />
+      <Field Column="ProdottiVisibilita_Codice" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="ProdottiVisibilita_Ordine" IsNull="Y" Type="smallint" />
+      <Field Column="ProdottiVisibilita_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="ProdottiVisibilita_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="ProdottiVisibilita_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="ProdottiVisibilita_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiVisibilita_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiVisibilita_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[ProdottiVisibilita] (
+  [ProdottiVisibilita_Ky] smallint IDENTITY(1,1) NOT NULL , 
+  [ProdottiVisibilita_Titolo] varchar(200)  NULL , 
+  [ProdottiVisibilita_Default] bit  NULL , 
+  [ProdottiVisibilita_Codice] varchar(50)  NULL , 
+  [ProdottiVisibilita_Ordine] smallint  NULL , 
+  [ProdottiVisibilita_UserInsert] int  NULL , 
+  [ProdottiVisibilita_UserUpdate] int  NULL , 
+  [ProdottiVisibilita_UserDelete] int  NULL , 
+  [ProdottiVisibilita_DateInsert] datetime  NULL , 
+  [ProdottiVisibilita_DateUpdate] datetime  NULL , 
+  [ProdottiVisibilita_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[ProdottiVisibilita] ADD CONSTRAINT PK_ProdottiVisibilita PRIMARY KEY  ([ProdottiVisibilita_Ky])
+</SqlScriptCreate>
+</SqlTable>

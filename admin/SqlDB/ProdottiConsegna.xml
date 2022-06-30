@@ -1,0 +1,37 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ProdottiConsegna" Type="TABLE">
+    <Keys>
+      <Key Column="ProdottiConsegna_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="ProdottiConsegna_Ky" IsNull="N" Type="int" />
+      <Field Column="ProdottiConsegna_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="ProdottiConsegna_Titolo" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="ProdottiConsegna_Ordine" IsNull="Y" Type="int" />
+      <Field Column="ProdottiConsegna_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="ProdottiConsegna_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="ProdottiConsegna_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="ProdottiConsegna_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiConsegna_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiConsegna_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiConsegna_Default" IsNull="Y" Type="bit" />
+      <Field Column="ProdottiConsegna_Colore" IsNull="Y" Type="varchar" Lenght="50" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[ProdottiConsegna] (
+  [ProdottiConsegna_Ky] int IDENTITY(1,1) NOT NULL , 
+  [ProdottiConsegna_Descrizione] varchar(100)  NULL , 
+  [ProdottiConsegna_Titolo] varchar(50)  NULL , 
+  [ProdottiConsegna_Ordine] int  NULL , 
+  [ProdottiConsegna_UserInsert] int  NULL , 
+  [ProdottiConsegna_UserUpdate] int  NULL , 
+  [ProdottiConsegna_UserDelete] int  NULL , 
+  [ProdottiConsegna_DateInsert] datetime  NULL , 
+  [ProdottiConsegna_DateUpdate] datetime  NULL , 
+  [ProdottiConsegna_DateDelete] datetime  NULL , 
+  [ProdottiConsegna_Default] bit  NULL , 
+  [ProdottiConsegna_Colore] varchar(50)  NULL  )
+ALTER TABLE [dbo].[ProdottiConsegna] ADD CONSTRAINT PK_ProdottiConsegna PRIMARY KEY  ([ProdottiConsegna_Ky])
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,27 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AsteProxyBid_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Annunci_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AsteProxyBid_Ky" IsNull="N" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="AsteProxyBid_ValoreMax" IsNull="Y" Type="money" />
+      <Field Column="Annunci_Ky" IsNull="Y" Type="int" />
+      <Field Column="Aste_Ky" IsNull="Y" Type="int" />
+      <Field Column="AsteEsperimenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="AsteProxyBid_Data" IsNull="Y" Type="datetime" />
+      <Field Column="Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AsteEsperimenti_Numero" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.AsteProxyBid_Vw
+AS
+SELECT        dbo.Annunci.Annunci_Titolo, dbo.AsteProxyBid.AsteProxyBid_Ky, dbo.AsteProxyBid.Anagrafiche_Ky, dbo.AsteProxyBid.AsteProxyBid_ValoreMax, dbo.AsteProxyBid.Annunci_Ky, dbo.AsteProxyBid.Aste_Ky, 
+                         dbo.AsteProxyBid.AsteEsperimenti_Ky, dbo.AsteProxyBid.AsteProxyBid_Data, dbo.Anagrafiche.Anagrafiche_RagioneSociale, dbo.AsteEsperimenti.AsteEsperimenti_Numero
+FROM            dbo.AsteProxyBid LEFT OUTER JOIN
+                         dbo.AsteEsperimenti ON dbo.AsteProxyBid.AsteEsperimenti_Ky = dbo.AsteEsperimenti.AsteEsperimenti_Ky LEFT OUTER JOIN
+                         dbo.Anagrafiche ON dbo.AsteProxyBid.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky LEFT OUTER JOIN
+                         dbo.Annunci ON dbo.AsteProxyBid.Annunci_Ky = dbo.Annunci.Annunci_Ky LEFT OUTER JOIN
+                         dbo.Aste ON dbo.AsteProxyBid.Aste_Ky = dbo.Aste.Aste_Ky
+</SqlScriptCreate>
+</SqlTable>

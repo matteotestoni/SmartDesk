@@ -1,0 +1,25 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Concessionarie_SpazioGroup_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="GS_IDSede" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="GS_Sede" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="GS_Indirizzo_Sede" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="GS_Riferimento" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="GS_Email_Riferimento" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="GS_Telefono_Riferimento" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="agenzia_esiste" IsNull="Y" Type="bit" />
+      <Field Column="Comuni_Ky" IsNull="Y" Type="int" />
+      <Field Column="Province_Ky" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_CmnKy" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_PrvKy" IsNull="Y" Type="int" />
+      <Field Column="Regioni_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Concessionarie_SpazioGroup_Vw
+AS
+SELECT        GS_IDSede, GS_Sede, GS_Indirizzo_Sede, GS_Riferimento, GS_Email_Riferimento, GS_Telefono_Riferimento, agenzia_esiste, Comuni_Ky, Province_Ky, Veicoli_CmnKy, Veicoli_PrvKy, Regioni_Ky
+FROM            dbo.VeicoliSpazioGroup
+GROUP BY GS_IDSede, GS_Sede, GS_Indirizzo_Sede, GS_Riferimento, GS_Email_Riferimento, GS_Telefono_Riferimento, agenzia_esiste, Comuni_Ky, Province_Ky, Veicoli_CmnKy, Veicoli_PrvKy, Regioni_Ky
+</SqlScriptCreate>
+</SqlTable>

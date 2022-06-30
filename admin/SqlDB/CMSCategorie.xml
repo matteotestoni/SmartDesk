@@ -1,0 +1,33 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CMSCategorie" Type="TABLE">
+    <Keys>
+      <Key Column="CMSCategorie_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CMSCategorie_Ky" IsNull="N" Type="int" />
+      <Field Column="CMSCategorie_Descrizione" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSCategorie_UrlKey" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="CMSCategorie_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CMSCategorie_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CMSCategorie_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CMSCategorie_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CMSCategorie_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CMSCategorie_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="CMSCategorie_Padre" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CMSCategorie] (
+  [CMSCategorie_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CMSCategorie_Descrizione] varchar(200)  NULL , 
+  [CMSCategorie_UrlKey] varchar(150)  NULL , 
+  [CMSCategorie_UserInsert] int  NULL , 
+  [CMSCategorie_UserUpdate] int  NULL , 
+  [CMSCategorie_UserDelete] int  NULL , 
+  [CMSCategorie_DateInsert] datetime  NULL , 
+  [CMSCategorie_DateUpdate] datetime  NULL , 
+  [CMSCategorie_DateDelete] datetime  NULL , 
+  [CMSCategorie_Padre] int  NULL DEFAULT ((0)) )
+ALTER TABLE [dbo].[CMSCategorie] ADD CONSTRAINT PK_CMSCategorie PRIMARY KEY  ([CMSCategorie_Ky])
+</SqlScriptCreate>
+</SqlTable>

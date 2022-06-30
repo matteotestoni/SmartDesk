@@ -1,0 +1,19 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Utenti_SpazioGroup_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Utenti_Email" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="UtentiGruppi_Ky" IsNull="Y" Type="int" />
+      <Field Column="Utenti_Nominativo" IsNull="Y" Type="varchar" Lenght="255" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Utenti_SpazioGroup_Vw
+AS
+SELECT        dbo.Utenti.Utenti_Ky, dbo.Utenti.Utenti_Email, dbo.Utenti.UtentiGruppi_Ky, dbo.Utenti.Utenti_Nominativo
+FROM            dbo.Utenti RIGHT OUTER JOIN
+                         dbo.VeicoliSpazioGroup ON dbo.Utenti.Utenti_Ky = dbo.VeicoliSpazioGroup.Utenti_Ky
+GROUP BY dbo.Utenti.Utenti_Ky, dbo.Utenti.Utenti_Email, dbo.Utenti.UtentiGruppi_Ky, dbo.Utenti.Utenti_Nominativo
+HAVING        (dbo.Utenti.UtentiGruppi_Ky = 11)
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,31 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CMSTags" Type="TABLE">
+    <Keys>
+      <Key Column="CMSTags_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CMSTags_Ky" IsNull="N" Type="int" />
+      <Field Column="CMSTags_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSTags_Padre" IsNull="Y" Type="int" />
+      <Field Column="CMSTags_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CMSTags_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CMSTags_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CMSTags_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CMSTags_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CMSTags_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CMSTags] (
+  [CMSTags_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CMSTags_Titolo] varchar(200)  NULL , 
+  [CMSTags_Padre] int  NULL DEFAULT ((0)), 
+  [CMSTags_UserInsert] int  NULL , 
+  [CMSTags_UserUpdate] int  NULL , 
+  [CMSTags_UserDelete] int  NULL , 
+  [CMSTags_DateInsert] datetime  NULL , 
+  [CMSTags_DateUpdate] datetime  NULL , 
+  [CMSTags_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[CMSTags] ADD CONSTRAINT PK_CMSTags PRIMARY KEY  ([CMSTags_Ky])
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,56 @@
+<div class="grid-x grid-padding-x">
+<div class="large-2 medium-2 small-4 cell">
+<label for="Ticket_Data" class="large-text-right small-text-left middle">Data</label>
+</div>
+<div class="large-10 medium-10 small-8 cell">
+<input type="date" name="Ticket_Data" id="Ticket_Data" value="<%=GetFieldValue(dtTicket, "Ticket_Data")%>" placeholder="Data">
+</div>
+</div>
+<div class="grid-x grid-padding-x">
+<div class="large-2 medium-2 small-4 cell">
+<label for="Ticket_Titolo" class="large-text-right small-text-left middle">Titolo</label>
+</div>
+<div class="large-10 medium-10 small-8 cell">
+<input type="text" name="Ticket_Titolo" id="Ticket_Titolo" value="<%=GetFieldValue(dtTicket, "Ticket_Titolo")%>" placeholder="Titolo">
+</div>
+</div>
+<div class="grid-x grid-padding-x">
+<div class="large-2 medium-2 small-4 cell">
+<label for="Ticket_Richiesta" class="large-text-right small-text-left middle">Richiesta</label>
+</div>
+<div class="large-10 medium-10 small-8 cell">
+<textarea name="Ticket_Richiesta" id="Ticket_Richiesta"><%=GetFieldValue(dtTicket, "Ticket_Richiesta")%></textarea>
+</div>
+</div>
+<div class="grid-x grid-padding-x">
+<div class="large-2 medium-2 small-4 cell">
+<label for="TicketStati_Ky" class="large-text-right small-text-left middle">Stato</label>
+</div>
+<div class="large-10 medium-10 small-8 cell">
+<input type="text" name="TicketStati_Ky" id="TicketStati_Ky" value="<%=GetFieldValue(dtTicket, "TicketStati_Ky")%>" placeholder="Stato">
+</div>
+</div>
+<div class="grid-x grid-padding-x">
+<div class="large-2 medium-2 small-4 cell">
+<label for="TicketCategorie_Ky" class="large-text-right small-text-left middle">Categoria</label>
+</div>
+<div class="large-10 medium-10 small-8 cell">
+<input type="text" name="TicketCategorie_Ky" id="TicketCategorie_Ky" value="<%=GetFieldValue(dtTicket, "TicketCategorie_Ky")%>" placeholder="Categoria">
+</div>
+</div>
+<div class="grid-x grid-padding-x">
+<div class="large-2 medium-2 small-4 cell">
+<label for="Anagrafiche_Ky" class="large-text-right small-text-left middle">Anagrafica</label>
+</div>
+<div class="large-10 medium-10 small-8 cell">
+<input type="text" name="Anagrafiche_Ky" id="Anagrafiche_Ky" value="<%=GetFieldValue(dtTicket, "Anagrafiche_Ky")%>" placeholder="Anagrafica">
+</div>
+</div>
+<div class="grid-x grid-padding-x">
+<div class="large-2 medium-2 small-4 cell">
+<label for="Utenti_Ky" class="large-text-right small-text-left middle">UtentiCodice</label>
+</div>
+<div class="large-10 medium-10 small-8 cell">
+<input type="text" name="Utenti_Ky" id="Utenti_Ky" value="<%=GetFieldValue(dtTicket, "Utenti_Ky")%>" placeholder="UtentiCodice">
+</div>
+</div>

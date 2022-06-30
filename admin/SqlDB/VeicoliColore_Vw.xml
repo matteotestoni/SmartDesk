@@ -1,0 +1,27 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliColore_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="VeicoliColore_Ky" IsNull="N" Type="smallint" />
+      <Field Column="VeicoliColore_Descrizione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="VeicoliColore_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="VeicoliColore_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="VeicoliColore_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="VeicoliColore_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliColore_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliColore_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Colori_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliColore_Ordine" IsNull="Y" Type="int" />
+      <Field Column="Colori_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Colori_Ordine" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.VeicoliColore_Vw
+AS
+SELECT        dbo.VeicoliColore.VeicoliColore_Ky, dbo.VeicoliColore.VeicoliColore_Descrizione, dbo.VeicoliColore.VeicoliColore_UserInsert, dbo.VeicoliColore.VeicoliColore_UserUpdate, 
+                         dbo.VeicoliColore.VeicoliColore_UserDelete, dbo.VeicoliColore.VeicoliColore_DateInsert, dbo.VeicoliColore.VeicoliColore_DateUpdate, dbo.VeicoliColore.VeicoliColore_DateDelete, dbo.VeicoliColore.Colori_Ky, 
+                         dbo.VeicoliColore.VeicoliColore_Ordine, dbo.Colori.Colori_Titolo, dbo.Colori.Colori_Ordine
+FROM            dbo.VeicoliColore LEFT OUTER JOIN
+                         dbo.Colori ON dbo.VeicoliColore.Colori_Ky = dbo.Colori.Colori_Ky
+</SqlScriptCreate>
+</SqlTable>

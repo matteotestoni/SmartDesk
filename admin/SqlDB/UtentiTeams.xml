@@ -1,0 +1,29 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="UtentiTeams" Type="TABLE">
+    <Keys>
+      <Key Column="UtentiTeams_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="UtentiTeams_Ky" IsNull="N" Type="int" />
+      <Field Column="UtentiTeams_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="UtentiTeams_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="UtentiTeams_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="UtentiTeams_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="UtentiTeams_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="UtentiTeams_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="UtentiTeams_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[UtentiTeams] (
+  [UtentiTeams_Ky] int IDENTITY(1,1) NOT NULL , 
+  [UtentiTeams_Titolo] varchar(200)  NULL , 
+  [UtentiTeams_UserInsert] int  NULL , 
+  [UtentiTeams_UserUpdate] int  NULL , 
+  [UtentiTeams_UserDelete] int  NULL , 
+  [UtentiTeams_DateInsert] datetime  NULL , 
+  [UtentiTeams_DateUpdate] datetime  NULL , 
+  [UtentiTeams_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[UtentiTeams] ADD CONSTRAINT PK_UtentiTeams PRIMARY KEY  ([UtentiTeams_Ky])
+</SqlScriptCreate>
+</SqlTable>

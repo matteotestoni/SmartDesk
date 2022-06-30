@@ -1,0 +1,229 @@
+<script type="text/javascript">
+  String.prototype.replaceAll = function(search, replacement) {
+      var target = this;
+      return target.replace(new RegExp(search, 'g'), replacement);
+  };
+
+  function aggiornamentoTitolo(){
+    jQuery('#ProdottiCategorie_Url').val(jQuery('#ProdottiCategorie_Titolo').val());
+    jQuery('#ProdottiCategorie_Title').val(jQuery('#ProdottiCategorie_Titolo').val());
+  }
+  
+  function aggiornamentoDescrizione(){
+    jQuery('#ProdottiCategorie_Description').val(jQuery('#ProdottiCategorie_Descrizione').val());
+  }
+
+  function setDefaultSEO(){
+    if (jQuery('#ProdottiCategorie_Descrizione').val()==""){
+      jQuery('#ProdottiCategorie_Descrizione').val(jQuery('#ProdottiCategorie_Titolo').val());
+    }
+    if (jQuery('#ProdottiCategorie_Description').val()==""){
+      jQuery('#ProdottiCategorie_Description').val(jQuery('#ProdottiCategorie_Titolo').val());
+    }
+    if (jQuery('#ProdottiCategorie_Url').val()==""){
+      jQuery('#ProdottiCategorie_Url').val(getUrl(jQuery('#ProdottiCategorie_Titolo').val()));
+    }
+    if (jQuery('#ProdottiCategorie_Ordine').val()==""){
+      jQuery('#ProdottiCategorie_Ordine').val(getUrl(jQuery('#ProdottiCategorie_Ky').val()));
+    }
+  }
+  
+  function getUrl(strIn){
+    var strOut=strIn.replaceAll(" ","-").replaceAll("/","").replaceAll(",","").toLowerCase();
+    return strOut;  
+  }
+  
+</script>
+
+<div id="schedacategoria">
+<ul class="tabs" data-tabs role="tablist" id="prodotto-tabs" data-responsive-accordion-tabs="tabs small-accordion medium-tabs large-tabs">
+	<li class="tabs-title is-active" role="presentational"><a href="#tabs-scheda"><i class="fa-duotone fa-table fa-lg fa-fw"></i>Scheda</a></li>
+	<li class="tabs-title" role="presentational"><a href="#tabs-descrizione"><i class="fa-duotone fa-file-lines fa-lg fa-fw"></i>Descrizione</a></li>
+	<li class="tabs-title" role="presentational"><a href="#tabs-seo"><i class="fa-brands fa-google fa-lg fa-fw"></i>SEO</a></li>
+</ul>
+<div id="contenutotabs">
+    <div class="tabs-content" data-tabs-content="prodotto-tabs">
+	  	<section role="tabpanel" aria-hidden="false" class="tabs-panel is-active" id="tabs-scheda" name="tabs-scheda">
+			    <div class="grid-x grid-padding-x">
+			    	<div class="large-1 medium-1 small-4 cell">
+			    		<label for="ProdottiCategorie_PubblicaWEB" class="text-right middle">Pubblica</label>
+						</div>
+			    	<div class="large-3 medium-3 small-8 cell">
+							<div class="switch tiny">                                         
+		            <input class="switch-input" type="checkbox" name="ProdottiCategorie_PubblicaWEB" id="ProdottiCategorie_PubblicaWEB" value="on" <% if (GetCheckValue(dtProdottiCategorie, "ProdottiCategorie_PubblicaWEB")){ Response.Write("checked");} %> />
+		            <label class="switch-paddle" for="ProdottiCategorie_PubblicaWEB">
+		              <span class="show-for-sr">si</span>
+		              <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+		              <span class="switch-inactive" aria-hidden="true"></span>
+		            </label>
+		          </div> 
+			    	</div>
+			    	<div class="large-1 medium-1 small-4 cell">
+			    		<label for="ProdottiCategorie_InMenu" class="text-right middle">Nel men&ugrave;</label>
+						</div>
+			    	<div class="large-3 medium-3 small-8 cell">
+							<div class="switch tiny">                                         
+		            <input class="switch-input" type="checkbox" name="ProdottiCategorie_InMenu" id="ProdottiCategorie_InMenu" value="on" <% if (GetCheckValue(dtProdottiCategorie, "ProdottiCategorie_InMenu")){ Response.Write("checked");} %> />
+		            <label class="switch-paddle" for="ProdottiCategorie_InMenu">
+		              <span class="show-for-sr">si</span>
+		              <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+		              <span class="switch-inactive" aria-hidden="true"></span>
+		            </label>
+		          </div> 
+			    	</div>
+			    	<div class="large-1 medium-1 small-4 cell">
+			    		<label for="ProdottiCategorie_Ordine" class="text-right middle">Ordine <i class="fa-duotone fa-sort fa-fw"></i></label>
+						</div>
+			    	<div class="large-3 medium-3 small-8 cell">
+		          <input type="text" name="ProdottiCategorie_Ordine" id="ProdottiCategorie_Ordine" value="<%=GetFieldValue(dtProdottiCategorie, "ProdottiCategorie_Ordine")%>" size="4" min="0" max="8" step="1" required="required" pattern="number" />
+		  				<span class="form-error">Obbligatorio</span>
+			    	</div>
+					</div>	
+		
+			    <div class="grid-x grid-padding-x">
+			    	<div class="large-1 medium-1 small-4 cell">
+			    		<label for="ProdottiCategorie_Titolo" class="text-right middle">Titolo<i class="fa-duotone fa-tag fa-fw"></i></label>
+						</div>
+			    	<div class="large-11 medium-11 small-8 cell">
+			        <input type="text" name="ProdottiCategorie_Titolo" id="ProdottiCategorie_Titolo" value="<%=GetFieldValue(dtProdottiCategorie, "ProdottiCategorie_Titolo")%>" size="100" maxlenght="100" required="required" onchange="aggiornamentoTitolo();">
+			        <span class="form-error">Obbligatorio</span>
+			        <p class="help-text">max 100 carateri</p>
+			    	</div>
+					</div>	
+		
+			    <div class="grid-x grid-padding-x">
+			    	<div class="large-1 medium-3 small-4 cell">
+			    		<label for="AttributiGruppi_Ky" class="text-right middle">Set di attributi</label>
+						</div>
+			    	<div class="large-5 medium-3 small-8 cell">
+		          <select name="AttributiGruppi_Ky" id="AttributiGruppi_Ky">
+		            <option value=""></option>
+								<!--#include file="/var/cache/AttributiGruppi-options.htm"--> 
+		          </select>
+		          <script type="text/javascript">
+		            selectSet('AttributiGruppi_Ky', '<%=GetFieldValue(dtProdottiCategorie, "AttributiGruppi_Ky")%>');
+		          </script>
+			    	</div>
+			    	<div class="large-1 medium-1 small-4 cell">
+			    		<label for="ProdottiCategorie_Padre" class="text-right middle">Categoria padre</label>
+						</div>
+			    	<div class="large-5 medium-5 small-8 cell">
+		          <input type="text" name="ProdottiCategorie_Padre" id="ProdottiCategorie_Padre" value="<%=GetFieldValue(dtProdottiCategorie, "ProdottiCategorie_Padre")%>" size="2" />
+		  				<span class="form-error">Obbligatorio</span>
+			    	</div>
+					</div>	
+					<fieldset>
+						<legend>Immagine</legend>
+					    <div class="grid-x grid-padding-x">
+					    	<div class="large-1 medium-3 small-4 cell">
+					    		<label for="ProdottiCategorie_Logo" class="text-right middle">Logo</label>
+								</div>
+					    	<div class="large-11 medium-9 small-8 cell">
+					        <%
+					        if (GetFieldValue(dtProdottiCategorie, "ProdottiCategorie_Logo").Length>0){
+					          Response.Write("<div class=\"miniatura\"><a href=\"" + GetFieldValue(dtProdottiCategorie, "ProdottiCategorie_Logo") + "\" id=\"f" + i + "\" target=\"_blank\"><img src=\"" + GetFieldValue(dtProdottiCategorie, "ProdottiCategorie_Logo") + "\" border=\"0\" width=\"67\" height=\"50\" /></a><br /><a href=\"/admin/app/catalogo/crud/elimina-foto-prodotticategorie.aspx?ProdottiCategorie_Ky=" + GetFieldValue(dtProdottiCategorie, "ProdottiCategorie_Ky") + "&sorgente=scheda-prodottocategoria\"><i class=\"fa-duotone fa-trash-alt fa-fw\"></i></a></div>");
+					        }
+					        %>
+					        <div class="caricadocumento">
+					          Seleziona una foto sul tuo computer da associare all'anagrafica<br>
+					          <label for="foto" class="button small">Carica immagini</label>
+				            <input type="file" class="show-for-sr fileupload" name="foto" id="foto" /><br /><br />
+				            <div id="galleryfotocaricate" class="gallery"></div>
+				            <script>
+				              jQuery(function() {
+				                var imagesPreview = function(input, placeToInsertImagePreview) {
+				                    if (input.files) {
+				                        var filesAmount = input.files.length;
+				                        jQuery(placeToInsertImagePreview).html("");
+				                        for (i = 0; i < filesAmount; i++) {
+				                            var reader = new FileReader();
+				                            reader.onload = function(event) {
+				                                jQuery(jQuery.parseHTML('<img width="150" height="100" hspace="10" vspace="10" style="border:1px solid #000000">')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+				                            }
+				                             reader.readAsDataURL(input.files[i]);
+				                        }
+				                    }
+				                };
+				                jQuery('#foto').on('change', function() {
+				                    imagesPreview(this, '#galleryfotocaricate');
+				                });
+				              });
+				            </script>
+					        </div>
+					    	</div>
+							</div>	
+					</fieldset>
+    	</section>
+    	<section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-descrizione" name="tabs-descrizione">
+			    <div class="grid-x grid-padding-x">
+			    	<div class="large-12 medium-12 small-12 cell">
+		          <textarea name="ProdottiCategorie_Descrizione" id="ProdottiCategorie_Descrizione" class="ckeditor" cols="76" rows="3" required="required" onchange="aggiornamentoDescrizione();"><%=GetFieldValue(dtProdottiCategorie, "ProdottiCategorie_Descrizione")%></textarea>
+					    <script type="text/javascript">
+					    CKEDITOR.replace('ProdottiCategorie_Descrizione',
+					    	{
+					      	filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+					      	filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+					    	});
+			    		CKFinder.setupCKEditor( editor, null, { type: 'Files', currentFolder: '/uploads/foto-prodotti/' } );
+					    </script>
+		          <span class="form-error">Obbligatorio</span>
+			    	</div>
+					</div>	
+			</section>
+    	<section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-seo" name="tabs-seo">
+			    <div class="grid-x grid-padding-x">
+			    	<div class="large-2 medium-2 small-4 cell">
+			    		<label for="ProdottiCategorie_Url" class="text-right middle">Friendly Url</label>
+						</div>
+			    	<div class="large-10 medium-10 small-8 cell">
+		          <input type="text" name="ProdottiCategorie_Url" id="ProdottiCategorie_Url" value="<%=GetFieldValue(dtProdottiCategorie, "ProdottiCategorie_Url")%>" size="80">
+		  				<span class="form-error">Obbligatorio</span>
+			    	</div>
+					</div>	
+		
+			    <div class="grid-x grid-padding-x">
+			    	<div class="large-2 medium-2 small-4 cell">
+			    		<label for="ProdottiCategorie_Title" class="text-right middle">Titolo SEO</label>
+						</div>
+			    	<div class="large-10 medium-10 small-8 cell">
+		          <input type="text" name="ProdottiCategorie_Title" id="ProdottiCategorie_Title" value="<%=GetFieldValue(dtProdottiCategorie, "ProdottiCategorie_Title")%>" size="80">
+		  				<span class="form-error">Obbligatorio</span>
+			        <p class="help-text">max 70 carateri</p>
+			    	</div>
+					</div>	
+		
+			    <div class="grid-x grid-padding-x">
+			    	<div class="large-2 medium-2 small-4 cell">
+			    		<label for="ProdottiCategorie_Description" class="text-right middle">Descrizione SEO</label>
+						</div>
+			    	<div class="large-10 medium-10 small-8 cell">
+		          <textarea name="ProdottiCategorie_Description" id="ProdottiCategorie_Description" cols="76" rows="2"><%=GetFieldValue(dtProdottiCategorie, "ProdottiCategorie_Description")%></textarea>
+		  				<span class="form-error">Obbligatorio</span>
+			        <p class="help-text">max 160 carateri</p>
+			    	</div>
+					</div>
+						
+				  <div class="grid-x grid-padding-x">
+				  	<div class="large-2 medium-2 small-4 cell">
+				  		<label for="ProdottiCategorie_Robots" class="large-text-right small-text-left middle">Robots SEO<i class="fa-duotone fa-file-lines fa-fw"></i></label>
+				  	</div>
+				  	<div class="large-10 medium-10 small-8 cell">
+							<select name="ProdottiCategorie_Robots" id="ProdottiCategorie_Robots" value="<%=GetFieldValue(dtProdottiCategorie, "ProdottiCategorie_Robots")%>">
+				        <option value="index,follow">index,follow</option>
+				        <option value="noindex,nofollow">noindex,follow</option>
+				        <option value="noindex,nofollow">noindex,nofollow</option>
+				      </select>
+			        <p class="help-text">i noindex non saranno nella sitemap</p>
+				      <script type="text/javascript">
+				        selectSet('ProdottiCategorie_Robots', '<%=GetFieldValue(dtProdottiCategorie, "ProdottiCategorie_Robots")%>');
+				      </script>
+				  	</div>
+				  </div>
+			</section>
+		</div>
+	</div>
+
+</div>
+<script>
+  setDefaultSEO();
+</script>

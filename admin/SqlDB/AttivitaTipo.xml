@@ -1,0 +1,35 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AttivitaTipo" Type="TABLE">
+    <Keys>
+      <Key Column="AttivitaTipo_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AttivitaTipo_Ky" IsNull="N" Type="int" />
+      <Field Column="AttivitaTipo_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AttivitaTipo_Icona" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AttivitaTipo_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AttivitaTipo_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AttivitaTipo_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AttivitaTipo_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AttivitaTipo_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AttivitaTipo_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="AttivitaTipo_Attiva" IsNull="Y" Type="bit" />
+      <Field Column="AttivitaTipo_Ordine" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AttivitaTipo] (
+  [AttivitaTipo_Ky] int  NOT NULL , 
+  [AttivitaTipo_Descrizione] varchar(100)  NULL , 
+  [AttivitaTipo_Icona] varchar(100)  NULL , 
+  [AttivitaTipo_UserInsert] int  NULL , 
+  [AttivitaTipo_UserUpdate] int  NULL , 
+  [AttivitaTipo_UserDelete] int  NULL , 
+  [AttivitaTipo_DateInsert] datetime  NULL , 
+  [AttivitaTipo_DateUpdate] datetime  NULL , 
+  [AttivitaTipo_DateDelete] datetime  NULL , 
+  [AttivitaTipo_Attiva] bit  NULL DEFAULT ((1)), 
+  [AttivitaTipo_Ordine] int  NULL DEFAULT ((1)) )
+ALTER TABLE [dbo].[AttivitaTipo] ADD CONSTRAINT PK_AttivitaTipo PRIMARY KEY  ([AttivitaTipo_Ky])
+</SqlScriptCreate>
+</SqlTable>

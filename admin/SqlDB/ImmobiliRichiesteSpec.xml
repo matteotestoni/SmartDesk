@@ -1,0 +1,37 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ImmobiliRichiesteSpec" Type="TABLE">
+    <Keys>
+      <Key Column="ImmobiliRichiesteSpec_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="ImmobiliRichiesteSpec_Ky" IsNull="N" Type="int" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Immobili_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="ImmobiliRichiesteSpec_Data" IsNull="Y" Type="datetime" />
+      <Field Column="ImmobiliRichiesteSpec_Richiesta" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="ImmobiliRichiesteSpec_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="ImmobiliRichiesteSpec_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="ImmobiliRichiesteSpec_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="ImmobiliRichiesteSpec_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="ImmobiliRichiesteSpec_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="ImmobiliRichiesteSpec_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[ImmobiliRichiesteSpec] (
+  [ImmobiliRichiesteSpec_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Utenti_Ky] int  NULL , 
+  [Immobili_Ky] int  NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [ImmobiliRichiesteSpec_Data] datetime  NULL , 
+  [ImmobiliRichiesteSpec_Richiesta] varchar(MAX)  NULL , 
+  [ImmobiliRichiesteSpec_UserInsert] int  NULL , 
+  [ImmobiliRichiesteSpec_UserUpdate] int  NULL , 
+  [ImmobiliRichiesteSpec_UserDelete] int  NULL , 
+  [ImmobiliRichiesteSpec_DateInsert] datetime  NULL , 
+  [ImmobiliRichiesteSpec_DateUpdate] datetime  NULL , 
+  [ImmobiliRichiesteSpec_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[ImmobiliRichiesteSpec] ADD CONSTRAINT PK_ImmobiliRichiesteSpec PRIMARY KEY  ([ImmobiliRichiesteSpec_Ky])
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,58 @@
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="PagamentiMetodo_Default" class="large-text-right small-text-left middle">Predefinito:</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+		<div class="switch tiny">
+			<input class="switch-input" type="checkbox" name="PagamentiMetodo_Default" id="PagamentiMetodo_Default" value="on" <% if (GetCheckValue(dtPagamentiMetodo, "PagamentiMetodo_Default")){ Response.Write( "checked");} %> />
+			<label class="switch-paddle" for="PagamentiMetodo_Default">
+				<span class="show-for-sr">Attivo</span>
+				<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+				<span class="switch-inactive" aria-hidden="true"></span>
+			</label>
+		</div>
+		<span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="PagamentiMetodo_Titolo" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Titolo</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+  	<input type="text" name="PagamentiMetodo_Titolo" id="PagamentiMetodo_Titolo" title="Titolo" value="<%=GetFieldValue(dtPagamentiMetodo, "PagamentiMetodo_Titolo")%>" size="60" required="required">
+  	<span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="PagamentiMetodo_Descrizione" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Descrizione</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <textarea name="PagamentiMetodo_Descrizione" id="PagamentiMetodo_Descrizione" title="Descrizione" rows="3" required="required"><%=GetFieldValue(dtPagamentiMetodo, "PagamentiMetodo_Descrizione")%></textarea>
+  	<span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="PagamentiMetodo_Icona" class="large-text-right small-text-left middle">Icona:</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="PagamentiMetodo_Icona" id="PagamentiMetodo_Icona" title="Icona" value="<%=GetFieldValue(dtPagamentiMetodo, "PagamentiMetodo_Icona")%>" size="60">
+		<span class="help-text">Puoi specificare l'icona prendendo da Font Awesome. <a href="https://fontawesome.com/icons?d=gallery" target="_blank" rel="nofollow">Clicca qui</a> per maggiori informazioni.</span>
+		<span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="PagamentiMetodo_Colore" class="large-text-right small-text-left middle">Colore<i class="fa-duotone fa-paint-brush fa-fw"></i></label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+  	<input type="color" name="PagamentiMetodo_Colore" id="PagamentiMetodo_Colore" title="Icona" value="<%=GetFieldValue(dtPagamentiMetodo, "PagamentiMetodo_Colore")%>" size="60" required="required">
+		<span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+

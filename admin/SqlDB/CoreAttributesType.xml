@@ -1,0 +1,33 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CoreAttributesType" Type="TABLE">
+    <Keys>
+      <Key Column="CoreAttributesType_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CoreAttributesType_Ky" IsNull="N" Type="int" />
+      <Field Column="CoreAttributesType_Type" IsNull="N" Type="int" />
+      <Field Column="CoreAttributesType_Code" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreAttributesType_Icon" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreAttributesType_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CoreAttributesType_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CoreAttributesType_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CoreAttributesType_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CoreAttributesType_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CoreAttributesType_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CoreAttributesType] (
+  [CoreAttributesType_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CoreAttributesType_Type] int  NOT NULL , 
+  [CoreAttributesType_Code] varchar(100)  NULL , 
+  [CoreAttributesType_Icon] varchar(100)  NULL , 
+  [CoreAttributesType_UserInsert] int  NULL , 
+  [CoreAttributesType_UserUpdate] int  NULL , 
+  [CoreAttributesType_UserDelete] int  NULL , 
+  [CoreAttributesType_DateInsert] datetime  NULL , 
+  [CoreAttributesType_DateUpdate] datetime  NULL , 
+  [CoreAttributesType_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[CoreAttributesType] ADD CONSTRAINT PK_CoreAttributesType PRIMARY KEY  ([CoreAttributesType_Ky])
+</SqlScriptCreate>
+</SqlTable>

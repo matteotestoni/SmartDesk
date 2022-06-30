@@ -1,0 +1,115 @@
+<ul class="tabs" role="tablist" id="servizicategorie-tabs" data-responsive-accordion-tabs="tabs small-accordion medium-tabs large-tabs">
+	<li class="tabs-title is-active" role="presentational"><a href="#tabs-scheda"><i class="fa-duotone fa-table fa-lg fa-fw"></i>Scheda</a></li>
+	<li class="tabs-title" role="presentational"><a href="#tabs-descrizione"><i class="fa-duotone fa-file-lines fa-lg fa-fw"></i>Descrizione</a></li>
+	<li class="tabs-title" role="presentational"><a href="#tabs-seo"><i class="fa-brands fa-google fa-lg fa-fw"></i>SEO</a></li>
+</ul>
+<div id="contenutotabs">
+    <div class="tabs-content" data-tabs-content="servizicategorie-tabs">
+	  	<section role="tabpanel" aria-hidden="false" class="tabs-panel is-active" id="tabs-scheda" name="tabs-scheda">
+		      <div class="grid-x grid-padding-x">
+			    	<div class="large-2 medium-2 small-4 cell">
+			    		<label for="AttributiGruppi_Ky" class="text-right middle">Set di attributi</label>
+						</div>
+			    	<div class="large-10 medium-10 small-8 cell">
+		          <select name="AttributiGruppi_Ky" id="AttributiGruppi_Ky">
+		            <option value=""></option>
+								<!--#include file="/var/cache/AttributiGruppi-options.htm"--> 
+		          </select>
+		          <script type="text/javascript">
+		            selectSet('AttributiGruppi_Ky', '<%=GetFieldValue(dtServiziCategorie, "AttributiGruppi_Ky")%>');
+		          </script>
+			    	</div>
+					</div>	
+			    <div class="grid-x grid-padding-x">
+			    	<div class="large-2 medium-2 small-4 cell">
+			    		<label for="ServiziCategorie_Titolo" class="text-right middle">Titolo<i class="fa-duotone fa-tag fa-fw"></i></label>
+						</div>
+			    	<div class="large-10 medium-10 small-8 cell">
+			        <input type="text" name="ServiziCategorie_Titolo" id="ServiziCategorie_Titolo" value="<%=GetFieldValue(dtServiziCategorie, "ServiziCategorie_Titolo")%>" size="100" maxlenght="100" required="required" onchange="aggiornamentoTitolo();">
+			        <span class="form-error">Obbligatorio</span>
+			        <p class="help-text">max 100 carateri</p>
+			    	</div>
+					</div>	
+		      <div class="grid-x grid-padding-x">
+			    	<div class="large-2 medium-2 small-4 cell">
+			    		<label for="ProdottiCategorie_Ky" class="text-right middle">Categoria prodotto</label>
+						</div>
+			    	<div class="large-10 medium-10 small-8 cell">
+		          <select name="ProdottiCategorie_Ky" id="ProdottiCategorie_Ky">
+		            <option value=""></option>
+								<!--#include file="/var/cache/ProdottiCategorie-options.htm"--> 
+		          </select>
+		          <script type="text/javascript">
+		            selectSet('ProdottiCategorie_Ky', '<%=GetFieldValue(dtServiziCategorie, "ProdottiCategorie_Ky")%>');
+		          </script>
+			    	</div>
+					</div>	
+    	</section>
+    	<section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-descrizione" name="tabs-descrizione">
+			    <div class="grid-x grid-padding-x">
+			    	<div class="large-12 medium-12 small-12 cell">
+		          <textarea name="ServiziCategorie_Descrizione" id="ServiziCategorie_Descrizione" class="ckfinder" cols="76" rows="3" required="required" onchange="aggiornamentoDescrizione();"><%=GetFieldValue(dtServiziCategorie, "ServiziCategorie_Descrizione")%></textarea>
+					    <script type="text/javascript">
+					    CKEDITOR.replace('ServiziCategorie_Descrizione',
+					    	{
+					      	filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+					      	filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+					    	});
+				  		CKFinder.setupCKEditor( editor, null, { type: 'Files', currentFolder: '/uploads/foto-prodotti/' } );
+					    </script>
+		          <span class="form-error">Obbligatorio</span>
+			    	</div>
+					</div>	
+			</section>
+    	<section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-seo" name="tabs-seo">
+			    <div class="grid-x grid-padding-x">
+			    	<div class="large-2 medium-2 small-4 cell">
+			    		<label for="ServiziCategorie_Url" class="text-right middle">Friendly Url</label>
+						</div>
+			    	<div class="large-10 medium-10 small-8 cell">
+		          <input type="text" name="ServiziCategorie_Url" id="ServiziCategorie_Url" value="<%=GetFieldValue(dtServiziCategorie, "ServiziCategorie_Url")%>" size="80">
+		  				<span class="form-error">Obbligatorio</span>
+			    	</div>
+					</div>	
+		
+			    <div class="grid-x grid-padding-x">
+			    	<div class="large-2 medium-2 small-4 cell">
+			    		<label for="ServiziCategorie_Title" class="text-right middle">Titolo SEO</label>
+						</div>
+			    	<div class="large-10 medium-10 small-8 cell">
+		          <input type="text" name="ServiziCategorie_Title" id="ServiziCategorie_Title" value="<%=GetFieldValue(dtServiziCategorie, "ServiziCategorie_Title")%>" size="80">
+		  				<span class="form-error">Obbligatorio</span>
+			        <p class="help-text">max 70 carateri</p>
+			    	</div>
+					</div>	
+		
+			    <div class="grid-x grid-padding-x">
+			    	<div class="large-2 medium-2 small-4 cell">
+			    		<label for="ServiziCategorie_Description" class="text-right middle">Descrizione SEO</label>
+						</div>
+			    	<div class="large-10 medium-10 small-8 cell">
+		          <textarea name="ServiziCategorie_Description" id="ServiziCategorie_Description" cols="76" rows="2"><%=GetFieldValue(dtServiziCategorie, "ServiziCategorie_Description")%></textarea>
+		  				<span class="form-error">Obbligatorio</span>
+			        <p class="help-text">max 160 carateri</p>
+			    	</div>
+					</div>
+						
+				  <div class="grid-x grid-padding-x">
+				  	<div class="large-2 medium-2 small-4 cell">
+				  		<label for="ServiziCategorie_Robots" class="large-text-right small-text-left middle">Robots SEO<i class="fa-duotone fa-file-lines fa-fw"></i></label>
+				  	</div>
+				  	<div class="large-10 medium-10 small-8 cell">
+							<select name="ServiziCategorie_Robots" id="ServiziCategorie_Robots" value="<%=GetFieldValue(dtServiziCategorie, "ServiziCategorie_Robots")%>">
+				        <option value="index,follow">index,follow</option>
+				        <option value="noindex,nofollow">noindex,follow</option>
+				        <option value="noindex,nofollow">noindex,nofollow</option>
+				      </select>
+			        <p class="help-text">i noindex non saranno nella sitemap</p>
+				      <script type="text/javascript">
+				        selectSet('ServiziCategorie_Robots', '<%=GetFieldValue(dtServiziCategorie, "ServiziCategorie_Robots")%>');
+				      </script>
+				  	</div>
+				  </div>
+			</section>
+		</div>
+</div>

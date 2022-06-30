@@ -1,0 +1,43 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CMSBlocchi_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="CMSBlocchi_Ky" IsNull="N" Type="int" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="CMSCategorie_Ky" IsNull="Y" Type="int" />
+      <Field Column="CMSBlocchi_Categorie" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CMSBlocchi_Tags" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CMSBlocchi_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSBlocchi_Contenuto" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CMSBlocchi_Data" IsNull="Y" Type="datetime" />
+      <Field Column="CMSBlocchi_Ordine" IsNull="Y" Type="int" />
+      <Field Column="CMSBlocchi_PubblicaWEB" IsNull="Y" Type="bit" />
+      <Field Column="CMSBlocchi_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CMSBlocchi_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CMSBlocchi_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CMSBlocchi_DateInsert" IsNull="N" Type="datetime" />
+      <Field Column="CMSBlocchi_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CMSBlocchi_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="CMSBlocchi_Codice" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Lingue_Codice" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Lingue_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="CMSCategorie_Descrizione" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSCategorie_UrlKey" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Utenti_Nominativo" IsNull="Y" Type="varchar" Lenght="255" />
+      <Field Column="Utenti_Email" IsNull="Y" Type="varchar" Lenght="100" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.CMSBlocchi_Vw
+AS
+SELECT        dbo.CMSBlocchi.CMSBlocchi_Ky, dbo.CMSBlocchi.Utenti_Ky, dbo.CMSBlocchi.Lingue_Ky, dbo.CMSBlocchi.CMSCategorie_Ky, dbo.CMSBlocchi.CMSBlocchi_Categorie, dbo.CMSBlocchi.CMSBlocchi_Tags, 
+                         dbo.CMSBlocchi.CMSBlocchi_Titolo, dbo.CMSBlocchi.CMSBlocchi_Contenuto, dbo.CMSBlocchi.CMSBlocchi_Data, dbo.CMSBlocchi.CMSBlocchi_Ordine, dbo.CMSBlocchi.CMSBlocchi_PubblicaWEB, 
+                         dbo.CMSBlocchi.CMSBlocchi_UserInsert, dbo.CMSBlocchi.CMSBlocchi_UserUpdate, dbo.CMSBlocchi.CMSBlocchi_UserDelete, dbo.CMSBlocchi.CMSBlocchi_DateInsert, 
+                         dbo.CMSBlocchi.CMSBlocchi_DateUpdate, dbo.CMSBlocchi.CMSBlocchi_DateDelete, dbo.CMSBlocchi.CMSBlocchi_Codice, dbo.Lingue.Lingue_Codice, dbo.Lingue.Lingue_Titolo, 
+                         dbo.CMSCategorie.CMSCategorie_Descrizione, dbo.CMSCategorie.CMSCategorie_UrlKey, dbo.Utenti.Utenti_Nominativo, dbo.Utenti.Utenti_Email
+FROM            dbo.CMSBlocchi LEFT OUTER JOIN
+                         dbo.Lingue ON dbo.CMSBlocchi.Lingue_Ky = dbo.Lingue.Lingue_Ky LEFT OUTER JOIN
+                         dbo.CMSCategorie ON dbo.CMSBlocchi.CMSCategorie_Ky = dbo.CMSCategorie.CMSCategorie_Ky LEFT OUTER JOIN
+                         dbo.Utenti ON dbo.CMSBlocchi.Utenti_Ky = dbo.Utenti.Utenti_Ky
+</SqlScriptCreate>
+</SqlTable>

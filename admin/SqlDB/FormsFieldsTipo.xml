@@ -1,0 +1,33 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="FormsFieldsTipo" Type="TABLE">
+    <Keys>
+      <Key Column="FormsFieldsTipo_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="FormsFieldsTipo_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="FormsFieldsTipo_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="FormsFieldsTipo_Icona" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="FormsFieldsTipo_Ordine" IsNull="Y" Type="tinyint" />
+      <Field Column="FormsFieldsTipo_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="FormsFieldsTipo_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="FormsFieldsTipo_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="FormsFieldsTipo_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="FormsFieldsTipo_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="FormsFieldsTipo_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[FormsFieldsTipo] (
+  [FormsFieldsTipo_Ky] tinyint  NOT NULL , 
+  [FormsFieldsTipo_Titolo] varchar(100)  NULL , 
+  [FormsFieldsTipo_Icona] varchar(100)  NULL , 
+  [FormsFieldsTipo_Ordine] tinyint  NULL , 
+  [FormsFieldsTipo_UserInsert] int  NULL , 
+  [FormsFieldsTipo_UserUpdate] int  NULL , 
+  [FormsFieldsTipo_UserDelete] int  NULL , 
+  [FormsFieldsTipo_DateInsert] datetime  NULL , 
+  [FormsFieldsTipo_DateUpdate] datetime  NULL , 
+  [FormsFieldsTipo_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[FormsFieldsTipo] ADD CONSTRAINT PK_FormsFieldsTipo PRIMARY KEY  ([FormsFieldsTipo_Ky])
+</SqlScriptCreate>
+</SqlTable>

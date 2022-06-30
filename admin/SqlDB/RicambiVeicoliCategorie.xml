@@ -1,0 +1,35 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="RicambiVeicoliCategorie" Type="TABLE">
+    <Keys>
+      <Key Column="RicambiVeicoliCategorie_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="RicambiVeicoliCategorie_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="RicambiVeicoliCategorie_Descrizione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="RicambiVeicoliCategorie_DescrizioneHTML" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="RicambiVeicoliCategorie_Title" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="RicambiVeicoliCategorie_Description" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="RicambiVeicoliCategorie_Keywords" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="RicambiVeicoliCategorie_P1" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="VeicoliTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="RicambiVeicoliCategorie_Sezione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="RicambiVeicoliCategorie_NoMarca" IsNull="Y" Type="bit" />
+      <Field Column="RicambiVeicoliCategorie_Redirect" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[RicambiVeicoliCategorie] (
+  [RicambiVeicoliCategorie_Ky] tinyint IDENTITY(1,1) NOT NULL , 
+  [RicambiVeicoliCategorie_Descrizione] varchar(50)  NULL , 
+  [RicambiVeicoliCategorie_DescrizioneHTML] varchar(50)  NULL , 
+  [RicambiVeicoliCategorie_Title] varchar(300)  NULL , 
+  [RicambiVeicoliCategorie_Description] varchar(500)  NULL , 
+  [RicambiVeicoliCategorie_Keywords] varchar(500)  NULL , 
+  [RicambiVeicoliCategorie_P1] varchar(500)  NULL , 
+  [VeicoliTipo_Ky] tinyint  NULL , 
+  [RicambiVeicoliCategorie_Sezione] varchar(50)  NULL , 
+  [RicambiVeicoliCategorie_NoMarca] bit  NULL , 
+  [RicambiVeicoliCategorie_Redirect] bit  NULL  )
+ALTER TABLE [dbo].[RicambiVeicoliCategorie] ADD CONSTRAINT PK_RicambiVeicoliCategorie PRIMARY KEY  ([RicambiVeicoliCategorie_Ky])
+</SqlScriptCreate>
+</SqlTable>

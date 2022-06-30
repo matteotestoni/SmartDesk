@@ -1,0 +1,41 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CoreGridsColumns" Type="TABLE">
+    <Keys>
+      <Key Column="CoreGridsColumns_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CoreGridsColumns_Ky" IsNull="N" Type="int" />
+      <Field Column="CoreGrids_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreAttributes_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreGridsColumns_Width" IsNull="Y" Type="int" />
+      <Field Column="CoreGridsColumns_Order" IsNull="Y" Type="int" />
+      <Field Column="CoreGridsColumns_Link" IsNull="Y" Type="bit" />
+      <Field Column="CoreGridsColumns_Label" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreGridsColumns_Renderer" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreGridsColumns_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CoreGridsColumns_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CoreGridsColumns_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CoreGridsColumns_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CoreGridsColumns_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CoreGridsColumns_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CoreGridsColumns] (
+  [CoreGridsColumns_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CoreGrids_Ky] int  NULL , 
+  [CoreAttributes_Ky] int  NULL , 
+  [CoreGridsColumns_Width] int  NULL , 
+  [CoreGridsColumns_Order] int  NULL , 
+  [CoreGridsColumns_Link] bit  NULL , 
+  [CoreGridsColumns_Label] varchar(MAX)  NULL , 
+  [CoreGridsColumns_Renderer] varchar(MAX)  NULL , 
+  [CoreGridsColumns_UserInsert] int  NULL , 
+  [CoreGridsColumns_UserUpdate] int  NULL , 
+  [CoreGridsColumns_UserDelete] int  NULL , 
+  [CoreGridsColumns_DateInsert] datetime  NULL , 
+  [CoreGridsColumns_DateUpdate] datetime  NULL , 
+  [CoreGridsColumns_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[CoreGridsColumns] ADD CONSTRAINT PK_CoreGridsColumns PRIMARY KEY  ([CoreGridsColumns_Ky])
+</SqlScriptCreate>
+</SqlTable>

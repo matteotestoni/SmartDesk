@@ -1,0 +1,47 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Produttori" Type="TABLE">
+    <Keys>
+      <Key Column="Produttori_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Produttori_Ky" IsNull="N" Type="int" />
+      <Field Column="Produttori_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Produttori_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Aziende_Ky" IsNull="Y" Type="int" />
+      <Field Column="Produttori_Ordine" IsNull="Y" Type="int" />
+      <Field Column="Produttori_Logo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Produttori_Title" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Produttori_Description" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Produttori_PubblicaWEB" IsNull="Y" Type="bit" />
+      <Field Column="Produttori_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Produttori_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Produttori_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Produttori_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Produttori_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Produttori_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Produttori_UrlKey" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Produttori_Robots" IsNull="Y" Type="varchar" Lenght="100" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Produttori] (
+  [Produttori_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Produttori_Titolo] varchar(100)  NULL , 
+  [Produttori_Descrizione] varchar(MAX)  NULL , 
+  [Aziende_Ky] int  NULL , 
+  [Produttori_Ordine] int  NULL , 
+  [Produttori_Logo] varchar(100)  NULL , 
+  [Produttori_Title] varchar(100)  NULL , 
+  [Produttori_Description] varchar(100)  NULL , 
+  [Produttori_PubblicaWEB] bit  NULL , 
+  [Produttori_UserInsert] int  NULL , 
+  [Produttori_UserUpdate] int  NULL , 
+  [Produttori_UserDelete] int  NULL , 
+  [Produttori_DateInsert] datetime  NULL , 
+  [Produttori_DateUpdate] datetime  NULL , 
+  [Produttori_DateDelete] datetime  NULL , 
+  [Produttori_UrlKey] varchar(150)  NULL , 
+  [Produttori_Robots] varchar(100)  NULL  )
+ALTER TABLE [dbo].[Produttori] ADD CONSTRAINT PK_Produttori PRIMARY KEY  ([Produttori_Ky])
+</SqlScriptCreate>
+</SqlTable>

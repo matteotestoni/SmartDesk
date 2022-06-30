@@ -1,0 +1,257 @@
+<fieldset class="fieldset">
+    <legend>Attribute</legend>
+  <div class="grid-x grid-padding-x">
+      <div class="large-2 medium-2 small-4 cell">
+          <label class="checkbox text-right align-middle" for="CoreAttributes_Key">Chiave tabella</label>
+      </div>
+      <div class="large-1 medium-1 small-8 cell align-middle">                                               
+  				<div class="switch tiny">                                         
+            <input class="switch-input" type="checkbox" name="CoreAttributes_Key" id="CoreAttributes_Key" value="on" <% if (GetCheckValue(dtCoreAttributes, "CoreAttributes_Key")){ Response.Write("checked");} %> />
+            <label class="switch-paddle" for="CoreAttributes_Key">
+              <span class="show-for-sr">Chiave</span>
+              <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+              <span class="switch-inactive" aria-hidden="true"></span>
+            </label>
+          </div> 
+       </div>       
+      <div class="large-2 medium-2 small-4 cell">
+          <label class="checkbox text-right align-middle" for="CoreAttributes_Search">Ricercabile ?</label>
+      </div>
+      <div class="large-1 medium-1 small-8 cell align-middle">                                               
+  				<div class="switch tiny">                                         
+            <input class="switch-input" type="checkbox" name="CoreAttributes_Search" id="CoreAttributes_Search" value="on" <% if (GetCheckValue(dtCoreAttributes, "CoreAttributes_Search")){ Response.Write("checked");} %> />
+            <label class="switch-paddle" for="CoreAttributes_Search">
+              <span class="show-for-sr">Ricercabile</span>
+              <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+              <span class="switch-inactive" aria-hidden="true"></span>
+            </label>
+          </div> 
+       </div>       
+      <div class="large-2 medium-2 small-4 cell">
+          <label class="checkbox text-right align-middle" for="CoreAttributes_System">Di sistema</label>
+      </div>
+      <div class="large-1 medium-1 small-8 cell align-middle">                                               
+  				<div class="switch tiny">                                         
+            <input class="switch-input" type="checkbox" name="CoreAttributes_System" id="CoreAttributes_System" value="on" <% if (GetCheckValue(dtCoreAttributes, "CoreAttributes_System")){ Response.Write("checked");} %> />
+            <label class="switch-paddle" for="CoreAttributes_System">
+              <span class="show-for-sr">Sistema</span>
+              <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+              <span class="switch-inactive" aria-hidden="true"></span>
+            </label>
+          </div> 
+       </div>       
+  </div>       
+  
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="CoreAttributes_Code" class="large-text-right small-text-left middle">Codice</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="CoreAttributes_Code" id="CoreAttributes_Code" value="<%=GetFieldValue(dtCoreAttributes, "CoreAttributes_Code")%>" size="100" required="required" />
+      <span class="form-error">Obbligatorio</span>
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="CoreAttributes_Title" class="large-text-right small-text-left middle">Titolo <i class="fa-duotone fa-tag fa-fw"></i></label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="CoreAttributes_Title" id="CoreAttributes_Title" value="<%=GetFieldValue(dtCoreAttributes, "CoreAttributes_Title")%>" size="100" required="required" />
+      <span class="form-error">Obbligatorio</span>
+  	</div>
+  </div>
+  
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="CoreAttributes_Label" class="large-text-right small-text-left middle">Etichetta</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="CoreAttributes_Label" id="CoreAttributes_Label" value="<%=GetFieldValue(dtCoreAttributes, "CoreAttributes_Label")%>" size="100" required="required" />
+      <span class="form-error">Obbligatorio</span>
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="CoreAttributes_Helptext" class="large-text-right small-text-left middle">Testo help</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="CoreAttributes_Helptext" id="CoreAttributes_Helptext" value="<%=GetFieldValue(dtCoreAttributes, "CoreAttributes_Helptext")%>" size="100" />
+  	</div>
+  </div>
+  
+  
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="CoreAttributes_Table" class="large-text-right small-text-left middle">Tabella</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="CoreAttributes_Table" id="CoreAttributes_Table" value="<%=GetFieldValue(dtCoreAttributes, "CoreAttributes_Table")%>" size="100" required="required" />
+      <span class="form-error">Obbligatorio</span>
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="CoreAttributes_MaxLength" class="large-text-right small-text-left middle">Lunghezza massima</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="CoreAttributes_MaxLength" id="CoreAttributes_MaxLength" value="<%=GetFieldValue(dtCoreAttributes, "CoreAttributes_MaxLength")%>" size="100" required="required" />
+      <span class="form-error">Obbligatorio</span>
+  	</div>
+  </div>
+  
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label class="large-text-right small-text-left middle">Tipo </label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+  		<div class="button-group round toggle">
+  			<%
+  			for (int i = 0; i < dtCoreAttributesType.Rows.Count; i++){
+  				Response.Write("<input class=\"button radiotype\" type=\"radio\" id=\"CoreAttributesType_Ky" + dtCoreAttributesType.Rows[i]["CoreAttributesType_Ky"].ToString() + "\" name=\"CoreAttributesType_Ky\" value=\"" + dtCoreAttributesType.Rows[i]["CoreAttributesType_Ky"].ToString() + "\">");
+  				Response.Write("<label class=\"button\" for=\"CoreAttributesType_Ky" + dtCoreAttributesType.Rows[i]["CoreAttributesType_Ky"].ToString() + "\"><i class=\"" + dtCoreAttributesType.Rows[i]["CoreAttributesType_Icon"].ToString() + " fa-lg fa-fw\"></i>" + dtCoreAttributesType.Rows[i]["CoreAttributesType_Type"].ToString() + "-" + dtCoreAttributesType.Rows[i]["CoreAttributesType_Code"].ToString() + "</label>");
+  			}
+  			%>
+  		</div>
+  		<span class="form-error">Obbligatorio</span>
+  		<script type="text/javascript">
+  			radioSet('CoreAttributesType_Ky', '<%=GetFieldValue(dtCoreAttributes, "CoreAttributesType_Ky")%>');
+      </script>
+  	</div>
+  </div>
+  
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label class="large-text-right small-text-left middle">Formato attributo</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+  		<div class="button-group round toggle">
+  			<%
+  			for (int i = 0; i < dtCoreAttributesFormat.Rows.Count; i++){
+  				Response.Write("<input class=\"button" + dtCoreAttributesFormat.Rows[i]["CoreAttributesType_Ky"].ToString() + "\" type=\"radio\" id=\"CoreAttributesFormat_Ky" + dtCoreAttributesFormat.Rows[i]["CoreAttributesFormat_Ky"].ToString() + "\" name=\"CoreAttributesFormat_Ky\" value=\"" + dtCoreAttributesFormat.Rows[i]["CoreAttributesFormat_Ky"].ToString() + "\">");
+  				Response.Write("<label class=\"button CoreAttributesType_Ky type-" + dtCoreAttributesFormat.Rows[i]["CoreAttributesType_Ky"].ToString() + "\" for=\"CoreAttributesFormat_Ky" + dtCoreAttributesFormat.Rows[i]["CoreAttributesFormat_Ky"].ToString() + "\"><i class=\"" + dtCoreAttributesFormat.Rows[i]["CoreAttributesFormat_Icon"].ToString() + " fa-lg fa-fw\"></i>" + dtCoreAttributesFormat.Rows[i]["CoreAttributesFormat_Code"].ToString() + "</label>");
+  			}
+  			%>
+  		</div>
+  		<span class="form-error">Obbligatorio</span>
+  		<script type="text/javascript">
+  			radioSet('CoreAttributesFormat_Ky', '<%=GetFieldValue(dtCoreAttributes, "CoreAttributesFormat_Ky")%>');
+      </script>
+  	</div>
+  </div>
+
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="CoreAttributes_DefaultValue" class="large-text-right small-text-left middle">Default value</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+        <input type="text" name="CoreAttributes_DefaultValue" id="CoreAttributes_DefaultValue" value="<%=GetFieldValue(dtCoreAttributes, "CoreAttributes_DefaultValue")%>" />
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="CoreAttributes_Order" class="large-text-right small-text-left middle">Order</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+        <input type="text" name="CoreAttributes_Order" id="CoreAttributes_Order" value="<%=GetFieldValue(dtCoreAttributes, "CoreAttributes_Order")%>" size="100" />
+        <span class="form-error">Obbligatorio</span>
+  	</div>
+  </div>
+  
+</fieldset>
+
+<fieldset class="fieldset">
+    <legend>Select</legend>
+      <div class="grid-x grid-padding-x">
+      	<div class="large-2 medium-2 small-4 cell">
+      		<label for="CoreAttributes_Options" class="large-text-right small-text-left middle">Options</label>
+      	</div>
+      	<div class="large-10 medium-10 small-8 cell">
+            <textarea name="CoreAttributes_Options" id="CoreAttributes_Options" Rows="5"><%=GetFieldValue(dtCoreAttributes, "CoreAttributes_Options")%></textarea>
+      	</div>
+      </div>
+</fieldset>
+<fieldset class="fieldset">
+    <legend>Join</legend>
+      <div class="grid-x grid-padding-x">
+      	<div class="large-2 medium-2 small-4 cell">
+      		<label for="CoreAttributes_Join" class="large-text-right small-text-left middle">Entity code to Join <i class="fa-duotone fa-table fa-fw"></i></label>
+      	</div>
+      	<div class="large-4 medium-4 small-8 cell">
+              <input type="text" name="CoreAttributes_Join" id="CoreAttributes_Join" value="<%=GetFieldValue(dtCoreAttributes, "CoreAttributes_Join")%>" size="100" />
+      	</div>
+      	<div class="large-2 medium-2 small-4 cell">
+      		<label for="CoreAttributes_JoinFrom" class="large-text-right small-text-left middle">Join SQL From <i class="fa-duotone fa-table fa-fw"></i></label>
+      	</div>
+      	<div class="large-4 medium-4 small-8 cell">
+              <input type="text" name="CoreAttributes_JoinFrom" id="CoreAttributes_JoinFrom" value="<%=GetFieldValue(dtCoreAttributes, "CoreAttributes_JoinFrom")%>" size="100" />
+      	</div>
+      </div>
+      <div class="grid-x grid-padding-x">
+      	<div class="large-2 medium-2 small-4 cell">
+      		<label for="CoreAttributes_JoinText" class="large-text-right small-text-left middle">Join SQL Fields to select</label>
+      	</div>
+      	<div class="large-4 medium-4 small-8 cell">
+          	<input type="text" name="CoreAttributes_JoinText" id="CoreAttributes_JoinText" value="<%=GetFieldValue(dtCoreAttributes, "CoreAttributes_JoinText")%>" size="100" />
+      	</div>
+      	<div class="large-2 medium-2 small-4 cell">
+      		<label for="CoreAttributes_JoinOrder" class="large-text-right small-text-left middle">Join SQL Order</label>
+      	</div>
+      	<div class="large-4 medium-4 small-8 cell">
+              <input type="text" name="CoreAttributes_JoinOrder" id="CoreAttributes_JoinOrder" value="<%=GetFieldValue(dtCoreAttributes, "CoreAttributes_JoinOrder")%>" size="100" />
+      	</div>
+      </div>
+      
+      <div class="grid-x grid-padding-x">
+      	<div class="large-2 medium-2 small-4 cell">
+      		<label for="CoreAttributes_JoinIconField" class="large-text-right small-text-left middle">Join Icon field <i class="fa-duotone fa-table fa-fw"></i></label>
+      	</div>
+      	<div class="large-4 medium-4 small-8 cell">
+              <input type="text" name="CoreAttributes_JoinIconField" id="CoreAttributes_JoinIconField" value="<%=GetFieldValue(dtCoreAttributes, "CoreAttributes_JoinIconField")%>" size="100" />
+      	</div>
+      	<div class="large-2 medium-2 small-4 cell">
+      		<label for="CoreAttributes_JoinKey" class="large-text-right small-text-left middle">Join table key <i class="fa-duotone fa-key fa-fw"></i></label>
+      	</div>
+      	<div class="large-4 medium-4 small-8 cell">
+              <input type="text" name="CoreAttributes_JoinKey" id="CoreAttributes_JoinKey" value="<%=GetFieldValue(dtCoreAttributes, "CoreAttributes_JoinKey")%>" size="100" />
+      	</div>
+      </div>
+      
+      
+      <div class="grid-x grid-padding-x">
+      	<div class="large-2 medium-2 small-4 cell">
+      		<label for="CoreAttributes_JoinWhere" class="large-text-right small-text-left middle">Join SQL Where <i class="fa-duotone fa-filter fa-fw"></i></label>
+      	</div>
+      	<div class="large-10 medium-10 small-8 cell">
+              <input type="text" name="CoreAttributes_JoinWhere" id="CoreAttributes_JoinWhere" value="<%=GetFieldValue(dtCoreAttributes, "CoreAttributes_JoinWhere")%>" size="100" />
+      	</div>
+      </div>
+</fieldset>
+
+<fieldset class="fieldset">
+    <legend>javascript</legend>
+    <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="CoreAttributes_EventOn" class="large-text-right small-text-left middle">Event On <i class="fa-duotone fa-table fa-fw"></i></label>
+    	</div>
+    	<div class="large-10 medium-10 small-8 cell">
+            <select name="CoreAttributes_EventOn" id="CoreAttributes_EventOn" title="Event" value="<%=GetFieldValue(dtCoreAttributes, "CoreAttributes_EventOn")%>">
+              <option value="">Nessun evento</option>
+              <option value="onchange">onchange</option>
+              <option value="onblur">onblur</option>
+              <option value="onfocus">onfocus</option>
+              <option value="oninput">oninput</option>
+              <option value="onsubmit">onsubmit</option>
+            </select>
+            <script type="text/javascript">
+              selectSet('CoreAttributes_EventOn', '<%=GetFieldValue(dtCoreAttributes, "CoreAttributes_EventOn")%>');
+            </script>
+    	</div>
+    </div>
+    
+    <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="CoreAttributes_EventAction" class="large-text-right small-text-left middle">Event action</label>
+    	</div>
+    	<div class="large-10 medium-10 small-8 cell">
+            <textarea name="CoreAttributes_EventAction" id="CoreAttributes_EventAction" Rows="5"><%=GetFieldValue(dtCoreAttributes, "CoreAttributes_EventAction")%></textarea>
+    	</div>
+    </div>
+    
+</fieldset>
+
+
+
+
+

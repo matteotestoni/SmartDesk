@@ -1,0 +1,35 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CoreAttributesFormat" Type="TABLE">
+    <Keys>
+      <Key Column="CoreAttributesFormat_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CoreAttributesFormat_Ky" IsNull="N" Type="int" />
+      <Field Column="CoreAttributesType_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreAttributesFormat_Format" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreAttributesFormat_Code" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreAttributesFormat_Icon" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreAttributesFormat_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CoreAttributesFormat_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CoreAttributesFormat_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CoreAttributesFormat_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CoreAttributesFormat_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CoreAttributesFormat_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CoreAttributesFormat] (
+  [CoreAttributesFormat_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CoreAttributesType_Ky] int  NULL , 
+  [CoreAttributesFormat_Format] varchar(100)  NULL , 
+  [CoreAttributesFormat_Code] varchar(100)  NULL , 
+  [CoreAttributesFormat_Icon] varchar(100)  NULL , 
+  [CoreAttributesFormat_UserInsert] int  NULL , 
+  [CoreAttributesFormat_UserUpdate] int  NULL , 
+  [CoreAttributesFormat_UserDelete] int  NULL , 
+  [CoreAttributesFormat_DateInsert] datetime  NULL , 
+  [CoreAttributesFormat_DateUpdate] datetime  NULL , 
+  [CoreAttributesFormat_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[CoreAttributesFormat] ADD CONSTRAINT PK_CoreAttributesFormat PRIMARY KEY  ([CoreAttributesFormat_Ky])
+</SqlScriptCreate>
+</SqlTable>

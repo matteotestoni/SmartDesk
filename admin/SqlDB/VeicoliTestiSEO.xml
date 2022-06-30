@@ -1,0 +1,61 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliTestiSEO" Type="TABLE">
+    <Keys>
+      <Key Column="VeicoliTestiSEO_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="VeicoliTestiSEO_Ky" IsNull="N" Type="int" />
+      <Field Column="VeicoliMarca_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="VeicoliModello_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="VeicoliCategoria_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliTestiSEO_Title" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="VeicoliTestiSEO_Description" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="VeicoliTestiSEO_Keywords" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="VeicoliTestiSEO_Titolo" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="VeicoliTestiSEO_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="VeicoliCarburante_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliCarrozzeria_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Comuni_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliCambio_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliTestiSEO_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="VeicoliTestiSEO_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="VeicoliTestiSEO_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="VeicoliTestiSEO_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliTestiSEO_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliTestiSEO_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliTestiSEO_Neopatentati" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliTestiSEO_Topcar" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliTestiSEO_Ecologiche" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[VeicoliTestiSEO] (
+  [VeicoliTestiSEO_Ky] int IDENTITY(1,1) NOT NULL , 
+  [VeicoliMarca_Ky] smallint  NULL , 
+  [VeicoliModello_Ky] smallint  NULL , 
+  [VeicoliCategoria_Ky] tinyint  NULL , 
+  [VeicoliTestiSEO_Title] varchar(MAX)  NULL , 
+  [VeicoliTestiSEO_Description] varchar(MAX)  NULL , 
+  [VeicoliTestiSEO_Keywords] varchar(MAX)  NULL , 
+  [VeicoliTestiSEO_Titolo] varchar(MAX)  NULL , 
+  [VeicoliTestiSEO_Descrizione] varchar(MAX)  NULL , 
+  [VeicoliCarburante_Ky] tinyint  NULL , 
+  [VeicoliCarrozzeria_Ky] tinyint  NULL , 
+  [Comuni_Ky] int  NULL , 
+  [VeicoliCambio_Ky] tinyint  NULL , 
+  [VeicoliTestiSEO_UserInsert] int  NULL , 
+  [VeicoliTestiSEO_UserUpdate] int  NULL , 
+  [VeicoliTestiSEO_UserDelete] int  NULL , 
+  [VeicoliTestiSEO_DateInsert] datetime  NULL , 
+  [VeicoliTestiSEO_DateUpdate] datetime  NULL , 
+  [VeicoliTestiSEO_DateDelete] datetime  NULL , 
+  [VeicoliTestiSEO_Neopatentati] bit  NULL , 
+  [VeicoliTestiSEO_Topcar] bit  NULL , 
+  [VeicoliTestiSEO_Ecologiche] bit  NULL , 
+  [VeicoliTipo_Ky] tinyint  NULL , 
+  [Lingue_Ky] tinyint  NULL  )
+ALTER TABLE [dbo].[VeicoliTestiSEO] ADD CONSTRAINT PK_VeicoliTestiSEO PRIMARY KEY  ([VeicoliTestiSEO_Ky])
+</SqlScriptCreate>
+</SqlTable>

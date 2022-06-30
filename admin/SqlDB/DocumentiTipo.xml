@@ -1,0 +1,39 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="DocumentiTipo" Type="TABLE">
+    <Keys>
+      <Key Column="DocumentiTipo_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="DocumentiTipo_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="DocumentiTipo_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="DocumentiTipo_Segno" IsNull="Y" Type="varchar" Lenght="1" />
+      <Field Column="DocumentiTipo_Report" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="DocumentiTipo_Contatore" IsNull="Y" Type="smallint" />
+      <Field Column="DocumentiTipo_Ordine" IsNull="Y" Type="smallint" />
+      <Field Column="DocumentiTipo_Codice" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="DocumentiTipo_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="DocumentiTipo_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="DocumentiTipo_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="DocumentiTipo_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="DocumentiTipo_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="DocumentiTipo_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[DocumentiTipo] (
+  [DocumentiTipo_Ky] tinyint IDENTITY(1,1) NOT NULL , 
+  [DocumentiTipo_Descrizione] varchar(100)  NULL , 
+  [DocumentiTipo_Segno] varchar(1)  NULL , 
+  [DocumentiTipo_Report] varchar(200)  NULL , 
+  [DocumentiTipo_Contatore] smallint  NULL , 
+  [DocumentiTipo_Ordine] smallint  NULL , 
+  [DocumentiTipo_Codice] varchar(100)  NULL , 
+  [DocumentiTipo_UserInsert] int  NULL , 
+  [DocumentiTipo_UserUpdate] int  NULL , 
+  [DocumentiTipo_UserDelete] int  NULL , 
+  [DocumentiTipo_DateInsert] datetime  NULL , 
+  [DocumentiTipo_DateUpdate] datetime  NULL , 
+  [DocumentiTipo_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[DocumentiTipo] ADD CONSTRAINT PK_DocumentiTipo PRIMARY KEY  ([DocumentiTipo_Ky])
+</SqlScriptCreate>
+</SqlTable>

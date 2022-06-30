@@ -1,0 +1,203 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Prodotti_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Prodotti_Ky" IsNull="N" Type="int" />
+      <Field Column="Prodotti_Padre" IsNull="Y" Type="int" />
+      <Field Column="Prodotti_Codice" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Prodotti_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Prodotti_Sottotitolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Prodotti_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Prodotti_Prezzo" IsNull="Y" Type="decimal" Lenght="10" Decimal="2" />
+      <Field Column="Prodotti_PubblicaWEB" IsNull="Y" Type="bit" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Prodotti_InVetrina" IsNull="Y" Type="bit" />
+      <Field Column="Prodotti_InOfferta" IsNull="Y" Type="bit" />
+      <Field Column="ProdottiCategorie_Ky" IsNull="Y" Type="int" />
+      <Field Column="ProdottiDisponibilita_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Prodotti_Qta" IsNull="Y" Type="int" />
+      <Field Column="AliquoteIVA_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Prodotti_Ordine" IsNull="Y" Type="int" />
+      <Field Column="Prodotti_Foto1" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Prodotti_Foto1s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="ProdottiCategorie_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="ProdottiDisponibilita_Descrizione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Prodotti_Note" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Prodotti_Documento1" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Prodotti_Documento2" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Prodotti_Documento3" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Prodotti_Foto2" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Prodotti_Foto2s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Prodotti_Foto3" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Prodotti_Foto4" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Prodotti_Foto3s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Prodotti_Foto4s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Prodotti_Foto5" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Prodotti_Foto5s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Prodotti_Foto6" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Prodotti_Foto6s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Prodotti_Foto7" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Prodotti_Foto7s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Prodotti_Foto8" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Prodotti_Foto8s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Prodotti_Foto9" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Prodotti_Foto9s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Prodotti_Foto10" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Prodotti_Foto10s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Prodotti_Outlet" IsNull="Y" Type="bit" />
+      <Field Column="Prodotti_PrezzoSpeciale" IsNull="Y" Type="decimal" Lenght="10" Decimal="2" />
+      <Field Column="Prodotti_PrezzoSpecialeAl" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Prodotti_PrezzoSpecialeDal" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Prodotti_CodicePadre" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="AnagraficheCategorie_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Prodotti_Documento4" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Prodotti_Documento5" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Prodotti_PrezzoSpecialeDal_IT" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="Prodotti_PrezzoSpecialeAl_IT" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="Produttori_Ky" IsNull="Y" Type="int" />
+      <Field Column="Prodotti_PrezzoSpecialeDal_EN" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="Prodotti_PrezzoSpecialeAl_EN" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="Prodotti_InPromozione" IsNull="Y" Type="bit" />
+      <Field Column="Produttori_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Anagrafiche_Indirizzo" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Anagrafiche_CAP" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Anagrafiche_Comune" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Anagrafiche_Provincia" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Anagrafiche_Telefono" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_EmailContatti" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_SitoWeb" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="ProdottiConsegna_Ky" IsNull="Y" Type="int" />
+      <Field Column="ProdottiConsegna_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="ProdottiMontaggio_Ky" IsNull="Y" Type="int" />
+      <Field Column="ProdottiMontaggio_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Nazioni_Ky" IsNull="Y" Type="int" />
+      <Field Column="Prodotti_Peso" IsNull="Y" Type="float" />
+      <Field Column="Anagrafiche_Logo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Prodotti_Visite" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_Note" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="ProdottiCategorie_Url" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aziende_Ky" IsNull="Y" Type="int" />
+      <Field Column="Prodotti_DataInserimento" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Prodotti_DataAggiornamento" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Anagrafiche_Disdetto" IsNull="Y" Type="bit" />
+      <Field Column="Utenti_Email" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Prodotti_PrezzoPrivInOfferta" IsNull="Y" Type="bit" />
+      <Field Column="Prodotti_PrezzoProInOfferta" IsNull="Y" Type="bit" />
+      <Field Column="Prodotti_PrezzoRivInOfferta" IsNull="Y" Type="bit" />
+      <Field Column="Prodotti_PrezzoPrivOfferta" IsNull="Y" Type="money" />
+      <Field Column="Prodotti_PrezzoProOfferta" IsNull="Y" Type="money" />
+      <Field Column="Prodotti_PrezzoRivOfferta" IsNull="Y" Type="money" />
+      <Field Column="ProdottiCategorie_Padre" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheCategorie_Ky2" IsNull="Y" Type="smallint" />
+      <Field Column="Utenti_Iniziali" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="AttributiGruppi_Ky" IsNull="Y" Type="int" />
+      <Field Column="ProdottiMateriale_Ky" IsNull="Y" Type="int" />
+      <Field Column="ProdottiColore_Ky" IsNull="Y" Type="int" />
+      <Field Column="ProdottiColore_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="ProdottiMateriale_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="ProdottiMateriale_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Prodotti_UrlKey" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Prodotti_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Prodotti_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Prodotti_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Prodotti_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Prodotti_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Prodotti_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Prodotti_Caratteristiche" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Prodotti_Applicazioni" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Prodotti_Plus" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Prodotti_Faq" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Prodotti_Eancode" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="ProdottiTipo_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="ProdottiTipo_Codice" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="ProdottiTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Prodotti_DatiTecnici" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Prodotti_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Prodotti_Description" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Prodotti_Gruppo" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Prodotti_Packaging" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Prodotti_Video1" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Prodotti_Video2" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Prodotti_Video3" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Prodotti_Video4" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Prodotti_Video5" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Prodotti_Clearline" IsNull="Y" Type="bit" />
+      <Field Column="Prodotti_Video1Nome" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Prodotti_Video2Nome" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Prodotti_Video3Nome" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Prodotti_Video4Nome" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Prodotti_Video5Nome" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Prodotti_Documento1Nome" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Prodotti_Documento2Nome" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Prodotti_Documento3Nome" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Prodotti_Documento4Nome" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Prodotti_Documento5Nome" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Prodotti_Lunghezza" IsNull="Y" Type="float" />
+      <Field Column="Prodotti_Larghezza" IsNull="Y" Type="float" />
+      <Field Column="Prodotti_Altezza" IsNull="Y" Type="float" />
+      <Field Column="Prodotti_Tags" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Prodotti_CodiceProduttore" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Prodotti_Recensioni" IsNull="Y" Type="bit" />
+      <Field Column="Prodotti_Magazzino" IsNull="Y" Type="bit" />
+      <Field Column="Prodotti_QtaMin" IsNull="Y" Type="int" />
+      <Field Column="Prodotti_QtaMax" IsNull="Y" Type="int" />
+      <Field Column="Prodotti_SpedizioneGratuita" IsNull="Y" Type="bit" />
+      <Field Column="Prodotti_Robots" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="ProdottiVisibilita_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="ProdottiVisibilita_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="ProdottiVisibilita_Codice" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="CoreResponseCode_Title" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreResponseCode_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Prodotti_RedirectUrl" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Prodotti_Isbn" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Prodotti_Upc" IsNull="Y" Type="varchar" Lenght="50" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Prodotti_Vw
+AS
+SELECT        dbo.Prodotti.Prodotti_Ky, dbo.Prodotti.Prodotti_Padre, dbo.Prodotti.Prodotti_Codice, dbo.Prodotti.Prodotti_Titolo, dbo.Prodotti.Prodotti_Sottotitolo, dbo.Prodotti.Prodotti_Descrizione, CONVERT(DECIMAL(10, 2), 
+                         dbo.Prodotti.Prodotti_Prezzo) AS Prodotti_Prezzo, dbo.Prodotti.Prodotti_PubblicaWEB, dbo.Prodotti.Anagrafiche_Ky, dbo.Prodotti.Utenti_Ky, dbo.Prodotti.Prodotti_InVetrina, dbo.Prodotti.Prodotti_InOfferta, 
+                         dbo.Prodotti.ProdottiCategorie_Ky, dbo.Prodotti.ProdottiDisponibilita_Ky, dbo.Prodotti.Prodotti_Qta, dbo.Prodotti.AliquoteIVA_Ky, dbo.Prodotti.Prodotti_Ordine, dbo.Prodotti.Prodotti_Foto1, 
+                         dbo.Prodotti.Prodotti_Foto1s, dbo.ProdottiCategorie.ProdottiCategorie_Titolo, dbo.ProdottiDisponibilita.ProdottiDisponibilita_Descrizione, dbo.Anagrafiche.Anagrafiche_RagioneSociale, dbo.Prodotti.Prodotti_Note, 
+                         dbo.Prodotti.Prodotti_Documento1, dbo.Prodotti.Prodotti_Documento2, dbo.Prodotti.Prodotti_Documento3, dbo.Prodotti.Prodotti_Foto2, dbo.Prodotti.Prodotti_Foto2s, dbo.Prodotti.Prodotti_Foto3, 
+                         dbo.Prodotti.Prodotti_Foto4, dbo.Prodotti.Prodotti_Foto3s, dbo.Prodotti.Prodotti_Foto4s, dbo.Prodotti.Prodotti_Foto5, dbo.Prodotti.Prodotti_Foto5s, dbo.Prodotti.Prodotti_Foto6, dbo.Prodotti.Prodotti_Foto6s, 
+                         dbo.Prodotti.Prodotti_Foto7, dbo.Prodotti.Prodotti_Foto7s, dbo.Prodotti.Prodotti_Foto8, dbo.Prodotti.Prodotti_Foto8s, dbo.Prodotti.Prodotti_Foto9, dbo.Prodotti.Prodotti_Foto9s, dbo.Prodotti.Prodotti_Foto10, 
+                         dbo.Prodotti.Prodotti_Foto10s, dbo.Prodotti.Prodotti_Outlet, CONVERT(DECIMAL(10, 2), dbo.Prodotti.Prodotti_PrezzoSpeciale) AS Prodotti_PrezzoSpeciale, dbo.Prodotti.Prodotti_PrezzoSpecialeAl, 
+                         dbo.Prodotti.Prodotti_PrezzoSpecialeDal, dbo.Prodotti.Prodotti_CodicePadre, dbo.Prodotti.AnagraficheCategorie_Ky, dbo.Prodotti.Prodotti_Documento4, dbo.Prodotti.Prodotti_Documento5, CONVERT(varchar, 
+                         dbo.Prodotti.Prodotti_PrezzoSpecialeDal, 105) AS Prodotti_PrezzoSpecialeDal_IT, CONVERT(varchar, dbo.Prodotti.Prodotti_PrezzoSpecialeAl, 105) AS Prodotti_PrezzoSpecialeAl_IT, dbo.Prodotti.Produttori_Ky, 
+                         CONVERT(varchar, dbo.Prodotti.Prodotti_PrezzoSpecialeDal, 101) AS Prodotti_PrezzoSpecialeDal_EN, CONVERT(varchar, dbo.Prodotti.Prodotti_PrezzoSpecialeAl, 101) AS Prodotti_PrezzoSpecialeAl_EN, 
+                         dbo.Prodotti.Prodotti_InPromozione, dbo.Produttori.Produttori_Descrizione, dbo.Anagrafiche.Anagrafiche_Indirizzo, dbo.Anagrafiche.Anagrafiche_CAP, dbo.Anagrafiche.Anagrafiche_Comune, 
+                         dbo.Anagrafiche.Anagrafiche_Provincia, dbo.Anagrafiche.Anagrafiche_Telefono, dbo.Anagrafiche.Anagrafiche_EmailContatti, dbo.Anagrafiche.Anagrafiche_SitoWeb, dbo.Prodotti.ProdottiConsegna_Ky, 
+                         dbo.ProdottiConsegna.ProdottiConsegna_Descrizione, dbo.Prodotti.ProdottiMontaggio_Ky, dbo.ProdottiMontaggio.ProdottiMontaggio_Descrizione, dbo.Prodotti.Nazioni_Ky, dbo.Prodotti.Prodotti_Peso, 
+                         dbo.Anagrafiche.Anagrafiche_Logo, dbo.Prodotti.Prodotti_Visite, dbo.Anagrafiche.Anagrafiche_Note, dbo.ProdottiCategorie.ProdottiCategorie_Url, dbo.Prodotti.Aziende_Ky, dbo.Prodotti.Prodotti_DataInserimento, 
+                         dbo.Prodotti.Prodotti_DataAggiornamento, dbo.Anagrafiche.Anagrafiche_Disdetto, dbo.Utenti.Utenti_Email, dbo.Prodotti.Prodotti_PrezzoPrivInOfferta, dbo.Prodotti.Prodotti_PrezzoProInOfferta, 
+                         dbo.Prodotti.Prodotti_PrezzoRivInOfferta, dbo.Prodotti.Prodotti_PrezzoPrivOfferta, dbo.Prodotti.Prodotti_PrezzoProOfferta, dbo.Prodotti.Prodotti_PrezzoRivOfferta, dbo.ProdottiCategorie.ProdottiCategorie_Padre, 
+                         dbo.Prodotti.AnagraficheCategorie_Ky2, dbo.Utenti.Utenti_Iniziali, dbo.Prodotti.AttributiGruppi_Ky, dbo.Prodotti.ProdottiMateriale_Ky, dbo.Prodotti.ProdottiColore_Ky, dbo.ProdottiColore.ProdottiColore_Titolo, 
+                         dbo.ProdottiMateriale.ProdottiMateriale_Titolo, dbo.ProdottiMateriale.ProdottiMateriale_Descrizione, dbo.Prodotti.Prodotti_UrlKey, dbo.Prodotti.Prodotti_UserInsert, dbo.Prodotti.Prodotti_UserUpdate, 
+                         dbo.Prodotti.Prodotti_UserDelete, dbo.Prodotti.Prodotti_DateInsert, dbo.Prodotti.Prodotti_DateUpdate, dbo.Prodotti.Prodotti_DateDelete, dbo.Prodotti.Prodotti_Caratteristiche, dbo.Prodotti.Prodotti_Applicazioni, 
+                         dbo.Prodotti.Prodotti_Plus, dbo.Prodotti.Prodotti_Faq, dbo.Prodotti.Prodotti_Eancode, dbo.ProdottiTipo.ProdottiTipo_Titolo, dbo.ProdottiTipo.ProdottiTipo_Codice, dbo.Prodotti.ProdottiTipo_Ky, 
+                         dbo.Prodotti.Prodotti_DatiTecnici, dbo.Prodotti.Prodotti_Title, dbo.Prodotti.Prodotti_Description, dbo.Prodotti.Prodotti_Gruppo, dbo.Prodotti.Prodotti_Packaging, dbo.Prodotti.Prodotti_Video1, 
+                         dbo.Prodotti.Prodotti_Video2, dbo.Prodotti.Prodotti_Video3, dbo.Prodotti.Prodotti_Video4, dbo.Prodotti.Prodotti_Video5, dbo.Prodotti.Prodotti_Clearline, dbo.Prodotti.Prodotti_Video1Nome, 
+                         dbo.Prodotti.Prodotti_Video2Nome, dbo.Prodotti.Prodotti_Video3Nome, dbo.Prodotti.Prodotti_Video4Nome, dbo.Prodotti.Prodotti_Video5Nome, dbo.Prodotti.Prodotti_Documento1Nome, 
+                         dbo.Prodotti.Prodotti_Documento2Nome, dbo.Prodotti.Prodotti_Documento3Nome, dbo.Prodotti.Prodotti_Documento4Nome, dbo.Prodotti.Prodotti_Documento5Nome, dbo.Prodotti.Prodotti_Lunghezza, 
+                         dbo.Prodotti.Prodotti_Larghezza, dbo.Prodotti.Prodotti_Altezza, dbo.Prodotti.Prodotti_Tags, dbo.Prodotti.Prodotti_CodiceProduttore, dbo.Prodotti.Prodotti_Recensioni, dbo.Prodotti.Prodotti_Magazzino, 
+                         dbo.Prodotti.Prodotti_QtaMin, dbo.Prodotti.Prodotti_QtaMax, dbo.Prodotti.Prodotti_SpedizioneGratuita, dbo.Prodotti.Prodotti_Robots, dbo.Prodotti.ProdottiVisibilita_Ky, dbo.ProdottiVisibilita.ProdottiVisibilita_Titolo, 
+                         dbo.ProdottiVisibilita.ProdottiVisibilita_Codice, dbo.CoreResponseCode.CoreResponseCode_Title, dbo.Prodotti.CoreResponseCode_Ky, dbo.Prodotti.Prodotti_RedirectUrl, dbo.Prodotti.Prodotti_Isbn, 
+                         dbo.Prodotti.Prodotti_Upc
+FROM            dbo.Prodotti LEFT OUTER JOIN
+                         dbo.CoreResponseCode ON dbo.Prodotti.CoreResponseCode_Ky = dbo.CoreResponseCode.CoreResponseCode_Ky LEFT OUTER JOIN
+                         dbo.ProdottiVisibilita ON dbo.Prodotti.ProdottiVisibilita_Ky = dbo.ProdottiVisibilita.ProdottiVisibilita_Ky LEFT OUTER JOIN
+                         dbo.ProdottiTipo ON dbo.Prodotti.ProdottiTipo_Ky = dbo.ProdottiTipo.ProdottiTipo_Ky LEFT OUTER JOIN
+                         dbo.ProdottiMateriale ON dbo.Prodotti.ProdottiMateriale_Ky = dbo.ProdottiMateriale.ProdottiMateriale_Ky LEFT OUTER JOIN
+                         dbo.ProdottiColore ON dbo.Prodotti.ProdottiColore_Ky = dbo.ProdottiColore.ProdottiColore_Ky LEFT OUTER JOIN
+                         dbo.Utenti ON dbo.Prodotti.Utenti_Ky = dbo.Utenti.Utenti_Ky LEFT OUTER JOIN
+                         dbo.ProdottiMontaggio ON dbo.Prodotti.ProdottiMontaggio_Ky = dbo.ProdottiMontaggio.ProdottiMontaggio_Ky LEFT OUTER JOIN
+                         dbo.ProdottiConsegna ON dbo.Prodotti.ProdottiConsegna_Ky = dbo.ProdottiConsegna.ProdottiConsegna_Ky LEFT OUTER JOIN
+                         dbo.Produttori ON dbo.Prodotti.Produttori_Ky = dbo.Produttori.Produttori_Ky LEFT OUTER JOIN
+                         dbo.Anagrafiche ON dbo.Prodotti.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky LEFT OUTER JOIN
+                         dbo.ProdottiCategorie ON dbo.Prodotti.ProdottiCategorie_Ky = dbo.ProdottiCategorie.ProdottiCategorie_Ky LEFT OUTER JOIN
+                         dbo.ProdottiDisponibilita ON dbo.Prodotti.ProdottiDisponibilita_Ky = dbo.ProdottiDisponibilita.ProdottiDisponibilita_Ky
+</SqlScriptCreate>
+</SqlTable>

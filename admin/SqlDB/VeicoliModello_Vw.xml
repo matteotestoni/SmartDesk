@@ -1,0 +1,46 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliModello_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="VeicoliModello_Ky" IsNull="N" Type="smallint" />
+      <Field Column="VeicoliModello_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliMarca_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="VeicoliModello_Foto" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="VeicoliMarca_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliModello_DescrizioneHTML" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliModello_Importante" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliTipo_Titolo" IsNull="Y" Type="varchar" Lenght="40" />
+      <Field Column="VeicoliModello_UrlKey" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliModello_Tipo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliMarca_UrlKey" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliTipo_UrlKey" IsNull="Y" Type="varchar" Lenght="40" />
+      <Field Column="VeicoliCarrozzeria_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliModello_Ordine" IsNull="Y" Type="int" />
+      <Field Column="VeicoliCarrozzeria_Descrizione" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="VeicoliModello_Premium" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliModello_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliModello_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliModello_Description" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliModello_Robots" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliModello_Dismesso" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliModello_KySostituto" IsNull="Y" Type="smallint" />
+      <Field Column="VeicoliMarca_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliModello_Km0" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliModello_Usato" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.VeicoliModello_Vw
+AS
+SELECT        dbo.VeicoliModello.VeicoliModello_Ky, dbo.VeicoliModello.VeicoliModello_Descrizione, dbo.VeicoliModello.VeicoliMarca_Ky, dbo.VeicoliModello.VeicoliModello_Foto, dbo.VeicoliMarca.VeicoliMarca_Descrizione, 
+                         dbo.VeicoliModello.VeicoliModello_DescrizioneHTML, dbo.VeicoliModello.VeicoliModello_Importante, dbo.VeicoliModello.VeicoliTipo_Ky, dbo.VeicoliTipo.VeicoliTipo_Titolo, 
+                         dbo.VeicoliModello.VeicoliModello_UrlKey, dbo.VeicoliModello.VeicoliModello_Tipo, dbo.VeicoliMarca.VeicoliMarca_UrlKey, dbo.VeicoliTipo.VeicoliTipo_UrlKey, dbo.VeicoliModello.VeicoliCarrozzeria_Ky, 
+                         dbo.VeicoliModello.VeicoliModello_Ordine, dbo.VeicoliCarrozzeria.VeicoliCarrozzeria_Descrizione, dbo.VeicoliModello.VeicoliModello_Premium, dbo.VeicoliModello.VeicoliModello_Titolo, 
+                         dbo.VeicoliModello.VeicoliModello_Title, dbo.VeicoliModello.VeicoliModello_Description, dbo.VeicoliModello.VeicoliModello_Robots, dbo.VeicoliModello.VeicoliModello_Dismesso, 
+                         dbo.VeicoliModello.VeicoliModello_KySostituto, dbo.VeicoliMarca.VeicoliMarca_Titolo, dbo.VeicoliModello.VeicoliModello_Km0, dbo.VeicoliModello.VeicoliModello_Usato
+FROM            dbo.VeicoliModello LEFT OUTER JOIN
+                         dbo.VeicoliCarrozzeria ON dbo.VeicoliModello.VeicoliCarrozzeria_Ky = dbo.VeicoliCarrozzeria.VeicoliCarrozzeria_Ky LEFT OUTER JOIN
+                         dbo.VeicoliTipo ON dbo.VeicoliModello.VeicoliTipo_Ky = dbo.VeicoliTipo.VeicoliTipo_Ky LEFT OUTER JOIN
+                         dbo.VeicoliMarca ON dbo.VeicoliModello.VeicoliMarca_Ky = dbo.VeicoliMarca.VeicoliMarca_Ky
+</SqlScriptCreate>
+</SqlTable>

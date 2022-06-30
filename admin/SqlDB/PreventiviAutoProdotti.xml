@@ -1,0 +1,35 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="PreventiviAutoProdotti" Type="TABLE">
+    <Keys>
+      <Key Column="PreventiviAutoProdotti_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="PreventiviAutoProdotti_Ky" IsNull="N" Type="int" />
+      <Field Column="PreventiviAuto_Ky" IsNull="Y" Type="int" />
+      <Field Column="Prodotti_Ky" IsNull="Y" Type="int" />
+      <Field Column="PreventiviAutoProdotti_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="PreventiviAutoProdotti_Prezzo" IsNull="Y" Type="money" />
+      <Field Column="PreventiviAutoProdotti_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="PreventiviAutoProdotti_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="PreventiviAutoProdotti_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="PreventiviAutoProdotti_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="PreventiviAutoProdotti_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="PreventiviAutoProdotti_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[PreventiviAutoProdotti] (
+  [PreventiviAutoProdotti_Ky] int IDENTITY(1,1) NOT NULL , 
+  [PreventiviAuto_Ky] int  NULL , 
+  [Prodotti_Ky] int  NULL , 
+  [PreventiviAutoProdotti_Descrizione] varchar(MAX)  NULL , 
+  [PreventiviAutoProdotti_Prezzo] money  NULL , 
+  [PreventiviAutoProdotti_UserInsert] int  NULL , 
+  [PreventiviAutoProdotti_UserUpdate] int  NULL , 
+  [PreventiviAutoProdotti_UserDelete] int  NULL , 
+  [PreventiviAutoProdotti_DateInsert] datetime  NULL , 
+  [PreventiviAutoProdotti_DateUpdate] datetime  NULL , 
+  [PreventiviAutoProdotti_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[PreventiviAutoProdotti] ADD CONSTRAINT PK_PreventiviAutoProdotti PRIMARY KEY  ([PreventiviAutoProdotti_Ky])
+</SqlScriptCreate>
+</SqlTable>

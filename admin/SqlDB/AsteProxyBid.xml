@@ -1,0 +1,39 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AsteProxyBid" Type="TABLE">
+    <Keys>
+      <Key Column="AsteProxyBid_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AsteProxyBid_Ky" IsNull="N" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="AsteProxyBid_ValoreMax" IsNull="Y" Type="money" />
+      <Field Column="Annunci_Ky" IsNull="Y" Type="int" />
+      <Field Column="Aste_Ky" IsNull="Y" Type="int" />
+      <Field Column="AsteEsperimenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="AsteProxyBid_Data" IsNull="Y" Type="datetime" />
+      <Field Column="AsteProxyBid_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AsteProxyBid_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AsteProxyBid_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AsteProxyBid_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AsteProxyBid_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AsteProxyBid_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AsteProxyBid] (
+  [AsteProxyBid_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [AsteProxyBid_ValoreMax] money  NULL , 
+  [Annunci_Ky] int  NULL , 
+  [Aste_Ky] int  NULL , 
+  [AsteEsperimenti_Ky] int  NULL , 
+  [AsteProxyBid_Data] datetime  NULL DEFAULT (getdate()), 
+  [AsteProxyBid_UserInsert] int  NULL , 
+  [AsteProxyBid_UserUpdate] int  NULL , 
+  [AsteProxyBid_UserDelete] int  NULL , 
+  [AsteProxyBid_DateInsert] datetime  NULL DEFAULT (getdate()), 
+  [AsteProxyBid_DateUpdate] datetime  NULL DEFAULT (getdate()), 
+  [AsteProxyBid_DateDelete] datetime  NULL DEFAULT (getdate()) )
+ALTER TABLE [dbo].[AsteProxyBid] ADD CONSTRAINT PK_AsteProxyBid PRIMARY KEY  ([AsteProxyBid_Ky])
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,33 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="PersoneAssenzeTipo" Type="TABLE">
+    <Keys>
+      <Key Column="PersoneAssenzeTipo_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="PersoneAssenzeTipo_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="PersoneAssenzeTipo_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="PersoneAssenzeTipo_Tipo" IsNull="Y" Type="bit" />
+      <Field Column="PersoneAssenzeTipo_Segno" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="PersoneAssenzeTipo_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="PersoneAssenzeTipo_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="PersoneAssenzeTipo_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="PersoneAssenzeTipo_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="PersoneAssenzeTipo_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="PersoneAssenzeTipo_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[PersoneAssenzeTipo] (
+  [PersoneAssenzeTipo_Ky] tinyint IDENTITY(1,1) NOT NULL , 
+  [PersoneAssenzeTipo_Descrizione] varchar(100)  NULL , 
+  [PersoneAssenzeTipo_Tipo] bit  NULL , 
+  [PersoneAssenzeTipo_Segno] varchar(10)  NULL , 
+  [PersoneAssenzeTipo_UserInsert] int  NULL , 
+  [PersoneAssenzeTipo_UserUpdate] int  NULL , 
+  [PersoneAssenzeTipo_UserDelete] int  NULL , 
+  [PersoneAssenzeTipo_DateInsert] datetime  NULL , 
+  [PersoneAssenzeTipo_DateUpdate] datetime  NULL , 
+  [PersoneAssenzeTipo_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[PersoneAssenzeTipo] ADD CONSTRAINT PK_PersoneAssenzeTipo PRIMARY KEY  ([PersoneAssenzeTipo_Ky])
+</SqlScriptCreate>
+</SqlTable>

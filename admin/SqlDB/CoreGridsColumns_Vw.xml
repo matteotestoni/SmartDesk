@@ -1,0 +1,43 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CoreGridsColumns_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="CoreGridsColumns_Ky" IsNull="N" Type="int" />
+      <Field Column="CoreGrids_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreAttributes_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreAttributes_Code" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreGridsColumns_Width" IsNull="Y" Type="int" />
+      <Field Column="CoreGridsColumns_Order" IsNull="Y" Type="int" />
+      <Field Column="CoreGridsColumns_Renderer" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreAttributes_Title" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreAttributes_Label" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreAttributesType_Code" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreAttributesType_Icon" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreAttributesType_Type" IsNull="N" Type="int" />
+      <Field Column="CoreModules_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreGridsColumns_Link" IsNull="Y" Type="bit" />
+      <Field Column="CoreGrids_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreAttributesType_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreAttributesFormat_Format" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreAttributesFormat_Code" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreAttributesFormat_Icon" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreGridsColumns_Label" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreAttributes_EventOn" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreAttributes_EventAction" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.CoreGridsColumns_Vw
+AS
+SELECT        dbo.CoreGridsColumns.CoreGridsColumns_Ky, dbo.CoreGridsColumns.CoreGrids_Ky, dbo.CoreGridsColumns.CoreAttributes_Ky, dbo.CoreAttributes.CoreAttributes_Code, 
+                         dbo.CoreGridsColumns.CoreGridsColumns_Width, dbo.CoreGridsColumns.CoreGridsColumns_Order, dbo.CoreGridsColumns.CoreGridsColumns_Renderer, dbo.CoreAttributes.CoreAttributes_Title, 
+                         dbo.CoreAttributes.CoreAttributes_Label, dbo.CoreAttributesType.CoreAttributesType_Code, dbo.CoreAttributesType.CoreAttributesType_Icon, dbo.CoreAttributesType.CoreAttributesType_Type, 
+                         dbo.CoreAttributes.CoreModules_Ky, dbo.CoreGridsColumns.CoreGridsColumns_Link, dbo.CoreGrids.CoreGrids_Title, dbo.CoreAttributes.CoreAttributesType_Ky, 
+                         dbo.CoreAttributesFormat.CoreAttributesFormat_Format, dbo.CoreAttributesFormat.CoreAttributesFormat_Code, dbo.CoreAttributesFormat.CoreAttributesFormat_Icon, 
+                         dbo.CoreGridsColumns.CoreGridsColumns_Label, dbo.CoreAttributes.CoreAttributes_EventOn, dbo.CoreAttributes.CoreAttributes_EventAction
+FROM            dbo.CoreGridsColumns INNER JOIN
+                         dbo.CoreAttributes ON dbo.CoreGridsColumns.CoreAttributes_Ky = dbo.CoreAttributes.CoreAttributes_Ky INNER JOIN
+                         dbo.CoreAttributesType ON dbo.CoreAttributes.CoreAttributesType_Ky = dbo.CoreAttributesType.CoreAttributesType_Ky INNER JOIN
+                         dbo.CoreGrids ON dbo.CoreGridsColumns.CoreGrids_Ky = dbo.CoreGrids.CoreGrids_Ky LEFT OUTER JOIN
+                         dbo.CoreAttributesFormat ON dbo.CoreAttributes.CoreAttributesFormat_Ky = dbo.CoreAttributesFormat.CoreAttributesFormat_Ky
+</SqlScriptCreate>
+</SqlTable>

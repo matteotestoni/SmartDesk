@@ -1,0 +1,19 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Lead_Prospetto_utmsource_Utmmedium_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Lead_Ky" IsNull="Y" Type="int" />
+      <Field Column="conteggio" IsNull="Y" Type="int" />
+      <Field Column="mese" IsNull="Y" Type="int" />
+      <Field Column="anno" IsNull="Y" Type="int" />
+      <Field Column="utm_medium" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_source" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Lead_Prospetto_utmsource_Utmmedium_Vw
+AS
+SELECT        MAX(Lead_Ky) AS Lead_Ky, COUNT(Lead_Ky) AS conteggio, MONTH(Lead_Data) AS mese, YEAR(Lead_Data) AS anno, utm_medium, utm_source
+FROM            dbo.Lead
+GROUP BY YEAR(Lead_Data), MONTH(Lead_Data), utm_medium, utm_source
+</SqlScriptCreate>
+</SqlTable>

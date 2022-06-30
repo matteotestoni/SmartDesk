@@ -1,0 +1,43 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="TimeZones" Type="TABLE">
+    <Keys>
+      <Key Column="TimeZones_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="TimeZones_Ky" IsNull="N" Type="int" />
+      <Field Column="TimeZones_CountryCode" IsNull="Y" Type="varchar" Lenght="2" />
+      <Field Column="TimeZones_Coordinates" IsNull="Y" Type="varchar" Lenght="15" />
+      <Field Column="TimeZones_TimeZone" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="TimeZones_Comments" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="TimeZones_Format" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="TimeZones_UTCoffset" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="TimeZones_UTCDSToffset" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="TimeZones_Notes" IsNull="Y" Type="varchar" Lenght="255" />
+      <Field Column="TimeZones_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="TimeZones_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="TimeZones_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="TimeZones_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="TimeZones_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="TimeZones_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[TimeZones] (
+  [TimeZones_Ky] int IDENTITY(1,1) NOT NULL , 
+  [TimeZones_CountryCode] varchar(2)  NULL , 
+  [TimeZones_Coordinates] varchar(15)  NULL , 
+  [TimeZones_TimeZone] varchar(100)  NULL , 
+  [TimeZones_Comments] varchar(100)  NULL , 
+  [TimeZones_Format] varchar(20)  NULL , 
+  [TimeZones_UTCoffset] varchar(10)  NULL , 
+  [TimeZones_UTCDSToffset] varchar(10)  NULL , 
+  [TimeZones_Notes] varchar(255)  NULL , 
+  [TimeZones_UserInsert] int  NULL , 
+  [TimeZones_UserUpdate] int  NULL , 
+  [TimeZones_UserDelete] int  NULL , 
+  [TimeZones_DateInsert] datetime  NULL , 
+  [TimeZones_DateUpdate] datetime  NULL , 
+  [TimeZones_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[TimeZones] ADD CONSTRAINT PK_TimeZones PRIMARY KEY  ([TimeZones_Ky])
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,33 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AttributiTipo" Type="TABLE">
+    <Keys>
+      <Key Column="AttributiTipo_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AttributiTipo_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="AttributiTipo_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AttributiTipo_Codice" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AttributiTipo_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AttributiTipo_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AttributiTipo_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AttributiTipo_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AttributiTipo_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AttributiTipo_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="AttributiTipo_Icona" IsNull="Y" Type="varchar" Lenght="100" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AttributiTipo] (
+  [AttributiTipo_Ky] tinyint  NOT NULL , 
+  [AttributiTipo_Titolo] varchar(100)  NULL , 
+  [AttributiTipo_Codice] varchar(100)  NULL , 
+  [AttributiTipo_UserInsert] int  NULL , 
+  [AttributiTipo_UserUpdate] int  NULL , 
+  [AttributiTipo_UserDelete] int  NULL , 
+  [AttributiTipo_DateInsert] datetime  NULL , 
+  [AttributiTipo_DateUpdate] datetime  NULL , 
+  [AttributiTipo_DateDelete] datetime  NULL , 
+  [AttributiTipo_Icona] varchar(100)  NULL  )
+ALTER TABLE [dbo].[AttributiTipo] ADD CONSTRAINT PK_AttributiTipo PRIMARY KEY  ([AttributiTipo_Ky])
+</SqlScriptCreate>
+</SqlTable>

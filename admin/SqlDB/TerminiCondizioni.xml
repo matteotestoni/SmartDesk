@@ -1,0 +1,39 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="TerminiCondizioni" Type="TABLE">
+    <Keys>
+      <Key Column="TerminiCondizioni_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="TerminiCondizioni_Ky" IsNull="N" Type="int" />
+      <Field Column="TerminiCondizioni_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="TerminiCondizioni_Abilitato" IsNull="Y" Type="bit" />
+      <Field Column="TerminiCondizioni_TestoAccettazione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="TerminiCondizioni_Contenuto" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Negozi_Ky" IsNull="Y" Type="int" />
+      <Field Column="TerminiCondizioni_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="TerminiCondizioni_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="TerminiCondizioni_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="TerminiCondizioni_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="TerminiCondizioni_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="TerminiCondizioni_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[TerminiCondizioni] (
+  [TerminiCondizioni_Ky] int IDENTITY(1,1) NOT NULL , 
+  [TerminiCondizioni_Titolo] varchar(200)  NULL , 
+  [TerminiCondizioni_Abilitato] bit  NULL , 
+  [TerminiCondizioni_TestoAccettazione] varchar(MAX)  NULL , 
+  [TerminiCondizioni_Contenuto] varchar(MAX)  NULL , 
+  [Lingue_Ky] tinyint  NULL , 
+  [Negozi_Ky] int  NULL , 
+  [TerminiCondizioni_UserInsert] int  NULL , 
+  [TerminiCondizioni_UserUpdate] int  NULL , 
+  [TerminiCondizioni_UserDelete] int  NULL , 
+  [TerminiCondizioni_DateInsert] datetime  NULL , 
+  [TerminiCondizioni_DateUpdate] datetime  NULL , 
+  [TerminiCondizioni_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[TerminiCondizioni] ADD CONSTRAINT PK_TerminiCondizioni PRIMARY KEY  ([TerminiCondizioni_Ky])
+</SqlScriptCreate>
+</SqlTable>

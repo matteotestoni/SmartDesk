@@ -1,0 +1,39 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="LeadSorgenti" Type="TABLE">
+    <Keys>
+      <Key Column="LeadSorgenti_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="LeadSorgenti_Ky" IsNull="N" Type="int" />
+      <Field Column="LeadSorgenti_Titolo" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="LeadSorgenti_Default" IsNull="Y" Type="bit" />
+      <Field Column="LeadSorgenti_Codice" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="LeadSorgenti_Ordine" IsNull="Y" Type="int" />
+      <Field Column="LeadSorgenti_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="LeadSorgenti_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="LeadSorgenti_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="LeadSorgenti_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="LeadSorgenti_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="LeadSorgenti_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="LeadSorgenti_Icona" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="LeadTipo_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[LeadSorgenti] (
+  [LeadSorgenti_Ky] int IDENTITY(1,1) NOT NULL , 
+  [LeadSorgenti_Titolo] varchar(MAX)  NULL , 
+  [LeadSorgenti_Default] bit  NULL , 
+  [LeadSorgenti_Codice] varchar(MAX)  NULL , 
+  [LeadSorgenti_Ordine] int  NULL , 
+  [LeadSorgenti_UserInsert] int  NULL , 
+  [LeadSorgenti_UserUpdate] int  NULL , 
+  [LeadSorgenti_UserDelete] int  NULL , 
+  [LeadSorgenti_DateInsert] datetime  NULL , 
+  [LeadSorgenti_DateUpdate] datetime  NULL , 
+  [LeadSorgenti_DateDelete] datetime  NULL , 
+  [LeadSorgenti_Icona] varchar(100)  NULL , 
+  [LeadTipo_Ky] int  NULL  )
+ALTER TABLE [dbo].[LeadSorgenti] ADD CONSTRAINT PK_LeadSorgenti PRIMARY KEY  ([LeadSorgenti_Ky])
+</SqlScriptCreate>
+</SqlTable>

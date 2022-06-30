@@ -1,0 +1,37 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="LeadCategorie" Type="TABLE">
+    <Keys>
+      <Key Column="LeadCategorie_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="LeadCategorie_Ky" IsNull="N" Type="int" />
+      <Field Column="LeadCategorie_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="LeadCategorie_Codice" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="LeadCategorie_Default" IsNull="Y" Type="bit" />
+      <Field Column="LeadCategorie_Ordine" IsNull="Y" Type="int" />
+      <Field Column="LeadCategorie_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="LeadCategorie_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="LeadCategorie_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="LeadCategorie_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="LeadCategorie_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="LeadCategorie_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="LeadCategorie_Attiva" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[LeadCategorie] (
+  [LeadCategorie_Ky] int IDENTITY(1,1) NOT NULL , 
+  [LeadCategorie_Titolo] varchar(100)  NULL , 
+  [LeadCategorie_Codice] varchar(100)  NULL , 
+  [LeadCategorie_Default] bit  NULL , 
+  [LeadCategorie_Ordine] int  NULL , 
+  [LeadCategorie_UserInsert] int  NULL , 
+  [LeadCategorie_UserUpdate] int  NULL , 
+  [LeadCategorie_UserDelete] int  NULL , 
+  [LeadCategorie_DateInsert] datetime  NULL , 
+  [LeadCategorie_DateUpdate] datetime  NULL , 
+  [LeadCategorie_DateDelete] datetime  NULL , 
+  [LeadCategorie_Attiva] bit  NULL  )
+ALTER TABLE [dbo].[LeadCategorie] ADD CONSTRAINT PK_LeadCategorie PRIMARY KEY  ([LeadCategorie_Ky])
+</SqlScriptCreate>
+</SqlTable>

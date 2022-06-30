@@ -1,0 +1,229 @@
+<div class="grid-x grid-padding-x">
+  <div class="large-2 medium-2 small-4 cell">
+		<label for="CoreGrids_Default" class="large-text-right small-text-left middle">Default</label>
+	</div>
+  <div class="large-2 medium-2 small-8 cell">
+		<div class="switch tiny">                                         
+    	<input class="switch-input" type="checkbox" name="CoreGrids_Default" id="CoreGrids_Default" value="on" <% if (GetCheckValue(dtCoreGrids,"CoreGrids_Default")){ Response.Write("checked");} %> />
+			<label class="switch-paddle" for="CoreGrids_Default">
+				<span class="show-for-sr">Default</span>
+				<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+				<span class="switch-inactive" aria-hidden="true"></span>
+			</label>
+		</div>                                            
+	</div>
+  <div class="large-2 medium-2 small-4 cell">
+		<label for="CoreGrids_Custom" class="large-text-right small-text-left middle">Custom</label>
+	</div>
+  <div class="large-2 medium-2 small-8 cell">
+		<div class="switch tiny">                                         
+    	<input class="switch-input" type="checkbox" name="CoreGrids_Custom" id="CoreGrids_Custom" value="on" <% if (GetCheckValue(dtCoreGrids,"CoreGrids_Custom")){ Response.Write("checked");} %> />
+			<label class="switch-paddle" for="CoreGrids_Custom">
+				<span class="show-for-sr">Custom</span>
+				<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+				<span class="switch-inactive" aria-hidden="true"></span>
+			</label>
+		</div>                                            
+	</div>
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="CoreGrids_Order" class="large-text-right small-text-left middle">Order</label>
+	</div>
+	<div class="large-2 medium-2 small-8 cell">
+    <input type="text" name="CoreGrids_Order" id="CoreGrids_Order" value="<%=GetFieldValue(dtCoreGrids, "CoreGrids_Order")%>" size="100" required="required" />
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="CoreGrids_Title" class="large-text-right small-text-left middle">Title <i class="fa-duotone fa-tag fa-fw"></i></label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+    <input type="text" name="CoreGrids_Title" id="CoreGrids_Title" value="<%=GetFieldValue(dtCoreGrids, "CoreGrids_Title")%>" size="100" required="required" />
+    <span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="CoreGrids_SQLFrom" class="large-text-right small-text-left middle">SQL From <i class="fa-duotone fa-tag fa-fw"></i></label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+    <input type="text" name="CoreGrids_SQLFrom" id="CoreGrids_SQLFrom" value="<%=GetFieldValue(dtCoreGrids, "CoreGrids_SQLFrom")%>" size="100" />
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="CoreGrids_SQLWhere" class="large-text-right small-text-left middle">SQL Where <i class="fa-duotone fa-tag fa-fw"></i></label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+    <input type="text" name="CoreGrids_SQLWhere" id="CoreGrids_SQLWhere" value="<%=GetFieldValue(dtCoreGrids, "CoreGrids_SQLWhere")%>" size="100" />
+    <span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="CoreGrids_SQLOrder" class="large-text-right small-text-left middle">SQL Order <i class="fa-duotone fa-tag fa-fw"></i></label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+    <input type="text" name="CoreGrids_SQLOrder" id="CoreGrids_SQLOrder" value="<%=GetFieldValue(dtCoreGrids, "CoreGrids_SQLOrder")%>" size="100" />
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="CoreGrids_Rows" class="large-text-right small-text-left middle">Rows</label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+    <input type="text" name="CoreGrids_Rows" id="CoreGrids_Rows" value="<%=GetFieldValue(dtCoreGrids, "CoreGrids_Rows")%>" size="4" required="required" />
+    <span class="form-error">Obbligatorio</span>
+	</div>
+    <div class="large-2 medium-2 small-4 cell">												
+      <label for="CoreForms_Ky" class="large-text-right small-text-left middle">Form di default</label>											
+    </div>				              
+    <div class="large-4 medium-4 small-8 cell">				                
+      <select name="CoreForms_Ky" id="CoreForms_Ky" value="<%=GetFieldValue(dtCoreGrids, "CoreForms_Ky")%>">
+        <option value=""></option>
+        <% 
+        if (strAzione != "new" && dtCoreForms.Rows.Count>0 ){
+          for (int j = 0; j < dtCoreForms.Rows.Count; j++){
+            Response.Write("<option value=\"" + dtCoreForms.Rows[j]["CoreForms_Ky"].ToString() + "\">" + dtCoreForms.Rows[j]["CoreForms_Title"].ToString() + "</option>");
+          }
+        }
+        %>
+      </select>
+      <span class="form-error">Obbligatorio.</span>
+      <script type="text/javascript">
+        selectSet('CoreForms_Ky', '<%=GetFieldValue(dtCoreGrids, "CoreForms_Ky")%>');
+      </script>
+    </div>		
+</div>
+
+
+<div class="grid-x grid-padding-x hide">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="builder-import_export" class="large-text-right small-text-left middle">Builder</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <div id="builder-import_export"></div>
+	</div>
+</div>
+
+
+
+
+
+<script>
+var sql_import_export = 'name LIKE "%Johnny%" AND (category = 2 OR in_stock = 1)';
+
+var mongo_import_export = {
+  "$and": [{
+    "price": { "$lt": 10.25 }
+  }, {
+    "$or": [{
+      "category": 2
+    }, {
+      "category": 1
+    }]
+  }]
+}
+
+jQuery('#builder-import_export').queryBuilder({
+  plugins: [
+    'sortable',
+    'unique-filter',
+    'bt-checkbox',
+    'invert',
+    'not-group'
+  ],
+
+  filters: [{
+    id: 'name',
+    label: 'Name',
+    type: 'string'
+  	}, {
+    id: 'category',
+    label: 'Category',
+    type: 'integer',
+    input: 'select',
+    values: {
+      1: 'Books',
+      2: 'Movies',
+      3: 'Music',
+      4: 'Tools',
+      5: 'Goodies',
+      6: 'Clothes'
+    },
+    operators: ['equal', 'not_equal', 'in', 'not_in', 'is_null', 'is_not_null']
+  }, {
+    id: 'in_stock',
+    label: 'In stock',
+    type: 'integer',
+    input: 'radio',
+    values: {
+      1: 'Yes',
+      0: 'No'
+    },
+    operators: ['equal']
+  }, {
+    id: 'price',
+    label: 'Price',
+    type: 'double',
+    validation: {
+      min: 0,
+      step: 0.01
+    }
+  }, {
+    id: 'id',
+    label: 'Identifier',
+    type: 'string',
+    placeholder: '____-____-____',
+    operators: ['equal', 'not_equal'],
+    validation: {
+      format: /^.{4}-.{4}-.{4}$/
+    }
+  }]
+});
+
+jQuery('#btn-reset').on('click', function() {
+  console.log("reset");
+	jQuery('#builder-import_export').queryBuilder('reset');
+});
+
+jQuery('#btn-set-sql').on('click', function() {
+  jQuery('#builder-import_export').queryBuilder('setRulesFromSQL', sql_import_export);
+});
+
+jQuery('#btn-set-mongo').on('click', function() {
+  jQuery('#builder-import_export').queryBuilder('setRulesFromMongo', mongo_import_export);
+});
+
+jQuery('#btn-get-sql').on('click', function() {
+  var result = jQuery('#builder-import_export').queryBuilder('getSQL', 'question_mark');
+
+  if (result.sql.length) {
+    alert(result.sql + '\n\n' + JSON.stringify(result.params, null, 2));
+  }
+});
+
+jQuery('#btn-get-mongo').on('click', function() {
+  var result = jQuery('#builder-import_export').queryBuilder('getMongo');
+
+  if (!jQuery.isEmptyObject(result)) {
+    alert(JSON.stringify(result, null, 2));
+  }
+});
+</script>
+<div class="btn-group hide">
+      <button type="button" id="btn-reset" class="button warning btn btn-warning reset" data-target="import_export">Reset</button>
+    </div>
+<div class="btn-group hide">
+      <button type="button" id="btn-set-sql" class="button success btn btn-success set-sql" data-target="import_export">Set rules from SQL</button>
+      <button type="button" id="btn-set-mongo" class="button success btn btn-success set-mongo" data-target="import_export">Set rules from MongoDB</button>
+    </div>
+<div class="btn-group hide">
+      <button type="button" id="btn-get-sql" class="button btn btn-primary parse-sql" data-target="import_export" data-stmt="false">SQL</button>
+      <button type="button" id="btn-parse-sql" class="button btn btn-primary parse-sql" data-target="import_export" data-stmt="question_mark">SQL statement
+        (?)
+      </button>
+      <button type="button" id="btn-parse-sql" class="button btn btn-primary parse-sql" data-target="import_export" data-stmt="named">SQL statement (named)
+      </button>
+      <button type="button" id="btn-get-mongo"class="button btn btn-primary parse-mongo" data-target="import_export">MongoDB</button>
+    </div>		    

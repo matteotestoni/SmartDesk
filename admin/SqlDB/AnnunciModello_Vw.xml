@@ -1,0 +1,19 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnnunciModello_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="AnnunciModello_Ky" IsNull="N" Type="int" />
+      <Field Column="AnnunciModello_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="AnnunciMarca_Ky" IsNull="Y" Type="int" />
+      <Field Column="AnnunciModelloTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="AnnunciModelloTipo_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.AnnunciModello_Vw
+AS
+SELECT        dbo.AnnunciModello.AnnunciModello_Ky, dbo.AnnunciModello.AnnunciModello_Titolo, dbo.AnnunciModello.AnnunciMarca_Ky, dbo.AnnunciModello.AnnunciModelloTipo_Ky, 
+                         dbo.AnnunciModelloTipo.AnnunciModelloTipo_Titolo
+FROM            dbo.AnnunciModello LEFT OUTER JOIN
+                         dbo.AnnunciModelloTipo ON dbo.AnnunciModello.AnnunciModelloTipo_Ky = dbo.AnnunciModelloTipo.AnnunciModelloTipo_Ky
+</SqlScriptCreate>
+</SqlTable>

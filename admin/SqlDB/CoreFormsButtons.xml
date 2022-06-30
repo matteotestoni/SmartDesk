@@ -1,0 +1,37 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CoreFormsButtons" Type="TABLE">
+    <Keys>
+      <Key Column="CoreFormsButtons_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CoreFormsButtons_Ky" IsNull="N" Type="int" />
+      <Field Column="CoreForms_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsButtons_Title" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreFormsButtons_Icon" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreFormsButtons_Action" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreFormsButtons_Order" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsButtons_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsButtons_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsButtons_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsButtons_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CoreFormsButtons_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CoreFormsButtons_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CoreFormsButtons] (
+  [CoreFormsButtons_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CoreForms_Ky] int  NULL , 
+  [CoreFormsButtons_Title] varchar(100)  NULL , 
+  [CoreFormsButtons_Icon] varchar(100)  NULL , 
+  [CoreFormsButtons_Action] varchar(MAX)  NULL , 
+  [CoreFormsButtons_Order] int  NULL , 
+  [CoreFormsButtons_UserInsert] int  NULL , 
+  [CoreFormsButtons_UserUpdate] int  NULL , 
+  [CoreFormsButtons_UserDelete] int  NULL , 
+  [CoreFormsButtons_DateInsert] datetime  NULL , 
+  [CoreFormsButtons_DateUpdate] datetime  NULL , 
+  [CoreFormsButtons_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[CoreFormsButtons] ADD CONSTRAINT PK_CoreFormsButtons PRIMARY KEY  ([CoreFormsButtons_Ky])
+</SqlScriptCreate>
+</SqlTable>

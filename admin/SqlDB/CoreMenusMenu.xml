@@ -1,0 +1,45 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CoreMenusMenu" Type="TABLE">
+    <Keys>
+      <Key Column="CoreMenusMenu_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CoreMenusMenu_Ky" IsNull="N" Type="int" />
+      <Field Column="CoreMenus_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreMenusMenu_Parent" IsNull="Y" Type="int" />
+      <Field Column="CoreMenusMenu_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreMenusMenu_Icon" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreMenusMenu_Order" IsNull="Y" Type="int" />
+      <Field Column="CoreMenusMenu_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CoreMenusMenu_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CoreMenusMenu_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CoreMenusMenu_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CoreMenusMenu_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CoreMenusMenu_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="CoreGrids_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreForms_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreMenusMenuType_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="CoreMenusMenu_Url" IsNull="Y" Type="varchar" Lenght="200" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CoreMenusMenu] (
+  [CoreMenusMenu_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CoreMenus_Ky] int  NULL , 
+  [CoreMenusMenu_Parent] int  NULL , 
+  [CoreMenusMenu_Title] varchar(200)  NULL , 
+  [CoreMenusMenu_Icon] varchar(200)  NULL , 
+  [CoreMenusMenu_Order] int  NULL , 
+  [CoreMenusMenu_UserInsert] int  NULL , 
+  [CoreMenusMenu_UserUpdate] int  NULL , 
+  [CoreMenusMenu_UserDelete] int  NULL , 
+  [CoreMenusMenu_DateInsert] datetime  NULL , 
+  [CoreMenusMenu_DateUpdate] datetime  NULL , 
+  [CoreMenusMenu_DateDelete] datetime  NULL , 
+  [CoreGrids_Ky] int  NULL , 
+  [CoreForms_Ky] int  NULL , 
+  [CoreMenusMenuType_Ky] smallint  NULL , 
+  [CoreMenusMenu_Url] varchar(200)  NULL  )
+ALTER TABLE [dbo].[CoreMenusMenu] ADD CONSTRAINT PK_CoreMenusMenu PRIMARY KEY  ([CoreMenusMenu_Ky])
+</SqlScriptCreate>
+</SqlTable>

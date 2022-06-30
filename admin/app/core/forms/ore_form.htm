@@ -1,0 +1,46 @@
+	    <div class="grid-x grid-padding-x">
+	    	<div class="large-2 medium-3 small-4 cell">
+	    		<label for="Ore_Titolo" class="text-right middle">Titolo <i class="fa-duotone fa-tag fa-fw"></i></label>
+				</div>
+	    	<div class="large-10 medium-9 small-8 cell">
+	        <input type="text" name="Ore_Titolo" id="Ore_Titolo" value="<%=GetFieldValue("Ore_Titolo")%>" size="80" required="required">
+	        <span class="form-error">Obbligatorio</span>
+				  <p class="help-text">max 100 carateri</p>
+	    	</div>
+			</div>	
+	    
+			<div class="grid-x grid-padding-x">
+	    	<div class="large-2 medium-3 small-4 cell">
+	    		<label for="Ore_Valore" class="text-right middle">Valore <i class="fa-duotone fa-clock fa-fw"></i></label>
+				</div>
+	    	<div class="large-10 medium-9 small-8 cell">
+	        <input type="text" name="Ore_Valore" id="Ore_Valore" value="<%=GetFieldValue("Ore_Valore")%>" size="80" required="required">
+	        <span class="form-error">Obbligatorio</span>
+	    	</div>
+			</div>	
+			
+			<div class="grid-x grid-padding-x">
+	    	<div class="large-2 medium-3 small-4 cell">
+	    		<label for="Ore_Disabilita" class="text-right middle">Disabilita (non selezionabile)</label>
+				</div>
+	    	<div class="large-10 medium-9 small-8 cell">
+					<div class="switch tiny">                                         
+            <input class="switch-input" type="checkbox" name="Ore_Disabilita" id="Ore_Disabilita" value="on" <% if (GetCheckValue("Ore_Disabilita")){ Response.Write("checked");} %> />
+            <label class="switch-paddle" for="Ore_Disabilita">
+              <span class="show-for-sr">Non attivo</span>
+              <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+              <span class="switch-inactive" aria-hidden="true"></span>
+            </label>
+          </div> 
+	    	</div>
+			</div>				
+
+	    <div class="grid-x grid-padding-x">
+	    	<div class="large-2 medium-3 small-4 cell">
+	    		<label for="Ore_Ordine" class="text-right middle">Ordine <i class="fa-duotone fa-sort fa-fw"></i></label>
+			</div>
+	    	<div class="large-10 medium-9 small-8 cell">
+          <input type="text" name="Ore_Ordine" id="Ore_Ordine" value="<%=GetFieldValue("Ore_Ordine")%>" size="3" required="required" pattern="number" />
+			    <span class="form-error">Obbligatorio</span>
+	    	</div>
+		</div>

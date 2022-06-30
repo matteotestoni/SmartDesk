@@ -1,0 +1,45 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Wishlist" Type="TABLE">
+    <Keys>
+      <Key Column="Wishlist_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Wishlist_Ky" IsNull="N" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Ky" IsNull="Y" Type="int" />
+      <Field Column="Wishlist_Data" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Prodotti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Wishlist_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Wishlist_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Wishlist_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Wishlist_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Wishlist_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Wishlist_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Aste_Ky" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_Ky" IsNull="Y" Type="int" />
+      <Field Column="Cantieri_Ky" IsNull="Y" Type="int" />
+      <Field Column="Immobili_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Wishlist] (
+  [Wishlist_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [Annunci_Ky] int  NULL , 
+  [Wishlist_Data] smalldatetime  NULL , 
+  [Prodotti_Ky] int  NULL , 
+  [Utenti_Ky] int  NULL , 
+  [Wishlist_UserInsert] int  NULL , 
+  [Wishlist_UserUpdate] int  NULL , 
+  [Wishlist_UserDelete] int  NULL , 
+  [Wishlist_DateInsert] datetime  NULL , 
+  [Wishlist_DateUpdate] datetime  NULL , 
+  [Wishlist_DateDelete] datetime  NULL , 
+  [Aste_Ky] int  NULL , 
+  [Veicoli_Ky] int  NULL , 
+  [Cantieri_Ky] int  NULL , 
+  [Immobili_Ky] int  NULL  )
+ALTER TABLE [dbo].[Wishlist] ADD CONSTRAINT PK_Wishlist PRIMARY KEY  ([Wishlist_Ky])
+</SqlScriptCreate>
+</SqlTable>

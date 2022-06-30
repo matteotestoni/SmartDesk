@@ -1,0 +1,35 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AsteCommissioni" Type="TABLE">
+    <Keys>
+      <Key Column="AsteCommissioni_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AsteCommissioni_Ky" IsNull="N" Type="smallint" />
+      <Field Column="Aste_Ky" IsNull="Y" Type="int" />
+      <Field Column="AsteCommissioni_Da" IsNull="Y" Type="money" />
+      <Field Column="AsteCommissioni_A" IsNull="Y" Type="money" />
+      <Field Column="AsteCommissioni_Commissione" IsNull="Y" Type="tinyint" />
+      <Field Column="AsteCommissioni_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AsteCommissioni_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AsteCommissioni_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AsteCommissioni_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AsteCommissioni_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AsteCommissioni_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AsteCommissioni] (
+  [AsteCommissioni_Ky] smallint IDENTITY(1,1) NOT NULL , 
+  [Aste_Ky] int  NULL , 
+  [AsteCommissioni_Da] money  NULL DEFAULT ((0)), 
+  [AsteCommissioni_A] money  NULL DEFAULT ((0)), 
+  [AsteCommissioni_Commissione] tinyint  NULL DEFAULT ((0)), 
+  [AsteCommissioni_UserInsert] int  NULL , 
+  [AsteCommissioni_UserUpdate] int  NULL , 
+  [AsteCommissioni_UserDelete] int  NULL , 
+  [AsteCommissioni_DateInsert] datetime  NULL , 
+  [AsteCommissioni_DateUpdate] datetime  NULL , 
+  [AsteCommissioni_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[AsteCommissioni] ADD CONSTRAINT PK_AsteCommissioni PRIMARY KEY  ([AsteCommissioni_Ky])
+</SqlScriptCreate>
+</SqlTable>

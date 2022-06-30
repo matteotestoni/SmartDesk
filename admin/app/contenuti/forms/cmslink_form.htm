@@ -1,0 +1,70 @@
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="CMSLink_Data" class="text-right middle">Data <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+	</div>
+	<div class="large-10 medium-9 small-8 cell">
+		<input type="text" name="CMSLink_Data" id="CMSLink_Data" value="<%=GetFieldValue(dtCMSLink, "CMSLink_Data_IT")%>" class="fdatepicker" size="10" required="required">
+		<span class="form-error">Obbligatorio</span>
+		<p class="help-text">Data di inserimento del link</p>
+	</div>
+</div>	
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="CMSLink_Descrizione" class="text-right middle">Descrizione <i class="fa-duotone fa-file-lines fa-fw"></i></label>
+	</div>
+	<div class="large-10 medium-9 small-8 cell">
+		<input type="text" name="CMSLink_Descrizione" id="CMSLink_Descrizione" value="<%=GetFieldValue(dtCMSLink, "CMSLink_Descrizione")%>" size="80" required="required">
+		<span class="form-error">Obbligatorio</span>
+		<p class="help-text">Descrizione del link</p>
+	</div>
+</div>	
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="CMSLink_Link" class="text-right middle">Link <i class="fa-duotone fa-link fa-fw"></i></label>
+	</div>
+	<div class="large-10 medium-9 small-8 cell">
+		<input type="text" name="CMSLink_Link" id="CMSLink_Link" value="<%=GetFieldValue(dtCMSLink, "CMSLink_Link")%>" size="80" required="required">
+		<span class="form-error">Obbligatorio</span>
+		<p class="help-text">Indirizzo internet</p>
+	</div>
+</div>	
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="CMSCategorie_Ky" class="text-right middle">Categoria <i class="fa-duotone fa-list fa-fw"></i></label>
+	</div>
+	<div class="large-10 medium-9 small-8 cell">
+		<select name="CMSCategorie_Ky" id="CMSCategorie_Ky" value="<%=GetFieldValue(dtCMSLink, "CMSCategorie_Ky")%>" required="required">
+		<!--#include file="/var/cache/CMSCategorie-options.htm"--> 
+		</select>
+		<script type="text/javascript">
+		selectSet('CMSCategorie_Ky', '<%=GetFieldValue(dtCMSLink, "CMSCategorie_Ky")%>');
+		</script>
+		<span class="form-error">Obbligatorio</span>
+		<p class="help-text">Categoria: <a href="/admin/app/contenuti/scheda-CMSCategorie.aspx?azione=new" class="tiny button secondary">aggiungi<i class="fa-duotone fa-square-plus fa-fw"></i></a></p>
+	</div>
+</div>	
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="CMSLink_Tags" class="text-right middle">Tags <i class="fa-duotone fa-list fa-fw"></i></label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+		<select name="CMSLink_Tags" id="CMSLink_Tags" multiple class="select2" value="<%=GetFieldValue(dtCMSLink, "CMSLink_Tags")%>">
+			<option value=""></option>
+	    <%
+			for (int i = 0; i < dtCMSTags.Rows.Count; i++){
+				Response.Write("<option value=\"" + dtCMSTags.Rows[i]["CMSTags_Ky"].ToString() + "\">" + dtCMSTags.Rows[i]["CMSTags_Titolo"].ToString() + "</option>");
+			}
+			%>
+		</select>
+		<script type="text/javascript">
+			selectSetMultiple('CMSLink_Tags', '<%=GetFieldValue(dtCMSLink, "CMSLink_Tags")%>');
+		</script>
+		<span class="form-error">Obbligatorio</span>
+		<p class="help-text">Tags: <a href="/admin/view.aspx?CoreModules_Ky=9&CoreEntities_Ky=104&CoreGrids_Ky=87" class="tiny button secondary">gestisci <i class="fa-duotone fa-pen-to-square fa-fw"></i></a></p>
+	</div>
+</div>	
+

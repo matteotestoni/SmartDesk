@@ -1,0 +1,63 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Comuni" Type="TABLE">
+    <Keys>
+      <Key Column="Comuni_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Comuni_Ky" IsNull="N" Type="int" />
+      <Field Column="Comuni_Comune" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Comuni_Ordine" IsNull="Y" Type="int" />
+      <Field Column="Comuni_ComuneHTML" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Comuni_Principale" IsNull="Y" Type="bit" />
+      <Field Column="Comuni_Cap" IsNull="Y" Type="varchar" Lenght="5" />
+      <Field Column="Province_Codice" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Comuni_CodiceFiscale" IsNull="Y" Type="varchar" Lenght="5" />
+      <Field Column="Comuni_Istat" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="Comuni_Tipo" IsNull="Y" Type="tinyint" />
+      <Field Column="Comuni_Capo" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Comuni_Zona" IsNull="Y" Type="bit" />
+      <Field Column="Comuni_CapoKy" IsNull="Y" Type="int" />
+      <Field Column="ImmobiliZona_Ky" IsNull="Y" Type="int" />
+      <Field Column="Comuni_ZonaRichiesta" IsNull="Y" Type="bit" />
+      <Field Column="Province_Ky" IsNull="Y" Type="int" />
+      <Field Column="Comuni_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Comuni_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Comuni_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Comuni_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Comuni_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Comuni_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Comuni_CodiceCatastale" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="Comuni_Latitudine" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Comuni_Longitudine" IsNull="Y" Type="varchar" Lenght="100" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Comuni] (
+  [Comuni_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Comuni_Comune] varchar(100)  NULL , 
+  [Comuni_Ordine] int  NULL , 
+  [Comuni_ComuneHTML] varchar(100)  NULL , 
+  [Comuni_Principale] bit  NULL , 
+  [Comuni_Cap] varchar(5)  NULL , 
+  [Province_Codice] varchar(100)  NULL , 
+  [Comuni_CodiceFiscale] varchar(5)  NULL , 
+  [Comuni_Istat] varchar(10)  NULL , 
+  [Comuni_Tipo] tinyint  NULL , 
+  [Comuni_Capo] varchar(50)  NULL , 
+  [Comuni_Zona] bit  NULL , 
+  [Comuni_CapoKy] int  NULL , 
+  [ImmobiliZona_Ky] int  NULL , 
+  [Comuni_ZonaRichiesta] bit  NULL , 
+  [Province_Ky] int  NULL , 
+  [Comuni_UserInsert] int  NULL , 
+  [Comuni_UserUpdate] int  NULL , 
+  [Comuni_UserDelete] int  NULL , 
+  [Comuni_DateInsert] datetime  NULL , 
+  [Comuni_DateUpdate] datetime  NULL , 
+  [Comuni_DateDelete] datetime  NULL , 
+  [Comuni_CodiceCatastale] varchar(10)  NULL , 
+  [Comuni_Latitudine] varchar(100)  NULL , 
+  [Comuni_Longitudine] varchar(100)  NULL  )
+ALTER TABLE [dbo].[Comuni] ADD CONSTRAINT PK_Comuni PRIMARY KEY  ([Comuni_Ky])
+</SqlScriptCreate>
+</SqlTable>

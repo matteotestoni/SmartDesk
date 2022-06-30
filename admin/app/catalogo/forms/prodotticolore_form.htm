@@ -1,0 +1,50 @@
+    <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-3 small-4 cell">
+    		<label for="ProdottiColore_Titolo" class="text-right middle">Titolo <i class="fa-duotone fa-tag fa-fw"></i></label>
+		</div>
+    	<div class="large-10 medium-9 small-8 cell">
+        <input type="text" name="ProdottiColore_Titolo" id="ProdottiColore_Titolo" value="<%=GetFieldValue(dtProdottiColore, "ProdottiColore_Titolo")%>" size="80" required="required">
+        <span class="form-error">Obbligatorio</span>
+			  <p class="help-text">max 100 carateri</p>
+    	</div>
+	</div>
+		
+ 	<div class="grid-x grid-padding-x">     
+   	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Colori_Ky" class="large-text-right small-text-left middle">Colore primario</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+	    <select name="Colori_Ky" id="Colori_Ky" value="<%=GetFieldValue(dtProdottiColore, "Colori_Ky")%>" required="required">
+      <!--#include file="/var/cache/Colori-options.htm"--> 
+      </select>
+      <script type="text/javascript">
+        selectSet('Colori_Ky', '<%=GetFieldValue(dtProdottiColore, "Colori_Ky")%>');
+      </script>
+  	</div>
+  </div>
+
+	<div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-12 cell text-right">
+   		<label class="large-text-right small-text-left middle" for="ProdottiColore_Default">Predefinita</label>
+ 	  </div>
+  	<div class="large-10 medium-10 small-12 cell">
+			<select name="ProdottiColore_Default" id="ProdottiColore_Default" value="<%=GetCheckValue(dtProdottiColore, "ProdottiColore_Default")%>">
+	      <option value="True">si</option>
+	      <option value="False">no</option>
+	    </select>
+	    <span class="form-error">Obbligatorio</span>
+	    <script type="text/javascript">
+	      selectSet('ProdottiColore_Default', '<%=GetCheckValue(dtProdottiColore, "ProdottiColore_Default")%>');
+	    </script>
+  	</div>
+	</div>        
+
+  <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-3 small-4 cell">
+    		<label for="ProdottiColore_Ordine" class="text-right middle">Ordine <i class="fa-duotone fa-sort fa-fw"></i></label>
+		</div>
+    	<div class="large-10 medium-9 small-8 cell">
+              <input type="text" name="ProdottiColore_Ordine" id="ProdottiColore_Ordine" value="<%=GetFieldValue(dtProdottiColore, "ProdottiColore_Ordine")%>" size="3" required="required" pattern="number" />
+		    <span class="form-error">Obbligatorio</span>
+    	</div>
+	</div>

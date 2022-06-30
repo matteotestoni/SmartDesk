@@ -1,0 +1,46 @@
+  <div class="grid-x grid-padding-x">
+    <div class="large-2 medium-3 small-4 cell">
+      <label for="ProdottiDisponibilita_Titolo" class="text-right middle">Titolo <i class="fa-duotone fa-tag fa-fw"></i></label>
+    </div>
+    <div class="auto cell">
+      <input type="text" name="ProdottiDisponibilita_Titolo" id="ProdottiDisponibilita_Titolo" value="<%=GetFieldValue(dtProdottiDisponibilita, "ProdottiDisponibilita_Titolo")%>" size="80" required="required">
+      <span class="form-error">Obbligatorio</span>
+			<p class="help-text">max 100 carateri</p>
+    </div>
+  </div>	
+
+  <div class="grid-x grid-padding-x">
+    <div class="large-2 medium-3 small-4 cell">
+      <label for="ProdottiDisponibilita_Descrizione" class="text-right middle">Descrizione <i class="fa-duotone fa-file-lines fa-fw"></i></label>
+    </div>
+    <div class="auto cell">
+        <textarea name="ProdottiDisponibilita_Descrizione" id="ProdottiDisponibilita_Descrizione" cols="76" rows="2" required="required"><%=GetFieldValue(dtProdottiDisponibilita, "ProdottiDisponibilita_Descrizione")%></textarea>
+        <span class="form-error">Obbligatorio</span>
+    </div>
+  </div>	
+
+	<div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-12 cell text-right">
+   		<label class="large-text-right small-text-left middle" for="ProdottiDisponibilita_Default">Predefinita</label>
+ 	  </div>
+  	<div class="large-10 medium-10 small-12 cell">
+			<select name="ProdottiDisponibilita_Default" id="ProdottiDisponibilita_Default" value="<%=GetCheckValue(dtProdottiDisponibilita, "ProdottiDisponibilita_Default")%>">
+	      <option value="True">si</option>
+	      <option value="False">no</option>
+	    </select>
+	    <span class="form-error">Obbligatorio</span>
+	    <script type="text/javascript">
+	      selectSet('ProdottiDisponibilita_Default', '<%=GetCheckValue(dtProdottiDisponibilita, "ProdottiDisponibilita_Default")%>');
+	    </script>
+  	</div>
+	</div>        
+
+  <div class="grid-x grid-padding-x">
+    <div class="large-2 medium-3 small-4 cell">
+      <label for="ProdottiDisponibilita_Ordine" class="text-right middle">Ordine <i class="fa-duotone fa-sort fa-fw"></i></label>
+    </div>
+    <div class="auto cell">
+      <input type="text" name="ProdottiDisponibilita_Ordine" id="ProdottiDisponibilita_Ordine" value="<%=GetFieldValue(dtProdottiDisponibilita, "ProdottiDisponibilita_Ordine")%>" size="3" required="required" pattern="number" />
+      <span class="form-error">Obbligatorio</span>
+    </div>
+  </div>	

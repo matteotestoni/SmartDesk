@@ -1,0 +1,79 @@
+	<div class="grid-x grid-padding-x">
+		<div class="large-2 medium-2 small-12 cell">
+			<label for="TimeZones_TimeZone" class="large-text-right small-text-left middle">Fuso Orario <i class="fa-duotone fa-clock fa-fw"></i></label>
+		</div>
+		<div class="large-10 medium-10 small-12 cell contenuto">
+    	<input type="text" name="TimeZones_TimeZone" id="TimeZones_TimeZone" placeholder="Fuso orario" title="Fuso orario" required="required" value="<%=GetFieldValue(dtTimeZones, "TimeZones_TimeZone")%>" size="10" maxlength="30">
+      <span class="form-error">Obbligatorio</span>
+		</div>
+	</div>
+	
+	<div class="grid-x grid-padding-x">
+		<div class="large-2 medium-2 small-12 cell">
+			<label for="TimeZones_CountryCode" class="large-text-right small-text-left middle">Nazione</label>
+		</div>
+		<div class="large-10 medium-10 small-12 cell contenuto">
+    	<input type="text" name="TimeZones_CountryCode" id="TimeZones_CountryCode" placeholder="Nazione" title="Nazione" required="required" value="<%=GetFieldValue(dtTimeZones, "TimeZones_CountryCode")%>" size="10" maxlength="30">
+      <span class="form-error">Obbligatorio</span>
+		</div>
+	</div>
+	
+	<div class="grid-x grid-padding-x">
+		<div class="large-2 medium-2 small-12 cell">
+			<label for="TimeZones_Coordinates" class="large-text-right small-text-left middle">Coordinate</label>
+		</div>
+		<div class="large-10 medium-10 small-12 cell contenuto">
+    	<input type="text" name="TimeZones_Coordinates" id="TimeZones_Coordinates" placeholder="Coordinate" title="Coordinate" required="required" value="<%=GetFieldValue(dtTimeZones, "TimeZones_Coordinates")%>" size="10" maxlength="30">
+      <span class="form-error">Obbligatorio</span>
+		</div>
+	</div>
+	
+	<div class="grid-x grid-padding-x">
+		<div class="large-2 medium-2 small-12 cell">
+			<label for="TimeZones_Comments" class="large-text-right small-text-left middle">Commenti</label>
+		</div>
+		<div class="large-10 medium-10 small-12 cell contenuto">
+    	<input type="text" name="TimeZones_Comments" id="TimeZones_Comments" placeholder="Commenti" title="Commenti" value="<%=GetFieldValue(dtTimeZones, "TimeZones_Comments")%>" size="10" maxlength="30">
+      <span class="form-error">Obbligatorio</span>
+		</div>
+	</div>
+	
+	<div class="grid-x grid-padding-x">
+		<div class="large-2 medium-2 small-12 cell">
+			<label for="TimeZones_Format" class="large-text-right small-text-left middle">Formato</label>
+		</div>
+		<div class="large-10 medium-10 small-12 cell contenuto">
+    	<input type="text" name="TimeZones_Format" id="TimeZones_Format" placeholder="Formato" title="Formato" required="required" value="<%=GetFieldValue(dtTimeZones, "TimeZones_Format")%>" size="10" maxlength="30">
+      <span class="form-error">Obbligatorio</span>
+		</div>
+	</div>
+	
+	<div class="grid-x grid-padding-x">
+		<div class="large-2 medium-2 small-12 cell">
+			<label for="TimeZones_UTCoffset" class="large-text-right small-text-left middle">UTC offset</label>
+		</div>
+		<div class="large-10 medium-10 small-12 cell contenuto">
+    	<input type="text" name="TimeZones_UTCoffset" id="TimeZones_UTCoffset" placeholder="UTC offset" title="UTC offset" required="required" value="<%=GetFieldValue(dtTimeZones, "TimeZones_UTCoffset")%>" size="10" maxlength="30">
+      <span class="form-error">Obbligatorio</span>
+		</div>
+	</div>
+	
+	<div class="grid-x grid-padding-x">
+		<div class="large-2 medium-2 small-12 cell">
+			<label for="TimeZones_UTCDSToffset" class="large-text-right small-text-left middle">UTC DST offset</label>
+		</div>
+		<div class="large-10 medium-10 small-12 cell contenuto">
+    	<input type="text" name="TimeZones_UTCDSToffset" id="TimeZones_UTCDSToffset" placeholder="UTC DST offset" title="UTC DST offset" required="required" value="<%=GetFieldValue(dtTimeZones, "TimeZones_UTCDSToffset")%>" size="10" maxlength="30">
+      <span class="form-error">Obbligatorio</span>
+		</div>
+	</div>
+	
+	<div class="grid-x grid-padding-x">
+		<div class="large-2 medium-2 small-12 cell">
+			<label for="TimeZones_Notes" class="large-text-right small-text-left middle">Note</label>
+		</div>
+		<div class="large-10 medium-10 small-12 cell contenuto">
+    	<input type="text" name="TimeZones_Notes" id="TimeZones_Notes" placeholder="Note" title="Note" value="<%=GetFieldValue(dtTimeZones, "TimeZones_Notes")%>" size="10" maxlength="30">
+      <span class="form-error">Obbligatorio</span>
+		</div>
+	</div>

@@ -1,0 +1,37 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="SitiWebPageSpeedLog" Type="TABLE">
+    <Keys>
+      <Key Column="SitiWebPageSpeedLog_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="SitiWebPageSpeedLog_Ky" IsNull="N" Type="int" />
+      <Field Column="SitiWeb_Ky" IsNull="Y" Type="int" />
+      <Field Column="SitiWeb_Url" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="SitiWebPageSpeedLog_Data" IsNull="Y" Type="smalldatetime" />
+      <Field Column="SitiWebPageSpeedLog_ScoreDesktop" IsNull="Y" Type="varchar" Lenght="3" />
+      <Field Column="SitiWebPageSpeedLog_ScoreMobile" IsNull="Y" Type="varchar" Lenght="3" />
+      <Field Column="SitiWebPageSpeedLog_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="SitiWebPageSpeedLog_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="SitiWebPageSpeedLog_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="SitiWebPageSpeedLog_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="SitiWebPageSpeedLog_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="SitiWebPageSpeedLog_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[SitiWebPageSpeedLog] (
+  [SitiWebPageSpeedLog_Ky] int IDENTITY(1,1) NOT NULL , 
+  [SitiWeb_Ky] int  NULL , 
+  [SitiWeb_Url] varchar(200)  NULL , 
+  [SitiWebPageSpeedLog_Data] smalldatetime  NULL , 
+  [SitiWebPageSpeedLog_ScoreDesktop] varchar(3)  NULL , 
+  [SitiWebPageSpeedLog_ScoreMobile] varchar(3)  NULL , 
+  [SitiWebPageSpeedLog_UserInsert] int  NULL , 
+  [SitiWebPageSpeedLog_UserUpdate] int  NULL , 
+  [SitiWebPageSpeedLog_UserDelete] int  NULL , 
+  [SitiWebPageSpeedLog_DateInsert] datetime  NULL , 
+  [SitiWebPageSpeedLog_DateUpdate] datetime  NULL , 
+  [SitiWebPageSpeedLog_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[SitiWebPageSpeedLog] ADD CONSTRAINT PK_SitiWebPageSpeedLog PRIMARY KEY  ([SitiWebPageSpeedLog_Ky])
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,35 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CampagneStrategie" Type="TABLE">
+    <Keys>
+      <Key Column="CampagneStrategie_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CampagneStrategie_Ky" IsNull="N" Type="int" />
+      <Field Column="CampagneStrategie_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CampagneStrategie_Icona" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CampagneStrategie_Colore" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="CampagneStrategie_Ordine" IsNull="Y" Type="int" />
+      <Field Column="CampagneStrategie_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CampagneStrategie_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CampagneStrategie_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CampagneStrategie_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CampagneStrategie_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CampagneStrategie_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CampagneStrategie] (
+  [CampagneStrategie_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CampagneStrategie_Titolo] varchar(100)  NULL , 
+  [CampagneStrategie_Icona] varchar(100)  NULL , 
+  [CampagneStrategie_Colore] varchar(10)  NULL , 
+  [CampagneStrategie_Ordine] int  NULL , 
+  [CampagneStrategie_UserInsert] int  NULL , 
+  [CampagneStrategie_UserUpdate] int  NULL , 
+  [CampagneStrategie_UserDelete] int  NULL , 
+  [CampagneStrategie_DateInsert] datetime  NULL , 
+  [CampagneStrategie_DateUpdate] datetime  NULL , 
+  [CampagneStrategie_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[CampagneStrategie] ADD CONSTRAINT PK_CampagneStrategie PRIMARY KEY  ([CampagneStrategie_Ky])
+</SqlScriptCreate>
+</SqlTable>

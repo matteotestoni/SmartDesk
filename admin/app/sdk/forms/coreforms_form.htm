@@ -1,0 +1,69 @@
+<div class="grid-x grid-padding-x">
+  <div class="large-2 medium-2 small-4 cell">
+		<label for="CoreForms_Default" class="large-text-right small-text-left middle">Default</label>
+	</div>
+  <div class="large-2 medium-2 small-8 cell">
+		<div class="switch tiny">                                         
+    	<input class="switch-input" type="checkbox" name="CoreForms_Default" id="CoreForms_Default" value="on" <% if (GetCheckValue(dtCoreForms,"CoreForms_Default")){ Response.Write("checked");} %> />
+			<label class="switch-paddle" for="CoreForms_Default">
+				<span class="show-for-sr">Default</span>
+				<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+				<span class="switch-inactive" aria-hidden="true"></span>
+			</label>
+		</div>                                            
+	</div>
+  <div class="large-2 medium-2 small-4 cell">
+		<label for="CoreForms_Custom" class="large-text-right small-text-left middle">Custom</label>
+	</div>
+  <div class="large-2 medium-2 small-8 cell">
+		<div class="switch tiny">                                         
+    	<input class="switch-input" type="checkbox" name="CoreForms_Custom" id="CoreForms_Custom" value="on" <% if (GetCheckValue(dtCoreForms,"CoreForms_Custom")){ Response.Write("checked");} %> />
+			<label class="switch-paddle" for="CoreForms_Custom">
+				<span class="show-for-sr">Custom</span>
+				<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+				<span class="switch-inactive" aria-hidden="true"></span>
+			</label>
+		</div>                                            
+	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="CoreForms_Order" class="large-text-right small-text-left middle">Order</label>
+  	</div>
+  	<div class="large-2 medium-2 small-8 cell">
+        <input type="text" name="CoreForms_Order" id="CoreForms_Order" value="<%=GetFieldValue(dtCoreForms, "CoreForms_Order")%>" size="100" required="required" />
+        <span class="form-error">Obbligatorio</span>
+  	</div>
+</div>
+
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="CoreForms_Title" class="large-text-right small-text-left middle">Title <i class="fa-duotone fa-tag fa-fw"></i></label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="CoreForms_Title" id="CoreForms_Title" value="<%=GetFieldValue(dtCoreForms, "CoreForms_Title")%>" size="100" required="required" />
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+    <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="CoreForms_SQLFrom" class="large-text-right small-text-left middle">SQL From <i class="fa-duotone fa-tag fa-fw"></i></label>
+    	</div>
+    	<div class="large-4 medium-4 small-8 cell">
+        <input type="text" name="CoreForms_SQLFrom" id="CoreForms_SQLFrom" value="<%=GetFieldValue(dtCoreForms, "CoreForms_SQLFrom")%>" size="100" />
+        <span class="form-error">Obbligatorio</span>
+    	</div>
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="CoreForms_WhichFields" class="large-text-right small-text-left middle">Which fields</label>
+    	</div>
+    	<div class="large-4 medium-4 small-8 cell">
+        <select name="CoreForms_WhichFields" id="CoreForms_WhichFields" title="Quali campi" value="<%=GetFieldValue(dtCoreForms, "CoreForms_WhichFields")%>" required="required">
+    				<option value=""></option>
+    				<option value="1">Tutti i campi</option>
+    				<option value="2">Campi selezionati</option>
+    		</select>
+        <span class="form-error">Obbligatorio</span>
+        <script type="text/javascript">
+          selectSet('CoreForms_WhichFields', '<%=GetFieldValue(dtCoreForms, "CoreForms_WhichFields")%>');
+        </script>
+    	</div>
+</div>

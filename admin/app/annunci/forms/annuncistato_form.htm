@@ -1,0 +1,62 @@
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Annunci_PubblicaWEB" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Pubblica online</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+			<div class="switch tiny">                                         
+        <input class="switch-input" type="checkbox" name="AnnunciStato_PubblicaWEB" id="AnnunciStato_PubblicaWEB" value="on" <% if (GetCheckValue(dtAnnunciStato, "AnnunciStato_PubblicaWEB")){ Response.Write("checked");} %> />
+        <label class="switch-paddle" for="AnnunciStato_PubblicaWEB">
+          <span class="show-for-sr">Pubblica</span>
+          <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+          <span class="switch-inactive" aria-hidden="true"></span>
+        </label>
+      </div> 
+   	</div>
+  </div>  
+	
+	<div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AnnunciStato_Titolo" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Titolo</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="AnnunciStato_Titolo" id="AnnunciStato_Titolo" title="Nome" value="<%=GetFieldValue(dtAnnunciStato, "AnnunciStato_Titolo")%>" size="150" required="required">
+  	</div>
+  </div>
+  
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell text-right">
+  		<label for="AnnunciStato_Icona" class="large-text-right small-text-left middle">Icona</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="AnnunciStato_Icona" id="AnnunciStato_Icona" placeholder="Icona" title="Icona" required="required" value="<%=GetFieldValue(dtAnnunciStato, "AnnunciStato_Icona")%>" size="100" maxlength="100">
+			<span class="help-text">Puoi specificare l'icona prendendo da Font Awesome. <a href="https://fontawesome.com/icons?d=gallery" target="_blank" rel="nofollow">Clicca qui</a> per maggiori informazioni.</span>
+     	<span class="form-error">Obbligatorio.</span>
+  	</div>
+	</div>
+
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell text-right">
+  		<label class="large-text-right small-text-left middle">Anteprima</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <i class="fa-duotone <%=GetFieldValue(dtAnnunciStato, "AnnunciStato_Icona")%> fa-lg fa-fw"></i>
+  	</div>
+	</div>        
+  
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label class="large-text-right small-text-left middle">Colore<i class="fa-duotone fa-paint-brush fa-fw"></i></label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="color" required="required" name="AnnunciStato_Colore" id="AnnunciStato_Colore" title="Colore" value="<%=GetFieldValue(dtAnnunciStato, "AnnunciStato_Colore")%>" size="60">
+			<span class="form-error">Obbligatorio.</span>
+  	</div>
+  </div>
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AnnunciStato_Ordine" class="large-text-right small-text-left middle"></i>Ordine</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="AnnunciStato_Ordine" id="AnnunciStato_Titolo" title="Nome" value="<%=GetFieldValue(dtAnnunciStato, "AnnunciStato_Ordine")%>" size="150" required="required">
+  	</div>
+  </div>    

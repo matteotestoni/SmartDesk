@@ -1,0 +1,17 @@
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Descrizione</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <textarea name="PagamentiCondizioni_Descrizione" id="PagamentiCondizioni_Descrizione" title="Descrizione" rows="3" required="required"><%=GetFieldValue(dtPagamentiCondizioni, "PagamentiCondizioni_Descrizione")%></textarea>
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle">Predefinita</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+		<input type="checkbox" name="PagamentiCondizioni_Predefinita" id="PagamentiCondizioni_Predefinita" value="on" <% if (GetCheckValue(dtPagamentiCondizioni, "PagamentiCondizioni_Predefinita")){ Response.Write("checked");} %> />
+	</div>
+</div>

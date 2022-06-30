@@ -1,0 +1,43 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ServiziCategorie" Type="TABLE">
+    <Keys>
+      <Key Column="ServiziCategorie_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="ServiziCategorie_Ky" IsNull="N" Type="int" />
+      <Field Column="ServiziCategorie_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AttributiGruppi_Ky" IsNull="Y" Type="int" />
+      <Field Column="ServiziCategorie_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="ServiziCategorie_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="ServiziCategorie_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="ServiziCategorie_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="ServiziCategorie_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="ServiziCategorie_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="ServiziCategorie_Robots" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="ServiziCategorie_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="ServiziCategorie_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="ServiziCategorie_Description" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="ServiziCategorie_Url" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="ProdottiCategorie_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[ServiziCategorie] (
+  [ServiziCategorie_Ky] int IDENTITY(1,1) NOT NULL , 
+  [ServiziCategorie_Descrizione] varchar(100)  NULL , 
+  [AttributiGruppi_Ky] int  NULL , 
+  [ServiziCategorie_UserInsert] int  NULL , 
+  [ServiziCategorie_UserUpdate] int  NULL , 
+  [ServiziCategorie_UserDelete] int  NULL , 
+  [ServiziCategorie_DateInsert] datetime  NULL , 
+  [ServiziCategorie_DateUpdate] datetime  NULL , 
+  [ServiziCategorie_DateDelete] datetime  NULL , 
+  [ServiziCategorie_Robots] varchar(100)  NULL DEFAULT ('index,follow'), 
+  [ServiziCategorie_Titolo] varchar(100)  NULL , 
+  [ServiziCategorie_Title] varchar(200)  NULL , 
+  [ServiziCategorie_Description] varchar(200)  NULL , 
+  [ServiziCategorie_Url] varchar(200)  NULL , 
+  [ProdottiCategorie_Ky] int  NULL  )
+ALTER TABLE [dbo].[ServiziCategorie] ADD CONSTRAINT PK_ServiziCategorie PRIMARY KEY  ([ServiziCategorie_Ky])
+</SqlScriptCreate>
+</SqlTable>

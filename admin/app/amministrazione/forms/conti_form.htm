@@ -1,0 +1,78 @@
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-12 cell text-right">
+ 		<label class="large-text-right small-text-left middle" for="Conti_Default">Predefinito</label>
+  </div>
+	<div class="large-10 medium-10 small-12 cell">
+		<select name="Conti_Default" id="Conti_Default" value="<%=GetCheckValue(dtConti, "Conti_Default")%>">
+      <option value="True">si</option>
+      <option value="False">no</option>
+    </select>
+    <span class="form-error">Obbligatorio</span>
+    <script type="text/javascript">
+      selectSet('Conti_Default', '<%=GetCheckValue(dtConti, "Conti_Default")%>');
+    </script>
+	</div>
+</div>        
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="Aziende_Ky" class="large-text-right small-text-left middle">Azienda</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <select name="Aziende_Ky" id="Aziende_Ky" required="required" value="<%=GetFieldValue(dtConti, "Aziende_Ky")%>" onchange="chgAzienda();">
+      <!--#include file="/var/cache/Aziende-options.htm"--> 
+    </select>
+    <span class="form-error">Obbligatorio</span>
+    <script type="text/javascript">
+      selectSet('Aziende_Ky', '<%=GetFieldValue(dtConti, "Aziende_Ky")%>');
+    </script>
+	</div>
+</div>        
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="Conti_Data" class="large-text-right small-text-left middle">Data<i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="Conti_Data" id="Conti_Data" value="<%=GetFieldValue(dtConti, "Conti_Data_IT")%>" class="fdatepicker txt required" required="required" size="10">
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="Conti_Titolo" class="large-text-right small-text-left middle">Titolo <i class="fa-duotone fa-tag fa-fw"></i></label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="Conti_Titolo" id="Conti_Titolo" value="<%=GetFieldValue(dtConti, "Conti_Titolo")%>" size="100" required="required" />
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="Conti_IBAN" class="large-text-right small-text-left middle">IBAN</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="Conti_IBAN" id="Conti_IBAN" value="<%=GetFieldValue(dtConti, "Conti_IBAN")%>" size="30" />
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="Conti_Swift" class="large-text-right small-text-left middle">Swift / Bic</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="Conti_Swift" id="Conti_Swift" value="<%=GetFieldValue(dtConti, "Conti_Swift")%>" size="30" />
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="Conti_Istituto" class="large-text-right small-text-left middle">Nome dell'istituto</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="Conti_Istituto" id="Conti_Istituto" value="<%=GetFieldValue(dtConti, "Conti_Istituto")%>" size="30" />
+	</div>
+</div>

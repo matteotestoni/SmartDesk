@@ -1,0 +1,432 @@
+<fieldset class="fieldset">
+<legend>Dati del preventivo</legend>
+		<% if (boolAdmin==true){ %>
+    <div class="grid-x grid-padding-x">
+	    <div class="large-2 medium-2 small-4 cell">
+	      <label for="Utenti_Ky" class="large-text-right small-text-left middle">Utente <i class="fa-duotone fa-user fa-fw"></i></label>
+	    </div>
+	    <div class="large-10 medium-10 small-8 cell">
+				<select name="Utenti_Ky" id="Utenti_Ky" value="<%=GetFieldValue(dtFormsData, "Utenti_Ky")%>" required="required">
+          <!--#include file="/var/cache/Utenti-options.htm"--> 
+        </select>
+        <span class="form-error">Obbligatorio</span>
+				<script type="text/javascript">
+          selectSet('Utenti_Ky', '<%=GetFieldValue(dtFormsData, "Utenti_Ky")%>');
+        </script>  
+        </div>
+    </div>
+		<% }else{ %>
+			<input type="hidden" id="Utenti_Ky" name="Utenti_Ky" value="<%=dtLogin.Rows[0]["Utenti_Ky"].ToString()%>">
+		<% } %>
+    
+    <div class="grid-x grid-padding-x">
+      <div class="large-2 medium-2 small-4 cell">
+          <label for="PreventiviAutoStati_Ky" class="large-text-right small-text-left middle">Stato</label>
+      </div>
+      <div class="large-10 medium-10 small-8 cell">
+			  <!--#include file="/var/cache/PreventiviAutoStati-radio.htm"-->
+        <span class="form-error">Obbligatorio</span>
+  			<script type="text/javascript">
+  				radioSet('PreventiviAutoStati_Ky', '<%=GetFieldValue(dtFormsData, "PreventiviAutoStati_Ky")%>');
+        </script>
+      </div>
+    </div>
+    
+    
+    <div class="grid-x grid-padding-x">
+      <div class="large-2 medium-2 small-4 cell hide">
+          <label for="PreventiviAuto_Numero" class="large-text-right small-text-left middle">Numero</label>
+      </div>
+      <div class="large-4 medium-4 small-8 cell hide">
+          <input type="number" name="PreventiviAuto_Numero" id="PreventiviAuto_Numero" value="<%=GetFieldValue(dtFormsData, "PreventiviAuto_Numero")%>" placeholder="Numero">
+      </div>
+      <div class="large-2 medium-2 small-4 cell">
+        <label for="PreventiviAuto_Data" class="large-text-right small-text-left middle">Data</label>
+      </div>
+      <div class="large-4 medium-4 small-8 cell">
+        <input type="text" class="datetimepicker" name="PreventiviAuto_Data" id="PreventiviAuto_Data" value="<%=GetFieldValue(dtFormsData, "PreventiviAuto_Data")%>" placeholder="Data">
+      </div>
+    </div>
+</fieldset>
+
+<fieldset class="fieldset">
+<legend>Anagrafica</legend>
+    <div class="grid-x grid-padding-x">
+      <div class="large-2 medium-2 small-4 cell">
+        <label for="Anagrafiche_Ky" class="large-text-right small-text-left middle">Anagrafica</label>
+      </div>
+      <div class="large-4 medium-4 small-8 cell">
+        <div class="input-group">
+          <input style="width:60px;margin-right:5px;" type="text" name="Anagrafiche_Ky" id="Anagrafiche_Ky" value="<%=GetFieldValue(dtFormsData, "Anagrafiche_Ky")%>" placeholder="Anagrafica">
+          <input style="width:70%" type="text" class="input-group-field" name="Anagrafiche_RagioneSociale" id="Anagrafiche_RagioneSociale" value="<%=GetFieldValue(dtFormsData, "Anagrafiche_RagioneSociale")%>" placeholder="Anagrafica">
+          <div class="input-group-button">
+            <a style="margin-top:4px" data-toggle="dropdownmenu-anagrafiche"><i class="fa-duotone fa-bars fa-fw fa-lg"></i></a>
+            <div class="dropdown-pane bottom" id="dropdownmenu-anagrafiche" data-dropdown>
+              <div class="text-left">
+                <a onclick="javascript:gotoSchedaAnagrafica()"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw"></i>Vai a scheda</a><br>
+                <a data-open="formQuickEditAnagrafiche" onclick="javascript:inserisciAnagrafica()"><i class="fa-duotone fa-plus fa-fw"></i>Inserisci</a><br>
+                <a data-open="formQuickEditAnagrafiche" onclick="javascript:modificaAnagrafica()"><i class="fa-duotone fa-edit fa-fw"></i>Modifica</a><br>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:-15px;">
+          
+          <a style="margin-left:5px" class="button tiny clear" data-open="formQuickEditAnagrafiche" onclick="javascript:inserisciAnagrafica()">inserisci<i class="fa-duotone fa-plus fa-fw"></i></a>
+          <a style="margin-left:5px" class="button tiny clear" data-open="formQuickEditAnagrafiche" onclick="javascript:modificaAnagrafica()">modifica<i class="fa-duotone fa-edit fa-fw"></i></a>
+        </div>
+        
+        <dialog id="formQuickEditAnagrafiche" name="formQuickEditAnagrafiche" class="reveal large" data-reveal>
+          <input type="hidden" name="formaction" value="/admin/app/anagrafiche/crud/salva-anagrafiche.aspx">
+          <input type="hidden" name="azione" value="new">
+          <input type="hidden" name="Utenti_Ky" value="<%=Smartdesk.Session.CurrentUser.ToString()%>">
+          <input type="hidden" name="Anagrafiche_Ky" value="<%=GetFieldValue(dtFormsData, "Anagrafiche_Ky")%>">
+          <input type="hidden" name="AnagraficheTipo_Ky" value="3">
+          <input type="hidden" name="Lingue_Ky" value="1">
+          <input type="hidden" name="Nazioni_Ky" value="105">
+          <input type="hidden" name="Aziende_Ky" value="1">
+          <input type="hidden" name="Anagrafiche_Attivo" value="1">
+          <input type="hidden" name="ajax" value="1">
+            <div class="grid-x grid-padding-x">
+              <div class="large-2 medium-2 small-4 cell">
+                <label id="AnagraficheTipologia_Ky" for="AnagraficheTipologia_Ky" class="large-text-right small-text-left middle">Tipo </label>
+              </div>
+              <div class="large-4 medium-4 small-8 cell">
+                  <select name="AnagraficheTipologia_Ky" id="AnagraficheTipologia_Ky" required="required" value="<%=GetFieldValue(dtFormsData, "AnagraficheTipologia_Ky")%>" onchange="AnagraficheTipologia_Ky_Change(this)">
+                    <!--#include file="/var/cache/AnagraficheTipologia-options.htm"--> 
+                  </select>
+        	        <span class="form-error">Obbligatorio.</span>
+                  <script type="text/javascript">
+      	            selectSet('AnagraficheTipologia_Ky', '<%=GetFieldValue(dtFormsData, "AnagraficheTipologia_Ky")%>');
+                    AnagraficheTipologia_Ky_Change(document.getElementById('AnagraficheTipologia_Ky'));
+                  </script>
+              </div>
+							<div class="large-2 medium-2 small-4 cell">
+                  <label class="checkbox text-right align-middle" for="Anagrafiche_Privacy">Privacy</label>
+              </div>
+              <div class="large-4 medium-4 small-8 cell align-middle">
+									<div class="switch tiny">                                         
+                    <input class="switch-input" type="checkbox" name="Anagrafiche_Privacy" id="Anagrafiche_Privacy" value="on" <% if (GetCheckValue(dtFormsData, "Anagrafiche_Privacy")){ Response.Write("checked");} %>/>
+                    <label class="switch-paddle" for="Anagrafiche_Privacy">
+                      <span class="show-for-sr">Privacy</span>
+                      <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+                      <span class="switch-inactive" aria-hidden="true"></span>
+                    </label>
+                  </div> 
+              </div>                                          
+              
+            </div>
+            <div class="grid-x grid-padding-x">
+              <div class="large-2 medium-2 small-4 cell">
+                <label id="lblAnagrafiche_RagioneSocialeForm" for="Anagrafiche_RagioneSociale" class="large-text-right small-text-left middle" style="display:hidden">Rag. Soc. </label>
+              </div>
+              <div class="large-10 medium-10 small-8 cell">
+                <input type="text" name="Anagrafiche_RagioneSociale" id="Anagrafiche_RagioneSociale" value="<%=GetFieldValue(dtFormsData, "Anagrafiche_RagioneSociale")%>" placeholder="Ragione Sociale" maxlength="100" style="display:hidden">
+              </div>
+            </div>
+            <div class="grid-x grid-padding-x">
+              <div class="large-2 medium-2 small-4 cell">
+                <label id="lblAnagrafiche_Nome" for="Anagrafiche_Nome" class="large-text-right small-text-left middle">Nome</label>
+              </div>
+              <div class="large-4 medium-4 small-8 cell">
+                <input type="text" name="Anagrafiche_Nome" id="Anagrafiche_Nome" value="<%=GetFieldValue(dtFormsData, "Anagrafiche_Nome")%>" placeholder="Nome" maxlength="100">
+              </div>
+              <div class="large-2 medium-2 small-4 cell">
+                <label id="lblAnagrafiche_Cognome" for="Anagrafiche_Cognome" class="large-text-right small-text-left middle">Cognome</label>
+              </div>
+              <div class="large-4 medium-4 small-8 cell">
+                <input type="text" name="Anagrafiche_Cognome" id="Anagrafiche_Cognome" value="<%=GetFieldValue(dtFormsData, "Anagrafiche_Cognome")%>" placeholder="Cognome" maxlength="100">
+              </div>
+            </div>            
+                        
+            <div class="grid-x grid-padding-x">
+              <div class="large-2 medium-2 small-4 cell">
+                <label id="lblAnagrafiche_EmailContatti" for="Anagrafiche_EmailContatti" class="large-text-right small-text-left middle">Email contatti</label>
+              </div>
+              <div class="large-4 medium-4 small-8 cell">
+                <input type="text" class="email" name="Anagrafiche_EmailContatti" id="Anagrafiche_EmailContatti" value="<%=GetFieldValue(dtFormsData, "Anagrafiche_EmailContatti")%>" placeholder="Email contatti">
+              </div>
+              <div class="large-2 medium-2 small-4 cell">
+                <label id="lblAnagrafiche_Telefono" for="Anagrafiche_Telefono" class="large-text-right small-text-left middle">Telefono</label>
+              </div>
+              <div class="large-4 medium-4 small-8 cell">
+                <input type="text" class="phone" name="Anagrafiche_Telefono" id="Anagrafiche_Telefono" value="<%=GetFieldValue(dtFormsData, "Anagrafiche_Telefono")%>" placeholder="Telefono">
+              </div>
+            </div>            
+            <div class="grid-x grid-padding-x">
+               <div class="large-12 medium-12 small-12 cell text-center">
+                <button class="button large success" onclick="javascript:salvaAnagraficaQuickEdit()">Salva</button>
+              </div>
+            </div>
+
+            <button class="close-button" data-close aria-label="Close modal" type="button">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </dialog>        
+        <script type="text/javascript">
+        		jQuery("#Anagrafiche_RagioneSociale").autocomplete({
+        			source: "/admin/app/anagrafiche/autosuggest-GetAnagrafiche-json.aspx",
+        			minLength: 2,
+        			select: function( event, ui ) {
+        				jQuery("#Anagrafiche_Ky").val(ui.item.value);
+        				jQuery("#Anagrafiche_RagioneSociale").val(ui.item.label);
+        				return false;
+        			}
+        		});
+        </script>
+        <i class="fa-duotone fa-user fa-fw"></i><span id="infoAnagrafiche_Nome"><%=GetFieldValue(dtFormsData, "Anagrafiche_Nome")%></span> <span id="infoAnagrafiche_Cognome"><%=GetFieldValue(dtFormsData, "Anagrafiche_Cognome")%></span> - <i class="fa-duotone fa-phone fa-fw"></i><span id="infoAnagrafiche_Telefono"><%=GetFieldValue(dtFormsData, "Anagrafiche_Telefono")%></span> - <i class="fa-duotone fa-envelope fa-fw"></i><span id="infoAnagrafiche_EmailContatti"><%=GetFieldValue(dtFormsData, "Anagrafiche_EmailContatti")%></span>
+      </div>
+      <div class="large-2 medium-2 small-4 cell ">
+      <label for="Opportunita_Ky" class="large-text-right small-text-left middle">Trattativa</label>
+      </div>
+      <div class="large-4 medium-4 small-8 cell ">
+      <div class="input-group">
+        <input style="width:60px;margin-right:5px;" type="text" name="Opportunita_Ky" id="Opportunita_Ky" value="<%=GetFieldValue(dtFormsData, "Opportunita_Ky")%>" placeholder="Trattativa">
+        <input style="width:70%" type="text" class="input-group-field" name="Opportunita_Titolo" id="Opportunita_Titolo" value="<%=GetFieldValue(dtFormsData, "Opportunita_Titolo")%>" placeholder="Trattativa">
+        <div class="input-group-button"><a href="javascript:gotoSchedaTrattativa()" style="margin-top:4px"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw fa-lg"></i></a></div>
+      </div>
+      <script type="text/javascript">
+      		jQuery("#Opportunita_Titolo").autocomplete({
+      			source: "/admin/app/commerciale/autosuggest-GetOpportunita-json.aspx",
+      			minLength: 2,
+      			select: function( event, ui ) {
+      				jQuery("#Opportunita_Ky").val(ui.item.value);
+      				jQuery("#Opportunita_Titolo").val(ui.item.label);
+      				return false;
+      			}
+      		});
+      </script>
+      </div>
+    </div>
+</fieldset>    
+
+<fieldset class="fieldset">
+<legend>Veicolo in vendita</legend>
+  <div class="grid-x grid-padding-x">
+    <div class="large-2 medium-2 small-4 cell">
+      <label for="PreventiviAuto_Marca" class="large-text-right small-text-left middle">Marca</label>
+    </div>
+    <div class="large-2 medium-2 small-8 cell">
+      <input type="text" name="PreventiviAuto_Marca" id="PreventiviAuto_Marca" value="<%=GetFieldValue(dtFormsData, "PreventiviAuto_Marca")%>" placeholder="Marca">
+    </div>
+    <div class="large-2 medium-2 small-4 cell">
+      <label for="PreventiviAuto_Modello" class="large-text-right small-text-left middle">Modello</label>
+    </div>
+    <div class="large-2 medium-2 small-8 cell">
+      <input type="text" name="PreventiviAuto_Modello" id="PreventiviAuto_Modello" value="<%=GetFieldValue(dtFormsData, "PreventiviAuto_Modello")%>" placeholder="Modello">
+    </div>
+  </div>
+  <div class="grid-x grid-padding-x">
+    <div class="large-2 medium-2 small-4 cell">
+      <label for="PreventiviAuto_Km" class="large-text-right small-text-left middle">Km</label>
+    </div>
+    <div class="large-2 medium-2 small-8 cell">
+      <input type="number" name="PreventiviAuto_Km" id="PreventiviAuto_Km" value="<%=GetFieldValue(dtFormsData, "PreventiviAuto_Km")%>" placeholder="Km">
+    </div>
+    <div class="large-2 medium-2 small-4 cell">
+      <label for="PreventiviAuto_Colore" class="large-text-right small-text-left middle">Colore</label>
+    </div>
+    <div class="large-2 medium-2 small-8 cell">
+      <input type="text" name="PreventiviAuto_Colore" id="PreventiviAuto_Colore" value="<%=GetFieldValue(dtFormsData, "PreventiviAuto_Colore")%>" placeholder="Colore">
+    </div>
+    <div class="large-2 medium-2 small-4 cell">
+        <label for="PreventiviAuto_Anno" class="large-text-right small-text-left middle">Anno</label>
+    </div>
+    <div class="large-2 medium-2 small-8 cell">
+        <input type="number" name="PreventiviAuto_Anno" id="PreventiviAuto_Anno" value="<%=GetFieldValue(dtFormsData, "PreventiviAuto_Anno")%>" placeholder="Anno">
+    </div>
+  </div>
+</fieldset>
+
+<fieldset class="fieldset">
+<legend>Condizioni</legend>
+<div class="grid-x grid-padding-x">
+  <div class="large-2 medium-2 small-4 cell">
+    <label for="PreventiviAuto_Prezzo" class="large-text-right small-text-left middle">Prezzo</label>
+  </div>
+  <div class="large-4 medium-4 small-8 cell">
+    <input type="number" name="PreventiviAuto_Prezzo" id="PreventiviAuto_Prezzo" value="<%=GetMoneyValue(dtPreventiviAuto, "PreventiviAuto_Prezzo")%>" placeholder="Prezzo">
+  </div>
+  <div class="large-2 medium-2 small-4 cell">
+    <label for="PagamentiMetodo_Ky" class="large-text-right small-text-left middle">Pagamento</label>
+  </div>
+  <div class="large-4 medium-4 small-8 cell">
+    <select name="PagamentiMetodo_Ky" id="PagamentiMetodo_Ky" value="<%=GetFieldValue(dtFormsData, "PagamentiMetodo_Ky")%>">
+      <!--#include file="/var/cache/PagamentiMetodo-options.htm"--> 
+    </select>
+    <script type="text/javascript">
+      selectSet('PagamentiMetodo_Ky', '<%=GetFieldValue(dtFormsData, "PagamentiMetodo_Ky")%>');
+    </script>
+  </div>
+</div>
+<div class="grid-x grid-padding-x">
+  <div class="large-2 medium-2 small-4 cell">
+    <label for="PreventiviAuto_Sconto" class="large-text-right small-text-left middle">Sconto</label>
+  </div>
+  <div class="large-4 medium-4 small-8 cell">
+    <input type="number" name="PreventiviAuto_Sconto" id="PreventiviAuto_Sconto" value="<%=GetMoneyValue(dtPreventiviAuto, "PreventiviAuto_Sconto")%>" placeholder="Sconto">
+  </div>
+  <div class="large-2 medium-2 small-4 cell">
+    <label for="PreventiviAuto_ScontoPromozione" class="large-text-right small-text-left middle">Sconto promozione TTC</label>
+  </div>
+  <div class="large-4 medium-4 small-8 cell">
+    <input type="number" name="PreventiviAuto_ScontoPromozione" id="PreventiviAuto_ScontoPromozione" value="<%=GetMoneyValue(dtPreventiviAuto, "PreventiviAuto_ScontoPromozione")%>" placeholder="Sconto promozione">
+  </div>
+</div>
+<div class="grid-x grid-padding-x">
+  <div class="large-2 medium-2 small-4 cell">
+      <label for="PreventiviAuto_NotePagamento" class="large-text-right small-text-left middle">Note sul pagamento</label>
+  </div>
+  <div class="large-10 medium-10 small-8 cell">
+      <textarea name="PreventiviAuto_NotePagamento" id="PreventiviAuto_NotePagamento" rows="2" placeholder="Note"><%=GetFieldValue(dtFormsData, "PreventiviAuto_NotePagamento")%></textarea>
+  </div>
+</div>
+</fieldset>
+
+<fieldset class="fieldset">
+<legend>Accessori</legend>
+<p class="help-text"><i class="fa-duotone fa-circle-info fa-fw"></i>Scrivi l'accessorio e premi "conferma accessorio" per inserirlo nel preventivo</p>
+<hr>
+    <% if (strAzione!="new"){ %>
+    <table class="hover scroll" border="0" width="500" id="tableAccessori">
+    	<thead>
+        <tr>
+	        <th width="10" class="hide"><input type="checkbox" id="selectall" name="selectall" /></th>
+          <th width="30" class="hide" data-property="PreventiviAutoProdotti_Ky">Cod.</th>
+          <th width="300" data-property="PreventiviAutoProdotti_Descrizione">Descrizione</th>
+          <th width="110" data-property="PreventiviAutoProdotti_Prezzo">Prezzo</th>
+          <th width="12" class="nowrap"></th>
+        </tr>
+	   </thead>
+	   <tbody id="bodyaccessori">
+    <%
+      if (dtPreventiviAutoProdotti.Rows.Count>0){
+        for (int j = 0; j < dtPreventiviAutoProdotti.Rows.Count; j++){ %>
+        <tr class="riga<%=i%2%>" id="row<%=dtPreventiviAutoProdotti.Rows[j]["PreventiviAutoProdotti_Ky"].ToString()%>">
+          <td class="hide"><input type="checkbox" class="checkrow" id="record<%=dtPreventiviAutoProdotti.Rows[j]["PreventiviAutoProdotti_Ky"].ToString()%>" data-value="<%=dtPreventiviAutoProdotti.Rows[j]["PreventiviAutoProdotti_Ky"].ToString()%>" /></td>
+          <td class="hide"><%=dtPreventiviAutoProdotti.Rows[j]["PreventiviAutoProdotti_Ky"].ToString()%></td>
+          <td><%=dtPreventiviAutoProdotti.Rows[j]["PreventiviAutoProdotti_Descrizione"].ToString()%></td>
+          <td>&euro; <%=dtPreventiviAutoProdotti.Rows[j]["PreventiviAutoProdotti_Prezzo"].ToString()%></td>
+          <td><a title="elimina" onclick="eliminaAccessorio('<%=dtPreventiviAutoProdotti.Rows[j]["PreventiviAutoProdotti_Ky"].ToString().Trim()%>');"><i class="fa-duotone fa-trash-can fa-fw"></i>Elimina accessorio</a></td>
+        </tr>
+      <% } 
+      }else{
+        Response.Write("<tr><td colspan=\"5\"></td></tr>");
+      }
+    %>
+	   </tbody>
+     <tfoot>
+      <tr class="riga0">
+        <td class="hide"></td>
+        <td class="hide"></td>
+        <td><input type="text" id="PreventiviAutoProdotti_Descrizione0" placeholder="Descrizione accessorio"></td>
+        <td><input type="text" id="PreventiviAutoProdotti_Prezzo0" placeholder="Prezzo accessorio"></td>
+        <td><a title="salva" class="salva" onclick="salvaAccessorio()"><i class="fa-duotone fa-floppy-disk fa-fw fa-lg primary" style="--fa-primary-color: white;--fa-secondary-color: #1a73e8;"></i>Conferma accessorio</a></td>
+      </tr>
+    </tfoot>
+    </table>
+    <% }else{ %>
+      <button type="submit" class="button tiny"><i class="fa-duotone fa-square-plus fa-fw"></i>Aggiungi accessorio</button>
+    <% } %>
+</fieldset>
+
+<fieldset class="fieldset">
+<legend>Veicolo in permuta</legend>
+  <div class="grid-x grid-padding-x">
+    <div class="large-2 medium-2 small-4 cell">
+      <label for="PreventiviAuto_Permuta" class="large-text-right small-text-left middle">Permuta</label>
+    </div>
+    <div class="large-2 medium-2 small-8 cell">
+      <div class="switch tiny">
+        <input class="switch-input" type="checkbox" name="PreventiviAuto_Permuta" id="PreventiviAuto_Permuta" value="on" <% if (GetCheckValue(dtPreventiviAuto, "PreventiviAuto_Permuta")){ Response.Write("checked");} %>  />
+        <label class="switch-paddle" for="PreventiviAuto_Permuta">
+        <span class="show-for-sr">Ok</span>
+        <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+        <span class="switch-inactive" aria-hidden="true"></span>
+        </label>
+      </div>
+    </div>
+    <div class="large-2 medium-2 small-4 cell">
+      <label for="PreventiviAuto_PermutaVoltura" class="large-text-right small-text-left middle">Valore veicolo in permuta</label>
+    </div>
+    <div class="large-2 medium-2 small-8 cell">
+      <input type="number" name="PreventiviAuto_PermutaValore" id="PreventiviAuto_PermutaValore" value="<%=GetMoneyValue(dtPreventiviAuto, "PreventiviAuto_PermutaValore")%>" placeholder="Valore permuta">
+    </div>
+    <div class="large-2 medium-2 small-4 cell">
+      <label for="PreventiviAuto_PermutaVoltura" class="large-text-right small-text-left middle">Prezzo minivoltura</label>
+    </div>
+    <div class="large-2 medium-2 small-8 cell">
+      <input type="number" name="PreventiviAuto_PermutaVoltura" id="PreventiviAuto_PermutaVoltura" value="<%=GetMoneyValue(dtPreventiviAuto, "PreventiviAuto_PermutaVoltura")%>" placeholder="Prezzo Voltura">
+    </div>
+  </div>
+  <div class="grid-x grid-padding-x">
+    <div class="large-2 medium-2 small-4 cell">
+      <label for="PreventiviAuto_Permuta" class="large-text-right small-text-left middle">Veicolo in permuta</label>
+    </div>
+    <div class="large-10 medium-10 small-8 cell">
+      <textarea name="PreventiviAuto_PermutaAuto" id="PreventiviAuto_PermutaAuto" rows="2" placeholder="Descrizione veicolo in permuta"><%=GetFieldValue(dtFormsData, "PreventiviAuto_PermutaAuto")%></textarea>
+    </div>
+  </div>
+</fieldset>
+
+<fieldset class="fieldset">
+<legend>Voltura</legend>
+  <div class="grid-x grid-padding-x">
+  
+  
+  <div class="large-2 medium-2 small-4 cell">
+  <label for="PreventiviAuto_Voltura" class="large-text-right small-text-left middle">Voltura</label>
+  </div>
+  <div class="large-4 medium-4 small-8 cell">
+    <div class="switch tiny">
+    <input class="switch-input" type="checkbox" name="PreventiviAuto_Voltura" id="PreventiviAuto_Voltura" value="on" <% if (GetCheckValue(dtPreventiviAuto, "PreventiviAuto_Voltura")){ Response.Write("checked");} %>  />
+    <label class="switch-paddle" for="PreventiviAuto_Voltura">
+    <span class="show-for-sr">Ok</span>
+    <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+    <span class="switch-inactive" aria-hidden="true"></span>
+    </label>
+    </div>
+  </div>
+  <div class="large-2 medium-2 small-4 cell">
+  <label for="PreventiviAuto_VolturaPrezzo" class="large-text-right small-text-left middle">Prezzo voltura</label>
+  </div>
+  <div class="large-4 medium-4 small-8 cell">
+  <input type="number" name="PreventiviAuto_VolturaPrezzo" id="PreventiviAuto_VolturaPrezzo" value="<%=GetMoneyValue(dtPreventiviAuto, "PreventiviAuto_VolturaPrezzo")%>" placeholder="Prezzo Voltura">
+  </div>
+</div>
+</fieldset>
+
+<fieldset class="fieldset">
+<legend>Immatricolazione</legend>
+  <div class="grid-x grid-padding-x">
+    <div class="large-2 medium-2 small-4 cell">
+      <label for="PreventiviAuto_Immatricolazione" class="large-text-right small-text-left middle">Immatricolazione</label>
+    </div>
+    <div class="large-4 medium-4 small-8 cell">
+      <div class="switch tiny">
+      <input class="switch-input" type="checkbox" name="PreventiviAuto_Immatricolazione" id="PreventiviAuto_Immatricolazione" value="on" <% if (GetCheckValue(dtPreventiviAuto, "PreventiviAuto_Immatricolazione")){ Response.Write("checked");} %>  />
+      <label class="switch-paddle" for="PreventiviAuto_Immatricolazione">
+      <span class="show-for-sr">Ok</span>
+      <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+      <span class="switch-inactive" aria-hidden="true"></span>
+      </label>
+      </div>
+      </div>
+      <div class="large-2 medium-2 small-4 cell">
+      <label for="PreventiviAuto_ImmatricolazionePrezzo" class="large-text-right small-text-left middle">Prezzo immatricolazione</label>
+      </div>
+      <div class="large-4 medium-4 small-8 cell">
+      <input type="number" name="PreventiviAuto_ImmatricolazionePrezzo" id="PreventiviAuto_ImmatricolazionePrezzo" value="<%=GetMoneyValue(dtPreventiviAuto, "PreventiviAuto_ImmatricolazionePrezzo")%>" placeholder="Prezzo Immatricolazione">
+    </div>
+  </div>
+</fieldset>
+
+<fieldset class="fieldset">
+<legend>Note</legend>
+  <div class="grid-x grid-padding-x">
+    <div class="large-12 medium-12 small-12 cell">
+      <textarea name="PreventiviAuto_Note" id="PreventiviAuto_Note" rows="2" placeholder="Note"><%=GetFieldValue(dtFormsData, "PreventiviAuto_Note")%></textarea>
+    </div>
+  </div>
+</fieldset>
+

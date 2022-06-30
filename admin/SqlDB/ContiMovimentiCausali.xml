@@ -1,0 +1,29 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ContiMovimentiCausali" Type="TABLE">
+    <Keys>
+      <Key Column="ContiMovimentiCausali_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="ContiMovimentiCausali_Ky" IsNull="N" Type="int" />
+      <Field Column="ContiMovimentiCausali_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="ContiMovimentiCausali_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="ContiMovimentiCausali_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="ContiMovimentiCausali_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="ContiMovimentiCausali_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="ContiMovimentiCausali_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="ContiMovimentiCausali_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[ContiMovimentiCausali] (
+  [ContiMovimentiCausali_Ky] int IDENTITY(1,1) NOT NULL , 
+  [ContiMovimentiCausali_Titolo] varchar(200)  NULL , 
+  [ContiMovimentiCausali_UserInsert] int  NULL , 
+  [ContiMovimentiCausali_UserUpdate] int  NULL , 
+  [ContiMovimentiCausali_UserDelete] int  NULL , 
+  [ContiMovimentiCausali_DateInsert] datetime  NULL , 
+  [ContiMovimentiCausali_DateUpdate] datetime  NULL , 
+  [ContiMovimentiCausali_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[ContiMovimentiCausali] ADD CONSTRAINT PK_ContiMovimentiCausali PRIMARY KEY  ([ContiMovimentiCausali_Ky])
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,31 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CoreAttributesFormat_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="CoreAttributesFormat_Ky" IsNull="N" Type="int" />
+      <Field Column="CoreAttributesType_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreAttributesFormat_Format" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreAttributesFormat_Code" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreAttributesFormat_Icon" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreAttributesFormat_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CoreAttributesFormat_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CoreAttributesFormat_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CoreAttributesFormat_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CoreAttributesFormat_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CoreAttributesFormat_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="CoreAttributesType_Type" IsNull="N" Type="int" />
+      <Field Column="CoreAttributesType_Code" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreAttributesType_Icon" IsNull="Y" Type="varchar" Lenght="100" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.CoreAttributesFormat_Vw
+AS
+SELECT        dbo.CoreAttributesFormat.CoreAttributesFormat_Ky, dbo.CoreAttributesFormat.CoreAttributesType_Ky, dbo.CoreAttributesFormat.CoreAttributesFormat_Format, 
+                         dbo.CoreAttributesFormat.CoreAttributesFormat_Code, dbo.CoreAttributesFormat.CoreAttributesFormat_Icon, dbo.CoreAttributesFormat.CoreAttributesFormat_UserInsert, 
+                         dbo.CoreAttributesFormat.CoreAttributesFormat_UserUpdate, dbo.CoreAttributesFormat.CoreAttributesFormat_UserDelete, dbo.CoreAttributesFormat.CoreAttributesFormat_DateInsert, 
+                         dbo.CoreAttributesFormat.CoreAttributesFormat_DateUpdate, dbo.CoreAttributesFormat.CoreAttributesFormat_DateDelete, dbo.CoreAttributesType.CoreAttributesType_Type, 
+                         dbo.CoreAttributesType.CoreAttributesType_Code, dbo.CoreAttributesType.CoreAttributesType_Icon
+FROM            dbo.CoreAttributesFormat INNER JOIN
+                         dbo.CoreAttributesType ON dbo.CoreAttributesFormat.CoreAttributesType_Ky = dbo.CoreAttributesType.CoreAttributesType_Ky
+</SqlScriptCreate>
+</SqlTable>

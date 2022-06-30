@@ -1,0 +1,39 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CMSGallerie" Type="TABLE">
+    <Keys>
+      <Key Column="CMSGallerie_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CMSGallerie_Ky" IsNull="N" Type="int" />
+      <Field Column="CMSGallerie_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSGallerie_Data" IsNull="Y" Type="datetime" />
+      <Field Column="CMSGallerie_PubblicaWeb" IsNull="Y" Type="bit" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="CMSGallerie_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CMSGallerie_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CMSGallerie_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CMSGallerie_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CMSGallerie_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CMSGallerie_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="CMSCategorie_Ky" IsNull="Y" Type="int" />
+      <Field Column="CMSGallerie_Tags" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CMSGallerie] (
+  [CMSGallerie_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CMSGallerie_Titolo] varchar(200)  NULL , 
+  [CMSGallerie_Data] datetime  NULL , 
+  [CMSGallerie_PubblicaWeb] bit  NULL , 
+  [Utenti_Ky] int  NULL , 
+  [CMSGallerie_UserInsert] int  NULL , 
+  [CMSGallerie_UserUpdate] int  NULL , 
+  [CMSGallerie_UserDelete] int  NULL , 
+  [CMSGallerie_DateInsert] datetime  NULL , 
+  [CMSGallerie_DateUpdate] datetime  NULL , 
+  [CMSGallerie_DateDelete] datetime  NULL , 
+  [CMSCategorie_Ky] int  NULL , 
+  [CMSGallerie_Tags] varchar(MAX)  NULL  )
+ALTER TABLE [dbo].[CMSGallerie] ADD CONSTRAINT PK_CMSGallerie PRIMARY KEY  ([CMSGallerie_Ky])
+</SqlScriptCreate>
+</SqlTable>

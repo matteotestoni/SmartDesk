@@ -1,0 +1,19 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Officina_Giornalieri_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="NumeroOfficina" IsNull="Y" Type="int" />
+      <Field Column="Officina_DataAccettazione" IsNull="Y" Type="date" />
+      <Field Column="Officina_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+
+
+CREATE VIEW [dbo].[Officina_Giornalieri_Vw]
+AS
+SELECT        COUNT(Officina_Ky) AS NumeroOfficina, CONVERT(DATE, Officina_DataAccettazione) as Officina_DataAccettazione , MAX(Officina_Ky) AS Officina_Ky
+FROM            dbo.Officina
+GROUP BY CONVERT(DATE, Officina_DataAccettazione)
+</SqlScriptCreate>
+</SqlTable>

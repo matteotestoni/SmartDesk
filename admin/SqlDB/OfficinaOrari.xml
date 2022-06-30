@@ -1,0 +1,35 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="OfficinaOrari" Type="TABLE">
+    <Keys>
+      <Key Column="OfficinaOrari_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="OfficinaOrari_Ky" IsNull="N" Type="int" />
+      <Field Column="OfficinaOrari_Orario" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="OfficinaOrari_Ordine" IsNull="Y" Type="int" />
+      <Field Column="OfficinaOrari_Colore" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="OfficinaOrari_Icona" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="OfficinaOrari_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="OfficinaOrari_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="OfficinaOrari_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="OfficinaOrari_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="OfficinaOrari_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="OfficinaOrari_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[OfficinaOrari] (
+  [OfficinaOrari_Ky] int IDENTITY(1,1) NOT NULL , 
+  [OfficinaOrari_Orario] varchar(50)  NULL , 
+  [OfficinaOrari_Ordine] int  NULL , 
+  [OfficinaOrari_Colore] varchar(100)  NULL , 
+  [OfficinaOrari_Icona] varchar(200)  NULL , 
+  [OfficinaOrari_UserInsert] int  NULL , 
+  [OfficinaOrari_UserUpdate] int  NULL , 
+  [OfficinaOrari_UserDelete] int  NULL , 
+  [OfficinaOrari_DateInsert] datetime  NULL , 
+  [OfficinaOrari_DateUpdate] datetime  NULL , 
+  [OfficinaOrari_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[OfficinaOrari] ADD CONSTRAINT PK_OfficinaOrari PRIMARY KEY  ([OfficinaOrari_Ky])
+</SqlScriptCreate>
+</SqlTable>

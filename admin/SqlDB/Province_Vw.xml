@@ -1,0 +1,36 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Province_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Province_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="Province_Codice" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="Province_Provincia" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Regioni_Codice" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="Province_Zona" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="Province_ProvinciaHTML" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Province_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Province_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Province_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Province_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Province_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Province_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Nazioni_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Regioni_Regione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Nazioni_Nazione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Nazioni_Isocode2" IsNull="Y" Type="varchar" Lenght="2" />
+      <Field Column="Nazioni_Isocode3" IsNull="Y" Type="varchar" Lenght="3" />
+      <Field Column="Nazioni_Isocodenum" IsNull="Y" Type="int" />
+      <Field Column="Regioni_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Province_Vw
+AS
+SELECT        dbo.Province.Province_Ky, dbo.Province.Province_Codice, dbo.Province.Province_Provincia, dbo.Province.Regioni_Codice, dbo.Province.Province_Zona, dbo.Province.Province_ProvinciaHTML, 
+                         dbo.Province.Province_UserInsert, dbo.Province.Province_UserUpdate, dbo.Province.Province_UserDelete, dbo.Province.Province_DateInsert, dbo.Province.Province_DateUpdate, 
+                         dbo.Province.Province_DateDelete, dbo.Regioni.Nazioni_Ky, dbo.Regioni.Regioni_Regione, dbo.Nazioni.Nazioni_Nazione, dbo.Nazioni.Nazioni_Isocode2, dbo.Nazioni.Nazioni_Isocode3, 
+                         dbo.Nazioni.Nazioni_Isocodenum, dbo.Province.Regioni_Ky
+FROM            dbo.Province LEFT OUTER JOIN
+                         dbo.Regioni ON dbo.Province.Regioni_Ky = dbo.Regioni.Regioni_Ky LEFT OUTER JOIN
+                         dbo.Nazioni ON dbo.Regioni.Nazioni_Ky = dbo.Nazioni.Nazioni_Ky
+</SqlScriptCreate>
+</SqlTable>

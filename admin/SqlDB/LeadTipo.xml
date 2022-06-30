@@ -1,0 +1,37 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="LeadTipo" Type="TABLE">
+    <Keys>
+      <Key Column="LeadTipo_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="LeadTipo_Ky" IsNull="N" Type="int" />
+      <Field Column="LeadTipo_Titolo" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="LeadTipo_Default" IsNull="Y" Type="bit" />
+      <Field Column="LeadTipo_Codice" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="LeadTipo_Ordine" IsNull="Y" Type="int" />
+      <Field Column="LeadTipo_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="LeadTipo_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="LeadTipo_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="LeadTipo_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="LeadTipo_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="LeadTipo_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="LeadTipo_Icona" IsNull="Y" Type="varchar" Lenght="100" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[LeadTipo] (
+  [LeadTipo_Ky] int IDENTITY(1,1) NOT NULL , 
+  [LeadTipo_Titolo] varchar(MAX)  NULL , 
+  [LeadTipo_Default] bit  NULL , 
+  [LeadTipo_Codice] varchar(MAX)  NULL , 
+  [LeadTipo_Ordine] int  NULL , 
+  [LeadTipo_UserInsert] int  NULL , 
+  [LeadTipo_UserUpdate] int  NULL , 
+  [LeadTipo_UserDelete] int  NULL , 
+  [LeadTipo_DateInsert] datetime  NULL , 
+  [LeadTipo_DateUpdate] datetime  NULL , 
+  [LeadTipo_DateDelete] datetime  NULL , 
+  [LeadTipo_Icona] varchar(100)  NULL  )
+ALTER TABLE [dbo].[LeadTipo] ADD CONSTRAINT PK_LeadTipo PRIMARY KEY  ([LeadTipo_Ky])
+</SqlScriptCreate>
+</SqlTable>

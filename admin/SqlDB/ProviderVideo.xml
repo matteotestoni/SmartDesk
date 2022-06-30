@@ -1,0 +1,29 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ProviderVideo" Type="TABLE">
+    <Keys>
+      <Key Column="ProviderVideo_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="ProviderVideo_Ky" IsNull="N" Type="int" />
+      <Field Column="ProviderVideo_Descrizione" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="ProviderVideo_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="ProviderVideo_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="ProviderVideo_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="ProviderVideo_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="ProviderVideo_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="ProviderVideo_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[ProviderVideo] (
+  [ProviderVideo_Ky] int IDENTITY(1,1) NOT NULL , 
+  [ProviderVideo_Descrizione] varchar(20)  NULL , 
+  [ProviderVideo_UserInsert] int  NULL , 
+  [ProviderVideo_UserUpdate] int  NULL , 
+  [ProviderVideo_UserDelete] int  NULL , 
+  [ProviderVideo_DateInsert] datetime  NULL , 
+  [ProviderVideo_DateUpdate] datetime  NULL , 
+  [ProviderVideo_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[ProviderVideo] ADD CONSTRAINT PK_ProviderVideo PRIMARY KEY  ([ProviderVideo_Ky])
+</SqlScriptCreate>
+</SqlTable>

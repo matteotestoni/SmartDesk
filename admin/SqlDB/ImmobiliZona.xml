@@ -1,0 +1,19 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ImmobiliZona" Type="TABLE">
+    <Keys>
+      <Key Column="ImmobiliZona_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="ImmobiliZona_Ky" IsNull="N" Type="int" />
+      <Field Column="ImmobiliZona_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Comuni_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[ImmobiliZona] (
+  [ImmobiliZona_Ky] int IDENTITY(1,1) NOT NULL , 
+  [ImmobiliZona_Descrizione] varchar(100)  NULL , 
+  [Comuni_Ky] int  NULL  )
+ALTER TABLE [dbo].[ImmobiliZona] ADD CONSTRAINT PK_ImmobiliZona PRIMARY KEY  ([ImmobiliZona_Ky])
+</SqlScriptCreate>
+</SqlTable>

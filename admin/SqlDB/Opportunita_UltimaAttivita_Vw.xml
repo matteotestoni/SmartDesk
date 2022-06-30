@@ -1,0 +1,17 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Opportunita_UltimaAttivita_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Attivita_Ky" IsNull="Y" Type="int" />
+      <Field Column="Opportunita_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Opportunita_UltimaAttivita_Vw
+AS
+SELECT        TOP (100) PERCENT MAX(Attivita_Ky) AS Attivita_Ky, Opportunita_Ky
+FROM            dbo.Attivita
+GROUP BY Opportunita_Ky
+HAVING        (Opportunita_Ky IS NOT NULL)
+ORDER BY Opportunita_Ky
+</SqlScriptCreate>
+</SqlTable>

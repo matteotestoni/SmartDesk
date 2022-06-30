@@ -1,0 +1,41 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CoreForms" Type="TABLE">
+    <Keys>
+      <Key Column="CoreForms_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CoreForms_Ky" IsNull="N" Type="int" />
+      <Field Column="CoreEntities_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreForms_Custom" IsNull="Y" Type="bit" />
+      <Field Column="CoreForms_Default" IsNull="Y" Type="bit" />
+      <Field Column="CoreForms_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreForms_Order" IsNull="Y" Type="int" />
+      <Field Column="CoreForms_SQLFrom" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreForms_WhichFields" IsNull="Y" Type="tinyint" />
+      <Field Column="CoreForms_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CoreForms_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CoreForms_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CoreForms_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CoreForms_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CoreForms_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CoreForms] (
+  [CoreForms_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CoreEntities_Ky] int  NULL , 
+  [CoreForms_Custom] bit  NULL , 
+  [CoreForms_Default] bit  NULL , 
+  [CoreForms_Title] varchar(200)  NULL , 
+  [CoreForms_Order] int  NULL , 
+  [CoreForms_SQLFrom] varchar(MAX)  NULL , 
+  [CoreForms_WhichFields] tinyint  NULL DEFAULT ((1)), 
+  [CoreForms_UserInsert] int  NULL , 
+  [CoreForms_UserUpdate] int  NULL , 
+  [CoreForms_UserDelete] int  NULL , 
+  [CoreForms_DateInsert] datetime  NULL , 
+  [CoreForms_DateUpdate] datetime  NULL , 
+  [CoreForms_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[CoreForms] ADD CONSTRAINT PK_CoreForms PRIMARY KEY  ([CoreForms_Ky])
+</SqlScriptCreate>
+</SqlTable>

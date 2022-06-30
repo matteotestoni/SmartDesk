@@ -1,0 +1,47 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Recensioni" Type="TABLE">
+    <Keys>
+      <Key Column="Recensioni_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Recensioni_Ky" IsNull="N" Type="int" />
+      <Field Column="Recensioni_Data" IsNull="Y" Type="datetime" />
+      <Field Column="Recensioni_Titolo" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Recensioni_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="RecensioniTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Prodotti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Recensioni_Rating" IsNull="Y" Type="tinyint" />
+      <Field Column="Recensioni_Approvata" IsNull="Y" Type="bit" />
+      <Field Column="Recensioni_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Recensioni_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Recensioni_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Recensioni_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Recensioni_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Recensioni_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Recensioni_Risposta" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Recensioni] (
+  [Recensioni_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Recensioni_Data] datetime  NULL , 
+  [Recensioni_Titolo] varchar(300)  NULL , 
+  [Recensioni_Descrizione] varchar(MAX)  NULL , 
+  [RecensioniTipo_Ky] tinyint  NULL , 
+  [Prodotti_Ky] int  NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [Recensioni_Rating] tinyint  NULL , 
+  [Recensioni_Approvata] bit  NULL DEFAULT ((0)), 
+  [Recensioni_UserInsert] int  NULL , 
+  [Recensioni_UserUpdate] int  NULL , 
+  [Recensioni_UserDelete] int  NULL , 
+  [Recensioni_DateInsert] datetime  NULL , 
+  [Recensioni_DateUpdate] datetime  NULL , 
+  [Recensioni_DateDelete] datetime  NULL , 
+  [Lingue_Ky] tinyint  NULL , 
+  [Recensioni_Risposta] varchar(MAX)  NULL  )
+ALTER TABLE [dbo].[Recensioni] ADD CONSTRAINT PK_Recensioni PRIMARY KEY  ([Recensioni_Ky])
+</SqlScriptCreate>
+</SqlTable>

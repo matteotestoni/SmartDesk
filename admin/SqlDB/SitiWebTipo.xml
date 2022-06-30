@@ -1,0 +1,33 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="SitiWebTipo" Type="TABLE">
+    <Keys>
+      <Key Column="SitiWebTipo_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="SitiWebTipo_Ky" IsNull="N" Type="int" />
+      <Field Column="SitiWebTipo_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="SitiWebTipo_Codice" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="SitiWebTipo_Icona" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="SitiWebTipo_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="SitiWebTipo_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="SitiWebTipo_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="SitiWebTipo_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="SitiWebTipo_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="SitiWebTipo_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[SitiWebTipo] (
+  [SitiWebTipo_Ky] int IDENTITY(1,1) NOT NULL , 
+  [SitiWebTipo_Titolo] varchar(100)  NULL , 
+  [SitiWebTipo_Codice] varchar(100)  NULL , 
+  [SitiWebTipo_Icona] varchar(100)  NULL , 
+  [SitiWebTipo_UserInsert] int  NULL , 
+  [SitiWebTipo_UserUpdate] int  NULL , 
+  [SitiWebTipo_UserDelete] int  NULL , 
+  [SitiWebTipo_DateInsert] datetime  NULL , 
+  [SitiWebTipo_DateUpdate] datetime  NULL , 
+  [SitiWebTipo_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[SitiWebTipo] ADD CONSTRAINT PK_SitiWebTipo PRIMARY KEY  ([SitiWebTipo_Ky])
+</SqlScriptCreate>
+</SqlTable>

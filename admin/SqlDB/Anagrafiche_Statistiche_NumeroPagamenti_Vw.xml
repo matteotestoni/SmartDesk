@@ -1,0 +1,19 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Anagrafiche_Statistiche_NumeroPagamenti_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="NumeroPagamenti" IsNull="Y" Type="int" />
+      <Field Column="GGRitardo" IsNull="Y" Type="int" />
+      <Field Column="TotalePagamenti" IsNull="Y" Type="money" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Anagrafiche_Statistiche_NumeroPagamenti_Vw
+AS
+SELECT     TOP (100) PERCENT Anagrafiche_Ky, COUNT(Pagamenti_Ky) AS NumeroPagamenti, SUM(DATEDIFF(dd, Pagamenti_Data, Pagamenti_DataPagato)) AS GGRitardo, 
+                      SUM(Pagamenti_Importo) AS TotalePagamenti
+FROM         dbo.Pagamenti
+GROUP BY Anagrafiche_Ky
+ORDER BY Anagrafiche_Ky
+</SqlScriptCreate>
+</SqlTable>

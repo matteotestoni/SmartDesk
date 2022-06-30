@@ -1,0 +1,35 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliModelloSpazioGroup" Type="TABLE">
+    <Keys>
+      <Key Column="VeicoliModelloSpazioGroup_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="VeicoliModelloSpazioGroup_Ky" IsNull="N" Type="int" />
+      <Field Column="VeicoliMarcaSpazioGroup_Marca" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliModelloSpazioGroup_Modello" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliModelloSpazioGroup_ModelloHTML" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliModello_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliMarca_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliModello_Importante" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliMarcaSpazioGroup_MarcaHTML" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliCarrozzeria_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliModello_Nuovo" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[VeicoliModelloSpazioGroup] (
+  [VeicoliModelloSpazioGroup_Ky] int IDENTITY(1,1) NOT NULL , 
+  [VeicoliMarcaSpazioGroup_Marca] varchar(200)  NULL , 
+  [VeicoliModelloSpazioGroup_Modello] varchar(200)  NULL , 
+  [VeicoliModelloSpazioGroup_ModelloHTML] varchar(200)  NULL , 
+  [VeicoliTipo_Ky] tinyint  NULL , 
+  [VeicoliModello_Ky] int  NULL , 
+  [VeicoliMarca_Ky] int  NULL , 
+  [VeicoliModello_Importante] bit  NULL , 
+  [VeicoliMarcaSpazioGroup_MarcaHTML] varchar(200)  NULL , 
+  [VeicoliCarrozzeria_Ky] int  NULL , 
+  [VeicoliModello_Nuovo] bit  NULL  )
+ALTER TABLE [dbo].[VeicoliModelloSpazioGroup] ADD CONSTRAINT PK_VeicoliModelloSpazioGroup PRIMARY KEY  ([VeicoliModelloSpazioGroup_Ky])
+</SqlScriptCreate>
+</SqlTable>

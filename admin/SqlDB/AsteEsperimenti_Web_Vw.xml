@@ -1,0 +1,90 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AsteEsperimenti_Web_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="AsteCategorie_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AsteRitiri_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="AsteEsperimentiEsiti_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="AsteEsperimenti_Ky" IsNull="N" Type="int" />
+      <Field Column="AsteEsperimenti_Numero" IsNull="Y" Type="int" />
+      <Field Column="Aste_Ky" IsNull="Y" Type="int" />
+      <Field Column="Aste_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="AsteEsperimenti_DataInizio" IsNull="Y" Type="datetime" />
+      <Field Column="AsteEsperimenti_DataTermine" IsNull="Y" Type="datetime" />
+      <Field Column="AsteEsperimenti_DataPubblicazione" IsNull="Y" Type="datetime" />
+      <Field Column="AsteEsperimenti_DataChiusura" IsNull="Y" Type="datetime" />
+      <Field Column="AsteEsperimenti_PercentualeRibasso" IsNull="Y" Type="float" />
+      <Field Column="AsteEsperimentiEsiti_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="AsteEsperimenti_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AsteEsperimenti_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AsteEsperimenti_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AsteEsperimenti_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AsteEsperimenti_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AsteEsperimenti_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Aste_UrlKey" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_Numero" IsNull="Y" Type="int" />
+      <Field Column="Aste_Visite" IsNull="Y" Type="int" />
+      <Field Column="Aste_DataPagamento" IsNull="Y" Type="smalldatetime" />
+      <Field Column="PagamentiMetodo_Descrizione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Aste_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="AsteCategorie_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Aste_Foto1" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_Foto2" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_Foto3" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_Foto4" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_Foto5" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_Foto6" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_Foto7" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_Foto8" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_Foto9" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_Foto10" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_Referente" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_CellulareReferente" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Aste_EmailReferente" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Comuni_Comune" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Regioni_Regione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Nazioni_Nazione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Aste_Indirizzo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Province_Provincia" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Aste_Rilancio" IsNull="Y" Type="money" />
+      <Field Column="Aste_Cauzione" IsNull="Y" Type="money" />
+      <Field Column="Nazioni_Codice" IsNull="Y" Type="varchar" Lenght="4" />
+      <Field Column="Aste_Video" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_CommissioniTipo" IsNull="Y" Type="tinyint" />
+      <Field Column="Aste_Commissione" IsNull="Y" Type="tinyint" />
+      <Field Column="AsteNatura_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="AsteVendita_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="AsteVendita_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AsteNatura_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AsteVendita_Icona" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AsteNatura_Icona" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Regioni_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.AsteEsperimenti_Web_Vw
+AS
+SELECT        dbo.AsteCategorie.AsteCategorie_Titolo, dbo.AsteRitiri.AsteRitiri_Titolo, dbo.AsteEsperimentiEsiti.AsteEsperimentiEsiti_Titolo, dbo.AsteEsperimenti.AsteEsperimenti_Ky, 
+                         dbo.AsteEsperimenti.AsteEsperimenti_Numero, dbo.AsteEsperimenti.Aste_Ky, dbo.Aste.Aste_Titolo, dbo.AsteEsperimenti.AsteEsperimenti_DataInizio, dbo.AsteEsperimenti.AsteEsperimenti_DataTermine, 
+                         dbo.AsteEsperimenti.AsteEsperimenti_DataPubblicazione, dbo.AsteEsperimenti.AsteEsperimenti_DataChiusura, dbo.AsteEsperimenti.AsteEsperimenti_PercentualeRibasso, 
+                         dbo.AsteEsperimenti.AsteEsperimentiEsiti_Ky, dbo.AsteEsperimenti.AsteEsperimenti_UserInsert, dbo.AsteEsperimenti.AsteEsperimenti_UserUpdate, dbo.AsteEsperimenti.AsteEsperimenti_UserDelete, 
+                         dbo.AsteEsperimenti.AsteEsperimenti_DateInsert, dbo.AsteEsperimenti.AsteEsperimenti_DateUpdate, dbo.AsteEsperimenti.AsteEsperimenti_DateDelete, dbo.Aste.Aste_UrlKey, dbo.Aste.Aste_Numero, 
+                         dbo.Aste.Aste_Visite, dbo.Aste.Aste_DataPagamento, dbo.PagamentiMetodo.PagamentiMetodo_Descrizione, dbo.Aste.Aste_Descrizione, dbo.Aste.AsteCategorie_Ky, dbo.Aste.Aste_Foto1, dbo.Aste.Aste_Foto2, 
+                         dbo.Aste.Aste_Foto3, dbo.Aste.Aste_Foto4, dbo.Aste.Aste_Foto5, dbo.Aste.Aste_Foto6, dbo.Aste.Aste_Foto7, dbo.Aste.Aste_Foto8, dbo.Aste.Aste_Foto9, dbo.Aste.Aste_Foto10, dbo.Aste.Aste_Referente, 
+                         dbo.Aste.Aste_CellulareReferente, dbo.Aste.Aste_EmailReferente, dbo.Comuni.Comuni_Comune, dbo.Regioni.Regioni_Regione, dbo.Nazioni.Nazioni_Nazione, dbo.Aste.Aste_Indirizzo, 
+                         dbo.Province.Province_Provincia, dbo.Aste.Aste_Rilancio, dbo.Aste.Aste_Cauzione, dbo.Nazioni.Nazioni_Codice, dbo.Aste.Aste_Video, dbo.Aste.Aste_CommissioniTipo, dbo.Aste.Aste_Commissione, 
+                         dbo.Aste.AsteNatura_Ky, dbo.Aste.AsteVendita_Ky, dbo.AsteVendita.AsteVendita_Titolo, dbo.AsteNatura.AsteNatura_Titolo, dbo.AsteVendita.AsteVendita_Icona, dbo.AsteNatura.AsteNatura_Icona, 
+                         dbo.Aste.Regioni_Ky
+FROM            dbo.Nazioni RIGHT OUTER JOIN
+                         dbo.AsteNatura RIGHT OUTER JOIN
+                         dbo.Aste ON dbo.AsteNatura.AsteNatura_Ky = dbo.Aste.AsteNatura_Ky LEFT OUTER JOIN
+                         dbo.AsteVendita ON dbo.Aste.AsteVendita_Ky = dbo.AsteVendita.AsteVendita_Ky ON dbo.Nazioni.Nazioni_Ky = dbo.Aste.Nazioni_Ky LEFT OUTER JOIN
+                         dbo.Regioni ON dbo.Aste.Regioni_Ky = dbo.Regioni.Regioni_Ky LEFT OUTER JOIN
+                         dbo.Province RIGHT OUTER JOIN
+                         dbo.Comuni ON dbo.Province.Province_Ky = dbo.Comuni.Province_Ky ON dbo.Aste.Comuni_Ky = dbo.Comuni.Comuni_Ky LEFT OUTER JOIN
+                         dbo.PagamentiMetodo ON dbo.Aste.PagamentiMetodo_Ky = dbo.PagamentiMetodo.PagamentiMetodo_Ky LEFT OUTER JOIN
+                         dbo.AsteCategorie ON dbo.Aste.AsteCategorie_Ky = dbo.AsteCategorie.AsteCategorie_Ky LEFT OUTER JOIN
+                         dbo.AsteRitiri ON dbo.Aste.AsteRitiri_Ky = dbo.AsteRitiri.AsteRitiri_Ky RIGHT OUTER JOIN
+                         dbo.AsteEsperimenti LEFT OUTER JOIN
+                         dbo.AsteEsperimentiEsiti ON dbo.AsteEsperimenti.AsteEsperimentiEsiti_Ky = dbo.AsteEsperimentiEsiti.AsteEsperimentiEsiti_Ky ON dbo.Aste.Aste_Ky = dbo.AsteEsperimenti.Aste_Ky
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,33 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AliquoteIVA" Type="TABLE">
+    <Keys>
+      <Key Column="AliquoteIVA_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AliquoteIVA_Ky" IsNull="N" Type="smallint" />
+      <Field Column="AliquoteIVA_Aliquota" IsNull="Y" Type="money" />
+      <Field Column="AliquoteIVA_Descrizione" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="AliquoteIVA_Predefinita" IsNull="Y" Type="bit" />
+      <Field Column="AliquoteIVA_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AliquoteIVA_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AliquoteIVA_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AliquoteIVA_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AliquoteIVA_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AliquoteIVA_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AliquoteIVA] (
+  [AliquoteIVA_Ky] smallint IDENTITY(1,1) NOT NULL , 
+  [AliquoteIVA_Aliquota] money  NULL , 
+  [AliquoteIVA_Descrizione] varchar(300)  NULL , 
+  [AliquoteIVA_Predefinita] bit  NULL , 
+  [AliquoteIVA_UserInsert] int  NULL , 
+  [AliquoteIVA_UserUpdate] int  NULL , 
+  [AliquoteIVA_UserDelete] int  NULL , 
+  [AliquoteIVA_DateInsert] datetime  NULL , 
+  [AliquoteIVA_DateUpdate] datetime  NULL , 
+  [AliquoteIVA_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[AliquoteIVA] ADD CONSTRAINT PK_AliquoteIVA PRIMARY KEY  ([AliquoteIVA_Ky])
+</SqlScriptCreate>
+</SqlTable>

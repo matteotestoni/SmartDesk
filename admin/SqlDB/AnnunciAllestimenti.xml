@@ -1,0 +1,29 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnnunciAllestimenti" Type="TABLE">
+    <Keys>
+      <Key Column="AnnunciAllestimenti_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AnnunciAllestimenti_Ky" IsNull="N" Type="int" />
+      <Field Column="AnnunciAllestimenti_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnnunciAllestimenti_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AnnunciAllestimenti_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AnnunciAllestimenti_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AnnunciAllestimenti_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AnnunciAllestimenti_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AnnunciAllestimenti_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AnnunciAllestimenti] (
+  [AnnunciAllestimenti_Ky] int IDENTITY(1,1) NOT NULL , 
+  [AnnunciAllestimenti_Titolo] varchar(200)  NULL , 
+  [AnnunciAllestimenti_UserInsert] int  NULL , 
+  [AnnunciAllestimenti_UserUpdate] int  NULL , 
+  [AnnunciAllestimenti_UserDelete] int  NULL , 
+  [AnnunciAllestimenti_DateInsert] datetime  NULL , 
+  [AnnunciAllestimenti_DateUpdate] datetime  NULL , 
+  [AnnunciAllestimenti_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[AnnunciAllestimenti] ADD CONSTRAINT PK_AnnunciAllestimenti PRIMARY KEY  ([AnnunciAllestimenti_Ky])
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,79 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Servizi" Type="TABLE">
+    <Keys>
+      <Key Column="Servizi_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Servizi_Ky" IsNull="N" Type="int" />
+      <Field Column="ServiziCategorie_Ky" IsNull="Y" Type="int" />
+      <Field Column="Servizi_Codice" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Servizi_CodicePadre" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Servizi_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Servizi_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Servizi_Prezzo" IsNull="Y" Type="money" />
+      <Field Column="Servizi_PrezzoRinnovo" IsNull="Y" Type="money" />
+      <Field Column="AliquoteIVA_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Servizi_Ordine" IsNull="Y" Type="int" />
+      <Field Column="Servizi_Foto1" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Produttori_Ky" IsNull="Y" Type="int" />
+      <Field Column="Aziende_Ky" IsNull="Y" Type="int" />
+      <Field Column="AttributiGruppi_Ky" IsNull="Y" Type="int" />
+      <Field Column="Servizi_InVetrina" IsNull="Y" Type="bit" />
+      <Field Column="Servizi_InOfferta" IsNull="Y" Type="bit" />
+      <Field Column="Servizi_InPromozione" IsNull="Y" Type="bit" />
+      <Field Column="Servizi_Outlet" IsNull="Y" Type="bit" />
+      <Field Column="Servizi_PubblicaWEB" IsNull="Y" Type="bit" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Servizi_Sottotitolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Servizi_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Servizi_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Servizi_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Servizi_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Servizi_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Servizi_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Servizi_MaxAnnunci" IsNull="Y" Type="int" />
+      <Field Column="Servizi_Robots" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Servizi_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Servizi_Description" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreResponseCode_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Servizi_RedirectUrl" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Servizi] (
+  [Servizi_Ky] int IDENTITY(1,1) NOT NULL , 
+  [ServiziCategorie_Ky] int  NULL , 
+  [Servizi_Codice] varchar(50)  NULL , 
+  [Servizi_CodicePadre] varchar(50)  NULL , 
+  [Servizi_Titolo] varchar(100)  NULL , 
+  [Servizi_Descrizione] varchar(MAX)  NULL , 
+  [Servizi_Prezzo] money  NULL , 
+  [Servizi_PrezzoRinnovo] money  NULL , 
+  [AliquoteIVA_Ky] smallint  NULL , 
+  [Servizi_Ordine] int  NULL , 
+  [Servizi_Foto1] varchar(150)  NULL , 
+  [Produttori_Ky] int  NULL , 
+  [Aziende_Ky] int  NULL , 
+  [AttributiGruppi_Ky] int  NULL , 
+  [Servizi_InVetrina] bit  NULL , 
+  [Servizi_InOfferta] bit  NULL , 
+  [Servizi_InPromozione] bit  NULL , 
+  [Servizi_Outlet] bit  NULL , 
+  [Servizi_PubblicaWEB] bit  NULL , 
+  [Utenti_Ky] int  NULL , 
+  [Servizi_Sottotitolo] varchar(200)  NULL , 
+  [Servizi_UserInsert] int  NULL , 
+  [Servizi_UserUpdate] int  NULL , 
+  [Servizi_UserDelete] int  NULL , 
+  [Servizi_DateInsert] datetime  NULL , 
+  [Servizi_DateUpdate] datetime  NULL , 
+  [Servizi_DateDelete] datetime  NULL , 
+  [Servizi_MaxAnnunci] int  NULL , 
+  [Servizi_Robots] varchar(100)  NULL DEFAULT ('index,follow'), 
+  [Servizi_Title] varchar(200)  NULL , 
+  [Servizi_Description] varchar(200)  NULL , 
+  [CoreResponseCode_Ky] smallint  NULL DEFAULT ((200)), 
+  [Servizi_RedirectUrl] varchar(MAX)  NULL  )
+ALTER TABLE [dbo].[Servizi] ADD CONSTRAINT PK_Servizi PRIMARY KEY  ([Servizi_Ky])
+</SqlScriptCreate>
+</SqlTable>

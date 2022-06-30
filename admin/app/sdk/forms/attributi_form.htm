@@ -1,0 +1,278 @@
+    <div class="callout alert">
+      <i class="fa-duotone fa-circle-info fa-fw fa-lg"></i>
+      Rispettare le seguenti regole:
+      <ul>
+        <li>Il codice dell'attributo non deve avere spazi</li>
+        <li>Il codice dell'attributo deve essere formattato Nometabella_Campo quindi ad esempio Annunci_Campo</li>
+      </ul>
+    </div>
+
+    <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label class="large-text-right small-text-left middle">Codice</label>
+    	</div>
+    	<div class="large-4 medium-4 small-8 cell">
+        <input type="text" name="Attributi_Codice" id="Attributi_Codice" title="Codice" required="required" value="<%=GetFieldValue(dtAttributi, "Attributi_Codice")%>" size="60">
+        <span class="form-error">Obbligatorio</span>
+    	</div>
+
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label class="large-text-right small-text-left middle" for="Attributi_Titolo"><i class="fa-duotone fa-tag fa-fw"></i>Titolo </label>
+    	</div>
+    	<div class="large-4 medium-4 small-8 cell">
+        <input type="text" name="Attributi_Titolo" id="Attributi_Titolo" title="Titolo" required="required" value="<%=GetFieldValue(dtAttributi, "Attributi_Titolo")%>" size="60">
+        <span class="form-error">Obbligatorio</span>
+    	</div>
+    </div>
+
+    <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label class="large-text-right small-text-left middle" for="Attributi_Validazione"><i class="fa-duotone fa-check fa-fw"></i>Validazione </label>
+    	</div>
+    	<div class="large-3 medium-3 small-6 cell">
+        <select name="Attributi_Validazione" id="Attributi_Validazione" title="Validazione" value="<%=GetFieldValue(dtAttributi, "Attributi_Validazione")%>">
+						<option value="text">text</option>
+						<option value="number">number</option>
+						<option value="password">password</option>
+						<option value="url">url</option>
+						<option value="email">email</option>
+				</select>
+        <script type="text/javascript">
+          selectSet('Attributi_Validazione', '<%=GetFieldValue(dtAttributi, "Attributi_Validazione")%>');
+        </script>
+    	</div>
+    	<div class="large-1 medium-1 small-2 cell">
+    		<small><a href="https://get.foundation/sites/docs/abide.html" target="_blank"><i class="fa-duotone fa-circle-info fa-fw"></i>Specifiche</a></small>
+    	</div>
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label class="large-text-right small-text-left middle" for="Attributi_Ordine"><i class="fa-duotone fa-sort-amount-up fa-fw"></i>Ordine</label>
+    	</div>
+    	<div class="large-4 medium-4 small-8 cell">
+        <input type="text" name="Attributi_Ordine" id="Attributi_Ordine" title="Ordine" required="required" value="<%=GetFieldValue(dtAttributi, "Attributi_Ordine")%>" size="60">
+        <span class="form-error">Obbligatorio</span>
+    	</div>
+    </div>
+
+    <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label class="large-text-right small-text-left middle">Tipo </label>
+    	</div>
+    	<div class="large-10 medium-10 small-8 cell">
+				<div class="button-group round toggle">
+					<%
+					for (int i = 0; i < dtAttributiTipo.Rows.Count; i++){
+						Response.Write("<input class=\"button\" type=\"radio\" id=\"AttributiTipo_Ky" + dtAttributiTipo.Rows[i]["AttributiTipo_Ky"].ToString() + "\" name=\"AttributiTipo_Ky\" value=\"" + dtAttributiTipo.Rows[i]["AttributiTipo_Ky"].ToString() + "\">");
+						Response.Write("<label class=\"button\" for=\"AttributiTipo_Ky" + dtAttributiTipo.Rows[i]["AttributiTipo_Ky"].ToString() + "\"><i class=\"" + dtAttributiTipo.Rows[i]["AttributiTipo_Icona"].ToString() + " fa-lg fa-fw\"></i>" + dtAttributiTipo.Rows[i]["AttributiTipo_Titolo"].ToString() + "</label>");
+					}
+					%>
+				</div>
+    		<span class="form-error">Obbligatorio</span>
+	 			<script type="text/javascript">
+					radioSet('AttributiTipo_Ky', '<%=GetFieldValue(dtAttributi, "AttributiTipo_Ky")%>');
+	      </script>
+    	</div>
+
+    </div>
+
+    <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label class="large-text-right small-text-left middle" for="">Testo help</label>
+    	</div>
+    	<div class="large-4 medium-4 small-8 cell">
+        <input type="text" name="Attributi_HelpText" id="Attributi_HelpText" title="Help text" value="<%=GetFieldValue(dtAttributi, "Attributi_HelpText")%>" size="60">
+        <span class="form-error">Obbligatorio</span>
+    	</div>
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label class="large-text-right small-text-left middle" for="Attributi_ValoreDefault"><i class="fa-duotone fa-check fa-fw"></i>Valore predefinito</label>
+    	</div>
+    	<div class="large-4 medium-4 small-8 cell">
+        <input type="text" name="Attributi_ValoreDefault" id="Attributi_ValoreDefault" title="Valore predefinito" value="<%=GetFieldValue(dtAttributi, "Attributi_ValoreDefault")%>" size="60">
+    	</div>
+    </div>
+    <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-2 small-4 cell">
+    	   <label class="large-text-right small-text-left middle" for="">Icona</label>
+    	</div>
+    	<div class="large-4 medium-4 small-8 cell">
+            <input type="text" name="Attributi_Icona" id="Attributi_Icona" title="Help text" value="<%=GetFieldValue(dtAttributi, "Attributi_Icona")%>" size="60">
+    	</div>
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label class="large-text-right small-text-left middle">Classe CSS </label>
+    	</div>
+    	<div class="large-4 medium-4 small-8 cell">
+            <input type="text" name="Attributi_ClasseCSS" id="Attributi_ClasseCSS" title="Titolo" value="<%=GetFieldValue(dtAttributi, "Attributi_ClasseCSS")%>" size="60">
+    	</div>
+    </div>
+
+    <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label class="large-text-right small-text-left middle">Obbligatorio </label>
+    	</div>
+    	<div class="large-2 medium-2 small-8 cell">
+				<div class="switch tiny">                                         
+					<input class="switch-input" type="checkbox" name="Attributi_Obbligatorio" id="Attributi_Obbligatorio" value="on" <% if (GetCheckValue(dtAttributi, "Attributi_Obbligatorio")){ Response.Write("checked");} %> />
+					<label class="switch-paddle" for="Attributi_Obbligatorio">
+						<span class="show-for-sr">Obbligatorio</span>
+						<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+						<span class="switch-inactive" aria-hidden="true"></span>
+					</label>
+				</div>                                            
+    	</div>
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label class="large-text-right small-text-left middle">In ricerca</label>
+    	</div>
+    	<div class="large-2 medium-2 small-8 cell">
+				<div class="switch tiny">                                         
+					<input class="switch-input" type="checkbox" name="Attributi_InRicerca" id="Attributi_InRicerca" value="on" <% if (GetCheckValue(dtAttributi, "Attributi_InRicerca")){ Response.Write("checked");} %> />
+					<label class="switch-paddle" for="Attributi_InRicerca">
+						<span class="show-for-sr">In ricerca</span>
+						<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+						<span class="switch-inactive" aria-hidden="true"></span>
+					</label>
+				</div>                                            
+    	</div>
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label class="large-text-right small-text-left middle">In filtri</label>
+    	</div>
+    	<div class="large-2 medium-2 small-8 cell">
+				<div class="switch tiny">                                         
+					<input class="switch-input" type="checkbox" name="Attributi_InFiltri" id="Attributi_InFiltri" value="on" <% if (GetCheckValue(dtAttributi, "Attributi_InFiltri")){ Response.Write("checked");} %> />
+					<label class="switch-paddle" for="Attributi_InFiltri">
+						<span class="show-for-sr">In filtri</span>
+						<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+						<span class="switch-inactive" aria-hidden="true"></span>
+					</label>
+				</div>                                            
+    	</div>
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label class="large-text-right small-text-left middle">In comparazione</label>
+    	</div>
+    	<div class="large-2 medium-2 small-8 cell">
+				<div class="switch tiny">                                         
+					<input class="switch-input" type="checkbox" name="Attributi_InComparazione" id="Attributi_InComparazione" value="on" <% if (GetCheckValue(dtAttributi, "Attributi_InComparazione")){ Response.Write("checked");} %> />
+					<label class="switch-paddle" for="Attributi_InComparazione">
+						<span class="show-for-sr">In comparazione</span>
+						<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+						<span class="switch-inactive" aria-hidden="true"></span>
+					</label>
+				</div>                                            
+    	</div>
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label class="large-text-right small-text-left middle">Visibile</label>
+    	</div>
+    	<div class="large-2 medium-2 small-8 cell">
+				<div class="switch tiny">                                         
+					<input class="switch-input" type="checkbox" name="Attributi_Visibile" id="Attributi_Visibile" value="on" <% if (GetCheckValue(dtAttributi, "Attributi_Visibile")){ Response.Write("checked");} %> />
+					<label class="switch-paddle" for="Attributi_Visibile">
+						<span class="show-for-sr">Visibile</span>
+						<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+						<span class="switch-inactive" aria-hidden="true"></span>
+					</label>
+				</div>                                            
+    	</div>
+    </div>
+
+    <div class="grid-x grid-padding-x">
+    	<div class="large-12 medium-12 small-12 cell">
+        <hr>
+        <h2>Applica attributi sui seguenti oggetti</h2>
+      </div>
+    </div>
+    <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="Attributi_Annunci" class="large-text-right small-text-left middle">Annunci</label>
+    	</div>
+    	<div class="large-2 medium-2 small-8 cell">
+				<div class="switch tiny">                                         
+					<input class="switch-input" type="checkbox" name="Attributi_Annunci" id="Attributi_Annunci" value="on" <% if (GetCheckValue(dtAttributi, "Attributi_Annunci")){ Response.Write("checked");} %> />
+					<label class="switch-paddle" for="Attributi_Annunci">
+						<span class="show-for-sr">Annunci</span>
+						<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+						<span class="switch-inactive" aria-hidden="true"></span>
+					</label>
+				</div>                                            
+    	</div>
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="Attributi_Documenti" class="large-text-right small-text-left middle">Documenti</label>
+    	</div>
+    	<div class="large-2 medium-2 small-8 cell">
+				<div class="switch tiny">                                         
+					<input class="switch-input" type="checkbox" name="Attributi_Documenti" id="Attributi_Documenti" value="on" <% if (GetCheckValue(dtAttributi, "Attributi_Documenti")){ Response.Write("checked");} %> />
+					<label class="switch-paddle" for="Attributi_Documenti">
+						<span class="show-for-sr">Documenti</span>
+						<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+						<span class="switch-inactive" aria-hidden="true"></span>
+					</label>
+				</div>                                            
+    	</div>
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="Attributi_Anagrafiche" class="large-text-right small-text-left middle">Anagrafiche</label>
+    	</div>
+    	<div class="large-2 medium-2 small-8 cell">
+				<div class="switch tiny">                                         
+					<input class="switch-input" type="checkbox" name="Attributi_Anagrafiche" id="Attributi_Anagrafiche" value="on" <% if (GetCheckValue(dtAttributi, "Attributi_Anagrafiche")){ Response.Write("checked");} %> />
+					<label class="switch-paddle" for="Attributi_Anagrafiche">
+						<span class="show-for-sr">Anagrafiche</span>
+						<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+						<span class="switch-inactive" aria-hidden="true"></span>
+					</label>
+				</div>                                            
+    	</div>
+    </div>
+
+    <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="Attributi_Prodotti" class="large-text-right small-text-left middle">Prodotti</label>
+    	</div>
+    	<div class="large-2 medium-2 small-8 cell">
+				<div class="switch tiny">                                         
+					<input class="switch-input" type="checkbox" name="Attributi_Prodotti" id="Attributi_Prodotti" value="on" <% if (GetCheckValue(dtAttributi, "Attributi_Prodotti")){ Response.Write("checked");} %> />
+					<label class="switch-paddle" for="Attributi_Prodotti">
+						<span class="show-for-sr">Prodotti</span>
+						<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+						<span class="switch-inactive" aria-hidden="true"></span>
+					</label>
+				</div>                                            
+    	</div>
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="Attributi_Commesse" class="large-text-right small-text-left middle">Progetti</label>
+    	</div>
+    	<div class="large-2 medium-2 small-8 cell">
+				<div class="switch tiny">                                         
+					<input class="switch-input" type="checkbox" name="Attributi_Commesse" id="Attributi_Commesse" value="on" <% if (GetCheckValue(dtAttributi, "Attributi_Commesse")){ Response.Write("checked");} %> />
+					<label class="switch-paddle" for="Attributi_Commesse">
+						<span class="show-for-sr">Commesse</span>
+						<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+						<span class="switch-inactive" aria-hidden="true"></span>
+					</label>
+				</div>                                            
+    	</div>
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="Attributi_Attivita" class="large-text-right small-text-left middle">Attivita</label>
+    	</div>
+    	<div class="large-2 medium-2 small-8 cell">
+				<div class="switch tiny">                                         
+					<input class="switch-input" type="checkbox" name="Attributi_Attivita" id="Attributi_Attivita" value="on" <% if (GetCheckValue(dtAttributi, "Attributi_Attivita")){ Response.Write("checked");} %> />
+					<label class="switch-paddle" for="Attributi_Attivita">
+						<span class="show-for-sr">Attivita</span>
+						<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+						<span class="switch-inactive" aria-hidden="true"></span>
+					</label>
+				</div>                                            
+    	</div>
+    </div>
+    <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="Attributi_Servizi" class="large-text-right small-text-left middle">Servizi</label>
+    	</div>
+    	<div class="large-2 medium-2 small-8 cell end">
+				<div class="switch tiny">                                         
+					<input class="switch-input" type="checkbox" name="Attributi_Servizi" id="Attributi_Servizi" value="on" <% if (GetCheckValue(dtAttributi, "Attributi_Servizi")){ Response.Write("checked");} %> />
+					<label class="switch-paddle" for="Attributi_Servizi">
+						<span class="show-for-sr">Servizi</span>
+						<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+						<span class="switch-inactive" aria-hidden="true"></span>
+					</label>
+				</div>                                            
+    	</div>
+    </div> 

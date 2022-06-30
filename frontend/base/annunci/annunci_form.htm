@@ -1,0 +1,222 @@
+	<div class="grid-x grid-padding-x hide">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Annunci_CercoOffro" class="large-text-right small-text-left middle">Cerco</label>
+  	</div>
+  	<div class="large-1 medium-1 small-8 cell">
+			<div class="switch tiny float-left">                                         
+        <input class="switch-input" type="checkbox" name="Annunci_Cerco" id="Annunci_Cerco" value="on" <%if (GetCheckValue(dtAnnunci, "Annunci_Cerco")){ Response.Write("checked");}%> />
+        <label class="switch-paddle" for="Annunci_Cerco">
+          <span class="show-for-sr">cerco</span>
+          <span class="switch-active" aria-hidden="true"></span>
+          <span class="switch-inactive" aria-hidden="true"></span>
+        </label>
+      </div> 
+		</div>
+  	<div class="large-1 medium-1 small-4 cell">
+  		<label for="Annunci_CercoOffro" class="large-text-right small-text-left middle">Offro</label>
+  	</div>
+  	<div class="large-2 medium-2 small-8 cell end">
+			<div class="switch tiny float-left">                                         
+        <input class="switch-input" type="checkbox" name="Annunci_Offro" id="Annunci_Offro" value="on" checked="checked" />
+        <label class="switch-paddle" for="Annunci_Offro">
+          <span class="show-for-sr">offro</span>
+          <span class="switch-active" aria-hidden="false"></span>
+          <span class="switch-inactive" aria-hidden="true"></span>
+        </label>
+      </div> 
+		</div>
+	</div>
+
+	<div class="grid-x grid-padding-x">
+		<div class="large-2 medium-2 small-4 cell">
+	      <label for="AnnunciCategorie_Ky" class="large-text-right small-text-left middle">Categoria *<i class="fa-duotone fa-list fa-fw"></i></label>
+	  </div>
+		<div class="large-10 medium-10 small-8 cell">
+				<select name="AnnunciCategorie_Ky" id="AnnunciCategorie_Ky" class="select2" required="required" onchange="loadAttributi();">
+				  <option value="">Seleziona la categoria principale</option>
+				  <!--#include file="/var/cache/AnnunciCategorie-options.htm"--> 
+				</select>
+				<span class="form-error">Obbligatorio.</span>
+		</div>
+	</div> 
+
+	<div class="grid-x grid-padding-x">
+		<div class="large-2 medium-2 small-4 cell">
+	      <label for="AnnunciMarca_Ky" class="large-text-right small-text-left middle">Marca <i class="fa-duotone fa-list fa-fw"></i></label>
+	  </div>
+		<div class="large-4 medium-4 small-8 cell">
+  		 <input type="text" name="AnnunciMarca_Ky" id="AnnunciMarca_Ky" value="" size="3" onchange="loadAnnunciModelli()" style="display:none">
+			 <input type="text" name="AnnunciMarca_Titolo" id="AnnunciMarca_Titolo" placeholder="Marca" value="">
+      	<script type="text/javascript">
+      			jQuery("#AnnunciMarca_Titolo").autocomplete({
+      				autoFocus: true,
+              source:"/frontend/base/annunci/autosuggest-GetAnnunciMarca-json.aspx",
+      				minLength: 2,
+      				select: function( event, ui ) {
+      					//console.log(ui.item.value);
+      					//console.log(ui.item.label);
+                jQuery("#AnnunciMarca_Ky").val(ui.item.id);
+      					jQuery("#AnnunciMarca_Titolo").val(ui.item.label);
+      					loadAnnunciModelli();
+                return false;
+      				}
+      			});
+      	</script>
+				<span class="form-error">Obbligatorio.</span>
+				<p class="help-text" id="marcaHelpText">Manca la marca? Segnalacela compilando il form. <a href="/contatti.aspx" target="blank" class="blu">Clicca qui <i class="fa-duotone fa-arrow-right fa-fw"></i></a></p>
+		</div>
+		<div class="large-2 medium-2 small-4 cell">
+		    <label for="AnnunciModello_Ky" class="large-text-right small-text-left middle">Modello</label>
+		</div>
+		<div class="large-4 medium-4 small-8 cell">
+				<select name="AnnunciModello_Ky" id="AnnunciModello_Ky" value="">
+				</select>
+				<span class="form-error">Obbligatorio.</span>
+				<p class="help-text" id="modelloHelpText">Manca il modello? Segnalacelo compilando il form. <a href="/contatti.aspx" target="blank" class="blu">Clicca qui <i class="fa-duotone fa-arrow-right fa-fw"></i></a></p>
+	  </div>                                       
+	</div> 
+  
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Annunci_Titolo" class="large-text-right small-text-left middle">Titolo*<i class="fa-duotone fa-file-text fa-fw"></i></label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Annunci_Titolo" id="Annunci_Titolo" title="Titolo" value="" size="150" required="required">
+      <span class="form-error">Obbligatorio</span>
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Annunci_Valore" class="large-text-right small-text-left middle">Prezzo &euro;</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Annunci_Valore" id="Annunci_Valore" title="Annunci_Valore" value="" size="60">
+      <span class="form-error">Obbligatorio</span>
+  	</div>
+  </div>
+  
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Annunci_Descrizione" class="large-text-right small-text-left middle">Descrizione<i class="fa-duotone fa-file-text fa-fw"></i></label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+			<textarea name="Annunci_Descrizione" id="Annunci_Descrizione" class="ckeditor required" rows="3" required="required"></textarea>
+  	</div>
+  </div> 
+  
+	<div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="fotoannunci" class="large-text-right small-text-left middle">Foto degli annunci</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+    <p>Le immagini devono essere in formato jpg<br></p>
+    <label for="fotoannunci" class="button small">Carica Immagini</label>
+    <input type="file" multiple class="show-for-sr fileupload" placeholder="Foto annunci" id="fotoannunci" name="fotoannunci" />
+      <div id="numerofile" class="gallery"></div>
+      <small class="form-error">obbligatorio.</small>
+      <script>
+        jQuery(function() {
+          var imagesPreview = function(input, placeToInsertImagePreview) {
+              if (input.files) {
+                  var filesAmount = input.files.length;
+                  for (i = 0; i < filesAmount; i++) {
+                      var reader = new FileReader();
+                      reader.onload = function(event) {
+                          jQuery(jQuery.parseHTML('<img width="150" height="100" hspace="10" vspace="10" style="border:1px solid #000000">')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                      }
+                       reader.readAsDataURL(input.files[i]);
+                  }
+              }
+          };
+          jQuery('#fotoannunci').on('change', function() {
+              imagesPreview(this, 'div.gallery');
+          });
+        });
+      </script>
+  	</div>
+  </div>
+  
+<hr>
+<div id="attributi">
+<h2>Dati tecnici</h2>
+<div class="callout">In questa sezione ci sono gli attributi aggiuntivi dell'annuncio che dipendono dalla categoria</div>
+<%
+if (dtAttributi!=null && dtAttributi.Rows.Count>0){
+    for (int j = 0; j < dtAttributi.Rows.Count; j++){%>
+			<div class="grid-x grid-padding-x">
+        <div class="large-2 medium-2 small-4 cell">
+					<label class="large-text-right small-text-left middle">
+            <%=dtAttributi.Rows[j]["Attributi_Titolo"].ToString()%>
+    		    <%
+            if (dtAttributi.Rows[j]["Attributi_Obbligatorio"].Equals(true)){
+              Response.Write("*");
+            }
+            %>
+          </label>
+				</div>
+        <div class="large-10 medium-10 small-8 cell">
+				<%
+    		  if (dtAttributi.Rows[j]["Attributi_Obbligatorio"].Equals(true)){
+              strRequired=" " + "required=\"required\"";      
+          }else{
+              strRequired="";      
+          }
+    		  if (dtAttributi.Rows[j]["Attributi_ClasseCSS"].ToString().Length>0){
+              strClass=" " + dtAttributi.Rows[j]["Attributi_ClasseCSS"].ToString();      
+          }else{
+              strClass="";      
+          }
+              
+          switch (dtAttributi.Rows[j]["AttributiTipo_Ky"].ToString()){
+						case "1":
+							Response.Write("<input type=\"text\" name=\"" + dtAttributi.Rows[j]["Attributi_Codice"].ToString() + "\" id=\"" + dtAttributi.Rows[j]["Attributi_Codice"].ToString() + "\" value=\"" + GetFieldValue(dtAnnunci, dtAttributi.Rows[j]["Attributi_Codice"].ToString()) + "\"" + strRequired + strClass + " />");
+							break;
+						case "2":
+							Response.Write("<textarea name=\"" + dtAttributi.Rows[j]["Attributi_Codice"].ToString() + "\" id=\"" + dtAttributi.Rows[j]["Attributi_Codice"].ToString() + "\" value=\"\"" + strRequired + strClass + ">" + GetFieldValue(dtAnnunci, dtAttributi.Rows[j]["Attributi_Codice"].ToString()) + "</textarea>");
+							break;
+						case "3":
+							Response.Write("<input type=\"text\" name=\"" + dtAttributi.Rows[j]["Attributi_Codice"].ToString() + "\" id=\"" + dtAttributi.Rows[j]["Attributi_Codice"].ToString() + "\" class=\"datepicker txt\" value=\"" + GetFieldValue(dtAnnunci, dtAttributi.Rows[j]["Attributi_Codice"].ToString()) + "\"" + strRequired + strClass + " />");
+							break;
+						case "4":
+							Response.Write("<input type=\"checkbox\" name=\"" + dtAttributi.Rows[j]["Attributi_Codice"].ToString() + "\" id=\"" + dtAttributi.Rows[j]["Attributi_Codice"].ToString() + "\" value=\"" + GetFieldValue(dtAnnunci, dtAttributi.Rows[j]["Attributi_Codice"].ToString()) + "\"" + strRequired + strClass + " />");
+							break;
+						case "5":
+							Response.Write("<input type=\"number\" name=\"" + dtAttributi.Rows[j]["Attributi_Codice"].ToString() + "\" id=\"" + dtAttributi.Rows[j]["Attributi_Codice"].ToString() + "\" class=\"price\" value=\"" + GetFieldValue(dtAnnunci, dtAttributi.Rows[j]["Attributi_Codice"].ToString()) + "\"" + strRequired + strClass + " />");
+							break;
+						case "6":
+							Response.Write("<select name=\"" + dtAttributi.Rows[j]["Attributi_Codice"].ToString() + "\" id=\"" + dtAttributi.Rows[j]["Attributi_Codice"].ToString() + "\" value=\"" + GetFieldValue(dtAnnunci, dtAttributi.Rows[j]["Attributi_Codice"].ToString()) + "\"" + strRequired + strClass + "><option value=\"\"></option>");
+							strWHERENet="Attributi_Ky=" + dtAttributi.Rows[j]["Attributi_Ky"].ToString();
+	            strORDERNet = "AttributiOpzioni_Ordine";
+	            strFROMNet = "AttributiOpzioni";
+	            dtAttributiOpzioni = Smartdesk.Sql.getTablePage(strFROMNet, null, "AttributiOpzioni_Ky", strWHERENet, strORDERNet, 1, 100,Smartdesk.Config.Sql.ConnectionReadOnly);
+  						for (int j2 = 0; j2 < dtAttributiOpzioni.Rows.Count; j2++){
+  							Response.Write("<option value=\"" + dtAttributiOpzioni.Rows[j2]["AttributiOpzioni_Opzione"].ToString() + "\">" + dtAttributiOpzioni.Rows[j2]["AttributiOpzioni_Opzione"].ToString() + "</option>");
+							}
+							Response.Write("</select>\n");
+	            Response.Write("<script type=\"text/javascript\">\n");
+							Response.Write("selectSet('" + dtAttributi.Rows[j]["Attributi_Codice"].ToString() + "', '" + GetFieldValue(dtAnnunci, dtAttributi.Rows[j]["Attributi_Codice"].ToString()) + "');\n");
+	            Response.Write("</script>\n");
+							break;
+					}
+				%>
+				</div>
+      </div>
+    <%
+    }
+}
+%>
+</div>
+<script>  
+  function loadAttributi(strAnnunciCategorie_Ky=undefined, strValoreSelezionato=undefined){
+    var strPath;
+    var strValore;
+  
+    if (strAnnunciCategorie_Ky==null || strAnnunciCategorie_Ky==undefined || strAnnunciCategorie_Ky.Length<1){
+      strAnnunciCategorie_Ky=jQuery("#AnnunciCategorie_Ky").val();
+    }
+    if (strAnnunciCategorie_Ky!=""){
+        strPath="/frontend/base/annunci/getAttributiAnnunci-html.aspx?Annunci_Ky=" + jQuery("#Annunci_Ky").val() + "&AnnunciCategorie_Ky=" + strAnnunciCategorie_Ky;
+        jQuery.get(strPath, function( data ) {
+          jQuery("#attributi").html( data );
+        });
+    }  
+  };
+</script>

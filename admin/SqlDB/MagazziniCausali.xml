@@ -1,0 +1,33 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="MagazziniCausali" Type="TABLE">
+    <Keys>
+      <Key Column="MagazziniCausali_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="MagazziniCausali_Ky" IsNull="N" Type="int" />
+      <Field Column="MagazziniCausali_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="MagazziniCausali_Ordine" IsNull="Y" Type="int" />
+      <Field Column="MagazziniCausali_Default" IsNull="Y" Type="bit" />
+      <Field Column="MagazziniCausali_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="MagazziniCausali_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="MagazziniCausali_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="MagazziniCausali_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="MagazziniCausali_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="MagazziniCausali_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[MagazziniCausali] (
+  [MagazziniCausali_Ky] int IDENTITY(1,1) NOT NULL , 
+  [MagazziniCausali_Titolo] varchar(200)  NULL , 
+  [MagazziniCausali_Ordine] int  NULL , 
+  [MagazziniCausali_Default] bit  NULL , 
+  [MagazziniCausali_UserInsert] int  NULL , 
+  [MagazziniCausali_UserUpdate] int  NULL , 
+  [MagazziniCausali_UserDelete] int  NULL , 
+  [MagazziniCausali_DateInsert] datetime  NULL , 
+  [MagazziniCausali_DateUpdate] datetime  NULL , 
+  [MagazziniCausali_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[MagazziniCausali] ADD CONSTRAINT PK_MagazziniCausali PRIMARY KEY  ([MagazziniCausali_Ky])
+</SqlScriptCreate>
+</SqlTable>

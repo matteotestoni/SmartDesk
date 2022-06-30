@@ -1,0 +1,26 @@
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="VeicoliCarburante_Ecologico" class="large-text-right small-text-left middle">Ecologico:</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+		<div class="switch tiny">
+			<input class="switch-input" type="checkbox" name="VeicoliCarburante_Ecologico" id="VeicoliCarburante_Ecologico" value="on" <% if (GetCheckValue("VeicoliCarburante_Ecologico")){ Response.Write( "checked");} %> />
+			<label class="switch-paddle" for="VeicoliCarburante_Ecologico">
+				<span class="show-for-sr">Attivo</span>
+				<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+				<span class="switch-inactive" aria-hidden="true"></span>
+			</label>
+		</div>
+		<span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">     
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="VeicoliCarburante_Descrizione" class="large-text-right small-text-left middle">Titolo</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="VeicoliCarburante_Descrizione" id="VeicoliCarburante_Descrizione" value="<%=GetFieldValue("VeicoliCarburante_Descrizione")%>" size="30" required="required">
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>

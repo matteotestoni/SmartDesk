@@ -1,0 +1,24 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Conti_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Conti_Ky" IsNull="N" Type="int" />
+      <Field Column="Conti_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Conti_Data" IsNull="Y" Type="datetime" />
+      <Field Column="Conti_Data_IT" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="Conti_IBAN" IsNull="Y" Type="varchar" Lenght="27" />
+      <Field Column="Conti_Swift" IsNull="Y" Type="varchar" Lenght="15" />
+      <Field Column="Conti_Istituto" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aziende_Ky" IsNull="Y" Type="int" />
+      <Field Column="Conti_Default" IsNull="Y" Type="bit" />
+      <Field Column="Aziende_RagioneSociale" IsNull="Y" Type="varchar" Lenght="250" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Conti_Vw
+AS
+SELECT        dbo.Conti.Conti_Ky, dbo.Conti.Conti_Titolo, dbo.Conti.Conti_Data, CONVERT(varchar, dbo.Conti.Conti_Data, 105) AS Conti_Data_IT, dbo.Conti.Conti_IBAN, dbo.Conti.Conti_Swift, dbo.Conti.Conti_Istituto, 
+                         dbo.Conti.Aziende_Ky, dbo.Conti.Conti_Default, dbo.Aziende.Aziende_RagioneSociale
+FROM            dbo.Conti LEFT OUTER JOIN
+                         dbo.Aziende ON dbo.Conti.Aziende_Ky = dbo.Aziende.Aziende_Ky
+</SqlScriptCreate>
+</SqlTable>

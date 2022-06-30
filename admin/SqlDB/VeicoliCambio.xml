@@ -1,0 +1,29 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliCambio" Type="TABLE">
+    <Keys>
+      <Key Column="VeicoliCambio_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="VeicoliCambio_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="VeicoliCambio_Descrizione" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="VeicoliCambio_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="VeicoliCambio_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="VeicoliCambio_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="VeicoliCambio_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliCambio_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliCambio_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[VeicoliCambio] (
+  [VeicoliCambio_Ky] tinyint IDENTITY(1,1) NOT NULL , 
+  [VeicoliCambio_Descrizione] varchar(20)  NULL , 
+  [VeicoliCambio_UserInsert] int  NULL , 
+  [VeicoliCambio_UserUpdate] int  NULL , 
+  [VeicoliCambio_UserDelete] int  NULL , 
+  [VeicoliCambio_DateInsert] datetime  NULL , 
+  [VeicoliCambio_DateUpdate] datetime  NULL , 
+  [VeicoliCambio_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[VeicoliCambio] ADD CONSTRAINT PK_VeicoliCambio PRIMARY KEY  ([VeicoliCambio_Ky])
+</SqlScriptCreate>
+</SqlTable>

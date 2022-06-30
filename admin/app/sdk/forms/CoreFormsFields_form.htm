@@ -1,0 +1,63 @@
+<div class="grid-x grid-padding-x">
+<div class="large-2 medium-2 small-4 cell">
+<label for="CoreFormsFieldset_Ky" class="large-text-right small-text-left middle">Fieldset</label>
+</div>
+<div class="large-10 medium-10 small-8 cell">
+<input type="text" name="CoreFormsFieldset_Ky" id="CoreFormsFieldset_Ky" value="<%=GetFieldValue(dtCoreFormsFields, "CoreFormsFieldset_Ky")%>" placeholder="Fieldset">
+</div>
+</div>
+<div class="grid-x grid-padding-x">
+<div class="large-2 medium-2 small-4 cell">
+<label for="CoreFormsTabs_Ky" class="large-text-right small-text-left middle">Tab</label>
+</div>
+<div class="large-10 medium-10 small-8 cell">
+<input type="text" name="CoreFormsTabs_Ky" id="CoreFormsTabs_Ky" value="<%=GetFieldValue(dtCoreFormsFields, "CoreFormsTabs_Ky")%>" placeholder="Tab">
+</div>
+</div>
+<div class="grid-x grid-padding-x">
+<div class="large-2 medium-2 small-4 cell">
+<label for="CoreAttributes_Ky" class="large-text-right small-text-left middle">Attribute</label>
+</div>
+<div class="large-10 medium-10 small-8 cell">
+<input type="text" name="CoreAttributes_Ky" id="CoreAttributes_Ky" value="<%=GetFieldValue(dtCoreFormsFields, "CoreAttributes_Ky")%>" placeholder="Attribute">
+</div>
+</div>
+<div class="grid-x grid-padding-x">
+<div class="large-2 medium-2 small-4 cell">
+<label for="CoreFormsFields_Order" class="large-text-right small-text-left middle">Order</label>
+</div>
+<div class="large-10 medium-10 small-8 cell">
+<input type="number" name="CoreFormsFields_Order" id="CoreFormsFields_Order" value="<%=GetFieldValue(dtCoreFormsFields, "CoreFormsFields_Order")%>" placeholder="Order">
+</div>
+</div>
+<div class="grid-x grid-padding-x">
+<div class="large-2 medium-2 small-4 cell">
+<label for="CoreFormsFields_Label" class="large-text-right small-text-left middle">Label</label>
+</div>
+<div class="large-10 medium-10 small-8 cell">
+<input type="text" name="CoreFormsFields_Label" id="CoreFormsFields_Label" value="<%=GetFieldValue(dtCoreFormsFields, "CoreFormsFields_Label")%>" placeholder="Label">
+</div>
+</div>
+<div class="grid-x grid-padding-x">
+<div class="large-2 medium-2 small-4 cell">
+<label for="CoreFormsFields_Columns" class="large-text-right small-text-left middle">Columns</label>
+</div>
+<div class="large-10 medium-10 small-8 cell">
+<input type="number" name="CoreFormsFields_Columns" id="CoreFormsFields_Columns" value="<%=GetFieldValue(dtCoreFormsFields, "CoreFormsFields_Columns")%>" placeholder="Columns">
+</div>
+</div>
+<div class="grid-x grid-padding-x">
+<div class="large-2 medium-2 small-4 cell">
+<label for="CoreFormsFields_Hidden" class="large-text-right small-text-left middle">Hidden</label>
+</div>
+<div class="large-10 medium-10 small-8 cell">
+<div class="switch tiny">
+<input class="switch-input" type="checkbox" name="CoreFormsFields_Hidden" id="CoreFormsFields_Hidden" value="on" <% if (GetCheckValue(dtCoreFormsFields, "CoreFormsFields_Hidden")){ Response.Write("checked");} %>  />
+<label class="switch-paddle" for="CoreFormsFields_Hidden">
+<span class="show-for-sr">Ok</span>
+<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+<span class="switch-inactive" aria-hidden="true"></span>
+</label>
+</div>
+</div>
+</div>

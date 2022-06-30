@@ -1,0 +1,55 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ProdottiCategorie" Type="TABLE">
+    <Keys>
+      <Key Column="ProdottiCategorie_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="ProdottiCategorie_Ky" IsNull="N" Type="int" />
+      <Field Column="ProdottiCategorie_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="ProdottiCategorie_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="ProdottiCategorie_Ordine" IsNull="Y" Type="int" />
+      <Field Column="ProdottiCategorie_Padre" IsNull="Y" Type="int" />
+      <Field Column="ProdottiCategorie_HaFigli" IsNull="Y" Type="bit" />
+      <Field Column="ProdottiCategorie_Url" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="ProdottiCategorie_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="ProdottiCategorie_Description" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="ProdottiCategorie_PubblicaWEB" IsNull="Y" Type="bit" />
+      <Field Column="ProdottiCategorie_Logo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AttributiGruppi_Ky" IsNull="Y" Type="int" />
+      <Field Column="ProdottiCategorie_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="ProdottiCategorie_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="ProdottiCategorie_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="ProdottiCategorie_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiCategorie_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiCategorie_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiCategorie_InMenu" IsNull="Y" Type="bit" />
+      <Field Column="ProdottiCategorie_Robots" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="ProdottiCategorie_InSitemap" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[ProdottiCategorie] (
+  [ProdottiCategorie_Ky] int IDENTITY(1,1) NOT NULL , 
+  [ProdottiCategorie_Titolo] varchar(100)  NULL , 
+  [ProdottiCategorie_Descrizione] varchar(MAX)  NULL , 
+  [ProdottiCategorie_Ordine] int  NULL , 
+  [ProdottiCategorie_Padre] int  NULL , 
+  [ProdottiCategorie_HaFigli] bit  NULL , 
+  [ProdottiCategorie_Url] varchar(200)  NULL , 
+  [ProdottiCategorie_Title] varchar(200)  NULL , 
+  [ProdottiCategorie_Description] varchar(200)  NULL , 
+  [ProdottiCategorie_PubblicaWEB] bit  NULL DEFAULT ((0)), 
+  [ProdottiCategorie_Logo] varchar(200)  NULL , 
+  [AttributiGruppi_Ky] int  NULL , 
+  [ProdottiCategorie_UserInsert] int  NULL , 
+  [ProdottiCategorie_UserUpdate] int  NULL , 
+  [ProdottiCategorie_UserDelete] int  NULL , 
+  [ProdottiCategorie_DateInsert] datetime  NULL , 
+  [ProdottiCategorie_DateUpdate] datetime  NULL , 
+  [ProdottiCategorie_DateDelete] datetime  NULL , 
+  [ProdottiCategorie_InMenu] bit  NULL , 
+  [ProdottiCategorie_Robots] varchar(100)  NULL DEFAULT ('index,follow'), 
+  [ProdottiCategorie_InSitemap] bit  NULL DEFAULT ((1)) )
+ALTER TABLE [dbo].[ProdottiCategorie] ADD CONSTRAINT PK_ProdottiCategorie PRIMARY KEY  ([ProdottiCategorie_Ky])
+</SqlScriptCreate>
+</SqlTable>

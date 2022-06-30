@@ -1,0 +1,35 @@
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-12 cell">
+  		<label for="SpedizioniZone_Titolo" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Titolo</label>
+  	</div>
+  	<div class="large-10 medium-10 small-12 cell">
+      <input type="text" name="SpedizioniZone_Titolo" id="SpedizioniZone_Titolo" title="Titolo" value="<%=GetFieldValue(dtSpedizioniZone, "SpedizioniZone_Titolo")%>" size="60">
+      <span class="form-error">Obbligatorio</span>
+  	</div>
+  </div>
+
+	<div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-12 cell text-right">
+   		<label class="large-text-right small-text-left middle" for="SpedizioniZone_Default">Predefinita</label>
+ 	  </div>
+  	<div class="large-10 medium-10 small-12 cell">
+			<select name="SpedizioniZone_Default" id="SpedizioniZone_Default" value="<%=GetCheckValue(dtSpedizioniZone, "SpedizioniZone_Default")%>">
+	      <option value="True">si</option>
+	      <option value="False">no</option>
+	    </select>
+	    <span class="form-error">Obbligatorio</span>
+	    <script type="text/javascript">
+	      selectSet('SpedizioniZone_Default', '<%=GetCheckValue(dtSpedizioniZone, "SpedizioniZone_Default")%>');
+	    </script>
+  	</div>
+	</div>        
+  
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-12 cell">
+  		<label for="SpedizioniZone_Ordine" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Ordine</label>
+  	</div>
+  	<div class="large-10 medium-10 small-12 cell">
+      <input type="text" name="SpedizioniZone_Ordine" id="SpedizioniZone_Ordine" title="Ordine" value="<%=GetFieldValue(dtSpedizioniZone, "SpedizioniZone_Ordine")%>" size="2">
+      <span class="form-error">Obbligatorio</span>
+  	</div>
+  </div>

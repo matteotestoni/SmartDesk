@@ -1,0 +1,67 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CoreAttributes_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="CoreAttributes_Ky" IsNull="N" Type="int" />
+      <Field Column="CoreModules_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreEntities_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreAttributesType_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreAttributes_Code" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreAttributes_Table" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreAttributes_Title" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreAttributes_Label" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreAttributes_Options" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreAttributes_MaxLength" IsNull="Y" Type="smallint" />
+      <Field Column="CoreAttributes_Search" IsNull="Y" Type="bit" />
+      <Field Column="CoreAttributesType_Code" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreAttributesType_Icon" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreEntities_Code" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreModules_Code" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreAttributes_System" IsNull="Y" Type="bit" />
+      <Field Column="CoreAttributesFormat_Format" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreAttributesFormat_Code" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreAttributesFormat_Icon" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreAttributes_Join" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreAttributes_Order" IsNull="Y" Type="int" />
+      <Field Column="CoreAttributes_Key" IsNull="Y" Type="bit" />
+      <Field Column="CoreAttributes_JoinText" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreAttributes_Helptext" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreAttributes_JoinIconField" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreAttributes_JoinOrder" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreAttributes_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CoreAttributes_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CoreAttributes_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CoreAttributes_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CoreAttributes_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CoreAttributes_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="CoreAttributesFormat_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreAttributes_JoinKey" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreAttributes_JoinWhere" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreAttributes_JoinFrom" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreEntities_Icon" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreEntities_IconJoin" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreAttributes_EventOn" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreAttributes_EventAction" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreAttributes_DefaultValue" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.CoreAttributes_Vw
+AS
+SELECT        dbo.CoreAttributes.CoreAttributes_Ky, dbo.CoreAttributes.CoreModules_Ky, dbo.CoreAttributes.CoreEntities_Ky, dbo.CoreAttributes.CoreAttributesType_Ky, dbo.CoreAttributes.CoreAttributes_Code, 
+                         dbo.CoreAttributes.CoreAttributes_Table, dbo.CoreAttributes.CoreAttributes_Title, dbo.CoreAttributes.CoreAttributes_Label, dbo.CoreAttributes.CoreAttributes_Options, dbo.CoreAttributes.CoreAttributes_MaxLength, 
+                         dbo.CoreAttributes.CoreAttributes_Search, dbo.CoreAttributesType.CoreAttributesType_Code, dbo.CoreAttributesType.CoreAttributesType_Icon, dbo.CoreEntities.CoreEntities_Code, 
+                         dbo.CoreModules.CoreModules_Code, dbo.CoreAttributes.CoreAttributes_System, dbo.CoreAttributesFormat.CoreAttributesFormat_Format, dbo.CoreAttributesFormat.CoreAttributesFormat_Code, 
+                         dbo.CoreAttributesFormat.CoreAttributesFormat_Icon, dbo.CoreAttributes.CoreAttributes_Join, dbo.CoreAttributes.CoreAttributes_Order, dbo.CoreAttributes.CoreAttributes_Key, 
+                         dbo.CoreAttributes.CoreAttributes_JoinText, dbo.CoreAttributes.CoreAttributes_Helptext, dbo.CoreAttributes.CoreAttributes_JoinIconField, dbo.CoreAttributes.CoreAttributes_JoinOrder, 
+                         dbo.CoreAttributes.CoreAttributes_UserInsert, dbo.CoreAttributes.CoreAttributes_UserUpdate, dbo.CoreAttributes.CoreAttributes_UserDelete, dbo.CoreAttributes.CoreAttributes_DateInsert, 
+                         dbo.CoreAttributes.CoreAttributes_DateUpdate, dbo.CoreAttributes.CoreAttributes_DateDelete, dbo.CoreAttributes.CoreAttributesFormat_Ky, dbo.CoreAttributes.CoreAttributes_JoinKey, 
+                         dbo.CoreAttributes.CoreAttributes_JoinWhere, dbo.CoreAttributes.CoreAttributes_JoinFrom, dbo.CoreEntities.CoreEntities_Icon, CoreEntities_1.CoreEntities_Icon AS CoreEntities_IconJoin, 
+                         dbo.CoreAttributes.CoreAttributes_EventOn, dbo.CoreAttributes.CoreAttributes_EventAction, dbo.CoreAttributes.CoreAttributes_DefaultValue
+FROM            dbo.CoreAttributes LEFT OUTER JOIN
+                         dbo.CoreEntities ON dbo.CoreAttributes.CoreEntities_Ky = dbo.CoreEntities.CoreEntities_Ky LEFT OUTER JOIN
+                         dbo.CoreEntities AS CoreEntities_1 ON dbo.CoreAttributes.CoreAttributes_Join = CoreEntities_1.CoreEntities_Code LEFT OUTER JOIN
+                         dbo.CoreAttributesFormat ON dbo.CoreAttributes.CoreAttributesFormat_Ky = dbo.CoreAttributesFormat.CoreAttributesFormat_Ky LEFT OUTER JOIN
+                         dbo.CoreModules ON dbo.CoreAttributes.CoreModules_Ky = dbo.CoreModules.CoreModules_Ky LEFT OUTER JOIN
+                         dbo.CoreAttributesType ON dbo.CoreAttributes.CoreAttributesType_Ky = dbo.CoreAttributesType.CoreAttributesType_Ky
+</SqlScriptCreate>
+</SqlTable>

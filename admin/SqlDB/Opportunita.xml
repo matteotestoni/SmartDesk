@@ -1,0 +1,97 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Opportunita" Type="TABLE">
+    <Keys>
+      <Key Column="Opportunita_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Opportunita_Ky" IsNull="N" Type="int" />
+      <Field Column="Opportunita_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Opportunita_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Opportunita_Note" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Opportunita_Data" IsNull="Y" Type="smalldatetime" />
+      <Field Column="OpportunitaStati_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Opportunita_Chiusa" IsNull="Y" Type="bit" />
+      <Field Column="Opportunita_ValoreMin" IsNull="Y" Type="money" />
+      <Field Column="Opportunita_ValoreMax" IsNull="Y" Type="money" />
+      <Field Column="OpportunitaSorgenti_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Opportunita_Stato" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Opportunita_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Opportunita_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Opportunita_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Opportunita_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Opportunita_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Opportunita_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Immobili_Ky" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_Ky" IsNull="Y" Type="int" />
+      <Field Column="Prodotti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Servizi_Ky" IsNull="Y" Type="int" />
+      <Field Column="Cantieri_Ky" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Ky" IsNull="Y" Type="int" />
+      <Field Column="Aste_Ky" IsNull="Y" Type="int" />
+      <Field Column="utm_source" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_medium" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_campaign" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_term" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_content" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Commesse_Ky" IsNull="Y" Type="int" />
+      <Field Column="Documenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Spese_Ky" IsNull="Y" Type="int" />
+      <Field Column="Note_Ky" IsNull="Y" Type="int" />
+      <Field Column="Campagne_Ky" IsNull="Y" Type="int" />
+      <Field Column="Lead_Ky" IsNull="Y" Type="int" />
+      <Field Column="RicambiVeicoli_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliMarca_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliModello_Ky" IsNull="Y" Type="int" />
+      <Field Column="Produttori_Ky" IsNull="Y" Type="int" />
+      <Field Column="Opportunita_Codice" IsNull="Y" Type="varchar" Lenght="100" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Opportunita] (
+  [Opportunita_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Opportunita_Titolo] varchar(100)  NULL , 
+  [Opportunita_Descrizione] varchar(MAX)  NULL , 
+  [Opportunita_Note] varchar(MAX)  NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [Utenti_Ky] int  NULL , 
+  [Opportunita_Data] smalldatetime  NULL , 
+  [OpportunitaStati_Ky] tinyint  NULL , 
+  [Opportunita_Chiusa] bit  NULL , 
+  [Opportunita_ValoreMin] money  NULL DEFAULT ((0)), 
+  [Opportunita_ValoreMax] money  NULL DEFAULT ((0)), 
+  [OpportunitaSorgenti_Ky] tinyint  NULL , 
+  [Opportunita_Stato] varchar(MAX)  NULL , 
+  [Opportunita_UserInsert] int  NULL , 
+  [Opportunita_UserUpdate] int  NULL , 
+  [Opportunita_UserDelete] int  NULL , 
+  [Opportunita_DateInsert] datetime  NULL , 
+  [Opportunita_DateUpdate] datetime  NULL , 
+  [Opportunita_DateDelete] datetime  NULL , 
+  [Immobili_Ky] int  NULL , 
+  [Veicoli_Ky] int  NULL , 
+  [Prodotti_Ky] int  NULL , 
+  [Servizi_Ky] int  NULL , 
+  [Cantieri_Ky] int  NULL , 
+  [Annunci_Ky] int  NULL , 
+  [Aste_Ky] int  NULL , 
+  [utm_source] varchar(MAX)  NULL , 
+  [utm_medium] varchar(MAX)  NULL , 
+  [utm_campaign] varchar(MAX)  NULL , 
+  [utm_term] varchar(MAX)  NULL , 
+  [utm_content] varchar(MAX)  NULL , 
+  [Commesse_Ky] int  NULL , 
+  [Documenti_Ky] int  NULL , 
+  [Spese_Ky] int  NULL , 
+  [Note_Ky] int  NULL , 
+  [Campagne_Ky] int  NULL , 
+  [Lead_Ky] int  NULL , 
+  [RicambiVeicoli_Ky] int  NULL , 
+  [VeicoliMarca_Ky] int  NULL , 
+  [VeicoliModello_Ky] int  NULL , 
+  [Produttori_Ky] int  NULL , 
+  [Opportunita_Codice] varchar(100)  NULL  )
+ALTER TABLE [dbo].[Opportunita] ADD CONSTRAINT PK_Opportunita PRIMARY KEY  ([Opportunita_Ky])
+</SqlScriptCreate>
+</SqlTable>

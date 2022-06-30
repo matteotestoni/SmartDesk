@@ -1,0 +1,71 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="DocumentiCorpo" Type="TABLE">
+    <Keys>
+      <Key Column="DocumentiCorpo_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="DocumentiCorpo_Ky" IsNull="N" Type="int" />
+      <Field Column="Documenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="DocumentiCorpo_Titolo" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="DocumentiCorpo_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="DocumentiCorpo_Qta" IsNull="Y" Type="float" />
+      <Field Column="DocumentiCorpo_Importo" IsNull="Y" Type="money" />
+      <Field Column="DocumentiCorpo_Totale" IsNull="Y" Type="money" />
+      <Field Column="DocumentiCorpo_TotaleIVA" IsNull="Y" Type="money" />
+      <Field Column="AnagraficheServizi_Ky" IsNull="Y" Type="int" />
+      <Field Column="AliquoteIVA_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="AliquoteIVA_Aliquota" IsNull="Y" Type="money" />
+      <Field Column="AttributiGruppi_Ky" IsNull="Y" Type="int" />
+      <Field Column="Servizi_Ky" IsNull="Y" Type="int" />
+      <Field Column="Prodotti_Ky" IsNull="Y" Type="int" />
+      <Field Column="DocumentiCorpo_Ordine" IsNull="Y" Type="int" />
+      <Field Column="attr-numeroemail" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="attr-posizionamento" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="attr-posizionamentozone" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="attr-bozze" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="attr-revisioni" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="attr-piattaformaecommerce" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CentridiCR_Ky" IsNull="Y" Type="int" />
+      <Field Column="DocumentiCorpo_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="DocumentiCorpo_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="DocumentiCorpo_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="DocumentiCorpo_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="DocumentiCorpo_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="DocumentiCorpo_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="DocumentiCorpo_ImportoTagliato" IsNull="Y" Type="money" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[DocumentiCorpo] (
+  [DocumentiCorpo_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Documenti_Ky] int  NULL , 
+  [DocumentiCorpo_Titolo] varchar(500)  NULL , 
+  [DocumentiCorpo_Descrizione] varchar(MAX)  NULL , 
+  [DocumentiCorpo_Qta] float  NULL , 
+  [DocumentiCorpo_Importo] money  NULL , 
+  [DocumentiCorpo_Totale] money  NULL , 
+  [DocumentiCorpo_TotaleIVA] money  NULL , 
+  [AnagraficheServizi_Ky] int  NULL , 
+  [AliquoteIVA_Ky] smallint  NULL , 
+  [AliquoteIVA_Aliquota] money  NULL , 
+  [AttributiGruppi_Ky] int  NULL , 
+  [Servizi_Ky] int  NULL , 
+  [Prodotti_Ky] int  NULL , 
+  [DocumentiCorpo_Ordine] int  NULL , 
+  [attr-numeroemail] varchar(MAX)  NULL DEFAULT ((0)), 
+  [attr-posizionamento] varchar(MAX)  NULL , 
+  [attr-posizionamentozone] varchar(MAX)  NULL , 
+  [attr-bozze] varchar(MAX)  NULL , 
+  [attr-revisioni] varchar(MAX)  NULL , 
+  [attr-piattaformaecommerce] varchar(MAX)  NULL , 
+  [CentridiCR_Ky] int  NULL , 
+  [DocumentiCorpo_UserInsert] int  NULL , 
+  [DocumentiCorpo_UserUpdate] int  NULL , 
+  [DocumentiCorpo_UserDelete] int  NULL , 
+  [DocumentiCorpo_DateInsert] datetime  NULL , 
+  [DocumentiCorpo_DateUpdate] datetime  NULL , 
+  [DocumentiCorpo_DateDelete] datetime  NULL , 
+  [DocumentiCorpo_ImportoTagliato] money  NULL  )
+ALTER TABLE [dbo].[DocumentiCorpo] ADD CONSTRAINT PK_DocumentiCorpo PRIMARY KEY  ([DocumentiCorpo_Ky])
+</SqlScriptCreate>
+</SqlTable>

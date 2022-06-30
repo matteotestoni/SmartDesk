@@ -1,0 +1,71 @@
+    <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-3 small-4 cell">
+    		<label for="ProdottiApplicazioni_Titolo" class="text-right middle">Titolo <i class="fa-duotone fa-tag fa-fw"></i></label>
+		</div>
+    	<div class="large-10 medium-9 small-8 cell">
+        <input type="text" name="ProdottiApplicazioni_Titolo" id="ProdottiApplicazioni_Titolo" value="<%=GetFieldValue(dtProdottiApplicazioni, "ProdottiApplicazioni_Titolo")%>" size="80" required="required">
+        <span class="form-error">Obbligatorio</span>
+			  <p class="help-text">max 100 carateri</p>
+    	</div>
+	</div>	
+	
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-12 cell text-right">
+   		<label class="large-text-right small-text-left middle" for="Lingue_Ky">Lingua</label>
+ 	  </div>
+  	<div class="large-10 medium-10 small-12 cell">
+			<select name="Lingue_Ky" id="Lingue_Ky" value="<%=GetFieldValue(dtProdottiApplicazioni, "Lingue_Ky")%>" required="required">
+        <!--#include file="/var/cache/Lingue-options.htm"--> 
+	    </select>
+	    <span class="form-error">Obbligatorio</span>
+	    <script type="text/javascript">
+	      selectSet('Lingue_Ky', '<%=GetFieldValue(dtProdottiApplicazioni, "Lingue_Ky")%>');
+	    </script>
+  	</div>
+  </div>
+
+	<div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-12 cell text-right">
+   		<label class="large-text-right small-text-left middle" for="ProdottiApplicazioniCategorie_Ky">Categoria</label>
+ 	  </div>
+  	<div class="large-10 medium-10 small-12 cell">
+			<select name="ProdottiApplicazioniCategorie_Ky" id="ProdottiApplicazioniCategorie_Ky" value="<%=GetFieldValue(dtProdottiApplicazioni, "ProdottiApplicazioniCategorie_Ky")%>">
+			<option value=""></option>
+			<%
+			for (int i = 0; i < dtProdottiApplicazioniCategorie.Rows.Count; i++){
+				Response.Write("<option value=\"" + dtProdottiApplicazioniCategorie.Rows[i]["ProdottiApplicazioniCategorie_Ky"].ToString() + "\">" + dtProdottiApplicazioniCategorie.Rows[i]["ProdottiApplicazioniCategorie_Titolo"].ToString() + "</option>");
+			}
+			%>
+	    </select>
+	    <span class="form-error">Obbligatorio</span>
+	    <script type="text/javascript">
+	      selectSet('ProdottiApplicazioniCategorie_Ky', '<%=GetFieldValue(dtProdottiApplicazioni, "ProdottiApplicazioniCategorie_Ky")%>');
+	    </script>
+  	</div>
+  </div>
+
+	<div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-12 cell text-right">
+   		<label class="large-text-right small-text-left middle" for="ProdottiApplicazioni_Default">Predefinita</label>
+ 	  </div>
+  	<div class="large-10 medium-10 small-12 cell">
+			<select name="ProdottiApplicazioni_Default" id="ProdottiApplicazioni_Default" value="<%=GetCheckValue(dtProdottiApplicazioni, "ProdottiApplicazioni_Default")%>">
+	      <option value="True">si</option>
+	      <option value="False">no</option>
+	    </select>
+	    <span class="form-error">Obbligatorio</span>
+	    <script type="text/javascript">
+	      selectSet('ProdottiApplicazioni_Default', '<%=GetCheckValue(dtProdottiApplicazioni, "ProdottiApplicazioni_Default")%>');
+	    </script>
+  	</div>
+	</div>        
+
+  <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-3 small-4 cell">
+    		<label for="ProdottiApplicazioni_Ordine" class="text-right middle">Ordine <i class="fa-duotone fa-sort fa-fw"></i></label>
+		</div>
+    	<div class="large-10 medium-9 small-8 cell">
+              <input type="text" name="ProdottiApplicazioni_Ordine" id="ProdottiApplicazioni_Ordine" value="<%=GetFieldValue(dtProdottiApplicazioni, "ProdottiApplicazioni_Ordine")%>" size="3" required="required" pattern="number" />
+		    <span class="form-error">Obbligatorio</span>
+    	</div>
+	</div>

@@ -1,0 +1,61 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnagraficheProdotti" Type="TABLE">
+    <Keys>
+      <Key Column="AnagraficheProdotti_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AnagraficheProdotti_Ky" IsNull="N" Type="int" />
+      <Field Column="AnagraficheProdotti_Qta" IsNull="Y" Type="int" />
+      <Field Column="Prodotti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheProdotti_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnagraficheProdotti_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="AnagraficheProdotti_DataAcquisto" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheProdotti_Matricola" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Commesse_Ky" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Ky" IsNull="Y" Type="int" />
+      <Field Column="Aste_Ky" IsNull="Y" Type="int" />
+      <Field Column="Campagne_Ky" IsNull="Y" Type="int" />
+      <Field Column="Immobili_Ky" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_Ky" IsNull="Y" Type="int" />
+      <Field Column="Opportunita_Ky" IsNull="Y" Type="int" />
+      <Field Column="SitiWeb_Ky" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheProdotti_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheProdotti_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheProdotti_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheProdotti_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheProdotti_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheProdotti_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Anagrafiche_Ky_Rivenditore" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheProdotti_Rivenditore" IsNull="Y" Type="varchar" Lenght="500" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AnagraficheProdotti] (
+  [AnagraficheProdotti_Ky] int IDENTITY(1,1) NOT NULL , 
+  [AnagraficheProdotti_Qta] int  NULL , 
+  [Prodotti_Ky] int  NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [AnagraficheProdotti_Titolo] varchar(200)  NULL , 
+  [AnagraficheProdotti_Descrizione] varchar(MAX)  NULL , 
+  [AnagraficheProdotti_DataAcquisto] datetime  NULL , 
+  [AnagraficheProdotti_Matricola] varchar(200)  NULL , 
+  [Commesse_Ky] int  NULL , 
+  [Annunci_Ky] int  NULL , 
+  [Aste_Ky] int  NULL , 
+  [Campagne_Ky] int  NULL , 
+  [Immobili_Ky] int  NULL , 
+  [Veicoli_Ky] int  NULL , 
+  [Opportunita_Ky] int  NULL , 
+  [SitiWeb_Ky] int  NULL , 
+  [AnagraficheProdotti_UserInsert] int  NULL , 
+  [AnagraficheProdotti_UserUpdate] int  NULL , 
+  [AnagraficheProdotti_UserDelete] int  NULL , 
+  [AnagraficheProdotti_DateInsert] datetime  NULL , 
+  [AnagraficheProdotti_DateUpdate] datetime  NULL , 
+  [AnagraficheProdotti_DateDelete] datetime  NULL , 
+  [Anagrafiche_Ky_Rivenditore] int  NULL , 
+  [AnagraficheProdotti_Rivenditore] varchar(500)  NULL  )
+ALTER TABLE [dbo].[AnagraficheProdotti] ADD CONSTRAINT PK_AnagraficheProdotti PRIMARY KEY  ([AnagraficheProdotti_Ky])
+</SqlScriptCreate>
+</SqlTable>

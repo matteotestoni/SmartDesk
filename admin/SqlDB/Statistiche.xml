@@ -1,0 +1,37 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Statistiche" Type="TABLE">
+    <Keys>
+      <Key Column="Statistiche_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Statistiche_Ky" IsNull="N" Type="int" />
+      <Field Column="Statistiche_Data" IsNull="Y" Type="smalldatetime" />
+      <Field Column="StatisticheTipo_Ky" IsNull="Y" Type="int" />
+      <Field Column="Statistiche_Numero" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Prodotti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Statistiche_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Statistiche_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Statistiche_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Statistiche_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Statistiche_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Statistiche_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Statistiche] (
+  [Statistiche_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Statistiche_Data] smalldatetime  NULL , 
+  [StatisticheTipo_Ky] int  NULL , 
+  [Statistiche_Numero] int  NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [Prodotti_Ky] int  NULL , 
+  [Statistiche_UserInsert] int  NULL , 
+  [Statistiche_UserUpdate] int  NULL , 
+  [Statistiche_UserDelete] int  NULL , 
+  [Statistiche_DateInsert] datetime  NULL , 
+  [Statistiche_DateUpdate] datetime  NULL , 
+  [Statistiche_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[Statistiche] ADD CONSTRAINT PK_Statistiche PRIMARY KEY  ([Statistiche_Ky])
+</SqlScriptCreate>
+</SqlTable>

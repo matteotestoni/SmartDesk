@@ -1,0 +1,35 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ProdottiColore" Type="TABLE">
+    <Keys>
+      <Key Column="ProdottiColore_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="ProdottiColore_Ky" IsNull="N" Type="int" />
+      <Field Column="ProdottiColore_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="ProdottiColore_Ordine" IsNull="Y" Type="int" />
+      <Field Column="ProdottiColore_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="ProdottiColore_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="ProdottiColore_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="ProdottiColore_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiColore_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiColore_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiColore_Default" IsNull="Y" Type="bit" />
+      <Field Column="Colori_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[ProdottiColore] (
+  [ProdottiColore_Ky] int IDENTITY(1,1) NOT NULL , 
+  [ProdottiColore_Titolo] varchar(200)  NULL , 
+  [ProdottiColore_Ordine] int  NULL , 
+  [ProdottiColore_UserInsert] int  NULL , 
+  [ProdottiColore_UserUpdate] int  NULL , 
+  [ProdottiColore_UserDelete] int  NULL , 
+  [ProdottiColore_DateInsert] datetime  NULL , 
+  [ProdottiColore_DateUpdate] datetime  NULL , 
+  [ProdottiColore_DateDelete] datetime  NULL , 
+  [ProdottiColore_Default] bit  NULL , 
+  [Colori_Ky] int  NULL  )
+ALTER TABLE [dbo].[ProdottiColore] ADD CONSTRAINT PK_ProdottiColore PRIMARY KEY  ([ProdottiColore_Ky])
+</SqlScriptCreate>
+</SqlTable>

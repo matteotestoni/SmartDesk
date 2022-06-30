@@ -1,0 +1,53 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CMSAds" Type="TABLE">
+    <Keys>
+      <Key Column="CMSAds_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CMSAds_Ky" IsNull="N" Type="int" />
+      <Field Column="CMSAds_PubblicaWEB" IsNull="Y" Type="bit" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="CMSAds_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSAds_Foto" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="CMSAds_Url" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="CMSAds_Roitracking" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="CMSAds_Tags" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSAds_Categorie" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSAds_Province" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSAds_Zone" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSAds_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CMSAds_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CMSAds_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CMSAds_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CMSAds_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CMSAds_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="CMSAds_Provincie" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSAds_Click" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CMSAds] (
+  [CMSAds_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CMSAds_PubblicaWEB] bit  NULL DEFAULT ((0)), 
+  [Anagrafiche_Ky] int  NULL , 
+  [Lingue_Ky] tinyint  NULL , 
+  [CMSAds_Titolo] varchar(200)  NULL , 
+  [CMSAds_Foto] varchar(300)  NULL , 
+  [CMSAds_Url] varchar(500)  NULL , 
+  [CMSAds_Roitracking] varchar(500)  NULL , 
+  [CMSAds_Tags] varchar(200)  NULL , 
+  [CMSAds_Categorie] varchar(200)  NULL , 
+  [CMSAds_Province] varchar(200)  NULL , 
+  [CMSAds_Zone] varchar(200)  NULL , 
+  [CMSAds_UserInsert] int  NULL , 
+  [CMSAds_UserUpdate] int  NULL , 
+  [CMSAds_UserDelete] int  NULL , 
+  [CMSAds_DateInsert] datetime  NULL , 
+  [CMSAds_DateUpdate] datetime  NULL , 
+  [CMSAds_DateDelete] datetime  NULL , 
+  [CMSAds_Provincie] varchar(200)  NULL , 
+  [CMSAds_Click] int  NULL DEFAULT ((0)) )
+ALTER TABLE [dbo].[CMSAds] ADD CONSTRAINT PK_CMSAds PRIMARY KEY  ([CMSAds_Ky])
+</SqlScriptCreate>
+</SqlTable>

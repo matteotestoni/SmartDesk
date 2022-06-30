@@ -1,0 +1,241 @@
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="CMSContenuti_PubblicaWEB" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Pubblica</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+        <input class="switch-input" type="checkbox" name="CMSContenuti_PubblicaWEB" id="CMSContenuti_PubblicaWEB" value="on" <% if (GetCheckValue(dtCMSContenuti, "CMSContenuti_PubblicaWEB")){ Response.Write("checked");} %> />
+        <label class="switch-paddle" for="CMSContenuti_PubblicaWEB">
+          <span class="show-for-sr">si</span>
+          <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+          <span class="switch-inactive" aria-hidden="true"></span>
+        </label>
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="CMSContenuti_InMenu" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>In menù</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+        <input class="switch-input" type="checkbox" name="CMSContenuti_InMenu" id="CMSContenuti_InMenu" value="on" <% if (GetCheckValue(dtCMSContenuti, "CMSContenuti_InMenu")){ Response.Write("checked");} %> />
+        <label class="switch-paddle" for="CMSContenuti_InMenu">
+          <span class="show-for-sr">si</span>
+          <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+          <span class="switch-inactive" aria-hidden="true"></span>
+        </label>
+  	</div>
+  </div>
+
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="CMSContenuti_Titolo" class="large-text-right small-text-left middle">Titolo<i class="fa-duotone fa-file-lines fa-fw"></i></label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="CMSContenuti_Titolo" id="CMSContenuti_Titolo" title="Titolo" required="required" value="<%=GetFieldValue(dtCMSContenuti, "CMSContenuti_Titolo")%>" size="60">
+  	</div>
+  </div>
+
+	<div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell text-right">
+  		<label class="large-text-right small-text-left middle" for="Lingue_Ky">Lingua <i class="fa-duotone fa-language fa-fw"></i></label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+			<select name="Lingue_Ky" id="Lingue_Ky" value="<%=GetFieldValue(dtCMSContenuti, "Lingue_Ky")%>" required="required">
+        <!--#include file="/var/cache/Lingue-options.htm"--> 
+      </select>
+      <script type="text/javascript">
+        selectSet('Lingue_Ky', '<%=GetFieldValue(dtCMSContenuti, "Lingue_Ky")%>');
+      </script>
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="CMSContenuti_Ordine" class="large-text-right small-text-left middle">Ordine <i class="fa-duotone fa-sort fa-fw"></i></label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="CMSContenuti_Ordine" id="CMSContenuti_Ordine" title="Ordine" required="required" value="<%=GetFieldValue(dtCMSContenuti, "CMSContenuti_Ordine")%>" size="60">
+  	</div>
+  </div>
+  
+	<div class="grid-x grid-padding-x">
+		<div class="large-2 medium-2 small-4 cell">
+			<label for="CMSCategorie_Ky" class="text-right middle">Categoria <i class="fa-duotone fa-list fa-fw"></i></label>
+		</div>
+		<div class="large-4 medium-4 small-8 cell">
+			<select name="CMSCategorie_Ky" id="CMSCategorie_Ky" value="<%=GetFieldValue(dtCMSContenuti, "CMSCategorie_Ky")%>">
+			<!--#include file="/var/cache/CMSCategorie-options.htm"--> 
+			</select>
+			<script type="text/javascript">
+			selectSet('CMSCategorie_Ky', '<%=GetFieldValue(dtCMSContenuti, "CMSCategorie_Ky")%>');
+			</script>
+			<span class="form-error">Obbligatorio</span>
+		</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="CMSContenuti_Data" class="text-right middle">Data <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+    </div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="CMSContenuti_Data" id="CMSContenuti_Data" class="datetimepicker" value="<%=GetFieldValue(dtCMSContenuti, "CMSContenuti_Data")%>" size="80" required="required">
+      <span class="form-error">Obbligatorio</span>
+  	</div>
+	</div>	
+	
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="CMSContenutiTipo_Ky" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Tipo di contenuto</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+			<select name="CMSContenutiTipo_Ky" id="CMSContenutiTipo_Ky" value="<%=GetFieldValue(dtCMSContenuti, "CMSContenutiTipo_Ky")%>" required="required">
+			<!--#include file="/var/cache/CMSContenutiTipo-options.htm"--> 
+			</select>
+			<script type="text/javascript">
+			selectSet('CMSContenutiTipo_Ky', '<%=GetFieldValue(dtCMSContenuti, "CMSContenutiTipo_Ky")%>');
+			</script>
+			<span class="form-error">Obbligatorio</span>
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell text-right">
+  		<label class="large-text-right small-text-left middle" for="CMSContenuti_Template">Template</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="CMSContenuti_Template" id="CMSContenuti_Template" value="<%=GetFieldValue(dtCMSContenuti, "CMSContenuti_Template")%>" size="83" >
+      <p class="help-text" id="CMSContenuti_Template_HelpText">Template preso da cartella %template%/contenuti/</p>
+  	</div>
+	</div>	
+
+	<div class="grid-x grid-padding-x">
+		<div class="large-2 medium-2 small-4 cell">
+			<label for="CMSContenuti_Tags" class="text-right middle">Tags <i class="fa-duotone fa-list fa-fw"></i></label>
+		</div>
+		<div class="large-10 medium-10 small-8 cell">
+			<select name="CMSContenuti_Tags" id="CMSContenuti_Tags" multiple class="select2" value="<%=GetFieldValue(dtCMSContenuti, "CMSContenuti_Tags")%>">
+				<option value=""></option>
+		    <%
+				for (int i = 0; i < dtCMSTags.Rows.Count; i++){
+					Response.Write("<option value=\"" + dtCMSTags.Rows[i]["CMSTags_Ky"].ToString() + "\">" + dtCMSTags.Rows[i]["CMSTags_Titolo"].ToString() + "</option>");
+				}
+				%>
+			</select>
+			<script type="text/javascript">
+				selectSetMultiple('CMSContenuti_Tags', '<%=GetFieldValue(dtCMSContenuti, "CMSContenuti_Tags")%>');
+			</script>
+			<span class="form-error">Obbligatorio</span>
+			<p class="help-text">Tags: <a href="/admin/view.aspx?CoreModules_Ky=9&CoreEntities_Ky=104&CoreGrids_Ky=87" class="tiny button secondary">gestisci <i class="fa-duotone fa-pen-to-square fa-fw"></i></a></p>
+		</div>
+	</div>	
+	
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="CMSContenuti_Contenuto" class="large-text-right small-text-left middle">Contenuto<i class="fa-duotone fa-file-lines fa-fw"></i></label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <textarea name="CMSContenuti_Contenuto" id="CMSContenuti_Contenuto" rows="5" cols="78"><%=GetFieldValue(dtCMSContenuti, "CMSContenuti_Contenuto")%></textarea>
+      <script type="text/javascript">
+      CKEDITOR.replace('CMSContenuti_Contenuto',
+      	{
+        	filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+        	filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+      	});
+      </script>
+  	</div>
+  </div>
+
+	<fieldset class="fieldset">
+		<legend><i class="fa-brands fa-google fa-fw"></i>SEO</legend>
+	  <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="CMSContenuti_Sitemap" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>In sitemap</label>
+    	</div>
+    	<div class="large-4 medium-4 small-8 cell">
+          <input class="switch-input" type="checkbox" name="CMSContenuti_Sitemap" id="CMSContenuti_Sitemap" value="on" <% if (GetCheckValue(dtCMSContenuti, "CMSContenuti_Sitemap")){ Response.Write("checked");} %> />
+          <label class="switch-paddle" for="CMSContenuti_Sitemap">
+            <span class="show-for-sr">si</span>
+            <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+            <span class="switch-inactive" aria-hidden="true"></span>
+          </label>
+          <span class="help-text">i noindex non saranno nella sitemap</span>
+    	</div>
+	  	<div class="large-2 medium-2 small-4 cell">
+	  		<label for="CMSContenuti_Robots" class="large-text-right small-text-left middle">Robots SEO<i class="fa-duotone fa-file-lines fa-fw"></i></label>
+	  	</div>
+	  	<div class="large-4 medium-4 small-8 cell">
+				<select name="CMSContenuti_Robots" id="CMSContenuti_Robots" value="<%=GetFieldValue(dtCMSContenuti, "CMSContenuti_Robots")%>">
+	        <option value="index,follow">index,follow</option>
+	        <option value="noindex,nofollow">noindex,follow</option>
+	        <option value="noindex,nofollow">noindex,nofollow</option>
+	      </select>
+	      <script type="text/javascript">
+	        selectSet('CMSContenuti_Robots', '<%=GetFieldValue(dtCMSContenuti, "CMSContenuti_Robots")%>');
+	      </script>
+	  	</div>
+	  </div>
+
+	  <div class="grid-x grid-padding-x">
+	  	<div class="large-2 medium-2 small-4 cell text-right">
+	  		<label class="large-text-right small-text-left middle" for="CMSContenuti_UrlKey">Friendly Url <i class="fa-duotone fa-link fa-fw"></i></label>
+	  	</div>
+	  	<div class="large-10 medium-10 small-8 cell">
+	      <input type="text" name="CMSContenuti_UrlKey" id="CMSContenuti_UrlKey" value="<%=GetFieldValue(dtCMSContenuti, "CMSContenuti_UrlKey")%>" size="83" >
+	  	</div>
+	  </div>
+	
+	  <div class="grid-x grid-padding-x">
+	  	<div class="large-2 medium-2 small-4 cell">
+	  		<label for="CMSContenuti_Title" class="large-text-right small-text-left middle">Titolo SEO<i class="fa-duotone fa-file-lines fa-fw"></i></label>
+	  	</div>
+	  	<div class="large-10 medium-10 small-8 cell">
+	      <input type="text" name="CMSContenuti_Title" id="CMSContenuti_Title" title="Titolo SEO" required="required" value="<%=GetFieldValue(dtCMSContenuti, "CMSContenuti_Title")%>" size="80">
+	  	</div>
+	  </div>
+	
+	  <div class="grid-x grid-padding-x">
+	  	<div class="large-2 medium-2 small-4 cell">
+	  		<label for="CMSContenuti_Description" class="large-text-right small-text-left middle">Descrizione SEO<i class="fa-duotone fa-file-lines fa-fw"></i></label>
+	  	</div>
+	  	<div class="large-10 medium-10 small-8 cell">
+	      <textarea name="CMSContenuti_Description" id="CMSContenuti_Description" title="Titolo SEO" value="<%=GetFieldValue(dtCMSContenuti, "CMSContenuti_Description")%>" rows="3" size="200"><%=GetFieldValue(dtCMSContenuti, "CMSContenuti_Description")%></textarea>
+	  	</div>
+	  </div>
+  </fieldset>
+ 
+	<fieldset class="fieldset">
+		<legend><i class="fa-duotone fa-image fa-fw"></i>Immagini</legend>
+			<div class="grid-x grid-padding-x">
+		  	<div class="large-2 medium-2 small-4 cell">
+		  		<label for="fotocontenuto" class="large-text-right small-text-left middle">Foto in evidenza</label>
+		  	</div>
+		  	<div class="large-10 medium-10 small-8 cell">
+		      <p>Le immagini devono essere in formato jpg<br></p>
+		      <label for="fotocontenuto" class="button small">Carica immagini</label>
+		      <input type="file" class="show-for-sr fileupload" placeholder="Foto slide" id="fotocontenuto" name="fotocontenuto" />
+		      <small class="form-error">obbligatorio.</small>
+		      <div id="galleryfotocaricate" class="gallery"></div>
+		      <script>
+		        jQuery(function() {
+		          var imagesPreview = function(input, placeToInsertImagePreview) {
+		              if (input.files) {
+		                  var filesAmount = input.files.length;
+		                  jQuery(placeToInsertImagePreview).html("");
+		                  for (i = 0; i < filesAmount; i++) {
+		                      var reader = new FileReader();
+		                      reader.onload = function(event) {
+		                          jQuery(jQuery.parseHTML('<img width="150" height="100" hspace="10" vspace="10" style="border:1px solid #000000">')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+		                      }
+		                       reader.readAsDataURL(input.files[i]);
+		                  }
+		              }
+		          };
+		          jQuery('#fotocontenuto').on('change', function() {
+		              imagesPreview(this, '#galleryfotocaricate');
+		          });
+		        });
+		      </script>
+		  	</div>
+		  </div>
+		  
+			<div class="grid-x grid-padding-x">
+		  	<div class="large-2 medium-2 small-4 cell">
+		  		<label for="fotoslide" class="large-text-right small-text-left middle">Anteprime</label>
+		  	</div>
+		  	<div class="large-10 medium-10 small-8 cell">
+		        <% 
+		        if (GetFieldValue(dtCMSContenuti, "CMSContenuti_Foto").Length>0){
+		          Response.Write("<div class=\"thumbnail\"><img src=\"" + GetFieldValue(dtCMSContenuti, "CMSContenuti_Foto")  + "\" height=\"150\" width=\"150\"></div>");
+		        }
+		        %>
+		    </div>
+		  </div> 
+	</fieldset>

@@ -1,0 +1,33 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AsteVendita" Type="TABLE">
+    <Keys>
+      <Key Column="AsteVendita_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AsteVendita_Ky" IsNull="N" Type="smallint" />
+      <Field Column="AsteVendita_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AsteVendita_Default" IsNull="Y" Type="bit" />
+      <Field Column="AsteVendita_Icona" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AsteVendita_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AsteVendita_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AsteVendita_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AsteVendita_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AsteVendita_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AsteVendita_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AsteVendita] (
+  [AsteVendita_Ky] smallint IDENTITY(1,1) NOT NULL , 
+  [AsteVendita_Titolo] varchar(200)  NULL , 
+  [AsteVendita_Default] bit  NULL DEFAULT ((0)), 
+  [AsteVendita_Icona] varchar(200)  NULL , 
+  [AsteVendita_UserInsert] int  NULL , 
+  [AsteVendita_UserUpdate] int  NULL , 
+  [AsteVendita_UserDelete] int  NULL , 
+  [AsteVendita_DateInsert] datetime  NULL , 
+  [AsteVendita_DateUpdate] datetime  NULL , 
+  [AsteVendita_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[AsteVendita] ADD CONSTRAINT PK_AsteVendita PRIMARY KEY  ([AsteVendita_Ky])
+</SqlScriptCreate>
+</SqlTable>

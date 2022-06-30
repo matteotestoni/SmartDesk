@@ -1,0 +1,77 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CoreAttributes" Type="TABLE">
+    <Keys>
+      <Key Column="CoreAttributes_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CoreAttributes_Ky" IsNull="N" Type="int" />
+      <Field Column="CoreModules_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreEntities_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreAttributesType_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreAttributesFormat_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreAttributes_Code" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreAttributes_Table" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreAttributes_Title" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreAttributes_Label" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreAttributes_Helptext" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreAttributes_Options" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreAttributes_Join" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreAttributes_JoinText" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreAttributes_JoinIconField" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreAttributes_MaxLength" IsNull="Y" Type="smallint" />
+      <Field Column="CoreAttributes_Search" IsNull="Y" Type="bit" />
+      <Field Column="CoreAttributes_System" IsNull="Y" Type="bit" />
+      <Field Column="CoreAttributes_Key" IsNull="Y" Type="bit" />
+      <Field Column="CoreAttributes_Order" IsNull="Y" Type="int" />
+      <Field Column="CoreAttributes_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CoreAttributes_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CoreAttributes_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CoreAttributes_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CoreAttributes_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CoreAttributes_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="CoreAttributes_JoinOrder" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreAttributes_JoinKey" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreAttributes_JoinWhere" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreAttributes_JoinFrom" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreAttributes_EventOn" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreAttributes_EventAction" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreAttributes_DefaultValue" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CoreAttributes] (
+  [CoreAttributes_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CoreModules_Ky] int  NULL , 
+  [CoreEntities_Ky] int  NULL , 
+  [CoreAttributesType_Ky] int  NULL , 
+  [CoreAttributesFormat_Ky] int  NULL , 
+  [CoreAttributes_Code] varchar(MAX)  NULL , 
+  [CoreAttributes_Table] varchar(MAX)  NULL , 
+  [CoreAttributes_Title] varchar(MAX)  NULL , 
+  [CoreAttributes_Label] varchar(MAX)  NULL , 
+  [CoreAttributes_Helptext] varchar(MAX)  NULL , 
+  [CoreAttributes_Options] varchar(MAX)  NULL , 
+  [CoreAttributes_Join] varchar(MAX)  NULL , 
+  [CoreAttributes_JoinText] varchar(MAX)  NULL , 
+  [CoreAttributes_JoinIconField] varchar(MAX)  NULL , 
+  [CoreAttributes_MaxLength] smallint  NULL , 
+  [CoreAttributes_Search] bit  NULL DEFAULT ((0)), 
+  [CoreAttributes_System] bit  NULL DEFAULT ((0)), 
+  [CoreAttributes_Key] bit  NULL DEFAULT ((0)), 
+  [CoreAttributes_Order] int  NULL DEFAULT ((0)), 
+  [CoreAttributes_UserInsert] int  NULL , 
+  [CoreAttributes_UserUpdate] int  NULL , 
+  [CoreAttributes_UserDelete] int  NULL , 
+  [CoreAttributes_DateInsert] datetime  NULL , 
+  [CoreAttributes_DateUpdate] datetime  NULL , 
+  [CoreAttributes_DateDelete] datetime  NULL , 
+  [CoreAttributes_JoinOrder] varchar(MAX)  NULL , 
+  [CoreAttributes_JoinKey] varchar(100)  NULL , 
+  [CoreAttributes_JoinWhere] varchar(MAX)  NULL , 
+  [CoreAttributes_JoinFrom] varchar(MAX)  NULL , 
+  [CoreAttributes_EventOn] varchar(100)  NULL , 
+  [CoreAttributes_EventAction] varchar(MAX)  NULL , 
+  [CoreAttributes_DefaultValue] varchar(MAX)  NULL  )
+ALTER TABLE [dbo].[CoreAttributes] ADD CONSTRAINT PK_CoreAttributes PRIMARY KEY  ([CoreAttributes_Ky])
+</SqlScriptCreate>
+</SqlTable>

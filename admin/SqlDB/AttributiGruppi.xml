@@ -1,0 +1,31 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AttributiGruppi" Type="TABLE">
+    <Keys>
+      <Key Column="AttributiGruppi_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AttributiGruppi_Ky" IsNull="N" Type="int" />
+      <Field Column="AttributiGruppi_Titolo" IsNull="N" Type="varchar" Lenght="100" />
+      <Field Column="AttributiGruppi_Attributi" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AttributiGruppi_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AttributiGruppi_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AttributiGruppi_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AttributiGruppi_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AttributiGruppi_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AttributiGruppi_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AttributiGruppi] (
+  [AttributiGruppi_Ky] int IDENTITY(1,1) NOT NULL , 
+  [AttributiGruppi_Titolo] varchar(100)  NOT NULL , 
+  [AttributiGruppi_Attributi] varchar(200)  NULL , 
+  [AttributiGruppi_UserInsert] int  NULL , 
+  [AttributiGruppi_UserUpdate] int  NULL , 
+  [AttributiGruppi_UserDelete] int  NULL , 
+  [AttributiGruppi_DateInsert] datetime  NULL , 
+  [AttributiGruppi_DateUpdate] datetime  NULL , 
+  [AttributiGruppi_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[AttributiGruppi] ADD CONSTRAINT PK_AttributiGruppi PRIMARY KEY  ([AttributiGruppi_Ky])
+</SqlScriptCreate>
+</SqlTable>

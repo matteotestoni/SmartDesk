@@ -1,0 +1,127 @@
+	<div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+			<label for="Anagrafiche_RagioneSociale" class="large-text-right">Anagrafica <i class="fa-duotone fa-users fa-fw"></i></label>
+		</div>
+  	<div class="cell shrink small-0 hide-for-small-only">
+			<input type="text" name="Anagrafiche_Ky" id="Anagrafiche_Ky" value="<%=GetFieldValue(dtAsteCauzioni, "Anagrafiche_Ky")%>" size="3" required="required">
+			<span class="form-error">Obbligatorio</span>
+		</div>
+  	<div class="auto cell">
+			<input type="text" name="Anagrafiche_RagioneSociale" id="Anagrafiche_RagioneSociale" placeholder="Ragione Sociale" value="<%=GetFieldValue(dtAsteCauzioni, "Anagrafiche_RagioneSociale")%>">
+			<span class="form-error">Obbligatorio</span>
+		</div>
+  	<div class="shrink cell">
+      <% if (GetFieldValue(dtAsteCauzioni, "Anagrafiche_Ky")!=null && GetFieldValue(dtAsteCauzioni, "Anagrafiche_Ky").Length>0){ %>
+				<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=GetFieldValue(dtAsteCauzioni, "Anagrafiche_Ky")%>" style="margin-top:4px"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw fa-lg"></i></a>
+			<% } %>
+		</div>
+  </div>
+  <script type="text/javascript">
+			jQuery("#Anagrafiche_RagioneSociale" ).autocomplete({
+				source: "/admin/app/anagrafiche/autosuggest-GetAnagrafiche-json.aspx",
+				minLength: 2,
+				select: function( event, ui ) {
+					jQuery("#Anagrafiche_Ky").val(ui.item.value);
+					jQuery("#Anagrafiche_RagioneSociale").val(ui.item.label);
+					return false;
+				}
+			});
+  </script>
+
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AsteEsperimenti_Ky" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Esperimento</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <select name="AsteEsperimenti_Ky" id="AsteEsperimenti_Ky" title="Esperimento" required="required">
+        <option value=""></option>
+		    <%
+				if (dtAsteEsperimenti!=null && dtAsteEsperimenti.Rows.Count>0){
+					for (int i = 0; i < dtAsteEsperimenti.Rows.Count; i++){ %>
+	          <option value="<%=dtAsteEsperimenti.Rows[i]["AsteEsperimenti_Ky"].ToString()%>"><%=dtAsteEsperimenti.Rows[i]["AsteEsperimenti_Numero"].ToString()%> - <%=dtAsteEsperimenti.Rows[i]["AsteEsperimentiEsiti_Titolo"].ToString()%> - Termine il <%=dtAsteEsperimenti.Rows[i]["AsteEsperimenti_DataTermine"].ToString()%></option>
+			    <% 
+					} 
+				}
+				%>
+      </select>
+	    <span class="form-error">Obbligatorio</span>
+	    <script type="text/javascript">
+	      selectSet('AsteEsperimenti_Ky', '<%=GetFieldValue(dtAsteCauzioni, "AsteEsperimenti_Ky")%>');
+	    </script>
+  	</div>
+  </div>
+  
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AsteCauzioni_Data" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Data</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="AsteCauzioni_Data" id="AsteCauzioni_Data" title="Inizio" class="fdatepicker" value="<%=GetFieldValue(dtAsteCauzioni, "AsteCauzioni_Data")%>" size="8">
+  	</div>
+  </div>
+  
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AsteCauzioni_Valore" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Valore</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="AsteCauzioni_Valore" id="AsteCauzioni_Valore" title="Valore" value="<%=GetFieldValue(dtAsteCauzioni, "AsteCauzioni_Valore")%>" size="8">
+  	</div>
+  </div>
+
+  <div class="grid-x grid-padding-x">
+		<div class="large-2 medium-2 small-4 cell">
+			<label class="large-text-right small-text-left middle">Tramite</label>
+		</div>
+		<div class="large-10 medium-10 small-8 cell">
+	    <select name="PagamentiMetodo_Ky" id="PagamentiMetodo_Ky" required="required" value="<%=GetFieldValue(dtAsteCauzioni, "PagamentiMetodo_Ky")%>">
+	      <!--#include file="/var/cache/PagamentiMetodo-options.htm"--> 
+	    </select>
+	    <span class="form-error">Obbligatorio</span>
+	    <script type="text/javascript">
+	      selectSet('PagamentiMetodo_Ky', '<%=GetFieldValue(dtAsteCauzioni, "PagamentiMetodo_Ky")%>');
+	    </script>
+	  </div>
+  </div>
+
+  <div class="grid-x grid-padding-x">
+		<div class="large-2 medium-2 small-4 cell">
+			<label class="large-text-right small-text-left middle">Conto <i class="fa-duotone fa-credit-card fa-fw"></i></label>
+		</div>
+		<div class="large-10 medium-10 small-8 cell end">
+	      <select name="Conti_Ky" id="Conti_Ky" value="1" required="required">
+	        <!--#include file="/var/cache/Conti-options.htm"--> 
+	      </select>
+	      <span class="form-error">Obbligatorio</span>
+	      <script type="text/javascript">
+	        selectSet('Conti_Ky', '<%=GetFieldValue(dtAsteCauzioni, "Conti_Ky")%>');
+	      </script>
+		</div>
+  </div>
+  
+  
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AsteCauzioni_Autorizzata" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Autorizzata</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+			<select name="AsteCauzioni_Autorizzata" id="AsteCauzioni_Autorizzata" value="<%=GetCheckValue(dtAsteCauzioni, "AsteCauzioni_Autorizzata")%>">
+	      <option value="True">si</option>
+	      <option value="False">no</option>
+	    </select>
+	    <span class="form-error">Obbligatorio</span>
+	    <script type="text/javascript">
+	      selectSet('AsteCauzioni_Autorizzata', '<%=GetCheckValue(dtAsteCauzioni, "AsteCauzioni_Autorizzata")%>');
+	    </script>
+  	</div>
+  </div>
+
+  
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AsteCauzioni_Riferimenti" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Riferimenti</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="AsteCauzioni_Riferimenti" id="AsteCauzioni_Valore" title="Riferimenti" value="<%=GetFieldValue(dtAsteCauzioni, "AsteCauzioni_Riferimenti")%>" size="8">
+  	</div>
+  </div>

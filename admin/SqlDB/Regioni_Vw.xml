@@ -1,0 +1,26 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Regioni_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Regioni_Ky" IsNull="N" Type="int" />
+      <Field Column="Nazioni_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Regioni_Codice" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="Regioni_Regione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Regioni_Zona" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Regioni_UrlKey" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Nazioni_Codice" IsNull="Y" Type="varchar" Lenght="4" />
+      <Field Column="Nazioni_Nazione" IsNull="Y" Type="varchar" Lenght="50" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE VIEW [dbo].[Regioni_Vw]
+AS
+SELECT        dbo.Regioni.Regioni_Ky, dbo.Regioni.Nazioni_Ky, dbo.Regioni.Regioni_Codice, dbo.Regioni.Regioni_Regione, dbo.Regioni.Regioni_Zona, dbo.Regioni.Regioni_UrlKey, dbo.Nazioni.Nazioni_Codice, 
+                         dbo.Nazioni.Nazioni_Nazione
+FROM            dbo.Regioni INNER JOIN
+                         dbo.Nazioni ON dbo.Regioni.Nazioni_Ky = dbo.Nazioni.Nazioni_Ky
+
+
+
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,39 @@
+<div class="grid-x grid-padding-x">
+<div class="large-2 medium-2 small-4 cell">
+<label for="LeadSorgenti_Titolo" class="large-text-right small-text-left middle">Titolo</label>
+</div>
+<div class="large-10 medium-10 small-8 cell">
+<input type="text" name="LeadSorgenti_Titolo" id="LeadSorgenti_Titolo" value="<%=GetFieldValue(dtLeadSorgenti, "LeadSorgenti_Titolo")%>" placeholder="Titolo">
+</div>
+</div>
+<div class="grid-x grid-padding-x">
+<div class="large-2 medium-2 small-4 cell">
+<label for="LeadSorgenti_Default" class="large-text-right small-text-left middle">Default</label>
+</div>
+<div class="large-10 medium-10 small-8 cell">
+<div class="switch tiny">
+<input class="switch-input" type="checkbox" name="LeadSorgenti_Default" id="LeadSorgenti_Default" value="on" <% if (GetCheckValue(dtLeadSorgenti, "LeadSorgenti_Default")){ Response.Write("checked");} %>  />
+<label class="switch-paddle" for="LeadSorgenti_Default">
+<span class="show-for-sr">Ok</span>
+<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+<span class="switch-inactive" aria-hidden="true"></span>
+</label>
+</div>
+</div>
+</div>
+<div class="grid-x grid-padding-x">
+<div class="large-2 medium-2 small-4 cell">
+<label for="LeadSorgenti_Codice" class="large-text-right small-text-left middle">Codice</label>
+</div>
+<div class="large-10 medium-10 small-8 cell">
+<input type="text" name="LeadSorgenti_Codice" id="LeadSorgenti_Codice" value="<%=GetFieldValue(dtLeadSorgenti, "LeadSorgenti_Codice")%>" placeholder="Codice">
+</div>
+</div>
+<div class="grid-x grid-padding-x">
+<div class="large-2 medium-2 small-4 cell">
+<label for="LeadSorgenti_Ordine" class="large-text-right small-text-left middle">Ordine</label>
+</div>
+<div class="large-10 medium-10 small-8 cell">
+<input type="number" name="LeadSorgenti_Ordine" id="LeadSorgenti_Ordine" value="<%=GetFieldValue(dtLeadSorgenti, "LeadSorgenti_Ordine")%>" placeholder="Ordine">
+</div>
+</div>

@@ -1,0 +1,37 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="UtentiLog" Type="TABLE">
+    <Keys>
+      <Key Column="UtentiLog_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="UtentiLog_Ky" IsNull="N" Type="int" />
+      <Field Column="UtentiLog_IP" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="UtentiLog_UserAgent" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="UtentiLog_Cookie" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="UtentiLog_Data" IsNull="Y" Type="datetime" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="UtentiLog_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="UtentiLog_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="UtentiLog_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="UtentiLog_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="UtentiLog_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="UtentiLog_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[UtentiLog] (
+  [UtentiLog_Ky] int IDENTITY(1,1) NOT NULL , 
+  [UtentiLog_IP] varchar(20)  NULL , 
+  [UtentiLog_UserAgent] varchar(500)  NULL , 
+  [UtentiLog_Cookie] varchar(MAX)  NULL , 
+  [UtentiLog_Data] datetime  NULL , 
+  [Utenti_Ky] int  NULL , 
+  [UtentiLog_UserInsert] int  NULL , 
+  [UtentiLog_UserUpdate] int  NULL , 
+  [UtentiLog_UserDelete] int  NULL , 
+  [UtentiLog_DateInsert] datetime  NULL , 
+  [UtentiLog_DateUpdate] datetime  NULL , 
+  [UtentiLog_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[UtentiLog] ADD CONSTRAINT PK_UtentiLog PRIMARY KEY  ([UtentiLog_Ky])
+</SqlScriptCreate>
+</SqlTable>

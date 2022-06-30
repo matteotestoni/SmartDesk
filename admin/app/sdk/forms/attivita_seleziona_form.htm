@@ -1,0 +1,23 @@
+	<div class="input-group">
+	  <span class="input-group-label">
+		<input type="text" name="Attivita_Ky" id="Attivita_Ky" value="<%=GetFieldValue(dtNote, "Attivita_Ky")%>" size="3">
+		</span>
+		<input type="text" class="input-group-field" name="Attivita_Descrizione" id="Attivita_Descrizione" placeholder="Descrizione" value="<%=GetFieldValue(dtNote, "Attivita_Descrizione")%>" size="50" autocomplete="off">
+    <% if (GetFieldValue(dtNote, "Attivita_Ky")!=null && GetFieldValue(dtNote, "Attivita_Ky").Length>0){ %>
+	  <div class="input-group-button">
+			<a href="/admin/app/attivita/scheda-attivita.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreForms_Ky=129&Attivita_Ky=<%=GetFieldValue(dtNote, "Attivita_Ky")%>&sorgente=scheda-nota">Scheda</a>
+	  </div>
+		<% } %>
+		<span class="form-error">Obbligatorio</span>
+	</div>
+  <script type="text/javascript">
+		jQuery("#Attivita_Descrizione" ).autocomplete({
+			source: "/admin/app/attivita/autosuggest-GetAttivita-json.aspx",
+			minLength: 2,
+			select: function( event, ui ) {
+				jQuery("#Attivita_Ky").val(ui.item.value);
+				jQuery("#Attivita_Descrizione").val(ui.item.label);
+				return false;
+			}
+		});
+  </script>

@@ -1,0 +1,51 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliRicerche" Type="TABLE">
+    <Keys>
+      <Key Column="VeicoliRicerche_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="VeicoliRicerche_Ky" IsNull="N" Type="int" />
+      <Field Column="VeicoliRicerche_Attivo" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliMarca_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="VeicoliModello_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="VeicoliRicerche_Nome" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliRicerche_Cognome" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliRicerche_Email" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliRicerche_Cellulare" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliRicerche_Localita" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliRicerche_Messaggio" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="VeicoliRicerche_DataUltimaEmail" IsNull="Y" Type="smalldatetime" />
+      <Field Column="VeicoliRicerche_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="VeicoliRicerche_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="VeicoliRicerche_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="VeicoliRicerche_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliRicerche_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliRicerche_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliRicerche_Confermato" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[VeicoliRicerche] (
+  [VeicoliRicerche_Ky] int IDENTITY(1,1) NOT NULL , 
+  [VeicoliRicerche_Attivo] bit  NULL , 
+  [VeicoliMarca_Ky] smallint  NULL , 
+  [VeicoliModello_Ky] smallint  NULL , 
+  [VeicoliRicerche_Nome] varchar(100)  NULL , 
+  [VeicoliRicerche_Cognome] varchar(100)  NULL , 
+  [VeicoliRicerche_Email] varchar(100)  NULL , 
+  [VeicoliRicerche_Cellulare] varchar(100)  NULL , 
+  [VeicoliRicerche_Localita] varchar(100)  NULL , 
+  [VeicoliRicerche_Messaggio] varchar(500)  NULL , 
+  [VeicoliRicerche_DataUltimaEmail] smalldatetime  NULL , 
+  [VeicoliRicerche_UserInsert] int  NULL , 
+  [VeicoliRicerche_UserUpdate] int  NULL , 
+  [VeicoliRicerche_UserDelete] int  NULL , 
+  [VeicoliRicerche_DateInsert] datetime  NULL , 
+  [VeicoliRicerche_DateUpdate] datetime  NULL , 
+  [VeicoliRicerche_DateDelete] datetime  NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [VeicoliRicerche_Confermato] bit  NULL DEFAULT ((0)) )
+ALTER TABLE [dbo].[VeicoliRicerche] ADD CONSTRAINT PK_VeicoliRicerche PRIMARY KEY  ([VeicoliRicerche_Ky])
+</SqlScriptCreate>
+</SqlTable>

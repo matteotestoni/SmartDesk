@@ -1,0 +1,23 @@
+	<div class="input-group">
+	  <span class="input-group-label">
+		<input type="text" name="SitiWeb_Ky" id="SitiWeb_Ky" value="<%=GetFieldValue(dtPasswordmanager, "SitiWeb_Ky")%>" size="3">
+		</span>
+		<input type="text" class="input-group-field" name="SitiWeb_Dominio" id="SitiWeb_Dominio" placeholder="Dominio" value="<%=GetFieldValue(dtPasswordmanager, "SitiWeb_Dominio")%>" autocomplete="off">
+	  <% if (GetFieldValue(dtPasswordmanager, "SitiWeb_Ky")!=null && GetFieldValue(dtPasswordmanager, "SitiWeb_Ky").Length>0){ %>
+	  <div class="input-group-button">
+				<a href="/admin/app/sitiweb/scheda-sitiweb.aspx?SitiWeb_Ky=<%=GetFieldValue(dtPasswordmanager, "SitiWeb_Ky")%>" style="margin-top:4px"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw fa-lg"></i></a>
+	  </div>
+		<% } %>
+		<span class="form-error">Obbligatorio</span>
+	</div>
+	<script type="text/javascript">
+			jQuery("#SitiWeb_Dominio").autocomplete({
+				source: "/admin/app/sitiweb/autosuggest-GetSitiWeb-json.aspx",
+				minLength: 2,
+				select: function( event, ui ) {
+					jQuery("#SitiWeb_Ky").val(ui.item.value);
+					jQuery("#SitiWeb_Dominio").val(ui.item.label);
+					return false;
+				}
+			});
+	</script>

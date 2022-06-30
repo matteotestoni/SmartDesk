@@ -1,0 +1,27 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliModelloSpazioGroup_ConVeicoli_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="VeicoliModelloSpazioGroup_Ky" IsNull="N" Type="int" />
+      <Field Column="VeicoliModelloSpazioGroup_Modello" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliModelloSpazioGroup_ModelloHTML" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliMarcaSpazioGroup_Marca" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliModello_Ky" IsNull="Y" Type="int" />
+      <Field Column="NumeroVeicoli" IsNull="Y" Type="int" />
+      <Field Column="VeicoliMarcaSpazioGroup_MarcaHTML" IsNull="Y" Type="varchar" Lenght="200" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.VeicoliModelloSpazioGroup_ConVeicoli_Vw
+AS
+SELECT        TOP (100) PERCENT dbo.VeicoliModelloSpazioGroup.VeicoliModelloSpazioGroup_Ky, dbo.VeicoliModelloSpazioGroup.VeicoliModelloSpazioGroup_Modello, 
+                         dbo.VeicoliModelloSpazioGroup.VeicoliModelloSpazioGroup_ModelloHTML, dbo.VeicoliModelloSpazioGroup.VeicoliMarcaSpazioGroup_Marca, dbo.VeicoliModelloSpazioGroup.VeicoliTipo_Ky, 
+                         dbo.VeicoliModelloSpazioGroup.VeicoliModello_Ky, COUNT(dbo.Veicoli.Veicoli_Ky) AS NumeroVeicoli, dbo.VeicoliMarcaSpazioGroup.VeicoliMarcaSpazioGroup_MarcaHTML
+FROM            dbo.VeicoliModelloSpazioGroup INNER JOIN
+                         dbo.VeicoliMarcaSpazioGroup ON dbo.VeicoliModelloSpazioGroup.VeicoliMarcaSpazioGroup_Marca = dbo.VeicoliMarcaSpazioGroup.VeicoliMarcaSpazioGroup_Marca INNER JOIN
+                         dbo.Veicoli ON dbo.VeicoliModelloSpazioGroup.VeicoliModello_Ky = dbo.Veicoli.VeicoliModello_Ky
+GROUP BY dbo.VeicoliModelloSpazioGroup.VeicoliModelloSpazioGroup_Ky, dbo.VeicoliModelloSpazioGroup.VeicoliModelloSpazioGroup_Modello, 
+                         dbo.VeicoliModelloSpazioGroup.VeicoliModelloSpazioGroup_ModelloHTML, dbo.VeicoliModelloSpazioGroup.VeicoliMarcaSpazioGroup_Marca, dbo.VeicoliModelloSpazioGroup.VeicoliTipo_Ky, 
+                         dbo.VeicoliModelloSpazioGroup.VeicoliModello_Ky, dbo.VeicoliMarcaSpazioGroup.VeicoliMarcaSpazioGroup_MarcaHTML
+</SqlScriptCreate>
+</SqlTable>

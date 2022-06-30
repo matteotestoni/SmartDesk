@@ -1,0 +1,16 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Anagrafiche_Statistiche_NumeroDocumenti_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="NumeroDocumenti" IsNull="Y" Type="int" />
+      <Field Column="TotaleDocumenti" IsNull="Y" Type="money" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Anagrafiche_Statistiche_NumeroDocumenti_Vw
+AS
+SELECT     Anagrafiche_Ky, COUNT(Documenti_Ky) AS NumeroDocumenti, SUM(Documenti_Totale) AS TotaleDocumenti
+FROM         dbo.Documenti
+GROUP BY Anagrafiche_Ky
+</SqlScriptCreate>
+</SqlTable>

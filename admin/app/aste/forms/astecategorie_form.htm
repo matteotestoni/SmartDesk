@@ -1,0 +1,134 @@
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AsteCategorie_Titolo" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Titolo</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="AsteCategorie_Titolo" id="AsteCategorie_Titolo" title="Titolo" value="<%=GetFieldValue(dtAsteCategorie, "AsteCategorie_Titolo")%>" size="150" required="required">
+  	</div>
+  </div>  
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AsteCategorie_Titolo" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Descrizione</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <textarea rows="3" name="AsteCategorie_Descrizione" id="AsteCategorie_Descrizione" title="Descrizione"><%=GetFieldValue(dtAsteCategorie, "AsteCategorie_Descrizione")%></textarea>
+  	</div>
+  </div>
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AsteCategorie_Icona" class="large-text-right small-text-left middle"><i class="fa-duotone fa-image fa-fw"></i>Icona</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="AsteCategorie_Icona" id="AsteCategorie_Icona" title="Icona" value="<%=GetFieldValue(dtAsteCategorie, "AsteCategorie_Icona")%>" size="150">
+			<span class="help-text">Puoi specificare l'icona prendendo da Font Awesome. <a href="https://fontawesome.com/icons?d=gallery" target="_blank" rel="nofollow">Clicca qui</a> per maggiori informazioni.</span>
+  	</div>
+  </div>  
+
+	<div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AsteCategorie_Ordine" class="large-text-right small-text-left middle">Ordine</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="AsteCategorie_Ordine" id="AsteCategorie_Ordine" title="AsteCategorie_Ordine" value="<%=GetFieldValue(dtAsteCategorie, "AsteCategorie_Ordine")%>" size="60">
+      <span class="form-error">Obbligatorio</span>
+    </div>
+  </div>
+  
+  
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AsteCategorie_Evidenza" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>In evidenza</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+			<div class="switch tiny">                                         
+        <input class="switch-input" type="checkbox" name="AsteCategorie_Evidenza" id="AsteCategorie_Evidenza" value="on" <% if (GetCheckValue(dtAsteCategorie, "AsteCategorie_Evidenza")){ Response.Write("checked");} %> />
+        <label class="switch-paddle" for="AsteCategorie_Evidenza">
+          <span class="show-for-sr">Evidenza</span>
+          <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+          <span class="switch-inactive" aria-hidden="true"></span>
+        </label>
+      </div> 
+   	</div>
+  </div>    
+	<fieldset>
+		<legend>Dati SEO</legend>
+	    <div class="grid-x grid-padding-x">
+	    	<div class="large-2 medium-2 small-4 cell">
+	    		<label for="AsteCategorie_Url" class="text-right middle">Url</label>
+				</div>
+	    	<div class="large-10 medium-10 small-8 cell">
+          <input type="text" name="AsteCategorie_Url" id="AsteCategorie_Url" value="<%=GetFieldValue(dtAsteCategorie, "AsteCategorie_Url")%>" size="80">
+  				<span class="form-error">Obbligatorio</span>
+	    	</div>
+			</div>	
+
+	    <div class="grid-x grid-padding-x">
+	    	<div class="large-2 medium-2 small-4 cell">
+	    		<label for="AsteCategorie_Title" class="text-right middle">Titolo SEO</label>
+				</div>
+	    	<div class="large-10 medium-10 small-8 cell">
+          <input type="text" name="AsteCategorie_Title" id="AsteCategorie_Title" value="<%=GetFieldValue(dtAsteCategorie, "AsteCategorie_Title")%>" size="80">
+  				<span class="form-error">Obbligatorio</span>
+	        <p class="help-text">max 70 carateri</p>
+	    	</div>
+			</div>	
+
+	    <div class="grid-x grid-padding-x">
+	    	<div class="large-2 medium-2 small-4 cell">
+	    		<label for="AsteCategorie_Description" class="text-right middle">Descrizione SEO</label>
+				</div>
+	    	<div class="large-10 medium-10 small-8 cell">
+          <textarea name="AsteCategorie_Description" id="AsteCategorie_Description" cols="76" rows="2"><%=GetFieldValue(dtAsteCategorie, "AsteCategorie_Description")%></textarea>
+  				<span class="form-error">Obbligatorio</span>
+	        <p class="help-text">max 160 carateri</p>
+	    	</div>
+			</div>	
+	</fieldset>
+	<fieldset>
+		<legend>Immagine</legend>
+  	<div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="fotocategoria" class="large-text-right small-text-left middle">Foto</label>
+    	</div>
+    	<div class="large-10 medium-10 small-8 cell">
+        <p>Le immagini devono essere in formato jpg<br></p>
+        <label for="fotocategoria" class="button small">Carica immagini</label>
+        <input type="file" class="show-for-sr fileupload" placeholder="Foto categoria" id="fotocategoria" name="fotocategoria" />
+        <small class="form-error">obbligatorio.</small>
+        <div id="galleryfotocaricate" class="gallery"></div>
+        <script>
+          jQuery(function() {
+            var imagesPreview = function(input, placeToInsertImagePreview) {
+                if (input.files) {
+                    var filesAmount = input.files.length;
+                    jQuery(placeToInsertImagePreview).html("");
+                    for (i = 0; i < filesAmount; i++) {
+                        var reader = new FileReader();
+                        reader.onload = function(event) {
+                            jQuery(jQuery.parseHTML('<img width="150" height="100" hspace="10" vspace="10" style="border:1px solid #000000">')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                        }
+                         reader.readAsDataURL(input.files[i]);
+                    }
+                }
+            };
+            jQuery('#fotocategoria').on('change', function() {
+                imagesPreview(this, '#galleryfotocaricate');
+            });
+          });
+        </script>
+    	</div>
+    </div>
+    
+  	<div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="fotocategoria" class="large-text-right small-text-left middle">Anteprime</label>
+    	</div>
+    	<div class="large-10 medium-10 small-8 cell">
+          <% 
+          if (GetFieldValue(dtAsteCategorie, "AsteCategorie_Foto").Length>0){
+            Response.Write("<div class=\"thumbnail\"><img src=\"" + GetFieldValue(dtAsteCategorie, "AsteCategorie_Foto")  + "\" height=\"150\" width=\"150\"></div>");
+          }
+          %>
+      </div>
+    </div> 
+  </fieldset>  

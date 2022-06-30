@@ -1,0 +1,53 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliRicerche_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="VeicoliRicerche_Ky" IsNull="N" Type="int" />
+      <Field Column="VeicoliRicerche_Attivo" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliMarca_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="VeicoliModello_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="VeicoliRicerche_Cognome" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliRicerche_Email" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliRicerche_Nome" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliRicerche_Cellulare" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliRicerche_Localita" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliRicerche_Messaggio" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="VeicoliRicerche_DataUltimaEmail" IsNull="Y" Type="smalldatetime" />
+      <Field Column="VeicoliMarca_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliModello_DescrizioneHTML" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliRicerche_DataUltimaEmail_IT" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="VeicoliModello_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliMarca_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliMarca_UrlKey" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_EmailContatti" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_Telefono" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_Nome" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_Cognome" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliModello_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliRicerche_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="VeicoliRicerche_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="VeicoliRicerche_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="VeicoliRicerche_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliRicerche_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliRicerche_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliRicerche_Confermato" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.VeicoliRicerche_Vw
+AS
+SELECT        dbo.VeicoliRicerche.VeicoliRicerche_Ky, dbo.VeicoliRicerche.VeicoliRicerche_Attivo, dbo.VeicoliRicerche.VeicoliMarca_Ky, dbo.VeicoliRicerche.VeicoliModello_Ky, dbo.VeicoliRicerche.VeicoliRicerche_Cognome, 
+                         dbo.VeicoliRicerche.VeicoliRicerche_Email, dbo.VeicoliRicerche.VeicoliRicerche_Nome, dbo.VeicoliRicerche.VeicoliRicerche_Cellulare, dbo.VeicoliRicerche.VeicoliRicerche_Localita, 
+                         dbo.VeicoliRicerche.VeicoliRicerche_Messaggio, dbo.VeicoliRicerche.VeicoliRicerche_DataUltimaEmail, dbo.VeicoliMarca.VeicoliMarca_Descrizione, dbo.VeicoliModello.VeicoliModello_DescrizioneHTML, 
+                         CONVERT(varchar, dbo.VeicoliRicerche.VeicoliRicerche_DataUltimaEmail, 105) AS VeicoliRicerche_DataUltimaEmail_IT, dbo.VeicoliModello.VeicoliModello_Descrizione, dbo.VeicoliMarca.VeicoliMarca_Titolo, 
+                         dbo.VeicoliMarca.VeicoliMarca_UrlKey, dbo.VeicoliRicerche.Anagrafiche_Ky, dbo.Anagrafiche.Anagrafiche_RagioneSociale, dbo.Anagrafiche.Anagrafiche_EmailContatti, dbo.Anagrafiche.Anagrafiche_Telefono, 
+                         dbo.Anagrafiche.Anagrafiche_Nome, dbo.Anagrafiche.Anagrafiche_Cognome, dbo.VeicoliModello.VeicoliModello_Titolo, dbo.VeicoliRicerche.VeicoliRicerche_UserInsert, 
+                         dbo.VeicoliRicerche.VeicoliRicerche_UserUpdate, dbo.VeicoliRicerche.VeicoliRicerche_UserDelete, dbo.VeicoliRicerche.VeicoliRicerche_DateInsert, dbo.VeicoliRicerche.VeicoliRicerche_DateUpdate, 
+                         dbo.VeicoliRicerche.VeicoliRicerche_DateDelete, dbo.VeicoliRicerche.VeicoliRicerche_Confermato
+FROM            dbo.VeicoliRicerche LEFT OUTER JOIN
+                         dbo.Anagrafiche ON dbo.VeicoliRicerche.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky LEFT OUTER JOIN
+                         dbo.VeicoliModello ON dbo.VeicoliRicerche.VeicoliModello_Ky = dbo.VeicoliModello.VeicoliModello_Ky LEFT OUTER JOIN
+                         dbo.VeicoliMarca ON dbo.VeicoliRicerche.VeicoliMarca_Ky = dbo.VeicoliMarca.VeicoliMarca_Ky
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,31 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnagraficheLog_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="AnagraficheLog_Ky" IsNull="N" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheLog_Data" IsNull="Y" Type="smalldatetime" />
+      <Field Column="AnagraficheLog_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AnagraficheLog_Valore" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AnagraficheLog_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheLog_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheLog_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheLog_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheLog_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheLog_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheLog_IP" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="AnagraficheLog_UserAgent" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="AnagraficheLog_Cookie" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.AnagraficheLog_Vw
+AS
+SELECT        dbo.AnagraficheLog.AnagraficheLog_Ky, dbo.AnagraficheLog.Anagrafiche_Ky, dbo.AnagraficheLog.AnagraficheLog_Data, dbo.AnagraficheLog.AnagraficheLog_Descrizione, 
+                         dbo.AnagraficheLog.AnagraficheLog_Valore, dbo.AnagraficheLog.AnagraficheLog_UserInsert, dbo.AnagraficheLog.AnagraficheLog_UserDelete, dbo.AnagraficheLog.AnagraficheLog_UserUpdate, 
+                         dbo.AnagraficheLog.AnagraficheLog_DateInsert, dbo.AnagraficheLog.AnagraficheLog_DateUpdate, dbo.AnagraficheLog.AnagraficheLog_DateDelete, dbo.AnagraficheLog.AnagraficheLog_IP, 
+                         dbo.AnagraficheLog.AnagraficheLog_UserAgent, dbo.AnagraficheLog.AnagraficheLog_Cookie, dbo.Anagrafiche.Anagrafiche_RagioneSociale
+FROM            dbo.AnagraficheLog LEFT OUTER JOIN
+                         dbo.Anagrafiche ON dbo.AnagraficheLog.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky
+</SqlScriptCreate>
+</SqlTable>

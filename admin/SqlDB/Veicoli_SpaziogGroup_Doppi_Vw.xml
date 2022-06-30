@@ -1,0 +1,18 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Veicoli_SpaziogGroup_Doppi_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Veicoli_ImportazioneRiferimento" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="doppioni" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Veicoli_SpaziogGroup_Doppi_Vw
+AS
+SELECT        Veicoli_ImportazioneRiferimento, COUNT(Veicoli_Ky) AS doppioni, MAX(Veicoli_Ky) AS Veicoli_Ky
+FROM            dbo.Veicoli
+WHERE        (UtentiGruppi_Ky = 11)
+GROUP BY Veicoli_ImportazioneRiferimento
+HAVING        (Veicoli_ImportazioneRiferimento IS NOT NULL) AND (COUNT(Veicoli_Ky) &gt; 1)
+</SqlScriptCreate>
+</SqlTable>

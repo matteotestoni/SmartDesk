@@ -1,0 +1,101 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Lead" Type="TABLE">
+    <Keys>
+      <Key Column="Lead_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Lead_Ky" IsNull="N" Type="int" />
+      <Field Column="Lead_Titolo" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="LeadTipo_Ky" IsNull="Y" Type="int" />
+      <Field Column="LeadStato_Ky" IsNull="Y" Type="int" />
+      <Field Column="LeadSorgenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="LeadFormulaAcquisto_Ky" IsNull="Y" Type="int" />
+      <Field Column="LeadSedi_Ky" IsNull="Y" Type="int" />
+      <Field Column="Lead_Data" IsNull="Y" Type="datetime" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Lead_Note" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Immobili_Ky" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_Ky" IsNull="Y" Type="int" />
+      <Field Column="Prodotti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Servizi_Ky" IsNull="Y" Type="int" />
+      <Field Column="Cantieri_Ky" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Ky" IsNull="Y" Type="int" />
+      <Field Column="Aste_Ky" IsNull="Y" Type="int" />
+      <Field Column="Commesse_Ky" IsNull="Y" Type="int" />
+      <Field Column="Documenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Spese_Ky" IsNull="Y" Type="int" />
+      <Field Column="Note_Ky" IsNull="Y" Type="int" />
+      <Field Column="utm_source" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_medium" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_campaign" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_term" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_content" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Lead_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Lead_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Lead_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Lead_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Lead_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Lead_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Lead_Tags" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Campagne_Ky" IsNull="Y" Type="int" />
+      <Field Column="RicambiVeicoli_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliMarca_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliModello_Ky" IsNull="Y" Type="int" />
+      <Field Column="Produttori_Ky" IsNull="Y" Type="int" />
+      <Field Column="Opportunita_Ky" IsNull="Y" Type="int" />
+      <Field Column="LeadCategorie_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliRicerche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Lead_Link" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Lead_EmailSorgente" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Lead] (
+  [Lead_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Lead_Titolo] varchar(MAX)  NULL , 
+  [LeadTipo_Ky] int  NULL , 
+  [LeadStato_Ky] int  NULL , 
+  [LeadSorgenti_Ky] int  NULL , 
+  [LeadFormulaAcquisto_Ky] int  NULL , 
+  [LeadSedi_Ky] int  NULL , 
+  [Lead_Data] datetime  NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [Utenti_Ky] int  NULL , 
+  [Lead_Note] varchar(MAX)  NULL , 
+  [Immobili_Ky] int  NULL , 
+  [Veicoli_Ky] int  NULL , 
+  [Prodotti_Ky] int  NULL , 
+  [Servizi_Ky] int  NULL , 
+  [Cantieri_Ky] int  NULL , 
+  [Annunci_Ky] int  NULL , 
+  [Aste_Ky] int  NULL , 
+  [Commesse_Ky] int  NULL , 
+  [Documenti_Ky] int  NULL , 
+  [Spese_Ky] int  NULL , 
+  [Note_Ky] int  NULL , 
+  [utm_source] varchar(MAX)  NULL , 
+  [utm_medium] varchar(MAX)  NULL , 
+  [utm_campaign] varchar(MAX)  NULL , 
+  [utm_term] varchar(MAX)  NULL , 
+  [utm_content] varchar(MAX)  NULL , 
+  [Lead_UserInsert] int  NULL , 
+  [Lead_UserUpdate] int  NULL , 
+  [Lead_UserDelete] int  NULL , 
+  [Lead_DateInsert] datetime  NULL , 
+  [Lead_DateUpdate] datetime  NULL , 
+  [Lead_DateDelete] datetime  NULL , 
+  [Lead_Tags] varchar(MAX)  NULL , 
+  [Campagne_Ky] int  NULL , 
+  [RicambiVeicoli_Ky] int  NULL , 
+  [VeicoliMarca_Ky] int  NULL , 
+  [VeicoliModello_Ky] int  NULL , 
+  [Produttori_Ky] int  NULL , 
+  [Opportunita_Ky] int  NULL , 
+  [LeadCategorie_Ky] int  NULL , 
+  [VeicoliRicerche_Ky] int  NULL , 
+  [Lead_Link] varchar(MAX)  NULL , 
+  [Lead_EmailSorgente] varchar(MAX)  NULL  )
+ALTER TABLE [dbo].[Lead] ADD CONSTRAINT PK_Lead PRIMARY KEY  ([Lead_Ky])
+</SqlScriptCreate>
+</SqlTable>

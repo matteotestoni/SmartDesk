@@ -1,0 +1,79 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="PreventiviAuto" Type="TABLE">
+    <Keys>
+      <Key Column="PreventiviAuto_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="PreventiviAuto_Ky" IsNull="N" Type="int" />
+      <Field Column="PreventiviAuto_Numero" IsNull="Y" Type="int" />
+      <Field Column="PreventiviAuto_Data" IsNull="Y" Type="datetime" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Opportunita_Ky" IsNull="Y" Type="int" />
+      <Field Column="PreventiviAuto_Marca" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="PreventiviAuto_Modello" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="PreventiviAuto_Km" IsNull="Y" Type="int" />
+      <Field Column="PreventiviAuto_Colore" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="PreventiviAuto_Anno" IsNull="Y" Type="int" />
+      <Field Column="PreventiviAuto_Prezzo" IsNull="Y" Type="money" />
+      <Field Column="PreventiviAuto_Voltura" IsNull="Y" Type="bit" />
+      <Field Column="PreventiviAuto_VolturaPrezzo" IsNull="Y" Type="money" />
+      <Field Column="PreventiviAuto_Immatricolazione" IsNull="Y" Type="bit" />
+      <Field Column="PreventiviAuto_ImmatricolazionePrezzo" IsNull="Y" Type="money" />
+      <Field Column="PreventiviAuto_Sconto" IsNull="Y" Type="money" />
+      <Field Column="PreventiviAuto_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="PreventiviAuto_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="PreventiviAuto_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="PreventiviAuto_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="PreventiviAuto_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="PreventiviAuto_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="PreventiviAuto_ScontoPromozione" IsNull="Y" Type="money" />
+      <Field Column="PreventiviAuto_Permuta" IsNull="Y" Type="bit" />
+      <Field Column="PreventiviAuto_PermutaAuto" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="PreventiviAuto_PermutaVoltura" IsNull="Y" Type="money" />
+      <Field Column="PreventiviAuto_PermutaValore" IsNull="Y" Type="money" />
+      <Field Column="PreventiviAuto_Note" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="PagamentiMetodo_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="PreventiviAuto_NotePagamento" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="PreventiviAuto_AccessoriExtra" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="PreventiviAutoStati_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[PreventiviAuto] (
+  [PreventiviAuto_Ky] int IDENTITY(1,1) NOT NULL , 
+  [PreventiviAuto_Numero] int  NULL , 
+  [PreventiviAuto_Data] datetime  NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [Opportunita_Ky] int  NULL , 
+  [PreventiviAuto_Marca] varchar(200)  NULL , 
+  [PreventiviAuto_Modello] varchar(200)  NULL , 
+  [PreventiviAuto_Km] int  NULL , 
+  [PreventiviAuto_Colore] varchar(200)  NULL , 
+  [PreventiviAuto_Anno] int  NULL , 
+  [PreventiviAuto_Prezzo] money  NULL , 
+  [PreventiviAuto_Voltura] bit  NULL , 
+  [PreventiviAuto_VolturaPrezzo] money  NULL , 
+  [PreventiviAuto_Immatricolazione] bit  NULL , 
+  [PreventiviAuto_ImmatricolazionePrezzo] money  NULL , 
+  [PreventiviAuto_Sconto] money  NULL , 
+  [PreventiviAuto_UserInsert] int  NULL , 
+  [PreventiviAuto_UserUpdate] int  NULL , 
+  [PreventiviAuto_UserDelete] int  NULL , 
+  [PreventiviAuto_DateInsert] datetime  NULL , 
+  [PreventiviAuto_DateUpdate] datetime  NULL , 
+  [PreventiviAuto_DateDelete] datetime  NULL , 
+  [Utenti_Ky] int  NULL , 
+  [PreventiviAuto_ScontoPromozione] money  NULL , 
+  [PreventiviAuto_Permuta] bit  NULL , 
+  [PreventiviAuto_PermutaAuto] varchar(MAX)  NULL , 
+  [PreventiviAuto_PermutaVoltura] money  NULL , 
+  [PreventiviAuto_PermutaValore] money  NULL , 
+  [PreventiviAuto_Note] varchar(MAX)  NULL , 
+  [PagamentiMetodo_Ky] smallint  NULL , 
+  [PreventiviAuto_NotePagamento] varchar(MAX)  NULL , 
+  [PreventiviAuto_AccessoriExtra] varchar(MAX)  NULL , 
+  [PreventiviAutoStati_Ky] int  NULL  )
+ALTER TABLE [dbo].[PreventiviAuto] ADD CONSTRAINT PK_PreventiviAuto PRIMARY KEY  ([PreventiviAuto_Ky])
+</SqlScriptCreate>
+</SqlTable>

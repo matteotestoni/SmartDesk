@@ -1,0 +1,35 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AsteEsperimenti_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="AsteEsperimenti_Ky" IsNull="N" Type="int" />
+      <Field Column="AsteEsperimenti_Numero" IsNull="Y" Type="int" />
+      <Field Column="Aste_Ky" IsNull="Y" Type="int" />
+      <Field Column="AsteEsperimenti_DataInizio" IsNull="Y" Type="datetime" />
+      <Field Column="AsteEsperimenti_DataTermine" IsNull="Y" Type="datetime" />
+      <Field Column="AsteEsperimenti_DataPubblicazione" IsNull="Y" Type="datetime" />
+      <Field Column="AsteEsperimenti_DataChiusura" IsNull="Y" Type="datetime" />
+      <Field Column="AsteEsperimenti_PercentualeRibasso" IsNull="Y" Type="float" />
+      <Field Column="AsteEsperimentiEsiti_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="AsteEsperimenti_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AsteEsperimenti_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AsteEsperimenti_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AsteEsperimenti_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AsteEsperimenti_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AsteEsperimenti_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="AsteEsperimentiEsiti_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="AsteEsperimentiEsiti_Icona" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AsteEsperimentiEsiti_Colore" IsNull="Y" Type="varchar" Lenght="50" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.AsteEsperimenti_Vw
+AS
+SELECT        dbo.AsteEsperimenti.AsteEsperimenti_Ky, dbo.AsteEsperimenti.AsteEsperimenti_Numero, dbo.AsteEsperimenti.Aste_Ky, dbo.AsteEsperimenti.AsteEsperimenti_DataInizio, 
+                         dbo.AsteEsperimenti.AsteEsperimenti_DataTermine, dbo.AsteEsperimenti.AsteEsperimenti_DataPubblicazione, dbo.AsteEsperimenti.AsteEsperimenti_DataChiusura, 
+                         dbo.AsteEsperimenti.AsteEsperimenti_PercentualeRibasso, dbo.AsteEsperimenti.AsteEsperimentiEsiti_Ky, dbo.AsteEsperimenti.AsteEsperimenti_UserInsert, dbo.AsteEsperimenti.AsteEsperimenti_UserUpdate, 
+                         dbo.AsteEsperimenti.AsteEsperimenti_UserDelete, dbo.AsteEsperimenti.AsteEsperimenti_DateInsert, dbo.AsteEsperimenti.AsteEsperimenti_DateUpdate, dbo.AsteEsperimenti.AsteEsperimenti_DateDelete, 
+                         dbo.AsteEsperimentiEsiti.AsteEsperimentiEsiti_Titolo, dbo.AsteEsperimentiEsiti.AsteEsperimentiEsiti_Icona, dbo.AsteEsperimentiEsiti.AsteEsperimentiEsiti_Colore
+FROM            dbo.AsteEsperimenti LEFT OUTER JOIN
+                         dbo.AsteEsperimentiEsiti ON dbo.AsteEsperimenti.AsteEsperimentiEsiti_Ky = dbo.AsteEsperimentiEsiti.AsteEsperimentiEsiti_Ky
+</SqlScriptCreate>
+</SqlTable>

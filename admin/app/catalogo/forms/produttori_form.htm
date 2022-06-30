@@ -1,0 +1,146 @@
+<fieldset>
+<legend>Dati del produttore / marchio</legend>
+   <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Produttori_PubblicaWEB" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Pubblica</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+        <input class="switch-input" type="checkbox" name="Produttori_PubblicaWEB" id="Produttori_PubblicaWEB" value="on" <% if (GetCheckValue(dtProduttori, "Produttori_PubblicaWEB")){ Response.Write("checked");} %> />
+        <label class="switch-paddle" for="Produttori_PubblicaWEB">
+          <span class="show-for-sr">si</span>
+          <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+          <span class="switch-inactive" aria-hidden="true"></span>
+        </label>
+  	</div>
+  </div>
+
+  <div class="grid-x grid-padding-x">
+    <div class="large-2 medium-3 small-4 cell">
+      <label for="Produttori_PubblicaWEB" class="text-right middle">Titolo <i class="fa-duotone fa-tag fa-fw"></i></label>
+  </div>
+    <div class="large-10 medium-9 small-8 cell">
+			<input type="text" name="Produttori_Titolo" id="Produttori_Titolo" title="Titolo" value="<%=GetFieldValue(dtProduttori, "Produttori_Titolo")%>" size="80" required="required">
+  		<span class="form-error">Obbligatorio</span>
+    </div>
+	</div>	
+  <div class="grid-x grid-padding-x">
+    <div class="large-2 medium-3 small-4 cell">
+      <label for="Produttori_Descrizione" class="text-right middle">Descrizione <i class="fa-duotone fa-file-lines fa-fw"></i></label>
+  </div>
+    <div class="large-10 medium-9 small-8 cell">
+			<textarea name="Produttori_Descrizione" id="Produttori_Descrizione" class="ckfinder required" rows="3" required="required"><%=GetFieldValue(dtProduttori, "Produttori_Descrizione")%></textarea>
+	    <script type="text/javascript">
+	    CKEDITOR.replace('Produttori_Descrizione',
+	    	{
+	      	filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+	      	filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+	    	});
+  		CKFinder.setupCKEditor( editor, null, { type: 'Files', currentFolder: '/uploads/foto-produttori/' } );
+	    </script>
+			<span class="form-error">Obbligatorio</span>
+			<hr>
+    </div>
+	</div>	
+  <div class="grid-x grid-padding-x">
+    <div class="large-2 medium-3 small-4 cell">
+      <label for="Produttori_Ordine" class="text-right middle">Ordine <i class="fa-duotone fa-sort fa-fw"></i></label>
+  	</div>
+    <div class="large-10 medium-9 small-8 cell">
+  		<input type="text" name="Produttori_Ordine" id="Produttori_Ordine" value="<%=GetFieldValue(dtProduttori, "Produttori_Ordine")%>" size="4" min="0" max="8" step="1" pattern="number" required="required" />
+			<span class="form-error">Obbligatorio</span>
+    </div>
+	</div>
+</fieldset>	
+<fieldset>
+<legend>Immagine del produttore / marchio</legend>
+      <div class="grid-x grid-padding-x">
+        <div class="large-2 medium-3 small-4 cell">
+          <label for="Produttori_Logo" class="text-right middle">Logo <i class="fa-duotone fa-image fa-fw"></i></label>
+      </div>
+        <div class="large-10 medium-9 small-8 cell">
+  <%
+  if (GetFieldValue(dtProduttori, "Produttori_Logo").Length>0){
+    Response.Write("<div class=\"miniatura\"><a href=\"" + GetFieldValue(dtProduttori, "Produttori_Logo") + "\" id=\"f" + i + "\" target=\"_blank\"><img src=\"" + GetFieldValue(dtProduttori, "Produttori_Logo") + "\" border=\"0\" width=\"67\" height=\"50\" /></a><br /><a href=\"/admin/app/catalogo/crud/elimina-foto-produttori.aspx?Produttori_Ky=" + GetFieldValue(dtProduttori, "Produttori_Ky") + "&sorgente=scheda-produttore\"><i class=\"fa-duotone fa-trash-alt fa-fw\"></i></a></div>");
+  }
+  %>
+  <div class="caricadocumento">
+    Seleziona una foto sul tuo computer da associare all'anagrafica<br>
+    <label for="foto" class="button small">Carica immagini</label>
+    <input type="file" class="show-for-sr fileupload" name="foto" id="foto" /><br /><br />
+    <div id="galleryfotocaricate" class="gallery"></div>
+    <script>
+      jQuery(function() {
+        var imagesPreview = function(input, placeToInsertImagePreview) {
+            if (input.files) {
+                var filesAmount = input.files.length;
+                jQuery(placeToInsertImagePreview).html("");
+                for (i = 0; i < filesAmount; i++) {
+                    var reader = new FileReader();
+                    reader.onload = function(event) {
+                        jQuery(jQuery.parseHTML('<img width="150" height="100" hspace="10" vspace="10" style="border:1px solid #000000">')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                    }
+                     reader.readAsDataURL(input.files[i]);
+                }
+            }
+        };
+        jQuery('#foto').on('change', function() {
+            imagesPreview(this, '#galleryfotocaricate');
+        });
+      });
+    </script>
+  </div>
+        </div>
+    </div>
+</fieldset>	
+<fieldset>
+<legend>Dati SEO</legend>
+      <div class="grid-x grid-padding-x">
+        <div class="large-2 medium-3 small-4 cell">
+          <label for="Produttori_Title" class="text-right middle">Titolo SEO</label>
+      </div>
+      <div class="large-10 medium-9 small-8 cell">
+      	<input type="text" name="Produttori_Title" id="Produttori_Title" value="<%=GetFieldValue(dtProduttori, "Produttori_Title")%>" size="80" required="required">
+      	<span class="form-error">Obbligatorio</span>
+        <p class="help-text" id="passwordHelpText">(max 70 caratteri)</p>
+        </div>
+    </div>	
+      <div class="grid-x grid-padding-x">
+        <div class="large-2 medium-3 small-4 cell">
+          <label for="Produttori_Description" class="text-right middle">Descrizione SEO</label>
+      </div>
+        <div class="large-10 medium-9 small-8 cell">
+      <textarea name="Produttori_Description" id="Produttori_Description" cols="76" rows="2" required="required"><%=GetFieldValue(dtProduttori, "Produttori_Description")%></textarea>
+      	<span class="form-error">Obbligatorio</span>
+                <p class="help-text" id="passwordHelpText">(max 160 caratteri)</p>
+        </div>
+    </div>	
+
+    <div class="grid-x grid-padding-x">
+      <div class="large-2 medium-3 small-4 cell">
+          <label for="Produttori_UrlKey" class="text-right middle">Friendly Url</label>
+      </div>
+      <div class="large-10 medium-9 small-8 cell">
+      	<input type="text" name="Produttori_UrlKey" id="Produttori_UrlKey" value="<%=GetFieldValue(dtProduttori, "Produttori_UrlKey")%>" size="150">
+      	<span class="form-error">Obbligatorio</span>
+        <p class="help-text" id="passwordHelpText">(max 150 caratteri)</p>
+        </div>
+    </div>	
+
+	  <div class="grid-x grid-padding-x">
+	  	<div class="large-2 medium-2 small-4 cell">
+	  		<label for="Produttori_Robots" class="large-text-right small-text-left middle">Robots SEO<i class="fa-duotone fa-file-lines fa-fw"></i></label>
+	  	</div>
+	  	<div class="large-10 medium-10 small-8 cell">
+				<select name="Produttori_Robots" id="Produttori_Robots" value="<%=GetFieldValue(dtProduttori, "Produttori_Robots")%>">
+	        <option value="index,follow">index,follow</option>
+	        <option value="noindex,nofollow">noindex,follow</option>
+	        <option value="noindex,nofollow">noindex,nofollow</option>
+	      </select>
+        <p class="help-text">i noindex non saranno nella sitemap</p>
+	      <script type="text/javascript">
+	        selectSet('Produttori_Robots', '<%=GetFieldValue(dtProduttori, "Produttori_Robots")%>');
+	      </script>
+	  	</div>
+	  </div>
+
+</fieldset>	

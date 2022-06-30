@@ -1,0 +1,30 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CoreFormsTabs_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="CoreFormsTabs_Ky" IsNull="N" Type="int" />
+      <Field Column="CoreForms_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsTabs_Title" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreFormsTabs_Icon" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreFormsTabs_Order" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsTabs_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsTabs_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsTabs_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsTabs_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CoreFormsTabs_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CoreFormsTabs_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="CoreForms_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreEntities_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreModules_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.CoreFormsTabs_Vw
+AS
+SELECT        dbo.CoreFormsTabs.CoreFormsTabs_Ky, dbo.CoreFormsTabs.CoreForms_Ky, dbo.CoreFormsTabs.CoreFormsTabs_Title, dbo.CoreFormsTabs.CoreFormsTabs_Icon, dbo.CoreFormsTabs.CoreFormsTabs_Order, 
+                         dbo.CoreFormsTabs.CoreFormsTabs_UserInsert, dbo.CoreFormsTabs.CoreFormsTabs_UserDelete, dbo.CoreFormsTabs.CoreFormsTabs_UserUpdate, dbo.CoreFormsTabs.CoreFormsTabs_DateInsert, 
+                         dbo.CoreFormsTabs.CoreFormsTabs_DateUpdate, dbo.CoreFormsTabs.CoreFormsTabs_DateDelete, dbo.CoreForms.CoreForms_Title, dbo.CoreForms.CoreEntities_Ky, dbo.CoreEntities.CoreModules_Ky
+FROM            dbo.CoreFormsTabs INNER JOIN
+                         dbo.CoreForms ON dbo.CoreFormsTabs.CoreForms_Ky = dbo.CoreForms.CoreForms_Ky INNER JOIN
+                         dbo.CoreEntities ON dbo.CoreForms.CoreEntities_Ky = dbo.CoreEntities.CoreEntities_Ky
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,48 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnagraficheProdotti_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="AnagraficheProdotti_Ky" IsNull="N" Type="int" />
+      <Field Column="AnagraficheProdotti_Qta" IsNull="Y" Type="int" />
+      <Field Column="Prodotti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheProdotti_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnagraficheProdotti_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="AnagraficheProdotti_DataAcquisto" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheProdotti_Matricola" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Commesse_Ky" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Ky" IsNull="Y" Type="int" />
+      <Field Column="Aste_Ky" IsNull="Y" Type="int" />
+      <Field Column="Campagne_Ky" IsNull="Y" Type="int" />
+      <Field Column="Immobili_Ky" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_Ky" IsNull="Y" Type="int" />
+      <Field Column="Opportunita_Ky" IsNull="Y" Type="int" />
+      <Field Column="SitiWeb_Ky" IsNull="Y" Type="int" />
+      <Field Column="Prodotti_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Commesse_Riferimenti" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="SitiWeb_Url" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="SitiWeb_Dominio" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_EmailContatti" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_Ky_Rivenditore" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_RagioneSociale_Rivenditore" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AnagraficheProdotti_Rivenditore" IsNull="Y" Type="varchar" Lenght="500" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.AnagraficheProdotti_Vw
+AS
+SELECT        dbo.AnagraficheProdotti.AnagraficheProdotti_Ky, dbo.AnagraficheProdotti.AnagraficheProdotti_Qta, dbo.AnagraficheProdotti.Prodotti_Ky, dbo.AnagraficheProdotti.Anagrafiche_Ky, 
+                         dbo.AnagraficheProdotti.AnagraficheProdotti_Titolo, dbo.AnagraficheProdotti.AnagraficheProdotti_Descrizione, dbo.AnagraficheProdotti.AnagraficheProdotti_DataAcquisto, 
+                         dbo.AnagraficheProdotti.AnagraficheProdotti_Matricola, dbo.AnagraficheProdotti.Commesse_Ky, dbo.AnagraficheProdotti.Annunci_Ky, dbo.AnagraficheProdotti.Aste_Ky, 
+                         dbo.AnagraficheProdotti.Campagne_Ky, dbo.AnagraficheProdotti.Immobili_Ky, dbo.AnagraficheProdotti.Veicoli_Ky, dbo.AnagraficheProdotti.Opportunita_Ky, dbo.AnagraficheProdotti.SitiWeb_Ky, 
+                         dbo.Prodotti.Prodotti_Titolo, dbo.Commesse.Commesse_Riferimenti, dbo.SitiWeb.SitiWeb_Url, dbo.SitiWeb.SitiWeb_Dominio, Anagrafiche_1.Anagrafiche_RagioneSociale, 
+                         Anagrafiche_1.Anagrafiche_EmailContatti, dbo.AnagraficheProdotti.Anagrafiche_Ky_Rivenditore, dbo.Anagrafiche.Anagrafiche_RagioneSociale AS Anagrafiche_RagioneSociale_Rivenditore, 
+                         dbo.AnagraficheProdotti.AnagraficheProdotti_Rivenditore
+FROM            dbo.AnagraficheProdotti LEFT OUTER JOIN
+                         dbo.Anagrafiche ON dbo.AnagraficheProdotti.Anagrafiche_Ky_Rivenditore = dbo.Anagrafiche.Anagrafiche_Ky LEFT OUTER JOIN
+                         dbo.Anagrafiche AS Anagrafiche_1 ON dbo.AnagraficheProdotti.Anagrafiche_Ky = Anagrafiche_1.Anagrafiche_Ky LEFT OUTER JOIN
+                         dbo.SitiWeb ON dbo.AnagraficheProdotti.SitiWeb_Ky = dbo.SitiWeb.SitiWeb_Ky LEFT OUTER JOIN
+                         dbo.Commesse ON dbo.AnagraficheProdotti.Commesse_Ky = dbo.Commesse.Commesse_Ky LEFT OUTER JOIN
+                         dbo.Prodotti ON dbo.AnagraficheProdotti.Prodotti_Ky = dbo.Prodotti.Prodotti_Ky
+</SqlScriptCreate>
+</SqlTable>

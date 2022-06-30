@@ -1,0 +1,35 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ip2location" Type="TABLE">
+    <Keys>
+      <Key Column="ipfrom_ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="ipfrom_ky" IsNull="N" Type="bigint" />
+      <Field Column="ip_from" IsNull="Y" Type="bigint" />
+      <Field Column="ip_to" IsNull="Y" Type="bigint" />
+      <Field Column="country_code" IsNull="Y" Type="varchar" Lenght="2" />
+      <Field Column="country_name" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="ip2location_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="ip2location_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="ip2location_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="ip2location_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="ip2location_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="ip2location_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[ip2location] (
+  [ipfrom_ky] bigint IDENTITY(1,1) NOT NULL , 
+  [ip_from] bigint  NULL , 
+  [ip_to] bigint  NULL , 
+  [country_code] varchar(2)  NULL , 
+  [country_name] varchar(50)  NULL , 
+  [ip2location_UserInsert] int  NULL , 
+  [ip2location_UserUpdate] int  NULL , 
+  [ip2location_UserDelete] int  NULL , 
+  [ip2location_DateInsert] datetime  NULL , 
+  [ip2location_DateUpdate] datetime  NULL , 
+  [ip2location_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[ip2location] ADD CONSTRAINT PK_ip2location PRIMARY KEY  ([ipfrom_ky])
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,114 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Attivita_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Attivita_Ky" IsNull="N" Type="int" />
+      <Field Column="Attivita_Descrizione" IsNull="Y" Type="varchar" Lenght="4000" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Attivita_Completo" IsNull="Y" Type="varchar" Lenght="2" />
+      <Field Column="Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Attivita_Scadenza" IsNull="Y" Type="datetime" />
+      <Field Column="Anagrafiche_Telefono" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="scadenzawhere" IsNull="Y" Type="datetime" />
+      <Field Column="Anagrafiche_Disdetto" IsNull="Y" Type="bit" />
+      <Field Column="Persone_Ky" IsNull="Y" Type="int" />
+      <Field Column="Priorita_Ky" IsNull="Y" Type="int" />
+      <Field Column="Priorita_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Persone_Colore" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="Persone_Sigla" IsNull="Y" Type="varchar" Lenght="4" />
+      <Field Column="Persone_Cognome" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Persone_Nome" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Attivita_Scadenza_IT" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="Attivita_Chiusura" IsNull="Y" Type="datetime" />
+      <Field Column="Attivita_Chiusura_IT" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="Anagrafiche_Note" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Commesse_Ky" IsNull="Y" Type="int" />
+      <Field Column="Attivita_Ore" IsNull="N" Type="float" />
+      <Field Column="Commesse_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Commesse_Riferimenti" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CommesseStato_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="AttivitaTipo_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AttivitaTipo_Ky" IsNull="Y" Type="int" />
+      <Field Column="Attivita_Trasferta" IsNull="Y" Type="bit" />
+      <Field Column="Attivita_Km" IsNull="Y" Type="money" />
+      <Field Column="Attivita_SpeseAutostrada" IsNull="Y" Type="money" />
+      <Field Column="Attivita_SpeseParcheggi" IsNull="Y" Type="money" />
+      <Field Column="Attivita_SpesePasti" IsNull="Y" Type="money" />
+      <Field Column="Attivita_SpeseTotali" IsNull="Y" Type="money" />
+      <Field Column="Attivita_Inizio_IT" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="Attivita_Inizio" IsNull="Y" Type="datetime" />
+      <Field Column="Attivita_SpeseMezziPubblici" IsNull="Y" Type="money" />
+      <Field Column="Attivita_RimborsoKm" IsNull="Y" Type="money" />
+      <Field Column="Attivita_SpeseKm" IsNull="Y" Type="money" />
+      <Field Column="AttivitaSettore_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="AttivitaSettore_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Persone_Foto" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="ggTrascorsi" IsNull="Y" Type="int" />
+      <Field Column="Opportunita_Ky" IsNull="Y" Type="int" />
+      <Field Column="Opportunita_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Utenti_Email" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Utenti_Iniziali" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="UtentiGruppi_Ky" IsNull="Y" Type="int" />
+      <Field Column="AttivitaTipo_Icona" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Persone_Attivo" IsNull="Y" Type="bit" />
+      <Field Column="Persone_DataInizio" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Mese" IsNull="Y" Type="int" />
+      <Field Column="Anno" IsNull="Y" Type="int" />
+      <Field Column="Attivita_OrePreviste" IsNull="Y" Type="float" />
+      <Field Column="Persone_CostoOrario" IsNull="Y" Type="money" />
+      <Field Column="Priorita_Icona" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Priorita_Colore" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Pagamenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Documenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_SitoWeb" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Comuni_Comune" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Province_Provincia" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AttivitaStati_Ky" IsNull="Y" Type="int" />
+      <Field Column="AttivitaStati_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Utenti_Colore" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="Utenti_Nome" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Utenti_Cognome" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Lead_Ky" IsNull="Y" Type="int" />
+      <Field Column="Ticket_Ky" IsNull="Y" Type="int" />
+      <Field Column="Ticket_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Ticket_Data" IsNull="Y" Type="datetime" />
+      <Field Column="AttivitaStati_Colore" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AttivitaStati_Aperta" IsNull="Y" Type="bit" />
+      <Field Column="AttivitaStati_Chiusa" IsNull="Y" Type="bit" />
+      <Field Column="AttivitaStati_Icona" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Utenti_Nominativo" IsNull="Y" Type="varchar" Lenght="255" />
+      <Field Column="Utenti_Logo" IsNull="Y" Type="varchar" Lenght="200" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Attivita_Vw
+AS
+SELECT        dbo.Attivita.Attivita_Ky, dbo.Attivita.Attivita_Descrizione, dbo.Attivita.Anagrafiche_Ky, dbo.fnBit(dbo.Attivita.Attivita_Completo) AS Attivita_Completo, dbo.Anagrafiche.Anagrafiche_RagioneSociale, 
+                         dbo.Attivita.Attivita_Scadenza, dbo.Anagrafiche.Anagrafiche_Telefono, dbo.Attivita.Attivita_Scadenza AS scadenzawhere, dbo.Anagrafiche.Anagrafiche_Disdetto, dbo.Attivita.Persone_Ky, dbo.Attivita.Priorita_Ky, 
+                         dbo.Priorita.Priorita_Descrizione, dbo.Persone.Persone_Colore, dbo.Persone.Persone_Sigla, dbo.Persone.Persone_Cognome, dbo.Persone.Persone_Nome, CONVERT(varchar, dbo.Attivita.Attivita_Scadenza, 105) 
+                         AS Attivita_Scadenza_IT, dbo.Attivita.Attivita_Chiusura, CONVERT(varchar, dbo.Attivita.Attivita_Chiusura, 105) AS Attivita_Chiusura_IT, dbo.Anagrafiche.Anagrafiche_Note, dbo.Attivita.Commesse_Ky, 
+                         dbo.Attivita.Attivita_Ore, dbo.Commesse.Commesse_Titolo, dbo.Commesse.Commesse_Riferimenti, dbo.Commesse.CommesseStato_Ky, dbo.AttivitaTipo.AttivitaTipo_Descrizione, dbo.Attivita.AttivitaTipo_Ky, 
+                         dbo.Attivita.Attivita_Trasferta, dbo.Attivita.Attivita_Km, dbo.Attivita.Attivita_SpeseAutostrada, dbo.Attivita.Attivita_SpeseParcheggi, dbo.Attivita.Attivita_SpesePasti, dbo.Attivita.Attivita_SpeseTotali, 
+                         CONVERT(varchar, dbo.Attivita.Attivita_Inizio, 105) AS Attivita_Inizio_IT, dbo.Attivita.Attivita_Inizio, dbo.Attivita.Attivita_OraInizio, dbo.Attivita.Attivita_OraScadenza, dbo.Attivita.Attivita_SpeseMezziPubblici, 
+                         dbo.Attivita.Attivita_RimborsoKm, dbo.Attivita.Attivita_SpeseKm, dbo.Attivita.AttivitaSettore_Ky, dbo.AttivitaSettore.AttivitaSettore_Titolo, dbo.Persone.Persone_Foto, DATEDIFF(day, dbo.Attivita.Attivita_Scadenza, 
+                         GETDATE()) AS ggTrascorsi, dbo.Attivita.Opportunita_Ky, dbo.Opportunita.Opportunita_Titolo, dbo.Attivita.Utenti_Ky, dbo.Utenti.Utenti_Email, dbo.Utenti.Utenti_Iniziali, dbo.Utenti.UtentiGruppi_Ky, 
+                         dbo.AttivitaTipo.AttivitaTipo_Icona, dbo.Persone.Persone_Attivo, dbo.Persone.Persone_DataInizio, MONTH(dbo.Attivita.Attivita_Scadenza) AS Mese, YEAR(dbo.Attivita.Attivita_Scadenza) AS Anno, 
+                         dbo.Attivita.Attivita_OrePreviste, dbo.Persone.Persone_CostoOrario, dbo.Priorita.Priorita_Icona, dbo.Priorita.Priorita_Colore, dbo.Attivita.Pagamenti_Ky, dbo.Attivita.Documenti_Ky, 
+                         dbo.Anagrafiche.Anagrafiche_SitoWeb, dbo.Comuni.Comuni_Comune, dbo.Province.Province_Provincia, dbo.Attivita.AttivitaStati_Ky, dbo.AttivitaStati.AttivitaStati_Titolo, dbo.Utenti.Utenti_Colore, 
+                         dbo.Utenti.Utenti_Nome, dbo.Utenti.Utenti_Cognome, dbo.Attivita.Lead_Ky, dbo.Attivita.Ticket_Ky, dbo.Ticket.Ticket_Titolo, dbo.Ticket.Ticket_Data, dbo.AttivitaStati.AttivitaStati_Colore, 
+                         dbo.AttivitaStati.AttivitaStati_Aperta, dbo.AttivitaStati.AttivitaStati_Chiusa, dbo.AttivitaStati.AttivitaStati_Icona, dbo.Utenti.Utenti_Nominativo, dbo.Utenti.Utenti_Logo
+FROM            dbo.Attivita LEFT OUTER JOIN
+                         dbo.Anagrafiche ON dbo.Attivita.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky LEFT OUTER JOIN
+                         dbo.Ticket ON dbo.Attivita.Ticket_Ky = dbo.Ticket.Ticket_Ky LEFT OUTER JOIN
+                         dbo.AttivitaStati ON dbo.Attivita.AttivitaStati_Ky = dbo.AttivitaStati.AttivitaStati_Ky LEFT OUTER JOIN
+                         dbo.Province ON dbo.Anagrafiche.Province_Ky = dbo.Province.Province_Ky LEFT OUTER JOIN
+                         dbo.Comuni ON dbo.Anagrafiche.Comuni_Ky = dbo.Comuni.Comuni_Ky LEFT OUTER JOIN
+                         dbo.Utenti ON dbo.Attivita.Utenti_Ky = dbo.Utenti.Utenti_Ky LEFT OUTER JOIN
+                         dbo.Opportunita ON dbo.Attivita.Opportunita_Ky = dbo.Opportunita.Opportunita_Ky LEFT OUTER JOIN
+                         dbo.AttivitaSettore ON dbo.Attivita.AttivitaSettore_Ky = dbo.AttivitaSettore.AttivitaSettore_Ky LEFT OUTER JOIN
+                         dbo.AttivitaTipo ON dbo.Attivita.AttivitaTipo_Ky = dbo.AttivitaTipo.AttivitaTipo_Ky LEFT OUTER JOIN
+                         dbo.Commesse ON dbo.Attivita.Commesse_Ky = dbo.Commesse.Commesse_Ky LEFT OUTER JOIN
+                         dbo.Priorita ON dbo.Attivita.Priorita_Ky = dbo.Priorita.Priorita_Ky LEFT OUTER JOIN
+                         dbo.Persone ON dbo.Attivita.Persone_Ky = dbo.Persone.Persone_Ky
+</SqlScriptCreate>
+</SqlTable>

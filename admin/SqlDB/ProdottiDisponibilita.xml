@@ -1,0 +1,37 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ProdottiDisponibilita" Type="TABLE">
+    <Keys>
+      <Key Column="ProdottiDisponibilita_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="ProdottiDisponibilita_Ky" IsNull="N" Type="smallint" />
+      <Field Column="ProdottiDisponibilita_Titolo" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="ProdottiDisponibilita_Descrizione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="ProdottiDisponibilita_Ordine" IsNull="Y" Type="int" />
+      <Field Column="ProdottiDisponibilita_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="ProdottiDisponibilita_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="ProdottiDisponibilita_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="ProdottiDisponibilita_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiDisponibilita_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiDisponibilita_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiDisponibilita_Default" IsNull="Y" Type="bit" />
+      <Field Column="ProdottiDisponibilita_Colore" IsNull="Y" Type="varchar" Lenght="50" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[ProdottiDisponibilita] (
+  [ProdottiDisponibilita_Ky] smallint IDENTITY(1,1) NOT NULL , 
+  [ProdottiDisponibilita_Titolo] varchar(50)  NULL , 
+  [ProdottiDisponibilita_Descrizione] varchar(50)  NULL , 
+  [ProdottiDisponibilita_Ordine] int  NULL , 
+  [ProdottiDisponibilita_UserInsert] int  NULL , 
+  [ProdottiDisponibilita_UserUpdate] int  NULL , 
+  [ProdottiDisponibilita_UserDelete] int  NULL , 
+  [ProdottiDisponibilita_DateInsert] datetime  NULL , 
+  [ProdottiDisponibilita_DateUpdate] datetime  NULL , 
+  [ProdottiDisponibilita_DateDelete] datetime  NULL , 
+  [ProdottiDisponibilita_Default] bit  NULL , 
+  [ProdottiDisponibilita_Colore] varchar(50)  NULL  )
+ALTER TABLE [dbo].[ProdottiDisponibilita] ADD CONSTRAINT PK_ProdottiDisponibilita PRIMARY KEY  ([ProdottiDisponibilita_Ky])
+</SqlScriptCreate>
+</SqlTable>

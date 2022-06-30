@@ -1,0 +1,85 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Persone" Type="TABLE">
+    <Keys>
+      <Key Column="Persone_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Persone_Ky" IsNull="N" Type="int" />
+      <Field Column="Persone_Nome" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Persone_Cognome" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Persone_Colore" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="Persone_Sigla" IsNull="Y" Type="varchar" Lenght="4" />
+      <Field Column="Persone_Attivo" IsNull="Y" Type="bit" />
+      <Field Column="Aziende_Ky" IsNull="Y" Type="int" />
+      <Field Column="Persone_OreFerie" IsNull="Y" Type="int" />
+      <Field Column="Persone_ComuneNascita" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Persone_ProvinciaNascita" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Persone_DataNascita" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Persone_Indirizzo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Persone_TelefonoCasa" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Persone_Cellulare" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Persone_Email" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Persone_CodiceFiscale" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Persone_Foto" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Persone_DataInizio" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Persone_DataTermine" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Persone_Codice" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Persone_CostoOrario" IsNull="Y" Type="money" />
+      <Field Column="Persone_RiceveEmail" IsNull="Y" Type="bit" />
+      <Field Column="Persone_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Persone_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Persone_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Persone_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Persone_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Persone_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Conti_Ky" IsNull="Y" Type="int" />
+      <Field Column="TimeZones_Ky" IsNull="Y" Type="int" />
+      <Field Column="Regioni_Ky" IsNull="Y" Type="int" />
+      <Field Column="Province_Ky" IsNull="Y" Type="int" />
+      <Field Column="Nazioni_Ky" IsNull="Y" Type="int" />
+      <Field Column="Comuni_Ky" IsNull="Y" Type="int" />
+      <Field Column="Persone_CAP" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Persone_OreGiornaliere" IsNull="Y" Type="float" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Persone] (
+  [Persone_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Persone_Nome] varchar(100)  NULL , 
+  [Persone_Cognome] varchar(100)  NULL , 
+  [Persone_Colore] varchar(10)  NULL , 
+  [Persone_Sigla] varchar(4)  NULL , 
+  [Persone_Attivo] bit  NULL , 
+  [Aziende_Ky] int  NULL , 
+  [Persone_OreFerie] int  NULL , 
+  [Persone_ComuneNascita] varchar(200)  NULL , 
+  [Persone_ProvinciaNascita] varchar(200)  NULL , 
+  [Persone_DataNascita] smalldatetime  NULL , 
+  [Persone_Indirizzo] varchar(200)  NULL , 
+  [Persone_TelefonoCasa] varchar(200)  NULL , 
+  [Persone_Cellulare] varchar(200)  NULL , 
+  [Persone_Email] varchar(200)  NULL , 
+  [Persone_CodiceFiscale] varchar(20)  NULL , 
+  [Persone_Foto] varchar(200)  NULL , 
+  [Persone_DataInizio] smalldatetime  NULL , 
+  [Persone_DataTermine] smalldatetime  NULL , 
+  [Persone_Codice] varchar(50)  NULL , 
+  [Persone_CostoOrario] money  NULL DEFAULT ((0)), 
+  [Persone_RiceveEmail] bit  NULL DEFAULT ((0)), 
+  [Persone_UserInsert] int  NULL , 
+  [Persone_UserUpdate] int  NULL , 
+  [Persone_UserDelete] int  NULL , 
+  [Persone_DateInsert] datetime  NULL , 
+  [Persone_DateUpdate] datetime  NULL , 
+  [Persone_DateDelete] datetime  NULL , 
+  [Conti_Ky] int  NULL DEFAULT ((1)), 
+  [TimeZones_Ky] int  NULL , 
+  [Regioni_Ky] int  NULL , 
+  [Province_Ky] int  NULL , 
+  [Nazioni_Ky] int  NULL , 
+  [Comuni_Ky] int  NULL , 
+  [Persone_CAP] varchar(50)  NULL , 
+  [Persone_OreGiornaliere] float  NULL  )
+ALTER TABLE [dbo].[Persone] ADD CONSTRAINT PK_Persone PRIMARY KEY  ([Persone_Ky])
+</SqlScriptCreate>
+</SqlTable>

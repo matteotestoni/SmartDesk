@@ -1,0 +1,31 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ImmobiliCategoria" Type="TABLE">
+    <Keys>
+      <Key Column="ImmobiliCategoria_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="ImmobiliCategoria_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="ImmobiliCategoria_Descrizione" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="ImmobiliCategoria_DescrizioneHTML" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="ImmobiliCategoria_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="ImmobiliCategoria_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="ImmobiliCategoria_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="ImmobiliCategoria_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="ImmobiliCategoria_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="ImmobiliCategoria_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[ImmobiliCategoria] (
+  [ImmobiliCategoria_Ky] tinyint IDENTITY(1,1) NOT NULL , 
+  [ImmobiliCategoria_Descrizione] varchar(20)  NULL , 
+  [ImmobiliCategoria_DescrizioneHTML] varchar(20)  NULL , 
+  [ImmobiliCategoria_UserInsert] int  NULL , 
+  [ImmobiliCategoria_UserUpdate] int  NULL , 
+  [ImmobiliCategoria_UserDelete] int  NULL , 
+  [ImmobiliCategoria_DateInsert] datetime  NULL , 
+  [ImmobiliCategoria_DateUpdate] datetime  NULL , 
+  [ImmobiliCategoria_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[ImmobiliCategoria] ADD CONSTRAINT PK_ImmobiliCategoria_1 PRIMARY KEY  ([ImmobiliCategoria_Ky])
+</SqlScriptCreate>
+</SqlTable>

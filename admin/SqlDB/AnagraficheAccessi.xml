@@ -1,0 +1,31 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnagraficheAccessi" Type="TABLE">
+    <Keys>
+      <Key Column="AnagraficheAccessi_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AnagraficheAccessi_Ky" IsNull="N" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="UtentiGruppi_Ky" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheAccessi_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheAccessi_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheAccessi_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheAccessi_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheAccessi_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheAccessi_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AnagraficheAccessi] (
+  [AnagraficheAccessi_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [UtentiGruppi_Ky] int  NULL , 
+  [AnagraficheAccessi_UserInsert] int  NULL , 
+  [AnagraficheAccessi_UserUpdate] int  NULL , 
+  [AnagraficheAccessi_UserDelete] int  NULL , 
+  [AnagraficheAccessi_DateInsert] datetime  NULL , 
+  [AnagraficheAccessi_DateUpdate] datetime  NULL , 
+  [AnagraficheAccessi_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[AnagraficheAccessi] ADD CONSTRAINT PK_AnagraficheAccessi PRIMARY KEY  ([AnagraficheAccessi_Ky])
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,192 @@
+<div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-12 cell align-top">
+			<label for="Anagrafiche_RagioneSociale" class="large-text-right small-text-left middle">Anagrafica <i class="fa-duotone fa-users fa-fw"></i></label>
+		</div>
+	  <div class="shrink cell hide-for-small-only">
+				<input type="text" name="Anagrafiche_Ky" id="Anagrafiche_Ky" value="<%=GetFieldValue(dtAttivita, "Anagrafiche_Ky")%>" size="3" required="required">
+				<span class="form-error">Obbligatorio</span>
+		</div>
+	  <div class="auto cell">
+				<input type="text" name="Anagrafiche_RagioneSociale" id="Anagrafiche_RagioneSociale" placeholder="Ragione Sociale" value="<%=GetFieldValue(dtAttivita, "Anagrafiche_RagioneSociale")%>" required="required">
+				<span class="form-error">Obbligatorio</span>
+        <script type="text/javascript">
+						jQuery("#Anagrafiche_RagioneSociale" ).autocomplete({
+							source: "/admin/app/anagrafiche/autosuggest-GetAnagrafiche-json.aspx",
+							minLength: 2,
+							select: function( event, ui ) {
+								jQuery("#Anagrafiche_Ky").val(ui.item.value);
+								jQuery("#Anagrafiche_RagioneSociale").val(ui.item.label);
+								return false;
+							}
+						});
+        </script>
+			</div>
+	  	<div class="shrink cell hide-for-small-only">
+        <% if (GetFieldValue(dtAttivita, "Anagrafiche_Ky")!=null && GetFieldValue(dtAttivita, "Anagrafiche_Ky").Length>0){ %>
+					<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=GetFieldValue(dtAttivita, "Anagrafiche_Ky")%>" style="margin-top:4px"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw fa-lg"></i></a>
+				<% } %>
+			</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+    <div class="large-2 medium-2 small-4 cell">
+      <label for="Attivita_Inizio" class="large-text-right small-text-left middle">Data <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+    </div>
+    <div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Attivita_Inizio" id="Attivita_Inizio" value="<%=GetFieldValue(dtAttivita, "Attivita_Inizio_IT")%>" class="fdatepicker" required="required" size="10" onchange="chgData()">
+      <span class="form-error">Obbligatorio</span>
+		</div>
+    <div class="large-2 medium-2 small-4 cell">
+      <label for="Attivita_Ore" class="large-text-right small-text-left middle">Ore impiegate <i class="fa-duotone fa-clock fa-fw"></i></label>
+    </div>
+    <div class="large-4 medium-4 small-8 cell">
+      <select name="Attivita_Ore" id="Attivita_Ore">
+        <option value="" selected="selected"></option>
+        <!--#include file="/var/cache/Ore-options.htm"--> 
+      </select>
+      <script type="text/javascript">
+        selectSet('Attivita_Ore', '<%=GetFieldValue(dtAttivita, "Attivita_Ore").Replace(",",".")%>');
+      </script>
+	 </div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-12 cell">
+		<label for="Attivita_Descrizione" class="large-text-right small-text-left middle">Descrizione <i class="fa-duotone fa-file-lines fa-fw"></i></label>
+	</div>
+	<div class="large-10 medium-10 small-12 cell">
+    <textarea name="Attivita_Descrizione" id="Attivita_Descrizione" cols="90" rows="1" required="required"><%=GetFieldValue(dtAttivita, "Attivita_Descrizione")%></textarea>
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+    <label for="AttivitaSettore_Ky" class="lbl text-right">Settore</label>
+  </div>
+  <div class="auto cell">
+		<!--#include file="/var/cache/AttivitaSettore-radio.htm"-->
+    <span class="form-error">Obbligatorio</span>
+		<script type="text/javascript">
+			radioSet('AttivitaSettore_Ky', '<%=GetFieldValue(dtAttivita, "AttivitaSettore_Ky")%>');
+    </script>
+  </div>
+</div>
+
+<div class="grid-x grid-padding-x">
+  <% if (dtLogin.Rows[0]["UtentiGruppi_Progetti"].Equals(true) || boolAdmin==true){ %>
+  <div class="large-2 medium-2 small-4 cell">
+    <label for="Commesse_Ky" class="lbl text-right">Progetto <i class="fa-duotone fa-building fa-fw"></i></label>
+  </div>
+  <div class="large-4 medium-4 small-8 cell large-text-left">
+  	<% if (dtCommesse!=null && dtCommesse.Rows.Count>0){ %>
+      <select name="Commesse_Ky" id="Commesse_Ky" value="<%=strCommesse_Ky%>">
+      <option value=""></option>
+				<%
+				for (int i = 0; i < dtCommesse.Rows.Count; i++){
+					Response.Write("<option value=\"" + dtCommesse.Rows[i]["Commesse_Ky"].ToString() + "\">" + dtCommesse.Rows[i]["Commesse_Titolo"].ToString() + "&nbsp;-&nbsp;" + dtCommesse.Rows[i]["CommesseStato_Titolo"].ToString() + "</option>");
+				}
+				%>
+      </select>
+      <script type="text/javascript">
+        selectSet('Commesse_Ky', '<%=strCommesse_Ky%>');
+      </script>
+    <% }else{ %>
+    	Nessuna progetto attivo sull'anagrafica
+    <% } %>
+  </div>
+  <% } %>
+
+	<% if (dtLogin.Rows[0]["UtentiGruppi_Opportunita"].Equals(true) || boolAdmin==true){ %>
+  <div class="large-2 medium-2 small-4 cell">
+    <label for="Opportunita_Ky" class="lbl text-right">Trattativa <i class="fa-duotone fa-euro-sign fa-fw"></i></label>
+  </div>
+  <div class="large-4 medium-4 small-8 cell large-text-left">
+    	<% if (dtOpportunita!=null && dtOpportunita.Rows.Count>0){ %>
+        <select name="Opportunita_Ky" id="Opportunita_Ky" value="<%=strOpportunita_Ky%>">
+        <option value=""></option>
+					<%
+					for (int i = 0; i < dtOpportunita.Rows.Count; i++){
+						Response.Write("<option value=\"" + dtOpportunita.Rows[i]["Opportunita_Ky"].ToString() + "\">" + dtOpportunita.Rows[i]["Opportunita_Titolo"].ToString() + "&nbsp;-&nbsp;" + dtOpportunita.Rows[i]["OpportunitaStati_Titolo"].ToString() + "</option>");
+					}
+					%>
+        </select>
+        <script type="text/javascript">
+          selectSet('Opportunita_Ky', '<%=strOpportunita_Ky%>');
+        </script>
+      <% }else{ %>
+      	Nessuna trattativa attiva sull'anagrafica
+      <% } %>
+  </div>
+  <% } %>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="Attivita_Ore" class="large-text-right small-text-left middle">Trasferta? <i class="fa-duotone fa-car fa-fw"></i></label>
+	</div>
+  <div class="large-10 medium-10 small-8 cell">
+      <input type="checkbox" name="Attivita_Trasferta" id="Attivita_Trasferta" value="on" <% if (GetCheckValue(dtAttivita, "Attivita_Trasferta")){ Response.Write("checked=\"checked\"");} %> onchange="attivaTrasferta();" />
+      (se trasferta compilare i campi con il dettaglio della trasferta)
+      <script type="text/javascript">
+        attivaTrasferta();
+      </script>
+	</div>
+</div>
+<fieldset id="datitrasferta" <% if (GetCheckValue(dtAttivita, "Attivita_Trasferta")==false){ Response.Write("style=\"display:none\"");} %>>
+  <legend class="radius">Dati della trasferta (<a href="#" onclick="javascript:aggiornaSpese(true);">aggiorna</a>)</legend>
+  <div class="grid-x grid-padding-x">
+    <div class="large-1 medium-2 small-4 cell">
+  		<label for="Attivita_Km" class="large-text-right small-text-left middle">KM percorsi</label>
+  	</div>
+    <div class="auto cell">
+      <input type="text" name="Attivita_Km" id="Attivita_Km" value="<%=GetDecimalValue("Attivita_Km")%>" size="6" min="0.5" max="8" step="0.5" />
+    </div>
+    <div class="large-2 medium-2 small-4 cell">
+  		<label for="Attivita_RimborsoKm" class="large-text-right small-text-left middle">X Rimborso Km &euro;</label>
+  	</div>
+    <div class="auto cell">
+      <input type="text" name="Attivita_RimborsoKm" id="Attivita_RimborsoKm" value="<%=GetDecimalValue("Attivita_RimborsoKm")%>" onchange="aggiornaSpese(false);" step="0.1" size="5" min="0" max="10" />
+    </div>
+    <div class="large-2 medium-2 small-4 cell">
+  		<label for="Attivita_SpeseKm" class="large-text-right small-text-left middle">= Totale Spese Km &euro;</label>
+  	</div>
+    <div class="auto cell">
+      <input type="text" name="Attivita_SpeseKm" id="Attivita_SpeseKm" value="<%=GetDecimalValue("Attivita_SpeseKm")%>" onchange="aggiornaSpese(false);" size="8" min="0" max="100" readonly="readonly" />
+    </div>
+  </div>
+  <div class="grid-x grid-padding-x">              
+    <div class="large-1 medium-2 small-4 cell">
+  		<label for="Attivita_SpeseAutostrada" class="large-text-right small-text-left middle">Autostrada &euro;</label>
+  	</div>
+    <div class="auto cell">
+      <input type="text" name="Attivita_SpeseAutostrada" id="Attivita_SpeseAutostrada" value="<%=GetDecimalValue("Attivita_SpeseAutostrada")%>" onchange="aggiornaSpese(false);" size="6" min="0" max="100" />
+    </div>
+    <div class="large-2 medium-2 small-4 cell">
+  		<label for="Attivita_SpeseParcheggi" class="large-text-right small-text-left middle">Parcheggi &euro;</label>
+  	</div>
+    <div class="auto cell">
+      <input type="text" name="Attivita_SpeseParcheggi" id="Attivita_SpeseParcheggi" value="<%=GetDecimalValue("Attivita_SpeseParcheggi")%>" onchange="aggiornaSpese(false);" size="6" min="0" max="100" />
+    </div>
+    <div class="large-2 medium-2 small-4 cell">
+  		<label for="Attivita_SpesePasti" class="large-text-right small-text-left middle">Pasti &euro;</label>
+  	</div>
+    <div class="auto cell">
+      <input type="text" name="Attivita_SpesePasti" id="Attivita_SpesePasti" value="<%=GetDecimalValue("Attivita_SpesePasti")%>" onchange="aggiornaSpese(false);" size="6" min="0" max="100" />
+    </div>
+  </div>
+  <div class="grid-x grid-padding-x">
+    <div class="large-1 medium-2 small-4 cell">
+  		<label for="Attivita_SpeseMezziPubblici" class="large-text-right small-text-left middle">Mezzi pubblici &euro;</label>
+  	</div>
+    <div class="auto cell">
+      <input type="text" name="Attivita_SpeseMezziPubblici" id="Attivita_SpeseMezziPubblici" value="<%=GetDecimalValue("Attivita_SpeseMezziPubblici")%>" onchange="aggiornaSpese(false);" size="6" min="0" max="100" />
+    </div>
+    <div class="large-5 medium-6 small-12 cell">
+  		<label for="Attivita_SpeseTotali" class="large-text-right small-text-left middle">Totale Spese: carburante + autostrada + parcheggi + pasti + mezzi pubblici = &euro;</label>
+  	</div>
+    <div class="auto cell">
+      <input type="text" name="Attivita_SpeseTotali" id="Attivita_SpeseTotali" value="<%=GetDecimalValue("Attivita_SpeseTotali")%>" size="8" min="0" max="100" readonly="readonly" />
+    </div>
+  </div>
+</fieldset>

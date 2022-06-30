@@ -1,0 +1,29 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ImmobiliArea" Type="TABLE">
+    <Keys>
+      <Key Column="ImmobiliArea_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="ImmobiliArea_Ky" IsNull="N" Type="int" />
+      <Field Column="ImmobiliArea_Descrizione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="ImmobiliArea_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="ImmobiliArea_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="ImmobiliArea_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="ImmobiliArea_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="ImmobiliArea_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="ImmobiliArea_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[ImmobiliArea] (
+  [ImmobiliArea_Ky] int IDENTITY(1,1) NOT NULL , 
+  [ImmobiliArea_Descrizione] varchar(50)  NULL , 
+  [ImmobiliArea_UserInsert] int  NULL , 
+  [ImmobiliArea_UserUpdate] int  NULL , 
+  [ImmobiliArea_UserDelete] int  NULL , 
+  [ImmobiliArea_DateInsert] datetime  NULL , 
+  [ImmobiliArea_DateUpdate] datetime  NULL , 
+  [ImmobiliArea_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[ImmobiliArea] ADD CONSTRAINT PK_ImmobiliArea PRIMARY KEY  ([ImmobiliArea_Ky])
+</SqlScriptCreate>
+</SqlTable>

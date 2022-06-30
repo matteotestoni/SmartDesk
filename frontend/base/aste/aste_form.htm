@@ -1,0 +1,67 @@
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Aste_Titolo" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-text fa-fw"></i>Titolo</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="Aste_Titolo" id="Aste_Titolo" title="Nome" value="" size="150" required="required">
+  	</div>
+  </div>
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Aste_Descrizione" class="large-text-right small-text-left middle">Descrizione</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+			<textarea name="Aste_Descrizione" id="Aste_Descrizione" class="ckeditor required" rows="3" required="required"></textarea>
+      <span class="form-error">Obbligatorio</span>
+  	</div>
+  </div>
+  <div class="grid-x grid-padding-x">
+		<div class="large-2 medium-2 small-4 cell">
+        <label for="AsteCategorie_Ky" class="large-text-right small-text-left middle">Categoria</label>
+    </div>
+    <div class="large-10 medium-10 small-8 cell">
+      <select name="AsteCategorie_Ky" id="AsteCategorie_Ky" class="select2" placeholder="Categoria" value="">
+        <!--#include file="/var/cache/AsteCategorie-options.htm"--> 
+      </select>
+      <span class="form-error">Obbligatorio.</span>
+    </div>                                       
+  </div> 
+
+
+	<div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Aste_Referente" class="large-text-right small-text-left middle">Referente</label>
+  	</div>
+  	<div class="large-2 medium-2 small-8 cell">
+      <input type="text" name="Aste_Referente" id="Aste_Referente" title="Aste_Referente" value="" size="60">
+      <span class="form-error">Obbligatorio</span>
+  	</div>
+
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Aste_CellulareReferente" class="large-text-right small-text-left middle">Cellulare Referente</label>
+  	</div>
+  	<div class="large-2 medium-2 small-8 cell">
+      <input type="text" name="Aste_CellulareReferente" id="Aste_Referente" title="Aste_CellulareReferente" value="" size="60">
+      <span class="form-error">Obbligatorio</span>
+  	</div>
+
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Aste_EmailReferente" class="large-text-right small-text-left middle">EmailReferente</label>
+  	</div>
+  	<div class="large-2 medium-2 small-8 cell">
+      <input type="text" name="Aste_EmailReferente" id="Aste_Referente" title="Aste_EmailReferente" value="" size="60">
+      <span class="form-error">Obbligatorio</span>
+  	</div>
+  </div>
+
+	<div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="fotoasta" class="large-text-right small-text-left middle">Foto identificativa dell'asta</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <p>Le immagini devono essere in formato jpg<br></p>
+      <label for="fotoasta" class="button small">Carica Immagini</label>
+      <input type="file" class="show-for-sr fileupload" placeholder="Foto asta" id="fotoasta" name="fotoasta" />
+      <small class="form-error">obbligatorio.</small>
+  	</div>
+  </div>

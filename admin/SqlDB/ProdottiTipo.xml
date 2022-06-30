@@ -1,0 +1,33 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ProdottiTipo" Type="TABLE">
+    <Keys>
+      <Key Column="ProdottiTipo_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="ProdottiTipo_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="ProdottiTipo_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="ProdottiTipo_Codice" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="ProdottiTipo_Attivo" IsNull="Y" Type="bit" />
+      <Field Column="ProdottiTipo_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="ProdottiTipo_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="ProdottiTipo_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="ProdottiTipo_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiTipo_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiTipo_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[ProdottiTipo] (
+  [ProdottiTipo_Ky] tinyint IDENTITY(1,1) NOT NULL , 
+  [ProdottiTipo_Titolo] varchar(100)  NULL , 
+  [ProdottiTipo_Codice] varchar(100)  NULL , 
+  [ProdottiTipo_Attivo] bit  NULL , 
+  [ProdottiTipo_UserInsert] int  NULL , 
+  [ProdottiTipo_UserUpdate] int  NULL , 
+  [ProdottiTipo_UserDelete] int  NULL , 
+  [ProdottiTipo_DateInsert] datetime  NULL , 
+  [ProdottiTipo_DateUpdate] datetime  NULL , 
+  [ProdottiTipo_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[ProdottiTipo] ADD CONSTRAINT PK_ProdottiTipo PRIMARY KEY  ([ProdottiTipo_Ky])
+</SqlScriptCreate>
+</SqlTable>

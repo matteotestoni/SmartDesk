@@ -1,0 +1,63 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Servizi_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Servizi_Ky" IsNull="N" Type="int" />
+      <Field Column="ServiziCategorie_Ky" IsNull="Y" Type="int" />
+      <Field Column="Servizi_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Servizi_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Servizi_Prezzo" IsNull="Y" Type="money" />
+      <Field Column="Servizi_PrezzoRinnovo" IsNull="Y" Type="money" />
+      <Field Column="AliquoteIVA_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Servizi_Ordine" IsNull="Y" Type="int" />
+      <Field Column="Servizi_Foto1" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Produttori_Ky" IsNull="Y" Type="int" />
+      <Field Column="ServiziCategorie_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AttributiGruppi_Ky" IsNull="Y" Type="int" />
+      <Field Column="Aziende_Ky" IsNull="Y" Type="int" />
+      <Field Column="Servizi_Codice" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Servizi_CodicePadre" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Servizi_InVetrina" IsNull="Y" Type="bit" />
+      <Field Column="Servizi_InOfferta" IsNull="Y" Type="bit" />
+      <Field Column="Servizi_InPromozione" IsNull="Y" Type="bit" />
+      <Field Column="Servizi_Outlet" IsNull="Y" Type="bit" />
+      <Field Column="Servizi_PubblicaWEB" IsNull="Y" Type="bit" />
+      <Field Column="AliquoteIVA_Descrizione" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="AttributiGruppi_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Utenti_Email" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Utenti_Iniziali" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Servizi_Sottotitolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Servizi_MaxAnnunci" IsNull="Y" Type="int" />
+      <Field Column="Produttori_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Servizi_Robots" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Servizi_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Servizi_Description" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="ServiziCategorie_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreResponseCode_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Servizi_RedirectUrl" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreResponseCode_Title" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Prodotti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Prodotti_Codice" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Prodotti_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Servizi_Vw
+AS
+SELECT        dbo.Servizi.Servizi_Ky, dbo.Servizi.ServiziCategorie_Ky, dbo.Servizi.Servizi_Titolo, dbo.Servizi.Servizi_Descrizione, dbo.Servizi.Servizi_Prezzo, dbo.Servizi.Servizi_PrezzoRinnovo, 
+                         dbo.Servizi.AliquoteIVA_Ky, dbo.Servizi.Servizi_Ordine, dbo.Servizi.Servizi_Foto1, dbo.Servizi.Produttori_Ky, dbo.ServiziCategorie.ServiziCategorie_Descrizione, dbo.Servizi.AttributiGruppi_Ky, 
+                         dbo.Servizi.Aziende_Ky, dbo.Servizi.Servizi_Codice, dbo.Servizi.Servizi_CodicePadre, dbo.Servizi.Servizi_InVetrina, dbo.Servizi.Servizi_InOfferta, dbo.Servizi.Servizi_InPromozione, dbo.Servizi.Servizi_Outlet, 
+                         dbo.Servizi.Servizi_PubblicaWEB, dbo.AliquoteIVA.AliquoteIVA_Descrizione, dbo.AttributiGruppi.AttributiGruppi_Titolo, dbo.Utenti.Utenti_Email, dbo.Utenti.Utenti_Iniziali, dbo.Servizi.Servizi_Sottotitolo, 
+                         dbo.Servizi.Servizi_MaxAnnunci, dbo.Produttori.Produttori_Titolo, dbo.Servizi.Utenti_Ky, dbo.Servizi.Servizi_Robots, dbo.Servizi.Servizi_Title, dbo.Servizi.Servizi_Description, 
+                         dbo.ServiziCategorie.ServiziCategorie_Titolo, dbo.Servizi.CoreResponseCode_Ky, dbo.Servizi.Servizi_RedirectUrl, dbo.CoreResponseCode.CoreResponseCode_Title, dbo.Servizi.Prodotti_Ky, 
+                         dbo.Prodotti.Prodotti_Codice, dbo.Prodotti.Prodotti_Titolo
+FROM            dbo.Servizi LEFT OUTER JOIN
+                         dbo.Prodotti ON dbo.Servizi.Prodotti_Ky = dbo.Prodotti.Prodotti_Ky LEFT OUTER JOIN
+                         dbo.CoreResponseCode ON dbo.Servizi.CoreResponseCode_Ky = dbo.CoreResponseCode.CoreResponseCode_Ky LEFT OUTER JOIN
+                         dbo.Produttori ON dbo.Servizi.Produttori_Ky = dbo.Produttori.Produttori_Ky LEFT OUTER JOIN
+                         dbo.Utenti ON dbo.Servizi.Utenti_Ky = dbo.Utenti.Utenti_Ky LEFT OUTER JOIN
+                         dbo.AttributiGruppi ON dbo.Servizi.AttributiGruppi_Ky = dbo.AttributiGruppi.AttributiGruppi_Ky LEFT OUTER JOIN
+                         dbo.AliquoteIVA ON dbo.Servizi.AliquoteIVA_Ky = dbo.AliquoteIVA.AliquoteIVA_Ky LEFT OUTER JOIN
+                         dbo.ServiziCategorie ON dbo.Servizi.ServiziCategorie_Ky = dbo.ServiziCategorie.ServiziCategorie_Ky
+</SqlScriptCreate>
+</SqlTable>

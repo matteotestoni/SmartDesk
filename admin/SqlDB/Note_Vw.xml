@@ -1,0 +1,58 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Note_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Note_Ky" IsNull="N" Type="int" />
+      <Field Column="Note_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Note_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Note_Data" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Priorita_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Priorita_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Note_Data_IT" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="Anagrafiche_Telefono" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Attivita_Ky" IsNull="Y" Type="int" />
+      <Field Column="AttivitaTipo_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Attivita_Descrizione" IsNull="Y" Type="varchar" Lenght="4000" />
+      <Field Column="Commesse_Ky" IsNull="Y" Type="int" />
+      <Field Column="Commesse_Riferimenti" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Commesse_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Utenti_Email" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Utenti_Iniziali" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="UtentiGruppi_Ky" IsNull="Y" Type="int" />
+      <Field Column="NoteCategorie_Ky" IsNull="Y" Type="int" />
+      <Field Column="NoteCategorie_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_SitoWeb" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Lingue_Codice" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Lingue_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Documenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Note_Tags" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Utenti_Nominativo" IsNull="Y" Type="varchar" Lenght="255" />
+      <Field Column="Utenti_Logo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Utenti_Colore" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="Utenti_Cognome" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Utenti_Nome" IsNull="Y" Type="varchar" Lenght="200" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Note_Vw
+AS
+SELECT        dbo.Note.Note_Ky, dbo.Note.Note_Titolo, dbo.Note.Note_Descrizione, dbo.Note.Anagrafiche_Ky, dbo.Note.Note_Data, dbo.Note.Priorita_Ky, dbo.Anagrafiche.Anagrafiche_RagioneSociale, 
+                         dbo.Priorita.Priorita_Descrizione, CONVERT(varchar, dbo.Note.Note_Data, 105) AS Note_Data_IT, dbo.Anagrafiche.Anagrafiche_Telefono, dbo.Note.Attivita_Ky, dbo.AttivitaTipo.AttivitaTipo_Descrizione, 
+                         dbo.Attivita.Attivita_Descrizione, dbo.Note.Commesse_Ky, dbo.Commesse.Commesse_Riferimenti, dbo.Commesse.Commesse_Titolo, dbo.Note.Utenti_Ky, dbo.Utenti.Utenti_Email, dbo.Utenti.Utenti_Iniziali, 
+                         dbo.Utenti.UtentiGruppi_Ky, dbo.Note.NoteCategorie_Ky, dbo.NoteCategorie.NoteCategorie_Titolo, dbo.Anagrafiche.Anagrafiche_SitoWeb, dbo.Note.Lingue_Ky, dbo.Lingue.Lingue_Codice, 
+                         dbo.Lingue.Lingue_Titolo, dbo.Note.Documenti_Ky, dbo.Note.Note_Tags, dbo.Utenti.Utenti_Nominativo, dbo.Utenti.Utenti_Logo, dbo.Utenti.Utenti_Colore, dbo.Utenti.Utenti_Cognome, 
+                         dbo.Utenti.Utenti_Nome
+FROM            dbo.Lingue RIGHT OUTER JOIN
+                         dbo.Note ON dbo.Lingue.Lingue_Ky = dbo.Note.Lingue_Ky LEFT OUTER JOIN
+                         dbo.NoteCategorie ON dbo.Note.NoteCategorie_Ky = dbo.NoteCategorie.NoteCategorie_Ky LEFT OUTER JOIN
+                         dbo.Utenti ON dbo.Note.Utenti_Ky = dbo.Utenti.Utenti_Ky LEFT OUTER JOIN
+                         dbo.Commesse ON dbo.Note.Commesse_Ky = dbo.Commesse.Commesse_Ky LEFT OUTER JOIN
+                         dbo.AttivitaTipo INNER JOIN
+                         dbo.Attivita ON dbo.AttivitaTipo.AttivitaTipo_Ky = dbo.Attivita.AttivitaTipo_Ky ON dbo.Note.Attivita_Ky = dbo.Attivita.Attivita_Ky LEFT OUTER JOIN
+                         dbo.Anagrafiche ON dbo.Note.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky LEFT OUTER JOIN
+                         dbo.Priorita ON dbo.Note.Priorita_Ky = dbo.Priorita.Priorita_Ky
+</SqlScriptCreate>
+</SqlTable>

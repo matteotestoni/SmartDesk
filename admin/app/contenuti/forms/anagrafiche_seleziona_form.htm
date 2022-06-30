@@ -1,0 +1,23 @@
+	<div class="input-group">
+	  <span class="input-group-label">
+		<input type="text" name="Anagrafiche_Ky" id="Anagrafiche_Ky" value="<%=GetFieldValue(dtFaq, "Anagrafiche_Ky")%>" size="3" required="required">
+		</span>
+		<input type="text" class="input-group-field" name="Anagrafiche_RagioneSociale" id="Anagrafiche_RagioneSociale" placeholder="Ragione Sociale" value="<%=GetFieldValue(dtFaq, "Anagrafiche_RagioneSociale")%>" required="required" autocomplete="off">
+	  <% if (GetFieldValue(dtFaq, "Anagrafiche_Ky")!=null && GetFieldValue(dtFaq, "Anagrafiche_Ky").Length>0){ %>
+	  <div class="input-group-button">
+				<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=GetFieldValue(dtFaq, "Anagrafiche_Ky")%>" style="margin-top:4px"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw fa-lg"></i></a>
+	  </div>
+		<% } %>
+		<span class="form-error">Obbligatorio</span>
+	</div>
+	<script type="text/javascript">
+			jQuery("#Anagrafiche_RagioneSociale" ).autocomplete({
+				source: "/admin/app/anagrafiche/autosuggest-GetAnagrafiche-json.aspx",
+				minLength: 2,
+				select: function( event, ui ) {
+					jQuery("#Anagrafiche_Ky").val(ui.item.value);
+					jQuery("#Anagrafiche_RagioneSociale").val(ui.item.label);
+					return false;
+				}
+			});
+	</script>

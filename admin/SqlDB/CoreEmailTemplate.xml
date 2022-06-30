@@ -1,0 +1,41 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CoreEmailTemplate" Type="TABLE">
+    <Keys>
+      <Key Column="CoreEmailTemplate_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CoreEmailTemplate_Ky" IsNull="N" Type="int" />
+      <Field Column="CoreEmailTemplate_Codice" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreEmailTemplate_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreEmailTemplate_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreEmailTemplate_Subject" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreEmailTemplate_SenderName" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreEmailTemplate_MailText" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="CoreEmailTemplate_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CoreEmailTemplate_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CoreEmailTemplate_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CoreEmailTemplate_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CoreEmailTemplate_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CoreEmailTemplate_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CoreEmailTemplate] (
+  [CoreEmailTemplate_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CoreEmailTemplate_Codice] varchar(200)  NULL , 
+  [CoreEmailTemplate_Titolo] varchar(200)  NULL , 
+  [CoreEmailTemplate_Descrizione] varchar(MAX)  NULL , 
+  [CoreEmailTemplate_Subject] varchar(200)  NULL , 
+  [CoreEmailTemplate_SenderName] varchar(200)  NULL , 
+  [CoreEmailTemplate_MailText] varchar(MAX)  NULL , 
+  [Lingue_Ky] tinyint  NULL , 
+  [CoreEmailTemplate_UserInsert] int  NULL , 
+  [CoreEmailTemplate_UserUpdate] int  NULL , 
+  [CoreEmailTemplate_UserDelete] int  NULL , 
+  [CoreEmailTemplate_DateInsert] datetime  NULL , 
+  [CoreEmailTemplate_DateUpdate] datetime  NULL , 
+  [CoreEmailTemplate_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[CoreEmailTemplate] ADD CONSTRAINT PK_CoreEmailTemplate PRIMARY KEY  ([CoreEmailTemplate_Ky])
+</SqlScriptCreate>
+</SqlTable>

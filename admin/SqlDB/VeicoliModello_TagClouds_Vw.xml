@@ -1,0 +1,29 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliModello_TagClouds_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="VeicoliModello_Ky" IsNull="N" Type="smallint" />
+      <Field Column="VeicoliModello_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliMarca_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="VeicoliModello_Foto" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="VeicoliMarca_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliMarca_DescrizioneHTML" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliModello_DescrizioneHTML" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="NumeroRicambi" IsNull="Y" Type="int" />
+      <Field Column="VeicoliTipo_Ky" IsNull="Y" Type="tinyint" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW [dbo].[VeicoliModello_TagClouds_Vw]
+AS
+SELECT     TOP (100) PERCENT dbo.VeicoliModello.VeicoliModello_Ky, dbo.VeicoliModello.VeicoliModello_Descrizione, dbo.VeicoliModello.VeicoliMarca_Ky, 
+                      dbo.VeicoliModello.VeicoliModello_Foto, dbo.VeicoliMarca.VeicoliMarca_Descrizione, dbo.VeicoliMarca.VeicoliMarca_DescrizioneHTML, 
+                      dbo.VeicoliModello.VeicoliModello_DescrizioneHTML, COUNT(dbo.RicambiVeicoli.RicambiVeicoli_Ky) AS NumeroRicambi, dbo.VeicoliMarca.VeicoliTipo_Ky
+FROM         dbo.VeicoliModello INNER JOIN
+                      dbo.RicambiVeicoli ON dbo.VeicoliModello.VeicoliModello_Ky = dbo.RicambiVeicoli.VeicoliModello_Ky LEFT OUTER JOIN
+                      dbo.VeicoliMarca ON dbo.VeicoliModello.VeicoliMarca_Ky = dbo.VeicoliMarca.VeicoliMarca_Ky
+GROUP BY dbo.VeicoliModello.VeicoliModello_Ky, dbo.VeicoliModello.VeicoliModello_Descrizione, dbo.VeicoliModello.VeicoliMarca_Ky, 
+                      dbo.VeicoliModello.VeicoliModello_Foto, dbo.VeicoliMarca.VeicoliMarca_Descrizione, dbo.VeicoliMarca.VeicoliMarca_DescrizioneHTML, 
+                      dbo.VeicoliModello.VeicoliModello_DescrizioneHTML, dbo.VeicoliMarca.VeicoliTipo_Ky
+ORDER BY NumeroRicambi DESC
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,20 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnagraficheAccessi_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="AnagraficheAccessi_Ky" IsNull="N" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="UtentiGruppi_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="UtentiGruppi_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.AnagraficheAccessi_Vw
+AS
+SELECT     dbo.AnagraficheAccessi.AnagraficheAccessi_Ky, dbo.AnagraficheAccessi.Anagrafiche_Ky, dbo.AnagraficheAccessi.UtentiGruppi_Ky, 
+                      dbo.Anagrafiche.Anagrafiche_RagioneSociale, dbo.UtentiGruppi.UtentiGruppi_Descrizione
+FROM         dbo.AnagraficheAccessi INNER JOIN
+                      dbo.Anagrafiche ON dbo.AnagraficheAccessi.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky INNER JOIN
+                      dbo.UtentiGruppi ON dbo.AnagraficheAccessi.UtentiGruppi_Ky = dbo.UtentiGruppi.UtentiGruppi_Ky
+</SqlScriptCreate>
+</SqlTable>

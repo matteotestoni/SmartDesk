@@ -1,0 +1,29 @@
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell text-right">
+		<label for="CommesseStato_Titolo" class="large-text-right small-text-left middle">Titolo</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="CommesseStato_Titolo" id="CommesseStato_Titolo" placeholder="Titolo" title="Titolo" required="required" value="<%=GetFieldValue(dtCommesseStato, "CommesseStato_Titolo")%>" size="100" maxlength="100">
+   	<span class="form-error">Obbligatorio.</span>
+	</div>
+</div>        
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell text-right">
+		<label for="CommesseStato_Icona" class="large-text-right small-text-left middle">Icona</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="CommesseStato_Icona" id="CommesseStato_Icona" placeholder="Icona" title="Icona" required="required" value="<%=GetFieldValue(dtCommesseStato, "CommesseStato_Icona")%>" size="100" maxlength="100">
+		<span class="help-text">Puoi specificare l'icona prendendo da Font Awesome. <a href="https://fontawesome.com/icons?d=gallery" target="_blank" rel="nofollow">Clicca qui</a> per maggiori informazioni.</span>
+   	<span class="form-error">Obbligatorio.</span>
+	</div>
+</div>
+        
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell text-right">
+		<label class="large-text-right small-text-left middle">Anteprima</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <i class="fa-duotone <%=GetFieldValue(dtCommesseStato, "CommesseStato_Icona")%> fa-lg fa-fw"></i>
+	</div>
+</div>        

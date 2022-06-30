@@ -1,0 +1,137 @@
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="CMSSlide_PubblicaWEB" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Pubblica</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+        <input class="switch-input" type="checkbox" name="CMSSlide_PubblicaWEB" id="CMSSlide_PubblicaWEB" value="on" <% if (GetCheckValue(dtCMSSlide, "CMSSlide_PubblicaWEB")){ Response.Write("checked");} %> />
+        <label class="switch-paddle" for="CMSSlide_PubblicaWEB">
+          <span class="show-for-sr">si</span>
+          <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+          <span class="switch-inactive" aria-hidden="true"></span>
+        </label>
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="CMSSlide_Ordine" class="large-text-right small-text-left middle">Ordine</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="CMSSlide_Ordine" id="CMSSlide_Ordine" title="Ordine" value="<%=GetFieldValue(dtCMSSlide, "CMSSlide_Ordine")%>" size="4">
+  	</div>
+  </div>
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Titolo</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="CMSSlide_Titolo" id="CMSSlide_Titolo" title="Nome" required="required" value="<%=GetFieldValue(dtCMSSlide, "CMSSlide_Titolo")%>" size="60">
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label class="large-text-right small-text-left middle">Posizione</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="CMSSlide_Codice" id="CMSSlide_Codice" title="Codice" required="required" value="<%=GetFieldValue(dtCMSSlide, "CMSSlide_Codice")%>" size="60">
+      <span class="form-error">Obbligatorio</span>
+  	</div>
+  </div>
+ 
+	<div class="grid-x grid-padding-x">
+		<div class="large-2 medium-2 small-4 cell">
+			<label for="CMSCategorie_Ky" class="text-right middle">Categoria <i class="fa-duotone fa-list fa-fw"></i></label>
+		</div>
+		<div class="large-4 medium-4 small-8 cell">
+			<select name="CMSCategorie_Ky" id="CMSCategorie_Ky" value="<%=GetFieldValue(dtCMSSlide, "CMSCategorie_Ky")%>" required="required">
+			<!--#include file="/var/cache/CMSCategorie-options.htm"--> 
+			</select>
+			<script type="text/javascript">
+			selectSet('CMSCategorie_Ky', '<%=GetFieldValue(dtCMSSlide, "CMSCategorie_Ky")%>');
+			</script>
+			<span class="form-error">Obbligatorio</span>
+		</div>
+  	<div class="large-2 medium-2 small-4 cell text-right">
+  		<label class="large-text-right small-text-left middle" for="Lingue_Ky">Lingua <i class="fa-duotone fa-language fa-fw"></i></label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+			<select name="Lingue_Ky" id="Lingue_Ky" value="<%=GetFieldValue(dtCMSSlide, "Lingue_Ky")%>">
+        <!--#include file="/var/cache/Lingue-options.htm"--> 
+      </select>
+      <script type="text/javascript">
+        selectSet('Lingue_Ky', '<%=GetFieldValue(dtCMSSlide, "Lingue_Ky")%>');
+      </script>
+  	</div>
+  </div>
+
+	<div class="grid-x grid-padding-x">
+		<div class="large-2 medium-2 small-4 cell">
+			<label for="CMSLink_Tags" class="text-right middle">Tags <i class="fa-duotone fa-list fa-fw"></i></label>
+		</div>
+		<div class="large-10 medium-10 small-8 cell">
+			<select name="CMSSlide_Tags" id="CMSSlide_Tags" multiple class="select2" value="<%=GetFieldValue(dtCMSSlide, "CMSSlide_Tags")%>">
+				<option value=""></option>
+		    <%
+				for (int i = 0; i < dtCMSTags.Rows.Count; i++){
+					Response.Write("<option value=\"" + dtCMSTags.Rows[i]["CMSTags_Ky"].ToString() + "\">" + dtCMSTags.Rows[i]["CMSTags_Titolo"].ToString() + "</option>");
+				}
+				%>
+			</select>
+			<script type="text/javascript">
+				selectSetMultiple('CMSSlide_Tags', '<%=GetFieldValue(dtCMSSlide, "CMSSlide_Tags")%>');
+			</script>
+			<span class="form-error">Obbligatorio</span>
+			<p class="help-text">Tags: <a href="/admin/view.aspx?CoreModules_Ky=9&CoreEntities_Ky=104&CoreGrids_Ky=87" class="tiny button secondary">gestisci <i class="fa-duotone fa-pen-to-square fa-fw"></i></a></p>
+		</div>
+	</div>	
+
+
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label class="large-text-right small-text-left middle"><i class="fa-duotone fa-link fa-fw"></i>Indirizzo</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="CMSSlide_Url" id="CMSSlide_Url" title="Indirizzo" required="required" value="<%=GetFieldValue(dtCMSSlide, "CMSSlide_Url")%>" size="60">
+  	</div>
+  </div>
+
+	<div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="fotoslide" class="large-text-right small-text-left middle">Foto</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <p>Le immagini devono essere in formato jpg<br></p>
+      <label for="fotoslide" class="button small">Carica immagini</label>
+      <input type="file" class="show-for-sr fileupload" placeholder="Foto slide" id="fotoslide" name="fotoslide" />
+      <small class="form-error">obbligatorio.</small>
+      <div id="galleryfotocaricate" class="gallery"></div>
+      <script>
+        jQuery(function() {
+          var imagesPreview = function(input, placeToInsertImagePreview) {
+              if (input.files) {
+                  var filesAmount = input.files.length;
+                  jQuery(placeToInsertImagePreview).html("");
+                  for (i = 0; i < filesAmount; i++) {
+                      var reader = new FileReader();
+                      reader.onload = function(event) {
+                          jQuery(jQuery.parseHTML('<img width="150" height="100" hspace="10" vspace="10" style="border:1px solid #000000">')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                      }
+                       reader.readAsDataURL(input.files[i]);
+                  }
+              }
+          };
+          jQuery('#fotoslide').on('change', function() {
+              imagesPreview(this, '#galleryfotocaricate');
+          });
+        });
+      </script>
+  	</div>
+  </div>
+  
+	<div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="fotoslide" class="large-text-right small-text-left middle">Anteprime</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+        <% 
+        if (GetFieldValue(dtCMSSlide, "CMSSlide_Foto").Length>0){
+          Response.Write("<div class=\"thumbnail\"><img src=\"" + GetFieldValue(dtCMSSlide, "CMSSlide_Foto")  + "\" height=\"150\" width=\"150\"></div>");
+        }
+        %>
+    </div>
+  </div> 

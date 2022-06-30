@@ -1,0 +1,37 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Socialped" Type="TABLE">
+    <Keys>
+      <Key Column="Socialped_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Socialped_Ky" IsNull="N" Type="int" />
+      <Field Column="Socialped_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Socialchannels_Ky" IsNull="Y" Type="int" />
+      <Field Column="Socialped_DataInizio" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Socialped_DataFine" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Socialped_Url" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Socialped_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Socialped_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Socialped_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Socialped_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Socialped_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Socialped_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Socialped] (
+  [Socialped_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Socialped_Titolo] varchar(200)  NULL , 
+  [Socialchannels_Ky] int  NULL , 
+  [Socialped_DataInizio] smalldatetime  NULL , 
+  [Socialped_DataFine] smalldatetime  NULL , 
+  [Socialped_Url] varchar(MAX)  NULL , 
+  [Socialped_UserInsert] int  NULL , 
+  [Socialped_UserUpdate] int  NULL , 
+  [Socialped_UserDelete] int  NULL , 
+  [Socialped_DateInsert] datetime  NULL , 
+  [Socialped_DateUpdate] datetime  NULL , 
+  [Socialped_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[Socialped] ADD CONSTRAINT PK_Socialped PRIMARY KEY  ([Socialped_Ky])
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,29 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnnunciTipologie" Type="TABLE">
+    <Keys>
+      <Key Column="AnnunciTipologie_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AnnunciTipologie_Ky" IsNull="N" Type="smallint" />
+      <Field Column="AnnunciTipologie_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="AnnunciTipologie_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AnnunciTipologie_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AnnunciTipologie_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AnnunciTipologie_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AnnunciTipologie_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AnnunciTipologie_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AnnunciTipologie] (
+  [AnnunciTipologie_Ky] smallint IDENTITY(1,1) NOT NULL , 
+  [AnnunciTipologie_Titolo] varchar(150)  NULL , 
+  [AnnunciTipologie_UserInsert] int  NULL , 
+  [AnnunciTipologie_UserUpdate] int  NULL , 
+  [AnnunciTipologie_UserDelete] int  NULL , 
+  [AnnunciTipologie_DateInsert] datetime  NULL , 
+  [AnnunciTipologie_DateUpdate] datetime  NULL , 
+  [AnnunciTipologie_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[AnnunciTipologie] ADD CONSTRAINT PK_AnnnuciTipologie PRIMARY KEY  ([AnnunciTipologie_Ky])
+</SqlScriptCreate>
+</SqlTable>

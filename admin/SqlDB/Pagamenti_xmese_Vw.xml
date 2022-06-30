@@ -1,0 +1,19 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Pagamenti_xmese_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="chiave" IsNull="Y" Type="int" />
+      <Field Column="anno" IsNull="Y" Type="int" />
+      <Field Column="mese" IsNull="Y" Type="int" />
+      <Field Column="Pagamenti_Importo" IsNull="Y" Type="money" />
+      <Field Column="PagamentiTipo_Ky" IsNull="Y" Type="tinyint" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Pagamenti_xmese_Vw
+AS
+SELECT        MAX(Pagamenti_Ky) AS chiave, YEAR(Pagamenti_DataPagato) AS anno, MONTH(Pagamenti_DataPagato) AS mese, SUM(Pagamenti_Importo) AS Pagamenti_Importo, PagamentiTipo_Ky
+FROM            dbo.Pagamenti
+WHERE        (Pagamenti_Pagato = 1)
+GROUP BY YEAR(Pagamenti_DataPagato), MONTH(Pagamenti_DataPagato), PagamentiTipo_Ky
+</SqlScriptCreate>
+</SqlTable>

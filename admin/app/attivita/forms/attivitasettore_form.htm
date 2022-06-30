@@ -1,0 +1,36 @@
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="AttivitaSettore_Titolo" class="text-right middle">Titolo <i class="fa-duotone fa-tag fa-fw"></i></label>
+	</div>
+	<div class="large-10 medium-9 small-8 cell">
+    <input type="text" name="AttivitaSettore_Titolo" id="AttivitaSettore_Titolo" value="<%=GetFieldValue("AttivitaSettore_Titolo")%>" size="80" required="required">
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>	
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="AttivitaSettore_Icona" class="text-right middle">Icona <i class="fa-duotone fa-image fa-fw"></i></label>
+	</div>
+	<div class="large-10 medium-9 small-8 cell">
+    <input type="text" name="AttivitaSettore_Icona" id="AttivitaSettore_Icona" value="<%=GetFieldValue("AttivitaSettore_Icona")%>" size="80">
+		<span class="help-text">Puoi specificare l'icona prendendo da Font Awesome. <a href="https://fontawesome.com/icons?d=gallery" target="_blank" rel="nofollow">Clicca qui</a> per maggiori informazioni.</span>
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="AttivitaSettore_Attiva" class="text-right middle">Attiva</label>
+	</div>
+	<div class="large-10 medium-9 small-8 cell">
+		<div class="switch tiny">                                         
+      <input class="switch-input" type="checkbox" name="AttivitaSettore_Attiva" id="AttivitaSettore_Attiva" value="on" <% if (GetCheckValue("AttivitaSettore_Attiva")){ Response.Write("checked");} %> />
+      <label class="switch-paddle" for="AttivitaSettore_Attiva">
+        <span class="show-for-sr">Attiva</span>
+        <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+        <span class="switch-inactive" aria-hidden="true"></span>
+      </label>
+    </div> 
+	</div>
+</div>	

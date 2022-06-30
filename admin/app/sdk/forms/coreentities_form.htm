@@ -1,0 +1,160 @@
+
+<fieldset class="fieldset">
+  <legend>Settings</legend>
+    <div class="grid-x grid-padding-x">
+      <div class="large-2 medium-2 small-4 cell">
+    		<label for="CoreEntities_Config" class="large-text-right small-text-left middle">Di configurazione</label>
+    	</div>
+      <div class="large-4 medium-4 small-8 cell">
+    		<div class="switch tiny">                                         
+        	<input class="switch-input" type="checkbox" name="CoreEntities_Config" id="CoreEntities_Config" value="on" <% if (GetCheckValue(dtCoreEntities,"CoreEntities_Config")){ Response.Write("checked");} %> />
+    			<label class="switch-paddle" for="CoreEntities_Config">
+    				<span class="show-for-sr">Configurazione</span>
+    				<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+    				<span class="switch-inactive" aria-hidden="true"></span>
+    			</label>
+    		</div>                                            
+    	</div>
+      <div class="large-2 medium-2 small-4 cell">
+    		<label for="CoreEntities_InMenu" class="large-text-right small-text-left middle">Include in Menu</label>
+    	</div>
+      <div class="large-4 medium-4 small-8 cell">
+    		<div class="switch tiny">                                         
+        	<input class="switch-input" type="checkbox" name="CoreEntities_InMenu" id="CoreEntities_InMenu" value="on" <% if (GetCheckValue(dtCoreEntities,"CoreEntities_InMenu")){ Response.Write("checked");} %> />
+    			<label class="switch-paddle" for="CoreEntities_InMenu">
+    				<span class="show-for-sr">Configurazione</span>
+    				<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+    				<span class="switch-inactive" aria-hidden="true"></span>
+    			</label>
+    		</div>                                            
+    	</div>
+    </div>
+    <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="CoreEntities_Code" class="large-text-right small-text-left middle">Code <i class="fa-duotone fa-tag fa-fw"></i></label>
+    	</div>
+    	<div class="large-4 medium-4 small-8 cell">
+        <input type="text" name="CoreEntities_Code" id="CoreEntities_Code" value="<%=GetFieldValue(dtCoreEntities, "CoreEntities_Code")%>" size="100" required="required" />
+        <span class="form-error">Obbligatorio</span>
+    	</div>
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="CoreEntities_Key" class="large-text-right small-text-left middle">Key <i class="fa-duotone fa-key fa-fw"></i></label>
+    	</div>
+    	<div class="large-4 medium-4 small-8 cell">
+        <input type="text" name="CoreEntities_Key" id="CoreEntities_Key" value="<%=GetFieldValue(dtCoreEntities, "CoreEntities_Key")%>" size="200" required="required" />
+        <span class="form-error">Obbligatorio</span>
+    	</div>
+    </div>
+    <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="CoreEntities_Tree" class="large-text-right small-text-left middle">Gerarchico <i class="fa-duotone fa-key fa-fw"></i></label>
+    	</div>
+    	<div class="large-4 medium-4 small-8 cell">
+    		<div class="switch tiny">                                         
+        	<input class="switch-input" type="checkbox" name="CoreEntities_Tree" id="CoreEntities_Tree" value="on" <% if (GetCheckValue(dtCoreEntities,"CoreEntities_Tree")){ Response.Write("checked");} %> />
+    			<label class="switch-paddle" for="CoreEntities_Tree">
+    				<span class="show-for-sr">Gerarchico</span>
+    				<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+    				<span class="switch-inactive" aria-hidden="true"></span>
+    			</label>
+    		</div>                                            
+    	</div>
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="CoreEntities_TreeAttribute" class="large-text-right small-text-left middle">Attributo gerarchia (padre)</label>
+    	</div>
+    	<div class="large-4 medium-4 small-8 cell">
+        <input type="text" name="CoreEntities_TreeAttribute" id="CoreEntities_TreeAttribute" value="<%=GetFieldValue(dtCoreEntities, "CoreEntities_TreeAttribute")%>" size="200" />
+    	</div>
+    </div>
+</fieldset>
+
+<fieldset class="fieldset">
+  <legend>Appearance</legend>
+
+    <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="CoreEntities_Title" class="large-text-right small-text-left middle">Title</label>
+    	</div>
+    	<div class="large-2 medium-2 small-8 cell">
+        <input type="text" name="CoreEntities_Title" id="CoreEntities_Title" value="<%=GetFieldValue(dtCoreEntities, "CoreEntities_Title")%>" size="100" required="required" />
+        <span class="form-error">Obbligatorio</span>
+    	</div>
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="CoreEntities_LabelSingular" class="large-text-right small-text-left middle">Label Singular</label>
+    	</div>
+    	<div class="large-2 medium-2 small-8 cell">
+        <input type="text" name="CoreEntities_LabelSingular" id="CoreEntities_LabelSingular" value="<%=GetFieldValue(dtCoreEntities, "CoreEntities_LabelSingular")%>" size="100" required="required" />
+        <span class="form-error">Obbligatorio</span>
+    	</div>
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="CoreEntities_LabelPlural" class="large-text-right small-text-left middle">Label Plural</label>
+    	</div>
+    	<div class="large-2 medium-2 small-8 cell">
+        <input type="text" name="CoreEntities_LabelPlural" id="CoreEntities_LabelPlural" value="<%=GetFieldValue(dtCoreEntities, "CoreEntities_LabelPlural")%>" size="100" required="required" />
+        <span class="form-error">Obbligatorio</span>
+    	</div>
+    </div>
+
+    <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="CoreEntities_Description" class="large-text-right small-text-left middle">Description</label>
+    	</div>
+    	<div class="large-10 medium-10 small-8 cell">
+        <textarea name="CoreEntities_Description" id="CoreEntities_Description"><%=GetFieldValue(dtCoreEntities, "CoreEntities_Description")%></textarea>
+    	</div>
+    </div>
+
+    <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="CoreEntities_Icon" class="large-text-right small-text-left middle">FontAwesome Icon</label>
+    	</div>
+    	<div class="large-4 medium-4 small-8 cell">
+        <input type="text" name="CoreEntities_Icon" id="CoreEntities_Icon" value="<%=GetFieldValue(dtCoreEntities, "CoreEntities_Icon")%>" size="100" required="required" />
+        <span class="form-error">Obbligatorio</span>
+    	</div>
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="CoreEntities_Order" class="large-text-right small-text-left middle">Ordine <i class="fa-duotone fa-sort fa-fw"></i></label>
+    	</div>
+    	<div class="large-4 medium-4 small-8 cell">
+        <input type="text" name="CoreEntities_Order" id="CoreEntities_Order" value="<%=GetFieldValue(dtCoreEntities, "CoreEntities_Order")%>" size="200" required="required" />
+        <span class="form-error">Obbligatorio</span>
+    	</div>
+    </div>
+</fieldset>
+
+<fieldset class="fieldset">
+  <legend>Save and delete operations</legend>
+    <div class="grid-x grid-padding-x">
+      <div class="large-2 medium-2 small-4 cell">
+    		<label for="CoreEntities_CustomSave" class="large-text-right small-text-left middle">Custom Save</label>
+    	</div>
+      <div class="large-4 medium-4 small-8 cell">
+    		<div class="switch tiny">                                         
+        	<input class="switch-input" type="checkbox" name="CoreEntities_CustomSave" id="CoreEntities_CustomSave" value="on" <% if (GetCheckValue(dtCoreEntities,"CoreEntities_CustomSave")){ Response.Write("checked");} %> />
+    			<label class="switch-paddle" for="CoreEntities_CustomSave">
+    				<span class="show-for-sr">Custom Save</span>
+    				<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+    				<span class="switch-inactive" aria-hidden="true"></span>
+    			</label>
+    		</div>                                            
+    	</div>
+      <div class="large-2 medium-2 small-4 cell">
+    		<label for="CoreEntities_CustomDelete" class="large-text-right small-text-left middle">Custom Delete</label>
+    	</div>
+      <div class="large-4 medium-4 small-8 cell">
+    		<div class="switch tiny">                                         
+        	<input class="switch-input" type="checkbox" name="CoreEntities_CustomDelete" id="CoreEntities_CustomDelete" value="on" <% if (GetCheckValue(dtCoreEntities,"CoreEntities_CustomDelete")){ Response.Write("checked");} %> />
+    			<label class="switch-paddle" for="CoreEntities_CustomDelete">
+    				<span class="show-for-sr">Custom Delete</span>
+    				<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+    				<span class="switch-inactive" aria-hidden="true"></span>
+    			</label>
+    		</div>                                            
+    	</div>
+    </div>
+</fieldset>
+
+
+
+
+

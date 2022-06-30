@@ -1,0 +1,684 @@
+<div class="grid-x grid-padding-x" id="scheda">
+  <div class="small-12 medium-12 large-12 cell">
+	  <div class="grid-x grid-padding-x" id="tabAnagrafica">
+        <ul class="tabs" data-responsive-accordion-tabs="tabs small-accordion medium-tabs large-tabs" role="tablist" id="anagrafica-tabs">
+  		    <li class="tabs-title is-active" role="presentational"><a href="#tabs-1"><i class="fa-duotone fa-user fa-lg fa-fw"></i>Scheda</a></li>
+  		    <li class="tabs-title" role="presentational"><a href="#tabs-indirizzi"><i class="fa-duotone fa-location-dot fa-lg fa-fw"></i>Indirizzi</a></li>
+  		    <li class="tabs-title" role="presentational"><a href="#tabs-marketing"><i class="fa-duotone fa-bullhorn fa-lg fa-fw"></i>Dati di Marketing</a></li>
+  		    <li class="tabs-title" role="presentational"><a href="#tabs-3"><i class="fa-duotone fa-euro-sign fa-lg fa-fw"></i>Dati amministrativi</a></li>
+  		    <li class="tabs-title" role="presentational"><a href="#tabs-6"><i class="fa-duotone fa-file-lines fa-lg fa-fw"></i>Descrizione</a></li>
+  		    <li class="tabs-title" role="presentational"><a href="#tabs-5"><i class="fa-duotone fa-fa-pen-field fa-lg fa-fw"></i>Attributi personalizzati</a></li>
+  	    </ul>
+		  	<div class="tabs-content" data-tabs-content="anagrafica-tabs">
+				<section role="tabpanel" aria-hidden="false" class="tabs-panel is-active" id="tabs-1" name="tabs-1">
+					<div class="grid-x grid-padding-x">
+						<div class="small-12 medium-12 large-12 cell" style="padding:10px;">
+                        <div class="grid-x grid-padding-x">
+                            <div class="xxlarge-1 xlarge-2 large-2 medium-2 small-4 cell">
+                                <label class="checkbox text-right align-middle" for="Anagrafiche_Disdetto">Chiuso ?</label>
+                            </div>
+                            <div class="xxlarge-1 large-1 medium-1 small-8 cell align-middle">                                               
+																<div class="switch tiny">                                         
+                                  <input class="switch-input" type="checkbox" name="Anagrafiche_Disdetto" id="Anagrafiche_Disdetto" value="on" <% if (GetCheckValue(dtAnagrafiche, "Anagrafiche_Disdetto")){ Response.Write("checked");} %>  <%=GetLock()%> />
+                                  <label class="switch-paddle" for="Anagrafiche_Disdetto">
+                                    <span class="show-for-sr">Chiuso</span>
+                                    <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+                                    <span class="switch-inactive" aria-hidden="true"></span>
+                                  </label>
+                                </div> 
+                             </div>       
+														<div class="xxlarge-1 xlarge-2 large-2 medium-2 small-4 cell">
+                                <label class="checkbox text-right align-middle" for="Anagrafiche_Newsletter">Newsletter ?</label>
+                            </div>
+                            <div class="xxlarge-1 large-1 medium-1 small-8 cell align-middle">
+																<div class="switch tiny">                                         
+                                  <input class="switch-input" type="checkbox" name="Anagrafiche_Newsletter" id="Anagrafiche_Newsletter" value="on" <% if (GetCheckValue(dtAnagrafiche, "Anagrafiche_Newsletter")){ Response.Write("checked");} %>  <%=GetLock()%> />
+                                  <label class="switch-paddle" for="Anagrafiche_Newsletter">
+                                    <span class="show-for-sr">Chiuso</span>
+                                    <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+                                    <span class="switch-inactive" aria-hidden="true"></span>
+                                  </label>
+                                </div> 
+                            </div>    
+                            
+														<div class="xxlarge-1 xlarge-2 large-2 medium-2 small-4 cell">
+                                <label class="checkbox text-right align-middle" for="Anagrafiche_Attivo">Confermato ?</label>
+                            </div>
+                            <div class="xxlarge-1 large-1 medium-1 small-8 cell align-middle">
+																<div class="switch tiny">                                         
+                                  <input class="switch-input" type="checkbox" name="Anagrafiche_Attivo" id="Anagrafiche_Attivo" value="on" <% if (GetCheckValue(dtAnagrafiche, "Anagrafiche_Attivo")){ Response.Write("checked");} %>  <%=GetLock()%> />
+                                  <label class="switch-paddle" for="Anagrafiche_Attivo">
+                                    <span class="show-for-sr">Chiuso</span>
+                                    <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+                                    <span class="switch-inactive" aria-hidden="true"></span>
+                                  </label>
+                                </div> 
+                            </div>                                          
+														<div class="xxlarge-1 xlarge-2 large-2 medium-2 small-4 cell">
+                                <label class="checkbox text-right align-middle" for="Anagrafiche_Privacy">Privacy</label>
+                            </div>
+                            <div class="xxlarge-1 large-1 medium-1 small-8 cell align-middle">
+																<div class="switch tiny">                                         
+                                  <input class="switch-input" type="checkbox" name="Anagrafiche_Privacy" id="Anagrafiche_Privacy" value="on" <% if (GetCheckValue(dtAnagrafiche, "Anagrafiche_Privacy")){ Response.Write("checked");} %> <%=GetLock()%>/>
+                                  <label class="switch-paddle" for="Anagrafiche_Privacy">
+                                    <span class="show-for-sr">Privacy</span>
+                                    <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+                                    <span class="switch-inactive" aria-hidden="true"></span>
+                                  </label>
+                                </div> 
+                            </div>                                          
+													</div>
+	        	        </div>
+	      	        </div>
+										<fieldset>
+										<legend>
+											Dati amministrativi
+											<% if (GetCheckValue(dtAnagrafiche, "Anagrafiche_Lock")){ Response.Write("<i class=\"fa-duotone fa-lock fa-fw\"></i>");} %>			  			
+										</legend>
+                        <div class="grid-x grid-padding-x">
+															<div class="xxlarge-1 xlarge-2 large-2 medium-2 small-4 cell">
+                              	<label for="Anagrafiche_RagioneSociale" class="large-text-right small-text-left middle">Rag.&nbsp;Sociale*</label>
+                              </div>
+                              <div class="xxlarge-3 xlarge-2 large-2 medium-2 small-8 cell ">
+                                  <input type="text" name="Anagrafiche_RagioneSociale" id="Anagrafiche_RagioneSociale" placeholder="Ragione Sociale" value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_RagioneSociale")%>" required="required" title="Ragione Sociale" <%=GetLock()%>>							  
+                                  <span class="form-error">Obbligatorio.</span>
+                              </div>
+                            <div class="xxlarge-1 xlarge-2 large-2 medium-2 small-4 cell">												
+                              <label for="AnagraficheTipologia_Ky" class="large-text-right small-text-left middle">Tipologia</label>											
+                            </div>				              
+                            <div class="xxlarge-3 xlarge-2 large-2 medium-2 small-8 cell align-middle">                                               
+      	                        <select name="AnagraficheTipologia_Ky" id="AnagraficheTipologia_Ky" required="required" value="<%=GetFieldValue(dtAnagrafiche, "AnagraficheTipologia_Ky")%>">
+      	                          <!--#include file="/var/cache/AnagraficheTipologia-options.htm"--> 
+      	                        </select>
+      	              	        <span class="form-error">Obbligatorio.</span>
+      	                        <script type="text/javascript">
+      	                          selectSet('AnagraficheTipologia_Ky', '<%=GetFieldValue(dtAnagrafiche, "AnagraficheTipologia_Ky")%>');
+      	                        </script>
+                             </div>       
+						                  <div class="xxlarge-1 xlarge-2 large-2 medium-2 small-4 cell">
+                                  <label for="AnagraficheTipo_Ky" class="large-text-right small-text-left middle">Tipo <i class="fa-duotone fa-list fa-fw"></i></label>
+                              </div>
+                              <div class="xxlarge-3 xlarge-2 large-2 medium-2 small-8 cell">
+        	                        <select name="AnagraficheTipo_Ky" id="AnagraficheTipo_Ky" class="select2" value="<%=GetFieldValue(dtAnagrafiche, "AnagraficheTipo_Ky")%>">
+        	                          <!--#include file="/var/cache/AnagraficheTipo-options.htm"--> 
+        	                        </select>
+        	              	        <span class="form-error">Obbligatorio.</span>
+        	                        <script type="text/javascript">
+        	                          selectSet('AnagraficheTipo_Ky', '<%=GetFieldValue(dtAnagrafiche, "AnagraficheTipo_Ky")%>');
+        	                        </script>
+                              </div>
+                         </div> 
+                          
+                          <div class="grid-x grid-padding-x">
+                            <div class="xxlarge-1 xlarge-2 large-2 medium-2 small-4 cell">												
+                              <label for="Nazioni_Ky" class="large-text-right small-text-left middle">Nazione 
+                                <i class="fa-duotone fa-location-dot fa-fw"></i>
+                              </label>											
+                            </div>				              
+                            <div class="xxlarge-3 xlarge-2 large-2 medium-2 small-8 cell">				                
+    	                        <select name="Nazioni_Ky" id="Nazioni_Ky" required="required" value="<%=GetFieldValue(dtAnagrafiche, "Nazioni_Ky")%>" onchange="loadCoreRegioni();">
+    	                          <!--#include file="/var/cache/Nazioni-options.htm"--> 
+    	                        </select>
+    	              	        <span class="form-error">Obbligatorio.</span>
+    	                        <script type="text/javascript">
+    	                          selectSet('Nazioni_Ky', '<%=GetFieldValue(dtAnagrafiche, "Nazioni_Ky")%>');
+    	                        </script>
+                            </div>		
+                            <div class="xxlarge-1 xlarge-2 large-2 medium-2 small-4 cell">												
+                              <label for="Regioni_Ky" class="large-text-right small-text-left middle">Regione 
+                                <i class="fa-duotone fa-location-dot fa-fw"></i>
+                              </label>											
+                            </div>				              
+                            <div class="xxlarge-3 xlarge-2 large-2 medium-2 small-8 cell">				                
+    	                        <select name="Regioni_Ky" id="Regioni_Ky" value="<%=GetFieldValue(dtAnagrafiche, "Regioni_Ky")%>" onchange="loadCoreProvince();">
+                                <% 
+                                if (strAzione != "new" && dtRegioni.Rows.Count>0 ){
+                                  for (int j = 0; j < dtRegioni.Rows.Count; j++){
+                                    Response.Write("<option value=\"" + dtRegioni.Rows[j]["Regioni_Ky"].ToString() + "\">" + dtRegioni.Rows[j]["Regioni_Regione"].ToString() + "</option>");
+                                  }
+                                }else{ %>
+                                <% } %>
+    	                        </select>
+    	              	        <span class="form-error">Obbligatorio.</span>
+    	                        <script type="text/javascript">
+    	                          selectSet('Regioni_Ky', '<%=GetFieldValue(dtAnagrafiche, "Regioni_Ky")%>');
+    	                        </script>
+                            </div>		
+                            <div class="xxlarge-1 xlarge-2 large-2 medium-2 small-4 cell">												
+                              <label for="Province_Ky" class="large-text-right small-text-left middle">Provincia 
+                                <i class="fa-duotone fa-location-dot fa-fw"></i>
+                              </label>											
+                            </div>				              
+                            <div class="xxlarge-3 xlarge-2 large-2 medium-2 small-8 cell">				                
+    	                        <select name="Province_Ky" id="Province_Ky" value="<%=GetFieldValue(dtAnagrafiche, "Province_Ky")%>" onchange="loadCoreComuni();">
+                                <% 
+                                if (strAzione != "new" && dtProvince.Rows.Count>0 ){
+                                  for (int j = 0; j < dtProvince.Rows.Count; j++){
+                                    Response.Write("<option value=\"" + dtProvince.Rows[j]["Province_Ky"].ToString() + "\">" + dtProvince.Rows[j]["Province_Provincia"].ToString() + "</option>");
+                                  }
+                                }
+                                %>
+    	                        </select>
+    	              	        <span class="form-error">Obbligatorio.</span>
+    	                        <script type="text/javascript">
+    	                          selectSet('Province_Ky', '<%=GetFieldValue(dtAnagrafiche, "Province_Ky")%>');
+    	                        </script>
+                            </div>		
+                          </div>  
+                          <div class="grid-x grid-padding-x">
+                            <div class="xxlarge-1 xlarge-2 large-2 medium-2 small-4 cell">												
+                              <label for="Comuni_Ky" class="large-text-right small-text-left middle">Comune 
+                                <i class="fa-duotone fa-location-dot fa-fw"></i>
+                              </label>											
+                            </div>				              
+                            <div class="xxlarge-3 xlarge-2 large-2 medium-2 small-8 cell">				                
+    	                        <select name="Comuni_Ky" id="Comuni_Ky" value="<%=GetFieldValue(dtAnagrafiche, "Comuni_Ky")%>">
+                                <% 
+                                if (strAzione != "new" && dtComuni.Rows.Count>0 ){
+                                  for (int j = 0; j < dtComuni.Rows.Count; j++){
+                                    Response.Write("<option value=\"" + dtComuni.Rows[j]["Comuni_Ky"].ToString() + "\">" + dtComuni.Rows[j]["Comuni_Comune"].ToString() + "</option>");
+                                  }
+                                }
+                                %>
+    	                        </select>
+    	              	        <span class="form-error">Obbligatorio.</span>
+    	                        <script type="text/javascript">
+    	                          selectSet('Comuni_Ky', '<%=GetFieldValue(dtAnagrafiche, "Comuni_Ky")%>');
+    	                        </script>
+                            </div>		
+                            <div class="xxlarge-1 xlarge-2 large-2 medium-2 small-4 cell">												
+                              <label for="Anagrafiche_Indirizzo" class="large-text-right small-text-left middle">Indirizzo 
+                                <i class="fa-duotone fa-location-dot fa-fw"></i>
+                              </label>											
+                            </div>				              
+                            <div class="xxlarge-3 xlarge-2 large-2 medium-2 small-8 cell">												
+                              <input type="text" name="Anagrafiche_Indirizzo" id="Anagrafiche_Indirizzo" placeholder="Indirizzo" value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_Indirizzo")%>" size="36" 
+                              <%=GetLock()%>> 											
+                            </div>				              
+                            <div class="xxlarge-1 xlarge-2 large-2 medium-2 small-4 cell">												
+                              <label for="Anagrafiche_CAP" class="large-text-right small-text-left middle">CAP 
+                                <i class="fa-duotone fa-location-dot fa-fw"></i>
+                              </label>
+                            </div>				               
+                            <div class="xxlarge-3 xlarge-2 large-2 medium-2 small-8 cell">				                			                		
+    	                        <input type="text" name="Anagrafiche_CAP" id="Anagrafiche_CAP" placeholder="CAP" value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_CAP")%>" size="5" 
+    	                        <%=GetLock()%>> 				                					                													 				                 				              
+                            </div>		
+                          </div>				            				            
+            <div class="grid-x grid-padding-x">				              
+              <div class="xxlarge-1 xlarge-2 large-2 medium-2 small-4 cell">
+                <label for="Anagrafiche_Codice" class="large-text-right small-text-left middle">Codice</label>
+              </div>				               
+              <div class="xxlarge-3 xlarge-2 large-2 medium-2 small-8 cell">				                
+                  <input type="text" class="input-group-field" name="Anagrafiche_Codice" id="Anagrafiche_Codice" placeholder="Codice" value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_Codice")%>" size="15"> 				                				              
+              </div>				              
+
+
+
+              <div class="xxlarge-1 xlarge-2 large-2 medium-2 small-4 cell">
+                <label for="Anagrafiche_PartitaIVA" class="large-text-right small-text-left middle">Partita IVA
+                </label>
+              </div>				               
+              <div class="xxlarge-3 xlarge-2 large-2 medium-2 small-8 cell">				                
+								<div class="input-group">
+                  <input type="text" class="input-group-field" name="Anagrafiche_PartitaIVA" id="Anagrafiche_PartitaIVA" placeholder="Partita IVA" value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_PartitaIVA")%>" size="15" 
+                  <%=GetLock()%>> 				                	
+								  <div class="input-group-button">
+                    <%=strCheckPartitaIVA%>				                	
+								  </div>
+								</div>				              
+              </div>				              
+              <div class="xxlarge-1 xlarge-2 large-2 medium-2 small-4 cell">
+                <label for="Anagrafiche_CodiceFiscale" class="large-text-right small-text-left middle">Cod. Fiscale
+                </label>
+              </div>				               
+              <div class="xxlarge-3 xlarge-2 large-2 medium-2 small-8 cell">				                
+								<div class="input-group">
+                  <input type="text" class="input-group-field" name="Anagrafiche_CodiceFiscale" id="Anagrafiche_CodiceFiscale" placeholder="Codice Fiscale" value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_CodiceFiscale")%>" size="16" 
+                  <%=GetLock()%>> 				                	
+								  <div class="input-group-button">
+                    <%=strCheckCodiceFiscale%>				                	
+								  </div>
+								</div>
+              </div>				            
+                          </div>				            
+</fieldset>
+<fieldset>
+<legend>Dati di contatto</legend>
+					<div class="grid-x grid-padding-x">
+						<div class="xxlarge-1 xlarge-2 large-2 medium-2 small-4 cell">
+                <label for="Anagrafiche_Nome" class="large-text-right small-text-left middle">Nome</label>
+            </div>
+            <div class="xxlarge-3 xlarge-3 large-3 medium-2 small-8 cell">
+                <input type="text" name="Anagrafiche_Nome" id="Anagrafiche_Nome" placeholder="Nome" value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_Nome")%>" size="36" title="Nome">
+            </div>
+            <div class="xxlarge-1 xlarge-2 large-2 medium-2 small-4 cell">
+                <label for="Anagrafiche_Cognome" class="large-text-right small-text-left middle">Cognome</label>
+            </div>
+            <div class="xxlarge-3 xlarge-2 large-2 medium-2 small-8 cell">
+                <input type="text" name="Anagrafiche_Cognome" id="Anagrafiche_Cognome" placeholder="Cognome" value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_Cognome")%>" size="36" title="Cognome">
+            </div>                                       
+							<div class="xxlarge-1 xlarge-2 large-2 medium-2 small-4 cell">
+									<label for="Anagrafiche_ParoleChiave" class="large-text-right small-text-left middle">Cerca <i class="fa-duotone fa-magnifying-glass fa-fw"></i></label>
+							</div>
+							<div class="xxlarge-3 xlarge-2 large-2 medium-2 small-8 cell">
+									<input type="text" name="Anagrafiche_ParoleChiave" id="Anagrafiche_ParoleChiave" placeholder="Parole Chiave"  value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_ParoleChiave")%>" size="36" title="Elenco delle parole chiave con cui ricercare l'anagrafica">
+							</div>                                       
+          </div>
+
+            <div class="grid-x grid-padding-x">				              
+              <div class="xxlarge-1 xlarge-2 large-2 medium-2 small-4 cell">
+                <label for="Anagrafiche_EmailContatti" class="large-text-right small-text-left middle">Email 
+                  <i class="fa-duotone fa-envelope fa-fw"></i>
+                </label>
+              </div>				               
+              <div class="xxlarge-3 xlarge-2 large-2 medium-2 small-8 cell">				                
+                <input type="text" name="Anagrafiche_EmailContatti" id="Anagrafiche_EmailContatti" placeholder="Email contatti" value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_EmailContatti")%>" size="36" required="required" pattern="email"> 				              	
+                <small class="form-error">Richiesto un indirizzo email</small>				              
+              </div>				              
+              <div class="xxlarge-1 xlarge-2 large-2 medium-2 small-4 cell">
+                <label for="Anagrafiche_EmailAmministrazione" class="large-text-right small-text-left middle">Email fatt. 
+                  <i class="fa-duotone fa-envelope fa-fw"></i>
+                </label>
+              </div>				               
+              <div class="xxlarge-3 xlarge-2 large-2 medium-2 small-8 cell">				                
+                <input type="text" name="Anagrafiche_EmailAmministrazione" id="Anagrafiche_EmailAmministrazione" placeholder="Email Amministrazione" value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_EmailAmministrazione")%>" size="36" required="required"> 				                
+                <small class="form-error">Richiesto un indirizzo email</small>				              
+              </div>				            
+                <div class="xxlarge-1 xlarge-2 large-2 medium-2 small-4 cell">
+                  <label for="Anagrafiche_PEC" class="large-text-right small-text-left middle">PEC 
+                    <i class="fa-duotone fa-envelope fa-fw"></i>
+                  </label>
+                </div>				               
+                <div class="xxlarge-3 xlarge-2 large-2 medium-2 small-8 cell">				                
+                  <input type="text" name="Anagrafiche_PEC" id="Anagrafiche_PEC" placeholder="PEC" value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_PEC")%>" size="36" pattern="email"> 				                
+                  <small class="form-error">Richiesto un indirizzo email</small>				              
+                </div>		
+            </div>		              
+            <div class="grid-x grid-padding-x">				              
+							<div class="xxlarge-1 xlarge-2 large-2 medium-2 small-4 cell">
+								<label for="Anagrafiche_Telefono" class="large-text-right small-text-left middle">Telefono 
+									<i class="fa-duotone fa-phone fa-fw"></i>
+								</label>
+							</div>				               
+							<div class="xxlarge-3 xlarge-2 large-2 medium-2 small-8 cell">				                
+								<input type="tel" name="Anagrafiche_Telefono" id="Anagrafiche_Telefono" placeholder="Telefono" value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_Telefono")%>" size="36" required="required"> 				              	
+								<span class="form-error">Obbligatorio.
+								</span>				              
+							</div>	
+							<div class="xxlarge-1 xlarge-2 large-2 medium-2 small-4 cell">
+								<label for="Anagrafiche_FAX" class="large-text-right small-text-left middle">FAX 
+									<i class="fa-duotone fa-fax fa-fw"></i>
+								</label>
+							</div>				               
+							<div class="xxlarge-3 xlarge-2 large-2 medium-2 small-8 cell">
+								<input type="text" name="Anagrafiche_FAX" id="Anagrafiche_FAX" placeholder="FAX" value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_FAX")%>" size="36">
+							</div>	
+                <div class="xxlarge-1 xlarge-2 large-2 medium-2 small-4 cell">
+                    <label for="Anagrafiche_SitoWeb" class="large-text-right small-text-left middle">Sito Web 
+                      <i class="fa-duotone fa-globe fa-fw"></i>
+                    </label>
+                  </div>				              
+                  <div class="large-3 medium-3 small-8 cell">
+										<div class="input-group">
+	                    <input type="text" class="input-group-field" name="Anagrafiche_SitoWeb" id="Anagrafiche_SitoWeb" placeholder="Sito Web" value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_SitoWeb")%>" size="33"> 				                	
+										  <div class="input-group-button">
+                    		<a href="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_SitoWeb")%>" target="_blank"><i class="fa-duotone fa-up-right-from-square fa-fw"></i></a>				                	
+										  </div>
+										</div>				              
+                  </div>				                
+                </div>										
+	               <div class="grid-x grid-padding-x">
+	                  <div class="xxlarge-1 xlarge-2 large-2 medium-2 small-4 cell">
+                        <label for="Anagrafiche_Categorie" class="large-text-right small-text-left middle">Categorie</label>
+                    </div>
+                    <div class="xxlarge-10 xlarge-8 large-8 medium-8 small-6 cell">
+                      <select name="Anagrafiche_Categorie" id="Anagrafiche_Categorie" class="select2" placeholder="Categoria" multiple value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_Categorie")%>">
+                        <!--#include file="/var/cache/AnagraficheCategorie-options.htm"--> 
+                      </select>
+            	        <span class="form-error">Obbligatorio.</span>
+                      <script type="text/javascript">
+                        selectSetMultiple('Anagrafiche_Categorie', '<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_Categorie")%>');
+                      </script>
+                    </div>                                       
+                		<div class="xxlarge-1 xlarge-2 large-2 medium-2 small-2 cell">
+                      <a href="/admin/app/anagrafiche/elenco-anagrafichecategorie.aspx?CoreModules_Ky=1&CoreEntities_Ky=23&CoreGrids_Ky=27" class="tiny button secondary">gestisci <i class="fa-duotone fa-pen-to-square fa-fw"></i></a>
+                		</div>
+                  </div> 
+                  
+                	<div class="grid-x grid-padding-x">
+                		<div class="xxlarge-1 xlarge-2 large-2 medium-2 small-4 cell">
+                			<label for="Anagrafiche_Tags" class="text-right middle">Tags <i class="fa-duotone fa-list fa-fw"></i></label>
+                		</div>
+                		<div class="xxlarge-10 xlarge-8 large-8 medium-8 small-6 cell">
+                			<select name="Anagrafiche_Tags" id="Anagrafiche_Tags" multiple class="select2" value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_Tags")%>">
+                				<option value=""></option>
+                		    <%
+                				for (int i = 0; i < dtAnagraficheTag.Rows.Count; i++){
+                					Response.Write("<option value=\"" + dtAnagraficheTag.Rows[i]["AnagraficheTag_Ky"].ToString() + "\">" + dtAnagraficheTag.Rows[i]["AnagraficheTag_Tag"].ToString() + "</option>");
+                				}
+                				%>
+                			</select>
+                			<script type="text/javascript">
+                				selectSetMultiple('Anagrafiche_Tags', '<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_Tags")%>');
+                			</script>
+                			<span class="form-error">Obbligatorio</span>
+                		</div>
+                		<div class="xxlarge-1 xlarge-2 large-2 medium-2 small-2 cell">
+                      <a href="/admin/view.aspx?CoreModules_Ky=1&CoreEntities_Ky=169&CoreGrids_Ky=158" class="tiny button secondary">gestisci <i class="fa-duotone fa-pen-to-square fa-fw"></i></a>
+                		</div>
+                	</div>	
+                  
+                  
+                  <% if (dtLogin.Rows[0]["UtentiGruppi_Amministrazione"].Equals(true)){ %>												
+                  <div class="grid-x grid-padding-x">													
+                    <div class="large-12 medium-12 small-12 cell">														
+                      <label for="Anagrafiche_NoteAmministrative" class="large-text-left middle">Note amministrative (solo per amministratori) 
+                        <i class="fa-duotone fa-file-lines fa-fw"></i>
+                      </label>														
+                      <textarea name="Anagrafiche_NoteAmministrative" id="Anagrafiche_NoteAmministrative" placeholder="note amministrative" rows="3"><%=GetFieldValue(dtAnagrafiche, "Anagrafiche_NoteAmministrative")%></textarea>												  
+                    </div>												
+                  </div>                        
+                  <% } %>												
+                  <div class="grid-x grid-padding-x">													
+                    <div class="large-12 medium-12 small-12 cell">														
+                      <label for="Anagrafiche_Note" class="large-text-left">Note tecniche (per tecnici ed amministratori) 
+                        <i class="fa-duotone fa-file-lines fa-fw"></i>
+                      </label>														
+                      <textarea name="Anagrafiche_Note" id="Anagrafiche_Note" placeholder="note tecniche" rows="5"><%=GetFieldValue(dtAnagrafiche, "Anagrafiche_Note")%></textarea>												  
+                    </div>												
+                  </div>											
+				</fieldset>
+	    	</section>
+				<section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-indirizzi" name="tabs-indirizzi">
+					<!--#include file=/admin/app/anagrafiche/scheda-anagrafiche-indirizzi.inc -->
+        </section>
+				<section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-marketing" name="tabs-marketing">
+		      <div class="grid-x grid-padding-x">
+						<div class="small-4 medium-2 large-2 cell">
+								<label for="Anagrafiche_Origine" class="large-text-right small-text-left middle">Origine</label>
+						</div>
+						<div class="small-8 medium-2 large-2 cell">
+                <input type="text" name="Anagrafiche_Origine" id="Anagrafiche_Origine" value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_Origine")%>" size="200" pattern="text">
+						</div>
+						<div class="small-4 medium-2 large-2 cell">
+								<label for="Anagrafiche_OriginDetail" class="large-text-right small-text-left middle">Dettagli Origine</label>
+						</div>
+						<div class="small-8 medium-2 large-2 cell">
+                <input type="text" name="Anagrafiche_OriginDetail" id="Anagrafiche_OriginDetail" value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_OriginDetail")%>" size="200" pattern="text">
+						</div>
+						<div class="small-4 medium-2 large-2 cell">
+								<label for="Anagrafiche_OriginCampaign" class="large-text-right small-text-left middle">Campagna di origine</label>
+						</div>
+						<div class="small-8 medium-2 large-2 cell">
+                <input type="text" name="Anagrafiche_OriginCampaign" id="Anagrafiche_OriginCampaign" value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_OriginCampaign")%>" size="200" pattern="text">
+						</div>
+					</div>
+		      <div class="grid-x grid-padding-x">
+						<div class="small-4 medium-2 large-2 cell">
+								<label for="Anagrafiche_OriginLink" class="large-text-right small-text-left middle">Link di origine</label>
+						</div>
+						<div class="small-8 medium-2 large-2 cell">
+                <input type="text" name="Anagrafiche_OriginLink" id="Anagrafiche_OriginLink" value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_OriginLink")%>" size="500" pattern="text">
+						</div>
+						<div class="small-4 medium-2 large-2 cell">
+								<label for="Anagrafiche_Tessera" class="large-text-right small-text-left middle">Tessera</label>
+						</div>
+						<div class="small-8 medium-2 large-2 cell">
+                <input type="text" name="Anagrafiche_Tessera" id="Anagrafiche_Tessera" value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_Tessera")%>" size="100">
+						</div>
+						<div class="small-4 medium-2 large-2 cell">
+    					<label class="large-text-right small-text-left middle">Data di nascita</label>
+    				</div>
+						<div class="small-8 medium-2 large-2 cell">
+    				  <input type="text" name="Anagrafiche_DataNascita" id="Anagrafiche_DataNascita" class="fdatepicker txt" value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_DataNascita")%>">
+    				</div>
+          </div>
+		      <div class="grid-x grid-padding-x">
+						<div class="small-4 medium-2 large-2 cell">
+								<label for="Anagrafiche_NumeroProdotti" class="large-text-right small-text-left middle">Numero max prodotti</label>
+						</div>
+						<div class="small-8 medium-2 large-2 cell">
+                <input type="text" name="Anagrafiche_NumeroProdotti" id="Anagrafiche_NumeroProdotti" value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_NumeroProdotti")%>" size="4" pattern="number">
+                <small class="form-error">Solo numeri.</small>
+						</div>
+						<div class="small-4 medium-2 large-2 cell">
+								<label for="Numero visite" class="large-text-right small-text-left middle">Numero visite</label>
+						</div>
+						<div class="small-8 medium-2 large-2 cell">
+                <input type="text" name="Anagrafiche_Visite" id="Anagrafiche_Visite" value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_Visite")%>" size="4" pattern="number" readonly>
+						</div>
+						<div class="small-4 medium-2 large-2 cell">
+								<label for="Numero visite" class="large-text-right small-text-left middle">Richieste del telefono</label>
+						</div>
+						<div class="small-8 medium-2 large-2 cell">
+                <input type="text" name="Anagrafiche_RichiesteTelefono" id="Anagrafiche_RichiesteTelefono" value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_RichiesteTelefono")%>" size="4" pattern="number" readonly>
+						</div>
+					</div>
+	    	</section>
+	    	<section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-3" name="tabs-3">
+
+			      <div class="grid-x grid-padding-x">
+								<div class="large-2 medium-2 small-4 cell">
+									<label for="Anagrafiche_CodiceDestinatario" class="large-text-right small-text-left middle">Codice Destinatario</label>
+								</div>				               
+								<div class="large-4 medium-4 small-8 cell">
+										<input type="text" name="Anagrafiche_CodiceDestinatario" id="Anagrafiche_CodiceDestinatario" placeholder="Codice Destinatario" value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_CodiceDestinatario")%>" size="25">
+								</div>	
+  							<div class="small-4 medium-2 large-2 cell">
+  									<label for="AliquoteIVA_Ky" class="large-text-right small-text-left middle">Aliquota IVA</label>
+  							</div>
+  							<div class="small-8 medium-4 large-4 cell">
+  	      	          <select name="AliquoteIVA_Ky" id="AliquoteIVA_Ky" value="<%=GetFieldValue(dtAnagrafiche, "AliquoteIVA_Ky")%>">
+  	                  <!--#include file="/var/cache/AliquoteIVA-options.htm"--> 
+  	                </select>
+  	                <script type="text/javascript">
+  	                  selectSet('AliquoteIVA_Ky', '<%=GetFieldValue(dtAnagrafiche, "AliquoteIVA_Ky")%>');
+  	                </script>
+  							</div>
+						</div>
+
+			      <div class="grid-x grid-padding-x">
+  							<div class="small-4 medium-2 large-2 cell">
+  									<label for="CentridiCR_Ky" class="large-text-right small-text-left middle">Centro di costo/ricavo</label>
+  							</div>
+  							<div class="small-8 medium-4 large-4 cell">
+  	      	          <select name="CentridiCR_Ky" id="CentridiCR_Ky" class="select2" style="width:100%;" value="<%=GetFieldValue(dtAnagrafiche, "CentridiCR_Ky")%>">
+  	                  <!--#include file="/var/cache/CentridiCR-options.htm"--> 
+  	                </select>
+  	                <script type="text/javascript">
+  	                  selectSet('CentridiCR_Ky', '<%=GetFieldValue(dtAnagrafiche, "CentridiCR_Ky")%>');
+  	                </script>
+  							</div>
+
+								<div class="large-2 medium-2 small-4 cell">
+									<label for="Anagrafiche_Password" class="large-text-right small-text-left middle">Password 
+										<i class="fa-duotone fa-key fa-fw"></i>
+									</label>
+								</div>				               
+								<div class="large-4 medium-4 small-6 cell">
+									<div class="input-group">
+										<input class="input-group-field" type="text" name="Anagrafiche_Password" id="Anagrafiche_Password" placeholder="Password" value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_Password")%>" size="25">
+									  <div class="input-group-button">
+											<button onclick="GeneraPassword(12,false,'Anagrafiche_Password');"><i class="fa-duotone fa-sync fa-fw"></i></button>
+									  </div>
+									</div>									
+								</div>	
+						</div>
+
+			      <div class="grid-x grid-padding-x">
+                <div class="large-2 medium-2 small-4 cell">												
+                  <label for="AnagraficheGruppi_Ky" class="large-text-right small-text-left middle">Gruppo</label>											
+                </div>				              
+                <div class="large-4 medium-4 small-8 cell align-middle">                                               
+                    <select name="AnagraficheGruppi_Ky" id="AnagraficheGruppi_Ky" value="<%=GetFieldValue(dtAnagrafiche, "AnagraficheGruppi_Ky")%>">
+                      <!--#include file="/var/cache/AnagraficheGruppi-options.htm"--> 
+                    </select>
+          	        <span class="form-error">Obbligatorio.</span>
+                    <script type="text/javascript">
+                      selectSet('AnagraficheGruppi_Ky', '<%=GetFieldValue(dtAnagrafiche, "AnagraficheGruppi_Ky")%>');
+                    </script>
+                 </div>       
+							<div class="small-4 medium-2 large-2 cell">
+									<label for="SpedizioniTipo_Ky" class="large-text-right small-text-left middle">Tipo di spedizione</label>
+							</div>
+							<div class="small-8 medium-4 large-4 cell">
+	      	          <select name="SpedizioniTipo_Ky" id="SpedizioniTipo_Ky" value="<%=GetFieldValue(dtAnagrafiche, "SpedizioniTipo_Ky")%>">
+	                  <!--#include file="/var/cache/SpedizioniTipo-options.htm"--> 
+	                </select>
+	                <script type="text/javascript">
+	                  selectSet('SpedizioniTipo_Ky', '<%=GetFieldValue(dtAnagrafiche, "SpedizioniTipo_Ky")%>');
+	                </script>
+							</div>
+						</div>
+
+						<div class="grid-x grid-padding-x">
+							<div class="small-4 medium-2 large-2 cell">
+									<label for="PagamentiCondizioni_Ky" class="large-text-right small-text-left middle">Pagamento su conto</label>
+							</div>
+							<div class="small-8 medium-4 large-4 cell">
+	                <select name="Conti_Ky" id="Conti_Ky" value="<%=GetFieldValue(dtAnagrafiche, "Conti_Ky")%>">
+	                  <!--#include file="/var/cache/Conti-options.htm"--> 
+	                </select>
+	                <script type="text/javascript">
+	                  selectSet('Conti_Ky', '<%=GetFieldValue(dtAnagrafiche, "Conti_Ky")%>');
+	                </script>
+							</div>
+							<div class="small-4 medium-2 large-2 cell">
+									<label for="PagamentiCondizioni_Ky" class="large-text-right small-text-left middle">Condizione di pagamento</label>
+							</div>
+							<div class="small-8 medium-4 large-4 cell">
+	                <select name="PagamentiCondizioni_Ky" id="PagamentiCondizioni_Ky" value="<%=GetFieldValue(dtAnagrafiche, "PagamentiCondizioni_Ky")%>">
+	                  <!--#include file="/var/cache/PagamentiCondizioni-options.htm"--> 
+	                </select>
+	                <script type="text/javascript">
+	                  selectSet('PagamentiCondizioni_Ky', '<%=GetFieldValue(dtAnagrafiche, "PagamentiCondizioni_Ky")%>');
+	                </script>
+							</div>
+						</div>
+
+			      <div class="grid-x grid-padding-x">
+							<div class="small-4 medium-2 large-2 cell">
+									<label for="PagamentiMetodo_Ky" class="large-text-right small-text-left middle">Tramite</label>
+							</div>
+							<div class="small-8 medium-4 large-4 cell">
+	                <select name="PagamentiMetodo_Ky" id="PagamentiMetodo_Ky" value="<%=GetFieldValue(dtAnagrafiche, "PagamentiMetodo_Ky")%>">
+	                  <!--#include file="/var/cache/PagamentiMetodo-options.htm"--> 
+	                </select>
+	                <script type="text/javascript">
+	                  selectSet('PagamentiMetodo_Ky', '<%=GetFieldValue(dtAnagrafiche, "PagamentiMetodo_Ky")%>');
+	                </script>
+							</div>
+							<div class="small-4 medium-2 large-2 cell">
+									<label for="Anagrafiche_Banca" class="large-text-right small-text-left middle">Banca</label>
+							</div>
+							<div class="small-8 medium-4 large-4 cell">
+	                <input type="text" name="Anagrafiche_Banca" id="Anagrafiche_Banca" value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_Banca")%>" size="100">
+							</div>
+						</div>
+
+			      <div class="grid-x grid-padding-x">
+							<div class="small-4 medium-2 large-2 cell">
+									<label for="Anagrafiche_Iban" class="large-text-right small-text-left middle">Iban</label>
+							</div>
+							<div class="small-8 medium-4 large-4 cell">
+	                <input type="text" name="Anagrafiche_Iban" id="Anagrafiche_Iban" value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_Iban")%>" size="100">
+							</div>
+						</div>
+            
+	    	</section>
+	    	<section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-5" name="tabs-5">
+          <%
+          if (dtAttributi!=null && dtAttributi.Rows.Count>0){
+              for (int j = 0; j < dtAttributi.Rows.Count; j++){ %>
+          			<div class="grid-x grid-padding-x">
+                  <div class="large-2 medium-2 small-4 cell">
+          					<label class="large-text-right small-text-left middle"><%=dtAttributi.Rows[j]["Attributi_Titolo"].ToString()%></label>
+          				</div>
+                  <div class="large-10 medium-10 small-8 cell">
+          				<%
+          					switch (dtAttributi.Rows[j]["AttributiTipo_Ky"].ToString()){
+          						case "1":
+          							Response.Write("<input type=\"text\" name=\"" + dtAttributi.Rows[j]["Attributi_Codice"].ToString() + "\" id=\"" + dtAttributi.Rows[j]["Attributi_Codice"].ToString() + "\" value=\"" + GetFieldValue(dtAnagrafiche, dtAttributi.Rows[j]["Attributi_Codice"].ToString()) + "\" />");
+          							break;
+          						case "2":
+          							Response.Write("<textarea name=\"" + dtAttributi.Rows[j]["Attributi_Codice"].ToString() + "\" id=\"" + dtAttributi.Rows[j]["Attributi_Codice"].ToString() + "\" value=\"\">" + GetFieldValue(dtAnagrafiche, dtAttributi.Rows[j]["Attributi_Codice"].ToString()) + "</textarea>");
+          							break;
+          						case "3":
+          							Response.Write("<input type=\"text\" name=\"" + dtAttributi.Rows[j]["Attributi_Codice"].ToString() + "\" id=\"" + dtAttributi.Rows[j]["Attributi_Codice"].ToString() + "\" class=\"fdatepicker txt\" value=\"" + GetFieldValue(dtAnagrafiche, dtAttributi.Rows[j]["Attributi_Codice"].ToString()) + "\" />");
+          							break;
+          						case "4":
+          							Response.Write("<input type=\"checkbox\" name=\"" + dtAttributi.Rows[j]["Attributi_Codice"].ToString() + "\" id=\"" + dtAttributi.Rows[j]["Attributi_Codice"].ToString() + "\" value=\"" + GetFieldValue(dtAnagrafiche, dtAttributi.Rows[j]["Attributi_Codice"].ToString()) + "\" />");
+          							break;
+          						case "5":
+          							Response.Write("<input type=\"number\" name=\"" + dtAttributi.Rows[j]["Attributi_Codice"].ToString() + "\" id=\"" + dtAttributi.Rows[j]["Attributi_Codice"].ToString() + "\" class=\"price\" value=\"" + GetFieldValue(dtAnagrafiche, dtAttributi.Rows[j]["Attributi_Codice"].ToString()) + "\" />");
+          							break;
+          						case "6":
+          							Response.Write("<select name=\"" + dtAttributi.Rows[j]["Attributi_Codice"].ToString() + "\" id=\"" + dtAttributi.Rows[j]["Attributi_Codice"].ToString() + "\" value=\"" + GetFieldValue(dtAnagrafiche, dtAttributi.Rows[j]["Attributi_Codice"].ToString()) + "\"><option value=\"\"></option>");
+          							strWHERENet="Attributi_Ky=" + dtAttributi.Rows[j]["Attributi_Ky"].ToString();
+          	            strORDERNet = "AttributiOpzioni_Ordine";
+          	            strFROMNet = "AttributiOpzioni";
+          	            dtAttributiOpzioni = Smartdesk.Sql.getTablePage(strFROMNet, null, "AttributiOpzioni_Ky", strWHERENet, strORDERNet, 1, 100,Smartdesk.Config.Sql.ConnectionReadOnly);
+            						for (int j2 = 0; j2 < dtAttributiOpzioni.Rows.Count; j2++){
+            							Response.Write("<option value=\"" + dtAttributiOpzioni.Rows[j2]["AttributiOpzioni_Opzione"].ToString() + "\">" + dtAttributiOpzioni.Rows[j2]["AttributiOpzioni_Opzione"].ToString() + "</option>");
+          							}
+          							Response.Write("</select>\n");
+          	            Response.Write("<script type=\"text/javascript\">\n");
+          							Response.Write("selectSet('" + dtAttributi.Rows[j]["Attributi_Codice"].ToString() + "', '" + GetFieldValue(dtAnagrafiche, dtAttributi.Rows[j]["Attributi_Codice"].ToString()) + "');\n");
+          	            Response.Write("</script>\n");
+          
+          
+          							break;
+          					}
+          				%>
+          				</div>
+                </div>
+              <%
+              }
+          }
+          %>
+	    	</section>
+	    	<section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-6" name="tabs-6">
+					<div class="grid-x grid-padding-x">
+						<div class="small-2 medium-2 large-2 cell">
+							<label for="Anagrafiche_Logo" class="large-text-right small-text-left middle">Logo <i class="fa-duotone fa-image fa-lg fa-fw"></i></label>
+		        </div>
+		      	<div class="small-8 medium-9 large-9 cell">
+		      		<input type="text" name="Anagrafiche_Logo" id="Anagrafiche_Logo" placeholder="Logo" value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_Logo")%>" size="40" title="Logo">
+						</div>
+		      	<div class="small-2 medium-1 large-1 cell end">														
+							<a href="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_Logo")%>" target="_blank"><i class="fa-duotone fa-up-right-from-square fa-fw"></i></a>
+						</div>
+		      </div>
+          <div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-4 cell">
+          		<label class="large-text-right small-text-left middle" for="Anagrafiche_Video">Codici video YouTube <i class="fa-brands fa-youtube fa-fw"></i></label>
+          	</div>
+          	<div class="large-9 medium-9 small-9 cell">
+              <input type="text" name="Anagrafiche_Video" id="Anagrafiche_Video" placeholder="Video" value="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_Video")%>" size="50">
+          	</div>
+		      	<div class="small-2 medium-1 large-1 cell end">														
+							<a href="<%=GetFieldValue(dtAnagrafiche, "Anagrafiche_Video")%>" target="_blank"><i class="fa-duotone fa-up-right-from-square fa-fw"></i></a>
+						</div>
+					</div> 
+          <div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-12 cell">
+          		<label class="large-text-right small-text-left middle" for="Anagrafiche_Descrizione">Descrizione</label>
+          	</div>
+          	<div class="large-10 medium-10 small-12 cell">
+              <textarea name="Anagrafiche_Descrizione" id="Anagrafiche_Descrizione" rows="2" cols="110" class="ckfinder"><%=GetFieldValue(dtAnagrafiche, "Anagrafiche_Descrizione")%></textarea>
+              <script type="text/javascript">
+              CKEDITOR.replace('Anagrafiche_Descrizione',
+              	{
+                	filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+                	filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+              	});
+              </script>
+          	</div>
+					</div> 
+	    	</section>
+        </div>
+        </div>
+	    </div>
+  	</div>
+</div>

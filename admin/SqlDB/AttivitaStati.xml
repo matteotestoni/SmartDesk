@@ -1,0 +1,39 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AttivitaStati" Type="TABLE">
+    <Keys>
+      <Key Column="AttivitaStati_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AttivitaStati_Ky" IsNull="N" Type="int" />
+      <Field Column="AttivitaStati_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AttivitaStati_Colore" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AttivitaStati_Aperta" IsNull="Y" Type="bit" />
+      <Field Column="AttivitaStati_Chiusa" IsNull="Y" Type="bit" />
+      <Field Column="AttivitaStati_Icona" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AttivitaStati_Ordine" IsNull="Y" Type="int" />
+      <Field Column="AttivitaStati_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AttivitaStati_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AttivitaStati_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AttivitaStati_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AttivitaStati_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AttivitaStati_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AttivitaStati] (
+  [AttivitaStati_Ky] int IDENTITY(1,1) NOT NULL , 
+  [AttivitaStati_Titolo] varchar(200)  NULL , 
+  [AttivitaStati_Colore] varchar(100)  NULL , 
+  [AttivitaStati_Aperta] bit  NULL , 
+  [AttivitaStati_Chiusa] bit  NULL , 
+  [AttivitaStati_Icona] varchar(200)  NULL , 
+  [AttivitaStati_Ordine] int  NULL , 
+  [AttivitaStati_UserInsert] int  NULL , 
+  [AttivitaStati_UserUpdate] int  NULL , 
+  [AttivitaStati_UserDelete] int  NULL , 
+  [AttivitaStati_DateInsert] datetime  NULL , 
+  [AttivitaStati_DateUpdate] datetime  NULL , 
+  [AttivitaStati_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[AttivitaStati] ADD CONSTRAINT PK_AttivitaStati PRIMARY KEY  ([AttivitaStati_Ky])
+</SqlScriptCreate>
+</SqlTable>

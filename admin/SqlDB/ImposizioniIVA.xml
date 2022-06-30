@@ -1,0 +1,33 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ImposizioniIVA" Type="TABLE">
+    <Keys>
+      <Key Column="ImposizioniIVA_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="ImposizioniIVA_Ky" IsNull="N" Type="smallint" />
+      <Field Column="ImposizioniIVA_Descrizione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="ImposizioniIVA_Simbolo" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="ImposizioniIVA_Deducibile" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="ImposizioniIVA_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="ImposizioniIVA_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="ImposizioniIVA_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="ImposizioniIVA_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="ImposizioniIVA_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="ImposizioniIVA_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[ImposizioniIVA] (
+  [ImposizioniIVA_Ky] smallint IDENTITY(1,1) NOT NULL , 
+  [ImposizioniIVA_Descrizione] varchar(50)  NULL , 
+  [ImposizioniIVA_Simbolo] varchar(50)  NULL , 
+  [ImposizioniIVA_Deducibile] varchar(50)  NULL , 
+  [ImposizioniIVA_UserInsert] int  NULL , 
+  [ImposizioniIVA_UserUpdate] int  NULL , 
+  [ImposizioniIVA_UserDelete] int  NULL , 
+  [ImposizioniIVA_DateInsert] datetime  NULL , 
+  [ImposizioniIVA_DateUpdate] datetime  NULL , 
+  [ImposizioniIVA_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[ImposizioniIVA] ADD CONSTRAINT PK_ImposizioniIVA PRIMARY KEY  ([ImposizioniIVA_Ky])
+</SqlScriptCreate>
+</SqlTable>

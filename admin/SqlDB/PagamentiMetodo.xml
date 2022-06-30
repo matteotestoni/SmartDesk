@@ -1,0 +1,37 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="PagamentiMetodo" Type="TABLE">
+    <Keys>
+      <Key Column="PagamentiMetodo_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="PagamentiMetodo_Ky" IsNull="N" Type="smallint" />
+      <Field Column="PagamentiMetodo_Descrizione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="PagamentiMetodo_Colore" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="PagamentiMetodo_Icona" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="PagamentiMetodo_Default" IsNull="Y" Type="bit" />
+      <Field Column="PagamentiMetodo_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="PagamentiMetodo_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="PagamentiMetodo_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="PagamentiMetodo_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="PagamentiMetodo_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="PagamentiMetodo_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="PagamentiMetodo_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[PagamentiMetodo] (
+  [PagamentiMetodo_Ky] smallint IDENTITY(1,1) NOT NULL , 
+  [PagamentiMetodo_Descrizione] varchar(50)  NULL , 
+  [PagamentiMetodo_Colore] varchar(50)  NULL , 
+  [PagamentiMetodo_Icona] varchar(50)  NULL , 
+  [PagamentiMetodo_Default] bit  NULL DEFAULT ((0)), 
+  [PagamentiMetodo_Titolo] varchar(100)  NULL , 
+  [PagamentiMetodo_UserInsert] int  NULL , 
+  [PagamentiMetodo_UserUpdate] int  NULL , 
+  [PagamentiMetodo_UserDelete] int  NULL , 
+  [PagamentiMetodo_DateInsert] datetime  NULL , 
+  [PagamentiMetodo_DateUpdate] datetime  NULL , 
+  [PagamentiMetodo_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[PagamentiMetodo] ADD CONSTRAINT PK_PagamentiMetodo PRIMARY KEY  ([PagamentiMetodo_Ky])
+</SqlScriptCreate>
+</SqlTable>

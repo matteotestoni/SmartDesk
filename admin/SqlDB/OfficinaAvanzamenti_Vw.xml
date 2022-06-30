@@ -1,0 +1,30 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="OfficinaAvanzamenti_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="OfficinaAvanzamenti_Ky" IsNull="N" Type="int" />
+      <Field Column="Officina_Ky" IsNull="Y" Type="int" />
+      <Field Column="OfficinaStati_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="OfficinaAvanzamenti_Data" IsNull="Y" Type="datetime" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Utenti_Nominativo" IsNull="Y" Type="varchar" Lenght="255" />
+      <Field Column="OfficinaStati_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Officina_Nominativo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Officina_TargaVettura" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Officina_Vettura" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="OfficinaStati_Colore" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="OfficinaStati_Icona" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Officina_NumeroTelaio" IsNull="Y" Type="varchar" Lenght="200" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.OfficinaAvanzamenti_Vw
+AS
+SELECT        dbo.OfficinaAvanzamenti.OfficinaAvanzamenti_Ky, dbo.OfficinaAvanzamenti.Officina_Ky, dbo.OfficinaAvanzamenti.OfficinaStati_Ky, dbo.OfficinaAvanzamenti.OfficinaAvanzamenti_Data, 
+                         dbo.OfficinaAvanzamenti.Utenti_Ky, dbo.Utenti.Utenti_Nominativo, dbo.OfficinaStati.OfficinaStati_Titolo, dbo.Officina.Officina_Nominativo, dbo.Officina.Officina_TargaVettura, dbo.Officina.Officina_Vettura, 
+                         dbo.OfficinaStati.OfficinaStati_Colore, dbo.OfficinaStati.OfficinaStati_Icona, dbo.Officina.Officina_NumeroTelaio
+FROM            dbo.OfficinaAvanzamenti LEFT OUTER JOIN
+                         dbo.Officina ON dbo.OfficinaAvanzamenti.Officina_Ky = dbo.Officina.Officina_Ky LEFT OUTER JOIN
+                         dbo.OfficinaStati ON dbo.OfficinaAvanzamenti.OfficinaStati_Ky = dbo.OfficinaStati.OfficinaStati_Ky LEFT OUTER JOIN
+                         dbo.Utenti ON dbo.OfficinaAvanzamenti.Utenti_Ky = dbo.Utenti.Utenti_Ky
+</SqlScriptCreate>
+</SqlTable>

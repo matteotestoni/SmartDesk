@@ -1,0 +1,37 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ProdottiApplicazioni" Type="TABLE">
+    <Keys>
+      <Key Column="ProdottiApplicazioni_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="ProdottiApplicazioni_Ky" IsNull="N" Type="int" />
+      <Field Column="ProdottiApplicazioni_Titolo" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="ProdottiApplicazioni_Ordine" IsNull="Y" Type="int" />
+      <Field Column="ProdottiApplicazioni_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="ProdottiApplicazioni_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="ProdottiApplicazioni_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="ProdottiApplicazioni_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiApplicazioni_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiApplicazioni_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiApplicazioni_Default" IsNull="Y" Type="bit" />
+      <Field Column="ProdottiApplicazioniCategorie_Ky" IsNull="Y" Type="int" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[ProdottiApplicazioni] (
+  [ProdottiApplicazioni_Ky] int IDENTITY(1,1) NOT NULL , 
+  [ProdottiApplicazioni_Titolo] varchar(MAX)  NULL , 
+  [ProdottiApplicazioni_Ordine] int  NULL , 
+  [ProdottiApplicazioni_UserInsert] int  NULL , 
+  [ProdottiApplicazioni_UserUpdate] int  NULL , 
+  [ProdottiApplicazioni_UserDelete] int  NULL , 
+  [ProdottiApplicazioni_DateInsert] datetime  NULL , 
+  [ProdottiApplicazioni_DateUpdate] datetime  NULL , 
+  [ProdottiApplicazioni_DateDelete] datetime  NULL , 
+  [ProdottiApplicazioni_Default] bit  NULL , 
+  [ProdottiApplicazioniCategorie_Ky] int  NULL , 
+  [Lingue_Ky] tinyint  NULL  )
+ALTER TABLE [dbo].[ProdottiApplicazioni] ADD CONSTRAINT PK_ProdottiApplicazioni PRIMARY KEY  ([ProdottiApplicazioni_Ky])
+</SqlScriptCreate>
+</SqlTable>

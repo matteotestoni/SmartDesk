@@ -1,0 +1,31 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CommesseTags" Type="TABLE">
+    <Keys>
+      <Key Column="CommesseTags_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CommesseTags_Ky" IsNull="N" Type="int" />
+      <Field Column="CommesseTags_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CommesseTags_Padre" IsNull="Y" Type="int" />
+      <Field Column="CommesseTags_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CommesseTags_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CommesseTags_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CommesseTags_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CommesseTags_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CommesseTags_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CommesseTags] (
+  [CommesseTags_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CommesseTags_Titolo] varchar(200)  NULL , 
+  [CommesseTags_Padre] int  NULL DEFAULT ((0)), 
+  [CommesseTags_UserInsert] int  NULL , 
+  [CommesseTags_UserUpdate] int  NULL , 
+  [CommesseTags_UserDelete] int  NULL , 
+  [CommesseTags_DateInsert] datetime  NULL , 
+  [CommesseTags_DateUpdate] datetime  NULL , 
+  [CommesseTags_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[CommesseTags] ADD CONSTRAINT PK_CommesseTags PRIMARY KEY  ([CommesseTags_Ky])
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,19 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Prospetto_annifatturato_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="anno" IsNull="Y" Type="int" />
+      <Field Column="chiave" IsNull="Y" Type="int" />
+      <Field Column="fatturato" IsNull="Y" Type="money" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Prospetto_annifatturato_Vw
+AS
+SELECT     TOP (100) PERCENT YEAR(Documenti_Data) AS anno, MAX(Documenti_Ky) AS chiave, SUM(Documenti_TotaleRighe) AS fatturato
+FROM         dbo.Documenti
+WHERE     (DocumentiTipo_Ky = 1) OR
+                      (DocumentiTipo_Ky = 2)
+GROUP BY YEAR(Documenti_Data)
+ORDER BY anno
+</SqlScriptCreate>
+</SqlTable>

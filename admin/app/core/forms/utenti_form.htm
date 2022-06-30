@@ -1,0 +1,248 @@
+<div class="grid-x grid-padding-x">
+  <div class="large-2 medium-2 small-4 cell">
+		<label for="Utenti_Attivo" class="large-text-right small-text-left middle">Attivo</label>
+	</div>
+  <div class="large-4 medium-4 small-8 cell">
+		<div class="switch tiny">                                         
+    	<input class="switch-input" type="checkbox" name="Utenti_Attivo" id="Utenti_Attivo" value="on" <% if (GetCheckValue("Utenti_Attivo")){ Response.Write("checked");} %> />
+			<label class="switch-paddle" for="Utenti_Attivo">
+				<span class="show-for-sr">Attivo</span>
+				<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+				<span class="switch-inactive" aria-hidden="true"></span>
+			</label>
+		</div>                                            
+	</div>
+  <div class="large-2 medium-2 small-4 cell">
+		<label for="Utenti_Admin" class="large-text-right small-text-left middle">Amministratore</label>
+	</div>
+  <div class="large-4 medium-4 small-8 cell">
+		<div class="switch tiny">                                         
+    	<input class="switch-input" type="checkbox" name="Utenti_Admin" id="Utenti_Admin" value="on" <% if (GetCheckValue("Utenti_Admin")){ Response.Write("checked");} %> />
+			<label class="switch-paddle" for="Utenti_Admin">
+				<span class="show-for-sr">Amministratore</span>
+				<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+				<span class="switch-inactive" aria-hidden="true"></span>
+			</label>
+		</div>                                            
+  </div>
+</div>
+
+<div class="grid-x grid-padding-x">
+  <div class="large-2 medium-2 small-4 cell">
+		<label for="Utenti_Nominativo" class="large-text-right small-text-left middle">Nominativo <i class="fa-duotone fa-user fa-fw"></i></label>
+	</div>
+  <div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="Utenti_Nominativo" id="Utenti_Nominativo" value="<%=GetFieldValue("Utenti_Nominativo")%>" size="80" required="required">
+    <span class="form-error">Obbligatorio</span>
+  </div>
+</div>
+
+<div class="grid-x grid-padding-x">
+  <div class="large-2 medium-2 small-4 cell">
+		<label for="Utenti_Nome" class="large-text-right small-text-left middle">Nome</label>
+	</div>
+  <div class="auto cell">
+    <input type="text" name="Utenti_Nome" id="Utenti_Nome" value="<%=GetFieldValue("Utenti_Nome")%>" size="80">
+  </div>
+  <div class="large-2 medium-2 small-4 cell">
+		<label for="Utenti_Cognome" class="large-text-right small-text-left middle">Cognome</label>
+	</div>
+  <div class="auto cell">
+    <input type="text" name="Utenti_Cognome" id="Utenti_Cognome" value="<%=GetFieldValue("Utenti_Cognome")%>" size="80">
+  </div>
+</div>
+
+
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell text-right">
+		<label class="large-text-right small-text-left middle" for="Lingue_Ky">Lingua <i class="fa-duotone fa-language fa-fw"></i></label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+		<select name="Lingue_Ky" id="Lingue_Ky" value="<%=GetFieldValue("Lingue_Ky")%>" required="required">
+      <!--#include file="/var/cache/Lingue-options.htm"--> 
+    </select>
+    <script type="text/javascript">
+      selectSet('Lingue_Ky', '<%=GetFieldValue("Lingue_Ky")%>');
+    </script>
+	</div>
+  <div class="large-2 medium-2 small-4 cell">
+      <label class="large-text-right small-text-left middle">Fuso orario <i class="fa-duotone fa-clock fa-fw"></i></label>
+  </div>
+  <div class="large-4 medium-4 small-8 cell">
+      <select name="TimeZones_Ky" id="TimeZones_Ky" value="1" required="required">
+        <!--#include file="/var/cache/TimeZones-options.htm"--> 
+      </select>
+      <span class="form-error">Obbligatorio</span>
+      <script type="text/javascript">
+        selectSet('TimeZones_Ky', '<%=GetFieldValue("TimeZones_Ky")%>');
+      </script>
+  </div>
+</div>
+<div class="grid-x grid-padding-x">
+  <div class="large-2 medium-2 small-4 cell">
+		<label for="Utenti_Email" class="large-text-right small-text-left middle">Email <i class="fa-duotone fa-envelope fa-fw"></i></label>
+	</div>
+  <div class="auto cell">
+    <input type="text" name="Utenti_Email" id="Utenti_Email" value="<%=GetFieldValue("Utenti_Email")%>" size="80" required="required">
+    <span class="form-error">Obbligatorio</span>
+  </div>
+  <div class="large-2 medium-2 small-4 cell">
+		<label for="Utenti_Password" class="large-text-right small-text-left middle">Password</label>
+	</div>
+  <div class="auto cell">
+    <input type="text" name="Utenti_Password" id="Utenti_Password" value="<%=GetFieldValue("Utenti_Password")%>" size="80" required="required">
+    <span class="form-error">Obbligatorio</span>
+  </div>
+</div>
+<div class="grid-x grid-padding-x">
+  <div class="large-2 medium-2 small-4 cell">
+		<label for="Utenti_Iniziali" class="large-text-right small-text-left middle">Iniziali</label>
+	</div>
+  <div class="auto cell">
+    <input type="text" name="Utenti_Iniziali" id="Utenti_Iniziali" value="<%=GetFieldValue("Utenti_Iniziali")%>" size="80" required="required">
+    <span class="form-error">Obbligatorio</span>
+  </div>
+  <div class="large-2 medium-2 small-4 cell">
+		<label for="UtentiTipo_Ky" class="large-text-right small-text-left middle">Tipo di utenti</label>
+	</div>
+  <div class="auto cell">
+    <select name="UtentiTipo_Ky" id="UtentiTipo_Ky" value="<%=GetFieldValue("UtentiTipo_Ky")%>" required="required">
+		<option value=""></option>
+    <%
+		for (int i = 0; i < dtUtentiTipo.Rows.Count; i++){
+			Response.Write("<option value=\"" + dtUtentiTipo.Rows[i]["UtentiTipo_Ky"].ToString() + "\">" + dtUtentiTipo.Rows[i]["UtentiTipo_Descrizione"].ToString() + "</option>");
+		}
+		%>
+    </select>
+    <span class="form-error">Obbligatorio</span>
+    <script type="text/javascript">
+      selectSet('UtentiTipo_Ky', '<%=GetFieldValue("UtentiTipo_Ky")%>');
+    </script>
+  </div>
+</div>
+<div class="grid-x grid-padding-x">
+  <div class="large-2 medium-2 small-4 cell">
+		<label for="UtentiGruppi_Ky" class="large-text-right small-text-left middle">Gruppo di utenti</label>
+	</div>
+  <div class="auto cell">
+    <select name="UtentiGruppi_Ky" id="UtentiGruppi_Ky" value="<%=GetFieldValue("UtentiGruppi_Ky")%>" required="required">
+		<%
+		for (int i = 0; i < dtUtentiGruppi.Rows.Count; i++){
+			Response.Write("<option value=\"" + dtUtentiGruppi.Rows[i]["UtentiGruppi_Ky"].ToString() + "\">" + dtUtentiGruppi.Rows[i]["UtentiGruppi_Descrizione"].ToString() + "</option>");
+		}
+		%>
+    </select>
+    <span class="form-error">Obbligatorio</span>
+    <script type="text/javascript">
+      selectSet('UtentiGruppi_Ky', '<%=GetFieldValue("UtentiGruppi_Ky")%>');
+    </script>
+  </div>
+  <div class="large-2 medium-2 small-4 cell">
+		<label for="Persone_Ky" class="large-text-right small-text-left middle">Persona</label>
+	</div>
+  <div class="auto cell">
+    <select name="Persone_Ky" id="Persone_Ky" value="<%=GetFieldValue("Persone_Ky")%>" required="required">
+    <option value=""></option>
+		<%
+		for (int i = 0; i < dtPersone.Rows.Count; i++){
+			Response.Write("<option value=\"" + dtPersone.Rows[i]["Persone_Ky"].ToString() + "\">" + dtPersone.Rows[i]["Persone_Cognome"].ToString() + " " + dtPersone.Rows[i]["Persone_Nome"].ToString() + "</option>");
+		}
+		%>
+    </select>
+    <span class="form-error">Obbligatorio</span>
+    <script type="text/javascript">
+      selectSet('Persone_Ky', '<%=GetFieldValue("Persone_Ky")%>');
+    </script>
+  </div>
+</div>
+<div class="grid-x grid-padding-x">
+  <div class="large-2 medium-2 small-4 cell">
+		<label for="Utenti_TipoCalendario" class="large-text-right small-text-left middle">Tipo calendario <i class="fa-duotone fa-list fa-fw"></i></label>
+	</div>
+  <div class="auto cell">
+    <select name="Utenti_TipoCalendario" id="Utenti_TipoCalendario" value="<%=GetFieldValue("Utenti_TipoCalendario")%>" required="required">
+    <option value="1">Mensile</option>
+    <option value="2">Settimanale</option>
+    <option value="3">Giornaliero</option>
+    </select>
+    <span class="form-error">Obbligatorio</span>
+    <script type="text/javascript">
+      selectSet('Utenti_TipoCalendario', '<%=GetFieldValue("Utenti_TipoCalendario")%>');
+    </script>
+  </div>
+  <div class="large-2 medium-2 small-4 cell">
+		<label for="Utenti_Home" class="large-text-right small-text-left middle">All'avvio vai a</label>
+	</div>
+  <div class="auto cell">
+    <select name="Utenti_Home" id="Utenti_Home" value="<%=GetFieldValue("Utenti_Home")%>">
+    <option value="1">Home</option>
+    <option value="2">Calendario</option>
+    <option value="3">Clienti</option>
+    </select>
+    <span class="form-error">Obbligatorio</span>
+    <script type="text/javascript">
+      selectSet('Utenti_Home', '<%=GetFieldValue("Utenti_Home")%>');
+    </script>
+  </div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="Aziende_Ky" class="large-text-right small-text-left middle">Azienda</label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+    <select name="Aziende_Ky" id="Aziende_Ky" required="required" value="<%=GetFieldValue("Aziende_Ky")%>">
+      <!--#include file="/var/cache/Aziende-options.htm"--> 
+    </select>
+    <span class="form-error">Obbligatorio</span>
+    <script type="text/javascript">
+      selectSet('Aziende_Ky', '<%=GetFieldValue("Aziende_Ky")%>');
+    </script>
+	</div>
+
+  <div class="large-2 medium-2 small-4 cell">
+		<label for="Utenti_Wysiwyg" class="large-text-right small-text-left middle">Abilita l'editor grafico</label>
+	</div>
+  <div class="large-4 medium-4 small-8 cell">
+		<div class="switch tiny">                                         
+    	<input class="switch-input" type="checkbox" name="Utenti_Wysiwyg" id="Utenti_Wysiwyg" value="on" <% if (GetCheckValue("Utenti_Wysiwyg")){ Response.Write("checked");} %> />
+			<label class="switch-paddle" for="Utenti_Wysiwyg">
+				<span class="show-for-sr">Attivo</span>
+				<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+				<span class="switch-inactive" aria-hidden="true"></span>
+			</label>
+		</div>                                            
+	</div>
+</div>
+  
+<div class="grid-x grid-padding-x">
+  <div class="large-2 medium-2 small-4 cell">
+		<label for="Utenti_Telefono1" class="large-text-right small-text-left middle">Telefono <i class="fa-duotone fa-phone fa-fw"></i></label>
+	</div>
+  <div class="auto cell">
+    <input type="text" name="Utenti_Telefono1" id="Utenti_Telefono1" value="<%=GetFieldValue("Utenti_Telefono1")%>" size="80">
+  </div>
+  <div class="large-2 medium-2 small-4 cell">
+		<label for="Utenti_Interno" class="large-text-right small-text-left middle">Interno</label>
+	</div>
+  <div class="auto cell">
+    <input type="text" name="Utenti_Interno" id="Utenti_Interno" value="<%=GetFieldValue("Utenti_Interno")%>" size="80">
+  </div>
+</div>
+
+<div class="grid-x grid-padding-x">
+  <div class="large-2 medium-2 small-4 cell">
+		<label for="Utenti_Codice" class="large-text-right small-text-left middle">Codice</label>
+	</div>
+  <div class="large-4 medium-4 small-8 cell">
+    <input type="text" name="Utenti_Codice" id="Utenti_Codice" value="<%=GetFieldValue("Utenti_Codice")%>" size="80">
+  </div>
+  <div class="large-2 medium-2 small-4 cell">
+      <label class="large-text-right small-text-left middle">Colore <i class="fa-duotone fa-paint-brush fa-fw"></i></label>
+  </div>
+  <div class="large-4 medium-4 small-8 cell">
+      <input type="color" name="Utenti_Colore" id="Utenti_Colore" value="<%=GetFieldValue("Utenti_Colore")%>" size="30" />
+      <span class="form-error">Obbligatorio</span>
+  </div>
+</div>

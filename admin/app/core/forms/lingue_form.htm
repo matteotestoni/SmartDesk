@@ -1,0 +1,30 @@
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Descrizione</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="Lingue_Titolo" id="Lingue_Titolo" title="Nome" required="required" value="<%=GetFieldValue("Lingue_Titolo")%>" size="60">
+	</div>
+</div>
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle">Codice</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="Lingue_Codice" id="Lingue_Codice" title="Codice" required="required" value="<%=GetFieldValue("Lingue_Codice")%>" size="60">
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell text-right">
+		<label class="large-text-right small-text-left middle" for="Divise_Ky">Divisa <i class="fa-duotone fa-money-bill-1-wave fa-fw"></i></label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+		<select name="Divise_Ky" id="Divise_Ky" value="<%=GetFieldValue("Divise_Ky")%>" required="required">
+      <!--#include file="/var/cache/Divise-options.htm"--> 
+    </select>
+    <script type="text/javascript">
+      selectSet('Divise_Ky', '<%=GetFieldValue("Divise_Ky")%>');
+    </script>
+	</div>
+</div>

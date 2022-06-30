@@ -1,0 +1,54 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="DocumentiCorpo_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="DocumentiCorpo_Ky" IsNull="N" Type="int" />
+      <Field Column="Documenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="DocumentiCorpo_Qta" IsNull="Y" Type="float" />
+      <Field Column="DocumentiCorpo_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="DocumentiCorpo_Importo" IsNull="Y" Type="money" />
+      <Field Column="DocumentiCorpo_Importo_IT" IsNull="Y" Type="decimal" Lenght="10" Decimal="2" />
+      <Field Column="DocumentiCorpo_Totale" IsNull="Y" Type="money" />
+      <Field Column="DocumentiCorpo_Titolo" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="DocumentiCorpo_Totale_IT" IsNull="Y" Type="decimal" Lenght="10" Decimal="2" />
+      <Field Column="AliquoteIVA_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="AliquoteIVA_Aliquota" IsNull="Y" Type="money" />
+      <Field Column="AnagraficheServizi_Ky" IsNull="Y" Type="int" />
+      <Field Column="AliquoteIVA_Descrizione" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Documenti_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_PartitaIVA" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Anagrafiche_CodiceFiscale" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="AttributiGruppi_Ky" IsNull="Y" Type="int" />
+      <Field Column="Servizi_Ky" IsNull="Y" Type="int" />
+      <Field Column="Prodotti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Prodotti_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Servizi_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="DocumentiCorpo_TotaleIVA_IT" IsNull="Y" Type="decimal" Lenght="10" Decimal="2" />
+      <Field Column="DocumentiCorpo_TotaleIVA" IsNull="Y" Type="money" />
+      <Field Column="DocumentiCorpo_Ordine" IsNull="Y" Type="int" />
+      <Field Column="CentridiCR_Ky" IsNull="Y" Type="int" />
+      <Field Column="DocumentiCorpo_DescrizioneText" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="DocumentiCorpo_ImportoTagliato" IsNull="Y" Type="money" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.DocumentiCorpo_Vw
+AS
+SELECT        dbo.DocumentiCorpo.DocumentiCorpo_Ky, dbo.DocumentiCorpo.Documenti_Ky, dbo.DocumentiCorpo.DocumentiCorpo_Qta, dbo.DocumentiCorpo.DocumentiCorpo_Descrizione, 
+                         dbo.DocumentiCorpo.DocumentiCorpo_Importo, CONVERT(DECIMAL(10, 2), dbo.DocumentiCorpo.DocumentiCorpo_Importo) AS DocumentiCorpo_Importo_IT, dbo.DocumentiCorpo.DocumentiCorpo_Totale, 
+                         dbo.DocumentiCorpo.DocumentiCorpo_Titolo, CONVERT(DECIMAL(10, 2), dbo.DocumentiCorpo.DocumentiCorpo_Totale) AS DocumentiCorpo_Totale_IT, dbo.DocumentiCorpo.AliquoteIVA_Ky, 
+                         dbo.DocumentiCorpo.AliquoteIVA_Aliquota, dbo.DocumentiCorpo.AnagraficheServizi_Ky, dbo.AliquoteIVA.AliquoteIVA_Descrizione, dbo.Documenti.Documenti_Descrizione, 
+                         dbo.Anagrafiche.Anagrafiche_RagioneSociale, dbo.Anagrafiche.Anagrafiche_PartitaIVA, dbo.Anagrafiche.Anagrafiche_CodiceFiscale, dbo.Documenti.Anagrafiche_Ky, dbo.DocumentiCorpo.AttributiGruppi_Ky, 
+                         dbo.DocumentiCorpo.Servizi_Ky, dbo.DocumentiCorpo.Prodotti_Ky, dbo.Prodotti.Prodotti_Titolo, dbo.Servizi.Servizi_Titolo, CONVERT(DECIMAL(10, 2), dbo.DocumentiCorpo.DocumentiCorpo_TotaleIVA) 
+                         AS DocumentiCorpo_TotaleIVA_IT, dbo.DocumentiCorpo.DocumentiCorpo_TotaleIVA, dbo.DocumentiCorpo.DocumentiCorpo_Ordine, dbo.DocumentiCorpo.CentridiCR_Ky, 
+                         dbo.udf_StripHTML(dbo.DocumentiCorpo.DocumentiCorpo_Descrizione) AS DocumentiCorpo_DescrizioneText, dbo.DocumentiCorpo.DocumentiCorpo_ImportoTagliato
+FROM            dbo.Anagrafiche RIGHT OUTER JOIN
+                         dbo.Documenti ON dbo.Anagrafiche.Anagrafiche_Ky = dbo.Documenti.Anagrafiche_Ky RIGHT OUTER JOIN
+                         dbo.Servizi RIGHT OUTER JOIN
+                         dbo.Prodotti RIGHT OUTER JOIN
+                         dbo.DocumentiCorpo ON dbo.Prodotti.Prodotti_Ky = dbo.DocumentiCorpo.Prodotti_Ky ON dbo.Servizi.Servizi_Ky = dbo.DocumentiCorpo.Servizi_Ky ON 
+                         dbo.Documenti.Documenti_Ky = dbo.DocumentiCorpo.Documenti_Ky LEFT OUTER JOIN
+                         dbo.AliquoteIVA ON dbo.DocumentiCorpo.AliquoteIVA_Ky = dbo.AliquoteIVA.AliquoteIVA_Ky
+</SqlScriptCreate>
+</SqlTable>

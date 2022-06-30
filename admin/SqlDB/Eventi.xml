@@ -1,0 +1,31 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Eventi" Type="TABLE">
+    <Keys>
+      <Key Column="Eventi_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Eventi_Ky" IsNull="N" Type="int" />
+      <Field Column="Eventi_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Eventi_Data" IsNull="Y" Type="datetime" />
+      <Field Column="Eventi_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Eventi_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Eventi_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Eventi_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Eventi_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Eventi_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Eventi] (
+  [Eventi_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Eventi_Titolo] varchar(200)  NULL , 
+  [Eventi_Data] datetime  NULL , 
+  [Eventi_UserInsert] int  NULL , 
+  [Eventi_UserUpdate] int  NULL , 
+  [Eventi_UserDelete] int  NULL , 
+  [Eventi_DateInsert] datetime  NULL , 
+  [Eventi_DateUpdate] datetime  NULL , 
+  [Eventi_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[Eventi] ADD CONSTRAINT PK_Eventi PRIMARY KEY  ([Eventi_Ky])
+</SqlScriptCreate>
+</SqlTable>

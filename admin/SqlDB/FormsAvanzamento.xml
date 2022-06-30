@@ -1,0 +1,39 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="FormsAvanzamento" Type="TABLE">
+    <Keys>
+      <Key Column="FormsAvanzamento_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="FormsAvanzamento_Ky" IsNull="N" Type="int" />
+      <Field Column="Forms_Ky" IsNull="Y" Type="int" />
+      <Field Column="FormsAvanzamento_Data" IsNull="Y" Type="smalldatetime" />
+      <Field Column="FormsAvanzamento_Stato" IsNull="Y" Type="int" />
+      <Field Column="FormsAvanzamento_Descrizione" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="FormsAvanzamento_Valore" IsNull="Y" Type="decimal" Lenght="18" Decimal="0" />
+      <Field Column="FormsAvanzamento_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="FormsAvanzamento_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="FormsAvanzamento_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="FormsAvanzamento_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="FormsAvanzamento_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="FormsAvanzamento_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[FormsAvanzamento] (
+  [FormsAvanzamento_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Forms_Ky] int  NULL , 
+  [FormsAvanzamento_Data] smalldatetime  NULL DEFAULT (getdate()), 
+  [FormsAvanzamento_Stato] int  NULL , 
+  [FormsAvanzamento_Descrizione] varchar(200)  NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [FormsAvanzamento_Valore] decimal(10, 0)   NULL , 
+  [FormsAvanzamento_UserInsert] int  NULL , 
+  [FormsAvanzamento_UserUpdate] int  NULL , 
+  [FormsAvanzamento_UserDelete] int  NULL , 
+  [FormsAvanzamento_DateInsert] datetime  NULL , 
+  [FormsAvanzamento_DateUpdate] datetime  NULL , 
+  [FormsAvanzamento_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[FormsAvanzamento] ADD CONSTRAINT PK_FormsAvanzamento PRIMARY KEY  ([FormsAvanzamento_Ky])
+</SqlScriptCreate>
+</SqlTable>

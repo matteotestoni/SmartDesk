@@ -1,0 +1,57 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnagraficheContatti" Type="TABLE">
+    <Keys>
+      <Key Column="AnagraficheContatti_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AnagraficheContatti_Ky" IsNull="N" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheContatti_Email" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AnagraficheContatti_Password" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="AnagraficheContatti_Alias" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AnagraficheContatti_PEC" IsNull="Y" Type="bit" />
+      <Field Column="AnagraficheContatti_Note" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="AnagraficheContattiTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="AnagraficheContatti_Stampa" IsNull="Y" Type="bit" />
+      <Field Column="SitiWeb_Ky" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheContatti_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheContatti_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheContatti_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheContatti_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheContatti_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheContatti_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheContatti_Nome" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnagraficheContatti_Cognome" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnagraficheContatti_DataNascita" IsNull="Y" Type="smalldatetime" />
+      <Field Column="AnagraficheContatti_Sesso" IsNull="Y" Type="varchar" Lenght="1" />
+      <Field Column="AnagraficheContatti_Telefono" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AnagraficheContatti_Inoltro" IsNull="Y" Type="varchar" Lenght="100" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AnagraficheContatti] (
+  [AnagraficheContatti_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [AnagraficheContatti_Email] varchar(100)  NULL , 
+  [AnagraficheContatti_Password] varchar(50)  NULL , 
+  [AnagraficheContatti_Alias] varchar(100)  NULL , 
+  [AnagraficheContatti_PEC] bit  NULL DEFAULT ((0)), 
+  [AnagraficheContatti_Note] varchar(MAX)  NULL , 
+  [AnagraficheContattiTipo_Ky] tinyint  NULL , 
+  [AnagraficheContatti_Stampa] bit  NULL DEFAULT ((0)), 
+  [SitiWeb_Ky] int  NULL , 
+  [AnagraficheContatti_UserInsert] int  NULL , 
+  [AnagraficheContatti_UserUpdate] int  NULL , 
+  [AnagraficheContatti_UserDelete] int  NULL , 
+  [AnagraficheContatti_DateInsert] datetime  NULL , 
+  [AnagraficheContatti_DateUpdate] datetime  NULL , 
+  [AnagraficheContatti_DateDelete] datetime  NULL , 
+  [AnagraficheContatti_Nome] varchar(200)  NULL , 
+  [AnagraficheContatti_Cognome] varchar(200)  NULL , 
+  [AnagraficheContatti_DataNascita] smalldatetime  NULL , 
+  [AnagraficheContatti_Sesso] varchar(1)  NULL , 
+  [AnagraficheContatti_Telefono] varchar(100)  NULL , 
+  [AnagraficheContatti_Inoltro] varchar(100)  NULL  )
+ALTER TABLE [dbo].[AnagraficheContatti] ADD CONSTRAINT PK_AnagraficheContatti PRIMARY KEY  ([AnagraficheContatti_Ky])
+</SqlScriptCreate>
+</SqlTable>

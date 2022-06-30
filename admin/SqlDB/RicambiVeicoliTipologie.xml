@@ -1,0 +1,17 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="RicambiVeicoliTipologie" Type="TABLE">
+    <Keys>
+      <Key Column="RicambiVeicoliTipologie_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="RicambiVeicoliTipologie_Ky" IsNull="N" Type="bit" />
+      <Field Column="RicambiVeicoliTipologie_Descrizione" IsNull="Y" Type="varchar" Lenght="20" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[RicambiVeicoliTipologie] (
+  [RicambiVeicoliTipologie_Ky] bit  NOT NULL , 
+  [RicambiVeicoliTipologie_Descrizione] varchar(20)  NULL  )
+ALTER TABLE [dbo].[RicambiVeicoliTipologie] ADD CONSTRAINT PK_RicambiVeicoliTipologie PRIMARY KEY  ([RicambiVeicoliTipologie_Ky])
+</SqlScriptCreate>
+</SqlTable>

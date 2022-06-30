@@ -1,0 +1,29 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CoreModulesOptionsValue_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="CoreModulesOptionsValue_Ky" IsNull="N" Type="int" />
+      <Field Column="CoreModulesOptions_Code" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreModulesOptionsValue_Value" IsNull="N" Type="varchar" Lenght="-1" />
+      <Field Column="CoreModulesOptions_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreModulesOptions_Order" IsNull="Y" Type="int" />
+      <Field Column="CoreModulesOptions_Icon" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreModules_Ky_Options" IsNull="Y" Type="int" />
+      <Field Column="CoreModulesOptions_Type" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="CoreModulesOptions_Description" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreModulesOptions_Default" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreModules_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreModules_Order" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.CoreModulesOptionsValue_Vw
+AS
+SELECT        dbo.CoreModulesOptionsValue.CoreModulesOptionsValue_Ky, dbo.CoreModulesOptionsValue.CoreModulesOptions_Code, dbo.CoreModulesOptionsValue.CoreModulesOptionsValue_Value, 
+                         dbo.CoreModulesOptions.CoreModulesOptions_Title, dbo.CoreModulesOptions.CoreModulesOptions_Order, dbo.CoreModulesOptions.CoreModulesOptions_Icon, 
+                         dbo.CoreModulesOptions.CoreModules_Ky AS CoreModules_Ky_Options, dbo.CoreModulesOptions.CoreModulesOptions_Type, dbo.CoreModulesOptions.CoreModulesOptions_Description, 
+                         dbo.CoreModulesOptions.CoreModulesOptions_Default, dbo.CoreModulesOptions.CoreModules_Ky, dbo.CoreModules.CoreModules_Order
+FROM            dbo.CoreModulesOptionsValue INNER JOIN
+                         dbo.CoreModulesOptions ON dbo.CoreModulesOptionsValue.CoreModulesOptions_Code = dbo.CoreModulesOptions.CoreModulesOptions_Code INNER JOIN
+                         dbo.CoreModules ON dbo.CoreModulesOptions.CoreModules_Ky = dbo.CoreModules.CoreModules_Ky
+</SqlScriptCreate>
+</SqlTable>

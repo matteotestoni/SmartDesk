@@ -1,0 +1,26 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AziendeSediReparti_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="AziendeSediReparti_Ky" IsNull="N" Type="int" />
+      <Field Column="Aziende_Ky" IsNull="Y" Type="int" />
+      <Field Column="AziendeSedi_Ky" IsNull="Y" Type="int" />
+      <Field Column="AziendeSediReparti_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AziendeSediReparti_Attivo" IsNull="Y" Type="bit" />
+      <Field Column="AziendeSediReparti_Default" IsNull="Y" Type="bit" />
+      <Field Column="AziendeSedi_Nome" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Aziende_Codice" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Aziende_RagioneSociale" IsNull="Y" Type="varchar" Lenght="250" />
+      <Field Column="AziendeSedi_Codice" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.AziendeSediReparti_Vw
+AS
+SELECT        dbo.AziendeSediReparti.AziendeSediReparti_Ky, dbo.AziendeSediReparti.Aziende_Ky, dbo.AziendeSediReparti.AziendeSedi_Ky, dbo.AziendeSediReparti.AziendeSediReparti_Titolo, 
+                         dbo.AziendeSediReparti.AziendeSediReparti_Attivo, dbo.AziendeSediReparti.AziendeSediReparti_Default, dbo.AziendeSedi.AziendeSedi_Nome, dbo.Aziende.Aziende_Codice, 
+                         dbo.Aziende.Aziende_RagioneSociale, dbo.AziendeSedi.AziendeSedi_Codice
+FROM            dbo.AziendeSedi INNER JOIN
+                         dbo.AziendeSediReparti ON dbo.AziendeSedi.AziendeSedi_Ky = dbo.AziendeSediReparti.AziendeSedi_Ky INNER JOIN
+                         dbo.Aziende ON dbo.AziendeSedi.Aziende_Ky = dbo.Aziende.Aziende_Ky
+</SqlScriptCreate>
+</SqlTable>

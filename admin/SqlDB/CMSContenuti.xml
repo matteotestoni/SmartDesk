@@ -1,0 +1,63 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CMSContenuti" Type="TABLE">
+    <Keys>
+      <Key Column="CMSContenuti_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CMSContenuti_Ky" IsNull="N" Type="int" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="CMSCategorie_Ky" IsNull="Y" Type="int" />
+      <Field Column="CMSContenuti_Tags" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CMSContenuti_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSContenuti_Contenuto" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CMSContenuti_Data" IsNull="Y" Type="datetime" />
+      <Field Column="CMSContenuti_Ordine" IsNull="Y" Type="int" />
+      <Field Column="CMSContenuti_PubblicaWEB" IsNull="Y" Type="bit" />
+      <Field Column="CMSContenuti_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CMSContenuti_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CMSContenuti_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CMSContenuti_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CMSContenuti_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CMSContenuti_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="CMSContenuti_Foto" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSContenuti_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSContenuti_Description" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="CMSContenuti_Robots" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CMSContenuti_UrlKey" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSContenuti_Sitemap" IsNull="Y" Type="bit" />
+      <Field Column="CMSContenuti_InMenu" IsNull="Y" Type="bit" />
+      <Field Column="CMSContenutiTipo_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="CMSContenuti_Template" IsNull="Y" Type="varchar" Lenght="200" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CMSContenuti] (
+  [CMSContenuti_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Utenti_Ky] int  NULL , 
+  [Lingue_Ky] tinyint  NULL , 
+  [CMSCategorie_Ky] int  NULL , 
+  [CMSContenuti_Tags] varchar(MAX)  NULL , 
+  [CMSContenuti_Titolo] varchar(200)  NULL , 
+  [CMSContenuti_Contenuto] varchar(MAX)  NULL , 
+  [CMSContenuti_Data] datetime  NULL , 
+  [CMSContenuti_Ordine] int  NULL , 
+  [CMSContenuti_PubblicaWEB] bit  NULL , 
+  [CMSContenuti_UserInsert] int  NULL , 
+  [CMSContenuti_UserUpdate] int  NULL , 
+  [CMSContenuti_UserDelete] int  NULL , 
+  [CMSContenuti_DateInsert] datetime  NULL , 
+  [CMSContenuti_DateUpdate] datetime  NULL , 
+  [CMSContenuti_DateDelete] datetime  NULL , 
+  [CMSContenuti_Foto] varchar(200)  NULL , 
+  [CMSContenuti_Title] varchar(200)  NULL , 
+  [CMSContenuti_Description] varchar(500)  NULL , 
+  [CMSContenuti_Robots] varchar(100)  NULL DEFAULT ('index,follow'), 
+  [CMSContenuti_UrlKey] varchar(200)  NULL , 
+  [CMSContenuti_Sitemap] bit  NULL DEFAULT ((1)), 
+  [CMSContenuti_InMenu] bit  NULL DEFAULT ((0)), 
+  [CMSContenutiTipo_Ky] smallint  NULL , 
+  [CMSContenuti_Template] varchar(200)  NULL  )
+ALTER TABLE [dbo].[CMSContenuti] ADD CONSTRAINT PK_CMSContenuti PRIMARY KEY  ([CMSContenuti_Ky])
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,17 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Attivita_TotaliCommesse_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Attivita_Ore" IsNull="Y" Type="float" />
+      <Field Column="Attivita_OrePreviste" IsNull="Y" Type="float" />
+      <Field Column="Commesse_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Attivita_TotaliCommesse_Vw
+AS
+SELECT        SUM(Attivita_Ore) AS Attivita_Ore, SUM(Attivita_OrePreviste) AS Attivita_OrePreviste, Commesse_Ky
+FROM            dbo.Attivita
+GROUP BY Commesse_Ky
+HAVING        (Commesse_Ky IS NOT NULL)
+</SqlScriptCreate>
+</SqlTable>

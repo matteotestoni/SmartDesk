@@ -1,0 +1,94 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Cantieri_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Cantieri_Ky" IsNull="N" Type="int" />
+      <Field Column="Cantieri_Riferimento" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Cantieri_Annuncio" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Cantieri_DataInizioLavori" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Cantieri_DataFineLavori" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Cantieri_Indirizzo" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_CmnKy" IsNull="Y" Type="int" />
+      <Field Column="Cantieri_PrvKy" IsNull="Y" Type="int" />
+      <Field Column="Nazioni_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Cantieri_VirtualTour" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Video" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Capitolato" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto1" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto1s" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto2" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto2s" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto3" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto3s" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto4" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto4s" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto5" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto5s" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto6" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto6s" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto7" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto7s" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto8" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto8s" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto9" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto9s" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto10" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto10s" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Cantieri_ImportazioneData" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Cantieri_ImportazioneRiferimento" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Cantieri_ImportazioneRiferimentoAgenzia" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Cantieri_PubblicaWEB" IsNull="Y" Type="bit" />
+      <Field Column="Cantieri_fImportato" IsNull="Y" Type="bit" />
+      <Field Column="Comuni_Comune" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Comuni_ComuneHTML" IsNull="Y" Type="varchar" Lenght="60" />
+      <Field Column="Province_Codice" IsNull="Y" Type="varchar" Lenght="2" />
+      <Field Column="Province_Provincia" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="Province_ProvinciaHTML" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="Cantieri_Inevidenza" IsNull="Y" Type="bit" />
+      <Field Column="Cantieri_Visite" IsNull="Y" Type="int" />
+      <Field Column="Cantieri_AnnuncioSmall" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Cantieri_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Cantieri_Sottotitolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Cantieri_Documento1" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Documento2" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Documento3" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Documento4" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Documento5" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Documento6" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Documento7" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Documento8" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Documento9" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Documento10" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Progetto" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Cantieri_Ordine" IsNull="Y" Type="int" />
+      <Field Column="CantieriStati_Ky" IsNull="Y" Type="int" />
+      <Field Column="CantieriStati_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Utenti_Email" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Utenti_Telefono1" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Utenti_Logo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Utenti_Nominativo" IsNull="Y" Type="varchar" Lenght="255" />
+      <Field Column="Utenti_Tipocontratto" IsNull="Y" Type="smallint" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Cantieri_ElencoWeb_Vw
+AS
+SELECT        dbo.Cantieri.Cantieri_Ky, dbo.Cantieri.Cantieri_Riferimento, dbo.Cantieri.Cantieri_Annuncio, dbo.Cantieri.Cantieri_DataInizioLavori, dbo.Cantieri.Cantieri_DataFineLavori, dbo.Cantieri.Cantieri_Indirizzo, 
+                         dbo.Cantieri.Cantieri_CmnKy, dbo.Cantieri.Cantieri_PrvKy, dbo.Cantieri.Nazioni_Ky, dbo.Cantieri.Cantieri_VirtualTour, dbo.Cantieri.Cantieri_Video, dbo.Cantieri.Cantieri_Capitolato, dbo.Cantieri.Cantieri_Foto1, 
+                         dbo.Cantieri.Cantieri_Foto1s, dbo.Cantieri.Cantieri_Foto2, dbo.Cantieri.Cantieri_Foto2s, dbo.Cantieri.Cantieri_Foto3, dbo.Cantieri.Cantieri_Foto3s, dbo.Cantieri.Cantieri_Foto4, dbo.Cantieri.Cantieri_Foto4s, 
+                         dbo.Cantieri.Cantieri_Foto5, dbo.Cantieri.Cantieri_Foto5s, dbo.Cantieri.Cantieri_Foto6, dbo.Cantieri.Cantieri_Foto6s, dbo.Cantieri.Cantieri_Foto7, dbo.Cantieri.Cantieri_Foto7s, dbo.Cantieri.Cantieri_Foto8, 
+                         dbo.Cantieri.Cantieri_Foto8s, dbo.Cantieri.Cantieri_Foto9, dbo.Cantieri.Cantieri_Foto9s, dbo.Cantieri.Cantieri_Foto10, dbo.Cantieri.Cantieri_Foto10s, dbo.Cantieri.Utenti_Ky, dbo.Cantieri.Cantieri_ImportazioneData,
+                          dbo.Cantieri.Cantieri_ImportazioneRiferimento, dbo.Cantieri.Cantieri_ImportazioneRiferimentoAgenzia, dbo.Cantieri.Cantieri_PubblicaWEB, dbo.Cantieri.Cantieri_fImportato, dbo.Comuni.Comuni_Comune, 
+                         dbo.Comuni.Comuni_ComuneHTML, dbo.Province.Province_Codice, dbo.Province.Province_Provincia, dbo.Province.Province_ProvinciaHTML, dbo.Cantieri.Cantieri_Inevidenza, dbo.Cantieri.Cantieri_Visite, 
+                         LEFT(dbo.Cantieri.Cantieri_Annuncio, 250) AS Cantieri_AnnuncioSmall, dbo.Cantieri.Cantieri_Titolo, dbo.Cantieri.Cantieri_Sottotitolo, dbo.Cantieri.Cantieri_Documento1, dbo.Cantieri.Cantieri_Documento2, 
+                         dbo.Cantieri.Cantieri_Documento3, dbo.Cantieri.Cantieri_Documento4, dbo.Cantieri.Cantieri_Documento5, dbo.Cantieri.Cantieri_Documento6, dbo.Cantieri.Cantieri_Documento7, dbo.Cantieri.Cantieri_Documento8, 
+                         dbo.Cantieri.Cantieri_Documento9, dbo.Cantieri.Cantieri_Documento10, dbo.Cantieri.Cantieri_Progetto, dbo.Utenti.UtentiGruppi_Ky, dbo.Cantieri.Cantieri_Ordine, dbo.Cantieri.CantieriStati_Ky, 
+                         dbo.CantieriStati.CantieriStati_Descrizione, dbo.Utenti.Utenti_Email, dbo.Utenti.Utenti_Telefono1, dbo.Utenti.Utenti_Logo, dbo.Utenti.Utenti_Nominativo, dbo.Utenti.Utenti_Tipocontratto
+FROM            dbo.Cantieri LEFT OUTER JOIN
+                         dbo.CantieriStati ON dbo.Cantieri.CantieriStati_Ky = dbo.CantieriStati.CantieriStati_Ky LEFT OUTER JOIN
+                         dbo.Utenti ON dbo.Cantieri.Utenti_Ky = dbo.Utenti.Utenti_Ky LEFT OUTER JOIN
+                         dbo.Province ON dbo.Cantieri.Cantieri_PrvKy = dbo.Province.Province_Ky LEFT OUTER JOIN
+                         dbo.Comuni ON dbo.Cantieri.Cantieri_CmnKy = dbo.Comuni.Comuni_Ky
+</SqlScriptCreate>
+</SqlTable>

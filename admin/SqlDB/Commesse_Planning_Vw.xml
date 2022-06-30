@@ -1,0 +1,66 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Commesse_Planning_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Commesse_Ky" IsNull="N" Type="int" />
+      <Field Column="Commesse_Riferimenti" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Attivita_Ky" IsNull="N" Type="int" />
+      <Field Column="Attivita_Descrizione" IsNull="Y" Type="varchar" Lenght="4000" />
+      <Field Column="Attivita_Scadenza" IsNull="Y" Type="datetime" />
+      <Field Column="AttivitaTipo_Ky" IsNull="Y" Type="int" />
+      <Field Column="chiave" IsNull="N" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CommesseStato_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Attivita_Completo" IsNull="Y" Type="bit" />
+      <Field Column="Attivita_Chiusura" IsNull="Y" Type="datetime" />
+      <Field Column="Attivita_Chiusura_IT" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="AttivitaTipo_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Attivita_Trasferta" IsNull="Y" Type="bit" />
+      <Field Column="Attivita_Ore" IsNull="N" Type="float" />
+      <Field Column="Commesse_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Attivita_Scadenza_IT" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="AttivitaTipo_Icona" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Attivita_Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Attivita_Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Commesse_DataInizioLavori" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Commesse_DataConsegna" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Commesse_DataInizioLavori_IT" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="Commesse_DataConsegna_IT" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="Attivita_OrePreviste" IsNull="Y" Type="float" />
+      <Field Column="Commesse_OrePreviste" IsNull="Y" Type="float" />
+      <Field Column="Commesse_OreImpiegate" IsNull="Y" Type="float" />
+      <Field Column="Opportunita_Ky" IsNull="Y" Type="int" />
+      <Field Column="Utenti_Colore" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="Utenti_Cognome" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Utenti_Nome" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Commesse_Data" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Commesse_Tags" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Commesse_OreResidue" IsNull="Y" Type="float" />
+      <Field Column="CommesseTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="CommesseTipo_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CommesseTipo_Icona" IsNull="Y" Type="varchar" Lenght="100" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Commesse_Planning_Vw
+AS
+SELECT        TOP (100) PERCENT dbo.Commesse.Commesse_Ky, dbo.Commesse.Commesse_Riferimenti, dbo.Attivita.Attivita_Ky, dbo.Attivita.Attivita_Descrizione, dbo.Attivita.Attivita_Scadenza, dbo.Attivita.AttivitaTipo_Ky, 
+                         dbo.Attivita.Attivita_Ky AS chiave, dbo.Commesse.Anagrafiche_Ky, dbo.Anagrafiche.Anagrafiche_RagioneSociale, dbo.Commesse.CommesseStato_Ky, dbo.Attivita.Attivita_Completo, dbo.Attivita.Attivita_Chiusura, 
+                         CONVERT(varchar, dbo.Attivita.Attivita_Chiusura, 105) AS Attivita_Chiusura_IT, dbo.AttivitaTipo.AttivitaTipo_Descrizione, dbo.Attivita.Attivita_Trasferta, dbo.Attivita.Attivita_Ore, dbo.Commesse.Commesse_Titolo, 
+                         CONVERT(varchar, dbo.Attivita.Attivita_Scadenza, 105) AS Attivita_Scadenza_IT, dbo.AttivitaTipo.AttivitaTipo_Icona, Anagrafiche_1.Anagrafiche_RagioneSociale AS Attivita_Anagrafiche_RagioneSociale, 
+                         dbo.Attivita.Anagrafiche_Ky AS Attivita_Anagrafiche_Ky, dbo.Commesse.Commesse_DataInizioLavori, dbo.Commesse.Commesse_DataConsegna, CONVERT(varchar, 
+                         dbo.Commesse.Commesse_DataInizioLavori, 105) AS Commesse_DataInizioLavori_IT, CONVERT(varchar, dbo.Commesse.Commesse_DataConsegna, 105) AS Commesse_DataConsegna_IT, 
+                         dbo.Attivita.Attivita_OrePreviste, dbo.Commesse.Commesse_OrePreviste, dbo.Commesse.Commesse_OreImpiegate, dbo.Commesse.Opportunita_Ky, dbo.Utenti.Utenti_Colore, dbo.Utenti.Utenti_Cognome, 
+                         dbo.Utenti.Utenti_Nome, dbo.Attivita.Utenti_Ky, dbo.Commesse.Commesse_Data, dbo.Commesse.Commesse_Tags, dbo.Commesse.Commesse_OreResidue, dbo.Commesse.CommesseTipo_Ky, 
+                         dbo.CommesseTipo.CommesseTipo_Titolo, dbo.CommesseTipo.CommesseTipo_Icona
+FROM            dbo.AttivitaTipo INNER JOIN
+                         dbo.Attivita ON dbo.AttivitaTipo.AttivitaTipo_Ky = dbo.Attivita.AttivitaTipo_Ky INNER JOIN
+                         dbo.Commesse INNER JOIN
+                         dbo.Anagrafiche ON dbo.Commesse.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky ON dbo.Attivita.Commesse_Ky = dbo.Commesse.Commesse_Ky INNER JOIN
+                         dbo.Anagrafiche AS Anagrafiche_1 ON dbo.Attivita.Anagrafiche_Ky = Anagrafiche_1.Anagrafiche_Ky INNER JOIN
+                         dbo.Utenti ON dbo.Attivita.Utenti_Ky = dbo.Utenti.Utenti_Ky LEFT OUTER JOIN
+                         dbo.CommesseTipo ON dbo.Commesse.CommesseTipo_Ky = dbo.CommesseTipo.CommesseTipo_Ky
+WHERE        (dbo.Attivita.Attivita_Completo = 0) AND (dbo.Commesse.CommesseStato_Ky = 4)
+</SqlScriptCreate>
+</SqlTable>

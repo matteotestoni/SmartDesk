@@ -1,0 +1,153 @@
+﻿select.combo{
+	padding: 2px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	border: 1px solid #cecece;
+	outline: none;
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1) inset, 0 1px 0 rgba(255,255,255,0.2);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.1) inset, 0 1px 0 rgba(255,255,255,0.2);
+	box-shadow: 0 1px 3px rgba(0,0,0,0.1) inset, 0 1px 0 rgba(255,255,255,0.2);
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25 ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+}
+select.combomini{
+  font-size:11px;
+  border: 1px solid #CCCCCC;
+  padding:1px;
+  margin:0;
+}
+select.combomini option{
+  font-size:11px;
+}
+
+input.txt{
+	padding: 2px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	border: 1px solid #cecece;
+	outline: none;
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1) inset, 0 1px 0 rgba(255,255,255,0.2);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.1) inset, 0 1px 0 rgba(255,255,255,0.2);
+	box-shadow: 0 1px 3px rgba(0,0,0,0.1) inset, 0 1px 0 rgba(255,255,255,0.2);
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25 ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+}
+
+input.txt:hover{
+	background:#ffffff;filter:expression("progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfe0e1',endColorstr='#ffffff')");-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfe0e1',endColorstr='#ffffff')";background:-moz-linear-gradient(0% 100% 90deg, #ffffff, #dfe0e1);background:-webkit-gradient(linear, left top, left bottom, from(#dfe0e1), to(#ffffff));background:-o-linear-gradient(0% 100% 90deg, #ffffff, #dfe0e1);
+}
+
+input.txtmini{
+  padding:1px;
+}
+
+input.txtbig{
+  padding:8px;
+  font-size:16px;
+  font-weight:bold;
+}
+
+input.txtbigpassword{
+  padding:4px;
+  font-family: courier new;  
+}
+
+textarea{
+  background-color:#FFF0A0;
+  padding:3px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	border: 1px solid #cecece;
+	outline: none;
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1) inset, 0 1px 0 rgba(255,255,255,0.2);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.1) inset, 0 1px 0 rgba(255,255,255,0.2);
+	box-shadow: 0 1px 3px rgba(0,0,0,0.1) inset, 0 1px 0 rgba(255,255,255,0.2);
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25 ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+}
+input.btnsave{
+  -moz-transition: all 0.218s ease 0s;
+  background-color: #D14836;
+  background-image: -moz-linear-gradient(center top , #DD4B39, #D14836);  border: 1px solid transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2px 2px 2px 2px;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: bold;
+  height: 27px;
+  line-height: 27px;
+  min-width: 54px;
+  outline: medium none;
+  padding: 0 8px;
+  text-align: center;  
+}
+input.btnsave:hover{
+  -moz-transition: all 0s ease 0s;
+  background-color: #D14836;
+  background-image: -moz-linear-gradient(center top , #DD4B39, #D14836);  border: 1px solid transparent;
+  border: 1px solid #C6C6C6;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  z-index: 80;
+}
+
+.LV_validation_message{
+    font-weight:bold;
+    margin:0 0 0 5px;
+}
+
+.LV_valid {
+    color:#00CC00;
+}
+	
+.LV_invalid {
+    color:#CC0000;
+}
+    
+.LV_valid_field,
+input.LV_valid_field:hover, 
+input.LV_valid_field:active,
+textarea.LV_valid_field:hover, 
+textarea.LV_valid_field:active {
+    border: 1px solid #00CC00;
+}
+    
+.LV_invalid_field, 
+input.LV_invalid_field:hover, 
+input.LV_invalid_field:active,
+textarea.LV_invalid_field:hover, 
+textarea.LV_invalid_field:active {
+    border: 1px solid #CC0000 !important;
+}
+table.grid{
+  border-collapse: collapse;
+  border-style: solid;
+  border-width:0;
+  padding:0;
+  margin:5px 5px 0 0;
+  table-layout:fixed;
+}
+td.titolo{
+  font-weight:bolder;
+  background-color: #EEEEEE;
+}
+tr.cliente{
+ border-top: 2px solid #bbbbbb;
+}
+div.caricadocumento{
+  padding:2px;
+  clear:both;
+  border:1px solid #cccccc;
+  margin-top:5px;
+}
+td.lbl{
+  font-weight:bolder;
+  text-align:right;
+  font-size:12px;
+}

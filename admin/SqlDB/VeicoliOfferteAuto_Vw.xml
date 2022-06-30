@@ -1,0 +1,47 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliOfferteAuto_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="VeicoliOfferteAuto_Ky" IsNull="N" Type="int" />
+      <Field Column="VeicoliOfferte_Ky" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_Targa" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Veicoli_Sconto" IsNull="Y" Type="money" />
+      <Field Column="Veicoli_ValoreInOfferta" IsNull="Y" Type="money" />
+      <Field Column="VeicoliMarca_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliMarca_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="VeicoliModello_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="VeicoliModello_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Veicoli_Allestimento" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Veicoli_Valore" IsNull="Y" Type="money" />
+      <Field Column="VeicoliOfferte_Titolo" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="VeicoliOfferte_DataInizio" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliOfferte_DataFine" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliOfferte_Abilitata" IsNull="Y" Type="bit" />
+      <Field Column="Veicoli_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliOfferte_ColoreTesto" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="VeicoliOfferte_ColoreSfondo" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="VeicoliOfferte_Etichetta" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Expr1" IsNull="Y" Type="money" />
+      <Field Column="Veicoli_ValoreTagliato" IsNull="Y" Type="money" />
+      <Field Column="Veicoli_DataPrimaImmatricolazione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Veicoli_ImmatricolazioneMese" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_ImmatricolazioneAnno" IsNull="Y" Type="smallint" />
+      <Field Column="VeicoliOfferte_MostraEtichetta" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.VeicoliOfferteAuto_Vw
+AS
+SELECT        dbo.VeicoliOfferteAuto.VeicoliOfferteAuto_Ky, dbo.VeicoliOfferteAuto.VeicoliOfferte_Ky, dbo.VeicoliOfferteAuto.Veicoli_Targa, dbo.VeicoliOfferteAuto.Veicoli_Sconto, dbo.VeicoliOfferteAuto.Veicoli_ValoreInOfferta, 
+                         dbo.VeicoliMarca.VeicoliMarca_Titolo, dbo.Veicoli.VeicoliMarca_Ky, dbo.Veicoli.VeicoliModello_Ky, dbo.VeicoliModello.VeicoliModello_Titolo, dbo.Veicoli.Veicoli_Allestimento, dbo.Veicoli.Veicoli_Valore, 
+                         dbo.VeicoliOfferte.VeicoliOfferte_Titolo, dbo.VeicoliOfferte.VeicoliOfferte_DataInizio, dbo.VeicoliOfferte.VeicoliOfferte_DataFine, dbo.VeicoliOfferte.VeicoliOfferte_Abilitata, dbo.Veicoli.Veicoli_Ky, 
+                         dbo.VeicoliMarca.VeicoliTipo_Ky, dbo.VeicoliOfferte.VeicoliOfferte_ColoreTesto, dbo.VeicoliOfferte.VeicoliOfferte_ColoreSfondo, dbo.VeicoliOfferte.VeicoliOfferte_Etichetta, 
+                         dbo.VeicoliOfferteAuto.Veicoli_Valore AS Expr1, dbo.VeicoliOfferteAuto.Veicoli_ValoreTagliato, dbo.Veicoli.Veicoli_DataPrimaImmatricolazione, dbo.Veicoli.Veicoli_ImmatricolazioneMese, 
+                         dbo.Veicoli.Veicoli_ImmatricolazioneAnno, dbo.VeicoliOfferte.VeicoliOfferte_MostraEtichetta
+FROM            dbo.VeicoliOfferte INNER JOIN
+                         dbo.VeicoliOfferteAuto ON dbo.VeicoliOfferte.VeicoliOfferte_Ky = dbo.VeicoliOfferteAuto.VeicoliOfferte_Ky LEFT OUTER JOIN
+                         dbo.VeicoliMarca INNER JOIN
+                         dbo.Veicoli ON dbo.VeicoliMarca.VeicoliMarca_Ky = dbo.Veicoli.VeicoliMarca_Ky INNER JOIN
+                         dbo.VeicoliModello ON dbo.Veicoli.VeicoliModello_Ky = dbo.VeicoliModello.VeicoliModello_Ky ON dbo.VeicoliOfferteAuto.Veicoli_Targa = dbo.Veicoli.Veicoli_Targa
+</SqlScriptCreate>
+</SqlTable>

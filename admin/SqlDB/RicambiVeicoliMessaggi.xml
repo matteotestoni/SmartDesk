@@ -1,0 +1,29 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="RicambiVeicoliMessaggi" Type="TABLE">
+    <Keys>
+      <Key Column="RicambiVeicoliMessaggi_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="RicambiVeicoliMessaggi_Ky" IsNull="N" Type="int" />
+      <Field Column="Utenti_InsertDt" IsNull="Y" Type="datetime" />
+      <Field Column="Utenti_VenditoreKy" IsNull="Y" Type="int" />
+      <Field Column="Utenti_AcquirenteKy" IsNull="Y" Type="int" />
+      <Field Column="RicambiVeicoliMessaggi_EmailVenditore" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="RicambiVeicoliMessaggi_EmailAcquirente" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="RicambiVeicoliMessaggi_Messaggio" IsNull="Y" Type="varchar" Lenght="4000" />
+      <Field Column="RicambiVeicoliRichieste_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[RicambiVeicoliMessaggi] (
+  [RicambiVeicoliMessaggi_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Utenti_InsertDt] datetime  NULL , 
+  [Utenti_VenditoreKy] int  NULL , 
+  [Utenti_AcquirenteKy] int  NULL , 
+  [RicambiVeicoliMessaggi_EmailVenditore] varchar(200)  NULL , 
+  [RicambiVeicoliMessaggi_EmailAcquirente] varchar(200)  NULL , 
+  [RicambiVeicoliMessaggi_Messaggio] varchar(4000)  NULL , 
+  [RicambiVeicoliRichieste_Ky] int  NULL  )
+ALTER TABLE [dbo].[RicambiVeicoliMessaggi] ADD CONSTRAINT PK_RicambiVeicoliMessaggi PRIMARY KEY  ([RicambiVeicoliMessaggi_Ky])
+</SqlScriptCreate>
+</SqlTable>

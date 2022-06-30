@@ -1,0 +1,86 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnagraficheServizi_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="chiave" IsNull="Y" Type="bigint" />
+      <Field Column="Servizi_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Servizi_Codice" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Servizi_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_SitoWeb" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_Note" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Anagrafiche_Comune" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Anagrafiche_Provincia" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Anagrafiche_Telefono" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_EmailAmministrazione" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_EmailContatti" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnagraficheServizi_Qta" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheServizi_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="AnagraficheServizi_Importo" IsNull="Y" Type="decimal" Lenght="10" Decimal="2" />
+      <Field Column="AnagraficheServizi_Prezzo" IsNull="Y" Type="decimal" Lenght="10" Decimal="2" />
+      <Field Column="AnagraficheServizi_Inizio" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheServizi_Inizio_IT" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="AnagraficheServizi_Termine" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheServizi_Termine_IT" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="AnagraficheServizi_Scadenza" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheServizi_Scadenza_IT" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="AnagraficheServizi_Ky" IsNull="N" Type="int" />
+      <Field Column="AnagraficheServizi_Rinnovo" IsNull="Y" Type="tinyint" />
+      <Field Column="Servizi_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheServizi_MeseScadenza" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheServizi_AnnoScadenza" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_Disdetto" IsNull="Y" Type="bit" />
+      <Field Column="AnagraficheTipo_Descrizione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="AttributiGruppi_Ky" IsNull="Y" Type="int" />
+      <Field Column="SitiWeb_Dominio" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnagraficheServizi_Chiuso" IsNull="Y" Type="bit" />
+      <Field Column="AnagraficheServizi_DataChiusura" IsNull="Y" Type="datetime" />
+      <Field Column="Commesse_Ky" IsNull="Y" Type="int" />
+      <Field Column="Commesse_Riferimenti" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AnagraficheServizi_DataChiusura_IT" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="ggTrascorsi" IsNull="Y" Type="int" />
+      <Field Column="AttributiGruppi_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Servizi_MaxAnnunci" IsNull="Y" Type="int" />
+      <Field Column="attr-posizionamento" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="attr-numeroemail" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="attr-posizionamentozone" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+
+
+
+
+CREATE VIEW [dbo].[AnagraficheServizi_Vw]
+AS
+SELECT          ROW_NUMBER() OVER (ORDER BY Servizi.Servizi_Ky) AS chiave, dbo.Servizi.Servizi_Titolo, dbo.Servizi.Servizi_Codice, dbo.Servizi.Servizi_Descrizione, dbo.Anagrafiche.Anagrafiche_RagioneSociale, dbo.Anagrafiche.Anagrafiche_SitoWeb, 
+                         dbo.Anagrafiche.Anagrafiche_Note, dbo.Anagrafiche.Anagrafiche_Comune, dbo.Anagrafiche.Anagrafiche_Provincia, dbo.Anagrafiche.Anagrafiche_Telefono, 
+                         dbo.Anagrafiche.Anagrafiche_EmailAmministrazione, dbo.Anagrafiche.Anagrafiche_EmailContatti, dbo.AnagraficheServizi.AnagraficheServizi_Qta, 
+                         dbo.AnagraficheServizi.AnagraficheServizi_Descrizione, CONVERT(DECIMAL(10, 2), dbo.AnagraficheServizi.AnagraficheServizi_Importo) 
+                         AS AnagraficheServizi_Importo, CONVERT(DECIMAL(10, 2), dbo.AnagraficheServizi.AnagraficheServizi_Prezzo) AS AnagraficheServizi_Prezzo, 
+                         dbo.AnagraficheServizi.AnagraficheServizi_Inizio, 
+						 CONVERT(varchar, dbo.AnagraficheServizi.AnagraficheServizi_Inizio, 105) AS AnagraficheServizi_Inizio_IT, 
+                         dbo.AnagraficheServizi.AnagraficheServizi_Termine, 
+						 CONVERT(varchar, dbo.AnagraficheServizi.AnagraficheServizi_Termine, 105) AS AnagraficheServizi_Termine_IT, 
+                         dbo.AnagraficheServizi.AnagraficheServizi_Scadenza, 
+						 CONVERT(varchar, dbo.AnagraficheServizi.AnagraficheServizi_Scadenza, 105) AS AnagraficheServizi_Scadenza_IT, 
+                         dbo.AnagraficheServizi.AnagraficheServizi_Ky, dbo.AnagraficheServizi.AnagraficheServizi_Rinnovo, 
+                         dbo.AnagraficheServizi.Servizi_Ky, dbo.AnagraficheServizi.Anagrafiche_Ky, 
+						 Month(AnagraficheServizi_Scadenza) as AnagraficheServizi_MeseScadenza, 
+                         Year(AnagraficheServizi_Scadenza) as AnagraficheServizi_AnnoScadenza, 
+						 dbo.Anagrafiche.Anagrafiche_Disdetto, dbo.AnagraficheTipo.AnagraficheTipo_Descrizione, 
+                         dbo.AnagraficheServizi.AttributiGruppi_Ky, dbo.AnagraficheServizi.SitiWeb_Dominio, dbo.AnagraficheServizi.AnagraficheServizi_Chiuso, 
+                         dbo.AnagraficheServizi.AnagraficheServizi_DataChiusura, dbo.AnagraficheServizi.Commesse_Ky, 
+                         dbo.Commesse.Commesse_Riferimenti,
+						 CONVERT(varchar, dbo.AnagraficheServizi.AnagraficheServizi_DataChiusura, 
+                         105) AS AnagraficheServizi_DataChiusura_IT, DATEDIFF(day, dbo.AnagraficheServizi.AnagraficheServizi_Scadenza, GETDATE()) AS ggTrascorsi, 
+                         dbo.AttributiGruppi.AttributiGruppi_Titolo, Servizi_MaxAnnunci, dbo.AnagraficheServizi.[attr-posizionamento], dbo.AnagraficheServizi.[attr-numeroemail], dbo.AnagraficheServizi.[attr-posizionamentozone]
+FROM            dbo.AnagraficheServizi INNER JOIN
+                         dbo.Anagrafiche ON dbo.AnagraficheServizi.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky INNER JOIN
+                         dbo.Servizi ON dbo.AnagraficheServizi.Servizi_Ky = dbo.Servizi.Servizi_Ky LEFT OUTER JOIN
+                         dbo.AttributiGruppi ON dbo.AnagraficheServizi.AttributiGruppi_Ky = dbo.AttributiGruppi.AttributiGruppi_Ky LEFT OUTER JOIN
+                         dbo.AnagraficheTipo ON dbo.Anagrafiche.AnagraficheTipo_Ky = dbo.AnagraficheTipo.AnagraficheTipo_Ky LEFT OUTER JOIN
+                         dbo.Commesse ON dbo.Commesse.Commesse_Ky = dbo.AnagraficheServizi.Commesse_Ky
+</SqlScriptCreate>
+</SqlTable>

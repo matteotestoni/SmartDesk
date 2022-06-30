@@ -1,0 +1,85 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="SitiWeb" Type="TABLE">
+    <Keys>
+      <Key Column="SitiWeb_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="SitiWeb_Ky" IsNull="N" Type="int" />
+      <Field Column="SitiWeb_Url" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="SitiWeb_IP" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="SitiWeb_IPCountry" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="SitiWeb_Dominio" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="SitiWeb_Tipo" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="SitiWeb_Versione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="SitiWeb_VersioneData" IsNull="Y" Type="smalldatetime" />
+      <Field Column="SitiWeb_PageSpeedData" IsNull="Y" Type="smalldatetime" />
+      <Field Column="SitiWeb_PageSpeedScore" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="SitiWeb_BackLink" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="SitiWeb_BackLinkData" IsNull="Y" Type="smalldatetime" />
+      <Field Column="SitiWeb_Redirect" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="SitiWeb_SEO" IsNull="Y" Type="bit" />
+      <Field Column="Providers_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="SitiWeb_Note" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="SitiWeb_ReportAnalytics" IsNull="Y" Type="smallint" />
+      <Field Column="SitiWeb_DataScadenzaReportAnalytics" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="SitiWeb_PeriodoVisite" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="SitiWeb_Visite" IsNull="Y" Type="int" />
+      <Field Column="SitiWeb_DataWorker" IsNull="Y" Type="smalldatetime" />
+      <Field Column="SitiWeb_path" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="SitiWebTipo_Ky" IsNull="Y" Type="int" />
+      <Field Column="SitiWeb_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="SitiWeb_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="SitiWeb_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="SitiWeb_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="SitiWeb_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="SitiWeb_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="SitiWeb_GooglePageRank" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="SitiWeb_GooglePageRankStatus" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="SitiWeb_GooglePageRankData" IsNull="Y" Type="smalldatetime" />
+      <Field Column="SitiWeb_GooglePageRankIcon" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="SitiWeb_PageSpeedScoreMobile" IsNull="Y" Type="varchar" Lenght="50" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[SitiWeb] (
+  [SitiWeb_Ky] int IDENTITY(1,1) NOT NULL , 
+  [SitiWeb_Url] varchar(200)  NULL , 
+  [SitiWeb_IP] varchar(20)  NULL , 
+  [SitiWeb_IPCountry] varchar(10)  NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [SitiWeb_Dominio] varchar(200)  NULL , 
+  [SitiWeb_Tipo] varchar(50)  NULL , 
+  [SitiWeb_Versione] varchar(50)  NULL , 
+  [SitiWeb_VersioneData] smalldatetime  NULL , 
+  [SitiWeb_PageSpeedData] smalldatetime  NULL , 
+  [SitiWeb_PageSpeedScore] varchar(50)  NULL , 
+  [SitiWeb_BackLink] varchar(10)  NULL , 
+  [SitiWeb_BackLinkData] smalldatetime  NULL , 
+  [SitiWeb_Redirect] varchar(200)  NULL , 
+  [SitiWeb_SEO] bit  NULL , 
+  [Providers_Ky] smallint  NULL , 
+  [SitiWeb_Note] varchar(MAX)  NULL , 
+  [SitiWeb_ReportAnalytics] smallint  NULL , 
+  [SitiWeb_DataScadenzaReportAnalytics] smalldatetime  NULL , 
+  [Utenti_Ky] int  NULL , 
+  [SitiWeb_PeriodoVisite] varchar(50)  NULL , 
+  [SitiWeb_Visite] int  NULL , 
+  [SitiWeb_DataWorker] smalldatetime  NULL , 
+  [SitiWeb_path] varchar(500)  NULL , 
+  [SitiWebTipo_Ky] int  NULL , 
+  [SitiWeb_UserInsert] int  NULL , 
+  [SitiWeb_UserUpdate] int  NULL , 
+  [SitiWeb_UserDelete] int  NULL , 
+  [SitiWeb_DateInsert] datetime  NULL , 
+  [SitiWeb_DateUpdate] datetime  NULL , 
+  [SitiWeb_DateDelete] datetime  NULL , 
+  [SitiWeb_GooglePageRank] varchar(10)  NULL , 
+  [SitiWeb_GooglePageRankStatus] varchar(10)  NULL , 
+  [SitiWeb_GooglePageRankData] smalldatetime  NULL , 
+  [SitiWeb_GooglePageRankIcon] varchar(10)  NULL , 
+  [SitiWeb_PageSpeedScoreMobile] varchar(50)  NULL  )
+ALTER TABLE [dbo].[SitiWeb] ADD CONSTRAINT PK_SitiWeb PRIMARY KEY  ([SitiWeb_Ky])
+</SqlScriptCreate>
+</SqlTable>

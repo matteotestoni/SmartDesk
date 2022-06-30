@@ -1,0 +1,31 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="FormsAvanzamento_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="FormsAvanzamento_Ky" IsNull="N" Type="int" />
+      <Field Column="Forms_Ky" IsNull="Y" Type="int" />
+      <Field Column="FormsAvanzamento_Data" IsNull="Y" Type="smalldatetime" />
+      <Field Column="FormsAvanzamento_Stato" IsNull="Y" Type="int" />
+      <Field Column="FormsAvanzamento_Descrizione" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Forms_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Forms_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Forms_Data" IsNull="Y" Type="datetime" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="FormsAvanzamento_Data_IT" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+
+CREATE VIEW [dbo].[FormsAvanzamento_Vw]
+AS
+SELECT        dbo.FormsAvanzamento.FormsAvanzamento_Ky, dbo.FormsAvanzamento.Forms_Ky, dbo.FormsAvanzamento.FormsAvanzamento_Data, 
+                         dbo.FormsAvanzamento.FormsAvanzamento_Stato, dbo.FormsAvanzamento.FormsAvanzamento_Descrizione, dbo.Forms.Forms_Descrizione, 
+                         dbo.Forms.Forms_Titolo, dbo.Forms.Forms_Data, dbo.FormsAvanzamento.Anagrafiche_Ky, CONVERT(varchar, 
+                         dbo.FormsAvanzamento.FormsAvanzamento_Data, 105) AS FormsAvanzamento_Data_IT, dbo.Anagrafiche.Anagrafiche_RagioneSociale
+FROM            dbo.FormsAvanzamento INNER JOIN
+                         dbo.Forms ON dbo.FormsAvanzamento.Forms_Ky = dbo.Forms.Forms_Ky INNER JOIN
+                         dbo.Anagrafiche ON dbo.FormsAvanzamento.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky
+
+</SqlScriptCreate>
+</SqlTable>

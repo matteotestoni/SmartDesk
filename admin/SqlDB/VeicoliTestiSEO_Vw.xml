@@ -1,0 +1,59 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliTestiSEO_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="VeicoliTestiSEO_Ky" IsNull="N" Type="int" />
+      <Field Column="VeicoliMarca_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="VeicoliModello_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="VeicoliCategoria_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliTestiSEO_Title" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="VeicoliTestiSEO_Description" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="VeicoliTestiSEO_Keywords" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="VeicoliTestiSEO_Titolo" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="VeicoliTestiSEO_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="VeicoliCarburante_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliCarrozzeria_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Comuni_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliCambio_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliMarca_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliModello_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliCategoria_Descrizione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="VeicoliTestiSEO_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="VeicoliTestiSEO_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="VeicoliTestiSEO_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="VeicoliTestiSEO_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliTestiSEO_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliTestiSEO_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliTestiSEO_Neopatentati" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliTestiSEO_Topcar" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliTestiSEO_Ecologiche" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliCarrozzeria_Descrizione" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="VeicoliCambio_Descrizione" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="VeicoliCarburante_Descrizione" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="VeicoliTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Lingue_Codice" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Lingue_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.VeicoliTestiSEO_Vw
+AS
+SELECT        dbo.VeicoliTestiSEO.VeicoliTestiSEO_Ky, dbo.VeicoliTestiSEO.VeicoliMarca_Ky, dbo.VeicoliTestiSEO.VeicoliModello_Ky, dbo.VeicoliTestiSEO.VeicoliCategoria_Ky, dbo.VeicoliTestiSEO.VeicoliTestiSEO_Title, 
+                         dbo.VeicoliTestiSEO.VeicoliTestiSEO_Description, dbo.VeicoliTestiSEO.VeicoliTestiSEO_Keywords, dbo.VeicoliTestiSEO.VeicoliTestiSEO_Titolo, dbo.VeicoliTestiSEO.VeicoliTestiSEO_Descrizione, 
+                         dbo.VeicoliTestiSEO.VeicoliCarburante_Ky, dbo.VeicoliTestiSEO.VeicoliCarrozzeria_Ky, dbo.VeicoliTestiSEO.Comuni_Ky, dbo.VeicoliTestiSEO.VeicoliCambio_Ky, dbo.VeicoliMarca.VeicoliMarca_Titolo, 
+                         dbo.VeicoliModello.VeicoliModello_Titolo, dbo.VeicoliCategoria.VeicoliCategoria_Descrizione, dbo.VeicoliTestiSEO.VeicoliTestiSEO_UserInsert, dbo.VeicoliTestiSEO.VeicoliTestiSEO_UserUpdate, 
+                         dbo.VeicoliTestiSEO.VeicoliTestiSEO_UserDelete, dbo.VeicoliTestiSEO.VeicoliTestiSEO_DateUpdate, dbo.VeicoliTestiSEO.VeicoliTestiSEO_DateInsert, dbo.VeicoliTestiSEO.VeicoliTestiSEO_DateDelete, 
+                         dbo.VeicoliTestiSEO.VeicoliTestiSEO_Neopatentati, dbo.VeicoliTestiSEO.VeicoliTestiSEO_Topcar, dbo.VeicoliTestiSEO.VeicoliTestiSEO_Ecologiche, dbo.VeicoliCarrozzeria.VeicoliCarrozzeria_Descrizione, 
+                         dbo.VeicoliCambio.VeicoliCambio_Descrizione, dbo.VeicoliCarburante.VeicoliCarburante_Descrizione, dbo.VeicoliTestiSEO.VeicoliTipo_Ky, dbo.VeicoliTestiSEO.Lingue_Ky, dbo.Lingue.Lingue_Codice, 
+                         dbo.Lingue.Lingue_Titolo
+FROM            dbo.VeicoliTestiSEO LEFT OUTER JOIN
+                         dbo.Lingue ON dbo.VeicoliTestiSEO.Lingue_Ky = dbo.Lingue.Lingue_Ky LEFT OUTER JOIN
+                         dbo.VeicoliTipo ON dbo.VeicoliTestiSEO.VeicoliTipo_Ky = dbo.VeicoliTipo.VeicoliTipo_Ky LEFT OUTER JOIN
+                         dbo.VeicoliMarca ON dbo.VeicoliTestiSEO.VeicoliMarca_Ky = dbo.VeicoliMarca.VeicoliMarca_Ky LEFT OUTER JOIN
+                         dbo.VeicoliCarburante ON dbo.VeicoliTestiSEO.VeicoliCarburante_Ky = dbo.VeicoliCarburante.VeicoliCarburante_Ky LEFT OUTER JOIN
+                         dbo.VeicoliCambio ON dbo.VeicoliTestiSEO.VeicoliCambio_Ky = dbo.VeicoliCambio.VeicoliCambio_Ky LEFT OUTER JOIN
+                         dbo.VeicoliCarrozzeria ON dbo.VeicoliTestiSEO.VeicoliCarrozzeria_Ky = dbo.VeicoliCarrozzeria.VeicoliCarrozzeria_Ky LEFT OUTER JOIN
+                         dbo.VeicoliModello ON dbo.VeicoliTestiSEO.VeicoliModello_Ky = dbo.VeicoliModello.VeicoliModello_Ky LEFT OUTER JOIN
+                         dbo.VeicoliCategoria ON dbo.VeicoliTestiSEO.VeicoliCategoria_Ky = dbo.VeicoliCategoria.VeicoliCategoria_Ky
+</SqlScriptCreate>
+</SqlTable>

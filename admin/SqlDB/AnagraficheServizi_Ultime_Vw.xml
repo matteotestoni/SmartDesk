@@ -1,0 +1,36 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnagraficheServizi_Ultime_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Servizi_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_Comune" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Anagrafiche_Provincia" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Anagrafiche_Telefono" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_EmailAmministrazione" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_EmailContatti" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnagraficheServizi_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="AnagraficheServizi_Importo" IsNull="Y" Type="decimal" Lenght="10" Decimal="2" />
+      <Field Column="AnagraficheServizi_Scadenza" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheServizi_Ky" IsNull="N" Type="int" />
+      <Field Column="Servizi_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheServizi_MeseScadenza" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheServizi_AnnoScadenza" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_Disdetto" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.AnagraficheServizi_Ultime_Vw
+AS
+SELECT     dbo.AnagraficheServizi_Vw.Servizi_Descrizione, dbo.AnagraficheServizi_Vw.Anagrafiche_RagioneSociale, 
+                      dbo.AnagraficheServizi_Vw.Anagrafiche_Comune, dbo.AnagraficheServizi_Vw.Anagrafiche_Provincia, 
+                      dbo.AnagraficheServizi_Vw.Anagrafiche_Telefono, dbo.AnagraficheServizi_Vw.Anagrafiche_EmailAmministrazione, 
+                      dbo.AnagraficheServizi_Vw.Anagrafiche_EmailContatti, dbo.AnagraficheServizi_Vw.AnagraficheServizi_Descrizione, 
+                      dbo.AnagraficheServizi_Vw.AnagraficheServizi_Importo, dbo.AnagraficheServizi_Vw.AnagraficheServizi_Scadenza, 
+                      dbo.AnagraficheServizi_Vw.AnagraficheServizi_Ky, dbo.AnagraficheServizi_Vw.Servizi_Ky, dbo.AnagraficheServizi_Vw.Anagrafiche_Ky, 
+                      dbo.AnagraficheServizi_Vw.AnagraficheServizi_MeseScadenza, dbo.AnagraficheServizi_Vw.AnagraficheServizi_AnnoScadenza, 
+                      dbo.AnagraficheServizi_Vw.Anagrafiche_Disdetto
+FROM         dbo.AnagraficheServizi_Vw INNER JOIN
+                      dbo.Anagrafiche_Ultime_Vw ON dbo.AnagraficheServizi_Vw.Anagrafiche_Ky = dbo.Anagrafiche_Ultime_Vw.Anagrafiche_Ky
+</SqlScriptCreate>
+</SqlTable>

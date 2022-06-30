@@ -1,0 +1,41 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Divise" Type="TABLE">
+    <Keys>
+      <Key Column="Divise_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Divise_Ky" IsNull="N" Type="int" />
+      <Field Column="Divise_Codice" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="Divise_Descrizione" IsNull="Y" Type="nvarchar" Lenght="50" />
+      <Field Column="Divise_Simbolo" IsNull="Y" Type="nvarchar" Lenght="50" />
+      <Field Column="Divise_Decimali" IsNull="Y" Type="tinyint" />
+      <Field Column="Divise_Cambio" IsNull="Y" Type="money" />
+      <Field Column="Divise_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Divise_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Divise_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Divise_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Divise_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Divise_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Divise_Ordine" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Divise] (
+  [Divise_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Divise_Codice] varchar(10)  NULL , 
+  [Divise_Descrizione] nvarchar(50)  NULL , 
+  [Divise_Simbolo] nvarchar(50)  NULL , 
+  [Divise_Decimali] tinyint  NULL , 
+  [Divise_Cambio] money  NULL , 
+  [Divise_UserInsert] int  NULL , 
+  [Divise_UserUpdate] int  NULL , 
+  [Divise_UserDelete] int  NULL , 
+  [Divise_DateInsert] datetime  NULL , 
+  [Divise_DateUpdate] datetime  NULL , 
+  [Divise_DateDelete] datetime  NULL , 
+  [Lingue_Ky] tinyint  NULL , 
+  [Divise_Ordine] int  NULL  )
+ALTER TABLE [dbo].[Divise] ADD CONSTRAINT PK_BDivise PRIMARY KEY  ([Divise_Ky])
+</SqlScriptCreate>
+</SqlTable>

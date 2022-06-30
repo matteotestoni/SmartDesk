@@ -1,0 +1,29 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="StatisticheTipo" Type="TABLE">
+    <Keys>
+      <Key Column="StatisticheTipo_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="StatisticheTipo_Ky" IsNull="N" Type="int" />
+      <Field Column="StatisticheTipo_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="StatisticheTipo_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="StatisticheTipo_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="StatisticheTipo_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="StatisticheTipo_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="StatisticheTipo_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="StatisticheTipo_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[StatisticheTipo] (
+  [StatisticheTipo_Ky] int IDENTITY(1,1) NOT NULL , 
+  [StatisticheTipo_Descrizione] varchar(100)  NULL , 
+  [StatisticheTipo_UserInsert] int  NULL , 
+  [StatisticheTipo_UserUpdate] int  NULL , 
+  [StatisticheTipo_UserDelete] int  NULL , 
+  [StatisticheTipo_DateInsert] datetime  NULL , 
+  [StatisticheTipo_DateUpdate] datetime  NULL , 
+  [StatisticheTipo_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[StatisticheTipo] ADD CONSTRAINT PK_StatisticheTipo PRIMARY KEY  ([StatisticheTipo_Ky])
+</SqlScriptCreate>
+</SqlTable>

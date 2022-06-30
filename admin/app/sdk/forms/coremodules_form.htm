@@ -1,0 +1,83 @@
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="CoreModules_Code" class="large-text-right small-text-left middle">Codice <i class="fa-duotone fa-tag fa-fw"></i></label>
+	</div>
+	<div class="large-2 medium-2 small-8 cell">
+    <input type="text" name="CoreModules_Code" id="CoreModules_Code" value="<%=GetFieldValue(dtCoreModules, "CoreModules_Code")%>" size="100" required="required" />
+    <span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="CoreModules_Title" class="large-text-right small-text-left middle">Titolo</label>
+	</div>
+	<div class="large-2 medium-2 small-8 cell">
+    <input type="text" name="CoreModules_Title" id="CoreModules_Title" value="<%=GetFieldValue(dtCoreModules, "CoreModules_Title")%>" size="100" required="required" />
+    <span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="CoreModules_Version" class="large-text-right small-text-left middle">Versione</label>
+	</div>
+	<div class="large-2 medium-2 small-8 cell">
+    <input type="text" name="CoreModules_Version" id="CoreModules_Version" value="<%=GetFieldValue(dtCoreModules, "CoreModules_Version")%>" size="100" required="required" />
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="CoreModules_AdminMenuTitle" class="large-text-right small-text-left middle">Titolo men&ugrave;</label>
+	</div>
+	<div class="large-2 medium-2 small-8 cell">
+    <input type="text" name="CoreModules_AdminMenuTitle" id="CoreModules_AdminMenuTitle" value="<%=GetFieldValue(dtCoreModules, "CoreModules_AdminMenuTitle")%>" size="100" required="required" />
+    <span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="CoreModules_LabelSingular" class="large-text-right small-text-left middle">Etichetta singolare</label>
+	</div>
+	<div class="large-2 medium-2 small-8 cell">
+    <input type="text" name="CoreModules_LabelSingular" id="CoreModules_LabelSingular" value="<%=GetFieldValue(dtCoreModules, "CoreModules_LabelSingular")%>" size="100" required="required" />
+    <span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="CoreModules_LabelPlural" class="large-text-right small-text-left middle">Etichetta plurale</label>
+	</div>
+	<div class="large-2 medium-2 small-8 cell">
+    <input type="text" name="CoreModules_LabelPlural" id="CoreModules_LabelPlural" value="<%=GetFieldValue(dtCoreModules, "CoreModules_LabelPlural")%>" size="100" required="required" />
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="CoreModules_Order" class="large-text-right small-text-left middle">Ordine</label>
+	</div>
+	<div class="large-2 medium-2 small-8 cell">
+    <input type="text" name="CoreModules_Order" id="CoreModules_Order" value="<%=GetFieldValue(dtCoreModules, "CoreModules_Order")%>" size="100" required="required" />
+    <span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="CoreModules_Icon" class="large-text-right small-text-left middle">Icona FontAwesome</label>
+	</div>
+	<div class="large-2 medium-2 small-8 cell">
+    <input type="text" name="CoreModules_Icon" id="CoreModules_Icon" value="<%=GetFieldValue(dtCoreModules, "CoreModules_Icon")%>" size="100" required="required" />
+    <span class="form-error">Obbligatorio</span>
+	</div>
+  <div class="large-2 medium-2 small-4 cell">
+		<label for="CoreModules_Active" class="large-text-right small-text-left middle">Attivo</label>
+	</div>
+  <div class="large-2 medium-2 small-8 cell">
+		<div class="switch tiny">                                         
+    	<input class="switch-input" type="checkbox" name="CoreModules_Active" id="CoreModules_Active" value="on" <% if (GetCheckValue(dtCoreModules,"CoreModules_Active")){ Response.Write("checked");} %> />
+			<label class="switch-paddle" for="CoreModules_Active">
+				<span class="show-for-sr">Attivo</span>
+				<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+				<span class="switch-inactive" aria-hidden="true"></span>
+			</label>
+		</div>                                            
+	</div>
+</div>
+
+
+
+
+
+

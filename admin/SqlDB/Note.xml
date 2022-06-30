@@ -1,0 +1,51 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Note" Type="TABLE">
+    <Keys>
+      <Key Column="Note_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Note_Ky" IsNull="N" Type="int" />
+      <Field Column="Note_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Note_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Note_Data" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Priorita_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Attivita_Ky" IsNull="Y" Type="int" />
+      <Field Column="Commesse_Ky" IsNull="Y" Type="int" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Note_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Note_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Note_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Note_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Note_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Note_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="NoteCategorie_Ky" IsNull="Y" Type="int" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Documenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Note_Tags" IsNull="Y" Type="varchar" Lenght="200" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Note] (
+  [Note_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Note_Titolo] varchar(200)  NULL , 
+  [Note_Descrizione] varchar(MAX)  NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [Note_Data] smalldatetime  NULL , 
+  [Priorita_Ky] tinyint  NULL , 
+  [Attivita_Ky] int  NULL , 
+  [Commesse_Ky] int  NULL , 
+  [Utenti_Ky] int  NULL , 
+  [Note_UserInsert] int  NULL , 
+  [Note_UserUpdate] int  NULL , 
+  [Note_UserDelete] int  NULL , 
+  [Note_DateInsert] datetime  NULL , 
+  [Note_DateUpdate] datetime  NULL , 
+  [Note_DateDelete] datetime  NULL , 
+  [NoteCategorie_Ky] int  NULL , 
+  [Lingue_Ky] tinyint  NULL , 
+  [Documenti_Ky] int  NULL , 
+  [Note_Tags] varchar(200)  NULL  )
+ALTER TABLE [dbo].[Note] ADD CONSTRAINT PK_Note PRIMARY KEY  ([Note_Ky])
+</SqlScriptCreate>
+</SqlTable>

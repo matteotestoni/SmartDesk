@@ -1,0 +1,31 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CoreMenus" Type="TABLE">
+    <Keys>
+      <Key Column="CoreMenus_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CoreMenus_Ky" IsNull="N" Type="int" />
+      <Field Column="CoreMenus_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreMenus_Order" IsNull="Y" Type="int" />
+      <Field Column="CoreMenus_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CoreMenus_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CoreMenus_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CoreMenus_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CoreMenus_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CoreMenus_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CoreMenus] (
+  [CoreMenus_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CoreMenus_Title] varchar(200)  NULL , 
+  [CoreMenus_Order] int  NULL , 
+  [CoreMenus_UserInsert] int  NULL , 
+  [CoreMenus_UserUpdate] int  NULL , 
+  [CoreMenus_UserDelete] int  NULL , 
+  [CoreMenus_DateInsert] datetime  NULL , 
+  [CoreMenus_DateUpdate] datetime  NULL , 
+  [CoreMenus_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[CoreMenus] ADD CONSTRAINT PK_CoreMenus PRIMARY KEY  ([CoreMenus_Ky])
+</SqlScriptCreate>
+</SqlTable>

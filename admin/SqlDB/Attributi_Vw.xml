@@ -1,0 +1,50 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Attributi_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Attributi_Ky" IsNull="N" Type="int" />
+      <Field Column="Attributi_Codice" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Attributi_Titolo" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="AttributiTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Attributi_Obbligatorio" IsNull="Y" Type="bit" />
+      <Field Column="Attributi_ClasseCSS" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="AttributiTipo_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AttributiTipo_Codice" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Attributi_ValoreDefault" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Attributi_Validazione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Attributi_InRicerca" IsNull="Y" Type="bit" />
+      <Field Column="Attributi_InFiltri" IsNull="Y" Type="bit" />
+      <Field Column="Attributi_InComparazione" IsNull="Y" Type="bit" />
+      <Field Column="Attributi_Visibile" IsNull="Y" Type="bit" />
+      <Field Column="Attributi_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Attributi_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Attributi_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Attributi_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Attributi_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Attributi_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Attributi_Annunci" IsNull="Y" Type="bit" />
+      <Field Column="Attributi_Documenti" IsNull="Y" Type="bit" />
+      <Field Column="Attributi_Anagrafiche" IsNull="Y" Type="bit" />
+      <Field Column="Attributi_Prodotti" IsNull="Y" Type="bit" />
+      <Field Column="Attributi_Commesse" IsNull="Y" Type="bit" />
+      <Field Column="Attributi_Attivita" IsNull="Y" Type="bit" />
+      <Field Column="Attributi_Opportunita" IsNull="Y" Type="bit" />
+      <Field Column="Attributi_Servizi" IsNull="Y" Type="bit" />
+      <Field Column="Attributi_Ordine" IsNull="Y" Type="int" />
+      <Field Column="Attributi_HelpText" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Attributi_Icona" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AttributiTipo_Icona" IsNull="Y" Type="varchar" Lenght="100" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Attributi_Vw
+AS
+SELECT        dbo.Attributi.Attributi_Ky, dbo.Attributi.Attributi_Codice, dbo.Attributi.Attributi_Titolo, dbo.Attributi.AttributiTipo_Ky, dbo.Attributi.Attributi_Obbligatorio, dbo.Attributi.Attributi_ClasseCSS, 
+                         dbo.AttributiTipo.AttributiTipo_Titolo, dbo.AttributiTipo.AttributiTipo_Codice, dbo.Attributi.Attributi_ValoreDefault, dbo.Attributi.Attributi_Validazione, dbo.Attributi.Attributi_InRicerca, dbo.Attributi.Attributi_InFiltri, 
+                         dbo.Attributi.Attributi_InComparazione, dbo.Attributi.Attributi_Visibile, dbo.Attributi.Attributi_UserInsert, dbo.Attributi.Attributi_UserUpdate, dbo.Attributi.Attributi_UserDelete, dbo.Attributi.Attributi_DateInsert, 
+                         dbo.Attributi.Attributi_DateUpdate, dbo.Attributi.Attributi_DateDelete, dbo.Attributi.Attributi_Annunci, dbo.Attributi.Attributi_Documenti, dbo.Attributi.Attributi_Anagrafiche, dbo.Attributi.Attributi_Prodotti, 
+                         dbo.Attributi.Attributi_Commesse, dbo.Attributi.Attributi_Attivita, dbo.Attributi.Attributi_Opportunita, dbo.Attributi.Attributi_Servizi, dbo.Attributi.Attributi_Ordine, dbo.Attributi.Attributi_HelpText, 
+                         dbo.Attributi.Attributi_Icona, dbo.AttributiTipo.AttributiTipo_Icona
+FROM            dbo.Attributi INNER JOIN
+                         dbo.AttributiTipo ON dbo.Attributi.AttributiTipo_Ky = dbo.AttributiTipo.AttributiTipo_Ky
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,11 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliEquipaggiamenti" Type="TABLE">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="VeicoliEquipaggiamenti_Ky" IsNull="N" Type="int" />
+      <Field Column="Veicoli_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliEquipaggiamenti_Equipaggiamento" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="VeicoliEquipaggiamenti_Tipo" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+</SqlTable>

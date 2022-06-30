@@ -1,0 +1,40 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CMSLink_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="CMSLink_Ky" IsNull="N" Type="int" />
+      <Field Column="CMSLink_Link" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSLink_Descrizione" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Province_Ky" IsNull="Y" Type="int" />
+      <Field Column="Comuni_Ky" IsNull="Y" Type="int" />
+      <Field Column="CMSLink_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSLink_Data" IsNull="Y" Type="smalldatetime" />
+      <Field Column="CMSLink_Data_IT" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="CMSLink_Data_EN" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="CMSLink_Destinazione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Utenti_Email" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Utenti_Iniziali" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="CMSCategorie_Descrizione" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSCategorie_UrlKey" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="CMSCategorie_Ky" IsNull="Y" Type="int" />
+      <Field Column="CMSLink_Tags" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Lingue_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Lingue_Codice" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Utenti_Nominativo" IsNull="Y" Type="varchar" Lenght="255" />
+      <Field Column="UtentiGruppi_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.CMSLink_Vw
+AS
+SELECT        dbo.CMSLink.CMSLink_Ky, dbo.CMSLink.CMSLink_Link, dbo.CMSLink.CMSLink_Descrizione, dbo.CMSLink.Province_Ky, dbo.CMSLink.Comuni_Ky, dbo.CMSLink.CMSLink_Title, dbo.CMSLink.CMSLink_Data, 
+                         CONVERT(varchar, dbo.CMSLink.CMSLink_Data, 105) AS CMSLink_Data_IT, CONVERT(varchar, dbo.CMSLink.CMSLink_Data, 101) AS CMSLink_Data_EN, dbo.CMSLink.CMSLink_Destinazione, 
+                         dbo.CMSLink.Utenti_Ky, dbo.Utenti.Utenti_Email, dbo.Utenti.Utenti_Iniziali, dbo.CMSCategorie.CMSCategorie_Descrizione, dbo.CMSCategorie.CMSCategorie_UrlKey, dbo.CMSLink.CMSCategorie_Ky, 
+                         dbo.CMSLink.CMSLink_Tags, dbo.Lingue.Lingue_Titolo, dbo.Lingue.Lingue_Codice, dbo.CMSLink.Lingue_Ky, dbo.Utenti.Utenti_Nominativo, dbo.Utenti.UtentiGruppi_Ky
+FROM            dbo.CMSLink LEFT OUTER JOIN
+                         dbo.Lingue ON dbo.CMSLink.Lingue_Ky = dbo.Lingue.Lingue_Ky LEFT OUTER JOIN
+                         dbo.CMSCategorie ON dbo.CMSLink.CMSCategorie_Ky = dbo.CMSCategorie.CMSCategorie_Ky LEFT OUTER JOIN
+                         dbo.Utenti ON dbo.CMSLink.Utenti_Ky = dbo.Utenti.Utenti_Ky
+</SqlScriptCreate>
+</SqlTable>

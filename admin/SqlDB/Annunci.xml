@@ -1,0 +1,433 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Annunci" Type="TABLE">
+    <Keys>
+      <Key Column="Annunci_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Annunci_Ky" IsNull="N" Type="int" />
+      <Field Column="Annunci_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Annunci_UrlKey" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Nazioni_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Province_Ky" IsNull="Y" Type="int" />
+      <Field Column="Regioni_Ky" IsNull="Y" Type="int" />
+      <Field Column="Comuni_Ky" IsNull="Y" Type="int" />
+      <Field Column="AnnunciStato_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="AnnunciTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Annunci_Numero" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Valore" IsNull="Y" Type="money" />
+      <Field Column="Annunci_Cauzione" IsNull="Y" Type="money" />
+      <Field Column="Annunci_Rilancio" IsNull="Y" Type="money" />
+      <Field Column="AnnunciCategorie_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="AnnunciTipologie_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Annunci_Foto1" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto2" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto3" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto4" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto5" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto6" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto7" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto8" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto9" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto10" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnnunciModello_Ky" IsNull="Y" Type="int" />
+      <Field Column="AnnunciMarca_Ky" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Anno" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Visite" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Visione" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_Ky" IsNull="Y" Type="int" />
+      <Field Column="Annunci_DataInserimento" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Annunci_DataAggiornamento" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Annunci_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Annunci_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Annunci_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Annunci_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Annunci_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Annunci_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="AnnunciEsiti_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Annunci_Indirizzo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Alimentazione" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Cambio" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Allestimento" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Tipologia" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Emissioni" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Cilindrata" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Assi" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Ore" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Km" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Portata" IsNull="Y" Type="float" />
+      <Field Column="Annunci_Peso" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Potenza" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Lunghezza" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Larghezza" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Altezza" IsNull="Y" Type="int" />
+      <Field Column="Annunci_LunghezzaBraccio" IsNull="Y" Type="int" />
+      <Field Column="Annunci_LunghezzaTaglio" IsNull="Y" Type="int" />
+      <Field Column="Annunci_AltezzaSollevamento" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Pressione" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Trazione" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Carrozzeria" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_NumeroPosti" IsNull="Y" Type="int" />
+      <Field Column="Annunci_NumeroPorte" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Tara" IsNull="Y" Type="float" />
+      <Field Column="Annunci_Massa" IsNull="Y" Type="float" />
+      <Field Column="Annunci_GruMunito" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_Gruppoidraulico" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_Allestimentorimorchisemirimorchi" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_SospensioniMezzi" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Retarder" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_Condizioni" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_CV" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Kw" IsNull="Y" Type="int" />
+      <Field Column="Annunci_IncavoPressePiegatrici" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_TipologiaPressePiegatrici" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_AssiMacchinariMetalmeccanica" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ControlloNumericoMacchinari" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_StrutturaPresseIdraulicheMeccanicheEcc" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_SpessoreCesoie" IsNull="Y" Type="int" />
+      <Field Column="Annunci_TipologiaTornio" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_MandrinoTornio" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto11" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto12" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto13" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto14" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto15" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto16" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto17" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto18" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto19" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto20" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Modello" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_PrezzoRiserva" IsNull="Y" Type="money" />
+      <Field Column="Annunci_NumeroFoto" IsNull="Y" Type="tinyint" />
+      <Field Column="Annunci_LunghezzaModuliPrefab" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_LarghezzaModuliPrefab" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_DumperRigidoArticolato" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_TerneRigideArticolate" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_TipoligiaTrattoriAgricoli" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_TrattoriDT" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_ClimaCabina" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_AlesatriciCorsaLong" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_AlesatriciCorsaVert" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_AlesatriciCorsaTrasv" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_AlesatriciCorsaCanotto" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_AlesatriciDimensioneTavola" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_AlesatriciMassimoCarico" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_MarchioCE" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_ConsumiAuto" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_AllestimentoRimorchiAgricoli" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ClimatizzatoreAuto" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliSuperficieInterna" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliNumeroLocali" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_NBagni" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliClasseEnergetica" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliDisponibilita" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_ImmobiliCondizioni" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliSuperficieEsterna" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliClasseImmobile" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_AnnoDiCostruzione" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliTipoContratto" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliTipoProprietà" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliSpeseCondominiali" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliPrestazioneEnergetica" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliPresenzaGarage" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliAscensore" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_ImmobiliCondizionatore" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_ImmobiliTerrazzo" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_ImmobiliPiano" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliSuperficieUfficiCapannoni" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliPostiAuto" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliArredamento" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliGiardino" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliAllarme" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_ImmobileCablato" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_TipologiaAttività" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliDipAzienda" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliCatAzienda" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_PortataVeicoliComm" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_TaraVeicComm" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_MassaComplVeicComm" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_TipologiaPressaFonderia" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_TipologiaPressaLavorazioneMetalli" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Video" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Note" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Annunci_NotePubblicita" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Annunci_Mq" IsNull="Y" Type="int" />
+      <Field Column="Annunci_KgCaffe" IsNull="Y" Type="int" />
+      <Field Column="Annunci_PostiSedere" IsNull="Y" Type="int" />
+      <Field Column="Annunci_NumeroBagni" IsNull="Y" Type="int" />
+      <Field Column="Annunci_NumeroCamere" IsNull="Y" Type="int" />
+      <Field Column="Annunci_NumeroVetrine" IsNull="Y" Type="int" />
+      <Field Column="Annunci_NumeroPonti" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Stelle" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Robots" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Annunci_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Description" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Cerco" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_Offro" IsNull="Y" Type="bit" />
+      <Field Column="ComuniZone_Ky" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Foto21" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto22" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto23" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto24" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto25" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto26" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto27" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto28" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto29" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto30" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_DataScadenza" IsNull="Y" Type="datetime" />
+      <Field Column="Annunci_Provvigione" IsNull="Y" Type="money" />
+      <Field Column="Annunci_PassaggioVeicoli" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Annunci_PassaggioPedoni" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Annunci_Foto31" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto32" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto33" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto34" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto35" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto36" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto37" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto38" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto39" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto40" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto41" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto42" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto43" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto44" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto45" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto46" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto47" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto48" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto49" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto50" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_IncassiGiornalieri" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Annunci_Vetrina" IsNull="Y" Type="bit" />
+      <Field Column="AnnunciSorgenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreResponseCode_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Annunci_RedirectUrl" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Annunci_ConRiserva" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_Codice" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_GestionaleImmobiliare" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_Agestanet" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_ClasseEnergetica" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Epi" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_EpiUm" IsNull="Y" Type="varchar" Lenght="200" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Annunci] (
+  [Annunci_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Annunci_Titolo] varchar(200)  NULL , 
+  [Annunci_Descrizione] varchar(MAX)  NULL , 
+  [Annunci_UrlKey] varchar(150)  NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [Nazioni_Ky] tinyint  NULL , 
+  [Province_Ky] int  NULL , 
+  [Regioni_Ky] int  NULL , 
+  [Comuni_Ky] int  NULL , 
+  [AnnunciStato_Ky] tinyint  NULL , 
+  [AnnunciTipo_Ky] tinyint  NULL , 
+  [Annunci_Numero] int  NULL , 
+  [Annunci_Valore] money  NULL , 
+  [Annunci_Cauzione] money  NULL , 
+  [Annunci_Rilancio] money  NULL , 
+  [AnnunciCategorie_Ky] smallint  NULL , 
+  [AnnunciTipologie_Ky] smallint  NULL , 
+  [Annunci_Foto1] varchar(200)  NULL , 
+  [Annunci_Foto2] varchar(200)  NULL , 
+  [Annunci_Foto3] varchar(200)  NULL , 
+  [Annunci_Foto4] varchar(200)  NULL , 
+  [Annunci_Foto5] varchar(200)  NULL , 
+  [Annunci_Foto6] varchar(200)  NULL , 
+  [Annunci_Foto7] varchar(200)  NULL , 
+  [Annunci_Foto8] varchar(200)  NULL , 
+  [Annunci_Foto9] varchar(200)  NULL , 
+  [Annunci_Foto10] varchar(200)  NULL , 
+  [AnnunciModello_Ky] int  NULL , 
+  [AnnunciMarca_Ky] int  NULL , 
+  [Annunci_Anno] int  NULL , 
+  [Annunci_Visite] int  NULL , 
+  [Annunci_Visione] varchar(200)  NULL , 
+  [Aste_Ky] int  NULL , 
+  [Annunci_DataInserimento] smalldatetime  NULL , 
+  [Annunci_DataAggiornamento] smalldatetime  NULL , 
+  [Utenti_Ky] int  NULL , 
+  [Annunci_UserInsert] int  NULL , 
+  [Annunci_UserUpdate] int  NULL , 
+  [Annunci_UserDelete] int  NULL , 
+  [Annunci_DateInsert] datetime  NULL , 
+  [Annunci_DateUpdate] datetime  NULL , 
+  [Annunci_DateDelete] datetime  NULL , 
+  [AnnunciEsiti_Ky] tinyint  NULL , 
+  [Annunci_Indirizzo] varchar(200)  NULL , 
+  [Annunci_Alimentazione] varchar(200)  NULL , 
+  [Annunci_Cambio] varchar(200)  NULL , 
+  [Annunci_Allestimento] varchar(200)  NULL , 
+  [Annunci_Tipologia] varchar(200)  NULL , 
+  [Annunci_Emissioni] varchar(200)  NULL , 
+  [Annunci_Cilindrata] int  NULL , 
+  [Annunci_Assi] int  NULL , 
+  [Annunci_Ore] int  NULL , 
+  [Annunci_Km] int  NULL , 
+  [Annunci_Portata] float  NULL , 
+  [Annunci_Peso] int  NULL , 
+  [Annunci_Potenza] varchar(200)  NULL , 
+  [Annunci_Lunghezza] int  NULL , 
+  [Annunci_Larghezza] int  NULL , 
+  [Annunci_Altezza] int  NULL , 
+  [Annunci_LunghezzaBraccio] int  NULL , 
+  [Annunci_LunghezzaTaglio] int  NULL , 
+  [Annunci_AltezzaSollevamento] int  NULL , 
+  [Annunci_Pressione] int  NULL , 
+  [Annunci_Trazione] varchar(200)  NULL , 
+  [Annunci_Carrozzeria] varchar(200)  NULL , 
+  [Annunci_NumeroPosti] int  NULL , 
+  [Annunci_NumeroPorte] int  NULL , 
+  [Annunci_Tara] float  NULL , 
+  [Annunci_Massa] float  NULL , 
+  [Annunci_GruMunito] bit  NULL , 
+  [Annunci_Gruppoidraulico] bit  NULL , 
+  [Annunci_Allestimentorimorchisemirimorchi] varchar(200)  NULL , 
+  [Annunci_SospensioniMezzi] varchar(200)  NULL , 
+  [Annunci_Retarder] bit  NULL , 
+  [Annunci_Condizioni] varchar(200)  NULL , 
+  [Annunci_CV] int  NULL , 
+  [Annunci_Kw] int  NULL , 
+  [Annunci_IncavoPressePiegatrici] varchar(200)  NULL , 
+  [Annunci_TipologiaPressePiegatrici] varchar(200)  NULL , 
+  [Annunci_AssiMacchinariMetalmeccanica] varchar(200)  NULL , 
+  [Annunci_ControlloNumericoMacchinari] varchar(200)  NULL , 
+  [Annunci_StrutturaPresseIdraulicheMeccanicheEcc] varchar(200)  NULL , 
+  [Annunci_SpessoreCesoie] int  NULL , 
+  [Annunci_TipologiaTornio] varchar(200)  NULL , 
+  [Annunci_MandrinoTornio] varchar(200)  NULL , 
+  [Annunci_Foto11] varchar(200)  NULL , 
+  [Annunci_Foto12] varchar(200)  NULL , 
+  [Annunci_Foto13] varchar(200)  NULL , 
+  [Annunci_Foto14] varchar(200)  NULL , 
+  [Annunci_Foto15] varchar(200)  NULL , 
+  [Annunci_Foto16] varchar(200)  NULL , 
+  [Annunci_Foto17] varchar(200)  NULL , 
+  [Annunci_Foto18] varchar(200)  NULL , 
+  [Annunci_Foto19] varchar(200)  NULL , 
+  [Annunci_Foto20] varchar(200)  NULL , 
+  [Annunci_Modello] varchar(200)  NULL , 
+  [Annunci_PrezzoRiserva] money  NULL , 
+  [Annunci_NumeroFoto] tinyint  NULL , 
+  [Annunci_LunghezzaModuliPrefab] varchar(200)  NULL , 
+  [Annunci_LarghezzaModuliPrefab] varchar(200)  NULL , 
+  [Annunci_DumperRigidoArticolato] varchar(200)  NULL , 
+  [Annunci_TerneRigideArticolate] varchar(200)  NULL , 
+  [Annunci_TipoligiaTrattoriAgricoli] varchar(200)  NULL , 
+  [Annunci_TrattoriDT] bit  NULL , 
+  [Annunci_ClimaCabina] bit  NULL , 
+  [Annunci_AlesatriciCorsaLong] varchar(200)  NULL , 
+  [Annunci_AlesatriciCorsaVert] varchar(200)  NULL , 
+  [Annunci_AlesatriciCorsaTrasv] varchar(200)  NULL , 
+  [Annunci_AlesatriciCorsaCanotto] varchar(200)  NULL , 
+  [Annunci_AlesatriciDimensioneTavola] varchar(200)  NULL , 
+  [Annunci_AlesatriciMassimoCarico] varchar(200)  NULL , 
+  [Annunci_MarchioCE] bit  NULL , 
+  [Annunci_ConsumiAuto] varchar(200)  NULL , 
+  [Annunci_AllestimentoRimorchiAgricoli] varchar(200)  NULL , 
+  [Annunci_ClimatizzatoreAuto] varchar(200)  NULL , 
+  [Annunci_ImmobiliSuperficieInterna] varchar(200)  NULL , 
+  [Annunci_ImmobiliNumeroLocali] varchar(200)  NULL , 
+  [Annunci_NBagni] varchar(200)  NULL , 
+  [Annunci_ImmobiliClasseEnergetica] varchar(200)  NULL , 
+  [Annunci_ImmobiliDisponibilita] bit  NULL , 
+  [Annunci_ImmobiliCondizioni] varchar(200)  NULL , 
+  [Annunci_ImmobiliSuperficieEsterna] varchar(200)  NULL , 
+  [Annunci_ImmobiliClasseImmobile] varchar(200)  NULL , 
+  [Annunci_AnnoDiCostruzione] varchar(200)  NULL , 
+  [Annunci_ImmobiliTipoContratto] varchar(200)  NULL , 
+  [Annunci_ImmobiliTipoProprietà] varchar(200)  NULL , 
+  [Annunci_ImmobiliSpeseCondominiali] varchar(200)  NULL , 
+  [Annunci_ImmobiliPrestazioneEnergetica] varchar(200)  NULL , 
+  [Annunci_ImmobiliPresenzaGarage] varchar(200)  NULL , 
+  [Annunci_ImmobiliAscensore] bit  NULL , 
+  [Annunci_ImmobiliCondizionatore] bit  NULL , 
+  [Annunci_ImmobiliTerrazzo] bit  NULL , 
+  [Annunci_ImmobiliPiano] varchar(200)  NULL , 
+  [Annunci_ImmobiliSuperficieUfficiCapannoni] varchar(200)  NULL , 
+  [Annunci_ImmobiliPostiAuto] varchar(200)  NULL , 
+  [Annunci_ImmobiliArredamento] varchar(200)  NULL , 
+  [Annunci_ImmobiliGiardino] varchar(200)  NULL , 
+  [Annunci_ImmobiliAllarme] bit  NULL , 
+  [Annunci_ImmobileCablato] bit  NULL , 
+  [Annunci_TipologiaAttività] varchar(200)  NULL , 
+  [Annunci_ImmobiliDipAzienda] varchar(200)  NULL , 
+  [Annunci_ImmobiliCatAzienda] varchar(200)  NULL , 
+  [Annunci_PortataVeicoliComm] varchar(200)  NULL , 
+  [Annunci_TaraVeicComm] varchar(200)  NULL , 
+  [Annunci_MassaComplVeicComm] varchar(200)  NULL , 
+  [Annunci_TipologiaPressaFonderia] varchar(200)  NULL , 
+  [Annunci_TipologiaPressaLavorazioneMetalli] varchar(200)  NULL , 
+  [Annunci_Video] varchar(200)  NULL , 
+  [Annunci_Note] varchar(MAX)  NULL , 
+  [Annunci_NotePubblicita] varchar(MAX)  NULL , 
+  [Annunci_Mq] int  NULL , 
+  [Annunci_KgCaffe] int  NULL , 
+  [Annunci_PostiSedere] int  NULL , 
+  [Annunci_NumeroBagni] int  NULL , 
+  [Annunci_NumeroCamere] int  NULL , 
+  [Annunci_NumeroVetrine] int  NULL , 
+  [Annunci_NumeroPonti] int  NULL , 
+  [Annunci_Stelle] varchar(200)  NULL , 
+  [Annunci_Robots] varchar(100)  NULL DEFAULT ('index,follow'), 
+  [Annunci_Title] varchar(200)  NULL , 
+  [Annunci_Description] varchar(200)  NULL , 
+  [Annunci_Cerco] bit  NULL DEFAULT ((0)), 
+  [Annunci_Offro] bit  NULL DEFAULT ((0)), 
+  [ComuniZone_Ky] int  NULL , 
+  [Annunci_Foto21] varchar(200)  NULL , 
+  [Annunci_Foto22] varchar(200)  NULL , 
+  [Annunci_Foto23] varchar(200)  NULL , 
+  [Annunci_Foto24] varchar(200)  NULL , 
+  [Annunci_Foto25] varchar(200)  NULL , 
+  [Annunci_Foto26] varchar(200)  NULL , 
+  [Annunci_Foto27] varchar(200)  NULL , 
+  [Annunci_Foto28] varchar(200)  NULL , 
+  [Annunci_Foto29] varchar(200)  NULL , 
+  [Annunci_Foto30] varchar(200)  NULL , 
+  [Annunci_DataScadenza] datetime  NULL , 
+  [Annunci_Provvigione] money  NULL , 
+  [Annunci_PassaggioVeicoli] varchar(100)  NULL , 
+  [Annunci_PassaggioPedoni] varchar(100)  NULL , 
+  [Annunci_Foto31] varchar(200)  NULL , 
+  [Annunci_Foto32] varchar(200)  NULL , 
+  [Annunci_Foto33] varchar(200)  NULL , 
+  [Annunci_Foto34] varchar(200)  NULL , 
+  [Annunci_Foto35] varchar(200)  NULL , 
+  [Annunci_Foto36] varchar(200)  NULL , 
+  [Annunci_Foto37] varchar(200)  NULL , 
+  [Annunci_Foto38] varchar(200)  NULL , 
+  [Annunci_Foto39] varchar(200)  NULL , 
+  [Annunci_Foto40] varchar(200)  NULL , 
+  [Annunci_Foto41] varchar(200)  NULL , 
+  [Annunci_Foto42] varchar(200)  NULL , 
+  [Annunci_Foto43] varchar(200)  NULL , 
+  [Annunci_Foto44] varchar(200)  NULL , 
+  [Annunci_Foto45] varchar(200)  NULL , 
+  [Annunci_Foto46] varchar(200)  NULL , 
+  [Annunci_Foto47] varchar(200)  NULL , 
+  [Annunci_Foto48] varchar(200)  NULL , 
+  [Annunci_Foto49] varchar(200)  NULL , 
+  [Annunci_Foto50] varchar(200)  NULL , 
+  [Annunci_IncassiGiornalieri] varchar(100)  NULL , 
+  [Annunci_Vetrina] bit  NULL DEFAULT ((0)), 
+  [AnnunciSorgenti_Ky] int  NULL , 
+  [CoreResponseCode_Ky] smallint  NULL DEFAULT ((200)), 
+  [Annunci_RedirectUrl] varchar(MAX)  NULL , 
+  [Annunci_ConRiserva] bit  NULL DEFAULT ((0)), 
+  [Annunci_Codice] varchar(200)  NULL , 
+  [Annunci_GestionaleImmobiliare] bit  NULL , 
+  [Annunci_Agestanet] bit  NULL , 
+  [Annunci_ClasseEnergetica] varchar(200)  NULL , 
+  [Annunci_Epi] varchar(200)  NULL , 
+  [Annunci_EpiUm] varchar(200)  NULL  )
+ALTER TABLE [dbo].[Annunci] ADD CONSTRAINT PK_Annunci PRIMARY KEY  ([Annunci_Ky])
+</SqlScriptCreate>
+</SqlTable>

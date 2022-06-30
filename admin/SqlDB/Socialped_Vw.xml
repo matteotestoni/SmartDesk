@@ -1,0 +1,31 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Socialped_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Socialped_Ky" IsNull="N" Type="int" />
+      <Field Column="Socialchannels_Ky" IsNull="Y" Type="int" />
+      <Field Column="Socialped_DataInizio" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Socialped_DataFine" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Socialped_Url" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Socialchannels_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Socialchannels_Attivo" IsNull="Y" Type="bit" />
+      <Field Column="Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Socialchannelstype_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Socialchannelstype_Icona" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Socialchannelstype_Ky" IsNull="Y" Type="int" />
+      <Field Column="Socialped_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="settimana" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Socialped_Vw
+AS
+SELECT        dbo.Socialped.Socialped_Ky, dbo.Socialped.Socialchannels_Ky, dbo.Socialped.Socialped_DataInizio, dbo.Socialped.Socialped_DataFine, dbo.Socialped.Socialped_Url, dbo.Socialchannels.Socialchannels_Titolo, 
+                         dbo.Socialchannels.Socialchannels_Attivo, dbo.Anagrafiche.Anagrafiche_RagioneSociale, dbo.Anagrafiche.Anagrafiche_Ky, dbo.Socialchannelstype.Socialchannelstype_Titolo, 
+                         dbo.Socialchannelstype.Socialchannelstype_Icona, dbo.Socialchannels.Socialchannelstype_Ky, dbo.Socialped.Socialped_Titolo, DATEPART(week, dbo.Socialped.Socialped_DataInizio) AS settimana
+FROM            dbo.Socialchannelstype RIGHT OUTER JOIN
+                         dbo.Socialchannels ON dbo.Socialchannelstype.Socialchannelstype_Ky = dbo.Socialchannels.Socialchannelstype_Ky RIGHT OUTER JOIN
+                         dbo.Socialped ON dbo.Socialchannels.Socialchannels_Ky = dbo.Socialped.Socialchannels_Ky LEFT OUTER JOIN
+                         dbo.Anagrafiche ON dbo.Socialchannels.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky
+</SqlScriptCreate>
+</SqlTable>

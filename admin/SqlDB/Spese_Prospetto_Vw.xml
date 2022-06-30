@@ -1,0 +1,21 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Spese_Prospetto_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="chiave" IsNull="Y" Type="int" />
+      <Field Column="Spese_Totale" IsNull="Y" Type="money" />
+      <Field Column="Spese_TotaleIVA" IsNull="Y" Type="money" />
+      <Field Column="Spese_TotaleRighe" IsNull="Y" Type="money" />
+      <Field Column="Anno" IsNull="Y" Type="int" />
+      <Field Column="Mese" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Spese_Prospetto_Vw
+AS
+SELECT        TOP (100) PERCENT MAX(Spese_Ky) AS chiave, SUM(Spese_Totale) AS Spese_Totale, SUM(Spese_TotaleIVA) AS Spese_TotaleIVA, SUM(Spese_TotaleRighe) AS Spese_TotaleRighe, 
+                         YEAR(Spese_DocumentoData) AS Anno, MONTH(Spese_DocumentoData) AS Mese
+FROM            dbo.Spese
+GROUP BY YEAR(Spese_DocumentoData), MONTH(Spese_DocumentoData)
+ORDER BY Anno, Mese
+</SqlScriptCreate>
+</SqlTable>

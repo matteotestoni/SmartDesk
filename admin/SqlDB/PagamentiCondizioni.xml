@@ -1,0 +1,31 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="PagamentiCondizioni" Type="TABLE">
+    <Keys>
+      <Key Column="PagamentiCondizioni_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="PagamentiCondizioni_Ky" IsNull="N" Type="smallint" />
+      <Field Column="PagamentiCondizioni_Descrizione" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="PagamentiCondizioni_Predefinita" IsNull="Y" Type="bit" />
+      <Field Column="PagamentiCondizioni_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="PagamentiCondizioni_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="PagamentiCondizioni_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="PagamentiCondizioni_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="PagamentiCondizioni_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="PagamentiCondizioni_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[PagamentiCondizioni] (
+  [PagamentiCondizioni_Ky] smallint IDENTITY(1,1) NOT NULL , 
+  [PagamentiCondizioni_Descrizione] varchar(200)  NULL , 
+  [PagamentiCondizioni_Predefinita] bit  NULL , 
+  [PagamentiCondizioni_UserInsert] int  NULL , 
+  [PagamentiCondizioni_UserUpdate] int  NULL , 
+  [PagamentiCondizioni_UserDelete] int  NULL , 
+  [PagamentiCondizioni_DateInsert] datetime  NULL , 
+  [PagamentiCondizioni_DateUpdate] datetime  NULL , 
+  [PagamentiCondizioni_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[PagamentiCondizioni] ADD CONSTRAINT PK_PagamentiCondizioni PRIMARY KEY  ([PagamentiCondizioni_Ky])
+</SqlScriptCreate>
+</SqlTable>

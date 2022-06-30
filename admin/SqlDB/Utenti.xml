@@ -1,0 +1,93 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Utenti" Type="TABLE">
+    <Keys>
+      <Key Column="Utenti_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Utenti_Ky" IsNull="N" Type="int" />
+      <Field Column="Utenti_Nominativo" IsNull="Y" Type="varchar" Lenght="255" />
+      <Field Column="Utenti_Email" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Utenti_Password" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Utenti_Iniziali" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Utenti_Admin" IsNull="Y" Type="bit" />
+      <Field Column="Utenti_Attivo" IsNull="Y" Type="bit" />
+      <Field Column="Aziende_Ky" IsNull="Y" Type="int" />
+      <Field Column="UtentiGruppi_Ky" IsNull="Y" Type="int" />
+      <Field Column="Persone_Ky" IsNull="Y" Type="int" />
+      <Field Column="Utenti_TipoCalendario" IsNull="Y" Type="tinyint" />
+      <Field Column="Utenti_Home" IsNull="Y" Type="tinyint" />
+      <Field Column="Utenti_Codice" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Utenti_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Utenti_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Utenti_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Utenti_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Utenti_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Utenti_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="UtentiTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="TimeZones_Ky" IsNull="Y" Type="int" />
+      <Field Column="Utenti_Wysiwyg" IsNull="Y" Type="bit" />
+      <Field Column="Comuni_Ky" IsNull="Y" Type="int" />
+      <Field Column="Province_Ky" IsNull="Y" Type="int" />
+      <Field Column="Nazioni_Ky" IsNull="Y" Type="int" />
+      <Field Column="Utenti_Indirizzo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Utenti_Telefono1" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Utenti_Logo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Utenti_PersContattare" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Utenti_PaginaWEB" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Utenti_Cognome" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Utenti_Nome" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Utenti_FAX" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Utenti_Telefono1Nascondi" IsNull="Y" Type="bit" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Utenti_Interno" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Utenti_Colore" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="Utenti_CambioGrid" IsNull="Y" Type="bit" />
+      <Field Column="Utenti_CambioForm" IsNull="Y" Type="bit" />
+      <Field Column="UtentiTeams_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Utenti] (
+  [Utenti_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Utenti_Nominativo] varchar(255)  NULL , 
+  [Utenti_Email] varchar(100)  NULL , 
+  [Utenti_Password] varchar(20)  NULL , 
+  [Utenti_Iniziali] varchar(50)  NULL , 
+  [Utenti_Admin] bit  NULL , 
+  [Utenti_Attivo] bit  NULL , 
+  [Aziende_Ky] int  NULL , 
+  [UtentiGruppi_Ky] int  NULL , 
+  [Persone_Ky] int  NULL , 
+  [Utenti_TipoCalendario] tinyint  NULL , 
+  [Utenti_Home] tinyint  NULL , 
+  [Utenti_Codice] varchar(50)  NULL , 
+  [Utenti_UserInsert] int  NULL , 
+  [Utenti_UserUpdate] int  NULL , 
+  [Utenti_UserDelete] int  NULL , 
+  [Utenti_DateInsert] datetime  NULL , 
+  [Utenti_DateUpdate] datetime  NULL , 
+  [Utenti_DateDelete] datetime  NULL , 
+  [UtentiTipo_Ky] tinyint  NULL , 
+  [TimeZones_Ky] int  NULL , 
+  [Utenti_Wysiwyg] bit  NULL DEFAULT ((1)), 
+  [Comuni_Ky] int  NULL , 
+  [Province_Ky] int  NULL , 
+  [Nazioni_Ky] int  NULL , 
+  [Utenti_Indirizzo] varchar(200)  NULL , 
+  [Utenti_Telefono1] varchar(200)  NULL , 
+  [Utenti_Logo] varchar(200)  NULL , 
+  [Utenti_PersContattare] varchar(200)  NULL , 
+  [Utenti_PaginaWEB] varchar(200)  NULL , 
+  [Utenti_Cognome] varchar(200)  NULL , 
+  [Utenti_Nome] varchar(200)  NULL , 
+  [Utenti_FAX] varchar(200)  NULL , 
+  [Utenti_Telefono1Nascondi] bit  NULL , 
+  [Lingue_Ky] tinyint  NULL , 
+  [Utenti_Interno] varchar(MAX)  NULL , 
+  [Utenti_Colore] varchar(10)  NULL , 
+  [Utenti_CambioGrid] bit  NULL , 
+  [Utenti_CambioForm] bit  NULL , 
+  [UtentiTeams_Ky] int  NULL  )
+ALTER TABLE [dbo].[Utenti] ADD CONSTRAINT PK_Utenti PRIMARY KEY  ([Utenti_Ky])
+</SqlScriptCreate>
+</SqlTable>

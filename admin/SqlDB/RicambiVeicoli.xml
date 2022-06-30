@@ -1,0 +1,149 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="RicambiVeicoli" Type="TABLE">
+    <Keys>
+      <Key Column="RicambiVeicoli_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="RicambiVeicoli_Ky" IsNull="N" Type="int" />
+      <Field Column="RicambiVeicoli_Titolo" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="RicambiVeicoli_Annuncio" IsNull="Y" Type="varchar" Lenght="1500" />
+      <Field Column="RicambiVeicoliCategorie_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="RicambiVeicoliTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliMarca_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliModello_Ky" IsNull="Y" Type="int" />
+      <Field Column="ImposizioniIVA_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="VeicoliTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="RicambiVeicoli_fArchiviato" IsNull="Y" Type="bit" />
+      <Field Column="RicambiVeicoli_fImportato" IsNull="Y" Type="bit" />
+      <Field Column="RicambiVeicoli_Valore" IsNull="Y" Type="money" />
+      <Field Column="RicambiVeicoli_ValoreNascondi" IsNull="Y" Type="bit" />
+      <Field Column="RicambiVeicoli_PubblicaWEB" IsNull="Y" Type="bit" />
+      <Field Column="RicambiVeicoli_Notifica" IsNull="Y" Type="bit" />
+      <Field Column="RicambiVeicoli_Visite" IsNull="Y" Type="smallint" />
+      <Field Column="RicambiVeicoli_Riferimento" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="RicambiVeicoli_ImportazioneData" IsNull="Y" Type="datetime" />
+      <Field Column="RicambiVeicoli_ImportazioneRiferimento" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="RicambiVeicoli_Foto" IsNull="Y" Type="bit" />
+      <Field Column="RicambiVeicoli_Foto1" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="RicambiVeicoli_Foto1s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="RicambiVeicoli_Foto1b" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="RicambiVeicoli_Foto2" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="RicambiVeicoli_Foto2s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="RicambiVeicoli_Foto2b" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="RicambiVeicoli_Foto3" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="RicambiVeicoli_Foto3s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="RicambiVeicoli_Foto3b" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="RicambiVeicoli_Foto4" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="RicambiVeicoli_Foto4s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="RicambiVeicoli_Foto4b" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="RicambiVeicoli_Foto5" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="RicambiVeicoli_Foto5s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="RicambiVeicoli_Foto5b" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="RicambiVeicoli_Foto6" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="RicambiVeicoli_Foto6s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="RicambiVeicoli_Foto6b" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="RicambiVeicoli_Foto7" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="RicambiVeicoli_Foto7s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="RicambiVeicoli_Foto7b" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="RicambiVeicoli_Foto8" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="RicambiVeicoli_Foto8s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="RicambiVeicoli_Foto8b" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="RicambiVeicoli_Foto9" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="RicambiVeicoli_Foto9s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="RicambiVeicoli_Foto9b" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="RicambiVeicoli_Foto10" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="RicambiVeicoli_Foto10s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="RicambiVeicoli_Foto10b" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Utenti_InsertKy" IsNull="Y" Type="int" />
+      <Field Column="Utenti_InsertDt" IsNull="Y" Type="datetime" />
+      <Field Column="Utenti_UpdateKy" IsNull="Y" Type="int" />
+      <Field Column="Utenti_UpdateDt" IsNull="Y" Type="datetime" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="RicambiVeicoliTipologie_Ky" IsNull="Y" Type="bit" />
+      <Field Column="RicambiVeicoli_Provenienza" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="RicambiVeicoli_FotoEsterne" IsNull="Y" Type="bit" />
+      <Field Column="RicambiVeicoli_Generato" IsNull="Y" Type="bit" />
+      <Field Column="RicambiVeicoli_Anno" IsNull="Y" Type="int" />
+      <Field Column="RicambiVeicoli_CodiceMagazzino" IsNull="Y" Type="varchar" Lenght="5" />
+      <Field Column="RicambiVeicoli_CodiceCorridoio" IsNull="Y" Type="varchar" Lenght="5" />
+      <Field Column="RicambiVeicoli_CodiceScaffale" IsNull="Y" Type="varchar" Lenght="5" />
+      <Field Column="RicambiVeicoli_Costo" IsNull="Y" Type="money" />
+      <Field Column="RicambiVeicoli_Qta" IsNull="Y" Type="smallint" />
+      <Field Column="RicambiVeicoli_Alimentazione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="RicambiVeicoli_Cilindrata" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Disponibilita_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[RicambiVeicoli] (
+  [RicambiVeicoli_Ky] int IDENTITY(1,1) NOT NULL , 
+  [RicambiVeicoli_Titolo] varchar(300)  NULL , 
+  [RicambiVeicoli_Annuncio] varchar(1500)  NULL , 
+  [RicambiVeicoliCategorie_Ky] tinyint  NULL , 
+  [RicambiVeicoliTipo_Ky] tinyint  NULL , 
+  [VeicoliMarca_Ky] int  NULL , 
+  [VeicoliModello_Ky] int  NULL , 
+  [ImposizioniIVA_Ky] smallint  NULL , 
+  [VeicoliTipo_Ky] tinyint  NULL , 
+  [RicambiVeicoli_fArchiviato] bit  NULL DEFAULT ((0)), 
+  [RicambiVeicoli_fImportato] bit  NULL DEFAULT ((0)), 
+  [RicambiVeicoli_Valore] money  NULL DEFAULT ((0)), 
+  [RicambiVeicoli_ValoreNascondi] bit  NULL DEFAULT ((0)), 
+  [RicambiVeicoli_PubblicaWEB] bit  NULL DEFAULT ((1)), 
+  [RicambiVeicoli_Notifica] bit  NULL DEFAULT ((0)), 
+  [RicambiVeicoli_Visite] smallint  NULL DEFAULT ((0)), 
+  [RicambiVeicoli_Riferimento] varchar(50)  NULL , 
+  [RicambiVeicoli_ImportazioneData] datetime  NULL , 
+  [RicambiVeicoli_ImportazioneRiferimento] varchar(50)  NULL , 
+  [RicambiVeicoli_Foto] bit  NULL DEFAULT ((0)), 
+  [RicambiVeicoli_Foto1] varchar(150)  NULL , 
+  [RicambiVeicoli_Foto1s] varchar(150)  NULL , 
+  [RicambiVeicoli_Foto1b] varchar(150)  NULL , 
+  [RicambiVeicoli_Foto2] varchar(150)  NULL , 
+  [RicambiVeicoli_Foto2s] varchar(150)  NULL , 
+  [RicambiVeicoli_Foto2b] varchar(150)  NULL , 
+  [RicambiVeicoli_Foto3] varchar(150)  NULL , 
+  [RicambiVeicoli_Foto3s] varchar(150)  NULL , 
+  [RicambiVeicoli_Foto3b] varchar(150)  NULL , 
+  [RicambiVeicoli_Foto4] varchar(150)  NULL , 
+  [RicambiVeicoli_Foto4s] varchar(150)  NULL , 
+  [RicambiVeicoli_Foto4b] varchar(150)  NULL , 
+  [RicambiVeicoli_Foto5] varchar(150)  NULL , 
+  [RicambiVeicoli_Foto5s] varchar(150)  NULL , 
+  [RicambiVeicoli_Foto5b] varchar(150)  NULL , 
+  [RicambiVeicoli_Foto6] varchar(150)  NULL , 
+  [RicambiVeicoli_Foto6s] varchar(150)  NULL , 
+  [RicambiVeicoli_Foto6b] varchar(150)  NULL , 
+  [RicambiVeicoli_Foto7] varchar(150)  NULL , 
+  [RicambiVeicoli_Foto7s] varchar(150)  NULL , 
+  [RicambiVeicoli_Foto7b] varchar(150)  NULL , 
+  [RicambiVeicoli_Foto8] varchar(150)  NULL , 
+  [RicambiVeicoli_Foto8s] varchar(150)  NULL , 
+  [RicambiVeicoli_Foto8b] varchar(150)  NULL , 
+  [RicambiVeicoli_Foto9] varchar(150)  NULL , 
+  [RicambiVeicoli_Foto9s] varchar(150)  NULL , 
+  [RicambiVeicoli_Foto9b] varchar(150)  NULL , 
+  [RicambiVeicoli_Foto10] varchar(150)  NULL , 
+  [RicambiVeicoli_Foto10s] varchar(150)  NULL , 
+  [RicambiVeicoli_Foto10b] varchar(150)  NULL , 
+  [Utenti_InsertKy] int  NULL , 
+  [Utenti_InsertDt] datetime  NULL DEFAULT (getdate()), 
+  [Utenti_UpdateKy] int  NULL , 
+  [Utenti_UpdateDt] datetime  NULL DEFAULT (getdate()), 
+  [Utenti_Ky] int  NULL , 
+  [RicambiVeicoliTipologie_Ky] bit  NULL , 
+  [RicambiVeicoli_Provenienza] varchar(10)  NULL , 
+  [RicambiVeicoli_FotoEsterne] bit  NULL , 
+  [RicambiVeicoli_Generato] bit  NULL , 
+  [RicambiVeicoli_Anno] int  NULL , 
+  [RicambiVeicoli_CodiceMagazzino] varchar(5)  NULL , 
+  [RicambiVeicoli_CodiceCorridoio] varchar(5)  NULL , 
+  [RicambiVeicoli_CodiceScaffale] varchar(5)  NULL , 
+  [RicambiVeicoli_Costo] money  NULL , 
+  [RicambiVeicoli_Qta] smallint  NULL , 
+  [RicambiVeicoli_Alimentazione] varchar(50)  NULL , 
+  [RicambiVeicoli_Cilindrata] varchar(20)  NULL , 
+  [Disponibilita_Ky] int  NULL  )
+ALTER TABLE [dbo].[RicambiVeicoli] ADD CONSTRAINT PK_RicambiVeicoli PRIMARY KEY  ([RicambiVeicoli_Ky])
+</SqlScriptCreate>
+</SqlTable>

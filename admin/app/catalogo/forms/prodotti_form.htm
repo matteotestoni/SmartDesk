@@ -1,0 +1,913 @@
+<div id="schedaprodotto">
+	<ul class="tabs" role="tablist" id="prodotto-tabs" data-responsive-accordion-tabs="tabs small-accordion medium-tabs large-tabs">
+		<li class="tabs-title is-active" role="presentational"><a href="#tabs-scheda"><i class="fa-duotone fa-table fa-lg fa-fw"></i>Scheda</a></li>
+		<li class="tabs-title" role="presentational"><a href="#tabs-descrizione"><i class="fa-duotone fa-file-lines fa-lg fa-fw"></i>Descrizione</a></li>
+		<li class="tabs-title" role="presentational"><a href="#tabs-seo"><i class="fa-brands fa-google fa-lg fa-fw"></i>SEO</a></li>
+		<li class="tabs-title hide" role="presentational"><a href="#tabs-attributi"><i class="fa-duotone fa-database fa-lg fa-fw"></i>Attributi</a></li>
+		<li class="tabs-title hide" role="presentational"><a href="#tabs-prezzi"><i class="fa-duotone fa-euro-sign fa-lg fa-fw"></i>Prezzi avanzati</a></li>
+		<li class="tabs-title" role="presentational"><a href="#tabs-datitecnici"><i class="fa-duotone fa-chart-area fa-lg fa-fw"></i>Dati tecnici</a></li>
+		<li class="tabs-title" role="presentational"><a href="#tabs-inventario"><i class="fa-duotone fa-chart-area fa-lg fa-fw"></i>Inventario avanzato</a></li>
+		<li class="tabs-title" role="presentational"><a href="#tabs-foto"><i class="fa-duotone fa-image fa-lg fa-fw"></i>Foto</a></li>
+		<li class="tabs-title" role="presentational"><a href="#tabs-video"><i class="fa-brands fa-youtube fa-lg fa-fw"></i>Video</a></li>
+		<li class="tabs-title" role="presentational"><a href="#tabs-allegati"><i class="fa-duotone fa-file fa-lg fa-fw"></i>Allegati</a></li>
+	</ul>
+  <div class="tabs-content" data-tabs-content="prodotto-tabs">
+	  	<section role="tabpanel" aria-hidden="false" class="tabs-panel is-active" id="tabs-scheda" name="tabs-scheda">
+					<div class="grid-x grid-padding-x small-up-2 medium-up-4 large-up-8">
+					  <div class="cell">
+							<label for="Prodotti_PubblicaWEB" class="float-left text-right" style="margin-right:5px;min-width:80px;">Pubblica</label>
+							<div class="switch tiny float-left">                                         
+		            <input class="switch-input" type="checkbox" name="Prodotti_PubblicaWEB" id="Prodotti_PubblicaWEB" value="on" <% if (GetCheckValue(dtProdotto, "Prodotti_PubblicaWEB")){ Response.Write("checked");} %> />
+		            <label class="switch-paddle" for="Prodotti_PubblicaWEB">
+		              <span class="show-for-sr">si</span>
+		              <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+		              <span class="switch-inactive" aria-hidden="true"></span>
+		            </label>
+		          </div> 
+						</div>
+					  <div class="cell">
+							<label for="Prodotti_SpedizioneGratuita" class="float-left text-right" style="margin-right:5px;min-width:80px;">Sped. gratis</label>
+							<div class="switch tiny float-left">                                         
+		            <input class="switch-input" type="checkbox" name="Prodotti_SpedizioneGratuita" id="Prodotti_SpedizioneGratuita" value="on" <% if (GetCheckValue(dtProdotto, "Prodotti_SpedizioneGratuita")){ Response.Write("checked");} %> />
+		            <label class="switch-paddle" for="Prodotti_SpedizioneGratuita">
+		              <span class="show-for-sr">si</span>
+		              <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+		              <span class="switch-inactive" aria-hidden="true"></span>
+		            </label>
+		          </div> 
+						</div>
+					  <div class="cell">
+              <label for="Prodotti_InVetrina" class="float-left text-right" style="margin-right:5px;min-width:80px;">Vetrina</label>
+							<div class="switch tiny float-left">                                         
+		            <input class="switch-input" type="checkbox" name="Prodotti_InVetrina" id="Prodotti_InVetrina" value="on" <% if (GetCheckValue(dtProdotto, "Prodotti_InVetrina")){ Response.Write("checked");} %> />
+		            <label class="switch-paddle" for="Prodotti_InVetrina">
+		              <span class="show-for-sr">si</span>
+		              <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+		              <span class="switch-inactive" aria-hidden="true"></span>
+		            </label>
+		          </div> 
+						</div>
+					  <div class="cell">
+              <label for="Prodotti_InOfferta" class="float-left text-right" style="margin-right:5px;min-width:80px;">Offerta</label>
+							<div class="switch tiny float-left">                                         
+		            <input class="switch-input" type="checkbox" name="Prodotti_InOfferta" id="Prodotti_InOfferta" value="on" <% if (GetCheckValue(dtProdotto, "Prodotti_InOfferta")){ Response.Write("checked");} %> />
+		            <label class="switch-paddle" for="Prodotti_InOfferta">
+		              <span class="show-for-sr">si</span>
+		              <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+		              <span class="switch-inactive" aria-hidden="true"></span>
+		            </label>
+		          </div> 
+						</div>
+					  <div class="cell">
+              <label for="Prodotti_InPromozione" class="float-left text-right" style="margin-right:5px;min-width:80px;">Promozione</label>
+							<div class="switch tiny float-left">                                         
+		            <input class="switch-input" type="checkbox" name="Prodotti_InPromozione" id="Prodotti_InPromozione" value="on" <% if (GetCheckValue(dtProdotto, "Prodotti_InPromozione")){ Response.Write("checked");} %> />
+		            <label class="switch-paddle" for="Prodotti_InPromozione">
+		              <span class="show-for-sr">si</span>
+		              <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+		              <span class="switch-inactive" aria-hidden="true"></span>
+		            </label>
+		          </div> 
+						</div>
+					  <div class="cell">
+              <label for="Prodotti_Outlet" class="float-left text-right" style="margin-right:5px;min-width:80px;">Outlet</label>
+							<div class="switch tiny float-left">                                         
+		            <input class="switch-input" type="checkbox" name="Prodotti_Outlet" id="Prodotti_Outlet" value="on" <% if (GetCheckValue(dtProdotto, "Prodotti_Outlet")){ Response.Write("checked");} %> />
+		            <label class="switch-paddle" for="Prodotti_Outlet">
+		              <span class="show-for-sr">si</span>
+		              <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+		              <span class="switch-inactive" aria-hidden="true"></span>
+		            </label>
+		          </div> 
+						</div>
+
+					  <div class="cell">
+              <label for="Prodotti_Recensioni" class="float-left text-right" style="margin-right:5px;min-width:80px;">Recensioni</label>
+							<div class="switch tiny float-left">                                         
+		            <input class="switch-input" type="checkbox" name="Prodotti_Recensioni" id="Prodotti_Recensioni" value="on" <% if (GetCheckValue(dtProdotto, "Prodotti_Recensioni")){ Response.Write("checked");} %> />
+		            <label class="switch-paddle" for="Prodotti_Recensioni">
+		              <span class="show-for-sr">si</span>
+		              <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+		              <span class="switch-inactive" aria-hidden="true"></span>
+		            </label>
+		          </div> 
+						</div>
+
+					  <div class="cell">
+              <label for="Prodotti_Magazzino" class="float-left text-right" style="margin-right:5px;min-width:80px;">Magazzino</label>
+							<div class="switch tiny float-left">                                         
+		            <input class="switch-input" type="checkbox" name="Prodotti_Magazzino" id="Prodotti_Magazzino" value="on" <% if (GetCheckValue(dtProdotto, "Prodotti_Magazzino")){ Response.Write("checked");} %> />
+		            <label class="switch-paddle" for="Prodotti_Magazzino">
+		              <span class="show-for-sr">si</span>
+		              <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+		              <span class="switch-inactive" aria-hidden="true"></span>
+		            </label>
+		          </div> 
+						</div>
+            
+					</div>
+
+					<br>
+
+          <div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-4 cell text-right">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_Titolo">Titolo <i class="fa-duotone fa-tag fa-fw"></i></label>
+          	</div>
+          	<div class="large-4 medium-4 small-8 cell">
+              <input type="text" name="Prodotti_Titolo" id="Prodotti_Titolo" value="<%=GetFieldValue(dtProdotto, "Prodotti_Titolo")%>" size="83" required="required">
+             	<span class="form-error">Obbligatorio.</span>
+          	</div>
+          	<div class="large-2 medium-2 small-4 cell text-right">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_Sottotitolo">Sottotitolo <i class="fa-duotone fa-tag fa-fw"></i></label>
+          	</div>
+          	<div class="large-4 medium-4 small-8 cell">
+              <input type="text" name="Prodotti_Sottotitolo" id="Prodotti_Sottotitolo" value="<%=GetFieldValue(dtProdotto, "Prodotti_Sottotitolo")%>" size="83">
+             	<span class="form-error">Obbligatorio.</span>
+          	</div>
+					</div>        
+
+					<div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-4 cell text-right">
+          		<label class="large-text-right small-text-left middle" for="ProdottiTipo_Ky">Tipo prodotto</label>
+          	</div>
+          	<div class="large-4 medium-4 small-8 cell">
+ 							<select name="ProdottiTipo_Ky" id="ProdottiTipo_Ky" value="<%=GetFieldValue(dtProdotto, "ProdottiTipo_Ky")%>">
+                <!--#include file="/var/cache/ProdottiTipo-options.htm"--> 
+              </select>
+              <script type="text/javascript">
+                selectSet('ProdottiTipo_Ky', '<%=GetFieldValue(dtProdotto, "ProdottiTipo_Ky")%>');
+              </script>
+          	</div>
+
+          	<div class="large-2 medium-2 small-4 cell">
+          		<label class="large-text-right small-text-left middle" for="ProdottiGruppi_Ky">Gruppo</label>
+          	</div>
+          	<div class="large-4 medium-4 small-8 cell">
+              <input type="hidden" name="Prodotti_Gruppo" id="Prodotti_Gruppo" title="Raggruppamento prodotti" value="<%=GetFieldValue(dtProdotto, "Prodotti_Gruppo")%>" size="50">
+              <select class="select2" name="ProdottiGruppi_Ky" id="ProdottiGruppi_Ky" value="<%=GetFieldValue(dtProdotto, "ProdottiGruppi_Ky")%>">
+              <option value=""></option>
+                <%
+								for (int i = 0; i < dtProdottiGruppi.Rows.Count; i++){
+  									if (GetFieldValue(dtProdotto, "ProdottiGruppi_Ky").Equals(dtProdottiGruppi.Rows[i]["ProdottiGruppi_Ky"].ToString())){
+  										strSelected=" selected";
+  									}else{
+  										strSelected="";
+  									}
+									  Response.Write("<option value=\"" + dtProdottiGruppi.Rows[i]["ProdottiGruppi_Ky"].ToString() + "\"" + strSelected + ">" + dtProdottiGruppi.Rows[i]["ProdottiGruppi_Titolo"].ToString() + "</option>");
+                }
+                %>
+              </select>
+              <script type="text/javascript">
+                selectSetMultiple('ProdottiGruppi_Ky', '<%=GetFieldValue(dtProdotto, "ProdottiGruppi_Ky")%>');
+              </script>
+          	</div>
+					</div>        
+
+					<div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-4 cell text-right">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_Qta">Quantit&agrave; disponibile</label>
+          	</div>
+          	<div class="large-4 medium-4 small-8 cell">
+              <input type="text" name="Prodotti_Qta" id="Prodotti_Qta" value="<%=GetFieldValue(dtProdotto, "Prodotti_Qta")%>" size="10">
+              <span class="form-error">Obbligatorio</span>
+          	</div>
+          	<div class="large-2 medium-2 small-4 cell text-right">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_Prezzo">Prezzo</label>
+          	</div>
+          	<div class="large-4 medium-4 small-8 cell">
+              <input type="text" name="Prodotti_Prezzo" id="Prodotti_Prezzo"  value="<%=GetFieldValue(dtProdotto, "Prodotti_Prezzo")%>" size="10" required="required">
+             	<span class="form-error">Obbligatorio.</span>
+          	</div>
+					</div>        
+          <div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-4 cell text-right">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_Codice">Codice *</label>
+          	</div>
+          	<div class="large-4 medium-4 small-8 cell">
+              <input type="text" name="Prodotti_Codice" id="Prodotti_Codice" title="Codice alfanumerico del prodotto" required="required" value="<%=GetFieldValue(dtProdotto, "Prodotti_Codice")%>" size="15">
+             	<span class="form-error">Obbligatorio.</span>
+          	</div>
+          	<div class="large-2 medium-2 small-4 cell text-right">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_Eancode">Codice EAN</label>
+          	</div>
+          	<div class="large-4 medium-4 small-8 cell">
+              <input type="text" name="Prodotti_Eancode" id="Prodotti_Eancode" title="EAN" value="<%=GetFieldValue(dtProdotto, "Prodotti_Eancode")%>" size="15">
+          	</div>
+					</div>    
+          <div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-4 cell text-right">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_Isbn">Codice ISBN</label>
+          	</div>
+          	<div class="large-4 medium-4 small-8 cell">
+              <input type="text" name="Prodotti_Isbn" id="Prodotti_Isbn" title="Codice ISBN" value="<%=GetFieldValue(dtProdotto, "Prodotti_Isbn")%>" size="15">
+            	</div>
+          	<div class="large-2 medium-2 small-4 cell text-right">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_Upc">Codice UPC</label>
+          	</div>
+          	<div class="large-4 medium-4 small-8 cell">
+              <input type="text" name="Prodotti_Upc" id="Prodotti_Upc" title="EAN" value="<%=GetFieldValue(dtProdotto, "Prodotti_Upc")%>" size="15">
+          	</div>
+					</div>    
+          
+          <div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-4 cell text-right">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_Codice">Codice padre</label>
+          	</div>
+          	<div class="large-4 medium-4 small-8 cell">
+              <select name="Prodotti_CodicePadre" id="Prodotti_CodicePadre" title="Codice alfanumerico del padre" value="<%=GetFieldValue(dtProdotto, "Prodotti_CodicePadre")%>">
+              <option value=""></option>
+							<%
+							for (int i = 0; i < dtProdottiPadre.Rows.Count; i++){
+								  Response.Write("<option value=\"" + dtProdottiPadre.Rows[i]["Prodotti_Codice"].ToString() + "\">N&deg;:" + i + " - ID:" + dtProdottiPadre.Rows[i]["Prodotti_Ky"].ToString() + " - Cod:" + dtProdottiPadre.Rows[i]["Prodotti_Codice"].ToString() + "</option>");
+              } %>
+              </select>
+              <script type="text/javascript">
+                selectSet('Prodotti_CodicePadre', '<%=GetFieldValue(dtProdotto, "Prodotti_CodicePadre")%>');
+              </script>
+             	<span class="form-error">Obbligatorio.</span>
+          	</div>
+          	<div class="large-2 medium-2 small-4 cell text-right">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_Padre">Id Padre</label>
+          	</div>
+          	<div class="large-4 medium-4 small-8 cell">
+              <select name="Prodotti_Padre" id="Prodotti_Padre" title="Codice alfanumerico del padre" value="<%=GetFieldValue(dtProdotto, "Prodotti_Padre")%>">
+              <option value=""></option>
+							<%
+							for (int i = 0; i < dtProdottiPadre.Rows.Count; i++){
+								  Response.Write("<option value=\"" + dtProdottiPadre.Rows[i]["Prodotti_Ky"].ToString() + "\">N&deg;:" + i + " - ID:" + dtProdottiPadre.Rows[i]["Prodotti_Ky"].ToString() + " - Cod:" + dtProdottiPadre.Rows[i]["Prodotti_Codice"].ToString() + "</option>");
+              } %>
+              </select>
+              <script type="text/javascript">
+                selectSet('Prodotti_Padre', '<%=GetFieldValue(dtProdotto, "Prodotti_Padre")%>');
+              </script>
+          	</div>
+					</div>    
+
+          <div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-4 cell text-right">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_Codice">Ordine</label>
+          	</div>
+          	<div class="large-4 medium-4 small-8 cell">
+              <input type="text" name="Prodotti_Ordine" id="Prodotti_Ordine" title="Ordine di visualizzazione in elenco prodotti" value="<%=GetFieldValue(dtProdotto, "Prodotti_Ordine")%>" size="4" min="0" max="8" step="1">
+          	</div>
+          	<div class="large-2 medium-2 small-4 cell text-right">
+          		<label class="large-text-right small-text-left middle" for="AliquoteIVA_Ky">Regime IVA</label>
+          	</div>
+          	<div class="large-4 medium-4 small-8 cell">
+              <select name="AliquoteIVA_Ky" id="AliquoteIVA_Ky" value="<%=GetFieldValue(dtProdotto, "AliquoteIVA_Ky")%>" required="required">
+                <!--#include file="/var/cache/AliquoteIVA-options.htm"--> 
+              </select>
+              <span class="form-error">Obbligatorio</span>
+              <script type="text/javascript">
+                selectSet('AliquoteIVA_Ky', '<%=GetFieldValue(dtProdotto, "AliquoteIVA_Ky")%>');
+              </script>
+          	</div>
+					</div>        
+					<div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-4 cell text-right">
+          		<label class="large-text-right small-text-left middle" for="ProdottiVisibilita_Ky">Visibilit&agrave; prodotto</label>
+          	</div>
+          	<div class="large-4 medium-4 small-8 cell">
+              <select name="ProdottiVisibilita_Ky" id="ProdottiVisibilita_Ky">
+                <!--#include file="/var/cache/ProdottiVisibilita-options.htm"--> 
+              </select>
+              <script type="text/javascript">
+                selectSet('ProdottiVisibilita_Ky', '<%=GetFieldValue(dtProdotto, "ProdottiVisibilita_Ky")%>');
+              </script>
+          	</div>
+          	<div class="large-2 medium-2 small-4 cell">
+          		<label class="large-text-right small-text-left middle" for="Nazioni_Ky">Paese di produzione <i class="fa-duotone fa-flag fa-fw"></i></label>
+          	</div>
+          	<div class="large-4 medium-4 small-8 cell">
+              <select name="Nazioni_Ky" id="Nazioni_Ky" value="<%=GetFieldValue(dtProdotto, "Nazioni_Ky")%>">
+                <!--#include file="/var/cache/Nazioni-options.htm"--> 
+              </select>
+              <script type="text/javascript">
+                selectSet('Nazioni_Ky', '<%=GetFieldValue(dtProdotto, "Nazioni_Ky")%>');
+              </script>
+          	</div>
+          </div>
+
+					<div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-4 cell text-right">
+          		<label class="large-text-right small-text-left middle" for="ProdottiCategorie_Ky">Categorie del prodotto</label>
+          	</div>
+          	<div class="large-10 medium-10 small-8 cell">
+              <select name="ProdottiCategorie_Ky" id="ProdottiCategorie_Ky" multiple class="select2" value="<%=GetFieldValue(dtProdotto, "ProdottiCategorie_Ky")%>" required="required">
+							<%
+							for (int i = 0; i < dtProdottiCategorie.Rows.Count; i++){
+              	strWHERENet="ProdottiCategorie_Padre=" + dtProdottiCategorie.Rows[i]["ProdottiCategorie_Ky"].ToString();
+  							dtProdottiCategorieFigli = Smartdesk.Sql.getTablePage("ProdottiCategorie_Vw", null, "ProdottiCategorie_Ky", strWHERENet, "ProdottiCategorie_Titolo", 1, 10000,Smartdesk.Config.Sql.ConnectionReadOnly);
+                if (dtProdottiCategorieFigli.Rows.Count<1){
+								  Response.Write("<option value=\"" + dtProdottiCategorie.Rows[i]["ProdottiCategorie_Ky"].ToString() + "\">" + dtProdottiCategorie.Rows[i]["ProdottiCategorie_Titolo"].ToString() + "</option>");
+                }else{
+								  Response.Write("<optgroup label=\"" + dtProdottiCategorie.Rows[i]["ProdottiCategorie_Titolo"].ToString() + "\" value=\"" + dtProdottiCategorie.Rows[i]["ProdottiCategorie_Ky"].ToString() + "\">");
+  								//Response.Write("<option value=\"" + dtProdottiCategorie.Rows[i]["ProdottiCategorie_Ky"].ToString() + "\">" + dtProdottiCategorie.Rows[i]["ProdottiCategorie_Titolo"].ToString() + "</option>");
+                	strWHERENet="ProdottiCategorie_Padre=" + dtProdottiCategorie.Rows[i]["ProdottiCategorie_Ky"].ToString();
+    							dtProdottiCategorieFigli = Smartdesk.Sql.getTablePage("ProdottiCategorie_Vw", null, "ProdottiCategorie_Ky", strWHERENet, "ProdottiCategorie_Titolo", 1, 10000,Smartdesk.Config.Sql.ConnectionReadOnly);
+    		    			for (int j = 0; j < dtProdottiCategorieFigli.Rows.Count; j++){
+								    Response.Write("<option value=\"" + dtProdottiCategorieFigli.Rows[j]["ProdottiCategorie_Ky"].ToString() + "\">" + dtProdottiCategorieFigli.Rows[j]["ProdottiCategorie_Titolo"].ToString() + "</option>");
+    		    		  }
+								  Response.Write("</optgroup>");
+                } 
+							}
+							%>
+              </select>
+              <span class="form-error">Obbligatorio</span>
+              <script type="text/javascript">
+                selectSetMultiple('ProdottiCategorie_Ky', '<%=GetFieldValue(dtProdotto, "ProdottiCategorie_Ky")%>');
+              </script>
+          	</div>
+					</div>      
+            					
+					<div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-4 cell text-right">
+          		<label class="large-text-right small-text-left middle" for="Produttori_Ky">Produttore</label>
+          	</div>
+          	<div class="large-4 medium-4 small-8 cell">
+              <select name="Produttori_Ky" id="Produttori_Ky">
+                <!--#include file="/var/cache/Produttori-options.htm"--> 
+              </select>
+              <script type="text/javascript">
+                selectSet('Produttori_Ky', '<%=GetFieldValue(dtProdotto, "Produttori_Ky")%>');
+              </script>
+          	</div>
+          	<div class="large-2 medium-2 small-4 cell text-right">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_CodiceProduttore">Codice produttore</label>
+          	</div>
+          	<div class="large-4 medium-4 small-8 cell">
+              <input type="text" name="Prodotti_CodiceProduttore" id="Prodotti_CodiceProduttore" title="Codice del produttore" required="required" value="<%=GetFieldValue(dtProdotto, "Prodotti_CodiceProduttore")%>" size="15">
+             	<span class="form-error">Obbligatorio.</span>
+          	</div>
+					</div>        
+          
+					<div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-4 cell text-right">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_Note">Note</label>
+          	</div>
+          	<div class="large-10 medium-10 small-8 cell">
+              <textarea name="Prodotti_Note" id="Prodotti_Note" rows="2" cols="80"><%=GetFieldValue(dtProdotto, "Prodotti_Note")%></textarea>
+          	</div>
+					</div>        
+    	</section>
+    	<section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-descrizione" name="tabs-descrizione">
+          <div class="grid-x grid-padding-x">
+          	<div class="xxlarge-1 xlarge-1 large-2 medium-2 small-12 cell">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_Descrizione">Descrizione</label>
+          	</div>
+          	<div class="xxlarge-11 xlarge-11 large-10 medium-10 small-12 cell">
+              <textarea name="Prodotti_Descrizione" id="Prodotti_Descrizione" rows="2" cols="110" class="ckfinder"><%=GetFieldValue(dtProdotto, "Prodotti_Descrizione")%></textarea>
+              <script type="text/javascript">
+              CKEDITOR.replace('Prodotti_Descrizione',
+              	{
+                	filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+                	filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+              	});
+              </script>
+          	</div>
+					</div> 
+					<hr>       
+          <div class="grid-x grid-padding-x">
+          	<div class="xxlarge-1 xlarge-1 large-2 medium-2 small-12 cell">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_Caratteristiche">Caratteristiche</label>
+          	</div>
+          	<div class="xxlarge-11 xlarge-11 large-10 medium-10 small-12 cell">
+              <textarea name="Prodotti_Caratteristiche" id="Prodotti_Caratteristiche" rows="2" cols="110" class="ckfinder"><%=GetFieldValue(dtProdotto, "Prodotti_Caratteristiche")%></textarea>
+              <script type="text/javascript">
+              CKEDITOR.replace('Prodotti_Caratteristiche',
+              	{
+                	filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+                	filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+              	});
+              </script>
+          	</div>
+					</div> 
+					<hr>       
+          <div class="grid-x grid-padding-x">
+          	<div class="xxlarge-1 xlarge-1 large-2 medium-2 small-12 cell">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_Plus">Plus del prodotto</label>
+          	</div>
+          	<div class="xxlarge-11 xlarge-11 large-10 medium-10 small-12 cell">
+              <textarea name="Prodotti_Plus" id="Prodotti_Plus" rows="2" cols="110" class="ckfinder"><%=GetFieldValue(dtProdotto, "Prodotti_Plus")%></textarea>
+              <script type="text/javascript">
+              CKEDITOR.replace('Prodotti_Plus',
+              	{
+                	filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+                	filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+              	});
+              </script>
+          	</div>
+					</div> 
+			</section>
+    	<section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-seo" name="tabs-seo">
+          <div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-4 cell text-right">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_UrlKey">Friendly Url <i class="fa-duotone fa-link fa-fw"></i></label>
+          	</div>
+          	<div class="large-10 medium-10 small-8 cell">
+              <input type="text" name="Prodotti_UrlKey" id="Prodotti_UrlKey" value="<%=GetFieldValue(dtProdotto, "Prodotti_UrlKey")%>" size="83" >
+          	</div>
+          </div>
+          <div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-4 cell text-right">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_Title">Titolo SEO</label>
+          	</div>
+          	<div class="large-10 medium-12 small-8 cell">
+              <input type="text" name="Prodotti_Title" id="Prodotti_Title" title="Titolo SEO" value="<%=GetFieldValue(dtProdotto, "Prodotti_Title")%>" size="200">
+          	</div>
+          </div>
+          <div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-12 cell">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_Description">Descrizione SEO</label>
+          	</div>
+          	<div class="large-10 medium-10 small-12 cell">
+              <textarea name="Prodotti_Description" id="Prodotti_Description" rows="2" cols="110"><%=GetFieldValue(dtProdotto, "Prodotti_Description")%></textarea>
+          	</div>
+					</div> 
+				  <div class="grid-x grid-padding-x">
+				  	<div class="large-2 medium-2 small-4 cell">
+				  		<label for="Prodotti_Robots" class="large-text-right small-text-left middle">Robots SEO<i class="fa-duotone fa-file-lines fa-fw"></i></label>
+				  	</div>
+				  	<div class="large-10 medium-10 small-8 cell">
+							<select name="Prodotti_Robots" id="Prodotti_Robots" value="<%=GetFieldValue(dtProdotto, "Prodotti_Robots")%>">
+				        <option value="index,follow">index,follow</option>
+				        <option value="noindex,nofollow">noindex,follow</option>
+				        <option value="noindex,nofollow">noindex,nofollow</option>
+				      </select>
+			        <p class="help-text">i noindex non saranno nella sitemap</p>
+				      <script type="text/javascript">
+				        selectSet('Prodotti_Robots', '<%=GetFieldValue(dtProdotto, "Prodotti_Robots")%>');
+				      </script>
+				  	</div>
+				  </div>
+
+      <div class="grid-x grid-padding-x">
+      	<div class="large-2 medium-2 small-12 cell">
+      		<label class="large-text-right small-text-left middle" for="CoreResponseCode_Ky">Risposta HTTP</label>
+      	</div>
+      	<div class="large-10 medium-10 small-12 cell">
+		  <select name="CoreResponseCode_Ky" id="CoreResponseCode_Ky">
+  			<!--#include file="/var/cache/CoreResponseCode-options.htm"--> 
+	      </select>
+	      <script type="text/javascript">
+	        selectSet('CoreResponseCode_Ky', '<%=GetFieldValue(dtProdotto, "CoreResponseCode_Ky")%>');
+	      </script>
+      	</div>
+	  </div> 
+      
+      <div class="grid-x grid-padding-x">
+        <div class="large-2 medium-2 small-4 cell">
+            <label for="Prodotti_RedirectUrl" class="large-text-right small-text-left middle">RedirectUrl</label>
+        </div>
+        <div class="large-10 medium-10 small-8 cell">
+            <input type="text" name="Prodotti_RedirectUrl" id="Prodotti_RedirectUrl" value="<%=GetFieldValue(dtProdotto, "Prodotti_RedirectUrl")%>" placeholder="RedirectUrl">
+        </div>
+      </div>      
+
+
+			</section>
+    	<section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-attributi" name="tabs-attributi">
+					<div class="grid-x grid-padding-x">
+          	<div class="xxlarge-1 xlarge-1 large-2 medium-2 small-4 cell text-right">
+          		<label class="large-text-right small-text-left middle" for="AttributiGruppi_Ky">Set di attributi</label>
+          	</div>
+          	<div class="large-10 medium-10 small-8 cell">
+              <select name="AttributiGruppi_Ky" id="AttributiGruppi_Ky">
+                <option value=""></option>
+								<!--#include file="/var/cache/AttributiGruppi-options.htm"--> 
+              </select>
+              <script type="text/javascript">
+                selectSet('AttributiGruppi_Ky', '<%=GetFieldValue(dtProdotto, "AttributiGruppi_Ky")%>');
+              </script>
+          	</div>
+					</div>        
+			</section>
+    	<section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-prezzi" name="tabs-prezzi">
+          <div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-4 cell">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_PrezzoSpeciale">Prezzo speciale</label>
+          	</div>
+          	<div class="large-2 medium-2 small-8 cell">
+              <input type="text" name="Prodotti_PrezzoSpeciale" id="Prodotti_PrezzoSpeciale"  value="<%=GetFieldValue(dtProdotto, "Prodotti_PrezzoSpeciale")%>" size="10">
+             	<span class="form-error">Obbligatorio.</span>
+          	</div>
+          	<div class="large-1 medium-1 small-4 cell">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_PrezzoSpecialeDal">Dal <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+          	</div>
+          	<div class="large-3 medium-3 small-8 cell">
+              <input type="text" class="fdatepicker" name="Prodotti_PrezzoSpecialeDal" id="Prodotti_PrezzoSpecialeDal" value="<%=GetFieldValue(dtProdotto, "Prodotti_PrezzoSpecialeDal_IT")%>" size="10">
+             	<span class="form-error">Obbligatorio.</span>
+          	</div>
+          	<div class="large-1 medium-1 small-4 cell">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_PrezzoSpecialeAl">Al <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+          	</div>
+          	<div class="large-3 medium-3 small-8 cell">
+              <input type="text" class="fdatepicker" name="Prodotti_PrezzoSpecialeAl" id="Prodotti_PrezzoSpecialeAl" value="<%=GetFieldValue(dtProdotto, "Prodotti_PrezzoSpecialeAl_IT")%>" size="10">
+             	<span class="form-error">Obbligatorio.</span>
+          	</div>
+					</div>        
+    	</section>
+    	<section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-datitecnici" name="tabs-datitecnici">
+          <div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-12 cell">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_Clearline">Clearline</label>
+          	</div>
+          	<div class="large-10 medium-10 small-12 cell">
+							<div class="switch tiny float-left">                                         
+		            <input class="switch-input" type="checkbox" name="Prodotti_Clearline" id="Prodotti_Clearline" value="on" <% if (GetCheckValue(dtProdotto, "Prodotti_Clearline")){ Response.Write("checked");} %> />
+		            <label class="switch-paddle" for="Prodotti_Clearline">
+		              <span class="show-for-sr">si</span>
+		              <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+		              <span class="switch-inactive" aria-hidden="true"></span>
+		            </label>
+		          </div> 
+          	</div>
+          </div>
+          
+          <div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-12 cell">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_Applicazioni">Applicazioni</label>
+          	</div>
+          	<div class="large-10 medium-10 small-12 cell">
+              <select multiple class="select2" name="Prodotti_Applicazioni" id="Prodotti_Applicazioni" value="<%=GetFieldValue(dtProdotto, "Prodotti_Applicazioni")%>">
+                <%
+								for (int i = 0; i < dtProdottiApplicazioniCategorie.Rows.Count; i++){
+								  Response.Write("<optgroup label=\"" + dtProdottiApplicazioniCategorie.Rows[i]["ProdottiApplicazioniCategorie_Titolo"].ToString() + "\">");
+                	
+                  strWHERENet="ProdottiApplicazioniCategorie_Ky=" + dtProdottiApplicazioniCategorie.Rows[i]["ProdottiApplicazioniCategorie_Ky"].ToString();
+    							dtProdottiApplicazioni = Smartdesk.Sql.getTablePage("ProdottiApplicazioni", null, "ProdottiApplicazioni_Ky", strWHERENet, "ProdottiApplicazioni_Titolo", 1, 10000,Smartdesk.Config.Sql.ConnectionReadOnly);
+    		    			for (int j = 0; j < dtProdottiApplicazioni.Rows.Count; j++){
+  									if (GetFieldValue(dtProdotto, "Prodotti_Applicazioni").IndexOf(dtProdottiApplicazioni.Rows[j]["ProdottiApplicazioni_Ky"].ToString())>-1){
+  										strSelected=" selected";
+  									}else{
+  										strSelected="";
+  									}
+									  Response.Write("<option value=\"" + dtProdottiApplicazioni.Rows[j]["ProdottiApplicazioni_Ky"].ToString() + "\"" + strSelected + ">" + dtProdottiApplicazioni.Rows[j]["ProdottiApplicazioni_Titolo"].ToString() + "</option>");
+    		    		  }
+								  Response.Write("</optgroup>");
+                }
+                %>
+              </select>
+              <script type="text/javascript">
+                selectSetMultiple('Prodotti_Applicazioni', '<%=GetFieldValue(dtProdotto, "Prodotti_Applicazioni")%>');
+              </script>
+          	</div>
+					</div>        
+
+					<div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-12 cell">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_Faq">Faq <i class="fa-duotone fa-circle-question fa-fw"></i></label>
+          	</div>
+          	<div class="large-10 medium-10 small-12 cell">
+              <select multiple class="select2" name="Prodotti_Faq" id="Prodotti_Faq" value="<%=GetFieldValue(dtProdotto, "Prodotti_Faq")%>">
+                <%
+								for (int i = 0; i < dtFaqCategorie.Rows.Count; i++){
+								  Response.Write("<optgroup label=\"" + dtFaqCategorie.Rows[i]["FaqCategorie_Titolo"].ToString() + "\">");
+                	
+                  strWHERENet="FaqCategorie_Ky=" + dtFaqCategorie.Rows[i]["FaqCategorie_Ky"].ToString();
+    							dtFaq = Smartdesk.Sql.getTablePage("Faq", null, "Faq_Ky", strWHERENet, "Faq_Domanda", 1, 10000,Smartdesk.Config.Sql.ConnectionReadOnly);
+    		    			for (int j = 0; j < dtFaq.Rows.Count; j++){
+  									if (GetFieldValue(dtProdotto, "Prodotti_Faq").IndexOf(dtFaq.Rows[j]["Faq_Ky"].ToString())>-1){
+  										strSelected=" selected";
+  									}else{
+  										strSelected="";
+  									}
+									  Response.Write("<option value=\"" + dtFaq.Rows[j]["Faq_Ky"].ToString() + "\"" + strSelected + ">" + dtFaq.Rows[j]["Faq_Domanda"].ToString() + "</option>");
+    		    		  }
+								  Response.Write("</optgroup>");
+                }
+                %>
+              </select>
+              <script type="text/javascript">
+                selectSetMultiple('Prodotti_Faq', '<%=GetFieldValue(dtProdotto, "Prodotti_Faq")%>');
+              </script>
+          	</div>
+					</div>        
+
+					<div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-12 cell">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_Tags">Tags <i class="fa-duotone fa-tags fa-fw"></i></label>
+          	</div>
+          	<div class="large-10 medium-10 small-12 cell">
+              <select multiple class="select2" name="Prodotti_Tags" id="Prodotti_Tags" value="<%=GetFieldValue(dtProdotto, "Prodotti_Tags")%>">
+                <%
+								for (int i = 0; i < dtProdottiTag.Rows.Count; i++){
+  									if (GetFieldValue(dtProdotto, "Prodotti_Tags").IndexOf(dtProdottiTag.Rows[i]["ProdottiTag_Ky"].ToString())>-1){
+  										strSelected=" selected";
+  									}else{
+  										strSelected="";
+  									}
+									  Response.Write("<option value=\"" + dtProdottiTag.Rows[i]["ProdottiTag_Ky"].ToString() + "\"" + strSelected + ">" + dtProdottiTag.Rows[i]["ProdottiTag_Tag"].ToString() + "</option>");
+                }
+                %>
+              </select>
+              <script type="text/javascript">
+                selectSetMultiple('Prodotti_Tags', '<%=GetFieldValue(dtProdotto, "Prodotti_Tags")%>');
+              </script>
+          	</div>
+					</div>        
+					
+          <div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-4 cell">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_DatiTecnici">PDF dati tecnici (literature) <i class="fa-duotone fa-file-pdf fa-fw"></i></label>
+          	</div>
+          	<div class="large-10 medium-10 small-8 cell">
+              <input type="text" name="Prodotti_DatiTecnici" id="Prodotti_DatiTecnici" value="<%=GetFieldValue(dtProdotto, "Prodotti_DatiTecnici")%>" size="100">
+          	</div>
+					</div>        
+
+
+					<div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-4 cell">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_Lunghezza">Lunghezza</label>
+          	</div>
+          	<div class="large-4 medium-4 small-8 cell">
+              <input type="text" name="Prodotti_Lunghezza" id="Prodotti_Lunghezza" pattern="number" value="<%=GetFieldValue(dtProdotto, "Prodotti_Lunghezza")%>" size="5">
+              <small class="form-error">Solo numeri</small>
+          	</div>
+          	<div class="large-2 medium-2 small-4 cell">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_Larghezza">Larghezza</label>
+          	</div>
+          	<div class="large-4 medium-4 small-8 cell">
+              <input type="text" name="Prodotti_Larghezza" id="Prodotti_Larghezza" value="<%=GetFieldValue(dtProdotto, "Prodotti_Larghezza")%>" size="200">
+          	</div>
+					</div>        
+					<div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-4 cell">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_Altezza">Altezza</label>
+          	</div>
+          	<div class="large-4 medium-4 small-8 cell">
+              <input type="text" name="Prodotti_Altezza" id="Prodotti_Altezza" pattern="number" value="<%=GetFieldValue(dtProdotto, "Prodotti_Altezza")%>" size="5">
+              <small class="form-error">Solo numeri</small>
+          	</div>
+          	<div class="large-2 medium-2 small-4 cell">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_Peso">Peso <i class="fa-duotone fa-balance-scale fa-fw"></i></label>
+          	</div>
+          	<div class="large-4 medium-4 small-8 cell">
+              <input type="text" name="Prodotti_Peso" id="Prodotti_Peso" pattern="number" value="<%=GetFieldValue(dtProdotto, "Prodotti_Peso")%>" size="5">
+              <small class="form-error">Solo numeri</small>
+          	</div>
+					</div>
+
+					<div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-4 cell">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_Packaging">Packaging (qta per confezione)<i class="fa-duotone fa-hand-paper fa-fw"></i></label>
+          	</div>
+          	<div class="large-4 medium-4 small-8 cell">
+              <input type="text" name="Prodotti_Packaging" id="Prodotti_Packaging" value="<%=GetFieldValue(dtProdotto, "Prodotti_Packaging")%>" size="200">
+          	</div>
+          	<div class="large-2 medium-2 small-4 cell">
+          		<label class="large-text-right small-text-left middle" for="ProdottiMontaggio_Ky">Montaggio <i class="fa-duotone fa-gear fa-fw"></i></label>
+          	</div>
+          	<div class="large-4 medium-4 small-8 cell">
+              <select name="ProdottiMontaggio_Ky" id="ProdottiMontaggio_Ky" value="<%=GetFieldValue(dtProdotto, "ProdottiMontaggio_Ky")%>">
+                <!--#include file="/var/cache/ProdottiMontaggio-options.htm"--> 
+              </select>
+              <script type="text/javascript">
+                selectSet('ProdottiMontaggio_Ky', '<%=GetFieldValue(dtProdotto, "ProdottiMontaggio_Ky")%>');
+              </script>
+          	</div>
+					</div>        
+    	</section>
+    	<section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-inventario" name="tabs-inventario">
+					<div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-4 cell text-right">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_QtaMin">Quantit&agrave; minima</label>
+          	</div>
+          	<div class="large-4 medium-4 small-8 cell">
+              <input type="text" name="Prodotti_QtaMin" id="Prodotti_QtaMin" title="QtË min" required="required" value="<%=GetFieldValue(dtProdotto, "Prodotti_QtaMin")%>" size="15">
+             	<span class="form-error">Obbligatorio.</span>
+          	</div>
+          	<div class="large-2 medium-2 small-4 cell text-right">
+          		<label class="large-text-right small-text-left middle" for="Prodotti_QtaMax">Quantit&agrave; massima</label>
+          	</div>
+          	<div class="large-4 medium-4 small-8 cell">
+              <input type="text" name="Prodotti_QtaMax" id="Prodotti_QtaMax" title="QtË max" required="required" value="<%=GetFieldValue(dtProdotto, "Prodotti_QtaMax")%>" size="15">
+             	<span class="form-error">Obbligatorio.</span>
+          	</div>
+					</div>        
+
+
+					<div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-4 cell">
+          		<label class="large-text-right small-text-left middle" for="ProdottiDisponibilita_Ky">Disponibilit&agrave;</label>
+          	</div>
+          	<div class="large-4 medium-4 small-8 cell">
+              <select name="ProdottiDisponibilita_Ky" id="ProdottiDisponibilita_Ky" value="<%=GetFieldValue(dtProdotto, "ProdottiDisponibilita_Ky")%>" required="required">
+                <!--#include file="/var/cache/ProdottiDisponibilita-options.htm"--> 
+              </select>
+              <span class="form-error">Obbligatorio</span>
+              <script type="text/javascript">
+                selectSet('ProdottiDisponibilita_Ky', '<%=GetFieldValue(dtProdotto, "ProdottiDisponibilita_Ky")%>');
+              </script>
+          	</div>
+          	<div class="large-2 medium-2 small-4 cell">
+          		<label class="large-text-right small-text-left middle" for="ProdottiConsegna_Ky">Consegna</label>
+          	</div>
+          	<div class="large-4 medium-4 small-8 cell">
+              <select name="ProdottiConsegna_Ky" id="ProdottiConsegna_Ky" value="<%=GetFieldValue(dtProdotto, "ProdottiConsegna_Ky")%>">
+                <!--#include file="/var/cache/ProdottiConsegna-options.htm"--> 
+              </select>
+              <script type="text/javascript">
+                selectSet('ProdottiConsegna_Ky', '<%=GetFieldValue(dtProdotto, "ProdottiConsegna_Ky")%>');
+              </script>
+          	</div>
+					</div>        
+   		</section>
+    	<section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-foto" name="tabs-foto">
+				<div class="grid-x grid-padding-x">
+			  	<div class="large-2 medium-2 small-4 cell">
+			  		<label for="fotoprodotto" class="large-text-right small-text-left middle">Foto identificativa dell'asta</label>
+			  	</div>
+			  	<div class="large-10 medium-10 small-8 cell">
+			      <div id="html5_uploader" style="width: 500px; height: 330px">Your browser doesn't support native upload.</div>
+						<script>
+						// Setup html5 version
+						jQuery("#html5_uploader").plupload({
+							runtimes : 'html5,html4',
+							url: '/admin/ImageUploadHandler.ashx',
+							chunk_size : '64kb',
+							unique_names : false,
+							max_file_count: 20,
+							file_data_name: 'fotoprodotto',
+							filters : {
+								max_file_size : '10mb',
+								mime_types: [
+									{title : "Image files", extensions : "jpg,gif,png"},
+									{title : "Zip files", extensions : "zip"}
+								]
+							},
+							sortable: true,
+						  dragdrop: true,
+							views: {
+								list: true,
+								thumbs: true,
+								active: 'thumbs'
+							}
+						});
+						</script>
+
+						<p>Le immagini devono essere in formato jpg<br></p>
+			      <label for="fotoprodotto" class="button small">Carica immagini</label>
+			      <input type="file" class="show-for-sr fileupload" placeholder="Foto prodotto" id="fotoprodotto" name="fotoprodotto" />
+			      <small class="form-error">obbligatorio.</small>
+			      <div id="galleryfotocaricate" class="gallery"></div>
+			      <script>
+			        jQuery(function() {
+			          var imagesPreview = function(input, placeToInsertImagePreview) {
+			              if (input.files) {
+			                  var filesAmount = input.files.length;
+			                  jQuery(placeToInsertImagePreview).html("");
+			                  for (i = 0; i < filesAmount; i++) {
+			                      var reader = new FileReader();
+			                      reader.onload = function(event) {
+			                          jQuery(jQuery.parseHTML('<img width="150" height="100" hspace="10" vspace="10" style="border:1px solid #000000">')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+			                      }
+			                       reader.readAsDataURL(input.files[i]);
+			                  }
+			              }
+			          };
+			          jQuery('#fotoprodotto').on('change', function() {
+			              imagesPreview(this, '#galleryfotocaricate');
+			          });
+			        });
+			      </script>
+			  	</div>
+			  </div>
+
+
+
+        <h2>Immagini gi&agrave; caricate</h2> 
+        <div class="grid-x grid-padding-x small-up-2 medium-up-3 large-up-5">
+          <%
+            intNumDoc=1;
+            for (int i = 1; i <= 10; i++){
+              if (GetFieldValue(dtProdotto, "Prodotti_Foto" + i).Length>0){
+              	Response.Write("<div class=\"cell\">");
+              	Response.Write("<div class=\"card\"><div class=\"card-section\"><h5 class=\"text-center\">Foto " + i + "</h5>");
+              	Response.Write("<small><i class=\"fa-duotone fa-folder-open fa-fw\"></i>" + GetFieldValue(dtProdotto, "Prodotti_Foto" + i) + "</small>");
+              	Response.Write("<img src=\"" + GetFieldValue(dtProdotto, "Prodotti_Foto" + i) + "\" alt=\"foto\" width=\"300\" height=\"200\" /><br>");
+              	Response.Write("<a href=\"" + GetFieldValue(dtProdotto, "Prodotti_Foto" + i) + "\" title=\"ingrandisci\" target=\"_blank\"><i class=\"fa-duotone fa-image fa-fw\"></i>ingrandisci</a><br>");
+              	if (i>1){
+									Response.Write("<a href=\"/admin/app/catalogo/scheda-prodotto-foto-predefinita.aspx?foto=" + i + "&Prodotti_Ky=" + GetFieldValue(dtProdotto, "Prodotti_Ky") + "\" title=\"principale\"><i class=\"fa-duotone fa-heart fa-fw\"></i>principale</a><br>");
+								}
+              	Response.Write("<a href=\"/admin/app/catalogo/crud/elimina-foto-prodotto.aspx?azione=delete&foto=" + i + "&Prodotti_Ky=" + GetFieldValue(dtProdotto, "Prodotti_Ky") + "\" title=\"elimina\"><i class=\"fa-duotone fa-trash-alt fa-fw\"></i>elimina</a><br>");
+              	Response.Write("</div></div></div>");
+                intNumDoc=i+1;
+              }else{
+                if (intNumDocVuoto==0){
+									intNumDoc=i;
+									intNumDocVuoto=1;
+								}
+              }
+            }
+          %>
+        </div>
+        <div class="grid-x grid-padding-x">
+        	<div class="large-12 medium-12 small-12 cell">
+							<fieldset class="fieldset">
+			        	<legend class="radius">Carica foto sul prodotto</legend>
+                <div class="callout primary"><i class="fa-duotone fa-circle-info fa-fw fal-lg"></i>Le immagini devono essere in formato jpg o jpeg</div>
+			          <label for="fotoprodotto" class="button small">Carica immagini</label>
+                <input type="file" class="show-for-sr fileupload" name="fotoprodotto" id="fotoprodotto" multiple /><br /><br />
+			          <input type="hidden" name="NumeroFoto" id="NumeroFoto" value="<%=intNumDoc%>" />
+                <div id="galleryfotocaricate" class="gallery"></div>
+                <script>
+                  jQuery(function() {
+                    var imagesPreview = function(input, placeToInsertImagePreview) {
+                        if (input.files) {
+                            var filesAmount = input.files.length;
+                            for (i = 0; i < filesAmount; i++) {
+                                var reader = new FileReader();
+                                reader.onload = function(event) {
+                                    jQuery(jQuery.parseHTML('<img width="150" height="100" hspace="10" vspace="10" style="border:1px solid #000000">')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                                }
+                                 reader.readAsDataURL(input.files[i]);
+                            }
+                        }
+                    };
+                    jQuery('#fotoprodotto').on('change', function() {
+                        imagesPreview(this, '#galleryfotocaricate');
+                    });
+                  });
+                </script>
+			        </fieldset>
+			    </div>
+			  </div>
+
+    	</section>
+
+    	<section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-video" name="tabs-video">
+        <h2>Codici video del prodotto di YouTube</h2> 
+				<p>Inserisci il codice del video di youtube e il nome del video. Ad esempio il codice pu&ograve; essere "f2xKde_Oc3Y"</p>
+        <div class="grid-x grid-padding-x">
+        	<div class="large-2 medium-2 small-4 cell">
+        		<label class="large-text-right small-text-left middle" for="Prodotti_Video1">Codici video YouTube <i class="fa-brands fa-youtube fa-fw"></i></label>
+        	</div>
+        	<div class="large-2 medium-2 small-12 cell">
+            <input type="text" name="Prodotti_Video1" id="Prodotti_Video1" placeholder="Video1" value="<%=GetFieldValue(dtProdotto, "Prodotti_Video1")%>" size="50">
+        	</div>
+        	<div class="large-2 medium-2 small-12 cell">
+            <input type="text" name="Prodotti_Video2" id="Prodotti_Video2" placeholder="Video2" value="<%=GetFieldValue(dtProdotto, "Prodotti_Video2")%>" size="50">
+        	</div>
+        	<div class="large-2 medium-2 small-12 cell">
+            <input type="text" name="Prodotti_Video3" id="Prodotti_Video3" placeholder="Video3" value="<%=GetFieldValue(dtProdotto, "Prodotti_Video3")%>" size="50">
+        	</div>
+        	<div class="large-2 medium-2 small-12 cell">
+            <input type="text" name="Prodotti_Video4" id="Prodotti_Video4" placeholder="Video4" value="<%=GetFieldValue(dtProdotto, "Prodotti_Video4")%>" size="50">
+        	</div>
+        	<div class="large-2 medium-2 small-12 cell">
+            <input type="text" name="Prodotti_Video5" id="Prodotti_Video5" placeholder="Video5" value="<%=GetFieldValue(dtProdotto, "Prodotti_Video5")%>" size="50">
+        	</div>
+				</div>
+				<div class="grid-x grid-padding-x">
+        	<div class="large-2 medium-2 small-4 cell">
+        		<label class="large-text-right small-text-left middle" for="Prodotti_Video1">Nomi video</label>
+        	</div>
+        	<div class="large-2 medium-2 small-12 cell">
+            <input type="text" name="Prodotti_Video1Nome" id="Prodotti_Video1Nome" placeholder="Nome Video1" value="<%=GetFieldValue(dtProdotto, "Prodotti_Video1Nome")%>" size="50">
+        	</div>
+        	<div class="large-2 medium-2 small-12 cell">
+            <input type="text" name="Prodotti_Video2Nome" id="Prodotti_Video2Nome" placeholder="Nome Video2" value="<%=GetFieldValue(dtProdotto, "Prodotti_Video2Nome")%>" size="50">
+        	</div>
+        	<div class="large-2 medium-2 small-12 cell">
+            <input type="text" name="Prodotti_Video3Nome" id="Prodotti_Video3Nome" placeholder="Nome Video3" value="<%=GetFieldValue(dtProdotto, "Prodotti_Video3Nome")%>" size="50">
+        	</div>
+        	<div class="large-2 medium-2 small-12 cell">
+            <input type="text" name="Prodotti_Video4Nome" id="Prodotti_Video4Nome" placeholder="Nome Video4" value="<%=GetFieldValue(dtProdotto, "Prodotti_Video4Nome")%>" size="50">
+        	</div>
+        	<div class="large-2 medium-2 small-12 cell">
+            <input type="text" name="Prodotti_Video5Nome" id="Prodotti_Video5Nome" placeholder="Nome Video5" value="<%=GetFieldValue(dtProdotto, "Prodotti_Video5Nome")%>" size="50">
+        	</div>
+				</div>
+    	</section>
+
+    	<section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-allegati">
+       <div class="grid-x grid-padding-x small-up-2 medium-up-3 large-up-5">
+          <%
+            intNumDoc=1;
+            for (int i = 1; i <= 5; i++){
+              	Response.Write("<div class=\"cell\">");
+              	Response.Write("<h5 class=\"text-center\">Allegato " + i + "</h5>");
+                Response.Write("<input type=\"text\" name=\"Prodotti_Documento" + i + "Nome\" id=\"Prodotti_Documento" + i + "Nome\" placeholder=\"Nome allegato " + i + "\" value=\"" + GetFieldValue(dtProdotto, "Prodotti_Documento" + i + "Nome") + "\" size=\"50\">");
+                if (GetFieldValue(dtProdotto, "Prodotti_Documento" + i).Length>0){
+                	Response.Write("<iframe name=\"iframe-documento-" + i + "\" frameborder=\"0\" style=\"clear:both\" src=\"" + GetFieldValue(dtProdotto, "Prodotti_Documento" + i) + "#view=FitH&statusbar=0&toolbar=0&navpanes=0\" width=\"100%\" height=\"300\"></iframe>");
+                  Response.Write("<a href=\"" +GetFieldValue(dtProdotto, "Prodotti_Documento" + i) + "\" id=\"d" + i + "\" title=\"ingrandisci\" target=\"_blank\"><i class=\"fa-duotone fa-file-pdf fa-fw\"></i>visualizza</a><br />");
+                  Response.Write("<a href=\"/admin/app/catalogo/crud/elimina-documento-prodotto.aspx?azione=delete&documento=" + i + "&Prodotti_Ky=" + GetFieldValue(dtProdotto, "Prodotti_Ky") + "\"><i class=\"fa-duotone fa-trash-alt fa-fw\"></i>elimina</a>");
+                  intNumDoc=i+1;
+								}
+              	Response.Write("</div>");
+            }
+          %>
+        </div>
+        <fieldset class="fieldset">
+        	<legend class="radius">Carica allegato sul prodotto</legend>
+          <div class="callout primary"><i class="fa-duotone fa-circle-info fa-fw fal-lg"></i>ATTENZIONE: SOLO documenti PDF</div>
+					<label for="documento" class="button small">Carica documento</label>
+          <input type="file" class="show-for-sr fileupload" name="documento" id="documento" multiple /><br /><br />
+        	<input type="hidden" name="NumeroDocumento" id="NumeroDocumento" value="<%=intNumDoc%>" />
+        </fieldset>
+    	</section>
+  		</form>    
+	</div>
+</div>

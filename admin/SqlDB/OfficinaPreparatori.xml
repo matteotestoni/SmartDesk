@@ -1,0 +1,37 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="OfficinaPreparatori" Type="TABLE">
+    <Keys>
+      <Key Column="OfficinaPreparatori_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="OfficinaPreparatori_Ky" IsNull="N" Type="int" />
+      <Field Column="OfficinaPreparatori_Nominativo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="OfficinaPreparatori_Ordine" IsNull="Y" Type="int" />
+      <Field Column="OfficinaPreparatori_Colore" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="OfficinaPreparatori_Icona" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="OfficinaPreparatori_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="OfficinaPreparatori_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="OfficinaPreparatori_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="OfficinaPreparatori_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="OfficinaPreparatori_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="OfficinaPreparatori_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[OfficinaPreparatori] (
+  [OfficinaPreparatori_Ky] int IDENTITY(1,1) NOT NULL , 
+  [OfficinaPreparatori_Nominativo] varchar(100)  NULL , 
+  [OfficinaPreparatori_Ordine] int  NULL , 
+  [OfficinaPreparatori_Colore] varchar(100)  NULL , 
+  [OfficinaPreparatori_Icona] varchar(200)  NULL , 
+  [OfficinaPreparatori_UserInsert] int  NULL , 
+  [OfficinaPreparatori_UserUpdate] int  NULL , 
+  [OfficinaPreparatori_UserDelete] int  NULL , 
+  [OfficinaPreparatori_DateInsert] datetime  NULL , 
+  [OfficinaPreparatori_DateUpdate] datetime  NULL , 
+  [OfficinaPreparatori_DateDelete] datetime  NULL , 
+  [Utenti_Ky] int  NULL  )
+ALTER TABLE [dbo].[OfficinaPreparatori] ADD CONSTRAINT PK_OfficinaPreparatori PRIMARY KEY  ([OfficinaPreparatori_Ky])
+</SqlScriptCreate>
+</SqlTable>

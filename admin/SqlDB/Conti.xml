@@ -1,0 +1,41 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Conti" Type="TABLE">
+    <Keys>
+      <Key Column="Conti_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Conti_Ky" IsNull="N" Type="int" />
+      <Field Column="Conti_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Conti_Data" IsNull="Y" Type="datetime" />
+      <Field Column="Conti_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Conti_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Conti_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Conti_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Conti_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Conti_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Conti_IBAN" IsNull="Y" Type="varchar" Lenght="27" />
+      <Field Column="Conti_Swift" IsNull="Y" Type="varchar" Lenght="15" />
+      <Field Column="Conti_Istituto" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aziende_Ky" IsNull="Y" Type="int" />
+      <Field Column="Conti_Default" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Conti] (
+  [Conti_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Conti_Titolo] varchar(200)  NULL , 
+  [Conti_Data] datetime  NULL , 
+  [Conti_UserInsert] int  NULL , 
+  [Conti_UserUpdate] int  NULL , 
+  [Conti_UserDelete] int  NULL , 
+  [Conti_DateInsert] datetime  NULL , 
+  [Conti_DateUpdate] datetime  NULL , 
+  [Conti_DateDelete] datetime  NULL , 
+  [Conti_IBAN] varchar(27)  NULL , 
+  [Conti_Swift] varchar(15)  NULL , 
+  [Conti_Istituto] varchar(200)  NULL , 
+  [Aziende_Ky] int  NULL , 
+  [Conti_Default] bit  NULL  )
+ALTER TABLE [dbo].[Conti] ADD CONSTRAINT PK_Conti PRIMARY KEY  ([Conti_Ky])
+</SqlScriptCreate>
+</SqlTable>

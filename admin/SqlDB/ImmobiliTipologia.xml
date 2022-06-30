@@ -1,0 +1,33 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ImmobiliTipologia" Type="TABLE">
+    <Keys>
+      <Key Column="ImmobiliTipologia_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="ImmobiliTipologia_Ky" IsNull="N" Type="smallint" />
+      <Field Column="ImmobiliTipologia_Descrizione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="ImmobiliArea_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="ImmobiliTipologia_DescrizioneHTML" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="ImmobiliTipologia_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="ImmobiliTipologia_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="ImmobiliTipologia_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="ImmobiliTipologia_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="ImmobiliTipologia_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="ImmobiliTipologia_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[ImmobiliTipologia] (
+  [ImmobiliTipologia_Ky] smallint  NOT NULL , 
+  [ImmobiliTipologia_Descrizione] varchar(50)  NULL , 
+  [ImmobiliArea_Ky] tinyint  NULL , 
+  [ImmobiliTipologia_DescrizioneHTML] varchar(50)  NULL , 
+  [ImmobiliTipologia_UserInsert] int  NULL , 
+  [ImmobiliTipologia_UserUpdate] int  NULL , 
+  [ImmobiliTipologia_UserDelete] int  NULL , 
+  [ImmobiliTipologia_DateInsert] datetime  NULL , 
+  [ImmobiliTipologia_DateUpdate] datetime  NULL , 
+  [ImmobiliTipologia_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[ImmobiliTipologia] ADD CONSTRAINT PK_ImmobiliTipologia PRIMARY KEY  ([ImmobiliTipologia_Ky])
+</SqlScriptCreate>
+</SqlTable>

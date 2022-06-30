@@ -1,0 +1,30 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliMarca_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="VeicoliMarca_Ky" IsNull="N" Type="smallint" />
+      <Field Column="VeicoliMarca_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliMarca_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliMarca_Stemma" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="VeicoliTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliMarca_Importante" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliTipo_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliMarca_UrlKey" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliTipo_Titolo" IsNull="Y" Type="varchar" Lenght="40" />
+      <Field Column="VeicoliMarca_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliMarca_Description" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliMarca_Robots" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliMarca_MesiGaranzia" IsNull="Y" Type="int" />
+      <Field Column="VeicoliTipo_UrlKey" IsNull="Y" Type="varchar" Lenght="40" />
+      <Field Column="VeicoliTipo_Icona" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.VeicoliMarca_Vw
+AS
+SELECT        dbo.VeicoliMarca.VeicoliMarca_Ky, dbo.VeicoliMarca.VeicoliMarca_Titolo, dbo.VeicoliMarca.VeicoliMarca_Descrizione, dbo.VeicoliMarca.VeicoliMarca_Stemma, dbo.VeicoliMarca.VeicoliTipo_Ky, 
+                         dbo.VeicoliMarca.VeicoliMarca_Importante, dbo.VeicoliTipo.VeicoliTipo_Descrizione, dbo.VeicoliMarca.VeicoliMarca_UrlKey, dbo.VeicoliTipo.VeicoliTipo_Titolo, dbo.VeicoliMarca.VeicoliMarca_Title, 
+                         dbo.VeicoliMarca.VeicoliMarca_Description, dbo.VeicoliMarca.VeicoliMarca_Robots, dbo.VeicoliMarca.VeicoliMarca_MesiGaranzia, dbo.VeicoliTipo.VeicoliTipo_UrlKey, dbo.VeicoliTipo.VeicoliTipo_Icona
+FROM            dbo.VeicoliMarca INNER JOIN
+                         dbo.VeicoliTipo ON dbo.VeicoliMarca.VeicoliTipo_Ky = dbo.VeicoliTipo.VeicoliTipo_Ky
+</SqlScriptCreate>
+</SqlTable>

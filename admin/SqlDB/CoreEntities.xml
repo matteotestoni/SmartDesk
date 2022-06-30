@@ -1,0 +1,57 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CoreEntities" Type="TABLE">
+    <Keys>
+      <Key Column="CoreEntities_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CoreEntities_Ky" IsNull="N" Type="int" />
+      <Field Column="CoreModules_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreEntities_Code" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreEntities_Key" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreEntities_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreEntities_Description" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreEntities_LabelSingular" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreEntities_LabelPlural" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreEntities_Icon" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreEntities_Config" IsNull="Y" Type="bit" />
+      <Field Column="CoreEntities_Order" IsNull="Y" Type="int" />
+      <Field Column="CoreEntities_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CoreEntities_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CoreEntities_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CoreEntities_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CoreEntities_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CoreEntities_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="CoreEntities_Tree" IsNull="Y" Type="bit" />
+      <Field Column="CoreEntities_TreeAttribute" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreEntities_InMenu" IsNull="Y" Type="bit" />
+      <Field Column="CoreEntities_CustomSave" IsNull="Y" Type="bit" />
+      <Field Column="CoreEntities_CustomDelete" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CoreEntities] (
+  [CoreEntities_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CoreModules_Ky] int  NULL , 
+  [CoreEntities_Code] varchar(200)  NULL , 
+  [CoreEntities_Key] varchar(200)  NULL , 
+  [CoreEntities_Title] varchar(200)  NULL , 
+  [CoreEntities_Description] varchar(MAX)  NULL , 
+  [CoreEntities_LabelSingular] varchar(200)  NULL , 
+  [CoreEntities_LabelPlural] varchar(200)  NULL , 
+  [CoreEntities_Icon] varchar(200)  NULL , 
+  [CoreEntities_Config] bit  NULL DEFAULT ((0)), 
+  [CoreEntities_Order] int  NULL , 
+  [CoreEntities_UserInsert] int  NULL , 
+  [CoreEntities_UserUpdate] int  NULL , 
+  [CoreEntities_UserDelete] int  NULL , 
+  [CoreEntities_DateInsert] datetime  NULL , 
+  [CoreEntities_DateUpdate] datetime  NULL , 
+  [CoreEntities_DateDelete] datetime  NULL , 
+  [CoreEntities_Tree] bit  NULL , 
+  [CoreEntities_TreeAttribute] varchar(100)  NULL , 
+  [CoreEntities_InMenu] bit  NULL DEFAULT ((0)), 
+  [CoreEntities_CustomSave] bit  NULL , 
+  [CoreEntities_CustomDelete] bit  NULL  )
+ALTER TABLE [dbo].[CoreEntities] ADD CONSTRAINT PK_CoreEntities PRIMARY KEY  ([CoreEntities_Ky])
+</SqlScriptCreate>
+</SqlTable>

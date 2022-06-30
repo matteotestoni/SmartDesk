@@ -1,0 +1,87 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Attivita" Type="TABLE">
+    <Keys>
+      <Key Column="Attivita_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Attivita_Ky" IsNull="N" Type="int" />
+      <Field Column="Attivita_Descrizione" IsNull="Y" Type="varchar" Lenght="4000" />
+      <Field Column="Attivita_Inizio" IsNull="Y" Type="datetime" />
+      <Field Column="Attivita_Scadenza" IsNull="Y" Type="datetime" />
+      <Field Column="Attivita_Chiusura" IsNull="Y" Type="datetime" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="AttivitaTipo_Ky" IsNull="Y" Type="int" />
+      <Field Column="Attivita_Completo" IsNull="Y" Type="bit" />
+      <Field Column="Persone_Ky" IsNull="Y" Type="int" />
+      <Field Column="Priorita_Ky" IsNull="Y" Type="int" />
+      <Field Column="Commesse_Ky" IsNull="Y" Type="int" />
+      <Field Column="Opportunita_Ky" IsNull="Y" Type="int" />
+      <Field Column="Attivita_Ore" IsNull="N" Type="float" />
+      <Field Column="Attivita_Trasferta" IsNull="Y" Type="bit" />
+      <Field Column="Attivita_Km" IsNull="Y" Type="money" />
+      <Field Column="Attivita_RimborsoKm" IsNull="Y" Type="money" />
+      <Field Column="Attivita_SpeseKm" IsNull="Y" Type="money" />
+      <Field Column="Attivita_SpeseAutostrada" IsNull="Y" Type="money" />
+      <Field Column="Attivita_SpeseParcheggi" IsNull="Y" Type="money" />
+      <Field Column="Attivita_SpesePasti" IsNull="Y" Type="money" />
+      <Field Column="Attivita_SpeseMezziPubblici" IsNull="Y" Type="money" />
+      <Field Column="Attivita_SpeseTotali" IsNull="Y" Type="money" />
+      <Field Column="AttivitaSettore_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Attivita_OrePreviste" IsNull="Y" Type="float" />
+      <Field Column="Pagamenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Documenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Attivita_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Attivita_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Attivita_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Attivita_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Attivita_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Attivita_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="AttivitaStati_Ky" IsNull="Y" Type="int" />
+      <Field Column="Lead_Ky" IsNull="Y" Type="int" />
+      <Field Column="Ticket_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Attivita] (
+  [Attivita_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Attivita_Descrizione] varchar(4000)  NULL , 
+  [Attivita_Inizio] datetime  NULL DEFAULT (getdate()), 
+  [Attivita_OraInizio] time  NULL DEFAULT (getdate()), 
+  [Attivita_Scadenza] datetime  NULL , 
+  [Attivita_OraScadenza] time  NULL DEFAULT (getdate()), 
+  [Attivita_Chiusura] datetime  NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [AttivitaTipo_Ky] int  NULL , 
+  [Attivita_Completo] bit  NULL DEFAULT ((0)), 
+  [Persone_Ky] int  NULL , 
+  [Priorita_Ky] int  NULL , 
+  [Commesse_Ky] int  NULL , 
+  [Opportunita_Ky] int  NULL , 
+  [Attivita_Ore] float  NOT NULL DEFAULT ((0)), 
+  [Attivita_Trasferta] bit  NULL DEFAULT ((0)), 
+  [Attivita_Km] money  NULL DEFAULT ((0)), 
+  [Attivita_RimborsoKm] money  NULL DEFAULT ((0)), 
+  [Attivita_SpeseKm] money  NULL DEFAULT ((0)), 
+  [Attivita_SpeseAutostrada] money  NULL DEFAULT ((0)), 
+  [Attivita_SpeseParcheggi] money  NULL DEFAULT ((0)), 
+  [Attivita_SpesePasti] money  NULL DEFAULT ((0)), 
+  [Attivita_SpeseMezziPubblici] money  NULL DEFAULT ((0)), 
+  [Attivita_SpeseTotali] money  NULL DEFAULT ((0)), 
+  [AttivitaSettore_Ky] tinyint  NULL DEFAULT ((1)), 
+  [Utenti_Ky] int  NULL , 
+  [Attivita_OrePreviste] float  NULL DEFAULT ((0)), 
+  [Pagamenti_Ky] int  NULL , 
+  [Documenti_Ky] int  NULL , 
+  [Attivita_UserInsert] int  NULL , 
+  [Attivita_UserUpdate] int  NULL , 
+  [Attivita_UserDelete] int  NULL , 
+  [Attivita_DateInsert] datetime  NULL , 
+  [Attivita_DateUpdate] datetime  NULL , 
+  [Attivita_DateDelete] datetime  NULL , 
+  [AttivitaStati_Ky] int  NULL , 
+  [Lead_Ky] int  NULL , 
+  [Ticket_Ky] int  NULL  )
+ALTER TABLE [dbo].[Attivita] ADD CONSTRAINT PK_Attivita PRIMARY KEY  ([Attivita_Ky])
+</SqlScriptCreate>
+</SqlTable>

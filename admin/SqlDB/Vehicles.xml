@@ -1,0 +1,105 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Vehicles" Type="TABLE">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="vehicleClass" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="id" IsNull="Y" Type="int" />
+      <Field Column="externalId" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="make" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="make_id" IsNull="Y" Type="int" />
+      <Field Column="model" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="model_id" IsNull="Y" Type="int" />
+      <Field Column="generation" IsNull="Y" Type="int" />
+      <Field Column="version" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="bodyType" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="fuelType" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="registrationDate" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="seal" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="type" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="status" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="creationDate" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="modificationDate" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="infocarCode" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="infocarMakeCode" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="infocarModelCode" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="dealer_id" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="dealer_name" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="dealer_city" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="dealer_address" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="dealer_email" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="dealer_phone" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="dealer_fax" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="dealer_county" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="dealer_zip" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="dealer_latitude" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="dealer_longitude" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="gearType" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="gearNumber" IsNull="Y" Type="int" />
+      <Field Column="tractionType" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="kw" IsNull="Y" Type="int" />
+      <Field Column="hp" IsNull="Y" Type="int" />
+      <Field Column="cc" IsNull="Y" Type="int" />
+      <Field Column="cylinders" IsNull="Y" Type="int" />
+      <Field Column="doors" IsNull="Y" Type="int" />
+      <Field Column="seats" IsNull="Y" Type="int" />
+      <Field Column="emissionClass" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="emissionCo2" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="consumption_urban" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="consumption_outer" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="consumption_combined" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="prices_priceB2c" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="prices_priceB2b" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="prices_listPrice" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="exterior_color" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="plate" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="km" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="isLuxury" IsNull="Y" Type="bit" />
+      <Field Column="isNoviceDrivable" IsNull="Y" Type="bit" />
+      <Field Column="description" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="previousOwnersNumber" IsNull="Y" Type="int" />
+      <Field Column="hasAccident" IsNull="Y" Type="bit" />
+      <Field Column="equipments" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="image1" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="image2" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="image3" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="image4" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="image5" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="image6" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="image7" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="image8" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="image9" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="image10" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="image11" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="image12" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="image13" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="image14" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="image15" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="image16" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="image17" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="image18" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="image19" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="image20" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Comuni_Ky" IsNull="Y" Type="int" />
+      <Field Column="Province_Ky" IsNull="Y" Type="int" />
+      <Field Column="Regioni_Ky" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_CmnKy" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_PrvKy" IsNull="Y" Type="int" />
+      <Field Column="Nazioni_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliCategoria_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliCarburante_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliMarca_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliModello_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliNormativeEuro_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_Premium" IsNull="Y" Type="bit" />
+      <Field Column="Veicoli_Autodasti" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliCambio_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliCarrozzeria_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_Foto" IsNull="Y" Type="bit" />
+      <Field Column="agenzia_esiste" IsNull="Y" Type="bit" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliColore_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Nuovo" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+</SqlTable>

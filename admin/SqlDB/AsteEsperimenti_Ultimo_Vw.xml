@@ -1,0 +1,16 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AsteEsperimenti_Ultimo_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="AsteEsperimenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Aste_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.AsteEsperimenti_Ultimo_Vw
+AS
+SELECT        MAX(dbo.AsteEsperimenti.AsteEsperimenti_Ky) AS AsteEsperimenti_Ky, dbo.AsteEsperimenti.Aste_Ky
+FROM            dbo.AsteEsperimenti INNER JOIN
+                         dbo.AsteEsperimentiEsiti ON dbo.AsteEsperimenti.AsteEsperimentiEsiti_Ky = dbo.AsteEsperimentiEsiti.AsteEsperimentiEsiti_Ky
+GROUP BY dbo.AsteEsperimenti.Aste_Ky
+</SqlScriptCreate>
+</SqlTable>

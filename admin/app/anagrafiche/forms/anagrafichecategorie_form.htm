@@ -1,0 +1,63 @@
+	<div class="grid-x grid-padding-x">
+		<div class="large-2 medium-2 small-4 cell">
+	    <label for="AnagraficheCategorie_Titolo" aria-describedby="AnagraficheCategorie_TitoloHelpText" class="large-text-right small-text-left middle"><i class="fa-duotone fa-tag fa-fw"></i> Titolo</label>
+		</div>
+		<div class="large-10 medium-10 small-8 cell">
+	    <input type="text" required="required" name="AnagraficheCategorie_Titolo" id="AnagraficheCategorie_Titolo" title="Titolo" value="<%=GetFieldValue(dtAnagraficheCategorie, "AnagraficheCategorie_Titolo")%>" size="60" maxlength="60">
+			<span class="form-error">Obbligatorio.</span>
+			<p class="help-text" id="AnagraficheCategorie_TitoloHelpText">(max 60 caratteri)</p>
+		</div>
+	</div>	
+	<div class="grid-x grid-padding-x">
+		<div class="large-2 medium-2 small-12 cell">
+	    <label for="AnagraficheCategorie_Descrizione" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Descrizione</label>
+		</div>
+		<div class="large-10 medium-10 small-12 cell">
+	    <textarea name="AnagraficheCategorie_Descrizione" aria-describedby="AnagraficheCategorie_TitoloHelpText" id="AnagraficheCategorie_Descrizione" rows="5" cols="110" required="required" class="ckfinder"><%=GetFieldValue(dtAnagraficheCategorie, "AnagraficheCategorie_Descrizione")%></textarea>
+	    <script type="text/javascript">
+	    CKEDITOR.replace('AnagraficheCategorie_Descrizione',
+	    	{
+	      	filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+	      	filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+	    	});
+	    CKFinder.setupCKEditor( editor, null, { type: 'Files', currentFolder: '/uploads/foto-anagrafiche/' } );
+	    </script>
+			<span class="form-error">Obbligatorio.</span>
+			<p class="help-text" id="AnagraficheCategorie_TitoloHelpText">(consigliato meno di 100 caratteri)</p>
+		</div>
+	</div>	
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AnagraficheCategorie_Padre" class="text-right middle">Categoria padre</label>
+		</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="AnagraficheCategorie_Padre" id="AnagraficheCategorie_Padre" value="<%=GetFieldValue(dtAnagraficheCategorie, "AnagraficheCategorie_Padre")%>" size="2" />
+			<span class="form-error">Obbligatorio</span>
+  	</div>
+ 	</div>
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AnagraficheCategorie_Ordine" class="text-right middle">Ordine</label>
+		</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="AnagraficheCategorie_Ordine" id="AnagraficheCategorie_Ordine" value="<%=GetFieldValue(dtAnagraficheCategorie, "AnagraficheCategorie_Ordine")%>" size="2" />
+  	</div>
+ 	</div>
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AnagraficheCategorie_Attributi" class="text-right middle">Attributi disponibili</label>
+		</div>
+  	<div class="large-10 medium-10 small-12 cell">
+      <select name="AnagraficheCategorie_Attributi" id="AnagraficheCategorie_Attributi" multiple size="10">
+				<%
+				for (int i = 0; i < dtAttributi.Rows.Count; i++){
+					Response.Write("<option value=\"" + dtAttributi.Rows[i]["Attributi_Ky"].ToString() + "\">" + dtAttributi.Rows[i]["Attributi_Codice"].ToString() + " - " + dtAttributi.Rows[i]["Attributi_Titolo"].ToString() + "</option>");
+				}
+				%>
+      </select>
+      <p class="help-text" id="AnagraficheCategorie_Attributi_HelpText">Gli attributi sono da definire nella <a href="/admin/view.aspx?CoreModules_Ky=26&CoreEntities_Ky=210&CoreGrids_Ky=218">gestione degli attributi</a></p>
+      <script type="text/javascript">
+        selectSetMultiple('AnagraficheCategorie_Attributi', '<%=GetFieldValue(dtAnagraficheCategorie, "AnagraficheCategorie_Attributi")%>');
+      </script>
+    </div>
+  </div>

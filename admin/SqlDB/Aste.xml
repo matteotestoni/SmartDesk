@@ -1,0 +1,121 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Aste" Type="TABLE">
+    <Keys>
+      <Key Column="Aste_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Aste_Ky" IsNull="N" Type="int" />
+      <Field Column="Aste_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Aste_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Aste_UrlKey" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_Numero" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Nazioni_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Province_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Regioni_Ky" IsNull="Y" Type="int" />
+      <Field Column="Comuni_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Aste_DataPagamento" IsNull="Y" Type="smalldatetime" />
+      <Field Column="AsteCategorie_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Aste_Referente" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_CellulareReferente" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Aste_EmailReferente" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Aste_Cauzione" IsNull="Y" Type="money" />
+      <Field Column="Aste_Rilancio" IsNull="Y" Type="money" />
+      <Field Column="Aste_Foto1" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_Foto2" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_Foto3" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_Foto4" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_Foto5" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_Foto6" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_Foto7" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_Foto8" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_Foto9" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_Foto10" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_Visite" IsNull="Y" Type="int" />
+      <Field Column="PagamentiMetodo_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="AsteRitiri_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Aste_DataInserimento" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Aste_DataAggiornamento" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Aste_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Aste_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Aste_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Aste_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Aste_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Aste_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Aste_Indirizzo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_NumeroFoto" IsNull="Y" Type="tinyint" />
+      <Field Column="Aste_Video" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_Procedura" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Conti_Ky" IsNull="Y" Type="int" />
+      <Field Column="AsteTipo_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Aste_Robots" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Aste_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_Description" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AsteNatura_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Aste_CommissioniTipo" IsNull="Y" Type="tinyint" />
+      <Field Column="Aste_Commissione" IsNull="Y" Type="tinyint" />
+      <Field Column="AsteVendita_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="CoreResponseCode_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Aste_RedirectUrl" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Aste] (
+  [Aste_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Aste_Titolo] varchar(150)  NULL , 
+  [Aste_Descrizione] varchar(MAX)  NULL , 
+  [Aste_UrlKey] varchar(200)  NULL , 
+  [Aste_Numero] int  NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [Nazioni_Ky] tinyint  NULL , 
+  [Province_Ky] tinyint  NULL , 
+  [Regioni_Ky] int  NULL , 
+  [Comuni_Ky] smallint  NULL , 
+  [Aste_DataPagamento] smalldatetime  NULL , 
+  [AsteCategorie_Ky] smallint  NULL , 
+  [Aste_Referente] varchar(200)  NULL , 
+  [Aste_CellulareReferente] varchar(100)  NULL , 
+  [Aste_EmailReferente] varchar(100)  NULL , 
+  [Aste_Cauzione] money  NULL , 
+  [Aste_Rilancio] money  NULL , 
+  [Aste_Foto1] varchar(200)  NULL , 
+  [Aste_Foto2] varchar(200)  NULL , 
+  [Aste_Foto3] varchar(200)  NULL , 
+  [Aste_Foto4] varchar(200)  NULL , 
+  [Aste_Foto5] varchar(200)  NULL , 
+  [Aste_Foto6] varchar(200)  NULL , 
+  [Aste_Foto7] varchar(200)  NULL , 
+  [Aste_Foto8] varchar(200)  NULL , 
+  [Aste_Foto9] varchar(200)  NULL , 
+  [Aste_Foto10] varchar(200)  NULL , 
+  [Aste_Visite] int  NULL , 
+  [PagamentiMetodo_Ky] smallint  NULL , 
+  [AsteRitiri_Ky] tinyint  NULL , 
+  [Utenti_Ky] int  NULL , 
+  [Aste_DataInserimento] smalldatetime  NULL , 
+  [Aste_DataAggiornamento] smalldatetime  NULL , 
+  [Aste_UserInsert] int  NULL , 
+  [Aste_UserUpdate] int  NULL , 
+  [Aste_UserDelete] int  NULL , 
+  [Aste_DateInsert] datetime  NULL , 
+  [Aste_DateUpdate] datetime  NULL , 
+  [Aste_DateDelete] datetime  NULL , 
+  [Aste_Indirizzo] varchar(200)  NULL , 
+  [Aste_NumeroFoto] tinyint  NULL , 
+  [Aste_Video] varchar(200)  NULL , 
+  [Aste_Procedura] varchar(200)  NULL , 
+  [Conti_Ky] int  NULL , 
+  [AsteTipo_Ky] smallint  NULL , 
+  [Aste_Robots] varchar(100)  NULL DEFAULT ('index,follow'), 
+  [Aste_Title] varchar(200)  NULL , 
+  [Aste_Description] varchar(200)  NULL , 
+  [AsteNatura_Ky] smallint  NULL , 
+  [Aste_CommissioniTipo] tinyint  NULL DEFAULT ((1)), 
+  [Aste_Commissione] tinyint  NULL DEFAULT ((0)), 
+  [AsteVendita_Ky] smallint  NULL , 
+  [CoreResponseCode_Ky] smallint  NULL DEFAULT ((200)), 
+  [Aste_RedirectUrl] varchar(MAX)  NULL  )
+ALTER TABLE [dbo].[Aste] ADD CONSTRAINT PK_Aste PRIMARY KEY  ([Aste_Ky])
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,122 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Opportunita_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Opportunita_Ky" IsNull="N" Type="int" />
+      <Field Column="Opportunita_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Opportunita_Data" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Opportunita_Note" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="OpportunitaStati_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Opportunita_Chiusa" IsNull="Y" Type="bit" />
+      <Field Column="OpportunitaStati_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="OpportunitaStati_Colore" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Opportunita_Data_IT" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="Opportunita_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Anagrafiche_Telefono" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Opportunita_ValoreMin" IsNull="Y" Type="money" />
+      <Field Column="Opportunita_ValoreMax" IsNull="Y" Type="money" />
+      <Field Column="OpportunitaSorgenti_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="OpportunitaSorgenti_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Utenti_Email" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Utenti_Iniziali" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="UtentiGruppi_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_EmailContatti" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_Nome" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_Cognome" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Opportunita_Stato" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="OpportunitaSorgenti_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="OpportunitaSorgenti_Colore" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="OpportunitaSorgenti_Icona" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_SitoWeb" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="OpportunitaStati_Aperta" IsNull="Y" Type="bit" />
+      <Field Column="OpportunitaStati_Chiusa" IsNull="Y" Type="bit" />
+      <Field Column="OpportunitaStati_Probabilita" IsNull="Y" Type="tinyint" />
+      <Field Column="Immobili_Ky" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_Ky" IsNull="Y" Type="int" />
+      <Field Column="Prodotti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Servizi_Ky" IsNull="Y" Type="int" />
+      <Field Column="Cantieri_Ky" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Ky" IsNull="Y" Type="int" />
+      <Field Column="Aste_Ky" IsNull="Y" Type="int" />
+      <Field Column="Immobili_Riferimento" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Veicoli_Riferimento" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Veicoli_Targa" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Annunci_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Prodotti_Codice" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Prodotti_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Cantieri_Riferimento" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Cantieri_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Servizi_Codice" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Servizi_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Utenti_Colore" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="Utenti_Cognome" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Utenti_Nome" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="utm_source" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_medium" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_campaign" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_term" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_content" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Commesse_Ky" IsNull="Y" Type="int" />
+      <Field Column="Documenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Spese_Ky" IsNull="Y" Type="int" />
+      <Field Column="Note_Ky" IsNull="Y" Type="int" />
+      <Field Column="OpportunitaStati_Icona" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Campagne_Ky" IsNull="Y" Type="int" />
+      <Field Column="Campagne_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Documenti_Riferimenti" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliMarca_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliModello_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Lead_Ky" IsNull="Y" Type="int" />
+      <Field Column="RicambiVeicoli_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliMarca_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliModello_Ky" IsNull="Y" Type="int" />
+      <Field Column="Produttori_Ky" IsNull="Y" Type="int" />
+      <Field Column="Lead_Titolo" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Opportunita_Codice" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Utenti_Nominativo" IsNull="Y" Type="varchar" Lenght="255" />
+      <Field Column="Expr1" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Expr2" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Expr3" IsNull="Y" Type="varchar" Lenght="10" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Opportunita_Vw
+AS
+SELECT        dbo.Opportunita.Opportunita_Ky, dbo.Opportunita.Opportunita_Titolo, dbo.Opportunita.Anagrafiche_Ky, dbo.Opportunita.Utenti_Ky, dbo.Opportunita.Opportunita_Data, dbo.Opportunita.Opportunita_Note, 
+                         dbo.Opportunita.OpportunitaStati_Ky, dbo.Opportunita.Opportunita_Chiusa, dbo.OpportunitaStati.OpportunitaStati_Titolo, dbo.OpportunitaStati.OpportunitaStati_Colore, 
+                         dbo.Anagrafiche.Anagrafiche_RagioneSociale, CONVERT(varchar, dbo.Opportunita.Opportunita_Data, 105) AS Opportunita_Data_IT, dbo.Opportunita.Opportunita_Descrizione, 
+                         dbo.Anagrafiche.Anagrafiche_Telefono, dbo.Opportunita.Opportunita_ValoreMin, dbo.Opportunita.Opportunita_ValoreMax, dbo.Opportunita.OpportunitaSorgenti_Ky, 
+                         dbo.OpportunitaSorgenti.OpportunitaSorgenti_Descrizione, Utenti_1.Utenti_Email, Utenti_1.Utenti_Iniziali, Utenti_1.UtentiGruppi_Ky, dbo.Anagrafiche.Anagrafiche_EmailContatti, 
+                         dbo.Anagrafiche.Anagrafiche_Nome, dbo.Anagrafiche.Anagrafiche_Cognome, dbo.Opportunita.Opportunita_Stato, dbo.OpportunitaSorgenti.OpportunitaSorgenti_Titolo, 
+                         dbo.OpportunitaSorgenti.OpportunitaSorgenti_Colore, dbo.OpportunitaSorgenti.OpportunitaSorgenti_Icona, dbo.Anagrafiche.Anagrafiche_SitoWeb, dbo.OpportunitaStati.OpportunitaStati_Aperta, 
+                         dbo.OpportunitaStati.OpportunitaStati_Chiusa, dbo.OpportunitaStati.OpportunitaStati_Probabilita, dbo.Opportunita.Immobili_Ky, dbo.Opportunita.Veicoli_Ky, dbo.Opportunita.Prodotti_Ky, 
+                         dbo.Opportunita.Servizi_Ky, dbo.Opportunita.Cantieri_Ky, dbo.Opportunita.Annunci_Ky, dbo.Opportunita.Aste_Ky, dbo.Immobili.Immobili_Riferimento, dbo.Veicoli.Veicoli_Riferimento, dbo.Veicoli.Veicoli_Targa, 
+                         dbo.Annunci.Annunci_Titolo, dbo.Aste.Aste_Titolo, dbo.Prodotti.Prodotti_Codice, dbo.Prodotti.Prodotti_Titolo, dbo.Cantieri.Cantieri_Riferimento, dbo.Cantieri.Cantieri_Titolo, dbo.Servizi.Servizi_Codice, 
+                         dbo.Servizi.Servizi_Titolo, Utenti_1.Utenti_Colore, Utenti_1.Utenti_Cognome, Utenti_1.Utenti_Nome, dbo.Opportunita.utm_source, dbo.Opportunita.utm_medium, dbo.Opportunita.utm_campaign, 
+                         dbo.Opportunita.utm_term, dbo.Opportunita.utm_content, dbo.Opportunita.Commesse_Ky, dbo.Opportunita.Documenti_Ky, dbo.Opportunita.Spese_Ky, dbo.Opportunita.Note_Ky, 
+                         dbo.OpportunitaStati.OpportunitaStati_Icona, dbo.Opportunita.Campagne_Ky, dbo.Campagne.Campagne_Titolo, dbo.Documenti.Documenti_Riferimenti, dbo.VeicoliMarca.VeicoliMarca_Titolo, 
+                         dbo.VeicoliModello.VeicoliModello_Titolo, dbo.Opportunita.Lead_Ky, dbo.Opportunita.RicambiVeicoli_Ky, dbo.Opportunita.VeicoliMarca_Ky, dbo.Opportunita.VeicoliModello_Ky, dbo.Opportunita.Produttori_Ky, 
+                         dbo.Lead.Lead_Titolo, dbo.Opportunita.Opportunita_Codice, dbo.Utenti.Utenti_Nominativo, dbo.Utenti.Utenti_Email AS Expr1, dbo.Utenti.Utenti_Iniziali AS Expr2, dbo.Utenti.Utenti_Colore AS Expr3
+FROM            dbo.Opportunita LEFT OUTER JOIN
+                         dbo.Utenti ON dbo.Opportunita.Utenti_Ky = dbo.Utenti.Utenti_Ky LEFT OUTER JOIN
+                         dbo.Lead ON dbo.Opportunita.Lead_Ky = dbo.Lead.Lead_Ky LEFT OUTER JOIN
+                         dbo.VeicoliModello ON dbo.Opportunita.VeicoliModello_Ky = dbo.VeicoliModello.VeicoliModello_Ky LEFT OUTER JOIN
+                         dbo.VeicoliMarca ON dbo.Opportunita.VeicoliMarca_Ky = dbo.VeicoliMarca.VeicoliMarca_Ky LEFT OUTER JOIN
+                         dbo.Documenti ON dbo.Opportunita.Documenti_Ky = dbo.Documenti.Documenti_Ky LEFT OUTER JOIN
+                         dbo.Campagne ON dbo.Opportunita.Campagne_Ky = dbo.Campagne.Campagne_Ky LEFT OUTER JOIN
+                         dbo.Servizi ON dbo.Opportunita.Servizi_Ky = dbo.Servizi.Servizi_Ky LEFT OUTER JOIN
+                         dbo.Cantieri ON dbo.Opportunita.Cantieri_Ky = dbo.Cantieri.Cantieri_Ky LEFT OUTER JOIN
+                         dbo.Prodotti ON dbo.Opportunita.Prodotti_Ky = dbo.Prodotti.Prodotti_Ky LEFT OUTER JOIN
+                         dbo.Aste ON dbo.Opportunita.Aste_Ky = dbo.Aste.Aste_Ky LEFT OUTER JOIN
+                         dbo.Annunci ON dbo.Opportunita.Annunci_Ky = dbo.Annunci.Annunci_Ky LEFT OUTER JOIN
+                         dbo.Veicoli ON dbo.Opportunita.Veicoli_Ky = dbo.Veicoli.Veicoli_Ky LEFT OUTER JOIN
+                         dbo.Immobili ON dbo.Opportunita.Immobili_Ky = dbo.Immobili.Immobili_Ky LEFT OUTER JOIN
+                         dbo.Utenti AS Utenti_1 ON dbo.Opportunita.Utenti_Ky = Utenti_1.Utenti_Ky LEFT OUTER JOIN
+                         dbo.OpportunitaSorgenti ON dbo.Opportunita.OpportunitaSorgenti_Ky = dbo.OpportunitaSorgenti.OpportunitaSorgenti_Ky LEFT OUTER JOIN
+                         dbo.OpportunitaStati ON dbo.Opportunita.OpportunitaStati_Ky = dbo.OpportunitaStati.OpportunitaStati_Ky LEFT OUTER JOIN
+                         dbo.Anagrafiche ON dbo.Opportunita.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky
+</SqlScriptCreate>
+</SqlTable>

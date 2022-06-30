@@ -1,0 +1,33 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CMSAds_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CMSAds_Ky" IsNull="N" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="CMSAds_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSAds_Url" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="CMSAds_Roitracking" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="CMSAds_Tags" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSAds_Categorie" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSAds_Zone" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="CMSAds_Foto" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Lingue_Codice" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Lingue_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="CMSAds_PubblicaWEB" IsNull="Y" Type="bit" />
+      <Field Column="CMSAds_Province" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSAds_Click" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_ParoleChiave" IsNull="Y" Type="varchar" Lenght="200" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.CMSAds_Vw
+AS
+SELECT        dbo.Anagrafiche.Anagrafiche_RagioneSociale, dbo.CMSAds.CMSAds_Ky, dbo.CMSAds.Anagrafiche_Ky, dbo.CMSAds.CMSAds_Titolo, dbo.CMSAds.CMSAds_Url, dbo.CMSAds.CMSAds_Roitracking, 
+                         dbo.CMSAds.CMSAds_Tags, dbo.CMSAds.CMSAds_Categorie, dbo.CMSAds.CMSAds_Zone, dbo.CMSAds.Lingue_Ky, dbo.CMSAds.CMSAds_Foto, dbo.Lingue.Lingue_Codice, dbo.Lingue.Lingue_Titolo, 
+                         dbo.CMSAds.CMSAds_PubblicaWEB, dbo.CMSAds.CMSAds_Province, dbo.CMSAds.CMSAds_Click, dbo.Anagrafiche.Anagrafiche_ParoleChiave
+FROM            dbo.CMSAds LEFT OUTER JOIN
+                         dbo.Lingue ON dbo.CMSAds.Lingue_Ky = dbo.Lingue.Lingue_Ky LEFT OUTER JOIN
+                         dbo.Anagrafiche ON dbo.CMSAds.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky
+</SqlScriptCreate>
+</SqlTable>

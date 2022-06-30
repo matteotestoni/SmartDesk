@@ -1,0 +1,35 @@
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AsteNatura_Titolo" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Titolo</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="AsteNatura_Titolo" id="AsteNatura_Titolo" title="Nome" value="<%=GetFieldValue(dtAsteNatura, "AsteNatura_Titolo")%>" size="150" required="required">
+  	</div>
+  </div>
+  
+	<div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AsteNatura_Icona" class="large-text-right small-text-left middle"><i class="fa-duotone fa-image fa-fw"></i>Icona</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="AsteNatura_Icona" id="AsteNatura_Icona" title="Nome" value="<%=GetFieldValue(dtAsteNatura, "AsteNatura_Icona")%>" size="150">
+			<span class="help-text">Puoi specificare l'icona prendendo da Font Awesome. <a href="https://fontawesome.com/icons?d=gallery" target="_blank" rel="nofollow">Clicca qui</a> per maggiori informazioni.</span>
+  	</div>
+  </div>
+  
+	<div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-12 cell text-right">
+   		<label class="large-text-right small-text-left middle" for="AsteNatura_Default">Predefinita</label>
+ 	  </div>
+  	<div class="large-10 medium-10 small-12 cell">
+			<select name="AsteNatura_Default" id="AsteNatura_Default" value="<%=GetCheckValue(dtAsteNatura, "AsteNatura_Default")%>">
+	      <option value="True">si</option>
+	      <option value="False">no</option>
+	    </select>
+	    <span class="form-error">Obbligatorio</span>
+	    <script type="text/javascript">
+	      selectSet('AsteNatura_Default', '<%=GetCheckValue(dtAsteNatura, "AsteNatura_Default")%>');
+	    </script>
+  	</div>
+	</div>        
+  

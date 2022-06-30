@@ -1,0 +1,35 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CoreUrlRedirect" Type="TABLE">
+    <Keys>
+      <Key Column="CoreUrlRedirect_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CoreUrlRedirect_Ky" IsNull="N" Type="int" />
+      <Field Column="CoreEntities_Code" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreEntities_KeyValue" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreUrlRedirect_UrlSource" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreUrlRedirect_UrlDestination" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreUrlRedirect_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CoreUrlRedirect_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CoreUrlRedirect_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CoreUrlRedirect_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CoreUrlRedirect_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CoreUrlRedirect_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CoreUrlRedirect] (
+  [CoreUrlRedirect_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CoreEntities_Code] varchar(200)  NULL , 
+  [CoreEntities_KeyValue] varchar(200)  NULL , 
+  [CoreUrlRedirect_UrlSource] varchar(MAX)  NULL , 
+  [CoreUrlRedirect_UrlDestination] varchar(MAX)  NULL , 
+  [CoreUrlRedirect_UserInsert] int  NULL , 
+  [CoreUrlRedirect_UserUpdate] int  NULL , 
+  [CoreUrlRedirect_UserDelete] int  NULL , 
+  [CoreUrlRedirect_DateInsert] datetime  NULL , 
+  [CoreUrlRedirect_DateUpdate] datetime  NULL , 
+  [CoreUrlRedirect_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[CoreUrlRedirect] ADD CONSTRAINT PK_CoreUrlRedirect PRIMARY KEY  ([CoreUrlRedirect_Ky])
+</SqlScriptCreate>
+</SqlTable>

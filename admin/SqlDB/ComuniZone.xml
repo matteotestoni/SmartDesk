@@ -1,0 +1,31 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ComuniZone" Type="TABLE">
+    <Keys>
+      <Key Column="ComuniZone_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="ComuniZone_Ky" IsNull="N" Type="int" />
+      <Field Column="ComuniZone_Zona" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Comuni_Ky" IsNull="Y" Type="int" />
+      <Field Column="ComuniZone_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="ComuniZone_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="ComuniZone_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="ComuniZone_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="ComuniZone_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="ComuniZone_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[ComuniZone] (
+  [ComuniZone_Ky] int IDENTITY(1,1) NOT NULL , 
+  [ComuniZone_Zona] varchar(100)  NULL , 
+  [Comuni_Ky] int  NULL , 
+  [ComuniZone_UserInsert] int  NULL , 
+  [ComuniZone_UserUpdate] int  NULL , 
+  [ComuniZone_UserDelete] int  NULL , 
+  [ComuniZone_DateInsert] datetime  NULL , 
+  [ComuniZone_DateUpdate] datetime  NULL , 
+  [ComuniZone_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[ComuniZone] ADD CONSTRAINT PK_ComuniZone PRIMARY KEY  ([ComuniZone_Ky])
+</SqlScriptCreate>
+</SqlTable>

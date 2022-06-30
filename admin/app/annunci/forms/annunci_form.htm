@@ -1,0 +1,520 @@
+<ul class="tabs" role="tablist" id="annuncio-tabs" data-responsive-accordion-tabs="tabs small-accordion medium-tabs large-tabs">
+	<li class="tabs-title is-active" role="presentational"><a href="#tabs-scheda"><i class="fa-duotone fa-table fa-lg fa-fw"></i>Scheda</a></li>
+	<li class="tabs-title" role="presentational"><a href="#tabs-descrizione"><i class="fa-duotone fa-file-lines fa-lg fa-fw"></i>Descrizione</a></li>
+	<li class="tabs-title" role="presentational"><a href="#tabs-sorgente"><i class="fa-duotone fa-file-import fa-lg fa-fw"></i>Sorgente</a></li>
+	<li class="tabs-title" role="presentational"><a href="#tabs-seo"><i class="fa-brands fa-google fa-lg fa-fw"></i>SEO</a></li>
+	<li class="tabs-title" role="presentational"><a href="#tabs-note"><i class="fa-duotone fa-sticky-note fa-lg fa-fw"></i>Annotazioni</a></li>
+	<li class="tabs-title" role="presentational"><a href="#tabs-datitecnici"><i class="fa-duotone fa-chart-area fa-lg fa-fw"></i>Dati tecnici</a></li>
+	<li class="tabs-title" role="presentational"><a href="#tabs-foto"><i class="fa-duotone fa-image fa-lg fa-fw"></i>Carica foto</a></li>
+	<li class="tabs-title" role="presentational"><a href="#tabs-video"><i class="fa-brands fa-youtube fa-lg fa-fw"></i>Video</a></li>
+</ul>
+<div id="contenutotabs">
+  <div class="tabs-content" data-tabs-content="annuncio-tabs">
+	  	<section role="tabpanel" aria-hidden="false" class="tabs-panel is-active" id="tabs-scheda" name="tabs-scheda">
+			<div class="grid-x grid-padding-x">
+      	<div class="large-2 medium-2 small-4 cell">
+      		<label for="Annunci_DateInsert" class="large-text-right small-text-left middle">Inserito il <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+      	</div>
+      	<div class="large-2 medium-2 small-8 cell">
+					<%=GetFieldValue(dtAnnunci, "Annunci_DateInsert")%>
+				</div>
+      	<div class="large-1 medium-1 small-4 cell">
+      		<label for="Annunci_DataScadenza" class="large-text-right small-text-left middle">Scade il <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+      	</div>
+      	<div class="large-2 medium-2 small-8 cell">
+					<%=GetFieldValue(dtAnnunci, "Annunci_DataScadenza")%>
+				</div>
+
+      	<div class="large-1 medium-2 small-4 cell">
+      		<label for="Annunci_Vetrina" class="large-text-right small-text-left middle">Vetrina</label>
+      	</div>
+      	<div class="large-1 medium-1 small-8 cell">
+					<div class="switch tiny float-left">                                         
+            <input class="switch-input" type="checkbox" name="Annunci_Vetrina" id="Annunci_Vetrina" value="on" <% if (GetCheckValue(dtAnnunci, "Annunci_Vetrina")){ Response.Write("checked");} %> />
+            <label class="switch-paddle" for="Annunci_Vetrina">
+              <span class="show-for-sr">vetrina</span>
+              <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+              <span class="switch-inactive" aria-hidden="true"></span>
+            </label>
+          </div> 
+				</div>
+
+			</div>
+
+      <div class="grid-x grid-padding-x">
+      	<div class="large-2 medium-2 small-4 cell">
+      		<label for="Annunci_Titolo" class="large-text-right small-text-left middle">Titolo<i class="fa-duotone fa-file-lines fa-fw"></i></label>
+      	</div>
+      	<div class="large-4 medium-4 small-8 cell">
+          <input type="text" name="Annunci_Titolo" id="Annunci_Titolo" title="Titolo" value="<%=GetFieldValue(dtAnnunci, "Annunci_Titolo")%>" size="150" required="required">
+      	</div>
+      	<div class="large-2 medium-2 small-4 cell">
+      		<label for="Annunci_Numero" class="large-text-right small-text-left middle">Numero<i class="fa-duotone fa-file-lines fa-fw"></i></label>
+      	</div>
+      	<div class="large-4 medium-4 small-8 cell">
+          <input type="text" name="Annunci_Numero" id="Annunci_Numero" title="Numero" value="<%=GetFieldValue(dtAnnunci, "Annunci_Numero")%>" size="4" required="required">
+      	</div>
+      </div> 
+      
+    	<div class="grid-x grid-padding-x">
+    		<div class="large-2 medium-2 small-4 cell">
+    			<label for="Anagrafiche_RagioneSociale" class="large-text-right">Anagrafica <i class="fa-duotone fa-users fa-fw"></i></label>
+    		</div>
+    		<div class="large-4 medium-4 small-8 cell">
+				  <!--#include file="/admin/app/annunci/forms/anagrafiche_seleziona_form.htm"--> 
+			  </div>
+    		<div class="large-2 medium-2 small-4 cell">
+    	      <label for="AnnunciStato_Ky" class="large-text-right small-text-left middle">Stato <i class="fa-duotone fa-list fa-fw"></i></label>
+    	  </div>
+    		<div class="large-2 medium-2 small-8 cell">
+    				<select name="AnnunciStato_Ky" id="AnnunciStato_Ky">
+    				  <!--#include file="/var/cache/AnnunciStato-options.htm"--> 
+    				</select>
+    				<span class="form-error">Obbligatorio.</span>
+    				<script type="text/javascript">
+    				  selectSet('AnnunciStato_Ky', '<%=GetFieldValue(dtAnnunci, "AnnunciStato_Ky")%>');
+    				</script>
+    		</div>
+			</div>
+    
+    	<div class="grid-x grid-padding-x">
+    		<div class="large-2 medium-2 small-4 cell">
+    		    <label for="AnnunciTipo_Ky" class="large-text-right small-text-left middle">Tipo</label>
+    		</div>
+    		<div class="large-4 medium-4 small-8 cell">
+    				<select name="AnnunciTipo_Ky" id="AnnunciTipo_Ky" required="required">
+    				  <!--#include file="/var/cache/AnnunciTipo-options.htm"--> 
+    				</select>
+    				<span class="form-error">Obbligatorio.</span>
+    				<script type="text/javascript">
+    				  selectSet('AnnunciTipo_Ky', '<%=GetFieldValue(dtAnnunci, "AnnunciTipo_Ky")%>');
+    				</script>
+    	  </div>                                       
+    		<div class="large-2 medium-2 small-4 cell">
+    	      <label for="AnnunciCategorie_Ky" class="large-text-right small-text-left middle">Categoria <i class="fa-duotone fa-list fa-fw"></i></label>
+    	  </div>
+    		<div class="large-4 medium-4 small-8 cell">
+    				<select name="AnnunciCategorie_Ky" id="AnnunciCategorie_Ky" class="select2" onchange="loadAttributi();">
+    				  <!--#include file="/var/cache/AnnunciCategorie-options.htm"--> 
+    				</select>
+    				<span class="form-error">Obbligatorio.</span>
+    				<script type="text/javascript">
+    				  selectSet('AnnunciCategorie_Ky', '<%=GetFieldValue(dtAnnunci, "AnnunciCategorie_Ky")%>');
+    				</script>
+    		</div>
+    	</div>
+    
+    	<div class="grid-x grid-padding-x">
+        <div class="large-2 medium-2 small-4 cell">
+    		    <label for="AnnunciTipologie_Ky" class="large-text-right small-text-left middle">Tipologia</label>
+    		</div>
+    		<div class="large-4 medium-4 small-8 cell">
+    				<select name="AnnunciTipologie_Ky" id="AnnunciTipologie_Ky" required="required">
+    				  <!--#include file="/var/cache/AnnunciTipologie-options.htm"--> 
+    				</select>
+    				<span class="form-error">Obbligatorio.</span>
+    				<script type="text/javascript">
+    				  selectSet('AnnunciTipologie_Ky', '<%=GetFieldValue(dtAnnunci, "AnnunciTipologie_Ky")%>');
+    				</script>
+    	  </div>                                       
+    	</div>
+    
+    
+      <fieldset class="fieldset">
+        <legend><i class="fa-duotone fa-location-dot fa-fw"></i>Indirizzo</legend>
+          <div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-4 cell">
+        			<label class="large-text-right">Nazione <i class="fa-duotone fa-circle-info fa-fw"></i></label>
+        		</div>
+        		<div class="large-2 medium-2 small-8 cell">
+        			<select name="Nazioni_Ky" id="Nazioni_Ky" class="select2">
+        			  <!--#include file="/var/cache/Nazioni-options.htm"--> 
+        			</select>
+              <script type="text/javascript">
+                selectSet('Nazioni_Ky', '<%=GetFieldValue(dtAnnunci, "Nazioni_Ky")%>');
+              </script>
+            </div>				              
+          	<div class="large-2 medium-2 small-4 cell">
+        			<label class="large-text-right">Regione <i class="fa-duotone fa-circle-info fa-fw"></i></label>
+        		</div>
+        		<div class="large-2 medium-2 small-8 cell">
+        			<select name="Regioni_Ky" id="Regioni_Ky" onchange="loadCoreProvince();">
+        			  <!--#include file="/var/cache/Regioni-options.htm"--> 
+        			</select>
+              <script type="text/javascript">
+                selectSet('Regioni_Ky', '<%=GetFieldValue(dtAnnunci, "Regioni_Ky")%>');
+              </script>
+            </div>
+          	<div class="large-2 medium-2 small-4 cell">
+        			<label class="large-text-right">Provincia <i class="fa-duotone fa-circle-info fa-fw"></i></label>
+        		</div>
+        		<div class="large-2 medium-2 small-8 cell">
+        			<select name="Province_Ky" id="Province_Ky" onchange="loadCoreComuni();">
+        			</select>
+              <script type="text/javascript">
+                loadCoreProvince("<%=GetFieldValue(dtAnnunci, "Regioni_Ky")%>","<%=GetFieldValue(dtAnnunci, "Province_Ky")%>");
+                selectSet('Province_Ky', '<%=GetFieldValue(dtAnnunci, "Province_Ky")%>');
+              </script>
+            </div>
+          </div>				              
+            
+          <div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-4 cell">
+        			<label class="large-text-right">Comune <i class="fa-duotone fa-circle-info fa-fw"></i></label>
+        		</div>
+        		<div class="large-2 medium-2 small-8 cell">
+        			<select name="Comuni_Ky" id="Comuni_Ky" onchange="loadCoreComuniZone();">
+        			</select>
+              <script type="text/javascript">
+                loadCoreComuni("<%=GetFieldValue(dtAnnunci, "Province_Ky")%>","<%=GetFieldValue(dtAnnunci, "Comuni_Ky")%>");
+                selectSet('Comuni_Ky', '<%=GetFieldValue(dtAnnunci, "Comuni_Ky")%>');
+              </script>
+            </div>
+          	<div class="large-2 medium-2 small-4 cell">
+        			<label class="large-text-right">Zona <i class="fa-duotone fa-circle-info fa-fw"></i></label>
+        		</div>
+        		<div class="large-2 medium-2 small-8 cell">
+        			<select name="ComuniZone_Ky" id="ComuniZone_Ky">
+        			</select>
+              <script type="text/javascript">
+                loadCoreComuniZone("<%=GetFieldValue(dtAnnunci, "Comuni_Ky")%>","<%=GetFieldValue(dtAnnunci, "ComuniZone_Ky")%>");
+                selectSet('ComuniZone_Ky', '<%=GetFieldValue(dtAnnunci, "ComuniZone_Ky")%>');
+              </script>
+            </div>
+          	<div class="large-2 medium-2 small-4 cell">
+          		<label for="Aste_Indirizzo" class="large-text-right small-text-left middle">Indirizzo</label>
+          	</div>
+          	<div class="large-2 medium-2 small-8 cell">
+              <input type="text" name="Annunci_Indirizzo" id="Annunci_Indirizzo" title="Infirizzo" value="<%=GetFieldValue(dtAnnunci, "Annunci_Indirizzo")%>" size="60">
+              <span class="form-error">Obbligatorio</span>
+          	</div>
+					</div>
+					
+          <div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-4 cell">
+          		<label for="Annunci_Visione" class="large-text-right small-text-left middle">Visione <i class="fa-duotone fa-eye fa-fw"></i></label>
+          	</div>
+          	<div class="large-10 medium-10 small-8 cell">
+              <input type="text" name="Annunci_Visione" id="Annunci_Visione" title="Visione" value="<%=GetFieldValue(dtAnnunci, "Annunci_Visione")%>" size="150">
+          	</div>
+          </div>				              
+      </fieldset>
+    
+      <fieldset class="fieldset">
+        <legend><i class="fa-duotone fa-table fa-fw"></i>Marca / Modello</legend>
+        	<div class="grid-x grid-padding-x">
+        		<div class="large-2 medium-2 small-4 cell">
+        	      <label for="AnnunciMarca_Ky" class="large-text-right small-text-left middle">Marca <i class="fa-duotone fa-list fa-fw"></i></label>
+        	  </div>
+        		<div class="large-2 medium-2 small-8 cell">
+          		 <input type="text" name="AnnunciMarca_Ky" id="AnnunciMarca_Ky" value="<%=GetFieldValue(dtAnnunci, "AnnunciMarca_Ky")%>" size="3" onchange="loadAnnunciModelli()" style="display:none">
+        			 <input type="text" name="AnnunciMarca_Titolo" id="AnnunciMarca_Titolo" placeholder="Marca" value="<%=GetFieldValue(dtAnnunci, "AnnunciMarca_Titolo")%>">
+              	<script type="text/javascript">
+                    loadAnnunciModelli("<%=GetFieldValue(dtAnnunci, "AnnunciMarca_Ky")%>","<%=GetFieldValue(dtAnnunci, "AnnunciModello_Ky")%>");
+              			jQuery("#AnnunciMarca_Titolo").autocomplete({
+              				source:"/admin/app/annunci/getAnnunciMarca-json.aspx",
+              				minLength: 2,
+              				select: function( event, ui ) {
+              					jQuery("#AnnunciMarca_Ky").val(ui.item.value);
+              					jQuery("#AnnunciMarca_Titolo").val(ui.item.label);
+                        loadAnnunciModelli();
+              					return false;
+              				}
+              			});
+              	</script>
+        		</div>
+        		<div class="large-2 medium-2 small-4 cell">
+        		    <label for="AnnunciModello_Ky" class="large-text-right small-text-left middle">Modello</label>
+        		</div>
+        		<div class="large-2 medium-2 small-8 cell">
+        				<select name="AnnunciModello_Ky" id="AnnunciModello_Ky" value="<%=GetFieldValue(dtAnnunci, "AnnunciModello_Ky")%>">
+                <%
+                  if (dtAnnunciModello!=null && dtAnnunciModello.Rows.Count>0){
+                    for (int i = 1; i < dtAnnunciModello.Rows.Count; i++){
+                        Response.Write("<option value=\"" + dtAnnunciModello.Rows[i]["AnnunciModello_Ky"].ToString() + "\">" + dtAnnunciModello.Rows[i]["AnnunciModello_Titolo"].ToString() + "</option>");
+                    }
+                  }
+                %>
+        				</select>
+        				<span class="form-error">Obbligatorio.</span>
+        				<script type="text/javascript">
+        				  selectSet('AnnunciModello_Ky', '<%=GetFieldValue(dtAnnunci, "AnnunciModello_Ky")%>');
+        				</script>
+        	  </div>                                       
+        		<div class="large-2 medium-2 small-4 cell">
+        		    <label for="Annunci_Modello" class="large-text-right small-text-left middle">Se non presente specifica<i class="fa-duotone fa-arrow-right fa-fw"></i></label>
+        		</div>
+        		<div class="large-2 medium-2 small-8 cell">
+              <input type="text" name="Annunci_Modello" id="Annunci_Modello" title="Modello" value="<%=GetFieldValue(dtAnnunci, "Annunci_Modello")%>" size="60">
+            </div>
+        	</div> 
+    	</fieldset>
+       
+      <fieldset class="fieldset">
+        <legend><i class="fa-duotone fa-euro-sign fa-fw"></i>Valore</legend>
+        	<div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-4 cell">
+          		<label for="Annunci_Valore" class="large-text-right small-text-left middle">Valore</label>
+          	</div>
+          	<div class="large-10 medium-10 small-8 cell">
+              <input type="text" name="Annunci_Valore" id="Annunci_Valore" title="Valore" value="<%=GetFieldValue(dtAnnunci, "Annunci_Valore")%>" size="60">
+              <span class="form-error">Obbligatorio</span>
+          	</div>
+          </div>
+			</fieldset>
+
+      <% if (dtLogin.Rows[0]["UtentiGruppi_Aste"].Equals(true)){ %>
+      <fieldset class="fieldset">
+        <legend><i class="fa-duotone fa-gavel fa-fw"></i>Dati dell'asta</legend>
+        	<div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-4 cell">
+          		<label for="Annunci_ConRiserva" class="large-text-right small-text-left middle">Con riserva</label>
+          	</div>
+          	<div class="large-1 medium-1 small-8 cell end">
+    					<div class="switch tiny float-left">                                         
+                <input class="switch-input" type="checkbox" name="Annunci_ConRiserva" id="Annunci_ConRiserva" value="on" <% if (GetCheckValue(dtAnnunci, "Annunci_ConRiserva")){ Response.Write("checked");} %> />
+                <label class="switch-paddle" for="Annunci_ConRiserva">
+                  <span class="show-for-sr">Riserva</span>
+                  <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+                  <span class="switch-inactive" aria-hidden="true"></span>
+                </label>
+              </div> 
+          	</div>
+
+          	<div class="large-1 medium-1 small-4 cell">
+          		<label for="Annunci_PrezzoRiserva" class="large-text-right small-text-left middle">Prezzo riserva</label>
+          	</div>
+          	<div class="large-1 medium-1 small-8 cell end">
+              <input type="text" name="Annunci_PrezzoRiserva" id="Annunci_PrezzoRiserva" title="Prezzo Riserva" value="<%=GetFieldValue(dtAnnunci, "Annunci_PrezzoRiserva")%>" size="60">
+              <span class="form-error">Obbligatorio</span>
+          	</div>
+
+          	<div class="large-1 medium-1 small-4 cell">
+          		<label for="Annunci_Cauzione" class="large-text-right small-text-left middle">Cauzione &euro;</label>
+          	</div>
+          	<div class="large-2 medium-2 small-8 cell">
+              <input type="text" name="Annunci_Cauzione" id="Annunci_Referente" title="Referente" value="<%=GetFieldValue(dtAnnunci, "Annunci_Cauzione")%>" size="60">
+              <span class="form-error">Obbligatorio</span>
+          	</div>
+        	
+          	<div class="large-1 medium-1 small-4 cell">
+          		<label for="Annunci_Rilancio" class="large-text-right small-text-left middle">Rilancio &euro;</label>
+          	</div>
+          	<div class="large-2 medium-2 small-8 cell">
+              <input type="text" name="Annunci_Rilancio" id="Annunci_Rilancio" title="Rilancio" value="<%=GetFieldValue(dtAnnunci, "Annunci_Rilancio")%>" size="60">
+              <span class="form-error">Obbligatorio</span>
+          	</div>
+          </div>
+      </fieldset>
+      <% } %>
+  </section>
+  <section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-descrizione" name="tabs-descrizione">
+      <div class="grid-x grid-padding-x">
+      	<div class="large-12 medium-12 small-12 cell">
+    			<textarea name="Annunci_Descrizione" id="Annunci_Descrizione" class="ckfinder required" rows="20" required="required"><%=GetFieldValue(dtAnnunci, "Annunci_Descrizione")%></textarea>
+			    <script type="text/javascript">
+			    CKEDITOR.replace('Annunci_Descrizione',
+			    	{
+			      	filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+			      	filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+			    	});
+	    		CKFinder.setupCKEditor( editor, null, { type: 'Files', currentFolder: '/uploads/foto-annunci/' } );
+			    </script>
+      	</div>
+      </div> 
+  </section>
+  <section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-sorgente" name="tabs-sorgente">
+
+			<div class="grid-x grid-padding-x">
+        <div class="large-2 medium-2 small-4 cell">
+    		    <label for="AnnunciSorgenti_Ky" class="large-text-right small-text-left middle">Sorgente</label>
+    		</div>
+    		<div class="large-10 medium-10 small-8 cell">
+    				<select name="AnnunciSorgenti_Ky" id="AnnunciSorgenti_Ky" required="required">
+    				  <!--#include file="/var/cache/AnnunciSorgenti-options.htm"--> 
+    				</select>
+    				<span class="form-error">Obbligatorio.</span>
+    				<script type="text/javascript">
+    				  selectSet('AnnunciSorgenti_Ky', '<%=GetFieldValue(dtAnnunci, "AnnunciSorgenti_Ky")%>');
+    				</script>
+    	  </div>                                       
+  	  </div>                                       
+			<div class="grid-x grid-padding-x">
+      	<div class="large-2 medium-2 small-4 cell">
+      		<label for="Annunci_GestionaleImmobiliare" class="large-text-right small-text-left middle">Gestionale Immobiliare</label>
+      	</div>
+      	<div class="large-10 medium-10 small-8 cell">
+					<div class="switch tiny float-left">                                         
+            <input class="switch-input" type="checkbox" name="Annunci_GestionaleImmobiliare" id="Annunci_GestionaleImmobiliare" value="on" <% if (GetCheckValue(dtAnnunci, "Annunci_GestionaleImmobiliare")){ Response.Write("checked");} %> />
+            <label class="switch-paddle" for="Annunci_GestionaleImmobiliare">
+              <span class="show-for-sr">GestionaleImmobiliare</span>
+              <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+              <span class="switch-inactive" aria-hidden="true"></span>
+            </label>
+          </div> 
+				</div>
+  	  </div>                                       
+			<div class="grid-x grid-padding-x">
+      	<div class="large-2 medium-2 small-4 cell">
+      		<label for="Annunci_Agestanet" class="large-text-right small-text-left middle">Agestanet</label>
+      	</div>
+      	<div class="large-10 medium-10 small-8 cell end">
+					<div class="switch tiny float-left">                                         
+            <input class="switch-input" type="checkbox" name="Annunci_Agestanet" id="Annunci_Agestanet" value="on" <% if (GetCheckValue(dtAnnunci, "Annunci_Agestanet")){ Response.Write("checked");} %> />
+            <label class="switch-paddle" for="Annunci_Agestanet">
+              <span class="show-for-sr">Agestanet</span>
+              <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+              <span class="switch-inactive" aria-hidden="true"></span>
+            </label>
+          </div> 
+				</div>
+			</div>
+
+
+
+
+
+  </section>
+	<section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-seo" name="tabs-seo">
+      <div class="grid-x grid-padding-x">
+      	<div class="large-2 medium-2 small-4 cell">
+      		<label for="Annunci_UrlKey" class="large-text-right small-text-left middle">Friendly Url<i class="fa-duotone fa-file-lines fa-fw"></i></label>
+      	</div>
+      	<div class="large-4 medium-4 small-8 cell">
+          <input type="text" name="Annunci_UrlKey" id="Annunci_UrlKey" title="UrlKey" value="<%=GetFieldValue(dtAnnunci, "Annunci_UrlKey")%>" size="150">
+			    <p class="help-text" id="AnagraficheCategorie_TitoloHelpText">se non specificato viene automaticamente calcolato dopo il salvataggio</p>
+      	</div>
+      </div>
+      <div class="grid-x grid-padding-x">
+      	<div class="large-2 medium-2 small-4 cell text-right">
+      		<label class="large-text-right small-text-left middle" for="Annunci_Title">Titolo SEO</label>
+      	</div>
+      	<div class="large-10 medium-12 small-8 cell">
+          <input type="text" name="Annunci_Title" id="Annunci_Title" title="Titolo SEO" value="<%=GetFieldValue(dtAnnunci, "Annunci_Title")%>" size="200">
+      	</div>
+      </div>
+      <div class="grid-x grid-padding-x">
+      	<div class="large-2 medium-2 small-12 cell">
+      		<label class="large-text-right small-text-left middle" for="Annunci_Description">Descrizione SEO</label>
+      	</div>
+      	<div class="large-10 medium-10 small-12 cell">
+          <textarea name="Annunci_Description" id="Annunci_Description" rows="2" cols="110"><%=GetFieldValue(dtAnnunci, "Annunci_Description")%></textarea>
+      	</div>
+			</div> 
+		  <div class="grid-x grid-padding-x">
+		  	<div class="large-2 medium-2 small-4 cell">
+		  		<label for="Annunci_Robots" class="large-text-right small-text-left middle">Robots SEO<i class="fa-duotone fa-file-lines fa-fw"></i></label>
+		  	</div>
+		  	<div class="large-10 medium-10 small-8 cell">
+			  <select name="Annunci_Robots" id="Annunci_Robots">
+		        <option value="index,follow">index,follow</option>
+		        <option value="noindex,nofollow">noindex,follow</option>
+		        <option value="noindex,nofollow">noindex,nofollow</option>
+		      </select>
+	        <p class="help-text">i noindex non saranno nella sitemap</p>
+		      <script type="text/javascript">
+		        selectSet('Annunci_Robots', '<%=GetFieldValue(dtAnnunci, "Annunci_Robots")%>');
+		      </script>
+		  	</div>
+		  </div>
+          
+      <div class="grid-x grid-padding-x">
+      	<div class="large-2 medium-2 small-12 cell">
+      		<label class="large-text-right small-text-left middle" for="CoreResponseCode_Ky">Risposta HTTP</label>
+      	</div>
+      	<div class="large-10 medium-10 small-12 cell">
+		  <select name="CoreResponseCode_Ky" id="CoreResponseCode_Ky">
+  			<!--#include file="/var/cache/CoreResponseCode-options.htm"--> 
+	      </select>
+	      <script type="text/javascript">
+	        selectSet('CoreResponseCode_Ky', '<%=GetFieldValue(dtAnnunci, "CoreResponseCode_Ky")%>');
+	      </script>
+      	</div>
+	  </div> 
+      
+      <div class="grid-x grid-padding-x">
+        <div class="large-2 medium-2 small-4 cell">
+            <label for="Annunci_RedirectUrl" class="large-text-right small-text-left middle">RedirectUrl</label>
+        </div>
+        <div class="large-10 medium-10 small-8 cell">
+            <input type="text" name="Annunci_RedirectUrl" id="Annunci_RedirectUrl" value="<%=GetFieldValue(dtAnnunci, "Annunci_RedirectUrl")%>" placeholder="RedirectUrl">
+        </div>
+      </div>      
+          
+          
+	</section>
+  <section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-note" name="tabs-note">
+      <div class="grid-x grid-padding-x">
+      	<div class="large-2 medium-2 small-4 cell">
+      		<label for="Annunci_Note" class="large-text-right small-text-left middle">Note</label>
+      	</div>
+      	<div class="large-10 medium-10 small-8 cell">
+    			<textarea name="Annunci_Note" id="Annunci_Note" rows="5" ><%=GetFieldValue(dtAnnunci, "Annunci_Note")%></textarea>
+      	</div>
+      </div> 
+      <div class="grid-x grid-padding-x">
+      	<div class="large-2 medium-2 small-4 cell">
+      		<label for="Annunci_NotePubblicita" class="large-text-right small-text-left middle">Note pubblicitarie</label>
+      	</div>
+      	<div class="large-10 medium-10 small-8 cell">
+    			<textarea name="Annunci_NotePubblicita" id="Annunci_NotePubblicita" class="ckfinder" rows="20"><%=GetFieldValue(dtAnnunci, "Annunci_NotePubblicita")%></textarea>
+			    <script type="text/javascript">
+			    CKEDITOR.replace('Annunci_NotePubblicita',
+			    	{
+			      	filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+			      	filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+			    	});
+	    		CKFinder.setupCKEditor( editor, null, { type: 'Files', currentFolder: '/uploads/foto-annunci/' } );
+			    </script>
+      	</div>
+      </div> 
+  </section>
+	<section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-datitecnici" name="tabs-datitecnici">
+    <!--#include file=/admin/app/annunci/scheda-annunci-attributi.inc -->
+  </section>
+  <section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-foto" name="tabs-foto">
+    	<div class="grid-x grid-padding-x">
+      	<div class="large-12 medium-12 small-8 cell">
+          <div class="callout primary"><i class="fa-duotone fa-circle-info fa-fw fal-lg"></i>Le immagini devono essere in formato jpg o jpeg</div>
+          <label for="fotoannunci" class="button small">Carica immagini</label>
+          <input type="file" multiple="multiple" class="show-for-sr fileupload" placeholder="Foto annunci" id="fotoannunci" name="fotoannunci" />
+          <small class="form-error">obbligatorio.</small>
+          <div id="galleryfotocaricate" class="gallery"></div>
+          <script>
+            jQuery(function() {
+              var imagesPreview = function(input, placeToInsertImagePreview) {
+                  if (input.files) {
+                      var filesAmount = input.files.length;
+                      for (i = 0; i < filesAmount; i++) {
+                          var reader = new FileReader();
+                          reader.onload = function(event) {
+                              jQuery(jQuery.parseHTML('<img width="150" height="100" hspace="10" vspace="10" style="border:1px solid #000000">')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                          }
+                           reader.readAsDataURL(input.files[i]);
+                      }
+                  }
+              };
+              jQuery('#fotoannunci').on('change', function() {
+                  imagesPreview(this, '#galleryfotocaricate');
+              });
+            });
+          </script>
+      	</div>
+      </div>
+  </section>
+  <section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-video" name="tabs-video">
+		<div class="grid-x grid-padding-x">
+	  	<div class="large-2 medium-2 small-4 cell">
+	  		<label for="Annunci_Video" class="large-text-right small-text-left middle">Video</label>
+	  	</div>
+	  	<div class="large-10 medium-10 small-8 cell">
+	      <input type="text" name="Annunci_Video" id="Annunci_Video" title="Aste_Video" value="<%=GetFieldValue(dtAnnunci, "Annunci_Video")%>" size="60">
+	      <span class="form-error">Obbligatorio</span>
+	      <span class="help-text">Codice video di youtube. Ad esempio: "j2bwv03iAe8"</span>
+	  	</div>
+	  </div>
+  </section>
+
+  </div>
+</div> 
+        

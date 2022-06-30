@@ -1,0 +1,36 @@
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="AliquoteIVA_Predefinita" class="large-text-right small-text-left middle">Predefinito:</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+		<div class="switch tiny">
+			<input class="switch-input" type="checkbox" name="AliquoteIVA_Predefinita" id="AliquoteIVA_Predefinita" value="on" <% if (GetCheckValue(dtAliquoteIVA, "AliquoteIVA_Predefinita")){ Response.Write( "checked");} %> />
+			<label class="switch-paddle" for="AliquoteIVA_Predefinita">
+				<span class="show-for-sr">Attivo</span>
+				<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+				<span class="switch-inactive" aria-hidden="true"></span>
+			</label>
+		</div>
+		<span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell text-right">
+		<label class="large-text-right small-text-left middle" for="AliquoteIVA_Descrizione">Descrizione</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <textarea name="AliquoteIVA_Descrizione" id="AliquoteIVA_Descrizione" placeholder="Descrizione" rows="5" cols="110" required="required"><%=GetFieldValue("AliquoteIVA_Descrizione")%></textarea>
+   	<span class="form-error">Obbligatorio.</span>
+	</div>
+</div>        
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell text-right">
+		<label class="large-text-right small-text-left middle" for="AliquoteIVA_Aliquota">Aliquota</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="AliquoteIVA_Aliquota" id="AliquoteIVA_Aliquota" placeholder="Aliquota" title="Aliquota prodotto" required="required" value="<%=GetFieldValue("AliquoteIVA_Aliquota")%>" size="10" maxlength="10">
+    <span class="form-error">Obbligatorio.</span>
+	</div>
+</div>

@@ -1,0 +1,67 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Commesse" Type="TABLE">
+    <Keys>
+      <Key Column="Commesse_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Commesse_Ky" IsNull="N" Type="int" />
+      <Field Column="Commesse_Riferimenti" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Commesse_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Commesse_Note" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="CommesseStato_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Commesse_Valore" IsNull="Y" Type="money" />
+      <Field Column="Commesse_Data" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Commesse_DataInizioLavori" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Commesse_DataChiusura" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Commesse_Avanzamento" IsNull="Y" Type="tinyint" />
+      <Field Column="Commesse_DataConsegna" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Commesse_OrePreviste" IsNull="Y" Type="float" />
+      <Field Column="Commesse_OreImpiegate" IsNull="Y" Type="float" />
+      <Field Column="Commesse_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Commesse_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Commesse_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Commesse_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Commesse_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Commesse_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Commesse_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Commesse_NoteAmministrative" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Opportunita_Ky" IsNull="Y" Type="int" />
+      <Field Column="Commesse_Tags" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Commesse_OreResidue" IsNull="Y" Type="float" />
+      <Field Column="CommesseTipo_Ky" IsNull="Y" Type="tinyint" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Commesse] (
+  [Commesse_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Commesse_Riferimenti] varchar(100)  NULL , 
+  [Commesse_Titolo] varchar(100)  NULL , 
+  [Commesse_Note] varchar(MAX)  NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [CommesseStato_Ky] tinyint  NULL , 
+  [Commesse_Valore] money  NULL DEFAULT ((0)), 
+  [Commesse_Data] smalldatetime  NULL , 
+  [Commesse_DataInizioLavori] smalldatetime  NULL , 
+  [Commesse_DataChiusura] smalldatetime  NULL , 
+  [Commesse_Avanzamento] tinyint  NULL DEFAULT ((0)), 
+  [Commesse_DataConsegna] smalldatetime  NULL , 
+  [Utenti_Ky] int  NULL , 
+  [Commesse_OrePreviste] float  NULL DEFAULT ((0)), 
+  [Commesse_OreImpiegate] float  NULL DEFAULT ((0)), 
+  [Commesse_UserInsert] int  NULL , 
+  [Commesse_UserUpdate] int  NULL , 
+  [Commesse_UserDelete] int  NULL , 
+  [Commesse_DateInsert] datetime  NULL , 
+  [Commesse_DateUpdate] datetime  NULL , 
+  [Commesse_DateDelete] datetime  NULL , 
+  [Commesse_Descrizione] varchar(MAX)  NULL , 
+  [Commesse_NoteAmministrative] varchar(MAX)  NULL , 
+  [Opportunita_Ky] int  NULL , 
+  [Commesse_Tags] varchar(MAX)  NULL , 
+  [Commesse_OreResidue] float  NULL DEFAULT ((0)), 
+  [CommesseTipo_Ky] tinyint  NULL  )
+ALTER TABLE [dbo].[Commesse] ADD CONSTRAINT PK_Commesse PRIMARY KEY  ([Commesse_Ky])
+</SqlScriptCreate>
+</SqlTable>

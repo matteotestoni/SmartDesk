@@ -1,0 +1,16 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Produttori_Categorie_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Produttori_Ky" IsNull="N" Type="int" />
+      <Field Column="Produttori_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="ProdottiCategorie_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Produttori_Categorie_Vw
+AS
+SELECT     dbo.Produttori.Produttori_Ky, dbo.Produttori.Produttori_Descrizione, dbo.Prodotti.ProdottiCategorie_Ky
+FROM         dbo.Prodotti INNER JOIN
+                      dbo.Produttori ON dbo.Prodotti.Produttori_Ky = dbo.Produttori.Produttori_Ky
+</SqlScriptCreate>
+</SqlTable>

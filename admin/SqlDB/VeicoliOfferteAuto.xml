@@ -1,0 +1,39 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliOfferteAuto" Type="TABLE">
+    <Keys>
+      <Key Column="VeicoliOfferteAuto_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="VeicoliOfferteAuto_Ky" IsNull="N" Type="int" />
+      <Field Column="VeicoliOfferte_Ky" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_Targa" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Veicoli_Sconto" IsNull="Y" Type="money" />
+      <Field Column="Veicoli_ValoreInOfferta" IsNull="Y" Type="money" />
+      <Field Column="VeicoliOfferteAuto_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="VeicoliOfferteAuto_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="VeicoliOfferteAuto_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="VeicoliOfferteAuto_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliOfferteAuto_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliOfferteAuto_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Veicoli_Valore" IsNull="Y" Type="money" />
+      <Field Column="Veicoli_ValoreTagliato" IsNull="Y" Type="money" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[VeicoliOfferteAuto] (
+  [VeicoliOfferteAuto_Ky] int IDENTITY(1,1) NOT NULL , 
+  [VeicoliOfferte_Ky] int  NULL , 
+  [Veicoli_Targa] varchar(50)  NULL , 
+  [Veicoli_Sconto] money  NULL , 
+  [Veicoli_ValoreInOfferta] money  NULL , 
+  [VeicoliOfferteAuto_UserInsert] int  NULL , 
+  [VeicoliOfferteAuto_UserUpdate] int  NULL , 
+  [VeicoliOfferteAuto_UserDelete] int  NULL , 
+  [VeicoliOfferteAuto_DateInsert] datetime  NULL , 
+  [VeicoliOfferteAuto_DateUpdate] datetime  NULL , 
+  [VeicoliOfferteAuto_DateDelete] datetime  NULL , 
+  [Veicoli_Valore] money  NULL , 
+  [Veicoli_ValoreTagliato] money  NULL  )
+ALTER TABLE [dbo].[VeicoliOfferteAuto] ADD CONSTRAINT PK_VeicoliOfferteAuto_Ky PRIMARY KEY  ([VeicoliOfferteAuto_Ky])
+</SqlScriptCreate>
+</SqlTable>

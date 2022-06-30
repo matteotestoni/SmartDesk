@@ -1,0 +1,38 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnnunciCategorie_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="AnnunciCategorie_Ky" IsNull="N" Type="smallint" />
+      <Field Column="AnnunciCategorie_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="AnnunciCategorie_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="AnnunciCategorie_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AnnunciCategorie_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AnnunciCategorie_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AnnunciCategorie_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AnnunciCategorie_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AnnunciCategorie_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="AnnunciCategorie_TitoloPadre" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="AnnunciCategorie_Padre" IsNull="Y" Type="smallint" />
+      <Field Column="AnnunciCategorie_Foto" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnnunciCategorie_Url" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnnunciCategorie_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnnunciCategorie_Description" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnnunciCategorie_Attributi" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnnunciCategorie_AttributiElenchi" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnnunciCategorie_Ordine" IsNull="Y" Type="smallint" />
+      <Field Column="AnnunciCategorie_DescrizioneFooter" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="AnnunciCategorie_DescrizioneSidebar" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.AnnunciCategorie_Vw
+AS
+SELECT        dbo.AnnunciCategorie.AnnunciCategorie_Ky, dbo.AnnunciCategorie.AnnunciCategorie_Titolo, dbo.AnnunciCategorie.AnnunciCategorie_Descrizione, dbo.AnnunciCategorie.AnnunciCategorie_UserInsert, 
+                         dbo.AnnunciCategorie.AnnunciCategorie_UserUpdate, dbo.AnnunciCategorie.AnnunciCategorie_UserDelete, dbo.AnnunciCategorie.AnnunciCategorie_DateInsert, 
+                         dbo.AnnunciCategorie.AnnunciCategorie_DateUpdate, dbo.AnnunciCategorie.AnnunciCategorie_DateDelete, AnnunciCategorie_1.AnnunciCategorie_Titolo AS AnnunciCategorie_TitoloPadre, 
+                         dbo.AnnunciCategorie.AnnunciCategorie_Padre, dbo.AnnunciCategorie.AnnunciCategorie_Foto, dbo.AnnunciCategorie.AnnunciCategorie_Url, dbo.AnnunciCategorie.AnnunciCategorie_Title, 
+                         dbo.AnnunciCategorie.AnnunciCategorie_Description, dbo.AnnunciCategorie.AnnunciCategorie_Attributi, dbo.AnnunciCategorie.AnnunciCategorie_AttributiElenchi, dbo.AnnunciCategorie.AnnunciCategorie_Ordine, 
+                         dbo.AnnunciCategorie.AnnunciCategorie_DescrizioneFooter, dbo.AnnunciCategorie.AnnunciCategorie_DescrizioneSidebar
+FROM            dbo.AnnunciCategorie LEFT OUTER JOIN
+                         dbo.AnnunciCategorie AS AnnunciCategorie_1 ON dbo.AnnunciCategorie.AnnunciCategorie_Padre = AnnunciCategorie_1.AnnunciCategorie_Ky
+</SqlScriptCreate>
+</SqlTable>

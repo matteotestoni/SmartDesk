@@ -1,0 +1,35 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Priorita" Type="TABLE">
+    <Keys>
+      <Key Column="Priorita_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Priorita_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="Priorita_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Priorita_Colore" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Priorita_Icona" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Priorita_Ordine" IsNull="Y" Type="int" />
+      <Field Column="Priorita_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Priorita_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Priorita_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Priorita_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Priorita_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Priorita_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Priorita] (
+  [Priorita_Ky] tinyint  NOT NULL , 
+  [Priorita_Descrizione] varchar(100)  NULL , 
+  [Priorita_Colore] varchar(100)  NULL , 
+  [Priorita_Icona] varchar(200)  NULL , 
+  [Priorita_Ordine] int  NULL , 
+  [Priorita_UserInsert] int  NULL , 
+  [Priorita_UserUpdate] int  NULL , 
+  [Priorita_UserDelete] int  NULL , 
+  [Priorita_DateInsert] datetime  NULL , 
+  [Priorita_DateUpdate] datetime  NULL , 
+  [Priorita_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[Priorita] ADD CONSTRAINT PK_Priorita PRIMARY KEY  ([Priorita_Ky])
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,162 @@
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AnnunciCategorie_Titolo" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Titolo</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="AnnunciCategorie_Titolo" id="AnnunciCategorie_Titolo" title="Titolo" value="<%=GetFieldValue(dtAnnunciCategorie, "AnnunciCategorie_Titolo")%>" size="150" required="required">
+  	</div>
+  </div>
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AnnunciCategorie_Descrizione" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Descrizione</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <textarea rows="3" name="AnnunciCategorie_Descrizione" id="AnnunciCategorie_Descrizione" title="Descrizione" class="ckeditor"><%=GetFieldValue(dtAnnunciCategorie, "AnnunciCategorie_Descrizione")%></textarea>
+  	</div>
+  </div>
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AnnunciCategorie_DescrizioneSidebar" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Descrizione sidebar</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      	<textarea rows="3" name="AnnunciCategorie_DescrizioneSidebar" id="AnnunciCategorie_DescrizioneSidebar" title="Descrizione sidebar" class="ckeditor"><%=GetFieldValue(dtAnnunciCategorie, "AnnunciCategorie_DescrizioneSidebar")%></textarea>
+  	</div>
+  </div>
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AnnunciCategorie_DescrizioneFooter" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Descrizione footer</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      	<textarea rows="3" name="AnnunciCategorie_DescrizioneFooter" id="AnnunciCategorie_DescrizioneFooter" title="Descrizione footer" class="ckeditor"><%=GetFieldValue(dtAnnunciCategorie, "AnnunciCategorie_DescrizioneFooter")%></textarea>
+  	</div>
+  </div>
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AnnunciCategorie_Ordine" class="text-right middle">Ordine</label>
+		</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="AnnunciCategorie_Ordine" id="AnnunciCategorie_Ordine" value="<%=GetFieldValue(dtAnnunciCategorie, "AnnunciCategorie_Ordine")%>" size="2" />
+			<span class="form-error">Obbligatorio</span>
+  	</div>
+  </div>
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AnnunciCategorie_Padre" class="text-right middle">Categoria padre</label>
+		</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="AnnunciCategorie_Padre" id="AnnunciCategorie_Padre" value="<%=GetFieldValue(dtAnnunciCategorie, "AnnunciCategorie_Padre")%>" size="2" />
+			<span class="form-error">Obbligatorio</span>
+  	</div>
+  </div>
+	<fieldset>
+		<legend>Dati SEO</legend>
+	    <div class="grid-x grid-padding-x">
+	    	<div class="large-2 medium-2 small-4 cell">
+	    		<label for="AnnunciCategorie_Url" class="text-right middle">Friendly Url</label>
+				</div>
+	    	<div class="large-10 medium-10 small-8 cell">
+          <input type="text" name="AnnunciCategorie_Url" id="AnnunciCategorie_Url" value="<%=GetFieldValue(dtAnnunciCategorie, "AnnunciCategorie_Url")%>" size="80">
+  				<span class="form-error">Obbligatorio</span>
+	    	</div>
+			</div>	
+
+	    <div class="grid-x grid-padding-x">
+	    	<div class="large-2 medium-2 small-4 cell">
+	    		<label for="AnnunciCategorie_Title" class="text-right middle">Titolo SEO</label>
+				</div>
+	    	<div class="large-10 medium-10 small-8 cell">
+          <input type="text" name="AnnunciCategorie_Title" id="AnnunciCategorie_Title" value="<%=GetFieldValue(dtAnnunciCategorie, "AnnunciCategorie_Title")%>" size="80">
+  				<span class="form-error">Obbligatorio</span>
+	        <p class="help-text">max 70 carateri</p>
+	    	</div>
+			</div>	
+
+	    <div class="grid-x grid-padding-x">
+	    	<div class="large-2 medium-2 small-4 cell">
+	    		<label for="AnnunciCategorie_Description" class="text-right middle">Descrizione SEO</label>
+				</div>
+	    	<div class="large-10 medium-10 small-8 cell">
+          <textarea name="AnnunciCategorie_Description" id="AnnunciCategorie_Description" cols="76" rows="2"><%=GetFieldValue(dtAnnunciCategorie, "AnnunciCategorie_Description")%></textarea>
+  				<span class="form-error">Obbligatorio</span>
+	        <p class="help-text">max 160 carateri</p>
+	    	</div>
+			</div>	
+	</fieldset>
+	<fieldset>
+		<legend>Immagine</legend>
+ 
+  	<div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="fotocategoria" class="large-text-right small-text-left middle">Foto</label>
+    	</div>
+    	<div class="large-10 medium-10 small-8 cell">
+        <div class="callout primary"><i class="fa-duotone fa-circle-info fa-fw fal-lg"></i>Le immagini devono essere in formato jpg o jpeg</div>
+        <label for="fotocategoria" class="button small">Carica immagini</label>
+        <input type="file" class="show-for-sr fileupload" placeholder="Foto categoria" id="fotocategoria" name="fotocategoria" />
+        <small class="form-error">obbligatorio.</small>
+        <div id="galleryfotocaricate" class="gallery"></div>
+        <script>
+          jQuery(function() {
+            var imagesPreview = function(input, placeToInsertImagePreview) {
+                if (input.files) {
+                    var filesAmount = input.files.length;
+                    jQuery(placeToInsertImagePreview).html("");
+                    for (i = 0; i < filesAmount; i++) {
+                        var reader = new FileReader();
+                        reader.onload = function(event) {
+                            jQuery(jQuery.parseHTML('<img width="150" height="100" hspace="10" vspace="10" style="border:1px solid #000000">')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                        }
+                         reader.readAsDataURL(input.files[i]);
+                    }
+                }
+            };
+            jQuery('#fotocategoria').on('change', function() {
+                imagesPreview(this, '#galleryfotocaricate');
+            });
+          });
+        </script>
+    	</div>
+    </div>
+    
+  	<div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="fotocategoria" class="large-text-right small-text-left middle">Anteprime</label>
+    	</div>
+    	<div class="large-10 medium-10 small-8 cell">
+          <% 
+          if (GetFieldValue(dtAnnunciCategorie, "AnnunciCategorie_Foto").Length>0){
+            Response.Write("<div class=\"thumbnail\"><img src=\"" + GetFieldValue(dtAnnunciCategorie, "AnnunciCategorie_Foto")  + "\" height=\"150\" width=\"150\"></div>");
+          }
+          %>
+      </div>
+    </div> 
+  </fieldset>
+	<div class="grid-x grid-padding-x">
+  	<div class="large-6 medium-6 small-12 cell">
+      <h2>Attributi disponibili</h2>
+      <select name="AnnunciCategorie_Attributi" id="AnnunciCategorie_Attributi" multiple size="40">
+				<%
+				for (int i = 0; i < dtAttributi.Rows.Count; i++){
+					Response.Write("<option value=\"" + dtAttributi.Rows[i]["Attributi_Ky"].ToString() + "\">" + dtAttributi.Rows[i]["Attributi_Codice"].ToString() + " - " + dtAttributi.Rows[i]["Attributi_Titolo"].ToString() + "</option>");
+				}
+				%>
+      </select>
+      <script type="text/javascript">
+        selectSetMultiple('AnnunciCategorie_Attributi', '<%=GetFieldValue(dtAnnunciCategorie, "AnnunciCategorie_Attributi")%>');
+      </script>
+    </div>
+  	<div class="large-6 medium-6 small-12 cell">
+      <h2>Attributi in elenco annunci</h2>
+      <select name="AnnunciCategorie_AttributiElenchi" id="AnnunciCategorie_AttributiElenchi" multiple size="40">
+				<%
+				for (int i = 0; i < dtAttributi.Rows.Count; i++){
+					Response.Write("<option value=\"" + dtAttributi.Rows[i]["Attributi_Ky"].ToString() + "\">" + dtAttributi.Rows[i]["Attributi_Codice"].ToString() + " - " + dtAttributi.Rows[i]["Attributi_Titolo"].ToString() + "</option>");
+				}
+				%>
+      </select>
+      <script type="text/javascript">
+        selectSetMultiple('AnnunciCategorie_AttributiElenchi', '<%=GetFieldValue(dtAnnunciCategorie, "AnnunciCategorie_AttributiElenchi")%>');
+      </script>
+    </div>
+  </div>
+ 

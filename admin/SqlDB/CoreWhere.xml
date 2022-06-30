@@ -1,0 +1,35 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CoreWhere" Type="TABLE">
+    <Keys>
+      <Key Column="CoreWhere_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CoreWhere_Ky" IsNull="N" Type="int" />
+      <Field Column="CoreWhere_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreEntities_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreAttributes_Ky" IsNull="N" Type="int" />
+      <Field Column="CoreWhere_Order" IsNull="Y" Type="int" />
+      <Field Column="CoreWhere_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CoreWhere_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CoreWhere_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CoreWhere_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CoreWhere_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CoreWhere_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CoreWhere] (
+  [CoreWhere_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CoreWhere_Title] varchar(200)  NULL , 
+  [CoreEntities_Ky] int  NULL , 
+  [CoreAttributes_Ky] int  NOT NULL , 
+  [CoreWhere_Order] int  NULL , 
+  [CoreWhere_UserInsert] int  NULL , 
+  [CoreWhere_UserUpdate] int  NULL , 
+  [CoreWhere_UserDelete] int  NULL , 
+  [CoreWhere_DateInsert] datetime  NULL , 
+  [CoreWhere_DateUpdate] datetime  NULL , 
+  [CoreWhere_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[CoreWhere] ADD CONSTRAINT PK_CoreWhere PRIMARY KEY  ([CoreWhere_Ky])
+</SqlScriptCreate>
+</SqlTable>

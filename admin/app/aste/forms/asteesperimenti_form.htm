@@ -1,0 +1,68 @@
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AsteEsperimenti_Numero" class="large-text-right small-text-left middle">Numero progressivo<i class="fa-duotone fa-file-lines fa-fw"></i></label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="AsteEsperimenti_Numero" id="AsteEsperimenti_Numero" title="Nome" value="<%=GetFieldValue(dtAsteEsperimenti, "AsteEsperimenti_Numero")%>" size="150" required="required">
+  	</div>
+  </div>
+  
+	<div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AsteEsperimentiEsiti_Ky" class="large-text-right small-text-left middle">Esito<i class="fa-duotone fa-tag fa-fw"></i></label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <select name="AsteEsperimentiEsiti_Ky" id="AsteEsperimentiEsiti_Ky" class="select2" placeholder="Esito" value="<%=GetFieldValue(dtAsteEsperimenti, "AsteEsperimentiEsiti_Ky")%>">
+        <!--#include file="/var/cache/AsteEsperimentiEsiti-options.htm"--> 
+      </select>
+      <span class="form-error">Obbligatorio.</span>
+      <script type="text/javascript">
+        selectSet('AsteEsperimentiEsiti_Ky', '<%=GetFieldValue(dtAsteEsperimenti, "AsteEsperimentiEsiti_Ky")%>');
+      </script>
+  	</div>
+  </div>
+  
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AsteEsperimenti_PercentualeRibasso" class="large-text-right small-text-left middle">% Ribasso</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="AsteEsperimenti_PercentualeRibasso" id="AsteEsperimenti_PercentualeRibasso" title="Ribasso" value="<%=GetFieldValue(dtAsteEsperimenti, "AsteEsperimenti_PercentualeRibasso")%>" size="3" required="required">
+  	</div>
+  </div>
+	
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AsteEsperimenti_DataInizio" class="large-text-right small-text-left middle">Data inizio<i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="AsteEsperimenti_DataInizio" id="AsteEsperimenti_DataInizio" title="Inizio" class="datetimepicker" value="<%=GetFieldValue(dtAsteEsperimenti, "AsteEsperimenti_DataInizio")%>" size="8">
+  	</div>
+  </div>
+	
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AsteEsperimenti_DataTermine" class="large-text-right small-text-left middle">Data termine<i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="AsteEsperimenti_DataTermine" id="AsteEsperimenti_DataTermine" title="Termine" class="datetimepicker" value="<%=GetFieldValue(dtAsteEsperimenti, "AsteEsperimenti_DataTermine")%>" size="8">
+  	</div>
+  </div>
+	
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AsteEsperimenti_DataPubblicazione" class="large-text-right small-text-left middle">Data Pubblicazione<i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="AsteEsperimenti_DataPubblicazione" id="AsteEsperimenti_DataPubblicazione" title="Pubblicazione" class="datetimepicker" value="<%=GetFieldValue(dtAsteEsperimenti, "AsteEsperimenti_DataPubblicazione")%>" size="8">
+  	</div>
+  </div>
+	
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AsteEsperimenti_DataChiusura" class="large-text-right small-text-left middle">Data Chiusura<i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="AsteEsperimenti_DataChiusura" id="AsteEsperimenti_DataChiusura" title="Chiusura" class="datetimepicker" value="<%=GetFieldValue(dtAsteEsperimenti, "AsteEsperimenti_DataChiusura")%>" size="8">
+  	</div>
+  </div>

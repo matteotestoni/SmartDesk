@@ -1,0 +1,31 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Titoli" Type="TABLE">
+    <Keys>
+      <Key Column="Titoli_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Titoli_Ky" IsNull="N" Type="int" />
+      <Field Column="Titoli_Descrizione" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Titoli_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Titoli_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Titoli_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Titoli_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Titoli_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Titoli_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Titoli_Genere" IsNull="Y" Type="varchar" Lenght="1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Titoli] (
+  [Titoli_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Titoli_Descrizione] varchar(20)  NULL , 
+  [Titoli_UserInsert] int  NULL , 
+  [Titoli_UserUpdate] int  NULL , 
+  [Titoli_UserDelete] int  NULL , 
+  [Titoli_DateInsert] datetime  NULL , 
+  [Titoli_DateUpdate] datetime  NULL , 
+  [Titoli_DateDelete] datetime  NULL , 
+  [Titoli_Genere] varchar(1)  NULL  )
+ALTER TABLE [dbo].[Titoli] ADD CONSTRAINT PK_BTitoli PRIMARY KEY  ([Titoli_Ky])
+</SqlScriptCreate>
+</SqlTable>

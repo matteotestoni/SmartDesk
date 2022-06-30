@@ -1,0 +1,52 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CoreForms_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="CoreForms_Ky" IsNull="N" Type="int" />
+      <Field Column="CoreEntities_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreForms_Custom" IsNull="Y" Type="bit" />
+      <Field Column="CoreForms_Default" IsNull="Y" Type="bit" />
+      <Field Column="CoreForms_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreForms_Order" IsNull="Y" Type="int" />
+      <Field Column="CoreForms_SQLFrom" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreEntities_Code" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreModules_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreEntities_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreForms_WhichFields" IsNull="Y" Type="tinyint" />
+      <Field Column="CoreModules_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreEntities_Key" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreEntities_Description" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreEntities_LabelSingular" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreEntities_LabelPlural" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreEntities_Icon" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreEntities_Config" IsNull="Y" Type="bit" />
+      <Field Column="CoreEntities_Order" IsNull="Y" Type="int" />
+      <Field Column="CoreEntities_Tree" IsNull="Y" Type="bit" />
+      <Field Column="CoreEntities_TreeAttribute" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreEntities_InMenu" IsNull="Y" Type="bit" />
+      <Field Column="CoreModules_Code" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreModules_AdminMenuTitle" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreModules_Order" IsNull="Y" Type="int" />
+      <Field Column="CoreModules_LabelSingular" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreModules_LabelPlural" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreModules_Icon" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreModules_Version" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="CoreModules_Active" IsNull="Y" Type="bit" />
+      <Field Column="CoreEntities_CustomSave" IsNull="Y" Type="bit" />
+      <Field Column="CoreEntities_CustomDelete" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.CoreForms_Vw
+AS
+SELECT        dbo.CoreForms.CoreForms_Ky, dbo.CoreForms.CoreEntities_Ky, dbo.CoreForms.CoreForms_Custom, dbo.CoreForms.CoreForms_Default, dbo.CoreForms.CoreForms_Title, dbo.CoreForms.CoreForms_Order, 
+                         dbo.CoreForms.CoreForms_SQLFrom, dbo.CoreEntities.CoreEntities_Code, dbo.CoreEntities.CoreModules_Ky, dbo.CoreEntities.CoreEntities_Title, dbo.CoreForms.CoreForms_WhichFields, 
+                         dbo.CoreModules.CoreModules_Title, dbo.CoreEntities.CoreEntities_Key, dbo.CoreEntities.CoreEntities_Description, dbo.CoreEntities.CoreEntities_LabelSingular, dbo.CoreEntities.CoreEntities_LabelPlural, 
+                         dbo.CoreEntities.CoreEntities_Icon, dbo.CoreEntities.CoreEntities_Config, dbo.CoreEntities.CoreEntities_Order, dbo.CoreEntities.CoreEntities_Tree, dbo.CoreEntities.CoreEntities_TreeAttribute, 
+                         dbo.CoreEntities.CoreEntities_InMenu, dbo.CoreModules.CoreModules_Code, dbo.CoreModules.CoreModules_AdminMenuTitle, dbo.CoreModules.CoreModules_Order, 
+                         dbo.CoreModules.CoreModules_LabelSingular, dbo.CoreModules.CoreModules_LabelPlural, dbo.CoreModules.CoreModules_Icon, dbo.CoreModules.CoreModules_Version, 
+                         dbo.CoreModules.CoreModules_Active, dbo.CoreEntities.CoreEntities_CustomSave, dbo.CoreEntities.CoreEntities_CustomDelete
+FROM            dbo.CoreForms INNER JOIN
+                         dbo.CoreEntities ON dbo.CoreForms.CoreEntities_Ky = dbo.CoreEntities.CoreEntities_Ky LEFT OUTER JOIN
+                         dbo.CoreModules ON dbo.CoreEntities.CoreModules_Ky = dbo.CoreModules.CoreModules_Ky
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,65 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliModello" Type="TABLE">
+    <Keys>
+      <Key Column="VeicoliModello_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="VeicoliModello_Ky" IsNull="N" Type="smallint" />
+      <Field Column="VeicoliModello_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliModello_DescrizioneHTML" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliMarca_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="VeicoliModello_Foto" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="VeicoliModello_Importante" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliModello_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="VeicoliModello_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="VeicoliModello_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="VeicoliModello_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliModello_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliModello_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliModello_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliModello_UrlKey" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliModello_Tipo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliCarrozzeria_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliModello_Ordine" IsNull="Y" Type="int" />
+      <Field Column="VeicoliModello_Premium" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliModello_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliModello_Description" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliModello_Robots" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliModello_Dismesso" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliModello_KySostituto" IsNull="Y" Type="smallint" />
+      <Field Column="VeicoliModello_Km0" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliModello_Usato" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[VeicoliModello] (
+  [VeicoliModello_Ky] smallint IDENTITY(1,1) NOT NULL , 
+  [VeicoliModello_Descrizione] varchar(100)  NULL , 
+  [VeicoliModello_DescrizioneHTML] varchar(100)  NULL , 
+  [VeicoliMarca_Ky] smallint  NULL , 
+  [VeicoliModello_Foto] varchar(150)  NULL , 
+  [VeicoliModello_Importante] bit  NULL , 
+  [VeicoliTipo_Ky] tinyint  NULL , 
+  [VeicoliModello_UserInsert] int  NULL , 
+  [VeicoliModello_UserUpdate] int  NULL , 
+  [VeicoliModello_UserDelete] int  NULL , 
+  [VeicoliModello_DateInsert] datetime  NULL , 
+  [VeicoliModello_DateUpdate] datetime  NULL , 
+  [VeicoliModello_DateDelete] datetime  NULL , 
+  [VeicoliModello_Titolo] varchar(100)  NULL , 
+  [VeicoliModello_UrlKey] varchar(100)  NULL , 
+  [VeicoliModello_Tipo] varchar(100)  NULL , 
+  [VeicoliCarrozzeria_Ky] int  NULL , 
+  [VeicoliModello_Ordine] int  NULL , 
+  [VeicoliModello_Premium] bit  NULL , 
+  [VeicoliModello_Title] varchar(200)  NULL , 
+  [VeicoliModello_Description] varchar(200)  NULL , 
+  [VeicoliModello_Robots] varchar(200)  NULL , 
+  [VeicoliModello_Dismesso] bit  NULL DEFAULT ((0)), 
+  [VeicoliModello_KySostituto] smallint  NULL DEFAULT ((0)), 
+  [VeicoliModello_Km0] bit  NULL DEFAULT ((0)), 
+  [VeicoliModello_Usato] bit  NULL DEFAULT ((0)) )
+ALTER TABLE [dbo].[VeicoliModello] ADD CONSTRAINT PK_VeicoliModello PRIMARY KEY  ([VeicoliModello_Ky])
+</SqlScriptCreate>
+</SqlTable>

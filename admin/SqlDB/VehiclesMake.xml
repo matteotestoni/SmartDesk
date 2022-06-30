@@ -1,0 +1,12 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VehiclesMake" Type="TABLE">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="make" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="makeHTML" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliMarca_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliMarca_Importante" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+</SqlTable>

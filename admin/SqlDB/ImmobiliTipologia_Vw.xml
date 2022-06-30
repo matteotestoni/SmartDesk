@@ -1,0 +1,19 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ImmobiliTipologia_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="ImmobiliTipologia_Ky" IsNull="N" Type="smallint" />
+      <Field Column="ImmobiliTipologia_Descrizione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="ImmobiliArea_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="ImmobiliTipologia_DescrizioneHTML" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="ImmobiliArea_Descrizione" IsNull="Y" Type="varchar" Lenght="50" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW [dbo].[ImmobiliTipologia_Vw]
+AS
+SELECT     dbo.ImmobiliTipologia.ImmobiliTipologia_Ky, dbo.ImmobiliTipologia.ImmobiliTipologia_Descrizione, dbo.ImmobiliTipologia.ImmobiliArea_Ky, 
+                      dbo.ImmobiliTipologia.ImmobiliTipologia_DescrizioneHTML, dbo.ImmobiliArea.ImmobiliArea_Descrizione
+FROM         dbo.ImmobiliTipologia INNER JOIN
+                      dbo.ImmobiliArea ON dbo.ImmobiliTipologia.ImmobiliArea_Ky = dbo.ImmobiliArea.ImmobiliArea_Ky
+</SqlScriptCreate>
+</SqlTable>

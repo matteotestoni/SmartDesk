@@ -1,0 +1,28 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="UtentiLog_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="UtentiLog_Ky" IsNull="N" Type="int" />
+      <Field Column="UtentiLog_IP" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="UtentiLog_UserAgent" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="UtentiLog_Cookie" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="UtentiLog_Data" IsNull="Y" Type="datetime" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="UtentiLog_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="UtentiLog_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="UtentiLog_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="UtentiLog_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="UtentiLog_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="UtentiLog_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Utenti_Nominativo" IsNull="Y" Type="varchar" Lenght="255" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.UtentiLog_Vw
+AS
+SELECT        dbo.UtentiLog.UtentiLog_Ky, dbo.UtentiLog.UtentiLog_IP, dbo.UtentiLog.UtentiLog_UserAgent, dbo.UtentiLog.UtentiLog_Cookie, dbo.UtentiLog.UtentiLog_Data, dbo.UtentiLog.Utenti_Ky, 
+                         dbo.UtentiLog.UtentiLog_UserInsert, dbo.UtentiLog.UtentiLog_UserUpdate, dbo.UtentiLog.UtentiLog_UserDelete, dbo.UtentiLog.UtentiLog_DateInsert, dbo.UtentiLog.UtentiLog_DateUpdate, 
+                         dbo.UtentiLog.UtentiLog_DateDelete, dbo.Utenti.Utenti_Nominativo
+FROM            dbo.UtentiLog INNER JOIN
+                         dbo.Utenti ON dbo.UtentiLog.Utenti_Ky = dbo.Utenti.Utenti_Ky
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,72 @@
+<% if (GetCheckValue(dtPersoneAssenze, "PersoneAssenze_Lock")){ Response.Write("<span class=\"badge alert\"><i class=\"fa-duotone fa-circle-info fa-fw\"></i>Assenza confermata e non modificabile</span>");} %>
+
+<div class="grid-x grid-padding-x">
+    <div class="large-2 medium-2 small-4 cell">
+        <label class="large-text-right small-text-left middle" for="PersoneAssenze_Data">Data <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+    </div>
+    <div class="large-10 medium-10 small-8 cell">
+        <input type="text" name="PersoneAssenze_Data" id="PersoneAssenze_Data" value="<%=GetFieldValue(dtPersoneAssenze, "PersoneAssenze_Data_IT")%>" class="fdatepicker" required="required" size="10" <%=GetLock()%>>
+    </div>
+</div>
+
+<div class="grid-x grid-padding-x">
+    <div class="large-2 medium-2 small-4 cell">
+        <label class="large-text-right small-text-left middle" for="PersoneAssenze_Anno">Anno <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+    </div>
+    <div class="large-10 medium-10 small-8 cell">
+        <input type="text" name="PersoneAssenze_Anno" id="PersoneAssenze_Anno" value="<%=GetFieldValue(dtPersoneAssenze, "PersoneAssenze_Anno")%>" min="0" max="2099" pattern="number" size="6" required="required" <%=GetLock()%> />
+        <small class="form-error">Solo numeri.</small>
+    </div>
+</div>
+
+<div class="grid-x grid-padding-x">
+    <div class="large-2 medium-2 small-4 cell">
+        <label class="large-text-right small-text-left middle" for="PersoneAssenze_Ore">Ore <i class="fa-duotone fa-clock fa-fw"></i></label>
+    </div>
+    <div class="large-10 medium-10 small-8 cell">
+        <input type="text" name="PersoneAssenze_Ore" id="PersoneAssenze_Ore" value="<%=GetFieldValue(dtPersoneAssenze, "PersoneAssenze_Ore")%>" size="4" min="-8" max="8" step="0.5" pattern="number" required="required" <%=GetLock()%>                                            />
+        <small class="form-error">Solo numeri.</small>
+    </div>
+</div>
+
+<div class="grid-x grid-padding-x">
+    <div class="large-2 medium-2 small-4 cell">
+        <label class="large-text-right small-text-left middle" for="PersoneAssenze_Descrizione">Descrizione <i class="fa-duotone fa-file-lines fa-fw"></i></label>
+    </div>
+    <div class="large-10 medium-10 small-8 cell">
+        <textarea name="PersoneAssenze_Descrizione" id="PersoneAssenze_Descrizione" cols="51" rows="2" required="required"><%=GetFieldValue(dtPersoneAssenze, "PersoneAssenze_Descrizione")%></textarea>
+        <span class="form-error">Obbligatorio</span>
+    </div>
+</div>
+
+<div class="grid-x grid-padding-x">
+    <div class="large-2 medium-2 small-4 cell">
+        <label class="large-text-right small-text-left middle" for="PersoneAssenzeTipo_Ky">Tipo <i class="fa-duotone fa-list fa-fw"></i></label>
+    </div>
+    <div class="large-10 medium-10 small-8 cell">
+        <select name="PersoneAssenzeTipo_Ky" id="PersoneAssenzeTipo_Ky" value="<%=GetFieldValue(dtPersoneAssenze, "PersoneAssenzeTipo_Ky")%>" required="required" <%=GetLock()%>>
+          <!--#include file="/var/cache/PersoneAssenzeTipo-options.htm"--> 
+        </select>
+        <script type="text/javascript">
+            selectSet('PersoneAssenzeTipo_Ky', '<%=GetFieldValue(dtPersoneAssenze, "PersoneAssenzeTipo_Ky")%>');
+        </script>
+    </div>
+</div>
+
+<% if (boolAdmin==true){ %>
+  <div class="grid-x grid-padding-x">
+      <div class="large-2 medium-2 small-4 cell">
+          <label class="large-text-right small-text-left middle" for="Persone_Ky">Persona <i class="fa-duotone fa-user fa-fw"></i></label>
+      </div>
+      <div class="large-10 medium-10 small-8 cell">
+          <select name="Persone_Ky" id="Persone_Ky" value="<%=GetFieldValue(dtPersoneAssenze, "Persone_Ky")%>" required="required" <%=GetLock()%>>
+            <!--#include file="/var/cache/Persone-options.htm"--> 
+          </select>
+          <script type="text/javascript">
+              selectSet('Persone_Ky', '<%=GetFieldValue(dtPersoneAssenze, "Persone_Ky")%>');
+          </script>
+      </div>
+  </div>
+<% }else{ %>
+		<input type="hidden" id="Persone_Ky" name="Persone_Ky" value="<%=dtLogin.Rows[0]["Persone_Ky"].ToString()%>">
+<% } %>

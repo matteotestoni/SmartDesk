@@ -1,0 +1,35 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="LeadSedi" Type="TABLE">
+    <Keys>
+      <Key Column="LeadSedi_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="LeadSedi_Ky" IsNull="N" Type="int" />
+      <Field Column="LeadSedi_Titolo" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="LeadSedi_Default" IsNull="Y" Type="bit" />
+      <Field Column="LeadSedi_Codice" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="LeadSedi_Ordine" IsNull="Y" Type="int" />
+      <Field Column="LeadSedi_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="LeadSedi_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="LeadSedi_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="LeadSedi_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="LeadSedi_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="LeadSedi_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[LeadSedi] (
+  [LeadSedi_Ky] int IDENTITY(1,1) NOT NULL , 
+  [LeadSedi_Titolo] varchar(MAX)  NULL , 
+  [LeadSedi_Default] bit  NULL , 
+  [LeadSedi_Codice] varchar(MAX)  NULL , 
+  [LeadSedi_Ordine] int  NULL , 
+  [LeadSedi_UserInsert] int  NULL , 
+  [LeadSedi_UserUpdate] int  NULL , 
+  [LeadSedi_UserDelete] int  NULL , 
+  [LeadSedi_DateInsert] datetime  NULL , 
+  [LeadSedi_DateUpdate] datetime  NULL , 
+  [LeadSedi_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[LeadSedi] ADD CONSTRAINT PK_LeadSedi PRIMARY KEY  ([LeadSedi_Ky])
+</SqlScriptCreate>
+</SqlTable>

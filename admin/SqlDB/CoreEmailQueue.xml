@@ -1,0 +1,43 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CoreEmailQueue" Type="TABLE">
+    <Keys>
+      <Key Column="CoreEmailQueue_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CoreEmailQueue_Ky" IsNull="N" Type="int" />
+      <Field Column="CoreEmailQueue_From" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreEmailQueue_To" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreEmailQueue_Cc" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreEmailQueue_Ccn" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreEmailQueue_Subject" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreEmailQueue_Body" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreEmailQueue_Sent" IsNull="Y" Type="bit" />
+      <Field Column="CoreEmailQueue_SentData" IsNull="Y" Type="datetime" />
+      <Field Column="CoreEmailQueue_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CoreEmailQueue_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CoreEmailQueue_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CoreEmailQueue_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CoreEmailQueue_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CoreEmailQueue_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CoreEmailQueue] (
+  [CoreEmailQueue_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CoreEmailQueue_From] varchar(MAX)  NULL , 
+  [CoreEmailQueue_To] varchar(MAX)  NULL , 
+  [CoreEmailQueue_Cc] varchar(MAX)  NULL , 
+  [CoreEmailQueue_Ccn] varchar(MAX)  NULL , 
+  [CoreEmailQueue_Subject] varchar(MAX)  NULL , 
+  [CoreEmailQueue_Body] varchar(MAX)  NULL , 
+  [CoreEmailQueue_Sent] bit  NULL , 
+  [CoreEmailQueue_SentData] datetime  NULL , 
+  [CoreEmailQueue_UserInsert] int  NULL , 
+  [CoreEmailQueue_UserUpdate] int  NULL , 
+  [CoreEmailQueue_UserDelete] int  NULL , 
+  [CoreEmailQueue_DateInsert] datetime  NULL , 
+  [CoreEmailQueue_DateUpdate] datetime  NULL , 
+  [CoreEmailQueue_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[CoreEmailQueue] ADD CONSTRAINT PK_CoreEmailQueue PRIMARY KEY  ([CoreEmailQueue_Ky])
+</SqlScriptCreate>
+</SqlTable>

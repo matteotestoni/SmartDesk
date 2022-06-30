@@ -1,0 +1,199 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Utenti_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Utenti_Ky" IsNull="N" Type="int" />
+      <Field Column="Utenti_Email" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Utenti_Password" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Utenti_Attivo" IsNull="Y" Type="bit" />
+      <Field Column="Utenti_Attivo_IT" IsNull="Y" Type="varchar" Lenght="2" />
+      <Field Column="Aziende_Ky" IsNull="Y" Type="int" />
+      <Field Column="UtentiGruppi_Ky" IsNull="Y" Type="int" />
+      <Field Column="Utenti_Admin" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="UtentiGruppi_Home" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="UtentiGruppi_Preferiti" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Anagrafiche" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_AnagraficheContatti" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Calendario" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Catalogo" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Servizi" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Attivita" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Pagamenti" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Amministrazione" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Vendite" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Contenuti" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Produzione" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Rapporti" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_SitiWeb" IsNull="Y" Type="bit" />
+      <Field Column="Persone_Ky" IsNull="Y" Type="int" />
+      <Field Column="Persone_Nome" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Persone_Cognome" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Utenti_Admin_IT" IsNull="Y" Type="varchar" Lenght="2" />
+      <Field Column="Utenti_Iniziali" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="UtentiGruppi_Fatturato" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Trasferte" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Prodotti" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Note" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Fatture" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Preventivi" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Ordini" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Notedicredito" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_ServiziCatalogo" IsNull="Y" Type="bit" />
+      <Field Column="Utenti_TipoCalendario" IsNull="Y" Type="tinyint" />
+      <Field Column="Utenti_Home" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiGruppi_AnagraficheClienti" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_AnagraficheConcorrenti" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_AnagraficheFornitori" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_AnagraficheLead" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Opportunita" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_PreferitiQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiGruppi_CalendarioQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiGruppi_AnagraficheQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiGruppi_CatalogoQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiGruppi_VenditeQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiGruppi_ProduzioneQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="Utenti_Codice" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Persone_Colore" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="UtentiGruppi_Spese" IsNull="Y" Type="bit" />
+      <Field Column="Persone_Foto" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="UtentiGruppi_Veicoli" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Immobili" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Aste" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Annunci" IsNull="Y" Type="bit" />
+      <Field Column="Utenti_Nominativo" IsNull="Y" Type="varchar" Lenght="255" />
+      <Field Column="UtentiTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiTipo_Descrizione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="TimeZones_TimeZone" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="TimeZones_Ky" IsNull="Y" Type="int" />
+      <Field Column="Utenti_Wysiwyg" IsNull="Y" Type="bit" />
+      <Field Column="Lingue_Codice" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Lingue_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Utenti_Telefono1" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Utenti_Cognome" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Utenti_Nome" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Utenti_Interno" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Utenti_Colore" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="UtentiGruppi_Faq" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Lead" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Social" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Commerciale" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Campagne" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_PersonaleAssenzeQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="Comuni_Ky" IsNull="Y" Type="int" />
+      <Field Column="Province_Ky" IsNull="Y" Type="int" />
+      <Field Column="Nazioni_Ky" IsNull="Y" Type="int" />
+      <Field Column="Utenti_Indirizzo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Utenti_Logo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Utenti_PersContattare" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Utenti_PaginaWEB" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Utenti_FAX" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Utenti_Telefono1Nascondi" IsNull="Y" Type="bit" />
+      <Field Column="Comuni_Comune" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Province_Provincia" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Nazioni_Nazione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="UtentiGruppi_Ticket" IsNull="Y" Type="bit" />
+      <Field Column="CoreMenus_Ky" IsNull="Y" Type="int" />
+      <Field Column="UtentiGruppi_Marketing" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Assistenza" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Officina" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Knowledgebase" IsNull="Y" Type="bit" />
+      <Field Column="Utenti_CambioGrid" IsNull="Y" Type="bit" />
+      <Field Column="Utenti_CambioForm" IsNull="Y" Type="bit" />
+      <Field Column="Utenti_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Utenti_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Utenti_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Utenti_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Utenti_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Utenti_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="UtentiTeams_Ky" IsNull="Y" Type="int" />
+      <Field Column="UtentiTeams_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="UtentiGruppi_Eventi" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Recensioni" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_CommercialeQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiGruppi_AssistenzaQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiGruppi_AutomotiveQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiGruppi_PreventiviAuto" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_PasswordmanagerQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiGruppi_Passwordmanager" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_AttivitaQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiGruppi_AmministrazioneQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiGruppi_Core" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_CoreQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiGruppi_Documenti" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_DocumentiQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiGruppi_Files" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Forms" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_Logistica" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_LogisticaQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiGruppi_FormsQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiGruppi_Persone" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_PersoneQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiGruppi_Progetti" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_ProgettiQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiGruppi_Ricambiveicoli" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_RicambiveicoliQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiGruppi_Sdk" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_SdkQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiGruppi_Sitowebecommerce" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_SitowebecommerceQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiGruppi_Automotive" IsNull="Y" Type="bit" />
+      <Field Column="UtentiGruppi_AnnunciQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiGruppi_AsteQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiGruppi_ContenutiQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiGruppi_ImmobiliQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiGruppi_NoteQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiGruppi_PagamentiQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiGruppi_SitiwebQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiGruppi_VeicoliQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiGruppi_MarketingQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiGruppi_OfficinaQuali" IsNull="Y" Type="tinyint" />
+      <Field Column="UtentiGruppi_PersonaleAssenze" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Utenti_Vw
+AS
+SELECT        dbo.Utenti.Utenti_Ky, dbo.Utenti.Utenti_Email, dbo.Utenti.Utenti_Password, dbo.Utenti.Utenti_Attivo, dbo.fnBit(dbo.Utenti.Utenti_Attivo) AS Utenti_Attivo_IT, dbo.Utenti.Aziende_Ky, dbo.Utenti.UtentiGruppi_Ky, 
+                         dbo.Utenti.Utenti_Admin, dbo.UtentiGruppi.UtentiGruppi_Descrizione, dbo.UtentiGruppi.UtentiGruppi_Home, dbo.UtentiGruppi.UtentiGruppi_Preferiti, dbo.UtentiGruppi.UtentiGruppi_Anagrafiche, 
+                         dbo.UtentiGruppi.UtentiGruppi_AnagraficheContatti, dbo.UtentiGruppi.UtentiGruppi_Calendario, dbo.UtentiGruppi.UtentiGruppi_Catalogo, dbo.UtentiGruppi.UtentiGruppi_Servizi, 
+                         dbo.UtentiGruppi.UtentiGruppi_Attivita, dbo.UtentiGruppi.UtentiGruppi_Pagamenti, dbo.UtentiGruppi.UtentiGruppi_Amministrazione, dbo.UtentiGruppi.UtentiGruppi_Vendite, 
+                         dbo.UtentiGruppi.UtentiGruppi_Contenuti, dbo.UtentiGruppi.UtentiGruppi_Produzione, dbo.UtentiGruppi.UtentiGruppi_Rapporti, dbo.UtentiGruppi.UtentiGruppi_SitiWeb, dbo.Utenti.Persone_Ky, 
+                         dbo.Persone.Persone_Nome, dbo.Persone.Persone_Cognome, dbo.fnBit(dbo.Utenti.Utenti_Admin) AS Utenti_Admin_IT, dbo.Utenti.Utenti_Iniziali, dbo.UtentiGruppi.UtentiGruppi_Fatturato, 
+                         dbo.UtentiGruppi.UtentiGruppi_Trasferte, dbo.UtentiGruppi.UtentiGruppi_Prodotti, dbo.UtentiGruppi.UtentiGruppi_Note, dbo.UtentiGruppi.UtentiGruppi_Fatture, dbo.UtentiGruppi.UtentiGruppi_Preventivi, 
+                         dbo.UtentiGruppi.UtentiGruppi_Ordini, dbo.UtentiGruppi.UtentiGruppi_Notedicredito, dbo.UtentiGruppi.UtentiGruppi_ServiziCatalogo, dbo.Utenti.Utenti_TipoCalendario, dbo.Utenti.Utenti_Home, 
+                         dbo.UtentiGruppi.UtentiGruppi_AnagraficheClienti, dbo.UtentiGruppi.UtentiGruppi_AnagraficheConcorrenti, dbo.UtentiGruppi.UtentiGruppi_AnagraficheFornitori, dbo.UtentiGruppi.UtentiGruppi_AnagraficheLead, 
+                         dbo.UtentiGruppi.UtentiGruppi_Opportunita, dbo.UtentiGruppi.UtentiGruppi_PreferitiQuali, dbo.UtentiGruppi.UtentiGruppi_CalendarioQuali, dbo.UtentiGruppi.UtentiGruppi_AnagraficheQuali, 
+                         dbo.UtentiGruppi.UtentiGruppi_CatalogoQuali, dbo.UtentiGruppi.UtentiGruppi_VenditeQuali, dbo.UtentiGruppi.UtentiGruppi_ProduzioneQuali, dbo.Utenti.Utenti_Codice, dbo.Persone.Persone_Colore, 
+                         dbo.UtentiGruppi.UtentiGruppi_Spese, dbo.Persone.Persone_Foto, dbo.UtentiGruppi.UtentiGruppi_Veicoli, dbo.UtentiGruppi.UtentiGruppi_Immobili, dbo.UtentiGruppi.UtentiGruppi_Aste, 
+                         dbo.UtentiGruppi.UtentiGruppi_Annunci, dbo.Utenti.Utenti_Nominativo, dbo.Utenti.UtentiTipo_Ky, dbo.UtentiTipo.UtentiTipo_Descrizione, dbo.TimeZones.TimeZones_TimeZone, dbo.Utenti.TimeZones_Ky, 
+                         dbo.Utenti.Utenti_Wysiwyg, dbo.Lingue.Lingue_Codice, dbo.Lingue.Lingue_Titolo, dbo.Utenti.Lingue_Ky, dbo.Utenti.Utenti_Telefono1, dbo.Utenti.Utenti_Cognome, dbo.Utenti.Utenti_Nome, 
+                         dbo.Utenti.Utenti_Interno, dbo.Utenti.Utenti_Colore, dbo.UtentiGruppi.UtentiGruppi_Faq, dbo.UtentiGruppi.UtentiGruppi_Lead, dbo.UtentiGruppi.UtentiGruppi_Social, dbo.UtentiGruppi.UtentiGruppi_Commerciale, 
+                         dbo.UtentiGruppi.UtentiGruppi_Campagne, dbo.UtentiGruppi.UtentiGruppi_PersonaleAssenzeQuali, dbo.Utenti.Comuni_Ky, dbo.Utenti.Province_Ky, dbo.Utenti.Nazioni_Ky, dbo.Utenti.Utenti_Indirizzo, 
+                         dbo.Utenti.Utenti_Logo, dbo.Utenti.Utenti_PersContattare, dbo.Utenti.Utenti_PaginaWEB, dbo.Utenti.Utenti_FAX, dbo.Utenti.Utenti_Telefono1Nascondi, dbo.Comuni.Comuni_Comune, 
+                         dbo.Province.Province_Provincia, dbo.Nazioni.Nazioni_Nazione, dbo.UtentiGruppi.UtentiGruppi_Ticket, dbo.UtentiGruppi.CoreMenus_Ky, dbo.UtentiGruppi.UtentiGruppi_Marketing, 
+                         dbo.UtentiGruppi.UtentiGruppi_Assistenza, dbo.UtentiGruppi.UtentiGruppi_Officina, dbo.UtentiGruppi.UtentiGruppi_Knowledgebase, dbo.Utenti.Utenti_CambioGrid, dbo.Utenti.Utenti_CambioForm, 
+                         dbo.Utenti.Utenti_UserInsert, dbo.Utenti.Utenti_UserUpdate, dbo.Utenti.Utenti_UserDelete, dbo.Utenti.Utenti_DateInsert, dbo.Utenti.Utenti_DateDelete, dbo.Utenti.Utenti_DateUpdate, dbo.Utenti.UtentiTeams_Ky, 
+                         dbo.UtentiTeams.UtentiTeams_Titolo, dbo.UtentiGruppi.UtentiGruppi_Eventi, dbo.UtentiGruppi.UtentiGruppi_Recensioni, dbo.UtentiGruppi.UtentiGruppi_CommercialeQuali, 
+                         dbo.UtentiGruppi.UtentiGruppi_AssistenzaQuali, dbo.UtentiGruppi.UtentiGruppi_AutomotiveQuali, dbo.UtentiGruppi.UtentiGruppi_PreventiviAuto, dbo.UtentiGruppi.UtentiGruppi_PasswordmanagerQuali, 
+                         dbo.UtentiGruppi.UtentiGruppi_Passwordmanager, dbo.UtentiGruppi.UtentiGruppi_AttivitaQuali, dbo.UtentiGruppi.UtentiGruppi_AmministrazioneQuali, dbo.UtentiGruppi.UtentiGruppi_Core, 
+                         dbo.UtentiGruppi.UtentiGruppi_CoreQuali, dbo.UtentiGruppi.UtentiGruppi_Documenti, dbo.UtentiGruppi.UtentiGruppi_DocumentiQuali, dbo.UtentiGruppi.UtentiGruppi_Files, dbo.UtentiGruppi.UtentiGruppi_Forms, 
+                         dbo.UtentiGruppi.UtentiGruppi_Logistica, dbo.UtentiGruppi.UtentiGruppi_LogisticaQuali, dbo.UtentiGruppi.UtentiGruppi_FormsQuali, dbo.UtentiGruppi.UtentiGruppi_Persone, 
+                         dbo.UtentiGruppi.UtentiGruppi_PersoneQuali, dbo.UtentiGruppi.UtentiGruppi_Progetti, dbo.UtentiGruppi.UtentiGruppi_ProgettiQuali, dbo.UtentiGruppi.UtentiGruppi_Ricambiveicoli, 
+                         dbo.UtentiGruppi.UtentiGruppi_RicambiveicoliQuali, dbo.UtentiGruppi.UtentiGruppi_Sdk, dbo.UtentiGruppi.UtentiGruppi_SdkQuali, dbo.UtentiGruppi.UtentiGruppi_Sitowebecommerce, 
+                         dbo.UtentiGruppi.UtentiGruppi_SitowebecommerceQuali, dbo.UtentiGruppi.UtentiGruppi_Automotive, dbo.UtentiGruppi.UtentiGruppi_AnnunciQuali, dbo.UtentiGruppi.UtentiGruppi_AsteQuali, 
+                         dbo.UtentiGruppi.UtentiGruppi_ContenutiQuali, dbo.UtentiGruppi.UtentiGruppi_ImmobiliQuali, dbo.UtentiGruppi.UtentiGruppi_NoteQuali, dbo.UtentiGruppi.UtentiGruppi_PagamentiQuali, 
+                         dbo.UtentiGruppi.UtentiGruppi_SitiwebQuali, dbo.UtentiGruppi.UtentiGruppi_VeicoliQuali, dbo.UtentiGruppi.UtentiGruppi_MarketingQuali, dbo.UtentiGruppi.UtentiGruppi_OfficinaQuali, 
+                         dbo.UtentiGruppi.UtentiGruppi_PersonaleAssenze
+FROM            dbo.Utenti LEFT OUTER JOIN
+                         dbo.UtentiTeams ON dbo.Utenti.UtentiTeams_Ky = dbo.UtentiTeams.UtentiTeams_Ky LEFT OUTER JOIN
+                         dbo.UtentiGruppi ON dbo.Utenti.UtentiGruppi_Ky = dbo.UtentiGruppi.UtentiGruppi_Ky LEFT OUTER JOIN
+                         dbo.Nazioni ON dbo.Utenti.Nazioni_Ky = dbo.Nazioni.Nazioni_Ky LEFT OUTER JOIN
+                         dbo.Province ON dbo.Utenti.Province_Ky = dbo.Province.Province_Ky LEFT OUTER JOIN
+                         dbo.Comuni ON dbo.Utenti.Comuni_Ky = dbo.Comuni.Comuni_Ky LEFT OUTER JOIN
+                         dbo.Lingue ON dbo.Utenti.Lingue_Ky = dbo.Lingue.Lingue_Ky LEFT OUTER JOIN
+                         dbo.TimeZones ON dbo.Utenti.TimeZones_Ky = dbo.TimeZones.TimeZones_Ky LEFT OUTER JOIN
+                         dbo.UtentiTipo ON dbo.Utenti.UtentiTipo_Ky = dbo.UtentiTipo.UtentiTipo_Ky LEFT OUTER JOIN
+                         dbo.Persone ON dbo.Utenti.Persone_Ky = dbo.Persone.Persone_Ky
+</SqlScriptCreate>
+</SqlTable>

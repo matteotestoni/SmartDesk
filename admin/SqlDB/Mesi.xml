@@ -1,0 +1,29 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Mesi" Type="TABLE">
+    <Keys>
+      <Key Column="Mesi_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Mesi_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="Mesi_Mese" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Mesi_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Mesi_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Mesi_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Mesi_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Mesi_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Mesi_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Mesi] (
+  [Mesi_Ky] tinyint  NOT NULL , 
+  [Mesi_Mese] varchar(50)  NULL , 
+  [Mesi_UserInsert] int  NULL , 
+  [Mesi_UserUpdate] int  NULL , 
+  [Mesi_UserDelete] int  NULL , 
+  [Mesi_DateInsert] datetime  NULL , 
+  [Mesi_DateUpdate] datetime  NULL , 
+  [Mesi_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[Mesi] ADD CONSTRAINT PK_Mesi PRIMARY KEY  ([Mesi_Ky])
+</SqlScriptCreate>
+</SqlTable>

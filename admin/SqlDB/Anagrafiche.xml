@@ -1,0 +1,181 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Anagrafiche" Type="TABLE">
+    <Keys>
+      <Key Column="Anagrafiche_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Anagrafiche_Ky" IsNull="N" Type="int" />
+      <Field Column="Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_Codice" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Anagrafiche_ParoleChiave" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Nazioni_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Anagrafiche_Nazione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Province_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_Provincia" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Comuni_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_Comune" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Anagrafiche_Indirizzo" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Anagrafiche_CAP" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Anagrafiche_PartitaIVA" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Anagrafiche_CodiceFiscale" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="AnagraficheStati_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="AnagraficheTipo_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="AnagraficheCategorie_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="AliquoteIVA_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="PagamentiCondizioni_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Anagrafiche_Telefono" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_FAX" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Anagrafiche_EmailAmministrazione" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_EmailContatti" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_PEC" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_SitoWeb" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_Note" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Anagrafiche_Disdetto" IsNull="Y" Type="bit" />
+      <Field Column="Providers_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Anagrafiche_Logo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_Password" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Anagrafiche_Visite" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_RichiesteTelefono" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_NumeroProdotti" IsNull="Y" Type="int" />
+      <Field Column="Aziende_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_Newsletter" IsNull="Y" Type="bit" />
+      <Field Column="Anagrafiche_Iban" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="Anagrafiche_Lock" IsNull="Y" Type="bit" />
+      <Field Column="Anagrafiche_DataInserimento" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Anagrafiche_DataAggiornamento" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_Nome" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_Cognome" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_Attivo" IsNull="Y" Type="bit" />
+      <Field Column="Anagrafiche_Facebook" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_Youtube" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_LinkedIn" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_Pinterest" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_Twitter" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_Googleplus" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_Accessi" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_AttivitaCommerciale" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Anagrafiche_AttivitaTecnica" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Anagrafiche_AttivitaAmministrazione" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Anagrafiche_NoteAmministrative" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Anagrafiche_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Anagrafiche_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Anagrafiche_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheTipologia_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="PagamentiMetodo_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="SpedizioniTipo_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Anagrafiche_Categorie" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Regioni_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_Favicon" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Conti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_Banca" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_Tessera" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_Origine" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_OriginDetail" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_OriginCampaign" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_OriginLink" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="AnagraficheGruppi_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Anagrafiche_CodiceDestinatario" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Anagrafiche_Tags" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Anagrafiche_Mybusiness" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Anagrafiche_Instagram" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Anagrafiche_Privacy" IsNull="Y" Type="bit" />
+      <Field Column="CentridiCR_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Anagrafiche_Video" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_DataNascita" IsNull="Y" Type="date" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Anagrafiche] (
+  [Anagrafiche_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Anagrafiche_RagioneSociale] varchar(100)  NULL , 
+  [Anagrafiche_Codice] varchar(50)  NULL , 
+  [Anagrafiche_ParoleChiave] varchar(200)  NULL , 
+  [Nazioni_Ky] tinyint  NULL , 
+  [Lingue_Ky] tinyint  NULL , 
+  [Anagrafiche_Nazione] varchar(100)  NULL , 
+  [Province_Ky] int  NULL , 
+  [Anagrafiche_Provincia] varchar(50)  NULL , 
+  [Comuni_Ky] int  NULL , 
+  [Anagrafiche_Comune] varchar(50)  NULL , 
+  [Anagrafiche_Indirizzo] varchar(50)  NULL , 
+  [Anagrafiche_CAP] varchar(50)  NULL , 
+  [Anagrafiche_PartitaIVA] varchar(50)  NULL , 
+  [Anagrafiche_CodiceFiscale] varchar(50)  NULL , 
+  [AnagraficheStati_Ky] smallint  NULL DEFAULT ((1)), 
+  [AnagraficheTipo_Ky] smallint  NULL , 
+  [AnagraficheCategorie_Ky] smallint  NULL , 
+  [AliquoteIVA_Ky] smallint  NULL , 
+  [PagamentiCondizioni_Ky] smallint  NULL , 
+  [Anagrafiche_Telefono] varchar(100)  NULL , 
+  [Anagrafiche_FAX] varchar(50)  NULL , 
+  [Anagrafiche_EmailAmministrazione] varchar(200)  NULL , 
+  [Anagrafiche_EmailContatti] varchar(200)  NULL , 
+  [Anagrafiche_PEC] varchar(200)  NULL , 
+  [Anagrafiche_SitoWeb] varchar(200)  NULL , 
+  [Anagrafiche_Note] varchar(MAX)  NULL , 
+  [Anagrafiche_Disdetto] bit  NULL DEFAULT ((0)), 
+  [Providers_Ky] smallint  NULL , 
+  [Anagrafiche_Logo] varchar(200)  NULL , 
+  [Anagrafiche_Password] varchar(50)  NULL , 
+  [Anagrafiche_Visite] int  NULL DEFAULT ((0)), 
+  [Anagrafiche_RichiesteTelefono] int  NULL DEFAULT ((0)), 
+  [Anagrafiche_NumeroProdotti] int  NULL DEFAULT ((0)), 
+  [Aziende_Ky] int  NULL , 
+  [Anagrafiche_Newsletter] bit  NULL DEFAULT ((1)), 
+  [Anagrafiche_Iban] varchar(30)  NULL , 
+  [Anagrafiche_Lock] bit  NULL DEFAULT ((0)), 
+  [Anagrafiche_DataInserimento] smalldatetime  NULL , 
+  [Anagrafiche_DataAggiornamento] smalldatetime  NULL , 
+  [Utenti_Ky] int  NULL , 
+  [Anagrafiche_Nome] varchar(100)  NULL , 
+  [Anagrafiche_Cognome] varchar(100)  NULL , 
+  [Anagrafiche_Attivo] bit  NULL DEFAULT ((0)), 
+  [Anagrafiche_Facebook] varchar(200)  NULL , 
+  [Anagrafiche_Youtube] varchar(200)  NULL , 
+  [Anagrafiche_LinkedIn] varchar(200)  NULL , 
+  [Anagrafiche_Pinterest] varchar(200)  NULL , 
+  [Anagrafiche_Twitter] varchar(200)  NULL , 
+  [Anagrafiche_Googleplus] varchar(200)  NULL , 
+  [Anagrafiche_Accessi] varchar(200)  NULL , 
+  [Anagrafiche_AttivitaCommerciale] smalldatetime  NULL , 
+  [Anagrafiche_AttivitaTecnica] smalldatetime  NULL , 
+  [Anagrafiche_AttivitaAmministrazione] smalldatetime  NULL , 
+  [Anagrafiche_NoteAmministrative] varchar(MAX)  NULL , 
+  [Anagrafiche_UserInsert] int  NULL , 
+  [Anagrafiche_UserUpdate] int  NULL , 
+  [Anagrafiche_UserDelete] int  NULL , 
+  [Anagrafiche_DateInsert] datetime  NULL , 
+  [Anagrafiche_DateUpdate] datetime  NULL , 
+  [Anagrafiche_DateDelete] datetime  NULL , 
+  [AnagraficheTipologia_Ky] tinyint  NULL , 
+  [PagamentiMetodo_Ky] smallint  NULL , 
+  [SpedizioniTipo_Ky] smallint  NULL , 
+  [Anagrafiche_Categorie] varchar(100)  NULL , 
+  [Regioni_Ky] int  NULL , 
+  [Anagrafiche_Favicon] varchar(200)  NULL , 
+  [Conti_Ky] int  NULL DEFAULT ((1)), 
+  [Anagrafiche_Banca] varchar(200)  NULL , 
+  [Anagrafiche_Tessera] varchar(100)  NULL , 
+  [Anagrafiche_Origine] varchar(200)  NULL , 
+  [Anagrafiche_OriginDetail] varchar(200)  NULL , 
+  [Anagrafiche_OriginCampaign] varchar(200)  NULL , 
+  [Anagrafiche_OriginLink] varchar(500)  NULL , 
+  [AnagraficheGruppi_Ky] smallint  NULL , 
+  [Anagrafiche_CodiceDestinatario] varchar(50)  NULL , 
+  [Anagrafiche_Tags] varchar(MAX)  NULL , 
+  [Anagrafiche_Mybusiness] varchar(MAX)  NULL , 
+  [Anagrafiche_Instagram] varchar(MAX)  NULL , 
+  [Anagrafiche_Privacy] bit  NULL DEFAULT ((1)), 
+  [CentridiCR_Ky] int  NULL , 
+  [Anagrafiche_Descrizione] varchar(MAX)  NULL , 
+  [Anagrafiche_Video] varchar(200)  NULL , 
+  [Anagrafiche_DataNascita] date  NULL  )
+ALTER TABLE [dbo].[Anagrafiche] ADD CONSTRAINT PK_Anagrafiche PRIMARY KEY  ([Anagrafiche_Ky])
+</SqlScriptCreate>
+</SqlTable>

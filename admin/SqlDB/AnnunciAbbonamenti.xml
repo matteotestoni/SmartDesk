@@ -1,0 +1,31 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnnunciAbbonamenti" Type="TABLE">
+    <Keys>
+      <Key Column="AnnunciAbbonamenti_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AnnunciAbbonamenti_Ky" IsNull="N" Type="smallint" />
+      <Field Column="AnnunciAbbonamenti_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnnunciAbbonamenti_MaxAnnunci" IsNull="Y" Type="int" />
+      <Field Column="AnnunciAbbonamenti_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AnnunciAbbonamenti_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AnnunciAbbonamenti_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AnnunciAbbonamenti_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AnnunciAbbonamenti_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AnnunciAbbonamenti_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AnnunciAbbonamenti] (
+  [AnnunciAbbonamenti_Ky] smallint IDENTITY(1,1) NOT NULL , 
+  [AnnunciAbbonamenti_Titolo] varchar(200)  NULL , 
+  [AnnunciAbbonamenti_MaxAnnunci] int  NULL , 
+  [AnnunciAbbonamenti_UserInsert] int  NULL , 
+  [AnnunciAbbonamenti_UserUpdate] int  NULL , 
+  [AnnunciAbbonamenti_UserDelete] int  NULL , 
+  [AnnunciAbbonamenti_DateInsert] datetime  NULL , 
+  [AnnunciAbbonamenti_DateUpdate] datetime  NULL , 
+  [AnnunciAbbonamenti_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[AnnunciAbbonamenti] ADD CONSTRAINT PK_AnnunciAbbonamenti PRIMARY KEY  ([AnnunciAbbonamenti_Ky])
+</SqlScriptCreate>
+</SqlTable>

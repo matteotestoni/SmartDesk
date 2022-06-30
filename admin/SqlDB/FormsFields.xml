@@ -1,0 +1,45 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="FormsFields" Type="TABLE">
+    <Keys>
+      <Key Column="FormsFields_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="FormsFields_Ky" IsNull="N" Type="int" />
+      <Field Column="Forms_Ky" IsNull="Y" Type="int" />
+      <Field Column="FormsFields_Descrizione" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="FormsFields_Info" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="FormsFields_Codice" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="FormsFields_Data" IsNull="Y" Type="smalldatetime" />
+      <Field Column="FormsFields_Ordine" IsNull="Y" Type="int" />
+      <Field Column="FormsFields_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="FormsFields_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="FormsFields_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="FormsFields_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="FormsFields_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="FormsFields_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="FormsFields_Valori" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="FormsFieldsTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="FormsFields_Obbligatorio" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[FormsFields] (
+  [FormsFields_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Forms_Ky] int  NULL , 
+  [FormsFields_Descrizione] varchar(200)  NULL , 
+  [FormsFields_Info] varchar(500)  NULL , 
+  [FormsFields_Codice] varchar(100)  NULL , 
+  [FormsFields_Data] smalldatetime  NULL DEFAULT (getdate()), 
+  [FormsFields_Ordine] int  NULL , 
+  [FormsFields_UserInsert] int  NULL , 
+  [FormsFields_UserUpdate] int  NULL , 
+  [FormsFields_UserDelete] int  NULL , 
+  [FormsFields_DateInsert] datetime  NULL , 
+  [FormsFields_DateUpdate] datetime  NULL , 
+  [FormsFields_DateDelete] datetime  NULL , 
+  [FormsFields_Valori] varchar(200)  NULL , 
+  [FormsFieldsTipo_Ky] tinyint  NULL , 
+  [FormsFields_Obbligatorio] bit  NULL DEFAULT ((1)) )
+ALTER TABLE [dbo].[FormsFields] ADD CONSTRAINT PK_FormsFields PRIMARY KEY  ([FormsFields_Ky])
+</SqlScriptCreate>
+</SqlTable>

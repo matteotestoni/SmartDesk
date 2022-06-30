@@ -1,0 +1,65 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Documenti" Type="TABLE">
+    <Keys>
+      <Key Column="Documenti_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Documenti_Ky" IsNull="N" Type="int" />
+      <Field Column="DocumentiTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="DocumentiStato_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Documenti_HTML" IsNull="Y" Type="bit" />
+      <Field Column="Documenti_Riferimenti" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Documenti_Numero" IsNull="Y" Type="int" />
+      <Field Column="Documenti_Data" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Documenti_TotaleRighe" IsNull="Y" Type="money" />
+      <Field Column="Documenti_TotaleIVA" IsNull="Y" Type="money" />
+      <Field Column="Documenti_Totale" IsNull="Y" Type="money" />
+      <Field Column="Documenti_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Documenti_Note" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Documenti_PDF" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Commesse_Ky" IsNull="Y" Type="int" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Aziende_Ky" IsNull="Y" Type="int" />
+      <Field Column="Documenti_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Documenti_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Documenti_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Documenti_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Documenti_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Documenti_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Negozi_Ky" IsNull="Y" Type="int" />
+      <Field Column="Opportunita_Ky" IsNull="Y" Type="int" />
+      <Field Column="Campagne_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Documenti] (
+  [Documenti_Ky] int IDENTITY(1,1) NOT NULL , 
+  [DocumentiTipo_Ky] tinyint  NULL , 
+  [DocumentiStato_Ky] tinyint  NULL , 
+  [Documenti_HTML] bit  NULL DEFAULT ((0)), 
+  [Documenti_Riferimenti] varchar(100)  NULL , 
+  [Documenti_Numero] int  NULL , 
+  [Documenti_Data] smalldatetime  NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [Documenti_TotaleRighe] money  NULL DEFAULT ((0)), 
+  [Documenti_TotaleIVA] money  NULL DEFAULT ((0)), 
+  [Documenti_Totale] money  NULL DEFAULT ((0)), 
+  [Documenti_Descrizione] varchar(MAX)  NULL , 
+  [Documenti_Note] varchar(MAX)  NULL , 
+  [Documenti_PDF] varchar(200)  NULL , 
+  [Commesse_Ky] int  NULL , 
+  [Utenti_Ky] int  NULL , 
+  [Aziende_Ky] int  NULL , 
+  [Documenti_UserInsert] int  NULL , 
+  [Documenti_UserUpdate] int  NULL , 
+  [Documenti_UserDelete] int  NULL , 
+  [Documenti_DateInsert] datetime  NULL , 
+  [Documenti_DateUpdate] datetime  NULL , 
+  [Documenti_DateDelete] datetime  NULL , 
+  [Negozi_Ky] int  NULL , 
+  [Opportunita_Ky] int  NULL , 
+  [Campagne_Ky] int  NULL  )
+ALTER TABLE [dbo].[Documenti] ADD CONSTRAINT PK_Documenti PRIMARY KEY  ([Documenti_Ky])
+</SqlScriptCreate>
+</SqlTable>

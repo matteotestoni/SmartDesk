@@ -1,0 +1,29 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="FaqCategorie" Type="TABLE">
+    <Keys>
+      <Key Column="FaqCategorie_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="FaqCategorie_Ky" IsNull="N" Type="int" />
+      <Field Column="FaqCategorie_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="FaqCategorie_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="FaqCategorie_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="FaqCategorie_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="FaqCategorie_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="FaqCategorie_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="FaqCategorie_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[FaqCategorie] (
+  [FaqCategorie_Ky] int IDENTITY(1,1) NOT NULL , 
+  [FaqCategorie_Titolo] varchar(200)  NULL , 
+  [FaqCategorie_UserInsert] int  NULL , 
+  [FaqCategorie_UserUpdate] int  NULL , 
+  [FaqCategorie_UserDelete] int  NULL , 
+  [FaqCategorie_DateInsert] datetime  NULL , 
+  [FaqCategorie_DateUpdate] datetime  NULL , 
+  [FaqCategorie_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[FaqCategorie] ADD CONSTRAINT PK_FaqCategorie PRIMARY KEY  ([FaqCategorie_Ky])
+</SqlScriptCreate>
+</SqlTable>

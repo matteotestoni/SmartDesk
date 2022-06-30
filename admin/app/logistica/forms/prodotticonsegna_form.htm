@@ -1,0 +1,46 @@
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-12 cell">
+  		<label class="large-text-right small-text-left middle">Titolo <i class="fa-duotone fa-tag fa-fw"></i></label>
+  	</div>
+  	<div class="large-10 medium-10 small-12 cell">
+      <input type="text" name="ProdottiConsegna_Titolo" id="ProdottiConsegna_Titolo" value="<%=GetFieldValue(dtProdottiConsegna, "ProdottiConsegna_Titolo")%>" size="80" required="required">
+      <span class="form-error">Obbligatorio</span>
+		  <p class="help-text">max 100 carateri</p>
+  	</div>
+  </div>
+
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-12 cell">
+  		<label class="large-text-right small-text-left middle">Descrizione <i class="fa-duotone fa-file-lines fa-fw"></i></label>
+  	</div>
+  	<div class="large-10 medium-10 small-12 cell">
+      <textarea name="ProdottiConsegna_Descrizione" id="ProdottiConsegna_Descrizione" cols="76" rows="2" required="required"><%=GetFieldValue(dtProdottiConsegna, "ProdottiConsegna_Descrizione")%></textarea>
+      <span class="form-error">Obbligatorio</span>
+  	</div>
+  </div>
+
+	<div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-12 cell text-right">
+   		<label class="large-text-right small-text-left middle" for="ProdottiConsegna_Default">Predefinita</label>
+ 	  </div>
+  	<div class="large-10 medium-10 small-12 cell">
+			<select name="ProdottiConsegna_Default" id="ProdottiConsegna_Default" value="<%=GetCheckValue(dtProdottiConsegna, "ProdottiConsegna_Default")%>">
+	      <option value="True">si</option>
+	      <option value="False">no</option>
+	    </select>
+	    <span class="form-error">Obbligatorio</span>
+	    <script type="text/javascript">
+	      selectSet('ProdottiConsegna_Default', '<%=GetCheckValue(dtProdottiConsegna, "ProdottiConsegna_Default")%>');
+	    </script>
+  	</div>
+	</div>        
+
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-12 cell">
+  		<label class="large-text-right small-text-left middle">Ordine <i class="fa-duotone fa-sort fa-fw"></i></label>
+  	</div>
+  	<div class="large-10 medium-10 small-12 cell">
+      <input type="text" name="ProdottiConsegna_Ordine" id="ProdottiConsegna_Ordine" value="<%=GetFieldValue(dtProdottiConsegna, "ProdottiConsegna_Ordine")%>" size="3" required="required" pattern="number" />
+      <span class="form-error">Obbligatorio</span>
+  	</div>
+  </div>

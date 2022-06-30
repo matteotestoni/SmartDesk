@@ -1,0 +1,43 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnagraficheContatti_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="AnagraficheContatti_Ky" IsNull="N" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheContatti_Email" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AnagraficheContatti_Password" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="AnagraficheContatti_PEC" IsNull="Y" Type="bit" />
+      <Field Column="AnagraficheContatti_Note" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="AnagraficheContattiTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="AnagraficheContattiTipo_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AnagraficheContatti_Stampa" IsNull="Y" Type="bit" />
+      <Field Column="AnagraficheContatti_Alias" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="SitiWeb_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="SitiWeb_Url" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="SitiWeb_Dominio" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnagraficheContatti_Nome" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnagraficheContatti_Cognome" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnagraficheContatti_DataNascita" IsNull="Y" Type="smalldatetime" />
+      <Field Column="AnagraficheContatti_Sesso" IsNull="Y" Type="varchar" Lenght="1" />
+      <Field Column="AnagraficheContatti_Telefono" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AnagraficheContatti_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheContatti_Inoltro" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_Telefono" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_EmailContatti" IsNull="Y" Type="varchar" Lenght="200" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.AnagraficheContatti_Vw
+AS
+SELECT        dbo.AnagraficheContatti.AnagraficheContatti_Ky, dbo.AnagraficheContatti.Anagrafiche_Ky, dbo.AnagraficheContatti.AnagraficheContatti_Email, dbo.AnagraficheContatti.AnagraficheContatti_Password, 
+                         dbo.AnagraficheContatti.AnagraficheContatti_PEC, dbo.AnagraficheContatti.AnagraficheContatti_Note, dbo.AnagraficheContatti.AnagraficheContattiTipo_Ky, 
+                         dbo.AnagraficheContattiTipo.AnagraficheContattiTipo_Descrizione, dbo.AnagraficheContatti.AnagraficheContatti_Stampa, dbo.AnagraficheContatti.AnagraficheContatti_Alias, dbo.AnagraficheContatti.SitiWeb_Ky, 
+                         dbo.Anagrafiche.Anagrafiche_RagioneSociale, dbo.SitiWeb.SitiWeb_Url, dbo.SitiWeb.SitiWeb_Dominio, dbo.AnagraficheContatti.AnagraficheContatti_Nome, dbo.AnagraficheContatti.AnagraficheContatti_Cognome, 
+                         dbo.AnagraficheContatti.AnagraficheContatti_DataNascita, dbo.AnagraficheContatti.AnagraficheContatti_Sesso, dbo.AnagraficheContatti.AnagraficheContatti_Telefono, 
+                         dbo.AnagraficheContatti.AnagraficheContatti_DateInsert, dbo.AnagraficheContatti.AnagraficheContatti_Inoltro, dbo.Anagrafiche.Anagrafiche_Telefono, dbo.Anagrafiche.Anagrafiche_EmailContatti
+FROM            dbo.AnagraficheContatti LEFT OUTER JOIN
+                         dbo.SitiWeb ON dbo.AnagraficheContatti.SitiWeb_Ky = dbo.SitiWeb.SitiWeb_Ky LEFT OUTER JOIN
+                         dbo.Anagrafiche ON dbo.AnagraficheContatti.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky LEFT OUTER JOIN
+                         dbo.AnagraficheContattiTipo ON dbo.AnagraficheContatti.AnagraficheContattiTipo_Ky = dbo.AnagraficheContattiTipo.AnagraficheContattiTipo_Ky
+</SqlScriptCreate>
+</SqlTable>

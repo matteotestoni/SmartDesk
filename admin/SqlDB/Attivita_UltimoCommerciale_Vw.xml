@@ -1,0 +1,18 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Attivita_UltimoCommerciale_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="UltimoCommerciale" IsNull="Y" Type="datetime" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE VIEW [dbo].[Attivita_UltimoCommerciale_Vw]
+AS
+SELECT     MAX(dbo.Attivita.Attivita_Chiusura) AS UltimoCommerciale, dbo.Attivita.Anagrafiche_Ky
+FROM         dbo.Anagrafiche INNER JOIN
+                      dbo.Attivita ON dbo.Anagrafiche.Anagrafiche_Ky = dbo.Attivita.Anagrafiche_Ky
+WHERE     (dbo.Attivita.AttivitaSettore_Ky = 2)
+GROUP BY dbo.Attivita.Anagrafiche_Ky
+</SqlScriptCreate>
+</SqlTable>

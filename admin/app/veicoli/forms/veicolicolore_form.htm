@@ -1,0 +1,31 @@
+ 	<div class="grid-x grid-padding-x">     
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="VeicoliColore_Descrizione" class="large-text-right small-text-left middle">Titolo</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="VeicoliColore_Descrizione" id="VeicoliColore_Descrizione" value="<%=GetFieldValue("VeicoliColore_Descrizione")%>" size="30" required="required">
+      <span class="form-error">Obbligatorio</span>
+  	</div>
+  </div>
+ 	<div class="grid-x grid-padding-x">     
+   	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Colori_Ky" class="large-text-right small-text-left middle">Colore primario</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+	    <select name="Colori_Ky" id="Colori_Ky" value="<%=GetFieldValue("Colori_Ky")%>" required="required">
+      <!--#include file="/var/cache/Colori-options.htm"--> 
+      </select>
+      <script type="text/javascript">
+        selectSet('Colori_Ky', '<%=GetFieldValue("Colori_Ky")%>');
+      </script>
+  	</div>
+  </div>
+ 	<div class="grid-x grid-padding-x">     
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="VeicoliColore_Ordine" class="large-text-right small-text-left middle">Ordine</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="VeicoliColore_Ordine" id="VeicoliColore_Ordine" value="<%=GetFieldValue("VeicoliColore_Ordine")%>" size="30">
+      <span class="form-error">Obbligatorio</span>
+  	</div>
+  </div>

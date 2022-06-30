@@ -1,0 +1,42 @@
+  <div class="grid-x grid-padding-x">
+		<div class="small-4 medium-2 large-2 cell">
+				<label for="AsteNatura_Ky" class="large-text-right small-text-left middle">Natura dell' asta</label>
+		</div>
+		<div class="small-8 medium-10 large-10 cell">
+        <select name="AsteNatura_Ky" id="AsteNatura_Ky" value="<%=GetFieldValue(dtAsteCommissioniDefault, "AsteNatura_Ky")%>">
+          <!--#include file="/var/cache/AsteNatura-options.htm"--> 
+        </select>
+        <script type="text/javascript">
+          selectSet('AsteNatura_Ky', '<%=GetFieldValue(dtAsteCommissioniDefault, "AsteNatura_Ky")%>');
+        </script>
+		</div>
+  </div>
+
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AsteCommissioniDefault_Da" class="large-text-right small-text-left middle">Da</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="AsteCommissioniDefault_Da" id="AsteCommissioniDefault_Da" title="Nome" value="<%=GetFieldValue(dtAsteCommissioniDefault, "AsteCommissioniDefault_Da")%>" size="150" required="required">
+  	</div>
+  </div>
+  
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AsteCommissioniDefault_A" class="large-text-right small-text-left middle">A</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="AsteCommissioniDefault_A" id="AsteCommissioniDefault_A" title="Nome" value="<%=GetFieldValue(dtAsteCommissioniDefault, "AsteCommissioniDefault_A")%>" size="150" required="required">
+  	</div>
+  </div>
+  
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AsteCommissioniDefault_Commissione" class="large-text-right small-text-left middle">Commissione</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="AsteCommissioniDefault_Commissione" id="AsteCommissioniDefault_Commissione" title="Nome" value="<%=GetFieldValue(dtAsteCommissioniDefault, "AsteCommissioniDefault_Commissione")%>" size="150" required="required">
+  	</div>
+  </div>
+      
+  

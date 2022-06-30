@@ -1,0 +1,40 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Forms_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Forms_Ky" IsNull="N" Type="int" />
+      <Field Column="Forms_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Forms_Disattiva" IsNull="Y" Type="bit" />
+      <Field Column="SitiWeb_Ky" IsNull="Y" Type="int" />
+      <Field Column="Forms_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Forms_Data" IsNull="Y" Type="datetime" />
+      <Field Column="Forms_Data_IT" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="Lingue_Codice" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Lingue_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Forms_PubblicaWEB" IsNull="Y" Type="bit" />
+      <Field Column="Forms_Robots" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Forms_Tags" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Forms_DataInizio" IsNull="Y" Type="datetime" />
+      <Field Column="Forms_DataTermine" IsNull="Y" Type="datetime" />
+      <Field Column="Forms_DataInizio_IT" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="Forms_DataTermine_IT" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="Forms_EmailFrom" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Forms_EmailBcc" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Forms_EmailSubjectThankyou" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Forms_EmailBodyThankyou" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Forms_EmailSubjectRequest" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Forms_EmailBodyRequest" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Forms_Vw
+AS
+SELECT        dbo.Forms.Forms_Ky, dbo.Forms.Forms_Descrizione, dbo.Forms.Forms_Disattiva, dbo.Forms.SitiWeb_Ky, dbo.Forms.Forms_Titolo, dbo.Forms.Forms_Data, CONVERT(varchar, dbo.Forms.Forms_Data, 105) 
+                         AS Forms_Data_IT, dbo.Lingue.Lingue_Codice, dbo.Lingue.Lingue_Titolo, dbo.Forms.Lingue_Ky, dbo.Forms.Forms_PubblicaWEB, dbo.Forms.Forms_Robots, dbo.Forms.Forms_Tags, 
+                         dbo.Forms.Forms_DataInizio, dbo.Forms.Forms_DataTermine, CONVERT(varchar, dbo.Forms.Forms_DataInizio, 105) AS Forms_DataInizio_IT, CONVERT(varchar, dbo.Forms.Forms_DataTermine, 105) 
+                         AS Forms_DataTermine_IT, dbo.Forms.Forms_EmailFrom, dbo.Forms.Forms_EmailBcc, dbo.Forms.Forms_EmailSubjectThankyou, dbo.Forms.Forms_EmailBodyThankyou, 
+                         dbo.Forms.Forms_EmailSubjectRequest, dbo.Forms.Forms_EmailBodyRequest
+FROM            dbo.Forms LEFT OUTER JOIN
+                         dbo.Lingue ON dbo.Forms.Lingue_Ky = dbo.Lingue.Lingue_Ky
+</SqlScriptCreate>
+</SqlTable>

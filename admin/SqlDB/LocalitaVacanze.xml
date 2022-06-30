@@ -1,0 +1,35 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="LocalitaVacanze" Type="TABLE">
+    <Keys>
+      <Key Column="LocalitaVacanze_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="LocalitaVacanze_Ky" IsNull="N" Type="int" />
+      <Field Column="LocalitaVacanze_Descrizione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Comuni_Ky" IsNull="Y" Type="int" />
+      <Field Column="ComuniZone_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="LocalitaVacanze_Tipo" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="LocalitaVacanze_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="LocalitaVacanze_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="LocalitaVacanze_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="LocalitaVacanze_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="LocalitaVacanze_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="LocalitaVacanze_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[LocalitaVacanze] (
+  [LocalitaVacanze_Ky] int IDENTITY(1,1) NOT NULL , 
+  [LocalitaVacanze_Descrizione] varchar(50)  NULL , 
+  [Comuni_Ky] int  NULL , 
+  [ComuniZone_Ky] smallint  NULL , 
+  [LocalitaVacanze_Tipo] varchar(10)  NULL , 
+  [LocalitaVacanze_UserInsert] int  NULL , 
+  [LocalitaVacanze_UserUpdate] int  NULL , 
+  [LocalitaVacanze_UserDelete] int  NULL , 
+  [LocalitaVacanze_DateInsert] datetime  NULL , 
+  [LocalitaVacanze_DateUpdate] datetime  NULL , 
+  [LocalitaVacanze_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[LocalitaVacanze] ADD CONSTRAINT PK_LocalitaVacanze PRIMARY KEY  ([LocalitaVacanze_Ky])
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,12 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliCarburante_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="VeicoliCarburante_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="VeicoliCarburante_Descrizione" IsNull="Y" Type="varchar" Lenght="20" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW [dbo].[VeicoliCarburante_Vw] as 
+Select VeicoliCarburante_Ky,VeicoliCarburante_Descrizione
+From VeicoliCarburante</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,37 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnagraficheCategorie" Type="TABLE">
+    <Keys>
+      <Key Column="AnagraficheCategorie_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AnagraficheCategorie_Ky" IsNull="N" Type="smallint" />
+      <Field Column="AnagraficheCategorie_Titolo" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="AnagraficheCategorie_Descrizione" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="AnagraficheCategorie_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheCategorie_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheCategorie_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheCategorie_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheCategorie_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheCategorie_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheCategorie_Padre" IsNull="Y" Type="smallint" />
+      <Field Column="AnagraficheCategorie_Attributi" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnagraficheCategorie_Ordine" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AnagraficheCategorie] (
+  [AnagraficheCategorie_Ky] smallint IDENTITY(1,1) NOT NULL , 
+  [AnagraficheCategorie_Titolo] varchar(50)  NULL , 
+  [AnagraficheCategorie_Descrizione] varchar(500)  NULL , 
+  [AnagraficheCategorie_UserInsert] int  NULL , 
+  [AnagraficheCategorie_UserUpdate] int  NULL , 
+  [AnagraficheCategorie_UserDelete] int  NULL , 
+  [AnagraficheCategorie_DateInsert] datetime  NULL , 
+  [AnagraficheCategorie_DateUpdate] datetime  NULL , 
+  [AnagraficheCategorie_DateDelete] datetime  NULL , 
+  [AnagraficheCategorie_Padre] smallint  NULL , 
+  [AnagraficheCategorie_Attributi] varchar(200)  NULL , 
+  [AnagraficheCategorie_Ordine] int  NULL  )
+ALTER TABLE [dbo].[AnagraficheCategorie] ADD CONSTRAINT PK_AnagraficheCategorie PRIMARY KEY  ([AnagraficheCategorie_Ky])
+</SqlScriptCreate>
+</SqlTable>

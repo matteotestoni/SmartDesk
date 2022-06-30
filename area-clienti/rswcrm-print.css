@@ -1,0 +1,257 @@
+*{
+  font-family: "Open Sans";
+}
+
+body{
+  margin:0;
+  padding:0;
+  background : #ffffff;
+  color : #000000;
+  border:0;
+  font-size:12px;
+}
+
+strong{
+	font-weight:700;
+}
+
+
+h1, h2, h3, h4, h5, h6{
+	font-family: "Open Sans";
+	font-weight:700;
+}
+
+
+h1{
+	font-size:20px;
+	font-weight:700;
+	color:#f15a29;
+}
+
+h2{
+	font-size:16px;
+	font-weight:700;
+	color:#f15a29;
+}
+
+a {
+  text-decoration : underline;
+  color : #000000;
+} 
+table.grid td{
+	border:1px solid #cccccc;
+}
+table.grid th{
+	border-bottom:0;
+}
+
+table.header{
+  width:19cm;
+  border-bottom:1px solid #a9a9a9;
+}
+div.titoloriga{
+  font-size:16px;
+  font-weight:700;
+}
+span.testoriga{
+  font-size:14px;
+  font-weight:700;
+}
+span.prezzo{
+  font-size:17px;
+  font-weight:700;
+}
+div.slogan{
+  font-size:13px;
+  font-weight:400;
+}
+td.totale{
+  padding:0 5px 0 0;
+  margin:0;
+	font-weight:700;
+}
+td.titolo{
+  border-width:1px;
+  border-style:solid;
+  border-color:#ffffff #ffffff #a9a9a9 #a9a9a9;
+}
+
+table.intestazione{
+  width:19cm;
+  margin-top:0.2cm;
+}
+div.corpodocumento{
+  border-width:0px;
+  border-style:solid;
+  border-color:#ffffff #a9a9a9 #a9a9a9 #a9a9a9;
+  width:19cm;
+  padding:0;
+  margin:0.2cm 0 0 0;
+}
+div.corpo{
+  border-width:1px;
+  border-style:solid;
+  border-color:#ffffff #a9a9a9 #a9a9a9 #a9a9a9;
+  width:19cm;
+  height:11cm;
+  padding:0;
+  margin:0.2cm 0 0 0;
+}
+table.corpo{
+  width:100%;
+  border-collapse:collapse;
+}
+table.corpo td.riga{
+  padding:10px 5px 10px 5px;
+}
+table.corpo td.rigaprezzo{
+  padding:15px 5px 15px 5px;
+}
+table.corpo td.titolo1{
+  font-weight:700;
+  font-size:14px;
+}
+table.corpo td.titololast{
+  font-weight:700;
+  border-top:1px solid #a9a9a9;
+  border-bottom:1px solid #a9a9a9;
+  font-size:14px;
+}
+table.corpo td.rigadocumento{
+  border-bottom:1px solid #a9a9a9;
+  border-right:1px solid #a9a9a9;
+  border-left:1px solid #a9a9a9;
+  padding:15px 5px 15px 5px;
+}
+
+table.standard{
+  width:19cm;
+}
+
+table.standard td{
+  border:1px solid #a9a9a9;
+  padding:2px 4px;
+  margin:0px;
+}
+
+table.totali{
+  width:7cm;
+  border: 1px solid #a9a9a9;
+  margin-left:12cm;
+  margin-top:1cm;
+  margin-bottom:0.5cm;
+  border-collapse:collapse;
+}
+table.pagamenti{
+  width:19cm;
+  border-top: 1px solid #a9a9a9;
+  border-bottom: 1px solid #a9a9a9;
+  margin-top:0.2cm;
+}
+
+div.titolopagamento{
+  font-size:14px;
+  font-weight:700;
+  text-align:right;
+}
+div.infopagamento{
+  font-size:14px;
+  font-weight:700;
+  margin-left:1cm;
+  line-height:1.5em;
+}
+div.titoloappoggio{
+  font-size:14px;
+  font-weight:700;
+  margin-top:0.1cm;
+  text-align:right;
+}
+div.infoappoggio{
+  font-size:14px;
+  font-weight:700;
+  margin-left:1cm;
+}
+div.infoappoggio p{
+  margin:0;
+  padding:0;
+}
+div.spettabile{
+  font-size:11px;
+}
+div.ragionesociale{
+  font-size:18px;
+  font-weight:700;
+}
+div.tipodocumento{
+  font-size:24px;
+  font-weight:700;
+}
+div.riferimenti{
+  font-size:14px;
+  font-weight:700;
+  width:65px;
+  padding-right:5px;
+  float:left;
+  text-align:left;
+}
+td.riferimenti{
+  font-size:14px;
+  font-weight:700;
+  padding-right:5px;
+}
+div.pagamenti{
+  width:19cm;
+  border-top:4px solid #a9a9a9;
+  border-bottom:4px solid #a9a9a9;
+  padding:0.2cm 0 0.2cm 0;
+}
+
+div.privacy{
+  margin-top:0.1cm;
+  width:19cm;
+  font-size:10px;
+  font-weight:700;
+  text-align:left;
+}
+
+div.footer{
+  margin-top:2.2cm;
+  width:19cm;
+  border-top:1px solid #a9a9a9;
+  padding:0;
+  font-size:9px;
+  font-weight:700;
+  text-align:center;
+}
+div.footerhor{
+  margin-top:2.2cm;
+  width:27cm;
+  border-top:1px solid #a9a9a9;
+  padding:0;
+  font-size:9px;
+  font-weight:700;
+  text-align:center;
+}
+.mainbar{
+	display:none;
+}
+.toolbar{
+	display:none;
+}
+[role="button"] {
+	display:none;
+}
+.griddatatables{
+	border:1px solid #000000;
+}
+.griddatatables td{
+	border:1px solid #000000;
+}
+h2{
+	padding:1em 0 0.1em 0;
+	margin:0;
+}
+h3{
+	padding:1em 0 0.1em 0;
+	margin:0;
+}

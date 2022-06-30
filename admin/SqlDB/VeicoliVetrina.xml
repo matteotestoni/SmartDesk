@@ -1,0 +1,39 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliVetrina" Type="TABLE">
+    <Keys>
+      <Key Column="VeicoliVetrina_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="VeicoliVetrina_Ky" IsNull="N" Type="int" />
+      <Field Column="Veicoli_Ky" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_Riferimento" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="RicambiVeicoli_Ky" IsNull="Y" Type="int" />
+      <Field Column="UtentiGruppi_Ky" IsNull="Y" Type="int" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliVetrina_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliVetrina_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="VeicoliVetrina_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="VeicoliVetrina_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="VeicoliVetrina_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliVetrina_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliVetrina_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[VeicoliVetrina] (
+  [VeicoliVetrina_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Veicoli_Ky] int  NULL , 
+  [Veicoli_Riferimento] varchar(50)  NULL , 
+  [RicambiVeicoli_Ky] int  NULL , 
+  [UtentiGruppi_Ky] int  NULL , 
+  [Utenti_Ky] int  NULL , 
+  [VeicoliVetrina_Titolo] varchar(100)  NULL , 
+  [VeicoliVetrina_UserInsert] int  NULL , 
+  [VeicoliVetrina_UserUpdate] int  NULL , 
+  [VeicoliVetrina_UserDelete] int  NULL , 
+  [VeicoliVetrina_DateInsert] datetime  NULL , 
+  [VeicoliVetrina_DateUpdate] datetime  NULL , 
+  [VeicoliVetrina_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[VeicoliVetrina] ADD CONSTRAINT PK_VeicoliVetrina PRIMARY KEY  ([VeicoliVetrina_Ky])
+</SqlScriptCreate>
+</SqlTable>

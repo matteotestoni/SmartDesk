@@ -1,0 +1,25 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ProdottiApplicazioni_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="ProdottiApplicazioni_Ky" IsNull="N" Type="int" />
+      <Field Column="ProdottiApplicazioni_Titolo" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="ProdottiApplicazioniCategorie_Ky" IsNull="Y" Type="int" />
+      <Field Column="ProdottiApplicazioni_Default" IsNull="Y" Type="bit" />
+      <Field Column="ProdottiApplicazioniCategorie_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="ProdottiApplicazioni_Ordine" IsNull="Y" Type="int" />
+      <Field Column="Lingue_Codice" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Lingue_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.ProdottiApplicazioni_Vw
+AS
+SELECT        dbo.ProdottiApplicazioni.ProdottiApplicazioni_Ky, dbo.ProdottiApplicazioni.ProdottiApplicazioni_Titolo, dbo.ProdottiApplicazioni.ProdottiApplicazioniCategorie_Ky, 
+                         dbo.ProdottiApplicazioni.ProdottiApplicazioni_Default, dbo.ProdottiApplicazioniCategorie.ProdottiApplicazioniCategorie_Titolo, dbo.ProdottiApplicazioni.ProdottiApplicazioni_Ordine, dbo.Lingue.Lingue_Codice, 
+                         dbo.Lingue.Lingue_Titolo, dbo.ProdottiApplicazioni.Lingue_Ky
+FROM            dbo.ProdottiApplicazioni LEFT OUTER JOIN
+                         dbo.Lingue ON dbo.ProdottiApplicazioni.Lingue_Ky = dbo.Lingue.Lingue_Ky LEFT OUTER JOIN
+                         dbo.ProdottiApplicazioniCategorie ON dbo.ProdottiApplicazioni.ProdottiApplicazioniCategorie_Ky = dbo.ProdottiApplicazioniCategorie.ProdottiApplicazioniCategorie_Ky
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,186 @@
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle" for="Servizi_Ky">Servizio <i class="fa-duotone fa-file fa-fw"></i></label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+          <select name="Servizi_Ky" id="Servizi_Ky" required="required" onchange="chgServizi_Ky();">
+            <!--#include file="/var/cache/Servizi-options.htm"--> 
+          </select>
+          <span class="form-error">Obbligatorio</span>
+          <script type="text/javascript">
+            selectSet('Servizi_Ky', '<%=GetFieldValue(dtAnagraficheServizi, "Servizi_Ky")%>');
+          </script>
+	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+			<label class="large-text-right small-text-left middle" for="Servizi_Ky">Set di attributi</label>
+	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <select name="AttributiGruppi_Ky" id="AttributiGruppi_Ky" onchange="chgAttributiGruppi_Ky();">
+        <option value=""></option>
+				<!--#include file="/var/cache/AttributiGruppi-options.htm"--> 
+      </select>
+      <script type="text/javascript">
+        selectSet('AttributiGruppi_Ky', '<%=GetFieldValue(dtAnagraficheServizi, "AttributiGruppi_Ky")%>');
+      </script>
+	</div>
+</div>
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="Anagrafiche_RagioneSociale" class="large-text-right">Anagrafica <i class="fa-duotone fa-user fa-fw"></i></label>
+	</div>
+	<div class="cell shrink small-0 hide-for-small-only">
+		<input type="text" name="Anagrafiche_Ky" id="Anagrafiche_Ky" value="<%=GetFieldValue(dtAnagraficheServizi, "Anagrafiche_Ky")%>" size="3" required="required">
+		<span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="auto cell">
+		<input type="text" name="Anagrafiche_RagioneSociale" id="Anagrafiche_RagioneSociale" placeholder="Ragione Sociale" value="<%=GetFieldValue(dtAnagraficheServizi, "Anagrafiche_RagioneSociale")%>" required="required">
+		<span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="shrink cell">
+    <% if (GetFieldValue(dtAnagraficheServizi, "Anagrafiche_Ky")!=null && GetFieldValue(dtAnagraficheServizi, "Anagrafiche_Ky").Length>0){ %>
+			<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=GetFieldValue(dtAnagraficheServizi, "Anagrafiche_Ky")%>" style="margin-top:4px"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw fa-lg"></i></a>
+		<% } %>
+	</div>
+</div>
+<script type="text/javascript">
+		jQuery("#Anagrafiche_RagioneSociale" ).autocomplete({
+			source: "/admin/app/anagrafiche/autosuggest-GetAnagrafiche-json.aspx",
+			minLength: 2,
+			select: function( event, ui ) {
+				jQuery("#Anagrafiche_Ky").val(ui.item.value);
+				jQuery("#Anagrafiche_RagioneSociale").val(ui.item.label);
+				return false;
+			}
+		});
+</script>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle">Qt&agrave;</label>
+	</div>
+	<div class="large-2 medium-2 small-8 cell">
+      <input type="text" name="AnagraficheServizi_Qta" id="AnagraficheServizi_Qta" size="2" required="required" min="1" max="1000000" value="<%=GetFieldValue(dtAnagraficheServizi, "AnagraficheServizi_Qta")%>" pattern="number" onchange="calcolaTotali()" />
+      <span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle">Prezzo &euro;:</label>
+	</div>
+	<div class="large-2 medium-2 small-8 cell">
+		<input type="text" name="AnagraficheServizi_Prezzo" id="AnagraficheServizi_Prezzo" size="15" required="required" min="1" max="1000000" value="<%=GetMoneyValue("AnagraficheServizi_Prezzo")%>" onchange="calcolaTotali()" />
+    <span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle">Importo &euro;:</label>
+	</div>
+	<div class="large-2 medium-2 small-8 cell">
+      <input type="text" name="AnagraficheServizi_Importo" id="AnagraficheServizi_Importo" size="15" required="required" min="1" max="1000000" value="<%=GetMoneyValue("AnagraficheServizi_Importo")%>" pattern="number" readonly="readonly" />
+      <span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle">Rinnovo <i class="fa-duotone fa-sync fa-fw"></i></label>
+	</div>
+	<div class="large-2 medium-2 small-8 cell">
+        <select name="AnagraficheServizi_Rinnovo" id="AnagraficheServizi_Rinnovo" min="0" max="12" step="1" value="<%=GetFieldValue(dtAnagraficheServizi, "AnagraficheServizi_Rinnovo")%>" required="required">
+          <option value="0">no rinnovo</option>
+          <option value="1">mensile</option>
+          <option value="2">bimestrale</option>
+          <option value="3">ogni 3 mesi</option>
+          <option value="4">ogni 4 mesi</option>
+          <option value="5">ogni 5 mesi</option>
+          <option value="6">ogni 6 mesi</option>
+          <option value="7">ogni 7 mesi</option>
+          <option value="8">ogni 8 mesi</option>
+          <option value="9">ogni 9 mesi</option>
+          <option value="10">ogni 10 mesi</option>
+          <option value="11">ogni 11 mesi</option>
+          <option value="12">annuale</option>
+        </select>
+        <script type="text/javascript">
+          selectSet('AnagraficheServizi_Rinnovo', '<%=GetFieldValue(dtAnagraficheServizi, "AnagraficheServizi_Rinnovo")%>');
+        </script>
+        <span class="form-error">Obbligatorio</span>
+	</div>
+
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle">Valido dal <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+	</div>
+	<div class="large-2 medium-2 small-8 cell">
+        <input type="text" name="AnagraficheServizi_Inizio" id="AnagraficheServizi_Inizio" value="<%=GetFieldValue(dtAnagraficheServizi, "AnagraficheServizi_Inizio_IT")%>" class="fdatepicker" required="required" size="10">
+        <span class="form-error">Obbligatorio</span>
+	</div>
+
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle">Scadenza <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+	</div>
+	<div class="large-2 medium-2 small-8 cell">
+        <input type="text" name="AnagraficheServizi_Scadenza" id="AnagraficheServizi_Scadenza" value="<%=GetFieldValue(dtAnagraficheServizi, "AnagraficheServizi_Scadenza_IT")%>" class="fdatepicker" required="required" size="10">
+        <span class="form-error">Obbligatorio</span>
+	</div>
+</div>	
+	
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle">Chiuso?</label>
+	</div>
+	<div class="large-2 medium-2 small-8 cell">
+		<select name="Anagrafiche_Disdetto" id="AnagraficheServizi_Chiuso" value="<%=GetCheckValue(dtAnagraficheServizi, "AnagraficheServizi_Chiuso")%>">
+      <option value="True">si</option>
+      <option value="False">no</option>
+    </select>
+    <span class="form-error">Obbligatorio</span>
+    <script type="text/javascript">
+      selectSet('AnagraficheServizi_Chiuso', '<%=GetCheckValue(dtAnagraficheServizi, "AnagraficheServizi_Chiuso")%>');
+    </script>
+	</div>
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle">Chiuso il: <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+	</div>
+	<div class="large-2 medium-2 small-8 cell">
+    <input type="text" name="AnagraficheServizi_DataChiusura" id="AnagraficheServizi_DataChiusura" class="fdatepicker" size="10" value="<%=GetFieldValue(dtAnagraficheServizi, "AnagraficheServizi_DataChiusura_IT")%>">
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle">Progetto <i class="fa-duotone fa-building fa-fw"></i></label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    	<% if (dtCommesse!=null && dtCommesse.Rows.Count>0){ %>
+        <select name="Commesse_Ky" id="Commesse_Ky" value="<%=GetFieldValue(dtAnagraficheServizi, "Commesse_Ky")%>">
+        <option value=""></option>
+					<%
+					for (int i = 0; i < dtCommesse.Rows.Count; i++){
+						Response.Write("<option value=\"" + dtCommesse.Rows[i]["Commesse_Ky"].ToString() + "\">" + dtCommesse.Rows[i]["Commesse_Titolo"].ToString() + "</option>");
+					}
+					%>
+        </select>
+        <script type="text/javascript">
+          selectSet('Commesse_Ky', '<%=GetFieldValue(dtAnagraficheServizi, "Commesse_Ky")%>');
+        </script>
+      <% }else{ %>
+      	Nessun progetto attivo sull'anagrafica
+      <% } %>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle">Dominio</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="SitiWeb_Dominio" id="SitiWeb_Dominio" size="15" value="<%=GetFieldValue(dtAnagraficheServizi, "SitiWeb_Dominio")%>" />
+     <small>inserisci il dominio del sito senza "www" e senza "http://" o "https://" quindi ad esempio "domain.com"</small>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle">Descrizione</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <textarea name="AnagraficheServizi_Descrizione" id="AnagraficheServizi_Descrizione" rows="2" cols="84"><%=GetFieldValue(dtAnagraficheServizi, "AnagraficheServizi_Descrizione")%></textarea>
+	</div>
+</div>

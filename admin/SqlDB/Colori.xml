@@ -1,0 +1,33 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Colori" Type="TABLE">
+    <Keys>
+      <Key Column="Colori_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Colori_Ky" IsNull="N" Type="int" />
+      <Field Column="Colori_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Colori_Ordine" IsNull="Y" Type="int" />
+      <Field Column="Colori_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Colori_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Colori_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Colori_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Colori_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Colori_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Colori_Colore" IsNull="Y" Type="varchar" Lenght="7" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Colori] (
+  [Colori_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Colori_Titolo] varchar(200)  NULL , 
+  [Colori_Ordine] int  NULL , 
+  [Colori_UserInsert] int  NULL , 
+  [Colori_UserUpdate] int  NULL , 
+  [Colori_UserDelete] int  NULL , 
+  [Colori_DateInsert] datetime  NULL , 
+  [Colori_DateUpdate] datetime  NULL , 
+  [Colori_DateDelete] datetime  NULL , 
+  [Colori_Colore] varchar(7)  NULL  )
+ALTER TABLE [dbo].[Colori] ADD CONSTRAINT PK_Colori PRIMARY KEY  ([Colori_Ky])
+</SqlScriptCreate>
+</SqlTable>

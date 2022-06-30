@@ -1,0 +1,39 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnnunciTipo" Type="TABLE">
+    <Keys>
+      <Key Column="AnnunciTipo_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AnnunciTipo_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="AnnunciTipo_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="AnnunciTipo_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AnnunciTipo_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AnnunciTipo_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AnnunciTipo_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AnnunciTipo_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AnnunciTipo_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="AnnunciTipo_Ordine" IsNull="Y" Type="int" />
+      <Field Column="AnnunciTipo_Icona" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AnnunciTipo_Colore" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="AnnunciTipo_Default" IsNull="Y" Type="bit" />
+      <Field Column="AnnunciTipo_Attivo" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AnnunciTipo] (
+  [AnnunciTipo_Ky] tinyint IDENTITY(1,1) NOT NULL , 
+  [AnnunciTipo_Titolo] varchar(150)  NULL , 
+  [AnnunciTipo_UserInsert] int  NULL , 
+  [AnnunciTipo_UserUpdate] int  NULL , 
+  [AnnunciTipo_UserDelete] int  NULL , 
+  [AnnunciTipo_DateInsert] datetime  NULL , 
+  [AnnunciTipo_DateUpdate] datetime  NULL , 
+  [AnnunciTipo_DateDelete] datetime  NULL , 
+  [AnnunciTipo_Ordine] int  NULL , 
+  [AnnunciTipo_Icona] varchar(100)  NULL , 
+  [AnnunciTipo_Colore] varchar(50)  NULL , 
+  [AnnunciTipo_Default] bit  NULL , 
+  [AnnunciTipo_Attivo] bit  NULL DEFAULT ((1)) )
+ALTER TABLE [dbo].[AnnunciTipo] ADD CONSTRAINT PK_AnnnunciTipo PRIMARY KEY  ([AnnunciTipo_Ky])
+</SqlScriptCreate>
+</SqlTable>

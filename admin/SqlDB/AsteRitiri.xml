@@ -1,0 +1,31 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AsteRitiri" Type="TABLE">
+    <Keys>
+      <Key Column="AsteRitiri_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AsteRitiri_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="AsteRitiri_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="AsteRitiri_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AsteRitiri_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AsteRitiri_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AsteRitiri_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AsteRitiri_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AsteRitiri_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="AsteRitiri_Ordine" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AsteRitiri] (
+  [AsteRitiri_Ky] tinyint IDENTITY(1,1) NOT NULL , 
+  [AsteRitiri_Titolo] varchar(150)  NULL , 
+  [AsteRitiri_UserInsert] int  NULL , 
+  [AsteRitiri_UserUpdate] int  NULL , 
+  [AsteRitiri_UserDelete] int  NULL , 
+  [AsteRitiri_DateInsert] datetime  NULL , 
+  [AsteRitiri_DateUpdate] datetime  NULL , 
+  [AsteRitiri_DateDelete] datetime  NULL , 
+  [AsteRitiri_Ordine] int  NULL  )
+ALTER TABLE [dbo].[AsteRitiri] ADD CONSTRAINT PK_AsteRitiri PRIMARY KEY  ([AsteRitiri_Ky])
+</SqlScriptCreate>
+</SqlTable>

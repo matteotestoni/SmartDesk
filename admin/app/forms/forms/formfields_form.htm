@@ -1,0 +1,80 @@
+			<div class="grid-x grid-padding-x">
+	    	<div class="large-2 medium-3 small-4 cell">
+	    		<label for="FormsFields_Descrizione" class="text-right middle">Titolo <i class="fa-duotone fa-tag fa-fw"></i></label>
+				</div>
+	    	<div class="large-10 medium-9 small-8 cell">
+          <input type="text" name="FormsFields_Descrizione" id="FormsFields_Descrizione" value="<%=GetFieldValue("FormsFields_Descrizione")%>" size="80" required="required">
+          <span class="form-error">Obbligatorio</span>
+	    	</div>
+			</div>	
+
+			<div class="grid-x grid-padding-x">
+	    	<div class="large-2 medium-3 small-4 cell">
+	    		<label for="FormsFields_Codice" class="text-right middle">Codice <i class="fa-duotone fa-tag fa-fw"></i></label>
+				</div>
+	    	<div class="large-10 medium-9 small-8 cell">
+          <input type="text" name="FormsFields_Codice" id="FormsFields_Codice" value="<%=GetFieldValue("FormsFields_Codice")%>" size="80" required="required">
+          <span class="form-error">Obbligatorio</span>
+	    	</div>
+			</div>	
+
+			<div class="grid-x grid-padding-x">
+	    	<div class="large-2 medium-3 small-4 cell">
+	    		<label for="FormsFieldsTipo_Ky" class="text-right middle">Tipo</label>
+				</div>
+	    	<div class="large-10 medium-9 small-8 cell">
+	          <select name="FormsFieldsTipo_Ky" id="FormsFieldsTipo_Ky" value="<%=GetFieldValue("FormsFieldsTipo_Ky")%>">
+	          <option value=""></option>
+	          <option value="1">Casella di testo</option>
+	          <option value="2">Checkbox</option>
+	          <option value="3">Radio</option>
+	          <option value="4">TextArea (area di testo)</option>
+	          <option value="5">Etichetta</option>
+	          <option value="6">Titolo</option>
+	          </select>
+	          <script type="text/javascript">
+	            selectSet('FormsFieldsTipo_Ky', '<%=GetFieldValue("FormsFieldsTipo_Ky")%>');
+	          </script>
+	          <span class="form-error">Obbligatorio</span>
+	    	</div>
+			</div>	
+	    
+			<div class="grid-x grid-padding-x">
+	    	<div class="large-2 medium-3 small-4 cell">
+	    		<label for="FormsFields_Valori" class="text-right middle">Valori separati da ,</label>
+			</div>
+	    	<div class="large-10 medium-9 small-8 cell">
+          <input type="text" name="FormsFields_Valori" id="FormsFields_Valori" value="<%=GetFieldValue("FormsFields_Valori")%>" size="80">
+          <span class="form-error">Obbligatorio</span>
+	    	</div>
+		  </div>
+
+			<div class="grid-x grid-padding-x">
+	    	<div class="large-2 medium-3 small-4 cell">
+	    		<label for="FormsFields_Data" class="text-right middle">Data <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+				</div>
+	    	<div class="large-10 medium-9 small-8 cell">
+          <input type="text" class="fdatepicker" name="FormsFields_Data" id="FormsFields_Data" value="<%=GetFieldValue("FormsFields_Data_IT")%>" size="80" required="required">
+          <span class="form-error">Obbligatorio</span>
+	    	</div>
+			</div>	
+
+	    <div class="grid-x grid-padding-x">
+	    	<div class="large-2 medium-3 small-4 cell">
+	    		<label for="FormsFields_Info" class="text-right middle">Informazioni <i class="fa-duotone fa-file-lines fa-fw"></i></label>
+			</div>
+	    	<div class="large-10 medium-9 small-8 cell">
+          <textarea name="FormsFields_Info" id="FormsFields_Info" cols="76" rows="2"><%=GetFieldValue("FormsFields_Info")%></textarea>
+          <span class="form-error">Obbligatorio</span>
+	    	</div>
+		</div>
+
+	    <div class="grid-x grid-padding-x">
+	    	<div class="large-2 medium-3 small-4 cell">
+	    		<label for="FormsFields_Ordine" class="text-right middle">Ordine <i class="fa-duotone fa-sort fa-fw"></i></label>
+			</div>
+	    	<div class="large-10 medium-9 small-8 cell">
+          <input type="text" name="FormsFields_Ordine" id="FormsFields_Ordine" value="<%=GetFieldValue("FormsFields_Ordine")%>" size="3" required="required" pattern="number" />
+			    <span class="form-error">Obbligatorio</span>
+	    	</div>
+		</div>

@@ -1,0 +1,29 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliMateriale" Type="TABLE">
+    <Keys>
+      <Key Column="VeicoliMateriale_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="VeicoliMateriale_Ky" IsNull="N" Type="smallint" />
+      <Field Column="VeicoliMateriale_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliMateriale_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="VeicoliMateriale_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="VeicoliMateriale_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="VeicoliMateriale_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliMateriale_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliMateriale_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[VeicoliMateriale] (
+  [VeicoliMateriale_Ky] smallint IDENTITY(1,1) NOT NULL , 
+  [VeicoliMateriale_Descrizione] varchar(100)  NULL , 
+  [VeicoliMateriale_UserInsert] int  NULL , 
+  [VeicoliMateriale_UserUpdate] int  NULL , 
+  [VeicoliMateriale_UserDelete] int  NULL , 
+  [VeicoliMateriale_DateInsert] datetime  NULL , 
+  [VeicoliMateriale_DateUpdate] datetime  NULL , 
+  [VeicoliMateriale_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[VeicoliMateriale] ADD CONSTRAINT PK_VeicoliMateriale PRIMARY KEY  ([VeicoliMateriale_Ky])
+</SqlScriptCreate>
+</SqlTable>

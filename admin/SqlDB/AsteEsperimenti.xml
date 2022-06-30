@@ -1,0 +1,43 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AsteEsperimenti" Type="TABLE">
+    <Keys>
+      <Key Column="AsteEsperimenti_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AsteEsperimenti_Ky" IsNull="N" Type="int" />
+      <Field Column="AsteEsperimenti_Numero" IsNull="Y" Type="int" />
+      <Field Column="Aste_Ky" IsNull="Y" Type="int" />
+      <Field Column="AsteEsperimenti_DataInizio" IsNull="Y" Type="datetime" />
+      <Field Column="AsteEsperimenti_DataTermine" IsNull="Y" Type="datetime" />
+      <Field Column="AsteEsperimenti_DataPubblicazione" IsNull="Y" Type="datetime" />
+      <Field Column="AsteEsperimenti_DataChiusura" IsNull="Y" Type="datetime" />
+      <Field Column="AsteEsperimenti_PercentualeRibasso" IsNull="Y" Type="float" />
+      <Field Column="AsteEsperimentiEsiti_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="AsteEsperimenti_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AsteEsperimenti_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AsteEsperimenti_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AsteEsperimenti_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AsteEsperimenti_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AsteEsperimenti_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AsteEsperimenti] (
+  [AsteEsperimenti_Ky] int IDENTITY(1,1) NOT NULL , 
+  [AsteEsperimenti_Numero] int  NULL , 
+  [Aste_Ky] int  NULL , 
+  [AsteEsperimenti_DataInizio] datetime  NULL , 
+  [AsteEsperimenti_DataTermine] datetime  NULL , 
+  [AsteEsperimenti_DataPubblicazione] datetime  NULL , 
+  [AsteEsperimenti_DataChiusura] datetime  NULL , 
+  [AsteEsperimenti_PercentualeRibasso] float  NULL , 
+  [AsteEsperimentiEsiti_Ky] tinyint  NULL , 
+  [AsteEsperimenti_UserInsert] int  NULL , 
+  [AsteEsperimenti_UserUpdate] int  NULL , 
+  [AsteEsperimenti_UserDelete] int  NULL , 
+  [AsteEsperimenti_DateInsert] datetime  NULL , 
+  [AsteEsperimenti_DateUpdate] datetime  NULL , 
+  [AsteEsperimenti_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[AsteEsperimenti] ADD CONSTRAINT PK_AsteEsperimenti PRIMARY KEY  ([AsteEsperimenti_Ky])
+</SqlScriptCreate>
+</SqlTable>

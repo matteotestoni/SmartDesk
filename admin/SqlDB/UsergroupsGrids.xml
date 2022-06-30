@@ -1,0 +1,31 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="UsergroupsGrids" Type="TABLE">
+    <Keys>
+      <Key Column="UsergroupsGrids_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="UsergroupsGrids_Ky" IsNull="N" Type="int" />
+      <Field Column="UtentiGruppi_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreGrids_Ky" IsNull="Y" Type="int" />
+      <Field Column="UsergroupsGrids_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="UsergroupsGrids_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="UsergroupsGrids_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="UsergroupsGrids_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="UsergroupsGrids_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="UsergroupsGrids_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[UsergroupsGrids] (
+  [UsergroupsGrids_Ky] int IDENTITY(1,1) NOT NULL , 
+  [UtentiGruppi_Ky] int  NULL , 
+  [CoreGrids_Ky] int  NULL , 
+  [UsergroupsGrids_UserInsert] int  NULL , 
+  [UsergroupsGrids_UserUpdate] int  NULL , 
+  [UsergroupsGrids_UserDelete] int  NULL , 
+  [UsergroupsGrids_DateInsert] datetime  NULL , 
+  [UsergroupsGrids_DateUpdate] datetime  NULL , 
+  [UsergroupsGrids_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[UsergroupsGrids] ADD CONSTRAINT PK_UsergroupsGrids PRIMARY KEY  ([UsergroupsGrids_Ky])
+</SqlScriptCreate>
+</SqlTable>

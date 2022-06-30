@@ -1,0 +1,57 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Spese" Type="TABLE">
+    <Keys>
+      <Key Column="Spese_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Spese_Ky" IsNull="N" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Commesse_Ky" IsNull="Y" Type="int" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Spese_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Spese_Note" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Spese_TotaleRighe" IsNull="Y" Type="money" />
+      <Field Column="Spese_TotaleIVA" IsNull="Y" Type="money" />
+      <Field Column="Spese_Totale" IsNull="Y" Type="money" />
+      <Field Column="Spese_Data" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Spese_DocumentoNumero" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Spese_DocumentoData" IsNull="Y" Type="smalldatetime" />
+      <Field Column="CentridiCR_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_ClienteKy" IsNull="Y" Type="int" />
+      <Field Column="Spese_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Spese_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Spese_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Spese_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Spese_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Spese_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Conti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Aziende_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Spese] (
+  [Spese_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [Commesse_Ky] int  NULL , 
+  [Utenti_Ky] int  NULL , 
+  [Spese_Titolo] varchar(200)  NULL , 
+  [Spese_Note] varchar(MAX)  NULL , 
+  [Spese_TotaleRighe] money  NULL , 
+  [Spese_TotaleIVA] money  NULL , 
+  [Spese_Totale] money  NULL , 
+  [Spese_Data] smalldatetime  NULL , 
+  [Spese_DocumentoNumero] varchar(50)  NULL , 
+  [Spese_DocumentoData] smalldatetime  NULL , 
+  [CentridiCR_Ky] int  NULL , 
+  [Anagrafiche_ClienteKy] int  NULL , 
+  [Spese_UserInsert] int  NULL , 
+  [Spese_UserUpdate] int  NULL , 
+  [Spese_UserDelete] int  NULL , 
+  [Spese_DateInsert] datetime  NULL , 
+  [Spese_DateUpdate] datetime  NULL , 
+  [Spese_DateDelete] datetime  NULL , 
+  [Conti_Ky] int  NULL DEFAULT ((1)), 
+  [Aziende_Ky] int  NULL  )
+ALTER TABLE [dbo].[Spese] ADD CONSTRAINT PK_Spese PRIMARY KEY  ([Spese_Ky])
+</SqlScriptCreate>
+</SqlTable>

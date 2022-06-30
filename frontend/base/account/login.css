@@ -1,0 +1,46 @@
+/* CSS Document */
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Condensed:300,400,700);
+
+input{
+	border-bottom:1px solid #e0e0e0 !important;
+}
+.help-text{
+	color: #e0e0e0 !important;
+}
+
+.footer{
+	text-align:center;
+	border-top:1px solid #AAAAAA;
+}
+
+.logo{
+	margin-bottom:2rem;
+}
+
+body.login{
+	margin-top:2rem;
+	background-image:url(/img/background.jpg);
+	background-repeat:no-repeat;
+	background-size: cover;
+	background-position:center center;
+	color:#ffffff;
+}
+
+h1, .h1{
+  background-color: #039be5;
+	box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.13), 0px 1px 5px 0px rgba(0, 0, 0, 0.08);
+	padding:0.5rem 0.5rem 0.5rem 0.5rem !important;
+	color:#ffffff;
+	margin-bottom:0 !important;
+	font-size:1.6rem !important;
+}
+
+#login{
+	margin: 0 0 1rem 0;
+	padding: 1rem;
+	border: 1px solid rgba(0, 0, 0, 0.25);
+	border-radius: 2px;
+	position: relative;
+	color: rgba(0, 0, 0, 0.87);
+	background-color: white;
+}

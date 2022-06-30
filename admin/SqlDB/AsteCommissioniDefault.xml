@@ -1,0 +1,35 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AsteCommissioniDefault" Type="TABLE">
+    <Keys>
+      <Key Column="AsteCommissioniDefault_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AsteCommissioniDefault_Ky" IsNull="N" Type="int" />
+      <Field Column="AsteNatura_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="AsteCommissioniDefault_Da" IsNull="Y" Type="money" />
+      <Field Column="AsteCommissioniDefault_A" IsNull="Y" Type="money" />
+      <Field Column="AsteCommissioniDefault_Commissione" IsNull="Y" Type="tinyint" />
+      <Field Column="AsteCommissioniDefault_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AsteCommissioniDefault_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AsteCommissioniDefault_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AsteCommissioniDefault_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AsteCommissioniDefault_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AsteCommissioniDefault_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AsteCommissioniDefault] (
+  [AsteCommissioniDefault_Ky] int IDENTITY(1,1) NOT NULL , 
+  [AsteNatura_Ky] smallint  NULL DEFAULT ((1)), 
+  [AsteCommissioniDefault_Da] money  NULL DEFAULT ((0)), 
+  [AsteCommissioniDefault_A] money  NULL DEFAULT ((0)), 
+  [AsteCommissioniDefault_Commissione] tinyint  NULL DEFAULT ((0)), 
+  [AsteCommissioniDefault_UserInsert] int  NULL , 
+  [AsteCommissioniDefault_UserUpdate] int  NULL , 
+  [AsteCommissioniDefault_UserDelete] int  NULL , 
+  [AsteCommissioniDefault_DateInsert] datetime  NULL , 
+  [AsteCommissioniDefault_DateUpdate] datetime  NULL , 
+  [AsteCommissioniDefault_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[AsteCommissioniDefault] ADD CONSTRAINT PK_AsteCommissioniDefault PRIMARY KEY  ([AsteCommissioniDefault_Ky])
+</SqlScriptCreate>
+</SqlTable>

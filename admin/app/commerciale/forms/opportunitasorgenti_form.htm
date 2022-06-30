@@ -1,0 +1,64 @@
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="OpportunitaSorgenti_Attiva" class="large-text-right small-text-left middle">Attiva:</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+		<div class="switch tiny">
+			<input class="switch-input" type="checkbox" name="OpportunitaSorgenti_Attiva" id="OpportunitaSorgenti_Attiva" value="on" <% if (GetCheckValue(dtOpportunitaSorgenti, "OpportunitaSorgenti_Attiva")){ Response.Write( "checked");} %> />
+			<label class="switch-paddle" for="OpportunitaSorgenti_Attiva">
+				<span class="show-for-sr">Attiva</span>
+				<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+				<span class="switch-inactive" aria-hidden="true"></span>
+			</label>
+		</div>
+		<span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="OpportunitaSorgenti_Predefinita" class="large-text-right small-text-left middle">Predefinita:</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+		<div class="switch tiny">
+			<input class="switch-input" type="checkbox" name="OpportunitaSorgenti_Predefinita" id="OpportunitaSorgenti_Predefinita" value="on" <% if (GetCheckValue(dtOpportunitaSorgenti, "OpportunitaSorgenti_Predefinita")){ Response.Write( "checked");} %> />
+			<label class="switch-paddle" for="OpportunitaSorgenti_Predefinita">
+				<span class="show-for-sr">Predefinita</span>
+				<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+				<span class="switch-inactive" aria-hidden="true"></span>
+			</label>
+		</div>
+		<span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell text-right">
+		<label for="OpportunitaSorgenti_Titolo" class="large-text-right small-text-left middle">Titolo</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="OpportunitaSorgenti_Titolo" id="OpportunitaSorgenti_Titolo" placeholder="Titolo" title="Titolo" required="required" value="<%=GetFieldValue("OpportunitaSorgenti_Titolo")%>" size="100" maxlength="100">
+   	<span class="form-error">Obbligatorio.</span>
+	</div>
+</div>             
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell text-right">
+		<label for="OpportunitaSorgenti_Icona" class="large-text-right small-text-left middle">Icona</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="OpportunitaSorgenti_Icona" id="OpportunitaSorgenti_Icona" placeholder="Icona" title="Icona" required="required" value="<%=GetFieldValue("OpportunitaSorgenti_Icona")%>" size="100" maxlength="100">
+		<span class="help-text">Puoi specificare l'icona prendendo da Font Awesome. <a href="https://fontawesome.com/icons?d=gallery" target="_blank" rel="nofollow">Clicca qui</a> per maggiori informazioni.</span>
+   	<span class="form-error">Obbligatorio.</span>
+	</div>
+</div>        
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell text-right">
+		<label class="large-text-right small-text-left middle" for="OpportunitaSorgenti_Colore">Colore<i class="fa-duotone fa-paint-brush fa-fw"></i></label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="color" name="OpportunitaSorgenti_Colore" id="OpportunitaSorgenti_Colore" placeholder="Colore" title="Colore" required="required" value="<%=GetFieldValue("OpportunitaSorgenti_Colore")%>" size="10" maxlength="10">
+    <span class="form-error">Obbligatorio.</span>
+	</div>
+</div>        

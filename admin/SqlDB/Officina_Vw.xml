@@ -1,0 +1,111 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Officina_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Officina_Ky" IsNull="N" Type="int" />
+      <Field Column="Colori_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Officina_DataConsegna" IsNull="Y" Type="datetime" />
+      <Field Column="Officina_Nominativo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Officina_Email" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Officina_Telefono" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Officina_Vettura" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Officina_TargaVettura" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Colori_Ky" IsNull="Y" Type="int" />
+      <Field Column="Officina_Venditore" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Officina_Targa" IsNull="Y" Type="bit" />
+      <Field Column="Officina_DoppieChiavi" IsNull="Y" Type="bit" />
+      <Field Column="Officina_Manuali" IsNull="Y" Type="bit" />
+      <Field Column="Officina_Accessori" IsNull="Y" Type="bit" />
+      <Field Column="Officina_ControlloLivelli" IsNull="Y" Type="bit" />
+      <Field Column="Officina_ControlloBatteria" IsNull="Y" Type="bit" />
+      <Field Column="Officina_Vetrofania" IsNull="Y" Type="bit" />
+      <Field Column="Officina_Spie" IsNull="Y" Type="bit" />
+      <Field Column="Officina_DataOra" IsNull="Y" Type="bit" />
+      <Field Column="Officina_Tappeti" IsNull="Y" Type="bit" />
+      <Field Column="Officina_PressioneGomme" IsNull="Y" Type="bit" />
+      <Field Column="Officina_Carburante" IsNull="Y" Type="bit" />
+      <Field Column="Officina_Carrozzeria" IsNull="Y" Type="bit" />
+      <Field Column="Officina_Kitfixgoruotino" IsNull="Y" Type="bit" />
+      <Field Column="Officina_Portatarghe" IsNull="Y" Type="bit" />
+      <Field Column="Officina_Note" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Officina_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Officina_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Officina_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Officina_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Officina_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Officina_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="OfficinaStati_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="OfficinaStati_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="OfficinaStati_Icona" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="OfficinaStati_Colore" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="OfficinaStati_Aperta" IsNull="Y" Type="bit" />
+      <Field Column="OfficinaStati_Chiusa" IsNull="Y" Type="bit" />
+      <Field Column="Officina_OraConsegna" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="Colori_Colore" IsNull="Y" Type="varchar" Lenght="7" />
+      <Field Column="Officina_Marchiatura" IsNull="Y" Type="bit" />
+      <Field Column="Officina_AccessoriOfficina" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="OfficinaPreparatori_Ky" IsNull="Y" Type="int" />
+      <Field Column="OfficinaPreparatori_Nominativo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="OfficinaPreparatori_Ordine" IsNull="Y" Type="int" />
+      <Field Column="OfficinaPreparatori_Colore" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="OfficinaPreparatori_Icona" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="OfficinaOrari_Orario" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="OfficinaOrari_Ky" IsNull="Y" Type="int" />
+      <Field Column="OfficinaOrari_Ordine" IsNull="Y" Type="int" />
+      <Field Column="OfficinaOrari_Colore" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="OfficinaOrari_Icona" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="OfficinaTipoauto_Ky" IsNull="Y" Type="int" />
+      <Field Column="Officina_DataAccettazione" IsNull="Y" Type="datetime" />
+      <Field Column="Priorita_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Priorita_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="OfficinaTipoauto_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="ggTrascorsi" IsNull="Y" Type="int" />
+      <Field Column="Officina_Telaio" IsNull="Y" Type="bit" />
+      <Field Column="Officina_Mapo" IsNull="Y" Type="bit" />
+      <Field Column="Officina_NumeroTelaio" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Officina_Colore" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Veicoli_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_Annuncio" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Priorita_Colore" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Priorita_Icona" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Officina_Stampata" IsNull="Y" Type="bit" />
+      <Field Column="OfficinaTipoauto_Colore" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="OfficinaTipoauto_Icona" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliMarca_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliModello_Ky" IsNull="Y" Type="int" />
+      <Field Column="utm_source" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_medium" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_campaign" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Officina_Link" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Officina_Vw
+AS
+SELECT        dbo.Officina.Officina_Ky, dbo.Colori.Colori_Titolo, dbo.Officina.Officina_DataConsegna, dbo.Officina.Officina_Nominativo, dbo.Officina.Officina_Email, dbo.Officina.Officina_Telefono, dbo.Officina.Officina_Vettura, 
+                         dbo.Officina.Officina_TargaVettura, dbo.Officina.Colori_Ky, dbo.Officina.Officina_Venditore, dbo.Officina.Officina_Targa, dbo.Officina.Officina_DoppieChiavi, dbo.Officina.Officina_Manuali, 
+                         dbo.Officina.Officina_Accessori, dbo.Officina.Officina_ControlloLivelli, dbo.Officina.Officina_ControlloBatteria, dbo.Officina.Officina_Vetrofania, dbo.Officina.Officina_Spie, dbo.Officina.Officina_DataOra, 
+                         dbo.Officina.Officina_Tappeti, dbo.Officina.Officina_PressioneGomme, dbo.Officina.Officina_Carburante, dbo.Officina.Officina_Carrozzeria, dbo.Officina.Officina_Kitfixgoruotino, dbo.Officina.Officina_Portatarghe, 
+                         dbo.Officina.Officina_Note, dbo.Officina.Officina_UserInsert, dbo.Officina.Officina_UserUpdate, dbo.Officina.Officina_UserDelete, dbo.Officina.Officina_DateInsert, dbo.Officina.Officina_DateUpdate, 
+                         dbo.Officina.Officina_DateDelete, dbo.Officina.OfficinaStati_Ky, dbo.OfficinaStati.OfficinaStati_Titolo, dbo.OfficinaStati.OfficinaStati_Icona, dbo.OfficinaStati.OfficinaStati_Colore, 
+                         dbo.OfficinaStati.OfficinaStati_Aperta, dbo.OfficinaStati.OfficinaStati_Chiusa, CONVERT(varchar, dbo.Officina.Officina_DataConsegna, 8) AS Officina_OraConsegna, dbo.Colori.Colori_Colore, 
+                         dbo.Officina.Officina_Marchiatura, dbo.Officina.Officina_AccessoriOfficina, dbo.Officina.OfficinaPreparatori_Ky, dbo.OfficinaPreparatori.OfficinaPreparatori_Nominativo, 
+                         dbo.OfficinaPreparatori.OfficinaPreparatori_Ordine, dbo.OfficinaPreparatori.OfficinaPreparatori_Colore, dbo.OfficinaPreparatori.OfficinaPreparatori_Icona, dbo.OfficinaOrari.OfficinaOrari_Orario, 
+                         dbo.Officina.OfficinaOrari_Ky, dbo.OfficinaOrari.OfficinaOrari_Ordine, dbo.OfficinaOrari.OfficinaOrari_Colore, dbo.OfficinaOrari.OfficinaOrari_Icona, dbo.Officina.OfficinaTipoauto_Ky, 
+                         dbo.Officina.Officina_DataAccettazione, dbo.Officina.Priorita_Ky, dbo.Priorita.Priorita_Descrizione, dbo.OfficinaTipoauto.OfficinaTipoauto_Titolo, DATEDIFF(day, dbo.Officina.Officina_DataAccettazione, GETDATE()) 
+                         AS ggTrascorsi, dbo.Officina.Officina_Telaio, dbo.Officina.Officina_Mapo, dbo.Officina.Officina_NumeroTelaio, dbo.Officina.Officina_Colore, dbo.Officina.Veicoli_Ky, dbo.Officina.Anagrafiche_Ky, 
+                         dbo.Veicoli.Veicoli_Annuncio, dbo.Anagrafiche.Anagrafiche_RagioneSociale, dbo.Priorita.Priorita_Colore, dbo.Priorita.Priorita_Icona, dbo.Officina.Officina_Stampata, dbo.OfficinaTipoauto.OfficinaTipoauto_Colore, 
+                         dbo.OfficinaTipoauto.OfficinaTipoauto_Icona, dbo.Officina.VeicoliMarca_Ky, dbo.Officina.VeicoliModello_Ky, dbo.Officina.utm_source, dbo.Officina.utm_medium, dbo.Officina.utm_campaign, 
+                         dbo.Officina.Officina_Link
+FROM            dbo.Officina LEFT OUTER JOIN
+                         dbo.Anagrafiche ON dbo.Officina.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky LEFT OUTER JOIN
+                         dbo.Veicoli ON dbo.Officina.Veicoli_Ky = dbo.Veicoli.Veicoli_Ky LEFT OUTER JOIN
+                         dbo.OfficinaTipoauto ON dbo.Officina.OfficinaTipoauto_Ky = dbo.OfficinaTipoauto.OfficinaTipoauto_Ky LEFT OUTER JOIN
+                         dbo.Priorita ON dbo.Officina.Priorita_Ky = dbo.Priorita.Priorita_Ky LEFT OUTER JOIN
+                         dbo.OfficinaOrari ON dbo.Officina.OfficinaOrari_Ky = dbo.OfficinaOrari.OfficinaOrari_Ky LEFT OUTER JOIN
+                         dbo.OfficinaPreparatori ON dbo.Officina.OfficinaPreparatori_Ky = dbo.OfficinaPreparatori.OfficinaPreparatori_Ky LEFT OUTER JOIN
+                         dbo.OfficinaStati ON dbo.Officina.OfficinaStati_Ky = dbo.OfficinaStati.OfficinaStati_Ky LEFT OUTER JOIN
+                         dbo.Colori ON dbo.Officina.Colori_Ky = dbo.Colori.Colori_Ky
+</SqlScriptCreate>
+</SqlTable>

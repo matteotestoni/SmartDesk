@@ -1,0 +1,45 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Recensioni_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Recensioni_Ky" IsNull="N" Type="int" />
+      <Field Column="Recensioni_Data" IsNull="Y" Type="datetime" />
+      <Field Column="Recensioni_Titolo" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Recensioni_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="RecensioniTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Prodotti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Recensioni_Rating" IsNull="Y" Type="tinyint" />
+      <Field Column="Recensioni_Approvata" IsNull="Y" Type="bit" />
+      <Field Column="Recensioni_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Recensioni_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Recensioni_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Recensioni_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Recensioni_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Recensioni_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="RecensioniTipo_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Prodotti_Codice" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Prodotti_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_Nome" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_Cognome" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Lingue_Codice" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Lingue_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Recensioni_Risposta" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Recensioni_Vw
+AS
+SELECT        dbo.Recensioni.Recensioni_Ky, dbo.Recensioni.Recensioni_Data, dbo.Recensioni.Recensioni_Titolo, dbo.Recensioni.Recensioni_Descrizione, dbo.Recensioni.RecensioniTipo_Ky, dbo.Recensioni.Prodotti_Ky, 
+                         dbo.Recensioni.Anagrafiche_Ky, dbo.Recensioni.Recensioni_Rating, dbo.Recensioni.Recensioni_Approvata, dbo.Recensioni.Recensioni_UserInsert, dbo.Recensioni.Recensioni_DateInsert, 
+                         dbo.Recensioni.Recensioni_UserUpdate, dbo.Recensioni.Recensioni_UserDelete, dbo.Recensioni.Recensioni_DateUpdate, dbo.Recensioni.Recensioni_DateDelete, dbo.RecensioniTipo.RecensioniTipo_Titolo, 
+                         dbo.Prodotti.Prodotti_Codice, dbo.Prodotti.Prodotti_Titolo, dbo.Anagrafiche.Anagrafiche_RagioneSociale, dbo.Anagrafiche.Anagrafiche_Nome, dbo.Anagrafiche.Anagrafiche_Cognome, dbo.Lingue.Lingue_Codice, 
+                         dbo.Lingue.Lingue_Titolo, dbo.Recensioni.Lingue_Ky, dbo.Recensioni.Recensioni_Risposta
+FROM            dbo.Recensioni LEFT OUTER JOIN
+                         dbo.Lingue ON dbo.Recensioni.Lingue_Ky = dbo.Lingue.Lingue_Ky LEFT OUTER JOIN
+                         dbo.Anagrafiche ON dbo.Recensioni.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky LEFT OUTER JOIN
+                         dbo.Prodotti ON dbo.Recensioni.Prodotti_Ky = dbo.Prodotti.Prodotti_Ky LEFT OUTER JOIN
+                         dbo.RecensioniTipo ON dbo.Recensioni.RecensioniTipo_Ky = dbo.RecensioniTipo.RecensioniTipo_Ky
+</SqlScriptCreate>
+</SqlTable>

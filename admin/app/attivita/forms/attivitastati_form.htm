@@ -1,0 +1,72 @@
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell text-right">
+		<label for="AttivitaStati_Titolo" class="large-text-right small-text-left middle">Titolo</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="AttivitaStati_Titolo" id="AttivitaStati_Titolo" placeholder="Titolo" title="Titolo" required="required" value="<%=GetFieldValue(dtAttivitaStati, "AttivitaStati_Titolo")%>" size="100" maxlength="100">
+   	<span class="form-error">Obbligatorio.</span>
+	</div>
+</div>        
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell text-right">
+		<label for="AttivitaStati_Ordine" class="large-text-right small-text-left middle">Ordine</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="AttivitaStati_Ordine" id="AttivitaStati_Ordine" placeholder="Ordine" title="Ordine" required="required" value="<%=GetFieldValue(dtAttivitaStati, "AttivitaStati_Ordine")%>" size="100" maxlength="100">
+   	<span class="form-error">Obbligatorio.</span>
+	</div>
+</div>        
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell text-right">
+		<label for="AttivitaStati_Icona" class="large-text-right small-text-left middle">Icona</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="AttivitaStati_Icona" id="AttivitaStati_Icona" placeholder="Icona" title="Icona" required="required" value="<%=GetFieldValue(dtAttivitaStati, "AttivitaStati_Icona")%>" size="100" maxlength="100">
+   	<span class="form-error">Obbligatorio.</span>
+	</div>
+</div>             
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell text-right">
+		<label class="large-text-right small-text-left middle" for="AttivitaStati_Colore">Colore<i class="fa-duotone fa-paint-brush fa-fw"></i></label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="color" name="AttivitaStati_Colore" id="AttivitaStati_Colore" placeholder="Colore" title="Colore" required="required" value="<%=GetFieldValue(dtAttivitaStati, "AttivitaStati_Colore")%>" size="10" maxlength="10">
+    <span class="form-error">Obbligatorio.</span>
+	</div>
+</div>  
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="AttivitaStati_Aperta" class="text-right middle">Aperta</label>
+  </div>
+	<div class="large-10 medium-9 small-8 cell">
+		<div class="switch tiny">                                         
+      <input class="switch-input" type="checkbox" name="AttivitaStati_Aperta" id="AttivitaStati_Aperta" value="on" <% if (GetCheckValue(dtAttivitaStati, "AttivitaStati_Aperta")){ Response.Write("checked");} %> />
+      <label class="switch-paddle" for="AttivitaStati_Aperta">
+        <span class="show-for-sr">Aperta</span>
+        <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+        <span class="switch-inactive" aria-hidden="true"></span>
+      </label>
+    </div> 
+	</div>
+</div>	
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="AttivitaStati_Chiusa" class="text-right middle">Chiusa</label>
+  </div>
+	<div class="large-10 medium-9 small-8 cell">
+		<div class="switch tiny">                                         
+      <input class="switch-input" type="checkbox" name="AttivitaStati_Chiusa" id="AttivitaStati_Chiusa" value="on" <% if (GetCheckValue(dtAttivitaStati, "AttivitaStati_Chiusa")){ Response.Write("checked");} %> />
+      <label class="switch-paddle" for="AttivitaStati_Chiusa">
+        <span class="show-for-sr">Chiusa</span>
+        <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+        <span class="switch-inactive" aria-hidden="true"></span>
+      </label>
+    </div> 
+	</div>
+</div>	
+      

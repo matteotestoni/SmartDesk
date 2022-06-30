@@ -1,0 +1,117 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Officina" Type="TABLE">
+    <Keys>
+      <Key Column="Officina_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Officina_Ky" IsNull="N" Type="int" />
+      <Field Column="Officina_DataConsegna" IsNull="Y" Type="datetime" />
+      <Field Column="Officina_Nominativo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Officina_Email" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Officina_Telefono" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Officina_Vettura" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Officina_TargaVettura" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Colori_Ky" IsNull="Y" Type="int" />
+      <Field Column="Officina_Venditore" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Officina_Telaio" IsNull="Y" Type="bit" />
+      <Field Column="Officina_Targa" IsNull="Y" Type="bit" />
+      <Field Column="Officina_DoppieChiavi" IsNull="Y" Type="bit" />
+      <Field Column="Officina_Manuali" IsNull="Y" Type="bit" />
+      <Field Column="Officina_Accessori" IsNull="Y" Type="bit" />
+      <Field Column="Officina_ControlloLivelli" IsNull="Y" Type="bit" />
+      <Field Column="Officina_ControlloBatteria" IsNull="Y" Type="bit" />
+      <Field Column="Officina_Vetrofania" IsNull="Y" Type="bit" />
+      <Field Column="Officina_Spie" IsNull="Y" Type="bit" />
+      <Field Column="Officina_DataOra" IsNull="Y" Type="bit" />
+      <Field Column="Officina_Tappeti" IsNull="Y" Type="bit" />
+      <Field Column="Officina_PressioneGomme" IsNull="Y" Type="bit" />
+      <Field Column="Officina_Carburante" IsNull="Y" Type="bit" />
+      <Field Column="Officina_Carrozzeria" IsNull="Y" Type="bit" />
+      <Field Column="Officina_Kitfixgoruotino" IsNull="Y" Type="bit" />
+      <Field Column="Officina_Portatarghe" IsNull="Y" Type="bit" />
+      <Field Column="Officina_Note" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Officina_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Officina_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Officina_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Officina_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Officina_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Officina_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="OfficinaStati_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Officina_Marchiatura" IsNull="Y" Type="bit" />
+      <Field Column="Officina_AccessoriOfficina" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="OfficinaPreparatori_Ky" IsNull="Y" Type="int" />
+      <Field Column="OfficinaOrari_Ky" IsNull="Y" Type="int" />
+      <Field Column="OfficinaTipoauto_Ky" IsNull="Y" Type="int" />
+      <Field Column="Officina_DataAccettazione" IsNull="Y" Type="datetime" />
+      <Field Column="Priorita_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Officina_Mapo" IsNull="Y" Type="bit" />
+      <Field Column="Officina_NumeroTelaio" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Officina_Colore" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Veicoli_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Officina_Stampata" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliMarca_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliModello_Ky" IsNull="Y" Type="int" />
+      <Field Column="utm_source" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_medium" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_campaign" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Officina_Link" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Officina] (
+  [Officina_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Officina_DataConsegna] datetime  NULL , 
+  [Officina_Nominativo] varchar(200)  NULL , 
+  [Officina_Email] varchar(200)  NULL , 
+  [Officina_Telefono] varchar(200)  NULL , 
+  [Officina_Vettura] varchar(200)  NULL , 
+  [Officina_TargaVettura] varchar(200)  NULL , 
+  [Colori_Ky] int  NULL , 
+  [Officina_Venditore] varchar(200)  NULL , 
+  [Officina_Telaio] bit  NULL , 
+  [Officina_Targa] bit  NULL , 
+  [Officina_DoppieChiavi] bit  NULL , 
+  [Officina_Manuali] bit  NULL , 
+  [Officina_Accessori] bit  NULL , 
+  [Officina_ControlloLivelli] bit  NULL , 
+  [Officina_ControlloBatteria] bit  NULL , 
+  [Officina_Vetrofania] bit  NULL , 
+  [Officina_Spie] bit  NULL , 
+  [Officina_DataOra] bit  NULL , 
+  [Officina_Tappeti] bit  NULL , 
+  [Officina_PressioneGomme] bit  NULL , 
+  [Officina_Carburante] bit  NULL , 
+  [Officina_Carrozzeria] bit  NULL , 
+  [Officina_Kitfixgoruotino] bit  NULL , 
+  [Officina_Portatarghe] bit  NULL , 
+  [Officina_Note] varchar(MAX)  NULL , 
+  [Officina_UserInsert] int  NULL , 
+  [Officina_UserUpdate] int  NULL , 
+  [Officina_UserDelete] int  NULL , 
+  [Officina_DateInsert] datetime  NULL , 
+  [Officina_DateUpdate] datetime  NULL , 
+  [Officina_DateDelete] datetime  NULL , 
+  [OfficinaStati_Ky] tinyint  NULL , 
+  [Officina_Marchiatura] bit  NULL , 
+  [Officina_AccessoriOfficina] varchar(MAX)  NULL , 
+  [OfficinaPreparatori_Ky] int  NULL , 
+  [OfficinaOrari_Ky] int  NULL , 
+  [OfficinaTipoauto_Ky] int  NULL , 
+  [Officina_DataAccettazione] datetime  NULL , 
+  [Priorita_Ky] tinyint  NULL , 
+  [Officina_Mapo] bit  NULL , 
+  [Officina_NumeroTelaio] varchar(200)  NULL , 
+  [Officina_Colore] varchar(200)  NULL , 
+  [Veicoli_Ky] int  NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [Officina_Stampata] bit  NULL DEFAULT ((0)), 
+  [VeicoliMarca_Ky] int  NULL , 
+  [VeicoliModello_Ky] int  NULL , 
+  [utm_source] varchar(MAX)  NULL , 
+  [utm_medium] varchar(MAX)  NULL , 
+  [utm_campaign] varchar(MAX)  NULL , 
+  [Officina_Link] varchar(MAX)  NULL  )
+ALTER TABLE [dbo].[Officina] ADD CONSTRAINT PK_Officina PRIMARY KEY  ([Officina_Ky])
+</SqlScriptCreate>
+</SqlTable>

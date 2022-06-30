@@ -1,0 +1,33 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CoreFormsRelations" Type="TABLE">
+    <Keys>
+      <Key Column="CoreFormsRelations_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CoreFormsRelations_Ky" IsNull="N" Type="int" />
+      <Field Column="CoreForms_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreGrids_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsRelations_Order" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsRelations_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsRelations_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsRelations_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsRelations_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CoreFormsRelations_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CoreFormsRelations_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CoreFormsRelations] (
+  [CoreFormsRelations_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CoreForms_Ky] int  NULL , 
+  [CoreGrids_Ky] int  NULL , 
+  [CoreFormsRelations_Order] int  NULL , 
+  [CoreFormsRelations_UserInsert] int  NULL , 
+  [CoreFormsRelations_UserUpdate] int  NULL , 
+  [CoreFormsRelations_UserDelete] int  NULL , 
+  [CoreFormsRelations_DateInsert] datetime  NULL , 
+  [CoreFormsRelations_DateUpdate] datetime  NULL , 
+  [CoreFormsRelations_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[CoreFormsRelations] ADD CONSTRAINT PK_CoreFormsRelations PRIMARY KEY  ([CoreFormsRelations_Ky])
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,35 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Lingue" Type="TABLE">
+    <Keys>
+      <Key Column="Lingue_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Lingue_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="Lingue_Codice" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Lingue_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Lingue_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Lingue_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Lingue_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Lingue_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Lingue_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Lingue_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Divise_Ky" IsNull="Y" Type="int" />
+      <Field Column="Lingue_Ordine" IsNull="Y" Type="tinyint" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Lingue] (
+  [Lingue_Ky] tinyint IDENTITY(1,1) NOT NULL , 
+  [Lingue_Codice] varchar(100)  NULL , 
+  [Lingue_Titolo] varchar(150)  NULL , 
+  [Lingue_UserInsert] int  NULL , 
+  [Lingue_UserUpdate] int  NULL , 
+  [Lingue_UserDelete] int  NULL , 
+  [Lingue_DateInsert] datetime  NULL , 
+  [Lingue_DateUpdate] datetime  NULL , 
+  [Lingue_DateDelete] datetime  NULL , 
+  [Divise_Ky] int  NULL , 
+  [Lingue_Ordine] tinyint  NULL  )
+ALTER TABLE [dbo].[Lingue] ADD CONSTRAINT PK_Lingue PRIMARY KEY  ([Lingue_Ky])
+</SqlScriptCreate>
+</SqlTable>

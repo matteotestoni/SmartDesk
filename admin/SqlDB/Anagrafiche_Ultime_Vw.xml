@@ -1,0 +1,14 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Anagrafiche_Ultime_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Anagrafiche_Ky" IsNull="N" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Anagrafiche_Ultime_Vw
+AS
+SELECT     TOP (50) Anagrafiche_Ky
+FROM         dbo.Anagrafiche
+ORDER BY Anagrafiche_Ky DESC
+</SqlScriptCreate>
+</SqlTable>

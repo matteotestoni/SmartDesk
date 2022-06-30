@@ -1,0 +1,29 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CoreResponseCode" Type="TABLE">
+    <Keys>
+      <Key Column="CoreResponseCode_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CoreResponseCode_Ky" IsNull="N" Type="smallint" />
+      <Field Column="CoreResponseCode_Title" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreResponseCode_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CoreResponseCode_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CoreResponseCode_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CoreResponseCode_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CoreResponseCode_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CoreResponseCode_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CoreResponseCode] (
+  [CoreResponseCode_Ky] smallint  NOT NULL , 
+  [CoreResponseCode_Title] varchar(100)  NULL , 
+  [CoreResponseCode_UserInsert] int  NULL , 
+  [CoreResponseCode_UserUpdate] int  NULL , 
+  [CoreResponseCode_UserDelete] int  NULL , 
+  [CoreResponseCode_DateInsert] datetime  NULL , 
+  [CoreResponseCode_DateUpdate] datetime  NULL , 
+  [CoreResponseCode_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[CoreResponseCode] ADD CONSTRAINT PK_CoreResponseCode PRIMARY KEY  ([CoreResponseCode_Ky])
+</SqlScriptCreate>
+</SqlTable>

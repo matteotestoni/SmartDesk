@@ -1,0 +1,150 @@
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="Note_Titolo" class="large-text-right small-text-left middle">Titolo <i class="fa-duotone fa-tag fa-fw"></i></label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="Note_Titolo" id="Note_Titolo" value="<%=GetFieldValue(dtNote, "Note_Titolo")%>" size="100" required="required" />
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+ 		<label class="large-text-right small-text-left middle" for="NoteCategorie_Ky">Categoria</label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+		<select name="NoteCategorie_Ky" id="NoteCategorie_Ky" value="<%=GetFieldValue(dtNote, "NoteCategorie_Ky")%>">
+		<option value=""></option>
+		<%
+		for (int i = 0; i < dtNoteCategorie.Rows.Count; i++){
+			Response.Write("<option value=\"" + dtNoteCategorie.Rows[i]["NoteCategorie_Ky"].ToString() + "\">" + dtNoteCategorie.Rows[i]["NoteCategorie_Titolo"].ToString() + "</option>");
+		}
+		%>
+    </select>
+    <span class="form-error">Obbligatorio</span>
+    <script type="text/javascript">
+      selectSet('NoteCategorie_Ky', '<%=GetFieldValue(dtNote, "NoteCategorie_Ky")%>');
+    </script>
+	</div>
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="Note_Tags" class="text-right middle">Tags <i class="fa-duotone fa-list fa-fw"></i></label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+		<select name="Note_Tags" id="Note_Tags" multiple class="select2" value="<%=GetFieldValue(dtNote, "Note_Tags")%>">
+			<option value=""></option>
+	    <%
+			for (int i = 0; i < dtCMSTags.Rows.Count; i++){
+				Response.Write("<option value=\"" + dtCMSTags.Rows[i]["CMSTags_Ky"].ToString() + "\">" + dtCMSTags.Rows[i]["CMSTags_Titolo"].ToString() + "</option>");
+			}
+			%>
+		</select>
+		<script type="text/javascript">
+			selectSetMultiple('Note_Tags', '<%=GetFieldValue(dtNote, "Note_Tags")%>');
+		</script>
+		<span class="form-error">Obbligatorio</span>
+	</div>
+</div>	
+
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="Note_Data" class="large-text-right small-text-left middle">Data<i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+    <input type="text" name="Note_Data" id="Note_Data" value="<%=GetFieldValue(dtNote, "Note_Data_IT")%>" class="fdatepicker txt required" required="required" size="10">
+    <span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="large-2 medium-2 small-4 cell text-right">
+		<label class="large-text-right small-text-left middle" for="Lingue_Ky">Lingua <i class="fa-duotone fa-language fa-fw"></i></label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+		<select name="Lingue_Ky" id="Lingue_Ky" value="<%=GetFieldValue(dtNote, "Lingue_Ky")%>" required="required">
+      <!--#include file="/var/cache/Lingue-options.htm"--> 
+    </select>
+    <script type="text/javascript">
+      selectSet('Lingue_Ky', '<%=GetFieldValue(dtNote, "Lingue_Ky")%>');
+    </script>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="Anagrafiche_RagioneSociale" class="large-text-right">Anagrafica <i class="fa-duotone fa-users fa-fw"></i></label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+	  <!--#include file="/admin/app/note/forms/anagrafiche_seleziona_form.htm"--> 
+  </div>
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="Attivita_Ky" class="large-text-right small-text-left middle">Attivit&agrave;</label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+	  <!--#include file="/admin/app/note/forms/attivita_seleziona_form.htm"--> 
+  </div>
+</div>
+
+<div class="grid-x grid-padding-x">        
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="Commesse_Ky" class="large-text-right small-text-left middle">Progetto <i class="fa-duotone fa-building fa-fw"></i></label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+  	<% if (dtCommesse!=null && dtCommesse.Rows.Count>0){ %>
+			<div class="input-group">
+	      <select  class="input-group-field" name="Commesse_Ky" id="Commesse_Ky">
+	      <option value=""></option>
+					<%
+					for (int i = 0; i < dtCommesse.Rows.Count; i++){
+						Response.Write("<option value=\"" + dtCommesse.Rows[i]["Commesse_Ky"].ToString() + "\">" + dtCommesse.Rows[i]["Commesse_Titolo"].ToString() + "&nbsp;-&nbsp;" + dtCommesse.Rows[i]["CommesseStato_Titolo"].ToString() + "</option>");
+					}
+					%>
+	      </select>
+	      <script type="text/javascript">
+	        selectSet('Commesse_Ky', '<%=strCommesse_Ky%>');
+	      </script>
+		    <% if (GetFieldValue(dtNote, "Commesse_Ky")!=null && GetFieldValue(dtNote, "Commesse_Ky").Length>0){ %>
+			  <div class="input-group-button">
+ 					<a href="/admin/app/progetti/scheda-commesse.aspx?Anagrafiche_Ky=<%=GetFieldValue(dtNote, "Anagrafiche_Ky")%>&Commesse_Ky=<%=GetFieldValue(dtNote, "Commesse_Ky")%>">Scheda</a>
+			  </div>
+				<% } %>
+				<span class="form-error">Obbligatorio</span>
+			</div>
+     <% }else{ %>
+    	<input type="hidden" name="Commesse_Ky" id="Commesse_Ky" value="" />
+    	Nessun progetto attivo sull'anagrafica
+    <% } %>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="Priorita_Ky" class="large-text-right small-text-left middle">Priorit&agrave; <i class="fa-duotone fa-bell fa-fw"></i></label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell contenuto">
+		<!--#include file="/var/cache/Priorita-radio.htm"-->
+    <span class="form-error">Obbligatorio</span>
+		<script type="text/javascript">
+			<% if (strAzione!="new"){ %>
+				radioSet('Priorita_Ky', '<%=GetFieldValue(dtNote, "Priorita_Ky")%>');
+			<% }else{ %>
+				radioSet('Priorita_Ky', '1');
+			<% } %>
+    </script>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="Note_Descrizione" class="large-text-right small-text-left middle">Descrizione <i class="fa-duotone fa-file-lines fa-fw"></i></label>
+	</div>
+	<div class="large-10 medium-11 small-8 cell contenuto">
+    <textarea name="Note_Descrizione" id="Note_Descrizione" rows="6" required="required" class="required"><%=GetFieldValue(dtNote, "Note_Descrizione")%></textarea>
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+
+
+
+
+
+
+
+

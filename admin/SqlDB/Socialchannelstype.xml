@@ -1,0 +1,33 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Socialchannelstype" Type="TABLE">
+    <Keys>
+      <Key Column="Socialchannelstype_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Socialchannelstype_Ky" IsNull="N" Type="int" />
+      <Field Column="Socialchannelstype_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Socialchannelstype_Icona" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Socialchannelstype_Attivo" IsNull="Y" Type="bit" />
+      <Field Column="Socialchannelstype_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Socialchannelstype_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Socialchannelstype_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Socialchannelstype_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Socialchannelstype_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Socialchannelstype_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Socialchannelstype] (
+  [Socialchannelstype_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Socialchannelstype_Titolo] varchar(100)  NULL , 
+  [Socialchannelstype_Icona] varchar(100)  NULL , 
+  [Socialchannelstype_Attivo] bit  NULL , 
+  [Socialchannelstype_UserInsert] int  NULL , 
+  [Socialchannelstype_UserUpdate] int  NULL , 
+  [Socialchannelstype_UserDelete] int  NULL , 
+  [Socialchannelstype_DateInsert] datetime  NULL , 
+  [Socialchannelstype_DateUpdate] datetime  NULL , 
+  [Socialchannelstype_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[Socialchannelstype] ADD CONSTRAINT PK_Socialchannelstype PRIMARY KEY  ([Socialchannelstype_Ky])
+</SqlScriptCreate>
+</SqlTable>

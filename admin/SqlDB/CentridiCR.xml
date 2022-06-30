@@ -1,0 +1,41 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CentridiCR" Type="TABLE">
+    <Keys>
+      <Key Column="CentridiCR_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CentridiCR_Ky" IsNull="N" Type="int" />
+      <Field Column="CentridiCR_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CentridiCR_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="CentridiCR_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CentridiCR_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CentridiCR_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CentridiCR_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CentridiCR_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CentridiCR_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="CentridiCR_Padre" IsNull="Y" Type="int" />
+      <Field Column="CentridiCR_Ordine" IsNull="Y" Type="int" />
+      <Field Column="CentridiCR_Attivo" IsNull="Y" Type="bit" />
+      <Field Column="CentridiCR_Icona" IsNull="Y" Type="varchar" Lenght="100" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CentridiCR] (
+  [CentridiCR_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CentridiCR_Titolo] varchar(200)  NULL , 
+  [CentridiCR_Descrizione] varchar(MAX)  NULL , 
+  [Utenti_Ky] int  NULL , 
+  [CentridiCR_UserInsert] int  NULL , 
+  [CentridiCR_UserUpdate] int  NULL , 
+  [CentridiCR_UserDelete] int  NULL , 
+  [CentridiCR_DateInsert] datetime  NULL , 
+  [CentridiCR_DateUpdate] datetime  NULL , 
+  [CentridiCR_DateDelete] datetime  NULL , 
+  [CentridiCR_Padre] int  NULL , 
+  [CentridiCR_Ordine] int  NULL , 
+  [CentridiCR_Attivo] bit  NULL , 
+  [CentridiCR_Icona] varchar(100)  NULL  )
+ALTER TABLE [dbo].[CentridiCR] ADD CONSTRAINT PK_CentridiCR PRIMARY KEY  ([CentridiCR_Ky])
+</SqlScriptCreate>
+</SqlTable>

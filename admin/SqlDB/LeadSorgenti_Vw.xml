@@ -1,0 +1,22 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="LeadSorgenti_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="LeadSorgenti_Ky" IsNull="N" Type="int" />
+      <Field Column="LeadSorgenti_Titolo" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="LeadSorgenti_Default" IsNull="Y" Type="bit" />
+      <Field Column="LeadSorgenti_Codice" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="LeadSorgenti_Ordine" IsNull="Y" Type="int" />
+      <Field Column="LeadSorgenti_Icona" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="LeadTipo_Ky" IsNull="Y" Type="int" />
+      <Field Column="LeadTipo_Titolo" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.LeadSorgenti_Vw
+AS
+SELECT        dbo.LeadSorgenti.LeadSorgenti_Ky, dbo.LeadSorgenti.LeadSorgenti_Titolo, dbo.LeadSorgenti.LeadSorgenti_Default, dbo.LeadSorgenti.LeadSorgenti_Codice, dbo.LeadSorgenti.LeadSorgenti_Ordine, 
+                         dbo.LeadSorgenti.LeadSorgenti_Icona, dbo.LeadSorgenti.LeadTipo_Ky, dbo.LeadTipo.LeadTipo_Titolo
+FROM            dbo.LeadSorgenti LEFT OUTER JOIN
+                         dbo.LeadTipo ON dbo.LeadSorgenti.LeadTipo_Ky = dbo.LeadTipo.LeadTipo_Ky
+</SqlScriptCreate>
+</SqlTable>

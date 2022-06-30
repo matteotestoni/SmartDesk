@@ -1,0 +1,35 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CoreUrlRewrite" Type="TABLE">
+    <Keys>
+      <Key Column="CoreUrlRewrite_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CoreUrlRewrite_Ky" IsNull="N" Type="int" />
+      <Field Column="CoreEntities_Code" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreEntities_KeyValue" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreUrlRewrite_UrlSource" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreUrlRewrite_UrlDestination" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreUrlRewrite_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CoreUrlRewrite_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CoreUrlRewrite_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CoreUrlRewrite_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CoreUrlRewrite_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CoreUrlRewrite_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CoreUrlRewrite] (
+  [CoreUrlRewrite_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CoreEntities_Code] varchar(200)  NULL , 
+  [CoreEntities_KeyValue] varchar(200)  NULL , 
+  [CoreUrlRewrite_UrlSource] varchar(MAX)  NULL , 
+  [CoreUrlRewrite_UrlDestination] varchar(MAX)  NULL , 
+  [CoreUrlRewrite_UserInsert] int  NULL , 
+  [CoreUrlRewrite_UserUpdate] int  NULL , 
+  [CoreUrlRewrite_UserDelete] int  NULL , 
+  [CoreUrlRewrite_DateInsert] datetime  NULL , 
+  [CoreUrlRewrite_DateUpdate] datetime  NULL , 
+  [CoreUrlRewrite_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[CoreUrlRewrite] ADD CONSTRAINT PK_CoreUrlRewrite PRIMARY KEY  ([CoreUrlRewrite_Ky])
+</SqlScriptCreate>
+</SqlTable>

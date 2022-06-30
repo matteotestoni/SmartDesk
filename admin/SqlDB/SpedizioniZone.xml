@@ -1,0 +1,33 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="SpedizioniZone" Type="TABLE">
+    <Keys>
+      <Key Column="SpedizioniZone_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="SpedizioniZone_Ky" IsNull="N" Type="smallint" />
+      <Field Column="SpedizioniZone_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="SpedizioniZone_Ordine" IsNull="Y" Type="smallint" />
+      <Field Column="SpedizioniZone_Default" IsNull="Y" Type="bit" />
+      <Field Column="SpedizioniZone_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="SpedizioniZone_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="SpedizioniZone_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="SpedizioniZone_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="SpedizioniZone_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="SpedizioniZone_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[SpedizioniZone] (
+  [SpedizioniZone_Ky] smallint IDENTITY(1,1) NOT NULL , 
+  [SpedizioniZone_Titolo] varchar(200)  NULL , 
+  [SpedizioniZone_Ordine] smallint  NULL , 
+  [SpedizioniZone_Default] bit  NULL DEFAULT ((0)), 
+  [SpedizioniZone_UserInsert] int  NULL , 
+  [SpedizioniZone_UserUpdate] int  NULL , 
+  [SpedizioniZone_UserDelete] int  NULL , 
+  [SpedizioniZone_DateInsert] datetime  NULL , 
+  [SpedizioniZone_DateUpdate] datetime  NULL , 
+  [SpedizioniZone_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[SpedizioniZone] ADD CONSTRAINT PK_SpedizioniZone PRIMARY KEY  ([SpedizioniZone_Ky])
+</SqlScriptCreate>
+</SqlTable>

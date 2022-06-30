@@ -1,0 +1,28 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="FormsValori_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="FormsValori_Ky" IsNull="Y" Type="int" />
+      <Field Column="FormsValori_Valore" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Forms_Ky" IsNull="Y" Type="int" />
+      <Field Column="FormsFields_Codice" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="FormsFields_Descrizione" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="FormsFields_Ordine" IsNull="Y" Type="int" />
+      <Field Column="FormsFields_Ky" IsNull="N" Type="int" />
+      <Field Column="Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Forms_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="FormsFieldsTipo_Ky" IsNull="Y" Type="tinyint" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.FormsValori_Vw
+AS
+SELECT        TOP (100) PERCENT dbo.FormsValori.FormsValori_Ky, dbo.FormsValori.FormsValori_Valore, dbo.FormsValori.Anagrafiche_Ky, dbo.FormsValori.Forms_Ky, dbo.FormsValori.FormsFields_Codice, 
+                         dbo.FormsFields.FormsFields_Descrizione, dbo.FormsFields.FormsFields_Ordine, dbo.FormsFields.FormsFields_Ky, dbo.Anagrafiche.Anagrafiche_RagioneSociale, dbo.Forms.Forms_Titolo, 
+                         dbo.FormsFields.FormsFieldsTipo_Ky
+FROM            dbo.FormsValori INNER JOIN
+                         dbo.Forms ON dbo.FormsValori.Forms_Ky = dbo.Forms.Forms_Ky LEFT OUTER JOIN
+                         dbo.Anagrafiche ON dbo.FormsValori.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky RIGHT OUTER JOIN
+                         dbo.FormsFields ON dbo.FormsValori.FormsFields_Codice = dbo.FormsFields.FormsFields_Codice
+</SqlScriptCreate>
+</SqlTable>

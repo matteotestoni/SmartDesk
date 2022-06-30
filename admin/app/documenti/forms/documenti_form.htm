@@ -1,0 +1,203 @@
+<div class="grid-x grid-padding-x">
+<div class="large-6 medium-6 small-12 cell">
+  	<fieldset class="fieldset">
+  	<legend class="radius"><i class="fa-duotone fa-file-lines fa-fw"></i>Intestazione documento</legend>
+      <div class="grid-x grid-padding-x">
+      	<div class="large-2 medium-2 small-4 cell">
+      		<label for="DocumentiTipo_Ky" class="large-text-right small-text-left middle">Documento</label>
+      	</div>
+      	<div class="large-3 medium-4 small-8 cell">
+          <select name="DocumentiTipo_Ky" id="DocumentiTipo_Ky" required="required" value="<%=GetFieldValue(dtDocumenti, "DocumentiTipo_Ky")%>">
+            <!--#include file="/var/cache/DocumentiTipo-options.htm"--> 
+          </select>
+          <span class="form-error">Obbligatorio</span>
+          <script type="text/javascript">
+            selectSet('DocumentiTipo_Ky', '<%=GetFieldValue(dtDocumenti, "DocumentiTipo_Ky")%>');
+          </script>
+      	</div>
+      	<div class="large-1 medium-2 small-4 cell">
+      		<label class="large-text-right small-text-left middle">N&deg;</label>
+      	</div>
+      	<div class="auto cell">
+					<input type="text" name="Documenti_Numero" id="Documenti_Numero" value="<%=GetFieldValue(dtDocumenti, "Documenti_Numero")%>" step="1" min="1" size="6" required="required">
+					<span class="form-error">Obbligatorio</span>
+      	</div>
+      	<div class="auto cell">
+      		<label class="large-text-right small-text-left middle">Data <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+      	</div>
+      	<div class="auto cell">
+            <input type="text" class="fdatepicker" size="10" name="Documenti_Data" id="Documenti_Data" value="<%=GetFieldValue(dtDocumenti, "Documenti_Data_IT")%>" required="required">
+            <span class="form-error">Obbligatorio</span>
+      	</div>
+			</div>
+			
+      <div class="grid-x grid-padding-x">
+				<div class="large-2 medium-2 small-4 cell">
+      		<label for="Aziende_Ky" class="large-text-right small-text-left middle">Azienda</label>
+      	</div>
+      	<div class="large-3 medium-4 small-8 cell">
+          <select name="Aziende_Ky" id="Aziende_Ky" required="required" value="<%=GetFieldValue(dtDocumenti, "Aziende_Ky")%>" onchange="chgAzienda();">
+            <!--#include file="/var/cache/Aziende-options.htm"--> 
+          </select>
+          <span class="form-error">Obbligatorio</span>
+          <script type="text/javascript">
+            selectSet('Aziende_Ky', '<%=GetFieldValue(dtDocumenti, "Aziende_Ky")%>');
+          </script>
+      	</div>
+				<div class="large-1 medium-2 small-4 cell">
+      		<label for="Negozi_Ky" class="large-text-right small-text-left middle">Negozio</label>
+      	</div>
+      	<div class="large-6 medium-4 small-8 cell">
+          <select name="Negozi_Ky" id="Negozi_Ky" required="required" value="<%=GetFieldValue(dtDocumenti, "Negozi_Ky")%>">
+            <!--#include file="/var/cache/Negozi-options.htm"--> 
+          </select>
+          <span class="form-error">Obbligatorio</span>
+          <script type="text/javascript">
+            selectSet('Negozi_Ky', '<%=GetFieldValue(dtDocumenti, "Negozi_Ky")%>');
+          </script>
+      	</div>
+			</div>
+      <div class="grid-x grid-padding-x">
+      	<div class="large-2 medium-2 small-4 cell">
+      		<label class="large-text-right small-text-left middle">Riferimenti</label>
+      	</div>
+      	<div class="large-3 medium-4 small-8 cell">
+					<input type="text" placeholder="codice conferma" name="Documenti_Riferimenti" id="Documenti_Riferimenti" value="<%=GetFieldValue(dtDocumenti, "Documenti_Riferimenti")%>" size="15" title="codice conferma" required="required">
+					<span class="form-error">Obbligatorio</span>
+      	</div>
+      	<div class="large-1 medium-2 small-4 cell">
+      		<label class="large-text-right small-text-left middle">Stato</label>
+      	</div>
+      	<div class="large-6 medium-4 small-8 cell">
+          <select name="DocumentiStato_Ky" id="DocumentiStato_Ky" value="<%=GetFieldValue(dtDocumenti, "DocumentiStato_Ky")%>" required="required">
+            <!--#include file="/var/cache/DocumentiStato-options.htm"--> 
+          </select>
+          <span class="form-error">Obbligatorio</span>
+          <script type="text/javascript">
+            selectSet('DocumentiStato_Ky', '<%=GetFieldValue(dtDocumenti, "DocumentiStato_Ky")%>');
+          </script>
+      	</div>
+			</div>
+	</fieldset>
+	<fieldset class="fieldset">
+		<legend class="radius"><i class="fa-duotone fa-user fa-fw"></i>Anagrafica</legend>
+
+    <div class="input-group">
+      <input style="width:60px;margin-right:5px;" type="text" name="Anagrafiche_Ky" id="Anagrafiche_Ky" value="<%=GetFieldValue(dtDocumenti, "Anagrafiche_Ky")%>" placeholder="Anagrafica">
+      <input style="width:70%" type="text" class="input-group-field" name="Anagrafiche_RagioneSociale" id="Anagrafiche_RagioneSociale" value="<%=GetFieldValue(dtDocumenti, "Anagrafiche_RagioneSociale")%>" placeholder="Anagrafica">
+      <div class="input-group-button">
+				<% if (GetFieldValue(dtDocumenti, "Anagrafiche_Ky")!=null && GetFieldValue(dtDocumenti, "Anagrafiche_Ky").Length>0){ %>
+				<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=GetFieldValue(dtDocumenti, "Anagrafiche_Ky")%>" style="margin-top:4px"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw fa-lg"></i></a>
+				<% } %>
+        <a style="margin-top:4px" data-toggle="dropdownmenu-anagrafiche"><i class="fa-duotone fa-bars fa-fw fa-lg"></i></a>
+        <div class="dropdown-pane bottom" id="dropdownmenu-anagrafiche" data-dropdown>
+          <div class="text-left">
+            <a onclick="javascript:gotoSchedaAnagrafica()"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw"></i>Vai a scheda</a><br>
+            <a data-open="formQuickEditAnagrafiche" onclick="javascript:inserisciAnagrafica()"><i class="fa-duotone fa-plus fa-fw"></i>Inserisci</a><br>
+            <a data-open="formQuickEditAnagrafiche" onclick="javascript:modificaAnagrafica()"><i class="fa-duotone fa-edit fa-fw"></i>Modifica</a><br>
+          </div>
+        </div>
+      </div>
+    </div>
+		<div class="grid-x grid-padding-x">
+			<div class="large-12 medium-12 small-12 cell">
+				Partita IVA: <span id="Anagrafiche_PartitaIVA"><%=GetFieldValue(dtDocumenti, "Anagrafiche_PartitaIVA")%>
+					<%=strCheckPartitaIVA%></span> -
+				Codice Fiscale: <span
+					id="Anagrafiche_CodiceFiscale"><%=GetFieldValue(dtDocumenti, "Anagrafiche_CodiceFiscale")%>
+					<%=strCheckCodiceFiscale%></span> -
+				Email: <%=GetFieldValue(dtDocumenti, "Anagrafiche_EmailAmministrazione")%>
+			</div>
+		</div>
+		<script type="text/javascript">
+			jQuery("#Anagrafiche_RagioneSociale").autocomplete({
+				source: "/admin/app/anagrafiche/autosuggest-GetAnagrafiche-json.aspx",
+				minLength: 2,
+				select: function (event, ui) {
+					jQuery("#Anagrafiche_Ky").val(ui.item.value);
+					jQuery("#Anagrafiche_RagioneSociale").val(ui.item.label);
+					jQuery("#Anagrafiche_PartitaIVA").val(ui.item.piva);
+					jQuery("#Anagrafiche_CodiceFiscale").val(ui.item.codfisc);
+					return false;
+				}
+			});
+		</script>
+	</fieldset>
+</div>
+<div class="large-6 medium-6 small-12 cell">
+  	<fieldset class="fieldset">
+  	<legend class="radius"><i class="fa-duotone fa-file-lines fa-fw"></i>Oggetto e note</legend>
+			<div class="grid-x grid-padding-x">
+		  	<div class="large-2 medium-2 small-4 cell"><label class="large-text-right small-text-left middle">Oggetto</label></div>
+		  	<div class="large-10 medium-10 small-8 cell">
+					<input type="text" name="Documenti_Descrizione" id="Documenti_Descrizione" placeholder="Da il nome al file pdf. Rif. Interno e non visibile in stampa" title="Da il nome al file pdf. Rif. Interno e non visibile in stampa" value="<%=GetFieldValue(dtDocumenti, "Documenti_Descrizione")%>" size="35" required="required">
+					<span class="form-error">Obbligatorio</span>
+				</div>
+		  </div>
+			<div class="grid-x grid-padding-x">
+		  	<div class="large-2 medium-2 small-4 cell">
+					<label class="large-text-right small-text-left middle">Annotazioni</label>
+				</div>
+		  	<div class="large-10 medium-10 small-8 cell">
+					<input type="text" name="Documenti_Note" id="Documenti_Note" placeholder="riferimento interno - non visibile in stampa" title="riferimento interno - non visibile in stampa" value="<%=GetFieldValue(dtDocumenti, "Documenti_Note")%>" size="41">
+				</div>
+		  </div>
+  	
+
+		</fieldset>
+
+	<fieldset class="fieldset">
+		<legend class="radius"><i class="fa-duotone fa-link fa-fw"></i>Collegamenti</legend>
+		<div class="grid-x grid-padding-x">
+			<div class="large-2 medium-2 small-4 cell"><label class="large-text-right small-text-left middle">Progetto</label>
+			</div>
+			<div class="large-10 medium-10 small-8 cell">
+				<% if (dtCommesse!=null && dtCommesse.Rows.Count>0){ %>
+				<select name="Commesse_Ky" id="Commesse_Ky">
+					<option value=""></option>
+					<%
+									for (int i = 0; i < dtCommesse.Rows.Count; i++){
+										Response.Write("<option value=\"" + dtCommesse.Rows[i]["Commesse_Ky"].ToString() + "\">" + dtCommesse.Rows[i]["Commesse_Titolo"].ToString() + "&nbsp;-&nbsp;" + dtCommesse.Rows[i]["CommesseStato_Titolo"].ToString() + "</option>");
+									}
+									%>
+				</select>
+				<script type="text/javascript">
+					selectSet('Commesse_Ky', '<%=strCommesse_Ky%>');
+				</script>
+				<% }else{ %>
+				<input type="hidden" name="Commesse_Ky" id="Commesse_Ky" value="" />
+				Nessun progetto
+				<% } %>
+			</div>
+		</div>
+
+		<div class="grid-x grid-padding-x">
+			<div class="large-2 medium-2 small-4 cell"><label class="large-text-right small-text-left middle">Trattativa</label>
+			</div>
+			<div class="large-10 medium-10 small-8 cell">
+				<% if (dtOpportunita!=null && dtOpportunita.Rows.Count>0){ %>
+				<select name="Opportunita_Ky" id="Opportunita_Ky" value="<%=strOpportunita_Ky%>">
+					<option value=""></option>
+					<%
+					for (int i = 0; i < dtOpportunita.Rows.Count; i++){
+						Response.Write("<option value=\"" + dtOpportunita.Rows[i]["Opportunita_Ky"].ToString() + "\">" + dtOpportunita.Rows[i]["Opportunita_Titolo"].ToString() + "&nbsp;-&nbsp;" + dtOpportunita.Rows[i]["Opportunita_Data"].ToString() + "</option>");
+					}
+					%>
+				</select>
+				<script type="text/javascript">
+					selectSet('Opportunita_Ky', '<%=strOpportunita_Ky%>');
+				</script>
+				<% }else{ %>
+				<input type="hidden" name="Opportunita_Ky" id="Opportunita_Ky" value="" />
+				Nessuna trattativa
+				<% } %>
+			</div>
+
+	</fieldset>
+
+
+
+</div>
+</div>
+
+

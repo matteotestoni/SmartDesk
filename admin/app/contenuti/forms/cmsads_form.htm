@@ -1,0 +1,166 @@
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="CMSAds_PubblicaWEB" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Pubblica</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+        <input class="switch-input" type="checkbox" name="CMSAds_PubblicaWEB" id="CMSAds_PubblicaWEB" value="on" <% if (GetCheckValue(dtCMSAds, "CMSAds_PubblicaWEB")){ Response.Write("checked");} %> />
+        <label class="switch-paddle" for="CMSAds_PubblicaWEB">
+          <span class="show-for-sr">si</span>
+          <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+          <span class="switch-inactive" aria-hidden="true"></span>
+        </label>
+  	</div>
+  </div>
+
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="CMSAds_Titolo" class="large-text-right small-text-left middle">Titolo<i class="fa-duotone fa-file-lines fa-fw"></i></label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="CMSAds_Titolo" id="CMSAds_Titolo" title="Titolo" required="required" value="<%=GetFieldValue(dtCMSAds, "CMSAds_Titolo")%>" size="60">
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell text-right">
+  		<label class="large-text-right small-text-left middle" for="Lingue_Ky">Lingua <i class="fa-duotone fa-language fa-fw"></i></label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+			<select name="Lingue_Ky" id="Lingue_Ky" value="<%=GetFieldValue(dtCMSAds, "Lingue_Ky")%>" required="required">
+        <!--#include file="/var/cache/Lingue-options.htm"--> 
+      </select>
+      <script type="text/javascript">
+        selectSet('Lingue_Ky', '<%=GetFieldValue(dtCMSAds, "Lingue_Ky")%>');
+      </script>
+  	</div>
+  </div>
+  
+	<div class="grid-x grid-padding-x">
+		<div class="large-2 medium-2 small-4 cell">
+			<label for="CMSAds_Zone" class="text-right middle">Zone <i class="fa-duotone fa-list fa-fw"></i></label>
+		</div>
+		<div class="large-10 medium-10 small-8 cell">
+			<select name="CMSAds_Zone" id="CMSAds_Zone" multiple class="select2" value="<%=GetFieldValue(dtCMSAds, "CMSAds_Zone")%>" required="required">
+      <%
+			for (int j = 0; j < dtCMSAdsZone.Rows.Count; j++){
+        Response.Write("<option value=\"" + dtCMSAdsZone.Rows[j]["CMSAdsZone_Ky"].ToString() + "\">" + dtCMSAdsZone.Rows[j]["CMSAdsZone_Titolo"].ToString() + "</option>");
+      }
+      %>
+			</select>
+			<script type="text/javascript">
+			selectSetMultiple('CMSAds_Zone', '<%=GetFieldValue(dtCMSAds, "CMSAds_Zone")%>');
+			</script>
+			<span class="form-error">Obbligatorio</span>
+		</div>
+	</div>	
+
+    <div class="grid-x grid-padding-x">
+		<div class="large-2 medium-2 small-4 cell">
+			<label for="CMSAds_Province" class="text-right middle">Province <i class="fa-duotone fa-location-dot fa-fw"></i></label>
+            
+		</div>
+		<div class="large-10 medium-10 small-8 cell">
+			<select name="CMSAds_Province" id="CMSAds_Province" multiple class="select2" value="<%=GetFieldValue(dtCMSAds, "CMSAds_Province")%>" required="required">
+            <%
+      			for (int j = 0; j < dtProvince.Rows.Count; j++){
+              Response.Write("<option value=\"" + dtProvince.Rows[j]["Province_Ky"].ToString() + "\">" + dtProvince.Rows[j]["Province_Provincia"].ToString() + "</option>");
+            }
+            %>
+			</select>
+			<script type="text/javascript">
+			selectSetMultiple('CMSAds_Province', '<%=GetFieldValue(dtCMSAds, "CMSAds_Province")%>');
+			</script>
+			<span class="form-error">Obbligatorio</span>
+            <script>
+                function selectAllProvincie(){
+                  jQuery('#CMSAds_Province > option').prop('selected', true);
+                  jQuery('#CMSAds_Province').select2('destroy').find('option').prop('selected', 'selected').end().select2();
+                }
+            </script>
+            <span class="help-text"><a href="#" onclick="selectAllProvincie()">seleziona tutte</a></span>
+		</div>
+	</div>	
+  
+	<div class="grid-x grid-padding-x">
+		<div class="large-2 medium-2 small-4 cell">
+			<label for="CMSAds_Categorie" class="text-right middle">Categoria <i class="fa-duotone fa-list fa-fw"></i></label>
+		</div>
+		<div class="large-4 medium-4 small-8 cell">
+			<select name="CMSAds_Categorie" id="CMSAds_Categorie" multiple class="select2" value="<%=GetFieldValue(dtCMSAds, "CMSAds_Categorie")%>">
+			<!--#include file="/var/cache/CMSCategorie-options.htm"--> 
+			</select>
+			<script type="text/javascript">
+			selectSetMultiple('CMSAds_Categorie', '<%=GetFieldValue(dtCMSAds, "CMSAds_Categorie")%>');
+			</script>
+			<span class="form-error">Obbligatorio</span>
+		</div>
+		<div class="large-2 medium-2 small-4 cell">
+			<label for="CMSAds_Tags" class="text-right middle">Tags <i class="fa-duotone fa-list fa-fw"></i></label>
+		</div>
+		<div class="large-4 medium-4 small-8 cell">
+			<select name="CMSAds_Tags" id="CMSAds_Tags" multiple class="select2" value="<%=GetFieldValue(dtCMSAds, "CMSAds_Tags")%>">
+				<option value=""></option>
+		    <%
+				for (int i = 0; i < dtCMSTags.Rows.Count; i++){
+					Response.Write("<option value=\"" + dtCMSTags.Rows[i]["CMSTags_Ky"].ToString() + "\">" + dtCMSTags.Rows[i]["CMSTags_Titolo"].ToString() + "</option>");
+				}
+				%>
+			</select>
+			<script type="text/javascript">
+				selectSetMultiple('CMSAds_Tags', '<%=GetFieldValue(dtCMSAds, "CMSAds_Tags")%>');
+			</script>
+			<span class="form-error">Obbligatorio</span>
+		</div>
+	</div>	
+
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell text-right">
+  		<label class="large-text-right small-text-left middle" for="CMSAds_Url">Target Url <i class="fa-duotone fa-link fa-fw"></i></label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="CMSAds_Url" id="CMSAds_Url" value="<%=GetFieldValue(dtCMSAds, "CMSAds_Url")%>" size="83" >
+  	</div>
+  </div>
+ 
+	<div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="fotocontenuto" class="large-text-right small-text-left middle">Foto in evidenza</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <p>Le immagini devono essere in formato jpg<br></p>
+      <label for="fotocontenuto" class="button small">Carica immagini</label>
+      <input type="file" class="show-for-sr fileupload" placeholder="Foto slide" id="fotocontenuto" name="fotocontenuto" />
+      <small class="form-error">obbligatorio.</small>
+      <div id="galleryfotocaricate" class="gallery"></div>
+      <script>
+        jQuery(function() {
+          var imagesPreview = function(input, placeToInsertImagePreview) {
+              if (input.files) {
+                  var filesAmount = input.files.length;
+                  jQuery(placeToInsertImagePreview).html("");
+                  for (i = 0; i < filesAmount; i++) {
+                      var reader = new FileReader();
+                      reader.onload = function(event) {
+                          jQuery(jQuery.parseHTML('<img width="150" height="100" hspace="10" vspace="10" style="border:1px solid #000000">')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                      }
+                       reader.readAsDataURL(input.files[i]);
+                  }
+              }
+          };
+          jQuery('#fotocontenuto').on('change', function() {
+              imagesPreview(this, '#galleryfotocaricate');
+          });
+        });
+      </script>
+  	</div>
+  </div>
+  
+	<div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="fotoslide" class="large-text-right small-text-left middle">Anteprime</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+        <% 
+        if (GetFieldValue(dtCMSAds, "CMSAds_Foto").Length>0){
+          Response.Write("<div class=\"thumbnail\"><img src=\"" + GetFieldValue(dtCMSAds, "CMSAds_Foto")  + "\" height=\"150\" width=\"150\"></div>");
+        }
+        %>
+    </div>
+  </div> 

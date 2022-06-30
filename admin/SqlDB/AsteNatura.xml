@@ -1,0 +1,33 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AsteNatura" Type="TABLE">
+    <Keys>
+      <Key Column="AsteNatura_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AsteNatura_Ky" IsNull="N" Type="smallint" />
+      <Field Column="AsteNatura_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AsteNatura_Default" IsNull="Y" Type="bit" />
+      <Field Column="AsteNatura_Icona" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AsteNatura_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AsteNatura_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AsteNatura_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AsteNatura_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AsteNatura_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AsteNatura_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AsteNatura] (
+  [AsteNatura_Ky] smallint IDENTITY(1,1) NOT NULL , 
+  [AsteNatura_Titolo] varchar(200)  NULL , 
+  [AsteNatura_Default] bit  NULL , 
+  [AsteNatura_Icona] varchar(200)  NULL , 
+  [AsteNatura_UserInsert] int  NULL , 
+  [AsteNatura_UserUpdate] int  NULL , 
+  [AsteNatura_UserDelete] int  NULL , 
+  [AsteNatura_DateInsert] datetime  NULL , 
+  [AsteNatura_DateUpdate] datetime  NULL , 
+  [AsteNatura_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[AsteNatura] ADD CONSTRAINT PK_AsteNatura PRIMARY KEY  ([AsteNatura_Ky])
+</SqlScriptCreate>
+</SqlTable>

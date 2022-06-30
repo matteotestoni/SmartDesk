@@ -1,0 +1,35 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ProdottiMateriale" Type="TABLE">
+    <Keys>
+      <Key Column="ProdottiMateriale_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="ProdottiMateriale_Ky" IsNull="N" Type="int" />
+      <Field Column="ProdottiMateriale_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="ProdottiMateriale_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="ProdottiMateriale_Ordine" IsNull="Y" Type="int" />
+      <Field Column="ProdottiMateriale_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="ProdottiMateriale_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="ProdottiMateriale_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="ProdottiMateriale_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiMateriale_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiMateriale_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiMateriale_Default" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[ProdottiMateriale] (
+  [ProdottiMateriale_Ky] int IDENTITY(1,1) NOT NULL , 
+  [ProdottiMateriale_Titolo] varchar(200)  NULL , 
+  [ProdottiMateriale_Descrizione] varchar(MAX)  NULL , 
+  [ProdottiMateriale_Ordine] int  NULL , 
+  [ProdottiMateriale_UserInsert] int  NULL , 
+  [ProdottiMateriale_UserUpdate] int  NULL , 
+  [ProdottiMateriale_UserDelete] int  NULL , 
+  [ProdottiMateriale_DateInsert] datetime  NULL , 
+  [ProdottiMateriale_DateUpdate] datetime  NULL , 
+  [ProdottiMateriale_DateDelete] datetime  NULL , 
+  [ProdottiMateriale_Default] bit  NULL  )
+ALTER TABLE [dbo].[ProdottiMateriale] ADD CONSTRAINT PK_ProdottiMateriale PRIMARY KEY  ([ProdottiMateriale_Ky])
+</SqlScriptCreate>
+</SqlTable>

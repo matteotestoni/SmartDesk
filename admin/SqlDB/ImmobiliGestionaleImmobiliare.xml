@@ -1,0 +1,107 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ImmobiliGestionaleImmobiliare" Type="TABLE">
+    <Keys>
+      <Key Column="info_id" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="agenzia_id" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="agenzia_ragione_sociale" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="agenzia_referente" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="agenzia_iva" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="agenzia_comune" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="agenzia_comune_istat" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="agenzia_provincia" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="agenzia_indirizzo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="agenzia_email" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="agenzia_url" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="agenzia_logo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="agenzia_telefono" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="info_id" IsNull="N" Type="varchar" Lenght="200" />
+      <Field Column="info_agency_code" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="info_deleted" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="info_mq" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="info_price" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="info_age" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="info_ipe" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="info_ipe_unit" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="info_ape" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="info_description" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="info_zona" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="info_comune_istat" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="info_indirizzo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="info_last_editor_time" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="info_categorie_id" IsNull="Y" Type="smallint" />
+      <Field Column="info_categorie_micro_id" IsNull="Y" Type="smallint" />
+      <Field Column="info_url" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="info_latitude" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="info_longitude" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="i18n_description_es" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="i18n_description_en" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="file_allegati_logo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="file_allegati_allegato1_file_path" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="file_allegati_allegato2_file_path" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="info_inserite_info1_valore_assegnato" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="info_inserite_info2_valore_assegnato" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="info_inserite_info3_valore_assegnato" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="info_inserite_info7_valore_assegnato" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Comuni_Ky" IsNull="Y" Type="int" />
+      <Field Column="Province_Ky" IsNull="Y" Type="int" />
+      <Field Column="Regioni_Ky" IsNull="Y" Type="int" />
+      <Field Column="Nazioni_Ky" IsNull="Y" Type="int" />
+      <Field Column="AnnunciCategorie_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="nuovo" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[ImmobiliGestionaleImmobiliare] (
+  [agenzia_id] varchar(200)  NULL , 
+  [agenzia_ragione_sociale] varchar(200)  NULL , 
+  [agenzia_referente] varchar(200)  NULL , 
+  [agenzia_iva] varchar(200)  NULL , 
+  [agenzia_comune] varchar(200)  NULL , 
+  [agenzia_comune_istat] varchar(200)  NULL , 
+  [agenzia_provincia] varchar(200)  NULL , 
+  [agenzia_indirizzo] varchar(200)  NULL , 
+  [agenzia_email] varchar(200)  NULL , 
+  [agenzia_url] varchar(200)  NULL , 
+  [agenzia_logo] varchar(200)  NULL , 
+  [agenzia_telefono] varchar(200)  NULL , 
+  [info_id] varchar(200)  NOT NULL , 
+  [info_agency_code] varchar(200)  NULL , 
+  [info_deleted] varchar(200)  NULL , 
+  [info_mq] varchar(200)  NULL , 
+  [info_price] varchar(200)  NULL , 
+  [info_age] varchar(200)  NULL , 
+  [info_ipe] varchar(200)  NULL , 
+  [info_ipe_unit] varchar(200)  NULL , 
+  [info_ape] varchar(200)  NULL , 
+  [info_description] varchar(MAX)  NULL , 
+  [info_zona] varchar(200)  NULL , 
+  [info_comune_istat] varchar(200)  NULL , 
+  [info_indirizzo] varchar(200)  NULL , 
+  [info_last_editor_time] varchar(200)  NULL , 
+  [info_categorie_id] smallint  NULL , 
+  [info_categorie_micro_id] smallint  NULL , 
+  [info_url] varchar(200)  NULL , 
+  [info_latitude] varchar(200)  NULL , 
+  [info_longitude] varchar(200)  NULL , 
+  [i18n_description_es] varchar(MAX)  NULL , 
+  [i18n_description_en] varchar(MAX)  NULL , 
+  [file_allegati_logo] varchar(200)  NULL , 
+  [file_allegati_allegato1_file_path] varchar(200)  NULL , 
+  [file_allegati_allegato2_file_path] varchar(200)  NULL , 
+  [info_inserite_info1_valore_assegnato] varchar(200)  NULL , 
+  [info_inserite_info2_valore_assegnato] varchar(200)  NULL , 
+  [info_inserite_info3_valore_assegnato] varchar(200)  NULL , 
+  [info_inserite_info7_valore_assegnato] varchar(200)  NULL , 
+  [Comuni_Ky] int  NULL , 
+  [Province_Ky] int  NULL , 
+  [Regioni_Ky] int  NULL , 
+  [Nazioni_Ky] int  NULL , 
+  [AnnunciCategorie_Ky] int  NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [nuovo] bit  NULL  )
+ALTER TABLE [dbo].[ImmobiliGestionaleImmobiliare] ADD CONSTRAINT PK_ImmobiliGestionaleImmobiliare PRIMARY KEY  ([info_id])
+</SqlScriptCreate>
+</SqlTable>

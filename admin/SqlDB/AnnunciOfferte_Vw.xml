@@ -1,0 +1,53 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnnunciOfferte_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="AnnunciOfferte_Ky" IsNull="N" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Ky" IsNull="Y" Type="int" />
+      <Field Column="Aste_Ky" IsNull="Y" Type="int" />
+      <Field Column="AsteEsperimenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="AnnunciOfferte_Data" IsNull="Y" Type="smalldatetime" />
+      <Field Column="AnnunciOfferte_Millisecondi" IsNull="Y" Type="smallint" />
+      <Field Column="AnnunciOfferte_Valore" IsNull="Y" Type="money" />
+      <Field Column="Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Aste_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Annunci_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AsteEsperimenti_Numero" IsNull="Y" Type="int" />
+      <Field Column="Aste_Numero" IsNull="Y" Type="int" />
+      <Field Column="AnnunciOfferte_Ora" IsNull="Y" Type="char" Lenght="8" />
+      <Field Column="AnnunciOfferte_Minuto" IsNull="Y" Type="int" />
+      <Field Column="AnnunciOfferte_Secondi" IsNull="Y" Type="int" />
+      <Field Column="AnnunciOfferte_Proxybid" IsNull="Y" Type="bit" />
+      <Field Column="AsteEsperimenti_DataTermine" IsNull="Y" Type="datetime" />
+      <Field Column="d" IsNull="Y" Type="int" />
+      <Field Column="hh" IsNull="Y" Type="int" />
+      <Field Column="mi" IsNull="Y" Type="int" />
+      <Field Column="ss" IsNull="Y" Type="int" />
+      <Field Column="AsteEsperimenti_PercentualeRibasso" IsNull="Y" Type="float" />
+      <Field Column="AsteProxyBid_Ky" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Numero" IsNull="Y" Type="int" />
+      <Field Column="AsteEsperimentiEsiti_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="AsteEsperimentiEsiti_Icona" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AsteEsperimentiEsiti_Colore" IsNull="Y" Type="varchar" Lenght="50" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.AnnunciOfferte_Vw
+AS
+SELECT        dbo.AnnunciOfferte.AnnunciOfferte_Ky, dbo.AnnunciOfferte.Anagrafiche_Ky, dbo.AnnunciOfferte.Annunci_Ky, dbo.AnnunciOfferte.Aste_Ky, dbo.AnnunciOfferte.AsteEsperimenti_Ky, 
+                         dbo.AnnunciOfferte.AnnunciOfferte_Data, dbo.AnnunciOfferte.AnnunciOfferte_Millisecondi, dbo.AnnunciOfferte.AnnunciOfferte_Valore, dbo.Anagrafiche.Anagrafiche_RagioneSociale, dbo.Aste.Aste_Titolo, 
+                         dbo.Annunci.Annunci_Titolo, dbo.AsteEsperimenti.AsteEsperimenti_Numero, dbo.Aste.Aste_Numero, CONVERT(char(8), dbo.AnnunciOfferte.AnnunciOfferte_Data, 108) AS AnnunciOfferte_Ora, DATEPART(m, 
+                         dbo.AnnunciOfferte.AnnunciOfferte_Data) AS AnnunciOfferte_Minuto, DATEPART(s, dbo.AnnunciOfferte.AnnunciOfferte_Data) AS AnnunciOfferte_Secondi, dbo.AnnunciOfferte.AnnunciOfferte_Proxybid, 
+                         dbo.AsteEsperimenti.AsteEsperimenti_DataTermine, DATEDIFF(d, dbo.AnnunciOfferte.AnnunciOfferte_Data, dbo.AsteEsperimenti.AsteEsperimenti_DataTermine) AS d, DATEDIFF(hh, 
+                         dbo.AnnunciOfferte.AnnunciOfferte_Data, dbo.AsteEsperimenti.AsteEsperimenti_DataTermine) AS hh, DATEDIFF(mi, dbo.AnnunciOfferte.AnnunciOfferte_Data, dbo.AsteEsperimenti.AsteEsperimenti_DataTermine) 
+                         AS mi, DATEDIFF(ss, dbo.AnnunciOfferte.AnnunciOfferte_Data, dbo.AsteEsperimenti.AsteEsperimenti_DataTermine) AS ss, dbo.AsteEsperimenti.AsteEsperimenti_PercentualeRibasso, 
+                         dbo.AnnunciOfferte.AsteProxyBid_Ky, dbo.Annunci.Annunci_Numero, dbo.AsteEsperimentiEsiti.AsteEsperimentiEsiti_Titolo, dbo.AsteEsperimentiEsiti.AsteEsperimentiEsiti_Icona, 
+                         dbo.AsteEsperimentiEsiti.AsteEsperimentiEsiti_Colore
+FROM            dbo.AsteEsperimentiEsiti INNER JOIN
+                         dbo.AsteEsperimenti ON dbo.AsteEsperimentiEsiti.AsteEsperimentiEsiti_Ky = dbo.AsteEsperimenti.AsteEsperimentiEsiti_Ky RIGHT OUTER JOIN
+                         dbo.AnnunciOfferte ON dbo.AsteEsperimenti.AsteEsperimenti_Ky = dbo.AnnunciOfferte.AsteEsperimenti_Ky LEFT OUTER JOIN
+                         dbo.Annunci ON dbo.AnnunciOfferte.Annunci_Ky = dbo.Annunci.Annunci_Ky LEFT OUTER JOIN
+                         dbo.Aste ON dbo.AnnunciOfferte.Aste_Ky = dbo.Aste.Aste_Ky LEFT OUTER JOIN
+                         dbo.Anagrafiche ON dbo.AnnunciOfferte.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky
+</SqlScriptCreate>
+</SqlTable>

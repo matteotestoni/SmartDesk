@@ -1,0 +1,35 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliMarcaRU" Type="TABLE">
+    <Keys>
+      <Key Column="VeicoliMarcaRU_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="VeicoliMarcaRU_Ky" IsNull="N" Type="int" />
+      <Field Column="VeicoliMarca_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliTipo_Ky" IsNull="Y" Type="int" />
+      <Field Column="COSA" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="MARCA" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="VeicoliMarcaRU_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="VeicoliMarcaRU_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="VeicoliMarcaRU_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="VeicoliMarcaRU_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliMarcaRU_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliMarcaRU_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[VeicoliMarcaRU] (
+  [VeicoliMarcaRU_Ky] int IDENTITY(1,1) NOT NULL , 
+  [VeicoliMarca_Ky] int  NULL , 
+  [VeicoliTipo_Ky] int  NULL , 
+  [COSA] varchar(500)  NULL , 
+  [MARCA] varchar(500)  NULL , 
+  [VeicoliMarcaRU_UserInsert] int  NULL , 
+  [VeicoliMarcaRU_UserUpdate] int  NULL , 
+  [VeicoliMarcaRU_UserDelete] int  NULL , 
+  [VeicoliMarcaRU_DateInsert] datetime  NULL , 
+  [VeicoliMarcaRU_DateUpdate] datetime  NULL , 
+  [VeicoliMarcaRU_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[VeicoliMarcaRU] ADD CONSTRAINT PK_VeicoliMarcaRU PRIMARY KEY  ([VeicoliMarcaRU_Ky])
+</SqlScriptCreate>
+</SqlTable>

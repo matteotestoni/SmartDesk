@@ -1,0 +1,139 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Cantieri" Type="TABLE">
+    <Keys>
+      <Key Column="Cantieri_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Cantieri_Ky" IsNull="N" Type="int" />
+      <Field Column="Cantieri_Riferimento" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="CantieriStati_Ky" IsNull="Y" Type="int" />
+      <Field Column="Cantieri_Annuncio" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Cantieri_DataInizioLavori" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Cantieri_DataFineLavori" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Cantieri_Indirizzo" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_CmnKy" IsNull="Y" Type="int" />
+      <Field Column="Cantieri_PrvKy" IsNull="Y" Type="int" />
+      <Field Column="Nazioni_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Cantieri_Visite" IsNull="Y" Type="int" />
+      <Field Column="Cantieri_Inevidenza" IsNull="Y" Type="bit" />
+      <Field Column="Cantieri_VirtualTour" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Video" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Capitolato" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto1" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto1s" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto2" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto2s" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto3" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto3s" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto4" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto4s" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto5" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto5s" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto6" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto6s" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto7" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto7s" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto8" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto8s" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto9" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto9s" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto10" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Foto10s" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_ImportazioneData" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Cantieri_ImportazioneRiferimento" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Cantieri_ImportazioneRiferimentoAgenzia" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Cantieri_PubblicaWEB" IsNull="Y" Type="bit" />
+      <Field Column="Cantieri_fImportato" IsNull="Y" Type="bit" />
+      <Field Column="Cantieri_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Cantieri_Sottotitolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Cantieri_Documento1" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Documento2" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Documento3" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Documento4" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Documento5" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Documento6" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Documento7" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Documento8" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Documento9" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Documento10" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Cantieri_Progetto" IsNull="Y" Type="bit" />
+      <Field Column="Cantieri_Ordine" IsNull="Y" Type="int" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Cantieri_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Cantieri_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Cantieri_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Cantieri_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Cantieri_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Cantieri_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="CoreResponseCode_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Cantieri_RedirectUrl" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Cantieri] (
+  [Cantieri_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Cantieri_Riferimento] varchar(50)  NULL , 
+  [CantieriStati_Ky] int  NULL , 
+  [Cantieri_Annuncio] varchar(MAX)  NULL , 
+  [Cantieri_DataInizioLavori] varchar(100)  NULL , 
+  [Cantieri_DataFineLavori] varchar(100)  NULL , 
+  [Cantieri_Indirizzo] varchar(300)  NULL , 
+  [Cantieri_CmnKy] int  NULL , 
+  [Cantieri_PrvKy] int  NULL , 
+  [Nazioni_Ky] tinyint  NULL , 
+  [Cantieri_Visite] int  NULL , 
+  [Cantieri_Inevidenza] bit  NULL , 
+  [Cantieri_VirtualTour] varchar(300)  NULL , 
+  [Cantieri_Video] varchar(300)  NULL , 
+  [Cantieri_Capitolato] varchar(300)  NULL , 
+  [Cantieri_Foto1] varchar(300)  NULL , 
+  [Cantieri_Foto1s] varchar(300)  NULL , 
+  [Cantieri_Foto2] varchar(300)  NULL , 
+  [Cantieri_Foto2s] varchar(300)  NULL , 
+  [Cantieri_Foto3] varchar(300)  NULL , 
+  [Cantieri_Foto3s] varchar(300)  NULL , 
+  [Cantieri_Foto4] varchar(300)  NULL , 
+  [Cantieri_Foto4s] varchar(300)  NULL , 
+  [Cantieri_Foto5] varchar(300)  NULL , 
+  [Cantieri_Foto5s] varchar(300)  NULL , 
+  [Cantieri_Foto6] varchar(300)  NULL , 
+  [Cantieri_Foto6s] varchar(300)  NULL , 
+  [Cantieri_Foto7] varchar(300)  NULL , 
+  [Cantieri_Foto7s] varchar(300)  NULL , 
+  [Cantieri_Foto8] varchar(300)  NULL , 
+  [Cantieri_Foto8s] varchar(300)  NULL , 
+  [Cantieri_Foto9] varchar(300)  NULL , 
+  [Cantieri_Foto9s] varchar(300)  NULL , 
+  [Cantieri_Foto10] varchar(300)  NULL , 
+  [Cantieri_Foto10s] varchar(300)  NULL , 
+  [Cantieri_ImportazioneData] smalldatetime  NULL , 
+  [Cantieri_ImportazioneRiferimento] varchar(50)  NULL , 
+  [Cantieri_ImportazioneRiferimentoAgenzia] varchar(50)  NULL , 
+  [Cantieri_PubblicaWEB] bit  NULL , 
+  [Cantieri_fImportato] bit  NULL , 
+  [Cantieri_Titolo] varchar(200)  NULL , 
+  [Cantieri_Sottotitolo] varchar(200)  NULL , 
+  [Cantieri_Documento1] varchar(300)  NULL , 
+  [Cantieri_Documento2] varchar(300)  NULL , 
+  [Cantieri_Documento3] varchar(300)  NULL , 
+  [Cantieri_Documento4] varchar(300)  NULL , 
+  [Cantieri_Documento5] varchar(300)  NULL , 
+  [Cantieri_Documento6] varchar(300)  NULL , 
+  [Cantieri_Documento7] varchar(300)  NULL , 
+  [Cantieri_Documento8] varchar(300)  NULL , 
+  [Cantieri_Documento9] varchar(300)  NULL , 
+  [Cantieri_Documento10] varchar(300)  NULL , 
+  [Cantieri_Progetto] bit  NULL , 
+  [Cantieri_Ordine] int  NULL , 
+  [Utenti_Ky] int  NULL , 
+  [Cantieri_UserInsert] int  NULL , 
+  [Cantieri_UserUpdate] int  NULL , 
+  [Cantieri_UserDelete] int  NULL , 
+  [Cantieri_DateInsert] datetime  NULL , 
+  [Cantieri_DateUpdate] datetime  NULL , 
+  [Cantieri_DateDelete] datetime  NULL , 
+  [CoreResponseCode_Ky] smallint  NULL DEFAULT ((200)), 
+  [Cantieri_RedirectUrl] varchar(MAX)  NULL  )
+ALTER TABLE [dbo].[Cantieri] ADD CONSTRAINT PK_Cantieri PRIMARY KEY  ([Cantieri_Ky])
+</SqlScriptCreate>
+</SqlTable>

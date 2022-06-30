@@ -1,0 +1,280 @@
+<div id="schedaazienda">
+	<ul class="tabs" role="tablist" id="azienda-tabs" data-responsive-accordion-tabs="tabs small-accordion medium-tabs large-tabs">
+		<li class="tabs-title is-active" role="presentational"><a href="#tabs-1">Scheda azienda</a></li>
+		<li class="tabs-title" role="presentational"><a href="#tabs-2">Impostazioni documenti</a></li>
+		<li class="tabs-title" role="presentational"><a href="#tabs-3"><i class="fa-duotone fa-image fa-lg fa-fw"></i> Logo</a></li>
+		<li class="tabs-title" role="presentational"><a href="#tabs-4">Email</a></li>
+		<li class="tabs-title" role="presentational"><a href="#tabs-5"><i class="fa-duotone fa-euro-sign fa-lg fa-fw"></i> Pagamenti</a></li>
+	</ul>
+	<div id="contenutotabs">
+  	<div class="tabs-content" data-tabs-content="azienda-tabs">
+  	<section role="tabpanel" aria-hidden="false" class="tabs-panel is-active" id="tabs-1" name="tabs-1">
+			  <div class="grid-x grid-padding-x">
+			  	<div class="large-2 medium-2 small-4 cell">
+			  		<label for="Aziende_Attiva" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Attiva</label>
+			  	</div>
+			  	<div class="large-4 medium-4 small-8 cell">
+			        <input class="switch-input" type="checkbox" name="Aziende_Attiva" id="Aziende_Attiva" value="on" <% if (GetCheckValue("Aziende_Attiva")){ Response.Write("checked");} %> />
+			        <label class="switch-paddle" for="Aziende_Attiva">
+			          <span class="show-for-sr">si</span>
+			          <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+			          <span class="switch-inactive" aria-hidden="true"></span>
+			        </label>
+			  	</div>
+			  	<div class="large-2 medium-2 small-4 cell">
+			  		<label for="Aziende_Default" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Predefinita</label>
+			  	</div>
+			  	<div class="large-4 medium-4 small-8 cell">
+			        <input class="switch-input" type="checkbox" name="Aziende_Default" id="Aziende_Default" value="on" <% if (GetCheckValue("Aziende_Default")){ Response.Write("checked");} %> />
+			        <label class="switch-paddle" for="Aziende_Default">
+			          <span class="show-for-sr">si</span>
+			          <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+			          <span class="switch-inactive" aria-hidden="true"></span>
+			        </label>
+			  	</div>
+			  </div>
+        <div class="grid-x grid-padding-x">
+          <div class="large-2 medium-2 small-4 cell text-right"><label class="large-text-right small-text-left middle" for="Aziende_Ky">Rag. Sociale *</div>
+          <div class="auto cell">
+            <input type="text" name="Aziende_RagioneSociale" id="Aziende_RagioneSociale" value="<%=GetFieldValue("Aziende_RagioneSociale")%>" size="101" required="required" title="Ragione Sociale">
+          </div>
+        </div>
+        <div class="grid-x grid-padding-x">
+          <div class="large-2 medium-2 small-4 cell text-right"><label class="large-text-right small-text-left middle" for="Aziende_Ky">Telefono *</label></div>
+          <div class="large-4 medium-4 small-8 cell">
+            <input type="text" name="Aziende_Telefono" id="Aziende_Telefono" value="<%=GetFieldValue("Aziende_Telefono")%>" size="35" required="required">
+      			<span class="form-error">Obbligatorio</span>
+          </div>
+          <div class="large-2 medium-2 small-4 cell text-right"><label class="large-text-right small-text-left middle" for="Aziende_Ky">FAX</label></div>
+          <div class="large-4 medium-4 small-8 cell"><input type="text" name="Aziende_FAX" id="Aziende_FAX" value="<%=GetFieldValue("Aziende_FAX")%>" size="35"></div>
+        </div>
+        <div class="grid-x grid-padding-x">
+          <div class="large-2 medium-2 small-4 cell text-right"><label class="large-text-right small-text-left middle" for="Aziende_Ky">Partita IVA*</label></div>
+          <div class="large-4 medium-4 small-8 cell">
+            <input type="text" name="Aziende_PartitaIVA" id="Aziende_PartitaIVA" value="<%=GetFieldValue("Aziende_PartitaIVA")%>" size="35">
+          </div>
+          <div class="large-2 medium-2 small-4 cell text-right"><label class="large-text-right small-text-left middle" for="Aziende_Ky">Cod. Fiscale*</div>
+          <div class="large-4 medium-4 small-8 cell"><input type="text" name="Aziende_CodiceFiscale" id="Aziende_CodiceFiscale" value="<%=GetFieldValue("Aziende_CodiceFiscale")%>" size="35"></div>
+        </div>
+        <div class="grid-x grid-padding-x">
+          <div class="large-2 medium-2 small-4 cell text-right"><label class="large-text-right small-text-left middle" for="Aziende_Ky">Numero REA*</label></div>
+          <div class="large-4 medium-4 small-8 cell">
+            <input type="text" name="Aziende_NumeroREA" id="Aziende_NumeroREA" value="<%=GetFieldValue("Aziende_NumeroREA")%>" size="35" required="required">
+      			<span class="form-error">Obbligatorio</span>
+          </div>
+          <div class="large-2 medium-2 small-4 cell text-right"><label class="large-text-right small-text-left middle" for="Aziende_Ky">Sito Web</label></div>
+          <div class="large-4 medium-4 small-8 cell">
+            <input type="text" name="Aziende_SitoWeb" id="Aziende_SitoWeb" value="<%=GetFieldValue("Aziende_SitoWeb")%>" size="35">
+          </div>
+        </div>
+        <div class="grid-x grid-padding-x">
+          <div class="large-2 medium-2 small-4 cell text-right"><label class="large-text-right small-text-left middle" for="Aziende_Codice">Codice</label></div>
+          <div class="large-4 medium-4 small-8 cell">
+            <input type="text" name="Aziende_Codice" id="Aziende_Codice" value="<%=GetFieldValue("Aziende_Codice")%>" size="35" required="required">
+      			<span class="form-error">Obbligatorio</span>
+          </div>
+          <div class="large-2 medium-2 small-4 cell text-right"><label class="large-text-right small-text-left middle" for="Aziende_Ky">Aliquota IVA Predefinita</label></div>
+          <div class="large-4 medium-4 small-8 cell">
+            <select name="AliquoteIVA_Ky" id="AliquoteIVA_Ky" value="<%=GetFieldValue("AliquoteIVA_Ky")%>" required="required">
+              <!--#include file="/var/cache/AliquoteIVA-options.htm"--> 
+            </select>
+      			<span class="form-error">Obbligatorio</span>
+            <script type="text/javascript">
+              selectSet('AliquoteIVA_Ky', '<%=GetFieldValue("AliquoteIVA_Ky")%>');
+            </script>
+          </div>
+        </div>
+  	</section>
+  	<section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-2" name="tabs-2">
+        <div class="grid-x grid-padding-x">
+          <div class="large-2 medium-2 small-4 cell text-right">
+						<label class="large-text-right small-text-left middle" for="Aziende_CAP">Intestazione</label>
+					</div>
+          <div class="auto cell">
+            <textarea name="Aziende_Header" id="Aziende_Header" rows="5" cols="78" class="ckfinder"><%=GetFieldValue("Aziende_Header")%></textarea>
+				    <script type="text/javascript">
+				    CKEDITOR.replace('Aziende_Header',
+				    	{
+				      	filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+				      	filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+				    	});
+			  		CKFinder.setupCKEditor( editor, null, { type: 'Files', currentFolder: '/uploads/foto-aziende/' } );
+				    </script>
+          </div>
+        </div>
+        <hr>
+        <div class="grid-x grid-padding-x">
+          <div class="large-2 medium-2 small-4 cell text-right">
+						<label class="large-text-right small-text-left middle" for="Aziende_Footer">Calce</label>
+					</div>
+          <div class="auto cell">
+            <textarea name="Aziende_Footer" id="Aziende_Footer" rows="5" cols="78" class="ckfinder"><%=GetFieldValue("Aziende_Footer")%></textarea>
+				    <script type="text/javascript">
+				    CKEDITOR.replace('Aziende_Footer',
+				    	{
+				      	filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+				      	filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+				    	});
+			  		CKFinder.setupCKEditor( editor, null, { type: 'Files', currentFolder: '/uploads/foto-aziende/' } );
+				    </script>
+          </div>
+        </div>
+        <hr>
+        <div class="grid-x grid-padding-x">
+          <div class="large-2 medium-2 small-4 cell text-right">
+						<label class="large-text-right small-text-left middle" for="Aziende_BancaAppoggio">Banca D'appoggio</label>
+					</div>
+          <div class="auto cell">
+            <textarea name="Aziende_BancaAppoggio" id="Aziende_BancaAppoggio" rows="5" cols="78" class="ckfinder"><%=GetFieldValue("Aziende_BancaAppoggio")%></textarea>
+				    <script type="text/javascript">
+				    CKEDITOR.replace('Aziende_BancaAppoggio',
+				    	{
+				      	filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+				      	filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+				    	});
+			  		CKFinder.setupCKEditor( editor, null, { type: 'Files', currentFolder: '/uploads/foto-aziende/' } );
+				    </script>
+          </div>
+        </div>
+	</section>
+	<section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-3" name="tabs-3">
+    <%
+    if (GetFieldValue("Aziende_Logo").Length>0){
+      Response.Write("<div class=\"miniatura\"><a href=\"" + GetFieldValue("Aziende_Logo") + "\" id=\"f" + i + "\" target=\"_blank\"><img src=\"" + GetFieldValue("Aziende_Logo") + "\" border=\"0\" width=\"67\" height=\"50\" /></a><br /><a href=\"/admin/app/core/crud/elimina-foto-azienda.aspx?Aziende_Ky=" + GetFieldValue("Aziende_Ky") + "&sorgente=scheda-azienda\"><i class=\"fa-duotone fa-trash-alt fa-fw\"></i></a></div>");
+    }
+    %>
+    <div class="caricadocumento">
+      Seleziona una foto sul tuo computer da associare all'azienda<br>
+      <label for="foto" class="button small">Carica immagini</label>
+      <input type="file" class="show-for-sr fileupload" name="foto" id="foto" multiple /><br /><br />
+      <div id="galleryfotocaricate" class="gallery"></div>
+      <script>
+        jQuery(function() {
+          var imagesPreview = function(input, placeToInsertImagePreview) {
+              if (input.files) {
+                  var filesAmount = input.files.length;
+                  jQuery(placeToInsertImagePreview).html("");
+                  for (i = 0; i < filesAmount; i++) {
+                      var reader = new FileReader();
+                      reader.onload = function(event) {
+                          jQuery(jQuery.parseHTML('<img width="150" height="100" hspace="10" vspace="10" style="border:1px solid #000000">')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                      }
+                       reader.readAsDataURL(input.files[i]);
+                  }
+              }
+          };
+          jQuery('#foto').on('change', function() {
+              imagesPreview(this, '#galleryfotocaricate');
+          });
+        });
+      </script>
+    </div>
+	</section>
+	<section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-4" name="tabs-4">
+        <div class="grid-x grid-padding-x">
+          <div class="large-2 medium-2 small-4 cell text-right">
+						<label class="large-text-right small-text-left middle" for="Aziende_Email">Mittente Email</label>
+					</div>
+          <div class="auto cell">
+            <input type="text" name="Aziende_Email" id="Aziende_Email" value="<%=GetFieldValue("Aziende_Email")%>" size="95" required="required" pattern="email">
+            <small class="form-error">Richiesto un indirizzo email</small>
+          </div>
+        </div>
+        <hr>
+        <div class="grid-x grid-padding-x">
+          <div class="large-2 medium-2 small-4 cell text-right">
+						<label class="large-text-right small-text-left middle" for="Aziende_FirmaEmail">Firma Email</label>
+					</div>
+          <div class="auto cell">
+            <textarea name="Aziende_FirmaEmail" id="Aziende_FirmaEmail" rows="15" cols="65" class="ckfinder"><%=GetFieldValue("Aziende_FirmaEmail")%></textarea>
+				    <script type="text/javascript">
+				    CKEDITOR.replace('Aziende_FirmaEmail',
+				    	{
+				      	filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+				      	filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+				    	});
+			  		CKFinder.setupCKEditor( editor, null, { type: 'Files', currentFolder: '/uploads/foto-aziende/' } );
+				    </script>
+          </div>
+        </div>
+        <hr>
+        <div class="grid-x grid-padding-x">
+          <div class="large-2 medium-2 small-4 cell text-right">
+						<label class="large-text-right small-text-left middle" for="Aziende_ServerSMTP">Server SMTP</label>
+					</div>
+          <div class="auto cell">
+            <input type="text" name="Aziende_ServerSMTP" id="Aziende_ServerSMTP" value="<%=GetFieldValue("Aziende_ServerSMTP")%>" size="35" required="required">
+    				<span class="form-error">Obbligatorio</span>
+          </div>
+          <div class="large-2 medium-2 small-4 cell text-right">
+						<label class="large-text-right small-text-left middle" for="Aziende_ServerSMTPPorta">Porta Server SMTP</label>
+					</div>
+          <div class="auto cell">
+            <input type="text" name="Aziende_ServerSMTPPorta" id="Aziende_ServerSMTPPorta" value="<%=GetFieldValue("Aziende_ServerSMTPPorta")%>" size="35" required="required">
+    				<span class="form-error">Obbligatorio</span>
+          </div>
+        </div>
+        <div class="grid-x grid-padding-x">
+          <div class="large-2 medium-2 small-4 cell text-right">
+						<label class="large-text-right small-text-left middle" for="Aziende_ServerSMTPUtente">Nome utente SMTP</label>
+					</div>
+          <div class="auto cell">
+            <input type="text" name="Aziende_ServerSMTPUtente" id="Aziende_ServerSMTPUtente" value="<%=GetFieldValue("Aziende_ServerSMTPUtente")%>" size="35" required="required">
+    				<span class="form-error">Obbligatorio</span>
+          </div>
+          <div class="large-2 medium-2 small-4 cell text-right">
+						<label class="large-text-right small-text-left middle" for="Aziende_ServerSMTPPassword">Password SMTP</label>
+					</div>
+          <div class="auto cell">
+            <input type="text" name="Aziende_ServerSMTPPassword" id="Aziende_ServerSMTPPassword" value="<%=GetFieldValue("Aziende_ServerSMTPPassword")%>" size="35">
+    				<span class="form-error">Obbligatorio</span>
+          </div>
+        </div>
+        <div class="grid-x grid-padding-x">
+          <div class="large-2 medium-2 small-4 cell text-right">
+						<label class="large-text-right small-text-left middle" for="Aziende_ServerSMTPSSL">Autenticazione SSL</label>
+					</div>
+          <div class="auto cell">
+            <input type="checkbox" name="Aziende_ServerSMTPSSL" id="Aziende_ServerSMTPSSL" value="on" <% if (GetCheckValue("Aziende_ServerSMTPSSL")){ Response.Write("checked");} %> />
+    				<span class="form-error">Obbligatorio</span>
+          </div>
+        </div>
+  	</section>
+  	<section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-5" name="tabs-5">
+          <div class="grid-x grid-padding-x">
+            <div class="large-2 medium-2 small-4 cell text-right">
+  						<label class="large-text-right small-text-left middle" for="Aziende_PagamentiScaduti">Testo Promemoria Pagamenti scaduti</label>
+  					</div>
+          	<div class="auto cell">
+              <textarea name="Aziende_PagamentiScaduti" id="Aziende_PagamentiScaduti" rows="12" cols="95" class="ckfinder"><%=GetFieldValue("Aziende_PagamentiScaduti")%></textarea>
+					    <script type="text/javascript">
+					    CKEDITOR.replace('Aziende_PagamentiScaduti',
+					    	{
+					      	filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+					      	filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+					    	});
+				  		CKFinder.setupCKEditor( editor, null, { type: 'Files', currentFolder: '/uploads/foto-aziende/' } );
+					    </script>
+            </div>
+          </div>
+          <hr>
+          <div class="grid-x grid-padding-x">
+            <div class="large-2 medium-2 small-4 cell text-right">
+  						<label class="large-text-right small-text-left middle" for="Aziende_PagamentiFuturi">Testo Promemoria Pagamenti futuri</label>
+  					</div>
+          	<div class="auto cell">
+              <textarea name="Aziende_PagamentiFuturi" id="Aziende_PagamentiFuturi" rows="12" cols="95" class="ckfinder"><%=GetFieldValue("Aziende_PagamentiFuturi")%></textarea>
+					    <script type="text/javascript">
+					    CKEDITOR.replace('Aziende_PagamentiFuturi',
+					    	{
+					      	filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+					      	filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+					    	});
+				  		CKFinder.setupCKEditor( editor, null, { type: 'Files', currentFolder: '/uploads/foto-aziende/' } );
+					    </script>
+            </div>
+          </div>
+  	</section>
+	 </div>
+  </div>
+</div>

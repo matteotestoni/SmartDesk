@@ -1,0 +1,39 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ImmobiliDomandeRisposte" Type="TABLE">
+    <Keys>
+      <Key Column="ImmobiliDomandeRisposte_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="ImmobiliDomandeRisposte_Ky" IsNull="N" Type="int" />
+      <Field Column="ImmobiliDomandeRisposte_Descrizione" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="Immobili_Ky" IsNull="Y" Type="int" />
+      <Field Column="ImmobiliDomandeRisposte_Email" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="ImmobiliDomandeRisposte_Tipo" IsNull="Y" Type="smallint" />
+      <Field Column="ImmobiliDomandeRisposte_Data" IsNull="Y" Type="datetime" />
+      <Field Column="ImmobiliDomandeRisposte_Pubblica" IsNull="Y" Type="bit" />
+      <Field Column="ImmobiliDomandeRisposte_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="ImmobiliDomandeRisposte_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="ImmobiliDomandeRisposte_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="ImmobiliDomandeRisposte_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="ImmobiliDomandeRisposte_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="ImmobiliDomandeRisposte_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[ImmobiliDomandeRisposte] (
+  [ImmobiliDomandeRisposte_Ky] int IDENTITY(1,1) NOT NULL , 
+  [ImmobiliDomandeRisposte_Descrizione] varchar(500)  NULL , 
+  [Immobili_Ky] int  NULL , 
+  [ImmobiliDomandeRisposte_Email] varchar(100)  NULL , 
+  [ImmobiliDomandeRisposte_Tipo] smallint  NULL , 
+  [ImmobiliDomandeRisposte_Data] datetime  NULL , 
+  [ImmobiliDomandeRisposte_Pubblica] bit  NULL , 
+  [ImmobiliDomandeRisposte_UserInsert] int  NULL , 
+  [ImmobiliDomandeRisposte_UserUpdate] int  NULL , 
+  [ImmobiliDomandeRisposte_UserDelete] int  NULL , 
+  [ImmobiliDomandeRisposte_DateInsert] datetime  NULL , 
+  [ImmobiliDomandeRisposte_DateUpdate] datetime  NULL , 
+  [ImmobiliDomandeRisposte_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[ImmobiliDomandeRisposte] ADD CONSTRAINT PK_ImmobiliDomandeRisposte PRIMARY KEY  ([ImmobiliDomandeRisposte_Ky])
+</SqlScriptCreate>
+</SqlTable>

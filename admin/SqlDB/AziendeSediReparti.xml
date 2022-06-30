@@ -1,0 +1,37 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AziendeSediReparti" Type="TABLE">
+    <Keys>
+      <Key Column="AziendeSediReparti_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AziendeSediReparti_Ky" IsNull="N" Type="int" />
+      <Field Column="Aziende_Ky" IsNull="Y" Type="int" />
+      <Field Column="AziendeSedi_Ky" IsNull="Y" Type="int" />
+      <Field Column="AziendeSediReparti_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AziendeSediReparti_Attivo" IsNull="Y" Type="bit" />
+      <Field Column="AziendeSediReparti_Default" IsNull="Y" Type="bit" />
+      <Field Column="AziendeSediReparti_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AziendeSediReparti_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AziendeSediReparti_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AziendeSediReparti_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AziendeSediReparti_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AziendeSediReparti_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AziendeSediReparti] (
+  [AziendeSediReparti_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Aziende_Ky] int  NULL , 
+  [AziendeSedi_Ky] int  NULL , 
+  [AziendeSediReparti_Titolo] varchar(200)  NULL , 
+  [AziendeSediReparti_Attivo] bit  NULL DEFAULT ((1)), 
+  [AziendeSediReparti_Default] bit  NULL , 
+  [AziendeSediReparti_UserInsert] int  NULL , 
+  [AziendeSediReparti_UserUpdate] int  NULL , 
+  [AziendeSediReparti_UserDelete] int  NULL , 
+  [AziendeSediReparti_DateInsert] datetime  NULL , 
+  [AziendeSediReparti_DateUpdate] datetime  NULL , 
+  [AziendeSediReparti_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[AziendeSediReparti] ADD CONSTRAINT PK_AziendeSediReparti PRIMARY KEY  ([AziendeSediReparti_Ky])
+</SqlScriptCreate>
+</SqlTable>

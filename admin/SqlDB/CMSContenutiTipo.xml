@@ -1,0 +1,31 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CMSContenutiTipo" Type="TABLE">
+    <Keys>
+      <Key Column="CMSContenutiTipo_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CMSContenutiTipo_Ky" IsNull="N" Type="smallint" />
+      <Field Column="CMSContenutiTipo_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CMSContenutiTipo_UrlKey" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSContenutiTipo_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CMSContenutiTipo_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CMSContenutiTipo_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CMSContenutiTipo_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CMSContenutiTipo_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CMSContenutiTipo_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CMSContenutiTipo] (
+  [CMSContenutiTipo_Ky] smallint IDENTITY(1,1) NOT NULL , 
+  [CMSContenutiTipo_Titolo] varchar(100)  NULL , 
+  [CMSContenutiTipo_UrlKey] varchar(200)  NULL , 
+  [CMSContenutiTipo_UserInsert] int  NULL , 
+  [CMSContenutiTipo_UserUpdate] int  NULL , 
+  [CMSContenutiTipo_UserDelete] int  NULL , 
+  [CMSContenutiTipo_DateInsert] datetime  NULL , 
+  [CMSContenutiTipo_DateUpdate] datetime  NULL , 
+  [CMSContenutiTipo_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[CMSContenutiTipo] ADD CONSTRAINT PK_CMSContenutiTipo PRIMARY KEY  ([CMSContenutiTipo_Ky])
+</SqlScriptCreate>
+</SqlTable>

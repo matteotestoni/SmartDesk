@@ -1,0 +1,35 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ProdottiMontaggio" Type="TABLE">
+    <Keys>
+      <Key Column="ProdottiMontaggio_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="ProdottiMontaggio_Ky" IsNull="N" Type="int" />
+      <Field Column="ProdottiMontaggio_Titolo" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="ProdottiMontaggio_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="ProdottiMontaggio_Ordine" IsNull="Y" Type="int" />
+      <Field Column="ProdottiMontaggio_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="ProdottiMontaggio_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="ProdottiMontaggio_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="ProdottiMontaggio_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiMontaggio_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiMontaggio_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiMontaggio_Default" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[ProdottiMontaggio] (
+  [ProdottiMontaggio_Ky] int IDENTITY(1,1) NOT NULL , 
+  [ProdottiMontaggio_Titolo] varchar(50)  NULL , 
+  [ProdottiMontaggio_Descrizione] varchar(100)  NULL , 
+  [ProdottiMontaggio_Ordine] int  NULL , 
+  [ProdottiMontaggio_UserInsert] int  NULL , 
+  [ProdottiMontaggio_UserUpdate] int  NULL , 
+  [ProdottiMontaggio_UserDelete] int  NULL , 
+  [ProdottiMontaggio_DateInsert] datetime  NULL , 
+  [ProdottiMontaggio_DateUpdate] datetime  NULL , 
+  [ProdottiMontaggio_DateDelete] datetime  NULL , 
+  [ProdottiMontaggio_Default] bit  NULL  )
+ALTER TABLE [dbo].[ProdottiMontaggio] ADD CONSTRAINT PK_ProdottiMontaggio PRIMARY KEY  ([ProdottiMontaggio_Ky])
+</SqlScriptCreate>
+</SqlTable>

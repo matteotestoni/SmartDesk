@@ -1,0 +1,54 @@
+<div id="schedaaziendesedi">
+      <div class="grid-x grid-padding-x">
+        <div class="large-2 medium-2 small-4 cell text-right">
+    			<label class="large-text-right small-text-left middle" for="AziendeSedi_Nome">Nome <i class="fa-duotone fa-user fa-fw"></i></label>
+    		</div>
+        <div class="auto cell">
+    			<input type="text" name="AziendeSedi_Nome" id="AziendeSedi_Nome" value="<%=GetFieldValue(dtAziendeSedi, "AziendeSedi_Nome")%>" size="35">
+    		</div>
+    	</div>
+      <div class="grid-x grid-padding-x">
+        <div class="large-2 medium-2 small-4 cell text-right">
+    			<label class="large-text-right small-text-left middle" for="AziendeSedi_Indirizzo">Indirizzo <i class="fa-duotone fa-location-dot fa-fw"></i></label>
+    		</div>
+        <div class="auto cell">
+    			<input type="text" name="AziendeSedi_Indirizzo" id="AziendeSedi_Indirizzo" value="<%=GetFieldValue(dtAziendeSedi, "AziendeSedi_Indirizzo")%>" size="35">
+    		</div>
+    	</div>
+      <div class="grid-x grid-padding-x">
+        <div class="large-2 medium-2 small-4 cell text-right">
+    			<label class="large-text-right small-text-left middle" for="AziendeSedi_CAP">CAP <i class="fa-duotone fa-location-dot fa-fw"></i></label>
+    		</div>
+        <div class="cell shrink">
+          <input type="text" name="AziendeSedi_CAP" id="AziendeSedi_CAP" value="<%=GetFieldValue(dtAziendeSedi, "AziendeSedi_CAP")%>" size="5">
+    		</div>
+        <div class="cell shrink">
+          <label class="large-text-right small-text-left middle" for="AziendeSedi_Comune">Comune <i class="fa-duotone fa-location-dot fa-fw"></i></label>
+    		</div>
+        <div class="auto cell">
+          <input type="text" name="AziendeSedi_Comune" id="AziendeSedi_Comune" value="<%=GetFieldValue(dtAziendeSedi, "AziendeSedi_Comune")%>" size="25">
+    		</div>
+        <div class="auto cell">
+          <label class="large-text-right small-text-left middle" for="AziendeSedi_Provincia">Prov. <i class="fa-duotone fa-location-dot fa-fw"></i></label>
+    		</div>
+        <div class="cell shrink">
+          <input type="text" name="AziendeSedi_Provincia" id="AziendeSedi_Provincia" value="<%=GetFieldValue(dtAziendeSedi, "AziendeSedi_Provincia")%>" size="2">
+        </div>
+      </div>
+
+
+      <div class="grid-x grid-padding-x">
+        <div class="large-2 medium-2 small-4 cell text-right">
+    			<label class="large-text-right small-text-left middle" for="AziendeSedi_Codice">Codice gestionale</label>
+    		</div>
+        <div class="auto cell">
+          <input type="text" name="AziendeSedi_Codice" id="AziendeSedi_Codice" value="<%=GetFieldValue(dtAziendeSedi, "AziendeSedi_Codice")%>" size="5">
+    		</div>
+        <div class="large-2 medium-2 small-4 cell text-right">
+          <label class="large-text-right small-text-left middle" for="AziendeSedi_Telefono">Telefono <i class="fa-duotone fa-phone fa-fw"></i></label>
+    		</div>
+        <div class="auto cell">
+          <input type="text" name="AziendeSedi_Telefono" id="AziendeSedi_Telefono" value="<%=GetFieldValue(dtAziendeSedi, "AziendeSedi_Telefono")%>" size="25">
+    		</div>
+      </div>
+</div>

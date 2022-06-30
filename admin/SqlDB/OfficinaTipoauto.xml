@@ -1,0 +1,37 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="OfficinaTipoauto" Type="TABLE">
+    <Keys>
+      <Key Column="OfficinaTipoauto_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="OfficinaTipoauto_Ky" IsNull="N" Type="int" />
+      <Field Column="OfficinaTipoauto_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="OfficinaTipoauto_Colore" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="OfficinaTipoauto_Icona" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="OfficinaTipoauto_Ordine" IsNull="Y" Type="int" />
+      <Field Column="OfficinaTipoauto_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="OfficinaTipoauto_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="OfficinaTipoauto_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="OfficinaTipoauto_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="OfficinaTipoauto_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="OfficinaTipoauto_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="OfficinaTipoauto_EmailResponsabili" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[OfficinaTipoauto] (
+  [OfficinaTipoauto_Ky] int IDENTITY(1,1) NOT NULL , 
+  [OfficinaTipoauto_Titolo] varchar(100)  NULL , 
+  [OfficinaTipoauto_Colore] varchar(100)  NULL , 
+  [OfficinaTipoauto_Icona] varchar(200)  NULL , 
+  [OfficinaTipoauto_Ordine] int  NULL , 
+  [OfficinaTipoauto_UserInsert] int  NULL , 
+  [OfficinaTipoauto_UserUpdate] int  NULL , 
+  [OfficinaTipoauto_UserDelete] int  NULL , 
+  [OfficinaTipoauto_DateInsert] datetime  NULL , 
+  [OfficinaTipoauto_DateUpdate] datetime  NULL , 
+  [OfficinaTipoauto_DateDelete] datetime  NULL , 
+  [OfficinaTipoauto_EmailResponsabili] varchar(MAX)  NULL  )
+ALTER TABLE [dbo].[OfficinaTipoauto] ADD CONSTRAINT PK_OfficinaTipoauto PRIMARY KEY  ([OfficinaTipoauto_Ky])
+</SqlScriptCreate>
+</SqlTable>

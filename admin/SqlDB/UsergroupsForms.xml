@@ -1,0 +1,31 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="UsergroupsForms" Type="TABLE">
+    <Keys>
+      <Key Column="UsergroupsForms_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="UsergroupsForms_Ky" IsNull="N" Type="int" />
+      <Field Column="CoreForms_Ky" IsNull="Y" Type="int" />
+      <Field Column="UtentiGruppi_Ky" IsNull="Y" Type="int" />
+      <Field Column="UsergroupsForms_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="UsergroupsForms_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="UsergroupsForms_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="UsergroupsForms_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="UsergroupsForms_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="UsergroupsForms_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[UsergroupsForms] (
+  [UsergroupsForms_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CoreForms_Ky] int  NULL , 
+  [UtentiGruppi_Ky] int  NULL , 
+  [UsergroupsForms_UserInsert] int  NULL , 
+  [UsergroupsForms_UserUpdate] int  NULL , 
+  [UsergroupsForms_UserDelete] int  NULL , 
+  [UsergroupsForms_DateInsert] datetime  NULL , 
+  [UsergroupsForms_DateUpdate] datetime  NULL , 
+  [UsergroupsForms_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[UsergroupsForms] ADD CONSTRAINT PK_LocalFormsGruppi PRIMARY KEY  ([UsergroupsForms_Ky])
+</SqlScriptCreate>
+</SqlTable>

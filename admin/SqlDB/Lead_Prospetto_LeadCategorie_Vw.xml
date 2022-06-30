@@ -1,0 +1,22 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Lead_Prospetto_LeadCategorie_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Lead_Ky" IsNull="Y" Type="int" />
+      <Field Column="conteggio" IsNull="Y" Type="int" />
+      <Field Column="mese" IsNull="Y" Type="int" />
+      <Field Column="anno" IsNull="Y" Type="int" />
+      <Field Column="LeadCategorie_Ky" IsNull="Y" Type="int" />
+      <Field Column="LeadCategorie_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+
+CREATE VIEW [dbo].[Lead_Prospetto_LeadCategorie_Vw]
+AS
+SELECT        MAX(dbo.Lead.Lead_Ky) AS Lead_Ky, COUNT(dbo.Lead.Lead_Ky) AS conteggio, MONTH(dbo.Lead.Lead_Data) AS mese, YEAR(dbo.Lead.Lead_Data) AS anno, dbo.Lead.LeadCategorie_Ky, 
+                         dbo.LeadCategorie.LeadCategorie_Titolo
+FROM            dbo.Lead INNER JOIN LeadCategorie ON dbo.Lead.LeadCategorie_Ky = dbo.LeadCategorie.LeadCategorie_Ky
+GROUP BY YEAR(dbo.Lead.Lead_Data), MONTH(dbo.Lead.Lead_Data), dbo.LeadCategorie.LeadCategorie_Titolo, dbo.Lead.LeadCategorie_Ky
+</SqlScriptCreate>
+</SqlTable>

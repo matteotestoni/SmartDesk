@@ -1,0 +1,59 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ImmobiliValutazioni" Type="TABLE">
+    <Keys>
+      <Key Column="ImmobiliValutazioni_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="ImmobiliValutazioni_Ky" IsNull="N" Type="int" />
+      <Field Column="ImmobiliCategoria_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="ImmobiliTipologia_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="ImmobiliSottotipologia_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Immobili_Annuncio" IsNull="Y" Type="varchar" Lenght="1500" />
+      <Field Column="Immobili_Mq" IsNull="Y" Type="money" />
+      <Field Column="Immobili_Valore" IsNull="Y" Type="money" />
+      <Field Column="Immobili_CmnKy" IsNull="Y" Type="smallint" />
+      <Field Column="ImmobiliZona_Ky" IsNull="Y" Type="int" />
+      <Field Column="Immobili_PrvKy" IsNull="Y" Type="tinyint" />
+      <Field Column="Nazioni_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Immobili_Ky" IsNull="Y" Type="int" />
+      <Field Column="Utenti_InsertKy" IsNull="Y" Type="int" />
+      <Field Column="Utenti_InsertDt" IsNull="Y" Type="datetime" />
+      <Field Column="Utenti_UpdateKy" IsNull="Y" Type="int" />
+      <Field Column="Utenti_UpdateDt" IsNull="Y" Type="datetime" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="ImmobiliValutazioni_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="ImmobiliValutazioni_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="ImmobiliValutazioni_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="ImmobiliValutazioni_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="ImmobiliValutazioni_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="ImmobiliValutazioni_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[ImmobiliValutazioni] (
+  [ImmobiliValutazioni_Ky] int IDENTITY(1,1) NOT NULL , 
+  [ImmobiliCategoria_Ky] tinyint  NULL , 
+  [ImmobiliTipologia_Ky] tinyint  NULL , 
+  [ImmobiliSottotipologia_Ky] tinyint  NULL , 
+  [Immobili_Annuncio] varchar(1500)  NULL , 
+  [Immobili_Mq] money  NULL DEFAULT ((0)), 
+  [Immobili_Valore] money  NULL DEFAULT ((0)), 
+  [Immobili_CmnKy] smallint  NULL , 
+  [ImmobiliZona_Ky] int  NULL , 
+  [Immobili_PrvKy] tinyint  NULL , 
+  [Nazioni_Ky] tinyint  NULL , 
+  [Immobili_Ky] int  NULL , 
+  [Utenti_InsertKy] int  NULL , 
+  [Utenti_InsertDt] datetime  NULL DEFAULT (getdate()), 
+  [Utenti_UpdateKy] int  NULL , 
+  [Utenti_UpdateDt] datetime  NULL DEFAULT (getdate()), 
+  [Utenti_Ky] int  NULL , 
+  [ImmobiliValutazioni_UserInsert] int  NULL , 
+  [ImmobiliValutazioni_UserUpdate] int  NULL , 
+  [ImmobiliValutazioni_UserDelete] int  NULL , 
+  [ImmobiliValutazioni_DateInsert] datetime  NULL , 
+  [ImmobiliValutazioni_DateUpdate] datetime  NULL , 
+  [ImmobiliValutazioni_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[ImmobiliValutazioni] ADD CONSTRAINT PK_ImmobiliValutazioni PRIMARY KEY  ([ImmobiliValutazioni_Ky])
+</SqlScriptCreate>
+</SqlTable>

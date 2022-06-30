@@ -1,0 +1,98 @@
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell text-right">
+		<label for="OpportunitaStati_Titolo" class="large-text-right small-text-left middle">Titolo</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="OpportunitaStati_Titolo" id="OpportunitaStati_Titolo" placeholder="Titolo" title="Titolo" required="required" value="<%=GetFieldValue(dtOpportunitaStati, "OpportunitaStati_Titolo")%>" size="100" maxlength="100">
+   	<span class="form-error">Obbligatorio.</span>
+	</div>
+</div>        
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell text-right">
+		<label for="OpportunitaStati_Ordine" class="large-text-right small-text-left middle">Ordine</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="OpportunitaStati_Ordine" id="OpportunitaStati_Ordine" placeholder="Ordine" title="Ordine" required="required" value="<%=GetFieldValue(dtOpportunitaStati, "OpportunitaStati_Ordine")%>" size="100" maxlength="100">
+   	<span class="form-error">Obbligatorio.</span>
+	</div>
+</div>        
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell text-right">
+		<label for="OpportunitaStati_Icona" class="large-text-right small-text-left middle">Icona</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="OpportunitaStati_Icona" id="OpportunitaStati_Icona" placeholder="Icona" title="Icona" required="required" value="<%=GetFieldValue(dtOpportunitaStati, "OpportunitaStati_Icona")%>" size="100" maxlength="100">
+   	<span class="form-error">Obbligatorio.</span>
+	</div>
+</div>        
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell text-right">
+		<label for="OpportunitaStati_Probabilita" class="large-text-right small-text-left middle">Probabilit&agrave;</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <select name="OpportunitaStati_Probabilita" id="OpportunitaStati_Probabilita" required="required" value="<%=GetFieldValue(dtOpportunitaStati, "OpportunitaStati_Probabilita")%>">
+      <option value="0">0%</option>
+      <option value="10">10%</option>
+      <option value="20">20%</option>
+      <option value="30">30%</option>
+      <option value="40">40%</option>
+      <option value="50">50%</option>
+      <option value="60">60%</option>
+      <option value="70">70%</option>
+      <option value="80">80%</option>
+      <option value="90">90%</option>
+      <option value="100">100%</option>
+    </select>
+    <span class="form-error">Obbligatorio.</span>
+    <script type="text/javascript">
+      selectSet('OpportunitaStati_Probabilita', '<%=GetFieldValue(dtOpportunitaStati, "OpportunitaStati_Probabilita")%>');
+    </script>
+   	<span class="form-error">Obbligatorio.</span>
+	</div>
+</div>        
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell text-right">
+		<label class="large-text-right small-text-left middle" for="OpportunitaStati_Colore">Colore<i class="fa-duotone fa-paint-brush fa-fw"></i></label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="color" name="OpportunitaStati_Colore" id="OpportunitaStati_Colore" placeholder="Colore" title="Colore" required="required" value="<%=GetFieldValue(dtOpportunitaStati, "OpportunitaStati_Colore")%>" size="10" maxlength="10">
+    <span class="form-error">Obbligatorio.</span>
+	</div>
+</div>  
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="OpportunitaStati_Aperta" class="text-right middle">Aperta</label>
+  </div>
+	<div class="large-10 medium-9 small-8 cell">
+		<div class="switch tiny">                                         
+      <input class="switch-input" type="checkbox" name="OpportunitaStati_Aperta" id="OpportunitaStati_Aperta" value="on" <% if (GetCheckValue(dtOpportunitaStati, "OpportunitaStati_Aperta")){ Response.Write("checked");} %> />
+      <label class="switch-paddle" for="OpportunitaStati_Aperta">
+        <span class="show-for-sr">Aperta</span>
+        <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+        <span class="switch-inactive" aria-hidden="true"></span>
+      </label>
+    </div> 
+	</div>
+</div>	
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="OpportunitaStati_Chiusa" class="text-right middle">Chiusa</label>
+  </div>
+	<div class="large-10 medium-9 small-8 cell">
+		<div class="switch tiny">                                         
+      <input class="switch-input" type="checkbox" name="OpportunitaStati_Chiusa" id="OpportunitaStati_Chiusa" value="on" <% if (GetCheckValue(dtOpportunitaStati, "OpportunitaStati_Chiusa")){ Response.Write("checked");} %> />
+      <label class="switch-paddle" for="OpportunitaStati_Chiusa">
+        <span class="show-for-sr">Chiusa</span>
+        <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+        <span class="switch-inactive" aria-hidden="true"></span>
+      </label>
+    </div> 
+	</div>
+</div>	
+      

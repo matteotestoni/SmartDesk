@@ -1,0 +1,11 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ImmobiliGestionaleImmobiliareMicrocategorie" Type="TABLE">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="categorie_micro_id" IsNull="Y" Type="smallint" />
+      <Field Column="categorie_id" IsNull="Y" Type="smallint" />
+      <Field Column="descrizione" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnnunciCategorie_Ky" IsNull="Y" Type="smallint" />
+    </Fields>
+  </Tables>
+</SqlTable>

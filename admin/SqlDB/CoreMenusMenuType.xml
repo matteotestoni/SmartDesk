@@ -1,0 +1,29 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CoreMenusMenuType" Type="TABLE">
+    <Keys>
+      <Key Column="CoreMenusMenuType_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CoreMenusMenuType_Ky" IsNull="N" Type="smallint" />
+      <Field Column="CoreMenusMenuType_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreMenusMenuType_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CoreMenusMenuType_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CoreMenusMenuType_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CoreMenusMenuType_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CoreMenusMenuType_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CoreMenusMenuType_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CoreMenusMenuType] (
+  [CoreMenusMenuType_Ky] smallint IDENTITY(1,1) NOT NULL , 
+  [CoreMenusMenuType_Title] varchar(200)  NULL , 
+  [CoreMenusMenuType_UserInsert] int  NULL , 
+  [CoreMenusMenuType_UserUpdate] int  NULL , 
+  [CoreMenusMenuType_UserDelete] int  NULL , 
+  [CoreMenusMenuType_DateInsert] datetime  NULL , 
+  [CoreMenusMenuType_DateUpdate] datetime  NULL , 
+  [CoreMenusMenuType_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[CoreMenusMenuType] ADD CONSTRAINT PK_CoreMenusMenuType PRIMARY KEY  ([CoreMenusMenuType_Ky])
+</SqlScriptCreate>
+</SqlTable>

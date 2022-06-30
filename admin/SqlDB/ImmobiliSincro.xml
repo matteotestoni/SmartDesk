@@ -1,0 +1,211 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ImmobiliSincro" Type="TABLE">
+    <Keys>
+      <Key Column="ImmobiliSincro_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="ImmobiliSincro_Ky" IsNull="N" Type="int" />
+      <Field Column="Immobili_Riferimento" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Immobili_Annuncio" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Immobili_Indirizzo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Immobili_IndirizzoNascondi" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_NumeroCivico" IsNull="Y" Type="varchar" Lenght="120" />
+      <Field Column="Immobili_NumeroCivicoNascondi" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_CmnKy" IsNull="Y" Type="smallint" />
+      <Field Column="ImmobiliZona_Ky" IsNull="Y" Type="int" />
+      <Field Column="Immobili_PrvKy" IsNull="Y" Type="tinyint" />
+      <Field Column="Nazioni_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Comuni_Istat" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Immobili_Prestigio" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_Turistico" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_Asta" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_NuovaCostruzione" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_Ecologico" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_Mq" IsNull="Y" Type="money" />
+      <Field Column="Immobili_Valore" IsNull="Y" Type="money" />
+      <Field Column="Immobili_ValoreNascondi" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_AnnoCostruzione" IsNull="Y" Type="int" />
+      <Field Column="Immobili_NumeroLocali" IsNull="Y" Type="smallint" />
+      <Field Column="Immobili_NumeroBagni" IsNull="Y" Type="smallint" />
+      <Field Column="Immobili_NumeroPostiAuto" IsNull="Y" Type="smallint" />
+      <Field Column="Immobili_NumeroCamereLetto" IsNull="Y" Type="smallint" />
+      <Field Column="ImmobiliCategoria_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="ImmobiliTipologia_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="ImmobiliSottotipologia_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="ImmobiliCondizione_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Immobili_DistanzaMare" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Immobili_NumeroMaxPersone" IsNull="Y" Type="tinyint" />
+      <Field Column="Immobili_AnimaliDomestici" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_Giardino" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_Piscina" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_LettoAggiunto" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_LettoBambini" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_Video" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Immobili_Foto" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_Foto1" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto1s" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto1b" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto2" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto2s" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto2b" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto3" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto3s" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto3b" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto4" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto4s" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto4b" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto5" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto5s" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto5b" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto6" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto6s" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto6b" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto7" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto7s" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto7b" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto8" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto8s" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto8b" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto9" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto9s" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto9b" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto10" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto10s" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Foto10b" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Note" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Immobili_CodiceGestionale" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="Immobili_Arredato" IsNull="Y" Type="bit" />
+      <Field Column="Immobili_VirtualTour" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Immobili_Latitudine" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Immobili_Longitudine" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Immobili_Progetto" IsNull="Y" Type="bit" />
+      <Field Column="Nuovo" IsNull="Y" Type="bit" />
+      <Field Column="Utenti_Email" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Utenti_Password" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Utenti_Nominativo" IsNull="Y" Type="varchar" Lenght="255" />
+      <Field Column="Utenti_Indirizzo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Utenti_Telefono1" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Utenti_PaginaWEB" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Utenti_Istat" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="Utenti_CodiceGestionale" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Utenti_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Utenti_Logo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Utenti_CmnKy" IsNull="Y" Type="smallint" />
+      <Field Column="Utenti_PrvKy" IsNull="Y" Type="smallint" />
+      <Field Column="Utenti_NazKy" IsNull="Y" Type="smallint" />
+      <Field Column="agenzia_esiste" IsNull="Y" Type="bit" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Immobili_ClasseEnergetica" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Immobili_Ipe" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="ImmobiliSincro_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="ImmobiliSincro_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="ImmobiliSincro_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="ImmobiliSincro_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="ImmobiliSincro_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="ImmobiliSincro_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[ImmobiliSincro] (
+  [ImmobiliSincro_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Immobili_Riferimento] varchar(50)  NULL , 
+  [Immobili_Annuncio] varchar(MAX)  NULL , 
+  [Immobili_Indirizzo] varchar(200)  NULL , 
+  [Immobili_IndirizzoNascondi] bit  NULL , 
+  [Immobili_NumeroCivico] varchar(120)  NULL , 
+  [Immobili_NumeroCivicoNascondi] bit  NULL , 
+  [Immobili_CmnKy] smallint  NULL , 
+  [ImmobiliZona_Ky] int  NULL , 
+  [Immobili_PrvKy] tinyint  NULL , 
+  [Nazioni_Ky] tinyint  NULL , 
+  [Comuni_Istat] varchar(20)  NULL , 
+  [Immobili_Prestigio] bit  NULL , 
+  [Immobili_Turistico] bit  NULL , 
+  [Immobili_Asta] bit  NULL , 
+  [Immobili_NuovaCostruzione] bit  NULL , 
+  [Immobili_Ecologico] bit  NULL , 
+  [Immobili_Mq] money  NULL , 
+  [Immobili_Valore] money  NULL , 
+  [Immobili_ValoreNascondi] bit  NULL , 
+  [Immobili_AnnoCostruzione] int  NULL , 
+  [Immobili_NumeroLocali] smallint  NULL , 
+  [Immobili_NumeroBagni] smallint  NULL , 
+  [Immobili_NumeroPostiAuto] smallint  NULL , 
+  [Immobili_NumeroCamereLetto] smallint  NULL , 
+  [ImmobiliCategoria_Ky] tinyint  NULL , 
+  [ImmobiliTipologia_Ky] tinyint  NULL , 
+  [ImmobiliSottotipologia_Ky] tinyint  NULL , 
+  [ImmobiliCondizione_Ky] tinyint  NULL , 
+  [Immobili_DistanzaMare] varchar(50)  NULL , 
+  [Immobili_NumeroMaxPersone] tinyint  NULL , 
+  [Immobili_AnimaliDomestici] bit  NULL , 
+  [Immobili_Giardino] bit  NULL , 
+  [Immobili_Piscina] bit  NULL , 
+  [Immobili_LettoAggiunto] bit  NULL , 
+  [Immobili_LettoBambini] bit  NULL , 
+  [Immobili_Video] varchar(300)  NULL , 
+  [Immobili_Foto] bit  NULL , 
+  [Immobili_Foto1] varchar(400)  NULL , 
+  [Immobili_Foto1s] varchar(400)  NULL , 
+  [Immobili_Foto1b] varchar(400)  NULL , 
+  [Immobili_Foto2] varchar(400)  NULL , 
+  [Immobili_Foto2s] varchar(400)  NULL , 
+  [Immobili_Foto2b] varchar(400)  NULL , 
+  [Immobili_Foto3] varchar(400)  NULL , 
+  [Immobili_Foto3s] varchar(400)  NULL , 
+  [Immobili_Foto3b] varchar(400)  NULL , 
+  [Immobili_Foto4] varchar(400)  NULL , 
+  [Immobili_Foto4s] varchar(400)  NULL , 
+  [Immobili_Foto4b] varchar(400)  NULL , 
+  [Immobili_Foto5] varchar(400)  NULL , 
+  [Immobili_Foto5s] varchar(400)  NULL , 
+  [Immobili_Foto5b] varchar(400)  NULL , 
+  [Immobili_Foto6] varchar(400)  NULL , 
+  [Immobili_Foto6s] varchar(400)  NULL , 
+  [Immobili_Foto6b] varchar(400)  NULL , 
+  [Immobili_Foto7] varchar(400)  NULL , 
+  [Immobili_Foto7s] varchar(400)  NULL , 
+  [Immobili_Foto7b] varchar(400)  NULL , 
+  [Immobili_Foto8] varchar(400)  NULL , 
+  [Immobili_Foto8s] varchar(400)  NULL , 
+  [Immobili_Foto8b] varchar(400)  NULL , 
+  [Immobili_Foto9] varchar(400)  NULL , 
+  [Immobili_Foto9s] varchar(400)  NULL , 
+  [Immobili_Foto9b] varchar(400)  NULL , 
+  [Immobili_Foto10] varchar(400)  NULL , 
+  [Immobili_Foto10s] varchar(400)  NULL , 
+  [Immobili_Foto10b] varchar(400)  NULL , 
+  [Immobili_Note] varchar(300)  NULL , 
+  [Immobili_CodiceGestionale] varchar(30)  NULL , 
+  [Immobili_Arredato] bit  NULL , 
+  [Immobili_VirtualTour] varchar(400)  NULL , 
+  [Immobili_Latitudine] varchar(200)  NULL , 
+  [Immobili_Longitudine] varchar(200)  NULL , 
+  [Immobili_Progetto] bit  NULL , 
+  [Nuovo] bit  NULL , 
+  [Utenti_Email] varchar(200)  NULL , 
+  [Utenti_Password] varchar(50)  NULL , 
+  [Utenti_Nominativo] varchar(255)  NULL , 
+  [Utenti_Indirizzo] varchar(200)  NULL , 
+  [Utenti_Telefono1] varchar(200)  NULL , 
+  [Utenti_PaginaWEB] varchar(200)  NULL , 
+  [Utenti_Istat] varchar(10)  NULL , 
+  [Utenti_CodiceGestionale] varchar(50)  NULL , 
+  [Utenti_Descrizione] varchar(MAX)  NULL , 
+  [Utenti_Logo] varchar(150)  NULL , 
+  [Utenti_CmnKy] smallint  NULL , 
+  [Utenti_PrvKy] smallint  NULL , 
+  [Utenti_NazKy] smallint  NULL , 
+  [agenzia_esiste] bit  NULL , 
+  [Utenti_Ky] int  NULL , 
+  [Immobili_ClasseEnergetica] varchar(20)  NULL , 
+  [Immobili_Ipe] varchar(20)  NULL , 
+  [ImmobiliSincro_UserInsert] int  NULL , 
+  [ImmobiliSincro_UserUpdate] int  NULL , 
+  [ImmobiliSincro_UserDelete] int  NULL , 
+  [ImmobiliSincro_DateInsert] datetime  NULL , 
+  [ImmobiliSincro_DateUpdate] datetime  NULL , 
+  [ImmobiliSincro_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[ImmobiliSincro] ADD CONSTRAINT PK_ImmobiliSincro PRIMARY KEY  ([ImmobiliSincro_Ky])
+</SqlScriptCreate>
+</SqlTable>

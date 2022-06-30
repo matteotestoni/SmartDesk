@@ -1,0 +1,53 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Faq" Type="TABLE">
+    <Keys>
+      <Key Column="Faq_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Faq_Ky" IsNull="N" Type="int" />
+      <Field Column="Faq_Domanda" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Faq_Risposta" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Faq_Data" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Prodotti_Ky" IsNull="Y" Type="int" />
+      <Field Column="ProdottiCategorie_Ky" IsNull="Y" Type="int" />
+      <Field Column="Servizi_Ky" IsNull="Y" Type="int" />
+      <Field Column="ServiziCategorie_Ky" IsNull="Y" Type="int" />
+      <Field Column="Faq_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Faq_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Faq_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Faq_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Faq_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Faq_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="FaqCategorie_Ky" IsNull="Y" Type="int" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Faq_PubblicaWEB" IsNull="Y" Type="bit" />
+      <Field Column="Faq_Tags" IsNull="Y" Type="varchar" Lenght="200" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Faq] (
+  [Faq_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Faq_Domanda] varchar(MAX)  NULL , 
+  [Faq_Risposta] varchar(MAX)  NULL , 
+  [Faq_Data] smalldatetime  NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [Utenti_Ky] int  NULL , 
+  [Prodotti_Ky] int  NULL , 
+  [ProdottiCategorie_Ky] int  NULL , 
+  [Servizi_Ky] int  NULL , 
+  [ServiziCategorie_Ky] int  NULL , 
+  [Faq_UserInsert] int  NULL , 
+  [Faq_UserUpdate] int  NULL , 
+  [Faq_UserDelete] int  NULL , 
+  [Faq_DateInsert] datetime  NULL , 
+  [Faq_DateUpdate] datetime  NULL , 
+  [Faq_DateDelete] datetime  NULL , 
+  [FaqCategorie_Ky] int  NULL , 
+  [Lingue_Ky] tinyint  NULL , 
+  [Faq_PubblicaWEB] bit  NULL , 
+  [Faq_Tags] varchar(200)  NULL  )
+ALTER TABLE [dbo].[Faq] ADD CONSTRAINT PK_Faq PRIMARY KEY  ([Faq_Ky])
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,29 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="NoteCategorie" Type="TABLE">
+    <Keys>
+      <Key Column="NoteCategorie_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="NoteCategorie_Ky" IsNull="N" Type="int" />
+      <Field Column="NoteCategorie_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="NoteCategorie_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="NoteCategorie_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="NoteCategorie_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="NoteCategorie_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="NoteCategorie_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="NoteCategorie_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[NoteCategorie] (
+  [NoteCategorie_Ky] int IDENTITY(1,1) NOT NULL , 
+  [NoteCategorie_Titolo] varchar(200)  NULL , 
+  [NoteCategorie_UserInsert] int  NULL , 
+  [NoteCategorie_UserUpdate] int  NULL , 
+  [NoteCategorie_UserDelete] int  NULL , 
+  [NoteCategorie_DateInsert] datetime  NULL , 
+  [NoteCategorie_DateUpdate] datetime  NULL , 
+  [NoteCategorie_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[NoteCategorie] ADD CONSTRAINT PK_NoteCategorie PRIMARY KEY  ([NoteCategorie_Ky])
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,33 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CMSAdsStatistiche" Type="TABLE">
+    <Keys>
+      <Key Column="CMSAdsStatistiche_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CMSAdsStatistiche_Ky" IsNull="N" Type="int" />
+      <Field Column="CMSAdsStatistiche_Data" IsNull="Y" Type="datetime" />
+      <Field Column="CMSAdsStatistiche_Tipo" IsNull="Y" Type="smallint" />
+      <Field Column="CMSAds_Ky" IsNull="Y" Type="int" />
+      <Field Column="CMSAdsStatistiche_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CMSAdsStatistiche_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CMSAdsStatistiche_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CMSAdsStatistiche_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CMSAdsStatistiche_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CMSAdsStatistiche_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CMSAdsStatistiche] (
+  [CMSAdsStatistiche_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CMSAdsStatistiche_Data] datetime  NULL , 
+  [CMSAdsStatistiche_Tipo] smallint  NULL , 
+  [CMSAds_Ky] int  NULL , 
+  [CMSAdsStatistiche_UserInsert] int  NULL , 
+  [CMSAdsStatistiche_UserUpdate] int  NULL , 
+  [CMSAdsStatistiche_UserDelete] int  NULL , 
+  [CMSAdsStatistiche_DateInsert] datetime  NULL , 
+  [CMSAdsStatistiche_DateUpdate] datetime  NULL , 
+  [CMSAdsStatistiche_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[CMSAdsStatistiche] ADD CONSTRAINT PK_CMSAdsStatistiche PRIMARY KEY  ([CMSAdsStatistiche_Ky])
+</SqlScriptCreate>
+</SqlTable>

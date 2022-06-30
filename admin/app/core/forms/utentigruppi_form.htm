@@ -1,0 +1,465 @@
+<div class="grid-x grid-padding-x">
+  <div class="large-2 medium-2 small-4 cell">
+		<label for="UtentiGruppi_Descrizione" class="large-text-right small-text-left middle">Nome gruppo</label>
+	</div>
+  <div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="UtentiGruppi_Descrizione" id="UtentiGruppi_Descrizione" value="<%=GetFieldValue("UtentiGruppi_Descrizione")%>" size="80" required="required">
+    <span class="form-error">Obbligatorio</span>
+  </div>
+</div>
+<div class="grid-x grid-padding-x">
+  <div class="large-2 medium-2 small-4 cell"><label for="Utenti_Email" class="large-text-right small-text-left middle">Home</div>
+  <div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="UtentiGruppi_Home" id="UtentiGruppi_Home" value="<%=GetFieldValue("UtentiGruppi_Home")%>" size="80" required="required">
+    <span class="form-error">Obbligatorio</span>
+  </div>
+</div>
+	<h2>Accesso al men&ugrave;</h2>
+	<div class="grid-x grid-padding-x">
+   	<div class="large-2 medium-2 small-4 cell">
+		 	<label for="UtentiGruppi_Preferiti" class="large-text-right small-text-left middle">Preferiti</label>
+		</div>
+		<div class="large-1 medium-1 small-1 cell">
+			<input type="checkbox" name="UtentiGruppi_Preferiti" id="UtentiGruppi_Preferiti" value="on" <% if (GetCheckValue("UtentiGruppi_Preferiti")){ Response.Write("checked");} %> />
+		</div>
+    <div class="large-9 medium-9 small-7 cell">
+			<select name="UtentiGruppi_PreferitiQuali" id="UtentiGruppi_PreferitiQuali"><option value="1">di tutti</option><option value="2">del gruppo</option><option value="3">dell'utente</option></select>
+		</div>
+	</div>
+	
+	<div class="grid-x grid-padding-x">
+   	<div class="large-2 medium-2 small-4 cell">
+		 	<label for="UtentiGruppi_Calendario" class="large-text-right small-text-left middle">Calendario</label>
+		</div>
+		<div class="large-1 medium-1 small-1 cell">
+				<input type="checkbox" name="UtentiGruppi_Calendario" id="UtentiGruppi_Calendario" value="on" <% if (GetCheckValue("UtentiGruppi_Calendario")){ Response.Write("checked");} %> />
+		</div>
+    <div class="large-9 medium-9 small-7 cell">
+				<select name="UtentiGruppi_CalendarioQuali" id="UtentiGruppi_CalendarioQuali"><option value="1">di tutti</option><option value="2">del gruppo</option><option value="3">dell'utente</option></select>
+		</div>
+	</div>
+
+	<fieldset>
+		<legend>Anagrafiche</legend>
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_Anagrafiche" class="large-text-right small-text-left middle">Anagrafiche</label>
+			</div>
+ 			<div class="large-1 medium-1 small-1 cell">
+				<input type="checkbox" name="UtentiGruppi_Anagrafiche" id="UtentiGruppi_Anagrafiche" value="on" <% if (GetCheckValue("UtentiGruppi_Anagrafiche")){ Response.Write("checked");} %> />
+			</div>
+			<div class="auto cell">
+					<select name="UtentiGruppi_AnagraficheQuali" id="UtentiGruppi_AnagraficheQuali"><option value="1">di tutti</option><option value="2">del gruppo</option><option value="3">dell'utente</option></select>
+			</div>
+		</div>
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_AnagraficheClienti" class="large-text-right small-text-left middle">Clienti</label>
+			</div>
+ 			<div class="auto cell">
+				<input type="checkbox" name="UtentiGruppi_AnagraficheClienti" id="UtentiGruppi_AnagraficheClienti" value="on" <% if (GetCheckValue("UtentiGruppi_AnagraficheClienti")){ Response.Write("checked");} %> />
+			</div>
+		</div>
+		
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_AnagraficheConcorrenti" class="large-text-right small-text-left middle">Concorrenti</label>
+			</div>
+ 			<div class="auto cell">
+				<input type="checkbox" name="UtentiGruppi_AnagraficheConcorrenti" id="UtentiGruppi_AnagraficheConcorrenti" value="on" <% if (GetCheckValue("UtentiGruppi_AnagraficheConcorrenti")){ Response.Write("checked");} %> />
+			</div>
+		</div>
+		
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_AnagraficheFornitori" class="large-text-right small-text-left middle">Fornitori</label>
+			</div>
+ 			<div class="auto cell">
+				<input type="checkbox" name="UtentiGruppi_AnagraficheFornitori" id="UtentiGruppi_AnagraficheFornitori" value="on" <% if (GetCheckValue("UtentiGruppi_AnagraficheFornitori")){ Response.Write("checked");} %> />
+			</div>
+		</div>
+
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_Calendario" class="large-text-right small-text-left middle">Lead</label>
+			</div>
+			<div class="auto cell">
+				<input type="checkbox" name="UtentiGruppi_AnagraficheLead" id="UtentiGruppi_AnagraficheLead" value="on" <% if (GetCheckValue("UtentiGruppi_AnagraficheLead")){ Response.Write("checked");} %> /> 
+			</div>
+		</div>
+		
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_Calendario" class="large-text-right small-text-left middle">Contatti su anagrafiche</label>
+			</div>
+  		<div class="auto cell">
+				<input type="checkbox" name="UtentiGruppi_AnagraficheContatti" id="UtentiGruppi_AnagraficheContatti" value="on" <% if (GetCheckValue("UtentiGruppi_AnagraficheContatti")){ Response.Write("checked");} %> />
+			</div>
+		</div>
+	</fieldset>
+
+	<fieldset>
+		<legend>Amministrazione</legend>
+		<div class="grid-x grid-padding-x">
+			<div class="large-2 medium-2 small-4 cell">
+				<label for="UtentiGruppi_Amministrazione" class="large-text-right small-text-left middle">Amministrazione</label>
+			</div>
+			<div class="large-1 medium-1 small-1 cell">
+				<input type="checkbox" name="UtentiGruppi_Amministrazione" id="UtentiGruppi_Amministrazione" value="on" <% if (GetCheckValue("UtentiGruppi_Amministrazione")){ Response.Write("checked");} %> />
+			</div>
+		</div>
+
+		<div class="grid-x grid-padding-x">
+			<div class="large-2 medium-2 small-4 cell">
+				<label for="UtentiGruppi_Servizi" class="large-text-right small-text-left middle">Servizi</label>
+			</div>
+			<div class="large-1 medium-1 small-1 cell">
+				<input type="checkbox" name="UtentiGruppi_Servizi" id="UtentiGruppi_Servizi" value="on" <% if (GetCheckValue("UtentiGruppi_Servizi")){ Response.Write("checked");} %> />
+			</div>
+		</div>
+
+		<div class="grid-x grid-padding-x">
+			<div class="large-2 medium-2 small-4 cell">
+				<label for="UtentiGruppi_Pagamenti" class="large-text-right small-text-left middle">Pagamenti</label>
+			</div>
+			<div class="large-1 medium-1 small-1 cell">
+				<input type="checkbox" name="UtentiGruppi_Pagamenti" id="UtentiGruppi_Pagamenti" value="on" <% if (GetCheckValue("UtentiGruppi_Pagamenti")){ Response.Write("checked");} %> />
+			</div>
+		</div>
+
+		<div class="grid-x grid-padding-x">
+			<div class="large-2 medium-2 small-4 cell">
+				<label for="UtentiGruppi_Fatturato" class="large-text-right small-text-left middle">Fatturato</label>
+			</div>
+			<div class="large-1 medium-1 small-1 cell">
+				<input type="checkbox" name="UtentiGruppi_Fatturato" id="UtentiGruppi_Fatturato" value="on" <% if (GetCheckValue("UtentiGruppi_Fatturato")){ Response.Write("checked");} %> />
+			</div>
+		</div>
+		</fieldset>
+
+		<fieldset>
+			<legend>Gestione del Personale</legend>
+
+			<div class="grid-x grid-padding-x">
+				<div class="large-2 medium-2 small-4 cell">
+					<label for="UtentiGruppi_Persone" class="large-text-right small-text-left middle">Persone</label>
+				</div>
+				<div class="large-1 medium-1 small-1 cell">
+					<input type="checkbox" name="UtentiGruppi_Persone" id="UtentiGruppi_Persone" value="on" <% if (GetCheckValue("UtentiGruppi_Persone")){ Response.Write("checked");} %> />
+				</div>
+				<div class="large-9 medium-9 small-7 cell">
+					<select name="UtentiGruppi_PersoneQuali" id="UtentiGruppi_PersoneQuali"><option value="1">di tutti</option><option value="2">del gruppo</option><option value="3">dell'utente</option></select>
+				</div>
+			</div>
+			<div class="grid-x grid-padding-x">
+				<div class="large-2 medium-2 small-4 cell">
+					<label for="UtentiGruppi_PersonaleAssenze" class="large-text-right small-text-left middle">Gestione assenze/presenze</label>
+				</div>
+				<div class="large-1 medium-1 small-1 cell">
+					<input type="checkbox" name="UtentiGruppi_PersonaleAssenze" id="UtentiGruppi_PersonaleAssenze" value="on" <% if (GetCheckValue("UtentiGruppi_PersonaleAssenze")){ Response.Write("checked");} %> />
+				</div>
+				<div class="large-9 medium-9 small-7 cell">
+					<select name="UtentiGruppi_PersonaleAssenzeQuali" id="UtentiGruppi_PersonaleAssenzeQuali"><option value="1">di tutti</option><option value="2">del gruppo</option><option value="3">dell'utente</option></select>
+				</div>
+			</div>
+
+			<div class="grid-x grid-padding-x">
+				<div class="large-2 medium-2 small-4 cell">
+					<label for="UtentiGruppi_Trasferte" class="large-text-right small-text-left middle">Trasferte</label>
+				</div>
+				<div class="large-1 medium-1 small-1 cell">
+					<input type="checkbox" name="UtentiGruppi_Trasferte" id="UtentiGruppi_Trasferte" value="on" <% if (GetCheckValue("UtentiGruppi_Trasferte")){ Response.Write("checked");} %> />
+				</div>
+			</div>
+		</fieldset>
+	
+
+	<fieldset>
+		<legend>Contenuti</legend>
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_Contenuti" class="large-text-right small-text-left middle">Contenuti</label>
+			</div>
+ 			<div class="large-1 medium-1 small-1 cell">
+				<input type="checkbox" name="UtentiGruppi_Contenuti" id="UtentiGruppi_Contenuti" value="on" <% if (GetCheckValue("UtentiGruppi_Contenuti")){ Response.Write("checked");} %> />
+			</div>
+		</div>
+
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_Note" class="large-text-right small-text-left middle">Note</label>
+			</div>
+ 			<div class="large-1 medium-1 small-1 cell">
+					<input type="checkbox" name="UtentiGruppi_Note" id="UtentiGruppi_Note" value="on" <% if (GetCheckValue("UtentiGruppi_Note")){ Response.Write("checked");} %> />
+			</div>
+		</div>									
+
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_Faq" class="large-text-right small-text-left middle">Faq</label>
+			</div>
+ 			<div class="large-1 medium-1 small-1 cell">
+					<input type="checkbox" name="UtentiGruppi_Faq" id="UtentiGruppi_Faq" value="on" <% if (GetCheckValue("UtentiGruppi_Faq")){ Response.Write("checked");} %> />
+			</div>
+		</div>									
+	</fieldset>
+
+
+	<fieldset>
+		<legend>Catalogo</legend>
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_Catalogo" class="large-text-right small-text-left middle">Catalogo</label>
+			</div>
+ 			<div class="large-1 medium-1 small-1 cell">
+					<input type="checkbox" name="UtentiGruppi_Catalogo" id="UtentiGruppi_Catalogo" value="on" <% if (GetCheckValue("UtentiGruppi_Catalogo")){ Response.Write("checked");} %> />
+			</div>
+			<div class="auto cell">
+					<select name="UtentiGruppi_CatalogoQuali" id="UtentiGruppi_CatalogoQuali"><option value="1">di tutti</option><option value="2">del gruppo</option><option value="3">dell'utente</option></select>
+			</div>
+		</div>
+				
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_Prodotti" class="large-text-right small-text-left middle">Prodotti</label>
+			</div>
+ 			<div class="large-1 medium-1 small-1 cell">
+					<input type="checkbox" name="UtentiGruppi_Prodotti" id="UtentiGruppi_Prodotti" value="on" <% if (GetCheckValue("UtentiGruppi_Prodotti")){ Response.Write("checked");} %> /> 
+			</div>
+		</div>
+		
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_ServiziCatalogo" class="large-text-right small-text-left middle">Servizi</label>
+			</div>
+ 			<div class="large-1 medium-1 small-1 cell">
+				<input type="checkbox" name="UtentiGruppi_ServiziCatalogo" id="UtentiGruppi_ServiziCatalogo" value="on" <% if (GetCheckValue("UtentiGruppi_ServiziCatalogo")){ Response.Write("checked");} %> />
+			</div>
+		</div>
+
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_Veicoli" class="large-text-right small-text-left middle">Veicoli</label>
+			</div>
+ 			<div class="large-1 medium-1 small-1 cell">
+			<input type="checkbox" name="UtentiGruppi_Veicoli" id="UtentiGruppi_Veicoli" value="on" <% if (GetCheckValue("UtentiGruppi_Veicoli")){ Response.Write("checked");} %> />
+			</div>
+		</div>
+
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_Annunci" class="large-text-right small-text-left middle">Annunci</label>
+			</div>
+ 			<div class="large-1 medium-1 small-1 cell">
+			<input type="checkbox" name="UtentiGruppi_Annunci" id="UtentiGruppi_Annunci" value="on" <% if (GetCheckValue("UtentiGruppi_Annunci")){ Response.Write("checked");} %> />
+			</div>
+		</div>
+
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_Immobili" class="large-text-right small-text-left middle">Immobili</label>
+			</div>
+ 			<div class="large-1 medium-1 small-1 cell">
+			<input type="checkbox" name="UtentiGruppi_Immobili" id="UtentiGruppi_Immobili" value="on" <% if (GetCheckValue("UtentiGruppi_Immobili")){ Response.Write("checked");} %> />
+			</div>
+		</div>
+
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_Aste" class="large-text-right small-text-left middle">Aste</label>
+			</div>
+ 			<div class="large-1 medium-1 small-1 cell">
+			<input type="checkbox" name="UtentiGruppi_Aste" id="UtentiGruppi_Aste" value="on" <% if (GetCheckValue("UtentiGruppi_Aste")){ Response.Write("checked");} %> />
+			</div>
+		</div>
+	</fieldset>
+
+	<fieldset>
+		<legend>Social</legend>
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_Social" class="large-text-right small-text-left middle">Social</label>
+			</div>
+ 			<div class="large-1 medium-1 small-1 cell">
+					<input type="checkbox" name="UtentiGruppi_Social" id="UtentiGruppi_Social" value="on" <% if (GetCheckValue("UtentiGruppi_Social")){ Response.Write("checked");} %> />
+			</div>
+		</div>
+	</fieldset>
+
+ 	<fieldset>
+		<legend>Commerciale</legend>
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_Commerciale" class="large-text-right small-text-left middle">Commerciale</label>
+			</div>
+ 			<div class="large-1 medium-1 small-1 cell">
+					<input type="checkbox" name="UtentiGruppi_Commerciale" id="UtentiGruppi_Commerciale" value="on" <% if (GetCheckValue("UtentiGruppi_Commerciale")){ Response.Write("checked");} %> />
+			</div>
+		</div>
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_Campagne" class="large-text-right small-text-left middle">Campagne</label>
+			</div>
+ 			<div class="large-1 medium-1 small-1 cell">
+					<input type="checkbox" name="UtentiGruppi_Campagne" id="UtentiGruppi_Campagne" value="on" <% if (GetCheckValue("UtentiGruppi_Campagne")){ Response.Write("checked");} %> />
+			</div>
+		</div>
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_Lead" class="large-text-right small-text-left middle">Lead</label>
+			</div>
+ 			<div class="large-1 medium-1 small-1 cell">
+					<input type="checkbox" name="UtentiGruppi_Lead" id="UtentiGruppi_Lead" value="on" <% if (GetCheckValue("UtentiGruppi_Lead")){ Response.Write("checked");} %> />
+			</div>
+		</div>
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_Opportunita" class="large-text-right small-text-left middle">Trattative</label>
+			</div>
+ 			<div class="large-1 medium-1 small-1 cell">
+					<input type="checkbox" name="UtentiGruppi_Opportunita" id="UtentiGruppi_Opportunita" value="on" <% if (GetCheckValue("UtentiGruppi_Opportunita")){ Response.Write("checked");} %> />
+			</div>
+		</div>
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_Preventivi" class="large-text-right small-text-left middle">Preventivi</label>
+			</div>
+ 			<div class="large-1 medium-1 small-1 cell">
+				<input type="checkbox" name="UtentiGruppi_Preventivi" id="UtentiGruppi_Preventivi" value="on" <% if (GetCheckValue("UtentiGruppi_Preventivi")){ Response.Write("checked");} %> />
+			</div>
+		</div>
+
+	</fieldset>
+
+	<fieldset>
+		<legend>Vendite</legend>
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_Vendite" class="large-text-right small-text-left middle">Vendite</label>
+			</div>
+ 			<div class="large-1 medium-1 small-1 cell">
+				<input type="checkbox" name="UtentiGruppi_Vendite" id="UtentiGruppi_Vendite" value="on" <% if (GetCheckValue("UtentiGruppi_Vendite")){ Response.Write("checked");} %> />
+			</div>
+			<div class="auto cell">
+				<select name="UtentiGruppi_VenditeQuali" id="UtentiGruppi_VenditeQuali"><option value="1">di tutti</option><option value="2">del gruppo</option><option value="3">dell'utente</option></select>
+			</div>
+		</div>
+				
+
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_Fatture" class="large-text-right small-text-left middle">Fatture</label>
+			</div>
+ 			<div class="large-1 medium-1 small-1 cell">
+					<input type="checkbox" name="UtentiGruppi_Fatture" id="UtentiGruppi_Fatture" value="on" <% if (GetCheckValue("UtentiGruppi_Fatture")){ Response.Write("checked");} %> />
+			</div>
+		</div>
+
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_Notedicredito" class="large-text-right small-text-left middle">Note di credito</label>
+			</div>
+ 			<div class="large-1 medium-1 small-1 cell">
+					<input type="checkbox" name="UtentiGruppi_Notedicredito" id="UtentiGruppi_Notedicredito" value="on" <% if (GetCheckValue("UtentiGruppi_Notedicredito")){ Response.Write("checked");} %> />
+			</div>
+		</div>
+
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_Ordini" class="large-text-right small-text-left middle">Ordini, spedizioni, RMA</label>
+			</div>
+ 			<div class="large-1 medium-1 small-1 cell">
+				<input type="checkbox" name="UtentiGruppi_Ordini" id="UtentiGruppi_Ordini" value="on" <% if (GetCheckValue("UtentiGruppi_Ordini")){ Response.Write("checked");} %> />
+			</div>
+		</div>
+	</fieldset>
+
+ 	<fieldset>
+		<legend>Password Manager</legend>
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_Passwordmanager" class="large-text-right small-text-left middle">Password manager</label>
+			</div>
+ 			<div class="large-1 medium-1 small-1 cell">
+				<input type="checkbox" name="UtentiGruppi_Passwordmanager" id="UtentiGruppi_Passwordmanager" value="on" <% if (GetCheckValue("UtentiGruppi_Passwordmanager")){ Response.Write("checked");} %> />
+			</div>
+			<div class="auto cell">
+				<select name="UtentiGruppi_PasswordmanagerQuali" id="UtentiGruppi_PasswordmanagerQuali"><option value="1">di tutti</option><option value="2">del gruppo</option><option value="3">dell'utente</option></select>
+			</div>
+		</div>
+	</fieldset>
+
+	<fieldset>
+		<legend>Produzione</legend>
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_Produzione" class="large-text-right small-text-left middle">Produzione</label>
+			</div>
+ 			<div class="large-1 medium-1 small-1 cell">
+				<input type="checkbox" name="UtentiGruppi_Produzione" id="UtentiGruppi_Produzione" value="on" <% if (GetCheckValue("UtentiGruppi_Produzione")){ Response.Write("checked");} %> />
+			</div>
+			<div class="auto cell">
+				<select name="UtentiGruppi_ProduzioneQuali" id="UtentiGruppi_ProduzioneQuali"><option value="1">di tutti</option><option value="2">del gruppo</option><option value="3">dell'utente</option></select>
+			</div>
+		</div>
+				
+		<div class="grid-x grid-padding-x">
+     	    <div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_Progetti" class="large-text-right small-text-left middle">Progetti</label>
+			</div>
+ 			<div class="large-1 medium-1 small-1 cell">
+					<input type="checkbox" name="UtentiGruppi_Progetti" id="UtentiGruppi_Progetti" value="on" <% if (GetCheckValue("UtentiGruppi_Progetti")){ Response.Write("checked");} %> /> 
+			</div>
+		</div>
+					
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_Attivita" class="large-text-right small-text-left middle">Attivit&agrave;</label>
+			</div>
+ 			<div class="large-1 medium-1 small-1 cell">
+						<input type="checkbox" name="UtentiGruppi_Attivita" id="UtentiGruppi_Attivita" value="on" <% if (GetCheckValue("UtentiGruppi_Attivita")){ Response.Write("checked");} %> /> 
+			</div>
+		</div>
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_SitiWeb" class="large-text-right small-text-left middle">Siti Web</label>
+			</div>
+ 			<div class="large-1 medium-1 small-1 cell">
+					<input type="checkbox" name="UtentiGruppi_SitiWeb" id="UtentiGruppi_SitiWeb" value="on" <% if (GetCheckValue("UtentiGruppi_SitiWeb")){ Response.Write("checked");} %> /> 
+			</div>
+		</div>
+	</fieldset>
+	
+  <fieldset>
+		<legend>Ticket</legend>
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_Ticket" class="large-text-right small-text-left middle">Ticket</label>
+			</div>
+ 			<div class="large-1 medium-1 small-1 cell">
+			<input type="checkbox" name="UtentiGruppi_Ticket" id="UtentiGruppi_Ticket" value="on" <% if (GetCheckValue("UtentiGruppi_Ticket")){ Response.Write("checked");} %> />
+			</div>
+		</div>
+	</fieldset>
+
+	<fieldset>
+		<legend>Rapporti</legend>
+		<div class="grid-x grid-padding-x">
+     	<div class="large-2 medium-2 small-4 cell">
+			 	<label for="UtentiGruppi_Rapporti" class="large-text-right small-text-left middle">Rapporti (per ogni sezione)</label>
+			</div>
+ 			<div class="large-1 medium-1 small-1 cell">
+			<input type="checkbox" name="UtentiGruppi_Rapporti" id="UtentiGruppi_Rapporti" value="on" <% if (GetCheckValue("UtentiGruppi_Rapporti")){ Response.Write("checked");} %> />
+			</div>
+		</div>
+	</fieldset>
+	
+<script type="text/javascript">
+	selectSet('UtentiGruppi_PreferitiQuali', '<%=GetFieldValue("UtentiGruppi_PreferitiQuali")%>');
+	selectSet('UtentiGruppi_CalendarioQuali', '<%=GetFieldValue("UtentiGruppi_CalendarioQuali")%>');
+	selectSet('UtentiGruppi_AnagraficheQuali', '<%=GetFieldValue("UtentiGruppi_AnagraficheQuali")%>');
+	selectSet('UtentiGruppi_CatalogoQuali', '<%=GetFieldValue("UtentiGruppi_CatalogoQuali")%>');
+	selectSet('UtentiGruppi_VenditeQuali', '<%=GetFieldValue("UtentiGruppi_VenditeQuali")%>');
+	selectSet('UtentiGruppi_ProduzioneQuali', '<%=GetFieldValue("UtentiGruppi_ProduzioneQuali")%>');
+	selectSet('UtentiGruppi_PersonaleAssenzeQuali', '<%=GetFieldValue("UtentiGruppi_PersonaleAssenzeQuali")%>');
+</script>

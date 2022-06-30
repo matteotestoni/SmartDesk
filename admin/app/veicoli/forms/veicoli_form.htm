@@ -1,0 +1,720 @@
+<fieldset class="fieldset">
+  <legend>Veicolo</legend>  
+	<div class="grid-x grid-padding-x">
+		<div class="large-2 medium-2 small-4 cell">
+			<label for="Veicoli_PubblicaWEB" class="large-text-right small-text-left middle">Pubblica:</label>
+		</div>
+		<div class="large-10 medium-10 small-8 cell">
+      <div class="grid-x grid-padding-x small-up-2 medium-up-5 large-up-5">
+        <div class="cell">
+    			<div class="switch tiny">
+    				<input class="switch-input" type="checkbox" name="Veicoli_PubblicaWEB" id="Veicoli_PubblicaWEB" value="on" <% if (GetCheckValue("Veicoli_PubblicaWEB")){ Response.Write( "checked");} %> />
+    				<label class="switch-paddle" for="Veicoli_PubblicaWEB">
+    					<span class="show-for-sr">Attivo</span>
+    					<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+    					<span class="switch-inactive" aria-hidden="true"></span>
+    				</label>
+    			</div>
+        </div>
+        <div class="cell">
+          <div class="input-group">
+            <label class="input-group-label">Premium:</label>
+            <div class="input-group-field switch tiny">
+      				<input class="switch-input" type="checkbox" name="Veicoli_Premium" id="Veicoli_Premium" value="on" <% if (GetCheckValue("Veicoli_Premium")){ Response.Write( "checked");} %> />
+      				<label class="switch-paddle" for="Veicoli_Premium">
+      					<span class="show-for-sr">Attivo</span>
+      					<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+      					<span class="switch-inactive" aria-hidden="true"></span>
+      				</label>
+      			</div>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="input-group">
+            <label class="input-group-label">Last Minute:</label>
+            <div class="input-group-field switch tiny">
+      				<input class="switch-input" type="checkbox" name="Veicoli_LastMinute" id="Veicoli_LastMinute" value="on" <% if (GetCheckValue("Veicoli_LastMinute")){ Response.Write( "checked");} %> />
+      				<label class="switch-paddle" for="Veicoli_LastMinute">
+      					<span class="show-for-sr">Attivo</span>
+      					<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+      					<span class="switch-inactive" aria-hidden="true"></span>
+      				</label>
+      			</div>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="input-group">
+            <label class="input-group-label">In evidenza:</label>
+            <div class="input-group-field switch tiny">
+      				<input class="switch-input" type="checkbox" name="Veicoli_Inevidenza" id="Veicoli_Inevidenza" value="on" <% if (GetCheckValue("Veicoli_Inevidenza")){ Response.Write( "checked");} %> />
+      				<label class="switch-paddle" for="Veicoli_Inevidenza">
+      					<span class="show-for-sr">Attivo</span>
+      					<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+      					<span class="switch-inactive" aria-hidden="true"></span>
+      				</label>
+      			</div>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="input-group">
+            <label class="input-group-label">Prime:</label>
+            <div class="input-group-field switch tiny">
+      				<input class="switch-input" type="checkbox" name="Veicoli_Prime" id="Veicoli_Prime" value="on" <% if (GetCheckValue("Veicoli_Prime")){ Response.Write( "checked");} %> />
+      				<label class="switch-paddle" for="Veicoli_Prime">
+      					<span class="show-for-sr">Attivo</span>
+      					<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+      					<span class="switch-inactive" aria-hidden="true"></span>
+      				</label>
+      			</div>
+          </div>
+        </div>
+      </div>    
+		</div>
+	</div>
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_Riferimento" class="large-text-right small-text-left middle">Riferimento</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_Riferimento" id="Veicoli_Riferimento" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_Riferimento")%>">
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_Targa" class="large-text-right small-text-left middle">Targa</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_Targa" id="Veicoli_Targa" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_Targa")%>">
+  	</div>
+  </div>
+ 	<div class="grid-x grid-padding-x">     
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="VeicoliMarca_Ky" class="large-text-right small-text-left middle">Marca</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+	    <select name="VeicoliMarca_Ky" id="VeicoliMarca_Ky" value="<%=GetFieldValue(dtVeicoli, "VeicoliMarca_Ky")%>">
+        <option value=""></option>
+				<%
+				for (int i = 0; i < dtVeicoliMarca.Rows.Count; i++){
+					Response.Write("<option value=\"" + dtVeicoliMarca.Rows[i]["VeicoliMarca_Ky"].ToString() + "\">" + dtVeicoliMarca.Rows[i]["VeicoliMarca_Titolo"].ToString() + "</option>");
+				}
+				%>
+      </select>
+      <script type="text/javascript">
+        selectSet('VeicoliMarca_Ky', '<%=GetFieldValue(dtVeicoli, "VeicoliMarca_Ky")%>');
+      </script>
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="VeicoliModello_Ky" class="large-text-right small-text-left middle">Modello</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+	    <select name="VeicoliModello_Ky" id="VeicoliModello_Ky" value="<%=GetFieldValue(dtVeicoli, "VeicoliModello_Ky")%>">
+        <option value=""></option>
+				<%
+				for (int i = 0; i < dtVeicoliModello.Rows.Count; i++){
+					Response.Write("<option value=\"" + dtVeicoliModello.Rows[i]["VeicoliModello_Ky"].ToString() + "\">" + dtVeicoliModello.Rows[i]["VeicoliModello_Titolo"].ToString() + "</option>");
+				}
+				%>
+      </select>
+      <script type="text/javascript">
+        selectSet('VeicoliModello_Ky', '<%=GetFieldValue(dtVeicoli, "VeicoliModello_Ky")%>');
+      </script>
+  	</div>
+  </div>
+ 	<div class="grid-x grid-padding-x">     
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_Allestimento" class="large-text-right small-text-left middle">Allestimento</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_Allestimento" id="Veicoli_Allestimento" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_Allestimento")%>">
+  	</div>
+   	<div class="large-2 medium-2 small-4 cell">
+  		<label for="VeicoliCarrozzeria_Ky" class="large-text-right small-text-left middle">Carrozzeria veicolo</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+	    <select name="VeicoliCarrozzeria_Ky" id="VeicoliCarrozzeria_Ky" value="<%=GetFieldValue(dtVeicoli, "VeicoliCarrozzeria_Ky")%>">
+      <!--#include file="/var/cache/VeicoliCarrozzeria-options.htm"--> 
+      </select>
+      <script type="text/javascript">
+        selectSet('VeicoliCarrozzeria_Ky', '<%=GetFieldValue(dtVeicoli, "VeicoliCarrozzeria_Ky")%>');
+      </script>
+  	</div>
+
+
+
+
+
+  </div>
+ 	<div class="grid-x grid-padding-x">     
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="VeicoliCarburante_Ky" class="large-text-right small-text-left middle">Carburante veicolo</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+	    <select name="VeicoliCarburante_Ky" id="VeicoliCarburante_Ky" value="<%=GetFieldValue(dtVeicoli, "VeicoliCarburante_Ky")%>">
+      <!--#include file="/var/cache/VeicoliCarburante-options.htm"--> 
+      </select>
+      <script type="text/javascript">
+        selectSet('VeicoliCarburante_Ky', '<%=GetFieldValue(dtVeicoli, "VeicoliCarburante_Ky")%>');
+      </script>
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="VeicoliNormativeEuro_Ky" class="large-text-right small-text-left middle">Normativa Euro veicolo</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+	    <select name="VeicoliNormativeEuro_Ky" id="VeicoliNormativeEuro_Ky" value="<%=GetFieldValue(dtVeicoli, "VeicoliNormativeEuro_Ky")%>">
+      <!--#include file="/var/cache/VeicoliNormativeEuro-options.htm"--> 
+      </select>
+      <script type="text/javascript">
+        selectSet('VeicoliNormativeEuro_Ky', '<%=GetFieldValue(dtVeicoli, "VeicoliNormativeEuro_Ky")%>');
+      </script>
+  	</div>
+  </div>
+  
+  
+ 	<div class="grid-x grid-padding-x">     
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_KM" class="large-text-right small-text-left middle">KM</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_KM" id="Veicoli_KM" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_KM")%>">
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="VeicoliCambio_Ky" class="large-text-right small-text-left middle">Cambio veicolo</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+	    <select name="VeicoliCambio_Ky" id="VeicoliCambio_Ky" value="<%=GetFieldValue(dtVeicoli, "VeicoliCambio_Ky")%>">
+      <!--#include file="/var/cache/VeicoliCambio-options.htm"--> 
+      </select>
+      <script type="text/javascript">
+        selectSet('VeicoliCambio_Ky', '<%=GetFieldValue(dtVeicoli, "VeicoliCambio_Ky")%>');
+      </script>
+  	</div>
+  </div>
+  
+  
+ 	<div class="grid-x grid-padding-x">     
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="VeicoliTipo_Ky" class="large-text-right small-text-left middle">Tipo di veicolo</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+	    <select name="VeicoliTipo_Ky" id="VeicoliTipo_Ky" value="<%=GetFieldValue(dtVeicoli, "VeicoliTipo_Ky")%>">
+      <!--#include file="/var/cache/VeicoliTipo-options.htm"--> 
+      </select>
+      <script type="text/javascript">
+        selectSet('VeicoliTipo_Ky', '<%=GetFieldValue(dtVeicoli, "VeicoliTipo_Ky")%>');
+      </script>
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="VeicoliTipologie_Ky" class="large-text-right small-text-left middle">Tipologie di veicolo</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+	    <select name="VeicoliTipologie_Ky" id="VeicoliTipologie_Ky" value="<%=GetFieldValue(dtVeicoli, "VeicoliTipologie_Ky")%>">
+      <!--#include file="/var/cache/VeicoliTipologie-options.htm"--> 
+      </select>
+      <script type="text/javascript">
+        selectSet('VeicoliTipologie_Ky', '<%=GetFieldValue(dtVeicoli, "VeicoliTipologie_Ky")%>');
+      </script>
+  	</div>
+  </div>
+ 	<div class="grid-x grid-padding-x">     
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="VeicoliContratto_Ky" class="large-text-right small-text-left middle">Contratto veicolo</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+	    <select name="VeicoliContratto_Ky" id="VeicoliContratto_Ky" value="<%=GetFieldValue(dtVeicoli, "VeicoliContratto_Ky")%>">
+      <!--#include file="/var/cache/VeicoliContratto-options.htm"--> 
+      </select>
+      <script type="text/javascript">
+        selectSet('VeicoliContratto_Ky', '<%=GetFieldValue(dtVeicoli, "VeicoliContratto_Ky")%>');
+      </script>
+  	</div>
+   	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_DataPrimaImmatricolazione" class="large-text-right small-text-left middle">Data immatricolazione</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" class="fdatepicker" name="Veicoli_DataPrimaImmatricolazione" id="Veicoli_DataPrimaImmatricolazione" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_DataPrimaImmatricolazione")%>">
+  	</div>
+ </div>
+ 	<div class="grid-x grid-padding-x">     
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_Annuncio" class="large-text-right small-text-left middle">Annuncio</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <textarea name="Veicoli_Annuncio" id="Veicoli_Annuncio" rows="4"><%=GetFieldValue(dtVeicoli, "Veicoli_Annuncio")%></textarea>
+      <span class="form-error">Obbligatorio</span>
+  	</div>
+  </div>
+ 	<div class="grid-x grid-padding-x">     
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_Optional" class="large-text-right small-text-left middle">Optional</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <textarea name="Veicoli_Optional" id="Veicoli_Optional" rows="4"><%=GetFieldValue(dtVeicoli, "Veicoli_Optional")%></textarea>
+      <span class="form-error">Obbligatorio</span>
+  	</div>
+  </div>
+</fieldset>
+<fieldset class="fieldset">
+  <legend>Spese</legend>  
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_CostoKm" class="large-text-right small-text-left middle">Costo Km</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_CostoKm" id="Veicoli_CostoKm" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_CostoKm")%>">
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_CostoGiornaliero" class="large-text-right small-text-left middle">Costo giornaliero</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_CostoGiornaliero" id="Veicoli_CostoGiornaliero" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_CostoGiornaliero")%>">
+  	</div>
+  </div>
+</fieldset>
+
+
+
+<fieldset class="fieldset">
+  <legend>Localizzazione</legend>  
+  <div class="grid-x grid-padding-x">
+    <div class="large-2 medium-2 small-4 cell">												
+      <label for="Nazioni_Ky" class="large-text-right small-text-left middle">Nazione 
+        <i class="fa-duotone fa-location-dot fa-fw"></i>
+      </label>											
+    </div>				              
+    <div class="large-4 medium-4 small-8 cell">				                
+      <select name="Nazioni_Ky" id="Nazioni_Ky" required="required" value="<%=GetFieldValue(dtVeicoli, "Nazioni_Ky")%>" onchange="loadCoreRegioni();">
+        <!--#include file="/var/cache/Nazioni-options.htm"--> 
+      </select>
+      <span class="form-error">Obbligatorio.</span>
+      <script type="text/javascript">
+        selectSet('Nazioni_Ky', '<%=GetFieldValue(dtVeicoli, "Nazioni_Ky")%>');
+      </script>
+    </div>		
+    <div class="large-2 medium-2 small-4 cell">												
+      <label for="Regioni_Ky" class="large-text-right small-text-left middle">Regione 
+        <i class="fa-duotone fa-location-dot fa-fw"></i>
+      </label>											
+    </div>				              
+    <div class="large-4 medium-4 small-8 cell">				                
+      <select name="Regioni_Ky" id="Regioni_Ky" value="<%=GetFieldValue(dtVeicoli, "Regioni_Ky")%>" onchange="loadCoreProvince();">
+        <% 
+        if (strAzione != "new" && dtRegioni.Rows.Count>0 ){
+          for (int j = 0; j < dtRegioni.Rows.Count; j++){
+            Response.Write("<option value=\"" + dtRegioni.Rows[j]["Regioni_Ky"].ToString() + "\">" + dtRegioni.Rows[j]["Regioni_Regione"].ToString() + "</option>");
+          }
+        }else{ %>
+        <% } %>
+      </select>
+      <span class="form-error">Obbligatorio.</span>
+      <script type="text/javascript">
+        selectSet('Regioni_Ky', '<%=GetFieldValue(dtVeicoli, "Regioni_Ky")%>');
+      </script>
+    </div>
+	</div>			
+  <div class="grid-x grid-padding-x">
+    <div class="large-2 medium-2 small-4 cell">												
+      <label for="Province_Ky" class="large-text-right small-text-left middle">Provincia 
+        <i class="fa-duotone fa-location-dot fa-fw"></i>
+      </label>											
+    </div>				              
+    <div class="large-4 medium-4 small-8 cell">				                
+      <select name="Province_Ky" id="Province_Ky" value="<%=GetFieldValue(dtVeicoli, "Province_Ky")%>" onchange="loadCoreComuni();">
+        <% 
+        if (strAzione != "new" && dtProvince.Rows.Count>0 ){
+          for (int j = 0; j < dtProvince.Rows.Count; j++){
+            Response.Write("<option value=\"" + dtProvince.Rows[j]["Province_Ky"].ToString() + "\">" + dtProvince.Rows[j]["Province_Provincia"].ToString() + "</option>");
+          }
+        }
+        %>
+      </select>
+      <span class="form-error">Obbligatorio.</span>
+      <script type="text/javascript">
+        selectSet('Province_Ky', '<%=GetFieldValue(dtVeicoli, "Province_Ky")%>');
+      </script>
+    </div>		
+    <div class="large-2 medium-2 small-4 cell">												
+      <label for="Comuni_Ky" class="large-text-right small-text-left middle">Comune 
+        <i class="fa-duotone fa-location-dot fa-fw"></i>
+      </label>											
+    </div>				              
+    <div class="large-4 medium-4 small-8 cell">				                
+      <select name="Comuni_Ky" id="Comuni_Ky" value="<%=GetFieldValue(dtVeicoli, "Comuni_Ky")%>">
+        <% 
+        if (strAzione != "new" && dtComuni.Rows.Count>0 ){
+          for (int j = 0; j < dtComuni.Rows.Count; j++){
+            Response.Write("<option value=\"" + dtComuni.Rows[j]["Comuni_Ky"].ToString() + "\">" + dtComuni.Rows[j]["Comuni_Comune"].ToString() + "</option>");
+          }
+        }
+        %>
+      </select>
+      <span class="form-error">Obbligatorio.</span>
+      <script type="text/javascript">
+        selectSet('Comuni_Ky', '<%=GetFieldValue(dtVeicoli, "Comuni_Ky")%>');
+      </script>
+    </div>
+	</div>		
+</fieldset>
+<fieldset class="fieldset">
+  <legend>Riferimento</legend>  
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_PersonaRiferimento" class="large-text-right small-text-left middle">Persona di riferimento</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_PersonaRiferimento" id="Veicoli_PersonaRiferimento" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_PersonaRiferimento")%>">
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_Sede" class="large-text-right small-text-left middle">Sede</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_Sede" id="Veicoli_Sede" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_Sede")%>">
+  	</div>
+  </div>
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_EmailPersonaRiferimento" class="large-text-right small-text-left middle">Email della persona</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_EmailPersonaRiferimento" id="Veicoli_EmailPersonaRiferimento" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_EmailPersonaRiferimento")%>">
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_TelefonoPersonaRiferimento" class="large-text-right small-text-left middle">Telefono della persona</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_TelefonoPersonaRiferimento" id="Veicoli_TelefonoPersonaRiferimento" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_TelefonoPersonaRiferimento")%>">
+  	</div>
+  </div>
+</fieldset>
+  
+  
+<fieldset class="fieldset">
+  <legend>Altri dati del Motore</legend>  
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_Motore" class="large-text-right small-text-left middle">Motore</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_Motore" id="Veicoli_Motore" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_Motore")%>">
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_TipoCambio" class="large-text-right small-text-left middle">Tipo cambio</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_TipoCambio" id="Veicoli_TipoCambio" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_TipoCambio")%>">
+  	</div>
+  </div>
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_CVKW" class="large-text-right small-text-left middle">KW</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_CVKW" id="Veicoli_CVKW" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_CVKW")%>">
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_CV" class="large-text-right small-text-left middle">CV</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_CV" id="Veicoli_CV" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_CV")%>">
+  	</div>
+  </div>  
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_Cilindrata" class="large-text-right small-text-left middle">Cilindrata</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_Cilindrata" id="Veicoli_Cilindrata" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_Cilindrata")%>">
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_NumeroRapporti" class="large-text-right small-text-left middle">Rapporti</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_NumeroRapporti" id="Veicoli_NumeroRapporti" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_NumeroRapporti")%>">
+  	</div>
+  </div>
+   <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_Trazione" class="large-text-right small-text-left middle">Trazione</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_Trazione" id="Veicoli_Trazione" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_Trazione")%>">
+  	</div>
+  </div>
+</fieldset>
+<fieldset class="fieldset">
+  <legend>Interni</legend>  
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_NumeroSedili" class="large-text-right small-text-left middle">Sedili</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_NumeroSedili" id="Veicoli_NumeroSedili" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_NumeroSedili")%>">
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_NumeroPosti" class="large-text-right small-text-left middle">Posti</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_NumeroPosti" id="Veicoli_NumeroPosti" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_NumeroPosti")%>">
+  	</div>
+  </div>
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_Strumentazione" class="large-text-right small-text-left middle">Strumentazione</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_Strumentazione" id="Veicoli_Strumentazione" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_Strumentazione")%>">
+  	</div>
+  </div>                 
+</fieldset>
+
+<fieldset class="fieldset">
+  <legend>Esterni</legend>  
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_NumeroPorte" class="large-text-right small-text-left middle">Porte</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_NumeroPorte" id="Veicoli_NumeroPorte" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_NumeroPorte")%>">
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_NumeroMarce" class="large-text-right small-text-left middle">Marce</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_NumeroMarce" id="Veicoli_NumeroMarce" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_NumeroMarce")%>">
+  	</div>
+  </div>
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_Lunghezza" class="large-text-right small-text-left middle">Lunghezza</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_Lunghezza" id="Veicoli_Lunghezza" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_Lunghezza")%>">
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_Larghezza" class="large-text-right small-text-left middle">Larghezza</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_Larghezza" id="Veicoli_Larghezza" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_Larghezza")%>">
+  	</div>
+  </div>
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_Altezza" class="large-text-right small-text-left middle">Altezza</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_Altezza" id="Veicoli_Altezza" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_Altezza")%>">
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="VeicoliColore_Ky" class="large-text-right small-text-left middle">Colore veicolo</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+	    <select name="VeicoliColore_Ky" id="VeicoliColore_Ky" value="<%=GetFieldValue(dtVeicoli, "VeicoliColore_Ky")%>">
+      <!--#include file="/var/cache/VeicoliColore-options.htm"--> 
+      </select>
+      <script type="text/javascript">
+        selectSet('VeicoliColore_Ky', '<%=GetFieldValue(dtVeicoli, "VeicoliColore_Ky")%>');
+      </script>
+  	</div>
+  </div>
+ 	<div class="grid-x grid-padding-x">     
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="VeicoliGruppi_Ky" class="large-text-right small-text-left middle">Gruppo veicolo</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+	    <select name="VeicoliGruppi_Ky" id="VeicoliGruppi_Ky" value="<%=GetFieldValue(dtVeicoli, "VeicoliGruppi_Ky")%>">
+      <!--#include file="/var/cache/VeicoliGruppi-options.htm"--> 
+      </select>
+      <script type="text/javascript">
+        selectSet('VeicoliGruppi_Ky', '<%=GetFieldValue(dtVeicoli, "VeicoliGruppi_Ky")%>');
+      </script>
+  	</div>
+
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_Carrozzeria" class="large-text-right small-text-left middle">Carrozzeria</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_Carrozzeria" id="Veicoli_Carrozzeria" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_Carrozzeria")%>">
+  	</div>
+  </div>
+</fieldset>
+
+<fieldset class="fieldset">
+  <legend>Dati aggiuntivi</legend>  
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_VelocitaMax" class="large-text-right small-text-left middle">Velocit&agrave; massima</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_VelocitaMax" id="Veicoli_VelocitaMax" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_VelocitaMax")%>">
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_VelocitaCrociera" class="large-text-right small-text-left middle">Velocit&agrave; di crociera</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_VelocitaCrociera" id="Veicoli_VelocitaCrociera" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_VelocitaCrociera")%>">
+  	</div>
+  </div>
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_Autonomia" class="large-text-right small-text-left middle">Autonomia</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_Autonomia" id="Veicoli_VelocitaMax" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_Autonomia")%>">
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_MotoreTipo" class="large-text-right small-text-left middle">Tipo di motore</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_MotoreTipo" id="Veicoli_MotoreTipo" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_MotoreTipo")%>">
+  	</div>
+  </div>
+ 	<div class="grid-x grid-padding-x">     
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_Garanzia" class="large-text-right small-text-left middle">Garanzia</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_Garanzia" id="Veicoli_Targa" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_Garanzia")%>">
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_PesoKg" class="large-text-right small-text-left middle">Peso in Kg</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_PesoKg" id="Veicoli_PesoKg" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_PesoKg")%>">
+  	</div>
+  </div>
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_NumeroCabine" class="large-text-right small-text-left middle">Numero cabine</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_NumeroCabine" id="Veicoli_NumeroCabine" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_NumeroCabine")%>">
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_Equipaggio" class="large-text-right small-text-left middle">Equipaggio</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_Equipaggio" id="Veicoli_Equipaggio" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_Equipaggio")%>">
+  	</div>
+  </div>
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_Passeggeri" class="large-text-right small-text-left middle">Passeggeri</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_Passegeri" id="Veicoli_Passegeri" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_Passegeri")%>">
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_PostiLetto" class="large-text-right small-text-left middle">Posti letto</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_PostiLetto" id="Veicoli_PostiLetto" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_PostiLetto")%>">
+  	</div>
+  </div>
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_Bagni" class="large-text-right small-text-left middle">Bagni</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_Bagni" id="Veicoli_Bagni" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_Bagni")%>">
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_Cucina" class="large-text-right small-text-left middle">Cucina</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_Cucina" id="Veicoli_Cucina" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_Cucina")%>">
+  	</div>
+  </div>
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_Serbatoio" class="large-text-right small-text-left middle">Serbatoio</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_Serbatoio" id="Veicoli_Serbatoio" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_Serbatoio")%>">
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_SerbatoioAcqua" class="large-text-right small-text-left middle">Serbatoio Acqua</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_SerbatoioAcqua" id="Veicoli_SerbatoioAcqua" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_SerbatoioAcqua")%>">
+  	</div>
+  </div>
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_Assi" class="large-text-right small-text-left middle">Assi</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_Assi" id="Veicoli_Assi" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_Assi")%>">
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_Ore" class="large-text-right small-text-left middle">Ore</label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell">
+      <input type="text" name="Veicoli_Ore" id="Veicoli_Ore" size="100" value="<%=GetFieldValue(dtVeicoli, "Veicoli_Ore")%>">
+  	</div>
+  </div>
+</fieldset>
+
+<fieldset class="fieldset">
+  <legend>Note</legend>  
+ 	<div class="grid-x grid-padding-x">     
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Veicoli_Note" class="large-text-right small-text-left middle">Note</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <textarea name="Veicoli_Note" id="Veicoli_Note" rows="4"><%=GetFieldValue(dtVeicoli, "Veicoli_Note")%></textarea>
+      <span class="form-error">Obbligatorio</span>
+  	</div>
+  </div>
+</fieldset>
+
+<fieldset class="fieldset">
+  <legend>Foto del veicolo</legend>  
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="fotoveicolo" class="large-text-right small-text-left middle">Foto veicolo</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <p>Le immagini devono essere in formato jpg<br></p>
+      <label for="fotoveicolo" class="button small">Carica immagini</label>
+      <input type="file" multiple class="show-for-sr fileupload" placeholder="Foto annunci" id="fotoveicolo" name="fotoveicolo" />
+      <small class="form-error">obbligatorio.</small>
+      <div id="galleryfotocaricate" class="gallery"></div>
+      <script>
+        jQuery(function() {
+          var imagesPreview = function(input, placeToInsertImagePreview) {
+              if (input.files) {
+                  var filesAmount = input.files.length;
+                  for (i = 0; i < filesAmount; i++) {
+                      var reader = new FileReader();
+                      reader.onload = function(event) {
+                          jQuery(jQuery.parseHTML('<img width="150" height="100" hspace="10" vspace="10" style="border:1px solid #000000">')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                      }
+                       reader.readAsDataURL(input.files[i]);
+                  }
+              }
+          };
+          jQuery('#fotoveicolo').on('change', function() {
+              imagesPreview(this, '#galleryfotocaricate');
+          });
+        });
+      </script>
+  	</div>
+  </div>
+  
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="fotoveicolo" class="large-text-right small-text-left middle">Anteprime</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+        <div class="grid-x grid-padding-x small-up-2 medium-up-6 large-up-8">
+            <% 
+            string strTemp="";
+            for (int i = 1; i < 21; i++){
+              strTemp="Veicoli_Foto" + i;
+              if (GetFieldValue(dtVeicoli, strTemp).Length>0){
+                Response.Write("<div class=\"cell cell-block\"><div class=\"thumbnail\"><a href=\"" + GetFieldValue(dtVeicoli, strTemp)  + "\" data-fancybox=\"images\"><img src=\"" + GetFieldValue(dtVeicoli, strTemp)  + "\" height=\"150\" width=\"100\" style=\"width:150px;height:100px;\" data-caption=\"immagine annuncio\"></a></div></div>");
+              }
+            }
+            %>
+        </div> 
+    </div>
+  </div> 
+</fieldset>             

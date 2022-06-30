@@ -1,0 +1,39 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="OpportunitaSorgenti" Type="TABLE">
+    <Keys>
+      <Key Column="OpportunitaSorgenti_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="OpportunitaSorgenti_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="OpportunitaSorgenti_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="OpportunitaSorgenti_Colore" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="OpportunitaSorgenti_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="OpportunitaSorgenti_Icona" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="OpportunitaSorgenti_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="OpportunitaSorgenti_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="OpportunitaSorgenti_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="OpportunitaSorgenti_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="OpportunitaSorgenti_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="OpportunitaSorgenti_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="OpportunitaSorgenti_Predefinita" IsNull="Y" Type="bit" />
+      <Field Column="OpportunitaSorgenti_Attiva" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[OpportunitaSorgenti] (
+  [OpportunitaSorgenti_Ky] tinyint IDENTITY(1,1) NOT NULL , 
+  [OpportunitaSorgenti_Descrizione] varchar(100)  NULL , 
+  [OpportunitaSorgenti_Colore] varchar(100)  NULL , 
+  [OpportunitaSorgenti_Titolo] varchar(100)  NULL , 
+  [OpportunitaSorgenti_Icona] varchar(100)  NULL , 
+  [OpportunitaSorgenti_UserInsert] int  NULL , 
+  [OpportunitaSorgenti_UserUpdate] int  NULL , 
+  [OpportunitaSorgenti_UserDelete] int  NULL , 
+  [OpportunitaSorgenti_DateInsert] datetime  NULL , 
+  [OpportunitaSorgenti_DateUpdate] datetime  NULL , 
+  [OpportunitaSorgenti_DateDelete] datetime  NULL , 
+  [OpportunitaSorgenti_Predefinita] bit  NULL , 
+  [OpportunitaSorgenti_Attiva] bit  NULL  )
+ALTER TABLE [dbo].[OpportunitaSorgenti] ADD CONSTRAINT PK_OpportunitaSorgenti PRIMARY KEY  ([OpportunitaSorgenti_Ky])
+</SqlScriptCreate>
+</SqlTable>

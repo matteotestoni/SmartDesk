@@ -1,0 +1,38 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Knowledgebase_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Knowledgebase_Ky" IsNull="N" Type="int" />
+      <Field Column="Knowledgebase_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="KnowledgebaseCategorie_Ky" IsNull="Y" Type="int" />
+      <Field Column="Knowledgebase_Data" IsNull="Y" Type="datetime" />
+      <Field Column="Knowledgebase_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Knowledgebase_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Knowledgebase_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Knowledgebase_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Knowledgebase_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Knowledgebase_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Knowledgebase_Contenuto" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Knowledgebase_PubblicaWEB" IsNull="Y" Type="bit" />
+      <Field Column="Knowledgebase_Keywords" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Knowledgebase_Riassunto" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Knowledgebase_Commenti" IsNull="Y" Type="bit" />
+      <Field Column="Knowledgebase_Recensioni" IsNull="Y" Type="bit" />
+      <Field Column="KnowledgebaseCategorie_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Lingue_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Lingue_Codice" IsNull="Y" Type="varchar" Lenght="100" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Knowledgebase_Vw
+AS
+SELECT        dbo.Knowledgebase.Knowledgebase_Ky, dbo.Knowledgebase.Knowledgebase_Titolo, dbo.Knowledgebase.KnowledgebaseCategorie_Ky, dbo.Knowledgebase.Knowledgebase_Data, 
+                         dbo.Knowledgebase.Knowledgebase_UserInsert, dbo.Knowledgebase.Knowledgebase_UserUpdate, dbo.Knowledgebase.Knowledgebase_UserDelete, dbo.Knowledgebase.Knowledgebase_DateInsert, 
+                         dbo.Knowledgebase.Knowledgebase_DateUpdate, dbo.Knowledgebase.Knowledgebase_DateDelete, dbo.Knowledgebase.Knowledgebase_Contenuto, dbo.Knowledgebase.Lingue_Ky, 
+                         dbo.Knowledgebase.Knowledgebase_PubblicaWEB, dbo.Knowledgebase.Knowledgebase_Keywords, dbo.Knowledgebase.Knowledgebase_Riassunto, dbo.Knowledgebase.Knowledgebase_Commenti, 
+                         dbo.Knowledgebase.Knowledgebase_Recensioni, dbo.KnowledgebaseCategorie.KnowledgebaseCategorie_Titolo, dbo.Lingue.Lingue_Titolo, dbo.Lingue.Lingue_Codice
+FROM            dbo.Knowledgebase LEFT OUTER JOIN
+                         dbo.Lingue ON dbo.Knowledgebase.Lingue_Ky = dbo.Lingue.Lingue_Ky LEFT OUTER JOIN
+                         dbo.KnowledgebaseCategorie ON dbo.Knowledgebase.KnowledgebaseCategorie_Ky = dbo.KnowledgebaseCategorie.KnowledgebaseCategorie_Ky
+</SqlScriptCreate>
+</SqlTable>

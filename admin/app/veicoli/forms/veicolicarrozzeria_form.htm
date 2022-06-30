@@ -1,0 +1,61 @@
+ 	<div class="grid-x grid-padding-x">     
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="VeicoliCarrozzeria_Descrizione" class="large-text-right small-text-left middle">Titolo</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="VeicoliCarrozzeria_Descrizione" id="VeicoliCarrozzeria_Descrizione" value="<%=GetFieldValue("VeicoliCarrozzeria_Descrizione")%>" size="30" required="required">
+      <span class="form-error">Obbligatorio</span>
+  	</div>
+  </div>
+ 	<div class="grid-x grid-padding-x">     
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="VeicoliCarrozzeria_Ordine" class="large-text-right small-text-left middle">Ordine</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="VeicoliCarrozzeria_Ordine" id="VeicoliCarrozzeria_Ordine" value="<%=GetFieldValue("VeicoliCarrozzeria_Ordine")%>" size="2" required="required">
+      <span class="form-error">Obbligatorio</span>
+  	</div>
+  </div>
+	<fieldset>
+		<legend>SEO</legend>
+	  <div class="grid-x grid-padding-x">
+	  	<div class="large-2 medium-2 small-4 cell text-right">
+	  		<label class="large-text-right small-text-left middle" for="VeicoliCarrozzeria_UrlKey">Friendly Url <i class="fa-duotone fa-link fa-fw"></i></label>
+	  	</div>
+	  	<div class="large-10 medium-10 small-8 cell">
+	      <input type="text" name="VeicoliCarrozzeria_UrlKey" id="VeicoliCarrozzeria_UrlKey" value="<%=GetFieldValue("VeicoliCarrozzeria_UrlKey")%>" size="83" >
+	  	</div>
+	  </div>
+	  <div class="grid-x grid-padding-x">
+	  	<div class="large-2 medium-2 small-4 cell text-right">
+	  		<label class="large-text-right small-text-left middle" for="VeicoliCarrozzeria_Title">Titolo SEO</label>
+	  	</div>
+	  	<div class="large-10 medium-12 small-8 cell">
+	      <input type="text" name="VeicoliCarrozzeria_Title" id="VeicoliCarrozzeria_Title" title="Titolo SEO" value="<%=GetFieldValue("VeicoliCarrozzeria_Title")%>" size="200">
+	  	</div>
+	  </div>
+	  <div class="grid-x grid-padding-x">
+	  	<div class="large-2 medium-2 small-12 cell">
+	  		<label class="large-text-right small-text-left middle" for="VeicoliCarrozzeria_Description">Descrizione SEO</label>
+	  	</div>
+	  	<div class="large-10 medium-10 small-12 cell">
+	      <textarea name="VeicoliCarrozzeria_Description" id="VeicoliCarrozzeria_Description" rows="2" cols="110"><%=GetFieldValue("VeicoliCarrozzeria_Description")%></textarea>
+	  	</div>
+		</div> 
+	  <div class="grid-x grid-padding-x">
+	  	<div class="large-2 medium-2 small-4 cell">
+	  		<label for="VeicoliCarrozzeria_Robots" class="large-text-right small-text-left middle">Robots SEO<i class="fa-duotone fa-file-lines fa-fw"></i></label>
+	  	</div>
+	  	<div class="large-10 medium-10 small-8 cell">
+				<select name="VeicoliCarrozzeria_Robots" id="VeicoliCarrozzeria_Robots" value="<%=GetFieldValue("VeicoliCarrozzeria_Robots")%>">
+	        <option value="index,follow">index,follow</option>
+	        <option value="noindex,nofollow">noindex,follow</option>
+	        <option value="noindex,nofollow">noindex,nofollow</option>
+	      </select>
+	      <p class="help-text">i noindex non saranno nella sitemap</p>
+	      <script type="text/javascript">
+	        selectSet('VeicoliCarrozzeria_Robots', '<%=GetFieldValue("VeicoliCarrozzeria_Robots")%>');
+	      </script>
+	  	</div>
+	  </div>
+	</fieldset>

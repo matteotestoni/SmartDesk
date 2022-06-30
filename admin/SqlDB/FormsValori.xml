@@ -1,0 +1,37 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="FormsValori" Type="TABLE">
+    <Keys>
+      <Key Column="FormsValori_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="FormsValori_Ky" IsNull="N" Type="int" />
+      <Field Column="FormsFields_Ky" IsNull="Y" Type="int" />
+      <Field Column="FormsValori_Valore" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Forms_Ky" IsNull="Y" Type="int" />
+      <Field Column="FormsFields_Codice" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="FormsValori_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="FormsValori_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="FormsValori_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="FormsValori_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="FormsValori_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="FormsValori_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[FormsValori] (
+  [FormsValori_Ky] int IDENTITY(1,1) NOT NULL , 
+  [FormsFields_Ky] int  NULL , 
+  [FormsValori_Valore] varchar(200)  NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [Forms_Ky] int  NULL , 
+  [FormsFields_Codice] varchar(200)  NULL , 
+  [FormsValori_UserInsert] int  NULL , 
+  [FormsValori_UserUpdate] int  NULL , 
+  [FormsValori_UserDelete] int  NULL , 
+  [FormsValori_DateInsert] datetime  NULL , 
+  [FormsValori_DateUpdate] datetime  NULL , 
+  [FormsValori_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[FormsValori] ADD CONSTRAINT PK_FormsValori PRIMARY KEY  ([FormsValori_Ky])
+</SqlScriptCreate>
+</SqlTable>

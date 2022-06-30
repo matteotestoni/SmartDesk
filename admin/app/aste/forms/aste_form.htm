@@ -1,0 +1,456 @@
+<ul class="tabs" role="tablist" id="aste-tabs" data-responsive-accordion-tabs="tabs small-accordion medium-tabs large-tabs">
+	<li class="tabs-title is-active" role="presentational"><a href="#tabs-scheda"><i class="fa-duotone fa-table fa-lg fa-fw"></i>Scheda</a></li>
+	<li class="tabs-title" role="presentational"><a href="#tabs-descrizione"><i class="fa-duotone fa-file-lines fa-lg fa-fw"></i>Descrizione</a></li>
+	<li class="tabs-title" role="presentational"><a href="#tabs-seo"><i class="fa-brands fa-google fa-lg fa-fw"></i>SEO</a></li>
+	<li class="tabs-title" role="presentational"><a href="#tabs-foto"><i class="fa-duotone fa-image fa-lg fa-fw"></i>Foto</a></li>
+	<li class="tabs-title" role="presentational"><a href="#tabs-video"><i class="fa-brands fa-youtube fa-lg fa-fw"></i>Video</a></li>
+</ul>
+<div id="contenutotabs">
+  <div class="tabs-content" data-tabs-content="aste-tabs">
+			<section role="tabpanel" aria-hidden="false" class="tabs-panel is-active" id="tabs-scheda" name="tabs-scheda">
+			  <div class="grid-x grid-padding-x">
+					<div class="small-4 medium-2 large-2 cell">
+							<label for="AsteVendita_Ky" class="large-text-right small-text-left middle">Tipo di vendita dell'asta</label>
+					</div>
+					<div class="small-8 medium-2 large-2 cell">
+			        <select name="AsteVendita_Ky" id="AsteVendita_Ky" value="<%=GetFieldValue(dtAste, "AsteVendita_Ky")%>">
+			          <!--#include file="/var/cache/AsteVendita-options.htm"--> 
+			        </select>
+			        <script type="text/javascript">
+			          selectSet('AsteVendita_Ky', '<%=GetFieldValue(dtAste, "AsteVendita_Ky")%>');
+			        </script>
+					</div>
+					<div class="small-4 medium-2 large-2 cell">
+							<label for="AsteNatura_Ky" class="large-text-right small-text-left middle">Natura dell' asta</label>
+					</div>
+					<div class="small-8 medium-2 large-2 cell">
+			        <select name="AsteNatura_Ky" id="AsteNatura_Ky" value="<%=GetFieldValue(dtAste, "AsteNatura_Ky")%>">
+			          <!--#include file="/var/cache/AsteNatura-options.htm"--> 
+			        </select>
+			        <script type="text/javascript">
+			          selectSet('AsteNatura_Ky', '<%=GetFieldValue(dtAste, "AsteNatura_Ky")%>');
+			        </script>
+					</div>
+					<div class="small-4 medium-2 large-2 cell">
+							<label for="AsteTipo_Ky" class="large-text-right small-text-left middle">Tipo di asta</label>
+					</div>
+					<div class="small-8 medium-2 large-2 cell">
+			        <select name="AsteTipo_Ky" id="AsteTipo_Ky" value="<%=GetFieldValue(dtAste, "AsteTipo_Ky")%>">
+			          <!--#include file="/var/cache/AsteTipo-options.htm"--> 
+			        </select>
+			        <script type="text/javascript">
+			          selectSet('AsteTipo_Ky', '<%=GetFieldValue(dtAste, "AsteTipo_Ky")%>');
+			        </script>
+					</div>
+			  </div>
+			  
+				<div class="grid-x grid-padding-x">
+			  	<div class="large-2 medium-2 small-4 cell">
+			  		<label for="Aste_Numero" class="large-text-right small-text-left middle">Numero</label>
+			  	</div>
+			  	<div class="large-2 medium-2 small-8 cell">
+			      <input type="text" name="Aste_Numero" id="Aste_Numero" title="Numero" value="<%=GetFieldValue(dtAste, "Aste_Numero")%>" size="5" required="required">
+			      <span class="form-error">Obbligatorio</span>
+			  	</div>
+			  	<div class="large-2 medium-2 small-4 cell">
+			  		<label for="Aste_Titolo" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Titolo</label>
+			  	</div>
+			  	<div class="large-2 medium-2 small-8 cell">
+			      <input type="text" name="Aste_Titolo" id="Aste_Titolo" title="Nome" value="<%=GetFieldValue(dtAste, "Aste_Titolo")%>" size="150" required="required">
+			  	</div>
+			  	<div class="large-2 medium-2 small-4 cell">
+			  		<label for="Aste_Procedura" class="large-text-right small-text-left middle">Procedura</label>
+			  	</div>
+			  	<div class="large-2 medium-2 small-8 cell">
+			      <input type="text" name="Aste_Procedura" id="Aste_Procedura" title="Nome" value="<%=GetFieldValue(dtAste, "Aste_Procedura")%>" size="150" required="required">
+			  	</div>
+			  </div>
+			  
+				<div class="grid-x grid-padding-x">
+	    		<div class="large-2 medium-2 small-4 cell">
+	    			<label for="Anagrafiche_RagioneSociale" class="large-text-right">Anagrafica <i class="fa-duotone fa-users fa-fw"></i></label>
+	    		</div>
+	    		<div class="large-10 medium-10 small-8 cell">
+					  <!--#include file="/admin/app/aste/forms/anagrafiche_seleziona_form.htm"--> 
+				  </div>
+			  </div>
+				<div class="grid-x grid-padding-x">
+					<div class="large-2 medium-2 small-4 cell">
+			        <label for="AsteCategorie_Ky" class="large-text-right small-text-left middle">Categoria</label>
+			    </div>
+			    <div class="large-10 medium-10 small-8 cell">
+			      <select name="AsteCategorie_Ky" id="AsteCategorie_Ky" class="select2" placeholder="Categoria" value="<%=GetFieldValue(dtAste, "AsteCategorie_Ky")%>">
+			        <!--#include file="/var/cache/AsteCategorie-options.htm"--> 
+			      </select>
+			      <span class="form-error">Obbligatorio.</span>
+			      <script type="text/javascript">
+			        selectSet('AsteCategorie_Ky', '<%=GetFieldValue(dtAste, "AsteCategorie_Ky")%>');
+			      </script>
+			    </div>                                       
+			  </div>
+			  <script type="text/javascript">
+						jQuery("#Anagrafiche_RagioneSociale" ).autocomplete({
+							source: "/admin/app/anagrafiche/autosuggest-GetAnagrafiche-json.aspx",
+							minLength: 2,
+							select: function( event, ui ) {
+								jQuery("#Anagrafiche_Ky").val(ui.item.value);
+								jQuery("#Anagrafiche_RagioneSociale").val(ui.item.label);
+								return false;
+							}
+						});
+			  </script>
+
+				<fieldset class="fieldset">
+        <legend><i class="fa-duotone fa-location-dot fa-fw"></i>Indirizzo</legend>
+			  <div class="grid-x grid-padding-x">
+			  	<div class="large-2 medium-2 small-4 cell">
+						<label class="large-text-right">Nazione <i class="fa-duotone fa-location-dot fa-fw"></i></label>
+					</div>
+					<div class="large-2 medium-2 small-8 cell">
+						<select name="Nazioni_Ky" id="Nazioni_Ky" class="select2" value="">
+						  <!--#include file="/var/cache/Nazioni-options.htm"--> 
+						</select>
+			      <script type="text/javascript">
+			        selectSet('Nazioni_Ky', '<%=GetFieldValue(dtAste, "Nazioni_Ky")%>');
+			      </script>
+			    </div>				              
+			  	<div class="large-2 medium-2 small-4 cell">
+						<label class="large-text-right">Regione <i class="fa-duotone fa-location-dot fa-fw"></i></label>
+					</div>
+					<div class="large-2 medium-2 small-8 cell">
+						<select name="Regioni_Ky" id="Regioni_Ky" value="<%=GetFieldValue(dtAste, "Regioni_Ky")%>" onchange="loadCoreProvince();">
+						  <!--#include file="/var/cache/Regioni-options.htm"--> 
+						</select>
+			      <script type="text/javascript">
+			        selectSet('Regioni_Ky', '<%=GetFieldValue(dtAste, "Regioni_Ky")%>');
+			      </script>
+			    </div>
+			  	<div class="large-2 medium-2 small-4 cell">
+						<label class="large-text-right">Provincia <i class="fa-duotone fa-location-dot fa-fw"></i></label>
+					</div>
+					<div class="large-2 medium-2 small-8 cell">
+						<select name="Province_Ky" id="Province_Ky" value="<%=GetFieldValue(dtAste, "Province_Ky")%>" onchange="loadCoreComuni();">
+						</select>
+			      <script type="text/javascript">
+			        loadCoreProvince("<%=GetFieldValue(dtAste, "Regioni_Ky")%>","<%=GetFieldValue(dtAste, "Province_Ky")%>");
+			        selectSet('Province_Ky', '<%=GetFieldValue(dtAste, "Province_Ky")%>');
+			      </script>
+			    </div>
+			  </div>				              
+			  
+				<div class="grid-x grid-padding-x">
+			  	<div class="large-2 medium-2 small-4 cell">
+						<label class="large-text-right">Comune <i class="fa-duotone fa-location-dot fa-fw"></i></label>
+					</div>
+					<div class="large-2 medium-2 small-8 cell">
+						<select name="Comuni_Ky" id="Comuni_Ky" value="<%=GetFieldValue(dtAste, "Comuni_Ky")%>">
+						</select>
+			      <script type="text/javascript">
+			        loadCoreComuni("<%=GetFieldValue(dtAste, "Province_Ky")%>","<%=GetFieldValue(dtAste, "Comuni_Ky")%>");
+			        selectSet('Comuni_Ky', '<%=GetFieldValue(dtAste, "Comuni_Ky")%>');
+			      </script>
+			    </div>
+			  	<div class="large-2 medium-2 small-4 cell">
+			  		<label for="Aste_Indirizzo" class="large-text-right small-text-left middle">Indirizzo <i class="fa-duotone fa-location-dot fa-fw"></i></label>
+			  	</div>
+			  	<div class="large-2 medium-2 small-8 cell">
+			      <input type="text" name="Aste_Indirizzo" id="Aste_Indirizzo" title="Indirizzo" value="<%=GetFieldValue(dtAste, "Aste_Indirizzo")%>" size="60">
+			      <span class="form-error">Obbligatorio</span>
+			  	</div>
+			 </div>
+			 </fieldset>
+			
+			<fieldset class="fieldset">
+      <legend><i class="fa-duotone fa-user fa-fw"></i>Referente</legend>
+				<div class="grid-x grid-padding-x">
+			  	<div class="large-2 medium-2 small-4 cell">
+			  		<label for="Aste_Referente" class="large-text-right small-text-left middle">Referente <i class="fa-duotone fa-user fa-fw"></i></label>
+			  	</div>
+			  	<div class="large-2 medium-2 small-8 cell">
+			      <input type="text" name="Aste_Referente" id="Aste_Referente" title="Aste_Referente" value="<%=GetFieldValue(dtAste, "Aste_Referente")%>" size="60">
+			      <span class="form-error">Obbligatorio</span>
+			  	</div>
+			
+			  	<div class="large-2 medium-2 small-4 cell">
+			  		<label for="Aste_CellulareReferente" class="large-text-right small-text-left middle">Cellulare Referente <i class="fa-duotone fa-mobile fa-fw"></i></label>
+			  	</div>
+			  	<div class="large-2 medium-2 small-8 cell">
+			      <input type="text" name="Aste_CellulareReferente" id="Aste_Referente" title="Aste_CellulareReferente" value="<%=GetFieldValue(dtAste, "Aste_CellulareReferente")%>" size="60">
+			      <span class="form-error">Obbligatorio</span>
+			  	</div>
+			
+			  	<div class="large-2 medium-2 small-4 cell">
+			  		<label for="Aste_EmailReferente" class="large-text-right small-text-left middle">Email Referente <i class="fa-duotone fa-envelope fa-fw"></i></label>
+			  	</div>
+			  	<div class="large-2 medium-2 small-8 cell">
+			      <input type="text" name="Aste_EmailReferente" id="Aste_Referente" title="Aste_EmailReferente" value="<%=GetFieldValue(dtAste, "Aste_EmailReferente")%>" size="60">
+			      <span class="form-error">Obbligatorio</span>
+			  	</div>
+			  </div>
+				</fieldset>
+			
+				<div class="grid-x grid-padding-x">
+					<div class="small-4 medium-2 large-2 cell">
+							<label for="AsteRitiri_Ky" class="large-text-right small-text-left middle">Ritiri delle aste</label>
+					</div>
+					<div class="small-8 medium-2 large-2 cell">
+			        <select name="AsteRitiri_Ky" id="AsteRitiri_Ky" value="<%=GetFieldValue(dtAste, "AsteRitiri_Ky")%>">
+			          <!--#include file="/var/cache/AsteRitiri-options.htm"--> 
+			        </select>
+			        <script type="text/javascript">
+			          selectSet('AsteRitiri_Ky', '<%=GetFieldValue(dtAste, "AsteRitiri_Ky")%>');
+			        </script>
+					</div>
+
+			  	<div class="large-2 medium-2 small-4 cell">
+			  		<label for="Aste_Cauzione" class="large-text-right small-text-left middle">Cauzione &euro;</label>
+			  	</div>
+			  	<div class="large-2 medium-2 small-8 cell">
+			      <input type="text" name="Aste_Cauzione" id="Aste_Cauzione" title="Aste_Cauzione" value="<%=GetFieldValue(dtAste, "Aste_Cauzione")%>" size="60">
+			      <span class="form-error">Obbligatorio</span>
+			  	</div>
+			  	<div class="large-2 medium-2 small-4 cell">
+			  		<label for="Aste_Rilancio" class="large-text-right small-text-left middle">Rilancio &euro;</label>
+			  	</div>
+			  	<div class="large-2 medium-2 small-8 cell">
+			      <input type="text" name="Aste_Rilancio" id="Aste_Referente" title="Aste_Rilancio" value="<%=GetFieldValue(dtAste, "Aste_Rilancio")%>" size="60">
+			      <span class="form-error">Obbligatorio</span>
+			  	</div>
+			  </div>
+			
+			  <div class="grid-x grid-padding-x">
+					<div class="small-4 medium-2 large-2 cell">
+							<label for="PagamentiMetodo_Ky" class="large-text-right small-text-left middle">Metodo di pagamento</label>
+					</div>
+					<div class="small-8 medium-2 large-2 cell">
+			        <select name="PagamentiMetodo_Ky" id="PagamentiMetodo_Ky" value="<%=GetFieldValue(dtAste, "PagamentiMetodo_Ky")%>">
+			          <!--#include file="/var/cache/PagamentiMetodo-options.htm"--> 
+			        </select>
+			        <script type="text/javascript">
+			          selectSet('PagamentiMetodo_Ky', '<%=GetFieldValue(dtAste, "PagamentiMetodo_Ky")%>');
+			        </script>
+					</div>
+			  	<div class="large-2 medium-2 small-4 cell">
+			  		<label for="Aste_DataPagamento" class="large-text-right small-text-left middle">Data di pagamento<i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+			  	</div>
+			  	<div class="large-2 medium-2 small-8 cell">
+			      <input type="text" name="Aste_DataPagamento" id="Aste_DataPagamento" title="Aste_DataPagamento" class="fdatepicker" value="<%=GetFieldValue(dtAste, "Aste_DataPagamento")%>" size="60" required="required">
+			      <span class="form-error">Obbligatorio</span>
+			  	</div>
+					<div class="large-2 medium-2 small-4 cell">
+						<label class="large-text-right small-text-left middle">Conto <i class="fa-duotone fa-credit-card fa-fw"></i></label>
+					</div>
+					<div class="large-2 medium-2 small-8 cell end">
+				      <select name="Conti_Ky" id="Conti_Ky" value="1" required="required">
+				        <!--#include file="/var/cache/Conti-options.htm"--> 
+				      </select>
+				      <span class="form-error">Obbligatorio</span>
+				      <script type="text/javascript">
+				        selectSet('Conti_Ky', '<%=GetFieldValue(dtAste, "Conti_Ky")%>');
+				      </script>
+					</div>
+				</div>
+        <div class="grid-x grid-padding-x">
+			  	<div class="large-2 medium-2 small-4 cell">
+			  		<label for="Aste_CommissioniTipo" class="large-text-right small-text-left middle">Tipo di commissione</label>
+			  	</div>
+			  	<div class="large-2 medium-2 small-8 cell">
+			      <select name="Aste_CommissioniTipo" id="Aste_CommissioniTipo" value="1" required="required">
+			        <option value="1">A scaglioni</option> 
+			        <option value="2">Fissa</option> 
+			      </select>
+			      <span class="form-error">Obbligatorio</span>
+			      <script type="text/javascript">
+			        selectSet('Aste_CommissioniTipo', '<%=GetFieldValue(dtAste, "Aste_CommissioniTipo")%>');
+			      </script>
+			      <span class="form-error">Obbligatorio</span>
+			  	</div>
+			  	<div class="large-2 medium-2 small-4 cell">
+			  		<label for="Aste_Commissione" class="large-text-right small-text-left middle">Commissione %</label>
+			  	</div>
+			  	<div class="large-2 medium-2 small-8 cell">
+			      <input type="text" name="Aste_Commissione" id="Aste_Commissione" title="Commissione" value="<%=GetFieldValue(dtAste, "Aste_Commissione")%>" size="60">
+			      <span class="form-error">Obbligatorio</span>
+			  	</div>
+				</div>					
+			</section>
+			<section role="tabpanel" aria-hidden="false" class="tabs-panel" id="tabs-descrizione" name="tabs-descrizione">
+			  <div class="grid-x grid-padding-x">
+			  	<div class="large-12 medium-12 small-12 cell">
+						<textarea name="Aste_Descrizione" id="Aste_Descrizione" class="ckeditor required" rows="3" required="required"><%=GetFieldValue(dtAste, "Aste_Descrizione")%></textarea>
+				    <script type="text/javascript">
+				    CKEDITOR.replace('Aste_Descrizione',
+				    	{
+				      	filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+				      	filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+				    	});
+		    		CKFinder.setupCKEditor( editor, null, { type: 'Files', currentFolder: '/uploads/foto-aste/' } );
+				    </script>
+			      <span class="form-error">Obbligatorio</span>
+			  	</div>
+			  </div>
+			</section>
+    	<section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-seo" name="tabs-seo">
+          <div class="grid-x grid-padding-x">
+				  	<div class="large-2 medium-2 small-4 cell">
+				  		<label for="Aste_UrlKey" class="large-text-right small-text-left middle">Friendly Url</label>
+				  	</div>
+				  	<div class="large-10 medium-10 small-8 cell">
+				      <input type="text" name="Aste_UrlKey" id="Aste_UrlKey" title="Codice" value="<%=GetFieldValue(dtAste, "Aste_UrlKey")%>" size="60">
+				      <span class="form-error">Obbligatorio</span>
+				  	</div>
+          </div>
+          <div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-4 cell text-right">
+          		<label class="large-text-right small-text-left middle" for="Aste_Title">Titolo SEO</label>
+          	</div>
+          	<div class="large-10 medium-12 small-8 cell">
+              <input type="text" name="Aste_Title" id="Aste_Title" title="Titolo SEO" value="<%=GetFieldValue(dtAste, "Aste_Title")%>" size="200">
+          	</div>
+          </div>
+          <div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-12 cell">
+          		<label class="large-text-right small-text-left middle" for="Aste_Description">Descrizione SEO</label>
+          	</div>
+          	<div class="large-10 medium-10 small-12 cell">
+              <textarea name="Aste_Description" id="Aste_Description" rows="2" cols="110"><%=GetFieldValue(dtAste, "Aste_Description")%></textarea>
+          	</div>
+					</div> 
+				  <div class="grid-x grid-padding-x">
+				  	<div class="large-2 medium-2 small-4 cell">
+				  		<label for="Aste_Robots" class="large-text-right small-text-left middle">Robots SEO<i class="fa-duotone fa-file-lines fa-fw"></i></label>
+				  	</div>
+				  	<div class="large-10 medium-10 small-8 cell">
+							<select name="Aste_Robots" id="Aste_Robots" value="<%=GetFieldValue(dtAste, "Aste_Robots")%>">
+				        <option value="index,follow">index,follow</option>
+				        <option value="noindex,nofollow">noindex,follow</option>
+				        <option value="noindex,nofollow">noindex,nofollow</option>
+				      </select>
+			        <p class="help-text">i noindex non saranno nella sitemap</p>
+				      <script type="text/javascript">
+				        selectSet('Aste_Robots', '<%=GetFieldValue(dtAste, "Aste_Robots")%>');
+				      </script>
+				  	</div>
+				  </div>
+                  
+      <div class="grid-x grid-padding-x">
+      	<div class="large-2 medium-2 small-12 cell">
+      		<label class="large-text-right small-text-left middle" for="CoreResponseCode_Ky">Risposta HTTP</label>
+      	</div>
+      	<div class="large-10 medium-10 small-12 cell">
+		  <select name="CoreResponseCode_Ky" id="CoreResponseCode_Ky">
+  			<!--#include file="/var/cache/CoreResponseCode-options.htm"--> 
+	      </select>
+	      <script type="text/javascript">
+	        selectSet('CoreResponseCode_Ky', '<%=GetFieldValue(dtAste, "CoreResponseCode_Ky")%>');
+	      </script>
+      	</div>
+	  </div> 
+      
+      <div class="grid-x grid-padding-x">
+        <div class="large-2 medium-2 small-4 cell">
+            <label for="Aste_RedirectUrl" class="large-text-right small-text-left middle">RedirectUrl</label>
+        </div>
+        <div class="large-10 medium-10 small-8 cell">
+            <input type="text" name="Aste_RedirectUrl" id="Aste_RedirectUrl" value="<%=GetFieldValue(dtAste, "Aste_RedirectUrl")%>" placeholder="RedirectUrl">
+        </div>
+      </div>      
+                  
+			</section>
+  		<section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-foto" name="tabs-foto">
+				<div class="grid-x grid-padding-x">
+			  	<div class="large-2 medium-2 small-4 cell">
+			  		<label for="fotoasta" class="large-text-right small-text-left middle">Foto identificativa dell'asta</label>
+			  	</div>
+			  	<div class="large-10 medium-10 small-8 cell">
+			      <div id="html5_uploader" style="width: 500px; height: 330px;display:none">Your browser doesn't support native upload.</div>
+						<script>
+						// Setup html5 version
+						jQuery("#html5_uploader").plupload({
+							// General settings
+							runtimes : 'html5,html4',
+							url: '/admin/ImageUploadHandler.ashx',
+							chunk_size : '64kb',
+							unique_names : false,
+							max_file_count: 20,
+							file_data_name: 'fotoasta',
+							filters : {
+								max_file_size : '10mb',
+								mime_types: [
+									{title : "Image files", extensions : "jpg,gif,png"},
+									{title : "Zip files", extensions : "zip"}
+								]
+							},
+							sortable: true,
+						  dragdrop: true,
+							views: {
+								list: true,
+								thumbs: true,
+								active: 'thumbs'
+							}
+						});
+						</script>
+
+						<p>Le immagini devono essere in formato jpg<br></p>
+			      <label for="fotoasta" class="button small">Carica immagini</label>
+			      <input type="file" class="show-for-sr fileupload" placeholder="Foto asta" id="fotoasta" name="fotoasta" />
+			      <small class="form-error">obbligatorio.</small>
+			      <div id="galleryfotocaricate" class="gallery"></div>
+			      <script>
+			        jQuery(function() {
+			          var imagesPreview = function(input, placeToInsertImagePreview) {
+			              if (input.files) {
+			                  var filesAmount = input.files.length;
+			                  jQuery(placeToInsertImagePreview).html("");
+			                  for (i = 0; i < filesAmount; i++) {
+			                      var reader = new FileReader();
+			                      reader.onload = function(event) {
+			                          jQuery(jQuery.parseHTML('<img width="150" height="100" hspace="10" vspace="10" style="border:1px solid #000000">')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+			                      }
+			                       reader.readAsDataURL(input.files[i]);
+			                  }
+			              }
+			          };
+			          jQuery('#fotoasta').on('change', function() {
+			              imagesPreview(this, '#galleryfotocaricate');
+			          });
+			        });
+			      </script>
+			  	</div>
+			  </div>
+			  
+				<div class="grid-x grid-padding-x">
+			  	<div class="large-2 medium-2 small-4 cell">
+			  		<label for="anteprima" class="large-text-right small-text-left middle">Anteprime</label>
+			  	</div>
+			  	<div class="large-10 medium-10 small-8 cell">
+              <div class="grid-x grid-padding-x small-up-2 medium-up-3 large-up-5">
+			            <% 
+			            string strTemp="";
+			            for (int i = 1; i < 51; i++){
+			              strTemp="Aste_Foto" + i;
+			              if (GetFieldValue(dtAste, strTemp).Length>0){
+			                Response.Write("<div class=\"cell\"><div class=\"thumbnail\"><a href=\"" + GetFieldValue(dtAste, strTemp)  + "\" data-fancybox=\"images\"><img src=\"" + GetFieldValue(dtAste, strTemp)  + "\" height=\"150\" width=\"100\" style=\"width:150px;height:100px;\" data-caption=\"immagine annuncio\"></a></div></div>");
+			              }
+			            }
+			            %>
+			        </div> 
+			    </div>
+			  </div>
+		  </section>
+		  <section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-video" name="tabs-video">
+				<div class="grid-x grid-padding-x">
+			  	<div class="large-2 medium-2 small-4 cell">
+			  		<label for="Aste_Video" class="large-text-right small-text-left middle">Video</label>
+			  	</div>
+			  	<div class="large-10 medium-10 small-8 cell">
+			      <input type="text" name="Aste_Video" id="Aste_Video" title="Aste_Video" value="<%=GetFieldValue(dtAste, "Aste_Video")%>" size="60">
+			      <span class="form-error">Obbligatorio</span>
+			      <span class="help-text">Codice video di youtube. Ad esempio: "j2bwv03iAe8"</span>
+			  	</div>
+			  </div>
+  		</section>
+
+  </div>
+</div> 
+				 

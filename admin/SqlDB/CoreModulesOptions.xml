@@ -1,0 +1,43 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CoreModulesOptions" Type="TABLE">
+    <Keys>
+      <Key Column="CoreModulesOptions_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CoreModulesOptions_Ky" IsNull="N" Type="int" />
+      <Field Column="CoreModules_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreModulesOptions_Code" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreModulesOptions_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreModulesOptions_Type" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="CoreModulesOptions_Description" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreModulesOptions_Icon" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreModulesOptions_Order" IsNull="Y" Type="int" />
+      <Field Column="CoreModulesOptions_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CoreModulesOptions_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CoreModulesOptions_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CoreModulesOptions_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CoreModulesOptions_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CoreModulesOptions_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="CoreModulesOptions_Default" IsNull="Y" Type="varchar" Lenght="200" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CoreModulesOptions] (
+  [CoreModulesOptions_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CoreModules_Ky] int  NULL , 
+  [CoreModulesOptions_Code] varchar(200)  NULL , 
+  [CoreModulesOptions_Title] varchar(200)  NULL , 
+  [CoreModulesOptions_Type] varchar(50)  NULL , 
+  [CoreModulesOptions_Description] varchar(MAX)  NULL , 
+  [CoreModulesOptions_Icon] varchar(200)  NULL , 
+  [CoreModulesOptions_Order] int  NULL , 
+  [CoreModulesOptions_UserInsert] int  NULL , 
+  [CoreModulesOptions_UserUpdate] int  NULL , 
+  [CoreModulesOptions_UserDelete] int  NULL , 
+  [CoreModulesOptions_DateInsert] datetime  NULL , 
+  [CoreModulesOptions_DateUpdate] datetime  NULL , 
+  [CoreModulesOptions_DateDelete] datetime  NULL , 
+  [CoreModulesOptions_Default] varchar(200)  NULL  )
+ALTER TABLE [dbo].[CoreModulesOptions] ADD CONSTRAINT PK_CoreModulesOptions PRIMARY KEY  ([CoreModulesOptions_Ky])
+</SqlScriptCreate>
+</SqlTable>

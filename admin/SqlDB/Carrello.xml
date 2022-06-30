@@ -1,0 +1,41 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Carrello" Type="TABLE">
+    <Keys>
+      <Key Column="Carrello_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Carrello_Ky" IsNull="N" Type="int" />
+      <Field Column="Carrello_Qta" IsNull="Y" Type="int" />
+      <Field Column="Prodotti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Carrello_Sessione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Prodotti_Prezzo" IsNull="Y" Type="money" />
+      <Field Column="ImposizioniIVA_Ky" IsNull="Y" Type="int" />
+      <Field Column="Prodotti_Codice" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Carrello_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Carrello_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Carrello_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Carrello_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Carrello_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Carrello_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Carrello] (
+  [Carrello_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Carrello_Qta] int  NULL , 
+  [Prodotti_Ky] int  NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [Carrello_Sessione] varchar(100)  NULL , 
+  [Prodotti_Prezzo] money  NULL , 
+  [ImposizioniIVA_Ky] int  NULL , 
+  [Prodotti_Codice] varchar(50)  NULL , 
+  [Carrello_UserInsert] int  NULL , 
+  [Carrello_UserUpdate] int  NULL , 
+  [Carrello_UserDelete] int  NULL , 
+  [Carrello_DateInsert] datetime  NULL , 
+  [Carrello_DateUpdate] datetime  NULL , 
+  [Carrello_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[Carrello] ADD CONSTRAINT PK_Carrello PRIMARY KEY  ([Carrello_Ky])
+</SqlScriptCreate>
+</SqlTable>

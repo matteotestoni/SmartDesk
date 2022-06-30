@@ -1,0 +1,43 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AziendeSedi" Type="TABLE">
+    <Keys>
+      <Key Column="AziendeSedi_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AziendeSedi_Ky" IsNull="N" Type="int" />
+      <Field Column="Aziende_Ky" IsNull="Y" Type="int" />
+      <Field Column="AziendeSedi_Nome" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="AziendeSedi_Indirizzo" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="AziendeSedi_CAP" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="AziendeSedi_Comune" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="AziendeSedi_Provincia" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="AziendeSedi_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AziendeSedi_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AziendeSedi_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AziendeSedi_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AziendeSedi_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AziendeSedi_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="AziendeSedi_Codice" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="AziendeSedi_Telefono" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AziendeSedi] (
+  [AziendeSedi_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Aziende_Ky] int  NULL , 
+  [AziendeSedi_Nome] varchar(MAX)  NULL , 
+  [AziendeSedi_Indirizzo] varchar(MAX)  NULL , 
+  [AziendeSedi_CAP] varchar(10)  NULL , 
+  [AziendeSedi_Comune] varchar(MAX)  NULL , 
+  [AziendeSedi_Provincia] varchar(MAX)  NULL , 
+  [AziendeSedi_UserInsert] int  NULL , 
+  [AziendeSedi_UserUpdate] int  NULL , 
+  [AziendeSedi_UserDelete] int  NULL , 
+  [AziendeSedi_DateInsert] datetime  NULL , 
+  [AziendeSedi_DateUpdate] datetime  NULL , 
+  [AziendeSedi_DateDelete] datetime  NULL , 
+  [AziendeSedi_Codice] varchar(MAX)  NULL , 
+  [AziendeSedi_Telefono] varchar(MAX)  NULL  )
+ALTER TABLE [dbo].[AziendeSedi] ADD CONSTRAINT PK_AziendeSedi PRIMARY KEY  ([AziendeSedi_Ky])
+</SqlScriptCreate>
+</SqlTable>

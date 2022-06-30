@@ -1,0 +1,45 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CoreFormsFields" Type="TABLE">
+    <Keys>
+      <Key Column="CoreFormsFields_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CoreFormsFields_Ky" IsNull="N" Type="int" />
+      <Field Column="CoreForms_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsFieldset_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsTabs_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreAttributes_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsFields_Order" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsFields_Label" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreFormsFields_Columns" IsNull="Y" Type="tinyint" />
+      <Field Column="CoreFormsFields_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsFields_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsFields_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsFields_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CoreFormsFields_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CoreFormsFields_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="CoreFormsFields_Hidden" IsNull="Y" Type="bit" />
+      <Field Column="CoreFormsFields_Readonly" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CoreFormsFields] (
+  [CoreFormsFields_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CoreForms_Ky] int  NULL , 
+  [CoreFormsFieldset_Ky] int  NULL , 
+  [CoreFormsTabs_Ky] int  NULL , 
+  [CoreAttributes_Ky] int  NULL , 
+  [CoreFormsFields_Order] int  NULL , 
+  [CoreFormsFields_Label] varchar(MAX)  NULL , 
+  [CoreFormsFields_Columns] tinyint  NULL , 
+  [CoreFormsFields_UserInsert] int  NULL , 
+  [CoreFormsFields_UserUpdate] int  NULL , 
+  [CoreFormsFields_UserDelete] int  NULL , 
+  [CoreFormsFields_DateInsert] datetime  NULL , 
+  [CoreFormsFields_DateUpdate] datetime  NULL , 
+  [CoreFormsFields_DateDelete] datetime  NULL , 
+  [CoreFormsFields_Hidden] bit  NULL , 
+  [CoreFormsFields_Readonly] bit  NULL  )
+ALTER TABLE [dbo].[CoreFormsFields] ADD CONSTRAINT PK_CoreFormsFields PRIMARY KEY  ([CoreFormsFields_Ky])
+</SqlScriptCreate>
+</SqlTable>

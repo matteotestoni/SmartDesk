@@ -1,0 +1,20 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Lingue_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Lingue_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="Lingue_Codice" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Lingue_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Divise_Ky" IsNull="Y" Type="int" />
+      <Field Column="Lingue_Ordine" IsNull="Y" Type="tinyint" />
+      <Field Column="Divise_Codice" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="Divise_Descrizione" IsNull="Y" Type="nvarchar" Lenght="50" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Lingue_Vw
+AS
+SELECT        dbo.Lingue.Lingue_Ky, dbo.Lingue.Lingue_Codice, dbo.Lingue.Lingue_Titolo, dbo.Lingue.Divise_Ky, dbo.Lingue.Lingue_Ordine, dbo.Divise.Divise_Codice, dbo.Divise.Divise_Descrizione
+FROM            dbo.Lingue LEFT OUTER JOIN
+                         dbo.Divise ON dbo.Lingue.Divise_Ky = dbo.Divise.Divise_Ky
+</SqlScriptCreate>
+</SqlTable>

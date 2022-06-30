@@ -1,0 +1,33 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliColore" Type="TABLE">
+    <Keys>
+      <Key Column="VeicoliColore_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="VeicoliColore_Ky" IsNull="N" Type="smallint" />
+      <Field Column="VeicoliColore_Descrizione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="VeicoliColore_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="VeicoliColore_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="VeicoliColore_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="VeicoliColore_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliColore_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliColore_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Colori_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliColore_Ordine" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[VeicoliColore] (
+  [VeicoliColore_Ky] smallint IDENTITY(1,1) NOT NULL , 
+  [VeicoliColore_Descrizione] varchar(50)  NULL , 
+  [VeicoliColore_UserInsert] int  NULL , 
+  [VeicoliColore_UserUpdate] int  NULL , 
+  [VeicoliColore_UserDelete] int  NULL , 
+  [VeicoliColore_DateInsert] datetime  NULL , 
+  [VeicoliColore_DateUpdate] datetime  NULL , 
+  [VeicoliColore_DateDelete] datetime  NULL , 
+  [Colori_Ky] int  NULL , 
+  [VeicoliColore_Ordine] int  NULL  )
+ALTER TABLE [dbo].[VeicoliColore] ADD CONSTRAINT PK_VeicoliColore PRIMARY KEY  ([VeicoliColore_Ky])
+</SqlScriptCreate>
+</SqlTable>

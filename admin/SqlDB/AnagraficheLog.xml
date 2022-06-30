@@ -1,0 +1,45 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnagraficheLog" Type="TABLE">
+    <Keys>
+      <Key Column="AnagraficheLog_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AnagraficheLog_Ky" IsNull="N" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheLog_Data" IsNull="Y" Type="smalldatetime" />
+      <Field Column="AnagraficheLog_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AnagraficheLog_Valore" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AnagraficheLog_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheLog_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheLog_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheLog_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheLog_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheLog_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheLog_IP" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Anagrafiche_UserAgent" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="Anagrafiche_Cookie" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="AnagraficheLog_UserAgent" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="AnagraficheLog_Cookie" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AnagraficheLog] (
+  [AnagraficheLog_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [AnagraficheLog_Data] smalldatetime  NULL , 
+  [AnagraficheLog_Descrizione] varchar(100)  NULL , 
+  [AnagraficheLog_Valore] varchar(100)  NULL , 
+  [AnagraficheLog_UserInsert] int  NULL , 
+  [AnagraficheLog_UserUpdate] int  NULL , 
+  [AnagraficheLog_UserDelete] int  NULL , 
+  [AnagraficheLog_DateInsert] datetime  NULL , 
+  [AnagraficheLog_DateUpdate] datetime  NULL , 
+  [AnagraficheLog_DateDelete] datetime  NULL , 
+  [AnagraficheLog_IP] varchar(20)  NULL , 
+  [Anagrafiche_UserAgent] varchar(500)  NULL , 
+  [Anagrafiche_Cookie] varchar(MAX)  NULL , 
+  [AnagraficheLog_UserAgent] varchar(500)  NULL , 
+  [AnagraficheLog_Cookie] varchar(MAX)  NULL  )
+ALTER TABLE [dbo].[AnagraficheLog] ADD CONSTRAINT PK_AnagraficheLog PRIMARY KEY  ([AnagraficheLog_Ky])
+</SqlScriptCreate>
+</SqlTable>

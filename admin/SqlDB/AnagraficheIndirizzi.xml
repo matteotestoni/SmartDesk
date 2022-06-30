@@ -1,0 +1,49 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnagraficheIndirizzi" Type="TABLE">
+    <Keys>
+      <Key Column="AnagraficheIndirizzi_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AnagraficheIndirizzi_Ky" IsNull="N" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheIndirizzi_Nome" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnagraficheIndirizzi_Indirizzo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AnagraficheIndirizzi_Comune" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="AnagraficheIndirizzi_Provincia" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="AnagraficheIndirizzi_CAP" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="AnagraficheIndirizzi_Telefono" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="AnagraficheIndirizzi_DefaultFatturazione" IsNull="Y" Type="bit" />
+      <Field Column="AnagraficheIndirizzi_DefaultSpedizione" IsNull="Y" Type="bit" />
+      <Field Column="AnagraficheIndirizzi_PartitaIVA" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="AnagraficheIndirizzi_CodiceFiscale" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="AnagraficheIndirizzi_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheIndirizzi_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheIndirizzi_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheIndirizzi_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheIndirizzi_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheIndirizzi_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AnagraficheIndirizzi] (
+  [AnagraficheIndirizzi_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [AnagraficheIndirizzi_Nome] varchar(200)  NULL , 
+  [AnagraficheIndirizzi_Indirizzo] varchar(100)  NULL , 
+  [AnagraficheIndirizzi_Comune] varchar(50)  NULL , 
+  [AnagraficheIndirizzi_Provincia] varchar(50)  NULL , 
+  [AnagraficheIndirizzi_CAP] varchar(50)  NULL , 
+  [AnagraficheIndirizzi_Telefono] varchar(50)  NULL , 
+  [AnagraficheIndirizzi_DefaultFatturazione] bit  NULL , 
+  [AnagraficheIndirizzi_DefaultSpedizione] bit  NULL , 
+  [AnagraficheIndirizzi_PartitaIVA] varchar(50)  NULL , 
+  [AnagraficheIndirizzi_CodiceFiscale] varchar(50)  NULL , 
+  [AnagraficheIndirizzi_UserInsert] int  NULL , 
+  [AnagraficheIndirizzi_UserUpdate] int  NULL , 
+  [AnagraficheIndirizzi_UserDelete] int  NULL , 
+  [AnagraficheIndirizzi_DateInsert] datetime  NULL , 
+  [AnagraficheIndirizzi_DateUpdate] datetime  NULL , 
+  [AnagraficheIndirizzi_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[AnagraficheIndirizzi] ADD CONSTRAINT PK_AnagraficheIndirizzi PRIMARY KEY  ([AnagraficheIndirizzi_Ky])
+</SqlScriptCreate>
+</SqlTable>

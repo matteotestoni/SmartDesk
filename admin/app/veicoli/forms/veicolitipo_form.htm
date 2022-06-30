@@ -1,0 +1,54 @@
+ 	<div class="grid-x grid-padding-x">     
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="VeicoliTipo_Titolo" class="large-text-right small-text-left middle">Titolo</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="VeicoliTipo_Titolo" id="VeicoliTipo_Titolo" value="<%=GetFieldValue("VeicoliTipo_Titolo")%>" size="30" required="required">
+      <span class="form-error">Obbligatorio</span>
+			<p class="help-text">max 100 carateri</p>
+  	</div>
+  </div>
+	<fieldset>
+	<legend>SEO</legend>
+ 	<div class="grid-x grid-padding-x">     
+  	<div class="large-2 medium-2 small-12 cell">
+  		<label for="VeicoliTipo_UrlKey" class="large-text-right small-text-left middle">Url Key</label>
+  	</div>
+  	<div class="large-4 medium-4 small-12 cell">
+      <input type="text" name="VeicoliTipo_UrlKey" id="VeicoliTipo_UrlKey" value="<%=GetFieldValue("VeicoliTipo_UrlKey")%>" size="30" required="required">
+      <span class="form-error">Obbligatorio</span>
+  	</div>
+  </div>
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell text-right">
+  		<label class="large-text-right small-text-left middle" for="VeicoliTipo_Title">Titolo SEO</label>
+  	</div>
+  	<div class="large-10 medium-12 small-8 cell">
+      <input type="text" name="VeicoliTipo_Title" id="VeicoliTipo_Title" title="Titolo SEO" value="<%=GetFieldValue("VeicoliTipo_Title")%>" size="200">
+  	</div>
+  </div>
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-12 cell">
+  		<label class="large-text-right small-text-left middle" for="VeicoliTipo_Description">Descrizione SEO</label>
+  	</div>
+  	<div class="large-10 medium-10 small-12 cell">
+      <textarea name="VeicoliTipo_Description" id="VeicoliTipo_Description" rows="2" cols="110"><%=GetFieldValue("VeicoliTipo_Description")%></textarea>
+  	</div>
+	</div> 
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="VeicoliTipo_Robots" class="large-text-right small-text-left middle">Robots SEO<i class="fa-duotone fa-file-lines fa-fw"></i></label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+			<select name="VeicoliTipo_Robots" id="VeicoliTipo_Robots" value="<%=GetFieldValue("VeicoliTipo_Robots")%>">
+        <option value="index,follow">index,follow</option>
+        <option value="noindex,nofollow">noindex,follow</option>
+        <option value="noindex,nofollow">noindex,nofollow</option>
+      </select>
+      <p class="help-text">i noindex non saranno nella sitemap</p>
+      <script type="text/javascript">
+        selectSet('VeicoliTipo_Robots', '<%=GetFieldValue("VeicoliTipo_Robots")%>');
+      </script>
+  	</div>
+  </div>
+	</fieldset>

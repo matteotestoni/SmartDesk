@@ -1,0 +1,19 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ImmobiliAgestaNETTipologie" Type="TABLE">
+    <Keys>
+      <Key Column="cod_tipologia" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="cod_tipologia" IsNull="N" Type="smallint" />
+      <Field Column="AnnunciCategorie_Ky" IsNull="Y" Type="int" />
+      <Field Column="importa" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[ImmobiliAgestaNETTipologie] (
+  [cod_tipologia] smallint  NOT NULL , 
+  [AnnunciCategorie_Ky] int  NULL , 
+  [importa] bit  NULL DEFAULT ((0)) )
+ALTER TABLE [dbo].[ImmobiliAgestaNETTipologie] ADD CONSTRAINT PK_ImmobiliAgestaNETTipologie PRIMARY KEY  ([cod_tipologia])
+</SqlScriptCreate>
+</SqlTable>

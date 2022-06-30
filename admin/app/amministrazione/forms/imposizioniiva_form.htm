@@ -1,0 +1,29 @@
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell text-right">
+		<label class="large-text-right small-text-left middle" for="ImposizioniIVA_Descrizione">Descrizione</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <textarea name="ImposizioniIVA_Descrizione" id="ImposizioniIVA_Descrizione" placeholder="Descrizione" rows="5" cols="110" required="required"><%=GetFieldValue("ImposizioniIVA_Descrizione")%></textarea>
+   	<span class="form-error">Obbligatorio.</span>
+	</div>
+</div>        
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell text-right">
+		<label class="large-text-right small-text-left middle" for="ImposizioniIVA_Simbolo">Simbolo</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="ImposizioniIVA_Simbolo" id="ImposizioniIVA_Simbolo" placeholder="simbolo" title="simbolo" value="<%=GetFieldValue("ImposizioniIVA_Simbolo")%>" size="10" maxlength="50">
+    <span class="form-error">Obbligatorio.</span>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell text-right">
+		<label class="large-text-right small-text-left middle" for="ImposizioniIVA_Deducibile">Deducibile</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="ImposizioniIVA_Deducibile" id="ImposizioniIVA_Deducibile" placeholder="deducibile" title="deducibile" value="<%=GetFieldValue("ImposizioniIVA_Deducibile")%>" size="10" maxlength="50">
+    <span class="form-error">Obbligatorio.</span>
+	</div>
+</div>

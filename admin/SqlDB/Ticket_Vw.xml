@@ -1,0 +1,73 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Ticket_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="TicketCategorie_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="TicketStati_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Utenti_Nominativo" IsNull="Y" Type="varchar" Lenght="255" />
+      <Field Column="Ticket_Ky" IsNull="N" Type="int" />
+      <Field Column="Ticket_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Ticket_Data" IsNull="Y" Type="datetime" />
+      <Field Column="Ticket_Richiesta" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="TicketStati_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="TicketCategorie_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Commesse_Ky" IsNull="Y" Type="int" />
+      <Field Column="Documenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Documenti_Riferimenti" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Commesse_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Lingue_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="AnagraficheProdotti_Ky" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheProdotti_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnagraficheProdotti_DataAcquisto" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheProdotti_Matricola" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_EmailContatti" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="TicketStati_Icona" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="TicketStati_Colore" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Prodotti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Servizi_Ky" IsNull="Y" Type="int" />
+      <Field Column="Prodotti_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Servizi_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Ticket_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Ticket_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Ticket_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Ticket_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Ticket_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Ticket_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Ticket_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Ticket_EmailPresentazione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Veicoli_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliMarca_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliModello_Ky" IsNull="Y" Type="int" />
+      <Field Column="utm_source" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_medium" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_campaign" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Ticket_Link" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Ticket_Vw
+AS
+SELECT        dbo.TicketCategorie.TicketCategorie_Titolo, dbo.TicketStati.TicketStati_Titolo, dbo.Anagrafiche.Anagrafiche_RagioneSociale, dbo.Utenti.Utenti_Nominativo, dbo.Ticket.Ticket_Ky, dbo.Ticket.Ticket_Titolo, 
+                         dbo.Ticket.Ticket_Data, dbo.Ticket.Ticket_Richiesta, dbo.Ticket.TicketStati_Ky, dbo.Ticket.TicketCategorie_Ky, dbo.Ticket.Anagrafiche_Ky, dbo.Ticket.Utenti_Ky, dbo.Ticket.Commesse_Ky, 
+                         dbo.Ticket.Documenti_Ky, dbo.Documenti.Documenti_Riferimenti, dbo.Commesse.Commesse_Titolo, dbo.Lingue.Lingue_Titolo, dbo.Ticket.Lingue_Ky, dbo.Ticket.AnagraficheProdotti_Ky, 
+                         dbo.AnagraficheProdotti.AnagraficheProdotti_Titolo, dbo.AnagraficheProdotti.AnagraficheProdotti_DataAcquisto, dbo.AnagraficheProdotti.AnagraficheProdotti_Matricola, dbo.Anagrafiche.Anagrafiche_EmailContatti, 
+                         dbo.TicketStati.TicketStati_Icona, dbo.TicketStati.TicketStati_Colore, dbo.Ticket.Prodotti_Ky, dbo.Ticket.Servizi_Ky, dbo.Prodotti.Prodotti_Titolo, dbo.Servizi.Servizi_Titolo, dbo.Ticket.Ticket_UserInsert, 
+                         dbo.Ticket.Ticket_UserUpdate, dbo.Ticket.Ticket_UserDelete, dbo.Ticket.Ticket_DateInsert, dbo.Ticket.Ticket_DateUpdate, dbo.Ticket.Ticket_DateDelete, dbo.Ticket.Ticket_Descrizione, 
+                         dbo.Ticket.Ticket_EmailPresentazione, dbo.Ticket.Veicoli_Ky, dbo.Ticket.VeicoliMarca_Ky, dbo.Ticket.VeicoliModello_Ky, dbo.Ticket.utm_source, dbo.Ticket.utm_medium, dbo.Ticket.utm_campaign, 
+                         dbo.Ticket.Ticket_Link
+FROM            dbo.Ticket LEFT OUTER JOIN
+                         dbo.Servizi ON dbo.Ticket.Servizi_Ky = dbo.Servizi.Servizi_Ky LEFT OUTER JOIN
+                         dbo.Prodotti ON dbo.Ticket.Prodotti_Ky = dbo.Prodotti.Prodotti_Ky LEFT OUTER JOIN
+                         dbo.AnagraficheProdotti ON dbo.Ticket.AnagraficheProdotti_Ky = dbo.AnagraficheProdotti.AnagraficheProdotti_Ky LEFT OUTER JOIN
+                         dbo.Lingue ON dbo.Ticket.Lingue_Ky = dbo.Lingue.Lingue_Ky LEFT OUTER JOIN
+                         dbo.Commesse ON dbo.Ticket.Commesse_Ky = dbo.Commesse.Commesse_Ky LEFT OUTER JOIN
+                         dbo.Documenti ON dbo.Ticket.Documenti_Ky = dbo.Documenti.Documenti_Ky LEFT OUTER JOIN
+                         dbo.Utenti ON dbo.Ticket.Utenti_Ky = dbo.Utenti.Utenti_Ky LEFT OUTER JOIN
+                         dbo.Anagrafiche ON dbo.Ticket.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky LEFT OUTER JOIN
+                         dbo.TicketStati ON dbo.Ticket.TicketStati_Ky = dbo.TicketStati.TicketStati_Ky LEFT OUTER JOIN
+                         dbo.TicketCategorie ON dbo.Ticket.TicketCategorie_Ky = dbo.TicketCategorie.TicketCategorie_Ky
+</SqlScriptCreate>
+</SqlTable>

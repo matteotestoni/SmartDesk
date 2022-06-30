@@ -1,0 +1,21 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Documenti_Totali_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Documenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="TotaleRighe" IsNull="Y" Type="money" />
+      <Field Column="TotaleIVA" IsNull="Y" Type="money" />
+      <Field Column="DocumentiTipo_Segno" IsNull="Y" Type="varchar" Lenght="1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Documenti_Totali_Vw
+AS
+SELECT     dbo.DocumentiCorpo.Documenti_Ky, SUM(dbo.DocumentiCorpo.DocumentiCorpo_Totale) AS TotaleRighe, 
+                      SUM(ROUND(dbo.DocumentiCorpo.DocumentiCorpo_Totale * dbo.DocumentiCorpo.AliquoteIVA_Aliquota / 100, 2)) AS TotaleIVA, 
+                      dbo.DocumentiTipo.DocumentiTipo_Segno
+FROM         dbo.DocumentiCorpo INNER JOIN
+                      dbo.Documenti ON dbo.DocumentiCorpo.Documenti_Ky = dbo.Documenti.Documenti_Ky INNER JOIN
+                      dbo.DocumentiTipo ON dbo.Documenti.DocumentiTipo_Ky = dbo.DocumentiTipo.DocumentiTipo_Ky
+GROUP BY dbo.DocumentiCorpo.Documenti_Ky, dbo.DocumentiTipo.DocumentiTipo_Segno
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,45 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AsteCauzioni" Type="TABLE">
+    <Keys>
+      <Key Column="AsteCauzioni_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AsteCauzioni_Ky" IsNull="N" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Aste_Ky" IsNull="Y" Type="int" />
+      <Field Column="AsteEsperimenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="AsteCauzioni_Data" IsNull="Y" Type="smalldatetime" />
+      <Field Column="AsteCauzioni_Valore" IsNull="Y" Type="money" />
+      <Field Column="PagamentiMetodo_Ky" IsNull="Y" Type="int" />
+      <Field Column="AsteCauzioni_Autorizzata" IsNull="Y" Type="bit" />
+      <Field Column="AsteCauzioni_Riferimenti" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AsteCauzioni_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AsteCauzioni_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AsteCauzioni_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AsteCauzioni_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AsteCauzioni_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AsteCauzioni_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Conti_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AsteCauzioni] (
+  [AsteCauzioni_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [Aste_Ky] int  NULL , 
+  [AsteEsperimenti_Ky] int  NULL , 
+  [AsteCauzioni_Data] smalldatetime  NULL , 
+  [AsteCauzioni_Valore] money  NULL , 
+  [PagamentiMetodo_Ky] int  NULL , 
+  [AsteCauzioni_Autorizzata] bit  NULL , 
+  [AsteCauzioni_Riferimenti] varchar(200)  NULL , 
+  [AsteCauzioni_UserInsert] int  NULL , 
+  [AsteCauzioni_UserUpdate] int  NULL , 
+  [AsteCauzioni_UserDelete] int  NULL , 
+  [AsteCauzioni_DateInsert] datetime  NULL , 
+  [AsteCauzioni_DateUpdate] datetime  NULL , 
+  [AsteCauzioni_DateDelete] datetime  NULL , 
+  [Conti_Ky] int  NULL  )
+ALTER TABLE [dbo].[AsteCauzioni] ADD CONSTRAINT PK_AsteCauzioni PRIMARY KEY  ([AsteCauzioni_Ky])
+</SqlScriptCreate>
+</SqlTable>

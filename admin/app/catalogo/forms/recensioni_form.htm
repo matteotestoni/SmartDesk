@@ -1,0 +1,117 @@
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="Recensioni_Data" class="text-right middle">Data <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+  </div>
+	<div class="large-10 medium-9 small-8 cell">
+    <input type="text" name="Recensioni_Data" id="Recensioni_Data" class="datetimepicker" value="<%=GetFieldValue(dtRecensioni, "Recensioni_Data")%>" size="80" required="required">
+    <span class="form-error">Obbligatorio</span>
+	  <p class="help-text">max 100 carateri</p>
+	</div>
+</div>	
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="Recensioni_Tipo" class="text-right middle">Tipo</label>
+  </div>
+	<div class="large-10 medium-9 small-8 cell">
+    <%=GetFieldValue(dtRecensioni, "RecensioniTipo_Titolo")%><br>
+	</div>
+</div>	
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="Anagrafiche_Nome" class="text-right middle">Anagrafica</label>
+  </div>
+	<div class="large-10 medium-9 small-8 cell">
+    <%=GetFieldValue(dtRecensioni, "Anagrafiche_Nome")%> <%=GetFieldValue(dtRecensioni, "Anagrafiche_Cognome")%><br>
+	</div>
+</div>	
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="Prodotti_Codice" class="text-right middle">Prodotto</label>
+  </div>
+	<div class="large-10 medium-9 small-8 cell">
+    <%=GetFieldValue(dtRecensioni, "Prodotti_Codice")%> <%=GetFieldValue(dtRecensioni, "Prodotti_Titolo")%><br>
+	</div>
+</div>	
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="Recensioni_Titolo" class="text-right middle">Titolo <i class="fa-duotone fa-tag fa-fw"></i></label>
+  </div>
+	<div class="large-10 medium-9 small-8 cell">
+    <input type="text" name="Recensioni_Titolo" id="Recensioni_Titolo" value="<%=GetFieldValue(dtRecensioni, "Recensioni_Titolo")%>" size="80" required="required">
+    <span class="form-error">Obbligatorio</span>
+	  <p class="help-text">max 100 carateri</p>
+	</div>
+</div>	
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="Recensioni_Descrizione" class="text-right middle">Recensione <i class="fa-duotone fa-file-text fa-fw"></i></label>
+  </div>
+	<div class="large-10 medium-9 small-8 cell">
+    <input type="text" name="Recensioni_Descrizione" id="Recensioni_Descrizione" value="<%=GetFieldValue(dtRecensioni, "Recensioni_Descrizione")%>" size="80">
+    <span class="form-error">Obbligatorio</span>
+	  <p class="help-text">max 500 carateri</p>
+	</div>
+</div>	
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="Recensioni_Risposta" class="text-right middle">Risposta <i class="fa-duotone fa-file-text fa-fw"></i></label>
+  </div>
+	<div class="large-10 medium-9 small-8 cell">
+    <input type="text" name="Recensioni_Risposta" id="Recensioni_Risposta" value="<%=GetFieldValue(dtRecensioni, "Recensioni_Risposta")%>" size="80">
+    <span class="form-error">Obbligatorio</span>
+	  <p class="help-text">max 500 carateri</p>
+	</div>
+</div>	
+
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell text-right">
+		<label class="large-text-right small-text-left middle" for="Lingue_Ky">Lingua <i class="fa-duotone fa-language fa-fw"></i></label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+		<select name="Lingue_Ky" id="Lingue_Ky" value="<%=GetFieldValue(dtRecensioni, "Lingue_Ky")%>" required="required">
+      <!--#include file="/var/cache/Lingue-options.htm"--> 
+    </select>
+    <script type="text/javascript">
+      selectSet('Lingue_Ky', '<%=GetFieldValue(dtRecensioni, "Lingue_Ky")%>');
+    </script>
+	</div>
+</div>
+
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="Recensioni_Rating" class="text-right middle">Voto <i class="fa-duotone fa-star fa-fw"></i></label>
+  </div>
+	<div class="large-10 medium-9 small-8 cell">
+    <select name="Recensioni_Rating" id="Recensioni_Rating" required="required" value="<%=GetFieldValue(dtRecensioni, "Recensioni_Rating")%>">
+      <option value=""></option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    <span class="form-error">Obbligatorio.</span>
+    <script type="text/javascript">
+      selectSet('Recensioni_Rating', '<%=GetFieldValue(dtRecensioni, "Recensioni_Rating")%>');
+    </script>
+	</div>
+</div>	
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="Recensioni_Approvata" class="text-right middle">Approvata</label>
+  </div>
+	<div class="large-10 medium-9 small-8 cell">
+		<div class="switch tiny">                                         
+      <input class="switch-input" type="checkbox" name="Recensioni_Approvata" id="Recensioni_Approvata" value="on" <% if (GetCheckValue(dtRecensioni, "Recensioni_Approvata")){ Response.Write("checked");} %> />
+      <label class="switch-paddle" for="Recensioni_Approvata">
+        <span class="show-for-sr">Approvata</span>
+        <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+        <span class="switch-inactive" aria-hidden="true"></span>
+      </label>
+    </div> 
+	</div>
+</div>	
+
+

@@ -1,0 +1,33 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="TicketMessaggi" Type="TABLE">
+    <Keys>
+      <Key Column="TicketMessaggi_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="TicketMessaggi_Ky" IsNull="N" Type="int" />
+      <Field Column="TicketMessaggi_Data" IsNull="Y" Type="datetime" />
+      <Field Column="Ticket_Ky" IsNull="Y" Type="int" />
+      <Field Column="TicketMessaggi_Messaggio" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="TicketMessaggi_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="TicketMessaggi_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="TicketMessaggi_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="TicketMessaggi_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="TicketMessaggi_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="TicketMessaggi_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[TicketMessaggi] (
+  [TicketMessaggi_Ky] int IDENTITY(1,1) NOT NULL , 
+  [TicketMessaggi_Data] datetime  NULL , 
+  [Ticket_Ky] int  NULL , 
+  [TicketMessaggi_Messaggio] varchar(MAX)  NULL , 
+  [TicketMessaggi_UserInsert] int  NULL , 
+  [TicketMessaggi_UserUpdate] int  NULL , 
+  [TicketMessaggi_UserDelete] int  NULL , 
+  [TicketMessaggi_DateInsert] datetime  NULL , 
+  [TicketMessaggi_DateUpdate] datetime  NULL , 
+  [TicketMessaggi_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[TicketMessaggi] ADD CONSTRAINT PK_TicketMessaggi PRIMARY KEY  ([TicketMessaggi_Ky])
+</SqlScriptCreate>
+</SqlTable>

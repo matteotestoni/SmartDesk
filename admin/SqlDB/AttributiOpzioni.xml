@@ -1,0 +1,35 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AttributiOpzioni" Type="TABLE">
+    <Keys>
+      <Key Column="AttributiOpzioni_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AttributiOpzioni_Ky" IsNull="N" Type="int" />
+      <Field Column="Attributi_Ky" IsNull="Y" Type="int" />
+      <Field Column="AttributiOpzioni_Opzione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AttributiOpzioni_Ordine" IsNull="Y" Type="int" />
+      <Field Column="AttributiOpzioni_Default" IsNull="Y" Type="bit" />
+      <Field Column="AttributiOpzioni_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AttributiOpzioni_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AttributiOpzioni_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AttributiOpzioni_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AttributiOpzioni_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AttributiOpzioni_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AttributiOpzioni] (
+  [AttributiOpzioni_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Attributi_Ky] int  NULL , 
+  [AttributiOpzioni_Opzione] varchar(100)  NULL , 
+  [AttributiOpzioni_Ordine] int  NULL , 
+  [AttributiOpzioni_Default] bit  NULL , 
+  [AttributiOpzioni_UserInsert] int  NULL , 
+  [AttributiOpzioni_UserUpdate] int  NULL , 
+  [AttributiOpzioni_UserDelete] int  NULL , 
+  [AttributiOpzioni_DateInsert] datetime  NULL , 
+  [AttributiOpzioni_DateUpdate] datetime  NULL , 
+  [AttributiOpzioni_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[AttributiOpzioni] ADD CONSTRAINT PK_AttributiOpzioni PRIMARY KEY  ([AttributiOpzioni_Ky])
+</SqlScriptCreate>
+</SqlTable>

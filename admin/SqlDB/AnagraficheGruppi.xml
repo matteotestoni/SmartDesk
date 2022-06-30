@@ -1,0 +1,33 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnagraficheGruppi" Type="TABLE">
+    <Keys>
+      <Key Column="AnagraficheGruppi_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AnagraficheGruppi_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="AnagraficheGruppi_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnagraficheGruppi_Ordine" IsNull="Y" Type="tinyint" />
+      <Field Column="AnagraficheGruppi_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheGruppi_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheGruppi_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheGruppi_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheGruppi_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheGruppi_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheGruppi_Default" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AnagraficheGruppi] (
+  [AnagraficheGruppi_Ky] tinyint IDENTITY(1,1) NOT NULL , 
+  [AnagraficheGruppi_Titolo] varchar(200)  NULL , 
+  [AnagraficheGruppi_Ordine] tinyint  NULL , 
+  [AnagraficheGruppi_UserInsert] int  NULL , 
+  [AnagraficheGruppi_UserUpdate] int  NULL , 
+  [AnagraficheGruppi_UserDelete] int  NULL , 
+  [AnagraficheGruppi_DateInsert] datetime  NULL , 
+  [AnagraficheGruppi_DateUpdate] datetime  NULL , 
+  [AnagraficheGruppi_DateDelete] datetime  NULL , 
+  [AnagraficheGruppi_Default] bit  NULL  )
+ALTER TABLE [dbo].[AnagraficheGruppi] ADD CONSTRAINT PK_AnagraficheGruppi PRIMARY KEY  ([AnagraficheGruppi_Ky])
+</SqlScriptCreate>
+</SqlTable>

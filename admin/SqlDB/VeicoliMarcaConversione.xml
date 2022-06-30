@@ -1,0 +1,23 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliMarcaConversione" Type="TABLE">
+    <Keys>
+      <Key Column="VeicoliMarcaConversione_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="VeicoliMarcaConversione_Ky" IsNull="N" Type="int" />
+      <Field Column="VeicoliMarca_Ky" IsNull="Y" Type="int" />
+      <Field Column="Marca" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliMarca_Importante" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[VeicoliMarcaConversione] (
+  [VeicoliMarcaConversione_Ky] int IDENTITY(1,1) NOT NULL , 
+  [VeicoliMarca_Ky] int  NULL , 
+  [Marca] varchar(200)  NULL , 
+  [VeicoliTipo_Ky] tinyint  NULL , 
+  [VeicoliMarca_Importante] bit  NULL  )
+ALTER TABLE [dbo].[VeicoliMarcaConversione] ADD CONSTRAINT PK_VeicoliMarcaConversione PRIMARY KEY  ([VeicoliMarcaConversione_Ky])
+</SqlScriptCreate>
+</SqlTable>

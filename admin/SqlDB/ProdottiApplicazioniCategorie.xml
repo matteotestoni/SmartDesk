@@ -1,0 +1,29 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ProdottiApplicazioniCategorie" Type="TABLE">
+    <Keys>
+      <Key Column="ProdottiApplicazioniCategorie_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="ProdottiApplicazioniCategorie_Ky" IsNull="N" Type="int" />
+      <Field Column="ProdottiApplicazioniCategorie_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="ProdottiApplicazioniCategorie_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="ProdottiApplicazioniCategorie_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="ProdottiApplicazioniCategorie_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="ProdottiApplicazioniCategorie_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiApplicazioniCategorie_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiApplicazioniCategorie_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[ProdottiApplicazioniCategorie] (
+  [ProdottiApplicazioniCategorie_Ky] int IDENTITY(1,1) NOT NULL , 
+  [ProdottiApplicazioniCategorie_Titolo] varchar(200)  NULL , 
+  [ProdottiApplicazioniCategorie_UserInsert] int  NULL , 
+  [ProdottiApplicazioniCategorie_UserUpdate] int  NULL , 
+  [ProdottiApplicazioniCategorie_UserDelete] int  NULL , 
+  [ProdottiApplicazioniCategorie_DateInsert] datetime  NULL , 
+  [ProdottiApplicazioniCategorie_DateUpdate] datetime  NULL , 
+  [ProdottiApplicazioniCategorie_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[ProdottiApplicazioniCategorie] ADD CONSTRAINT PK_ProdottiApplicazioniCategorie PRIMARY KEY  ([ProdottiApplicazioniCategorie_Ky])
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,29 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="BlacklistEmail" Type="TABLE">
+    <Keys>
+      <Key Column="BlacklistEmail_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="BlacklistEmail_Ky" IsNull="N" Type="int" />
+      <Field Column="BlacklistEmail_Regola" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="BlacklistEmail_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="BlacklistEmail_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="BlacklistEmail_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="BlacklistEmail_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="BlacklistEmail_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="BlacklistEmail_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[BlacklistEmail] (
+  [BlacklistEmail_Ky] int IDENTITY(1,1) NOT NULL , 
+  [BlacklistEmail_Regola] varchar(100)  NULL , 
+  [BlacklistEmail_UserInsert] int  NULL , 
+  [BlacklistEmail_UserUpdate] int  NULL , 
+  [BlacklistEmail_UserDelete] int  NULL , 
+  [BlacklistEmail_DateInsert] datetime  NULL , 
+  [BlacklistEmail_DateUpdate] datetime  NULL , 
+  [BlacklistEmail_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[BlacklistEmail] ADD CONSTRAINT PK_BlacklistEmail PRIMARY KEY  ([BlacklistEmail_Ky])
+</SqlScriptCreate>
+</SqlTable>

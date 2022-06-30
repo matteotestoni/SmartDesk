@@ -1,0 +1,46 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnagrafichePagamenti_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Anagrafiche_Telefono" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Pagamenti_Ky" IsNull="N" Type="int" />
+      <Field Column="Pagamenti_Riferimenti" IsNull="Y" Type="nvarchar" Lenght="500" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Pagamenti_Data_IT" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="Pagamenti_Importo" IsNull="Y" Type="decimal" Lenght="10" Decimal="2" />
+      <Field Column="Pagamenti_Pagato" IsNull="Y" Type="varchar" Lenght="2" />
+      <Field Column="Anagrafiche_Disdetto" IsNull="Y" Type="bit" />
+      <Field Column="Pagamenti_Data" IsNull="Y" Type="datetime" />
+      <Field Column="Pagamenti_NumeroPromemoria" IsNull="Y" Type="tinyint" />
+      <Field Column="Pagamenti_AttivaPromemoria" IsNull="Y" Type="bit" />
+      <Field Column="Anagrafiche_EmailAmministrazione" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="statopromemoria" IsNull="Y" Type="varchar" Lenght="2" />
+      <Field Column="Anagrafiche_Note" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Pagamenti_UltimoPromemoria_IT" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="ggTrascorsi" IsNull="Y" Type="int" />
+      <Field Column="PagamentiTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="ggRitardoPagamento" IsNull="Y" Type="int" />
+      <Field Column="Aziende_Ky" IsNull="Y" Type="int" />
+      <Field Column="Aziende_Codice" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Documenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Pagamenti_NumeroChiamate" IsNull="Y" Type="tinyint" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.AnagrafichePagamenti_Vw
+AS
+SELECT     dbo.Anagrafiche.Anagrafiche_Telefono, dbo.Pagamenti.Pagamenti_Ky, dbo.Pagamenti.Pagamenti_Riferimenti, dbo.Pagamenti.Anagrafiche_Ky, 
+                      dbo.Anagrafiche.Anagrafiche_RagioneSociale, CONVERT(varchar, dbo.Pagamenti.Pagamenti_Data, 105) AS Pagamenti_Data_IT, CONVERT(DECIMAL(10, 2), 
+                      dbo.Pagamenti.Pagamenti_Importo) AS Pagamenti_Importo, dbo.fnBit(dbo.Pagamenti.Pagamenti_Pagato) AS Pagamenti_Pagato, 
+                      dbo.Anagrafiche.Anagrafiche_Disdetto, dbo.Pagamenti.Pagamenti_Data, dbo.Pagamenti.Pagamenti_NumeroPromemoria, 
+                      dbo.Pagamenti.Pagamenti_AttivaPromemoria, dbo.Anagrafiche.Anagrafiche_EmailAmministrazione, dbo.fnBit(dbo.Pagamenti.Pagamenti_AttivaPromemoria) 
+                      AS statopromemoria, dbo.Anagrafiche.Anagrafiche_Note, CONVERT(varchar, dbo.Pagamenti.Pagamenti_UltimoPromemoria, 105) AS Pagamenti_UltimoPromemoria_IT, 
+                      DATEDIFF(day, dbo.Pagamenti.Pagamenti_Data, GETDATE()) AS ggTrascorsi, dbo.Pagamenti.PagamentiTipo_Ky, DATEDIFF(dd, dbo.Pagamenti.Pagamenti_Data, 
+                      dbo.Pagamenti.Pagamenti_DataPagato) AS ggRitardoPagamento, dbo.Documenti.Aziende_Ky, dbo.Aziende.Aziende_Codice, dbo.Pagamenti.Documenti_Ky, 
+                      dbo.Pagamenti.Pagamenti_NumeroChiamate
+FROM         dbo.Aziende INNER JOIN
+                      dbo.Documenti ON dbo.Aziende.Aziende_Ky = dbo.Documenti.Aziende_Ky RIGHT OUTER JOIN
+                      dbo.Anagrafiche INNER JOIN
+                      dbo.Pagamenti ON dbo.Anagrafiche.Anagrafiche_Ky = dbo.Pagamenti.Anagrafiche_Ky ON dbo.Documenti.Documenti_Ky = dbo.Pagamenti.Documenti_Ky
+</SqlScriptCreate>
+</SqlTable>

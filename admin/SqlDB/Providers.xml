@@ -1,0 +1,53 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Providers" Type="TABLE">
+    <Keys>
+      <Key Column="Providers_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Providers_Ky" IsNull="N" Type="smallint" />
+      <Field Column="Providers_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Providers_smtp" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Providers_pop3" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Providers_webmail" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Providers_pop3s" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Providers_smtps" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Providers_pop3sporta" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Providers_smtpsporta" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Providers_webmail2" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Providers_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Providers_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Providers_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Providers_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Providers_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Providers_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Providers_Logo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Providers_SitoWeb" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Providers_Imap" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Providers_ImapPorta" IsNull="Y" Type="varchar" Lenght="100" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Providers] (
+  [Providers_Ky] smallint IDENTITY(1,1) NOT NULL , 
+  [Providers_Descrizione] varchar(100)  NULL , 
+  [Providers_smtp] varchar(100)  NULL , 
+  [Providers_pop3] varchar(100)  NULL , 
+  [Providers_webmail] varchar(100)  NULL , 
+  [Providers_pop3s] varchar(100)  NULL , 
+  [Providers_smtps] varchar(100)  NULL , 
+  [Providers_pop3sporta] varchar(100)  NULL , 
+  [Providers_smtpsporta] varchar(100)  NULL , 
+  [Providers_webmail2] varchar(100)  NULL , 
+  [Providers_UserInsert] int  NULL , 
+  [Providers_UserUpdate] int  NULL , 
+  [Providers_UserDelete] int  NULL , 
+  [Providers_DateInsert] datetime  NULL , 
+  [Providers_DateUpdate] datetime  NULL , 
+  [Providers_DateDelete] datetime  NULL , 
+  [Providers_Logo] varchar(200)  NULL , 
+  [Providers_SitoWeb] varchar(200)  NULL , 
+  [Providers_Imap] varchar(100)  NULL , 
+  [Providers_ImapPorta] varchar(100)  NULL  )
+ALTER TABLE [dbo].[Providers] ADD CONSTRAINT PK_Providers PRIMARY KEY  ([Providers_Ky])
+</SqlScriptCreate>
+</SqlTable>

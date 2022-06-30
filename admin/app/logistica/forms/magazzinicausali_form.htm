@@ -1,0 +1,35 @@
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-12 cell">
+  		<label for="MagazziniCausali_Titolo" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Titolo</label>
+  	</div>
+  	<div class="large-10 medium-10 small-12 cell">
+      <input type="text" name="MagazziniCausali_Titolo" id="MagazziniCausali_Titolo" title="Titolo" value="<%=GetFieldValue(dtMagazziniCausali, "MagazziniCausali_Titolo")%>" size="60">
+      <span class="form-error">Obbligatorio</span>
+  	</div>
+  </div>
+
+	<div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-12 cell text-right">
+   		<label class="large-text-right small-text-left middle" for="MagazziniCausali_Default">Predefinito</label>
+ 	  </div>
+  	<div class="large-10 medium-10 small-12 cell">
+			<select name="MagazziniCausali_Default" id="MagazziniCausali_Default" value="<%=GetCheckValue(dtMagazziniCausali, "MagazziniCausali_Default")%>">
+	      <option value="True">si</option>
+	      <option value="False">no</option>
+	    </select>
+	    <span class="form-error">Obbligatorio</span>
+	    <script type="text/javascript">
+	      selectSet('MagazziniCausali_Default', '<%=GetCheckValue(dtMagazziniCausali, "MagazziniCausali_Default")%>');
+	    </script>
+  	</div>
+	</div>        
+  
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-12 cell">
+  		<label for="MagazziniCausali_Ordine" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Ordine</label>
+  	</div>
+  	<div class="large-10 medium-10 small-12 cell">
+      <input type="text" name="MagazziniCausali_Ordine" id="MagazziniCausali_Ordine" title="Ordine" value="<%=GetFieldValue(dtMagazziniCausali, "MagazziniCausali_Ordine")%>" size="2">
+      <span class="form-error">Obbligatorio</span>
+  	</div>
+  </div>

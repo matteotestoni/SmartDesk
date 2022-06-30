@@ -1,0 +1,71 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Veicoli_Scheda_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Province_Provincia" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliModello_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliCarburante_Descrizione" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="VeicoliMarca_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Veicoli_Ky" IsNull="N" Type="int" />
+      <Field Column="Utenti_UpdateDt" IsNull="Y" Type="datetime" />
+      <Field Column="Veicoli_Annuncio" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="VeicoliCategoria_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliCategoria_Descrizione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="VeicoliCarrozzeria_Descrizione" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Veicoli_KM" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_Valore" IsNull="Y" Type="money" />
+      <Field Column="VeicoliColore_Interni_Descrizione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="VeicoliColore_Esterni_Descrizione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Veicoli_ImmatricolazioneAnno" IsNull="Y" Type="smallint" />
+      <Field Column="Veicoli_ImmatricolazioneMese" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_CVKW" IsNull="Y" Type="float" />
+      <Field Column="Veicoli_Cilindrata" IsNull="Y" Type="smallint" />
+      <Field Column="VeicoliContratto_Descrizione" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Veicoli_NumeroPorte" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_NumeroCilindri" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_Allestimento" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Veicoli_ValoreNascondi" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliModello_Foto" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="VeicoliCategoria_DescrizioneWEB" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Utenti_Email" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Veicoli_Targa" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="VeicoliModelloSpazioGroup_Modello" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliMarcaSpazioGroup_Marca" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Veicoli_CV" IsNull="Y" Type="smallint" />
+      <Field Column="Veicoli_Assi" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_Ore" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_ValoreIniziale" IsNull="Y" Type="money" />
+      <Field Column="Veicoli_BestPrice" IsNull="Y" Type="bit" />
+      <Field Column="Veicoli_EmissioniCO2" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Veicoli_ConsumoUrbano" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Veicoli_ConsumoExtraUrbano" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Veicoli_ConsumoCombinato" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Veicoli_Prime" IsNull="Y" Type="bit" />
+      <Field Column="Veicoli_LastMinute" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Veicoli_Scheda_Vw
+AS
+SELECT        dbo.Province.Province_Provincia, dbo.VeicoliModello.VeicoliModello_Descrizione, dbo.VeicoliCarburante.VeicoliCarburante_Descrizione, dbo.VeicoliMarca.VeicoliMarca_Descrizione, dbo.Veicoli.Veicoli_Ky, 
+                         dbo.Veicoli.Utenti_UpdateDt, dbo.Veicoli.Veicoli_Annuncio, dbo.Veicoli.VeicoliCategoria_Ky, dbo.VeicoliCategoria.VeicoliCategoria_Descrizione, dbo.VeicoliCarrozzeria.VeicoliCarrozzeria_Descrizione, 
+                         dbo.Veicoli.Veicoli_KM, dbo.Veicoli.Veicoli_Valore, dbo.VeicoliColore.VeicoliColore_Descrizione AS VeicoliColore_Interni_Descrizione, 
+                         VeicoliColore_1.VeicoliColore_Descrizione AS VeicoliColore_Esterni_Descrizione, dbo.Veicoli.Veicoli_ImmatricolazioneAnno, dbo.Veicoli.Veicoli_ImmatricolazioneMese, dbo.Veicoli.Veicoli_CVKW, 
+                         dbo.Veicoli.Veicoli_Cilindrata, dbo.VeicoliContratto.VeicoliContratto_Descrizione, dbo.Veicoli.Veicoli_NumeroPorte, dbo.Veicoli.Veicoli_NumeroCilindri, dbo.Veicoli.Veicoli_Allestimento, 
+                         dbo.Veicoli.Veicoli_ValoreNascondi, dbo.VeicoliModello.VeicoliModello_Foto, dbo.VeicoliCategoria.VeicoliCategoria_DescrizioneWEB, dbo.Utenti.Utenti_Email, dbo.Veicoli.Veicoli_Targa, 
+                         dbo.Veicoli.VeicoliModelloSpazioGroup_Modello, dbo.Veicoli.VeicoliMarcaSpazioGroup_Marca, dbo.Veicoli.Veicoli_CV, dbo.Veicoli.Veicoli_Assi, dbo.Veicoli.Veicoli_Ore, dbo.Veicoli.Veicoli_ValoreIniziale, 
+                         dbo.Veicoli.Veicoli_BestPrice, dbo.Veicoli.Veicoli_EmissioniCO2, dbo.Veicoli.Veicoli_ConsumoUrbano, dbo.Veicoli.Veicoli_ConsumoExtraUrbano, dbo.Veicoli.Veicoli_ConsumoCombinato, 
+                         dbo.Veicoli.Veicoli_Prime, dbo.Veicoli.Veicoli_LastMinute
+FROM            dbo.VeicoliCarrozzeria RIGHT OUTER JOIN
+                         dbo.VeicoliColore AS VeicoliColore_1 RIGHT OUTER JOIN
+                         dbo.Veicoli LEFT OUTER JOIN
+                         dbo.Province ON dbo.Veicoli.Veicoli_PrvKy = dbo.Province.Province_Ky LEFT OUTER JOIN
+                         dbo.Utenti ON dbo.Veicoli.Utenti_Ky = dbo.Utenti.Utenti_Ky LEFT OUTER JOIN
+                         dbo.VeicoliCambio ON dbo.Veicoli.VeicoliCambio_Ky = dbo.VeicoliCambio.VeicoliCambio_Ky LEFT OUTER JOIN
+                         dbo.VeicoliContratto ON dbo.Veicoli.VeicoliContratto_Ky = dbo.VeicoliContratto.VeicoliContratto_Ky ON VeicoliColore_1.VeicoliColore_Ky = dbo.Veicoli.VeicoliColore_EsterniKy LEFT OUTER JOIN
+                         dbo.VeicoliColore ON dbo.Veicoli.VeicoliColore_InterniKy = dbo.VeicoliColore.VeicoliColore_Ky ON dbo.VeicoliCarrozzeria.VeicoliCarrozzeria_Ky = dbo.Veicoli.VeicoliCarrozzeria_Ky LEFT OUTER JOIN
+                         dbo.VeicoliCategoria ON dbo.Veicoli.VeicoliCategoria_Ky = dbo.VeicoliCategoria.VeicoliCategoria_Ky LEFT OUTER JOIN
+                         dbo.VeicoliMarca ON dbo.Veicoli.VeicoliMarca_Ky = dbo.VeicoliMarca.VeicoliMarca_Ky LEFT OUTER JOIN
+                         dbo.VeicoliModello ON dbo.Veicoli.VeicoliModello_Ky = dbo.VeicoliModello.VeicoliModello_Ky LEFT OUTER JOIN
+                         dbo.VeicoliCarburante ON dbo.Veicoli.VeicoliCarburante_Ky = dbo.VeicoliCarburante.VeicoliCarburante_Ky
+</SqlScriptCreate>
+</SqlTable>

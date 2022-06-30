@@ -1,0 +1,29 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="UtentiTipo" Type="TABLE">
+    <Keys>
+      <Key Column="UtentiTipo_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="UtentiTipo_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="UtentiTipo_Descrizione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="UtentiTipo_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="UtentiTipo_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="UtentiTipo_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="UtentiTipo_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="UtentiTipo_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="UtentiTipo_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[UtentiTipo] (
+  [UtentiTipo_Ky] tinyint IDENTITY(1,1) NOT NULL , 
+  [UtentiTipo_Descrizione] varchar(50)  NULL , 
+  [UtentiTipo_UserInsert] int  NULL , 
+  [UtentiTipo_UserUpdate] int  NULL , 
+  [UtentiTipo_UserDelete] int  NULL , 
+  [UtentiTipo_DateInsert] datetime  NULL , 
+  [UtentiTipo_DateUpdate] datetime  NULL , 
+  [UtentiTipo_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[UtentiTipo] ADD CONSTRAINT PK_UtentiTipo PRIMARY KEY  ([UtentiTipo_Ky])
+</SqlScriptCreate>
+</SqlTable>

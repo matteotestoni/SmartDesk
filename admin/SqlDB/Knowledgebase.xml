@@ -1,0 +1,47 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Knowledgebase" Type="TABLE">
+    <Keys>
+      <Key Column="Knowledgebase_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Knowledgebase_Ky" IsNull="N" Type="int" />
+      <Field Column="Knowledgebase_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="KnowledgebaseCategorie_Ky" IsNull="Y" Type="int" />
+      <Field Column="Knowledgebase_Data" IsNull="Y" Type="datetime" />
+      <Field Column="Knowledgebase_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Knowledgebase_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Knowledgebase_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Knowledgebase_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Knowledgebase_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Knowledgebase_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Knowledgebase_Contenuto" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Knowledgebase_PubblicaWEB" IsNull="Y" Type="bit" />
+      <Field Column="Knowledgebase_Keywords" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Knowledgebase_Riassunto" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Knowledgebase_Commenti" IsNull="Y" Type="bit" />
+      <Field Column="Knowledgebase_Recensioni" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Knowledgebase] (
+  [Knowledgebase_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Knowledgebase_Titolo] varchar(200)  NULL , 
+  [KnowledgebaseCategorie_Ky] int  NULL , 
+  [Knowledgebase_Data] datetime  NULL , 
+  [Knowledgebase_UserInsert] int  NULL , 
+  [Knowledgebase_UserUpdate] int  NULL , 
+  [Knowledgebase_UserDelete] int  NULL , 
+  [Knowledgebase_DateInsert] datetime  NULL , 
+  [Knowledgebase_DateUpdate] datetime  NULL , 
+  [Knowledgebase_DateDelete] datetime  NULL , 
+  [Knowledgebase_Contenuto] varchar(MAX)  NULL , 
+  [Lingue_Ky] tinyint  NULL , 
+  [Knowledgebase_PubblicaWEB] bit  NULL , 
+  [Knowledgebase_Keywords] varchar(MAX)  NULL , 
+  [Knowledgebase_Riassunto] varchar(MAX)  NULL , 
+  [Knowledgebase_Commenti] bit  NULL , 
+  [Knowledgebase_Recensioni] bit  NULL  )
+ALTER TABLE [dbo].[Knowledgebase] ADD CONSTRAINT PK_Knowledgebase PRIMARY KEY  ([Knowledgebase_Ky])
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,33 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="SpedizioniMetodo" Type="TABLE">
+    <Keys>
+      <Key Column="SpedizioniMetodo_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="SpedizioniMetodo_Ky" IsNull="N" Type="smallint" />
+      <Field Column="SpedizioniMetodo_Descrizione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="SpedizioniMetodo_Ordine" IsNull="Y" Type="smallint" />
+      <Field Column="SpedizioniMetodo_Default" IsNull="Y" Type="bit" />
+      <Field Column="SpedizioniMetodo_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="SpedizioniMetodo_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="SpedizioniMetodo_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="SpedizioniMetodo_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="SpedizioniMetodo_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="SpedizioniMetodo_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[SpedizioniMetodo] (
+  [SpedizioniMetodo_Ky] smallint IDENTITY(1,1) NOT NULL , 
+  [SpedizioniMetodo_Descrizione] varchar(50)  NULL , 
+  [SpedizioniMetodo_Ordine] smallint  NULL , 
+  [SpedizioniMetodo_Default] bit  NULL DEFAULT ((0)), 
+  [SpedizioniMetodo_UserInsert] int  NULL , 
+  [SpedizioniMetodo_UserUpdate] int  NULL , 
+  [SpedizioniMetodo_UserDelete] int  NULL , 
+  [SpedizioniMetodo_DateInsert] datetime  NULL , 
+  [SpedizioniMetodo_DateUpdate] datetime  NULL , 
+  [SpedizioniMetodo_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[SpedizioniMetodo] ADD CONSTRAINT PK_SpedizioniMetodo PRIMARY KEY  ([SpedizioniMetodo_Ky])
+</SqlScriptCreate>
+</SqlTable>

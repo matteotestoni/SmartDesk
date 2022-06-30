@@ -1,0 +1,33 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CMSAdsZone" Type="TABLE">
+    <Keys>
+      <Key Column="CMSAdsZone_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CMSAdsZone_Ky" IsNull="N" Type="int" />
+      <Field Column="CMSAdsZone_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSAdsZone_Width" IsNull="Y" Type="int" />
+      <Field Column="CMSAdsZone_Height" IsNull="Y" Type="int" />
+      <Field Column="CMSAdsZone_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CMSAdsZone_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CMSAdsZone_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CMSAdsZone_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CMSAdsZone_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CMSAdsZone_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CMSAdsZone] (
+  [CMSAdsZone_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CMSAdsZone_Titolo] varchar(200)  NULL , 
+  [CMSAdsZone_Width] int  NULL , 
+  [CMSAdsZone_Height] int  NULL , 
+  [CMSAdsZone_UserInsert] int  NULL , 
+  [CMSAdsZone_UserUpdate] int  NULL , 
+  [CMSAdsZone_UserDelete] int  NULL , 
+  [CMSAdsZone_DateInsert] datetime  NULL , 
+  [CMSAdsZone_DateUpdate] datetime  NULL , 
+  [CMSAdsZone_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[CMSAdsZone] ADD CONSTRAINT PK_CMSAdsZone PRIMARY KEY  ([CMSAdsZone_Ky])
+</SqlScriptCreate>
+</SqlTable>

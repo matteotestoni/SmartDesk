@@ -1,0 +1,40 @@
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="Priorita_Descrizione" class="text-right middle">Titolo <i class="fa-duotone fa-tag fa-fw"></i></label>
+	</div>
+	<div class="large-10 medium-9 small-8 cell">
+    <input type="text" name="Priorita_Descrizione" id="Priorita_Descrizione" value="<%=GetFieldValue("Priorita_Descrizione")%>" size="80" required="required">
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>	
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="Priorita_Icona" class="text-right middle">Icona <i class="fa-duotone fa-image fa-fw"></i></label>
+	</div>
+	<div class="large-10 medium-9 small-8 cell">
+    <input type="text" name="Priorita_Icona" id="Priorita_Icona" value="<%=GetFieldValue("Priorita_Icona")%>" size="80">
+		<span class="help-text">Puoi specificare l'icona prendendo da Font Awesome. <a href="https://fontawesome.com/icons?d=gallery" target="_blank" rel="nofollow">Clicca qui</a> per maggiori informazioni.</span>
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>	
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="Priorita_Colore" class="text-right middle">Colore<i class="fa-duotone fa-paint-brush fa-fw"></i></label>
+	</div>
+	<div class="large-10 medium-9 small-8 cell">
+    <input type="color" name="Priorita_Colore" id="Priorita_Colore" value="<%=GetFieldValue("Priorita_Colore")%>" size="7">
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>	
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="Priorita_Ordine" class="text-right middle">Ordine <i class="fa-duotone fa-sort fa-fw"></i></label>
+	</div>
+	<div class="large-10 medium-9 small-8 cell">
+    <input type="text" name="Priorita_Ordine" id="Priorita_Ordine" value="<%=GetFieldValue("Priorita_Ordine")%>" size="3" required="required" pattern="number" />
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>

@@ -1,0 +1,55 @@
+/* CSS Document */
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700|Fira+Sans+Condensed:300,400,500,700);
+
+.button{
+  box-shadow:0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+  text-transform:uppercase;
+  border-radius:15px;
+}
+
+input,input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill{
+	border-bottom:1px solid #e0e0e0 !important;
+  background-color:#ffffff !important; 
+  line-height:1.125rem !important;
+  font-size:1.125rem !important;
+  font-weight:300 !important;
+  padding:1rem 0.5rem !important;
+}
+.help-text{
+	color: #e0e0e0 !important;
+}
+
+.footer{
+	text-align:center;
+  color:#757575;
+}
+
+.logo{
+	margin-bottom:2rem;
+  margin-left:-1rem;
+}
+
+body.login{
+  margin: 2rem 0 0 0;
+  padding: 0;
+  background: #f2f6fc;
+  font-family: "Geomanist","Roboto","Helvetica Neue",Helvetica,sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #0a0a0a;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1{
+  margin-bottom:1.5rem;
+}
+#login{
+	margin: 0 0 1rem 0;
+	padding:2rem;
+	border-radius: 2px;
+	position: relative;
+	color: rgba(0, 0, 0, 0.87);
+	background-color: white;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+  border-radius:15px;
+}

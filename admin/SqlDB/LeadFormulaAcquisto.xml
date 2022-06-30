@@ -1,0 +1,35 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="LeadFormulaAcquisto" Type="TABLE">
+    <Keys>
+      <Key Column="LeadFormulaAcquisto_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="LeadFormulaAcquisto_Ky" IsNull="N" Type="int" />
+      <Field Column="LeadFormulaAcquisto_Titolo" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="LeadFormulaAcquisto_Default" IsNull="Y" Type="bit" />
+      <Field Column="LeadFormulaAcquisto_Codice" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="LeadFormulaAcquisto_Ordine" IsNull="Y" Type="int" />
+      <Field Column="LeadFormulaAcquisto_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="LeadFormulaAcquisto_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="LeadFormulaAcquisto_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="LeadFormulaAcquisto_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="LeadFormulaAcquisto_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="LeadFormulaAcquisto_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[LeadFormulaAcquisto] (
+  [LeadFormulaAcquisto_Ky] int IDENTITY(1,1) NOT NULL , 
+  [LeadFormulaAcquisto_Titolo] varchar(MAX)  NULL , 
+  [LeadFormulaAcquisto_Default] bit  NULL , 
+  [LeadFormulaAcquisto_Codice] varchar(MAX)  NULL , 
+  [LeadFormulaAcquisto_Ordine] int  NULL , 
+  [LeadFormulaAcquisto_UserInsert] int  NULL , 
+  [LeadFormulaAcquisto_UserUpdate] int  NULL , 
+  [LeadFormulaAcquisto_UserDelete] int  NULL , 
+  [LeadFormulaAcquisto_DateInsert] datetime  NULL , 
+  [LeadFormulaAcquisto_DateUpdate] datetime  NULL , 
+  [LeadFormulaAcquisto_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[LeadFormulaAcquisto] ADD CONSTRAINT PK_LeadFormulaAcquisto PRIMARY KEY  ([LeadFormulaAcquisto_Ky])
+</SqlScriptCreate>
+</SqlTable>

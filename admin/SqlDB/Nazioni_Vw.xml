@@ -1,0 +1,37 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Nazioni_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="TimeZones_CountryCode" IsNull="Y" Type="varchar" Lenght="2" />
+      <Field Column="TimeZones_Coordinates" IsNull="Y" Type="varchar" Lenght="15" />
+      <Field Column="TimeZones_TimeZone" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Nazioni_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="Nazioni_Codice" IsNull="Y" Type="varchar" Lenght="4" />
+      <Field Column="Nazioni_Nazione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Nazioni_Prefisso" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="Nazioni_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Nazioni_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Nazioni_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Nazioni_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Nazioni_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Nazioni_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Nazioni_Isocode2" IsNull="Y" Type="varchar" Lenght="2" />
+      <Field Column="Nazioni_Isocodenum" IsNull="Y" Type="int" />
+      <Field Column="Nazioni_Ordine" IsNull="Y" Type="int" />
+      <Field Column="Nazioni_Isocode3" IsNull="Y" Type="varchar" Lenght="3" />
+      <Field Column="Nazioni_Fatturazione" IsNull="Y" Type="bit" />
+      <Field Column="Nazioni_Spedizione" IsNull="Y" Type="bit" />
+      <Field Column="TimeZones_Ky" IsNull="Y" Type="int" />
+      <Field Column="Nazioni_UE" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Nazioni_Vw
+AS
+SELECT        dbo.TimeZones.TimeZones_CountryCode, dbo.TimeZones.TimeZones_Coordinates, dbo.TimeZones.TimeZones_TimeZone, dbo.Nazioni.Nazioni_Ky, dbo.Nazioni.Nazioni_Codice, dbo.Nazioni.Nazioni_Nazione, 
+                         dbo.Nazioni.Nazioni_Prefisso, dbo.Nazioni.Nazioni_UserInsert, dbo.Nazioni.Nazioni_UserUpdate, dbo.Nazioni.Nazioni_UserDelete, dbo.Nazioni.Nazioni_DateInsert, dbo.Nazioni.Nazioni_DateUpdate, 
+                         dbo.Nazioni.Nazioni_DateDelete, dbo.Nazioni.Nazioni_Isocode2, dbo.Nazioni.Nazioni_Isocodenum, dbo.Nazioni.Nazioni_Ordine, dbo.Nazioni.Nazioni_Isocode3, dbo.Nazioni.Nazioni_Fatturazione, 
+                         dbo.Nazioni.Nazioni_Spedizione, dbo.Nazioni.TimeZones_Ky, dbo.Nazioni.Nazioni_UE
+FROM            dbo.Nazioni LEFT OUTER JOIN
+                         dbo.TimeZones ON dbo.Nazioni.TimeZones_Ky = dbo.TimeZones.TimeZones_Ky
+</SqlScriptCreate>
+</SqlTable>

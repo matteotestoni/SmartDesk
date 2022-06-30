@@ -1,0 +1,35 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Ore" Type="TABLE">
+    <Keys>
+      <Key Column="Ore_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Ore_Ky" IsNull="N" Type="int" />
+      <Field Column="Ore_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Ore_Valore" IsNull="Y" Type="money" />
+      <Field Column="Ore_Ordine" IsNull="Y" Type="int" />
+      <Field Column="Ore_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Ore_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Ore_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Ore_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Ore_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Ore_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Ore_Disabilita" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Ore] (
+  [Ore_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Ore_Titolo] varchar(100)  NULL , 
+  [Ore_Valore] money  NULL , 
+  [Ore_Ordine] int  NULL , 
+  [Ore_UserInsert] int  NULL , 
+  [Ore_UserUpdate] int  NULL , 
+  [Ore_UserDelete] int  NULL , 
+  [Ore_DateInsert] datetime  NULL , 
+  [Ore_DateUpdate] datetime  NULL , 
+  [Ore_DateDelete] datetime  NULL , 
+  [Ore_Disabilita] bit  NULL DEFAULT ((0)) )
+ALTER TABLE [dbo].[Ore] ADD CONSTRAINT PK_Ore PRIMARY KEY  ([Ore_Ky])
+</SqlScriptCreate>
+</SqlTable>

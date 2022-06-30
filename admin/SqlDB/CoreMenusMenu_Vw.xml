@@ -1,0 +1,38 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CoreMenusMenu_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="CoreMenusMenu_Ky" IsNull="N" Type="int" />
+      <Field Column="CoreMenus_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreMenusMenu_Parent" IsNull="Y" Type="int" />
+      <Field Column="CoreMenusMenu_Icon" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreMenusMenu_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreMenusMenu_Order" IsNull="Y" Type="int" />
+      <Field Column="CoreGrids_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreEntities_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreEntities_Code" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreModules_Code" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreGrids_Custom" IsNull="Y" Type="bit" />
+      <Field Column="CoreMenus_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreForms_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreMenusMenu_Url" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreForms_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreMenusMenuType_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreMenusMenuType_Ky" IsNull="Y" Type="smallint" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.CoreMenusMenu_Vw
+AS
+SELECT        dbo.CoreMenusMenu.CoreMenusMenu_Ky, dbo.CoreMenusMenu.CoreMenus_Ky, dbo.CoreMenusMenu.CoreMenusMenu_Parent, dbo.CoreMenusMenu.CoreMenusMenu_Icon, 
+                         dbo.CoreMenusMenu.CoreMenusMenu_Title, dbo.CoreMenusMenu.CoreMenusMenu_Order, dbo.CoreMenusMenu.CoreGrids_Ky, dbo.CoreGrids.CoreEntities_Ky, dbo.CoreEntities.CoreEntities_Code, 
+                         dbo.CoreModules.CoreModules_Code, dbo.CoreGrids.CoreGrids_Custom, dbo.CoreMenus.CoreMenus_Title, dbo.CoreMenusMenu.CoreForms_Ky, dbo.CoreMenusMenu.CoreMenusMenu_Url, 
+                         dbo.CoreForms.CoreForms_Title, dbo.CoreMenusMenuType.CoreMenusMenuType_Title, dbo.CoreMenusMenu.CoreMenusMenuType_Ky
+FROM            dbo.CoreMenusMenuType RIGHT OUTER JOIN
+                         dbo.CoreMenusMenu ON dbo.CoreMenusMenuType.CoreMenusMenuType_Ky = dbo.CoreMenusMenu.CoreMenusMenuType_Ky LEFT OUTER JOIN
+                         dbo.CoreForms ON dbo.CoreMenusMenu.CoreForms_Ky = dbo.CoreForms.CoreForms_Ky LEFT OUTER JOIN
+                         dbo.CoreEntities INNER JOIN
+                         dbo.CoreGrids ON dbo.CoreEntities.CoreEntities_Ky = dbo.CoreGrids.CoreEntities_Ky INNER JOIN
+                         dbo.CoreModules ON dbo.CoreEntities.CoreModules_Ky = dbo.CoreModules.CoreModules_Ky ON dbo.CoreMenusMenu.CoreGrids_Ky = dbo.CoreGrids.CoreGrids_Ky LEFT OUTER JOIN
+                         dbo.CoreMenus ON dbo.CoreMenusMenu.CoreMenus_Ky = dbo.CoreMenus.CoreMenus_Ky
+</SqlScriptCreate>
+</SqlTable>

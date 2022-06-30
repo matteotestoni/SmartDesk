@@ -1,0 +1,71 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Ticket" Type="TABLE">
+    <Keys>
+      <Key Column="Ticket_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Ticket_Ky" IsNull="N" Type="int" />
+      <Field Column="Ticket_Data" IsNull="Y" Type="datetime" />
+      <Field Column="Ticket_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Ticket_Richiesta" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="TicketStati_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="TicketCategorie_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Commesse_Ky" IsNull="Y" Type="int" />
+      <Field Column="Documenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Ticket_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Ticket_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Ticket_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Ticket_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Ticket_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Ticket_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Ticket_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Ticket_EmailPresentazione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="AnagraficheProdotti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Prodotti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Servizi_Ky" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliMarca_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliModello_Ky" IsNull="Y" Type="int" />
+      <Field Column="utm_source" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_medium" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_campaign" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Ticket_Link" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Ticket] (
+  [Ticket_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Ticket_Data] datetime  NULL DEFAULT (getdate()), 
+  [Ticket_Titolo] varchar(200)  NULL , 
+  [Ticket_Richiesta] varchar(MAX)  NULL , 
+  [TicketStati_Ky] smallint  NULL , 
+  [TicketCategorie_Ky] smallint  NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [Utenti_Ky] int  NULL , 
+  [Commesse_Ky] int  NULL , 
+  [Documenti_Ky] int  NULL , 
+  [Ticket_UserInsert] int  NULL , 
+  [Ticket_UserUpdate] int  NULL , 
+  [Ticket_UserDelete] int  NULL , 
+  [Ticket_DateInsert] datetime  NULL , 
+  [Ticket_DateUpdate] datetime  NULL , 
+  [Ticket_DateDelete] datetime  NULL , 
+  [Ticket_Descrizione] varchar(MAX)  NULL , 
+  [Ticket_EmailPresentazione] varchar(MAX)  NULL , 
+  [Lingue_Ky] tinyint  NULL , 
+  [AnagraficheProdotti_Ky] int  NULL , 
+  [Prodotti_Ky] int  NULL , 
+  [Servizi_Ky] int  NULL , 
+  [Veicoli_Ky] int  NULL , 
+  [VeicoliMarca_Ky] int  NULL , 
+  [VeicoliModello_Ky] int  NULL , 
+  [utm_source] varchar(MAX)  NULL , 
+  [utm_medium] varchar(MAX)  NULL , 
+  [utm_campaign] varchar(MAX)  NULL , 
+  [Ticket_Link] varchar(MAX)  NULL  )
+ALTER TABLE [dbo].[Ticket] ADD CONSTRAINT PK_Ticket PRIMARY KEY  ([Ticket_Ky])
+</SqlScriptCreate>
+</SqlTable>

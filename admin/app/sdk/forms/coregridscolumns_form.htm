@@ -1,0 +1,100 @@
+<fieldset>
+  <legend>Dati dell'attributo (non modificabili)</legend>
+    <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="CoreAttributes_Code" class="large-text-right small-text-left middle">Attribute code</label>
+    	</div>
+    	<div class="large-10 medium-10 small-8 cell">
+        <input type="text" name="CoreAttributes_Code" id="CoreAttributes_Code" value="<%=GetFieldValue(dtCoreGridsColumns, "CoreAttributes_Code")%>" size="100" readonly />
+        <span class="form-error">Obbligatorio</span>
+    	</div>
+    </div>
+    
+    <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="CoreAttributes_Title" class="large-text-right small-text-left middle">Attribute title</label>
+    	</div>
+    	<div class="large-10 medium-10 small-8 cell">
+        <input type="text" name="CoreAttributes_Title" id="CoreAttributes_Title" value="<%=GetFieldValue(dtCoreGridsColumns, "CoreAttributes_Title")%>" size="100" readonly />
+        <span class="form-error">Obbligatorio</span>
+    	</div>
+    </div>
+    
+    
+    <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="CoreGrids_Title" class="large-text-right small-text-left middle">Grid</label>
+    	</div>
+    	<div class="large-10 medium-10 small-8 cell">
+        <input type="text" name="CoreGrids_Title" id="CoreGrids_Title" value="<%=GetFieldValue(dtCoreGridsColumns, "CoreGrids_Title")%>" size="100" readonly />
+        <span class="form-error">Obbligatorio</span>
+    	</div>
+    </div>
+    
+    <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="CoreAttributesType_Code" class="large-text-right small-text-left middle">Attribute Type</label>
+    	</div>
+    	<div class="large-10 medium-10 small-8 cell">
+        <input type="text" name="CoreAttributesType_Code" id="CoreAttributesType_Code" value="<%=GetFieldValue(dtCoreGridsColumns, "CoreAttributesType_Code")%>" size="100" readonly />
+        <span class="form-error">Obbligatorio</span>
+    	</div>
+    </div>
+</fieldset>
+
+<fieldset>
+  <legend>Dati della griglia (modificabili)</legend>
+    <div class="grid-x grid-padding-x">
+      <div class="large-2 medium-2 small-4 cell">
+    		<label for="CoreGridsColumns_Link" class="large-text-right small-text-left middle">Link</label>
+    	</div>
+      <div class="large-10 medium-10 small-8 cell">
+    		<div class="switch tiny">                                         
+        	<input class="switch-input" type="checkbox" name="CoreGridsColumns_Link" id="CoreGridsColumns_Link" value="on" <% if (GetCheckValue(dtCoreGridsColumns,"CoreGridsColumns_Link")){ Response.Write("checked");} %> />
+    			<label class="switch-paddle" for="CoreGridsColumns_Link">
+    				<span class="show-for-sr">Link</span>
+    				<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+    				<span class="switch-inactive" aria-hidden="true"></span>
+    			</label>
+    		</div>                                            
+    	</div>
+    </div>
+    
+    <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="CoreGridsColumns_Label" class="large-text-right small-text-left middle">Label</label>
+    	</div>
+    	<div class="large-10 medium-10 small-8 cell">
+        <input type="text" name="CoreGridsColumns_Label" id="CoreGridsColumns_Label" value="<%=GetFieldValue(dtCoreGridsColumns, "CoreGridsColumns_Label")%>" size="100" />
+        <span class="form-error">Obbligatorio</span>
+    	</div>
+    </div>
+
+    <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="CoreGridsColumns_Width" class="large-text-right small-text-left middle">Width</label>
+    	</div>
+    	<div class="large-10 medium-10 small-8 cell">
+        <input type="text" name="CoreGridsColumns_Width" id="CoreGridsColumns_Width" value="<%=GetFieldValue(dtCoreGridsColumns, "CoreGridsColumns_Width")%>" size="100" required="required" />
+        <span class="form-error">Obbligatorio</span>
+    	</div>
+    </div>
+    
+    <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="CoreGridsColumns_Order" class="large-text-right small-text-left middle">Order</label>
+    	</div>
+    	<div class="large-10 medium-10 small-8 cell">
+        <input type="text" name="CoreGridsColumns_Order" id="CoreGridsColumns_Order" value="<%=GetFieldValue(dtCoreGridsColumns, "CoreGridsColumns_Order")%>" size="100"  />
+    	</div>
+    </div>
+    
+    <div class="grid-x grid-padding-x">
+    	<div class="large-2 medium-2 small-4 cell">
+    		<label for="CoreGridsColumns_Renderer" class="large-text-right small-text-left middle">Renderer</label>
+    	</div>
+    	<div class="large-10 medium-10 small-8 cell">
+        <textarea name="CoreGridsColumns_Renderer" id="CoreGridsColumns_Renderer" rows="5"  /><%=GetFieldValue(dtCoreGridsColumns, "CoreGridsColumns_Renderer")%></textarea>
+    	</div>
+    </div>
+</fieldset>

@@ -1,0 +1,81 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ImmobiliAgestaNET" Type="TABLE">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="id_immobile" IsNull="Y" Type="int" />
+      <Field Column="id_agenzia" IsNull="Y" Type="int" />
+      <Field Column="username_agenzia" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="psw_agenzia" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="rif" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="contratto" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="data" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="cod_istat" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="localita" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="ubicazione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="latitudine" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="longitudine" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="cod_tipologia" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="tipologia" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="cod_categoria" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="testo" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="testo_eng" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="prezzo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="mq" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="vani" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="camere" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="bagni" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="garage" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="ascensore" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="arredato" IsNull="Y" Type="bit" />
+      <Field Column="condizionatore" IsNull="Y" Type="bit" />
+      <Field Column="giardino" IsNull="Y" Type="bit" />
+      <Field Column="regione" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="provincia" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="comune" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="indirizzo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="civico" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="mappa_visibile" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="mappa_immobile_visibile" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="trattativa_riservata" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="condizioni" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="riscaldamento" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="cucina" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="garage_mq" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="email" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="postoauto" IsNull="Y" Type="bit" />
+      <Field Column="balcone" IsNull="Y" Type="bit" />
+      <Field Column="terrazza" IsNull="Y" Type="bit" />
+      <Field Column="piscina" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="piano" IsNull="Y" Type="int" />
+      <Field Column="piani_totali" IsNull="Y" Type="int" />
+      <Field Column="spese_condominiali" IsNull="Y" Type="money" />
+      <Field Column="url1" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="url2" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="url3" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="url4" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="url5" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="url6" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="url7" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="url8" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="url9" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="url10" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="agenzia_esiste" IsNull="Y" Type="bit" />
+      <Field Column="Nuovo" IsNull="Y" Type="bit" />
+      <Field Column="classe_energetica" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="epi" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="epi_um" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Comuni_Ky" IsNull="Y" Type="int" />
+      <Field Column="Province_Ky" IsNull="Y" Type="int" />
+      <Field Column="Regioni_Ky" IsNull="Y" Type="int" />
+      <Field Column="Nazioni_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="AnnunciCategorie_Ky" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_UrlKey" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Annunci_NumeroFoto" IsNull="Y" Type="int" />
+      <Field Column="AnnunciTipologie_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Annunci_ClasseEnergetica" IsNull="Y" Type="varchar" Lenght="200" />
+    </Fields>
+  </Tables>
+</SqlTable>

@@ -1,0 +1,57 @@
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Descrizione</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="Divise_Descrizione" id="Divise_Descrizione" title="Nome" required="required" value="<%=GetFieldValue("Divise_Descrizione")%>" size="60">
+	</div>
+</div>
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle">Codice</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="Divise_Codice" id="Divise_Codice" title="Codice" required="required" value="<%=GetFieldValue("Divise_Codice")%>" size="60">
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="Divise_Simbolo" class="large-text-right small-text-left middle">Simbolo</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="Divise_Simbolo" id="Divise_Simbolo" title="Simbolo" value="<%=GetFieldValue("Divise_Simbolo")%>" size="60">
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="Divise_Decimali" class="large-text-right small-text-left middle">Decimali</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="Divise_Decimali" id="Divise_Decimali" title="Decimali" required="required" value="<%=GetFieldValue("Divise_Decimali")%>" size="60">
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="Divise_Cambio" class="large-text-right small-text-left middle">Cambio</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="Divise_Cambio" id="Divise_Cambio" title="Cambio" required="required" value="<%=GetFieldValue("Divise_Cambio")%>" size="60">
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell text-right">
+		<label class="large-text-right small-text-left middle" for="Lingue_Ky">Lingua <i class="fa-duotone fa-language fa-fw"></i></label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+		<select name="Lingue_Ky" id="Lingue_Ky" value="<%=GetFieldValue("Lingue_Ky")%>" required="required">
+      <!--#include file="/var/cache/Lingue-options.htm"--> 
+    </select>
+    <script type="text/javascript">
+      selectSet('Lingue_Ky', '<%=GetFieldValue("Lingue_Ky")%>');
+    </script>
+	</div>
+</div>

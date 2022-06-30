@@ -1,0 +1,49 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Faq_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Faq_Ky" IsNull="N" Type="int" />
+      <Field Column="Faq_Domanda" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Faq_Risposta" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Faq_Data" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Prodotti_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="ProdottiCategorie_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Prodotti_Ky" IsNull="Y" Type="int" />
+      <Field Column="ProdottiCategorie_Ky" IsNull="Y" Type="int" />
+      <Field Column="Servizi_Ky" IsNull="Y" Type="int" />
+      <Field Column="ServiziCategorie_Ky" IsNull="Y" Type="int" />
+      <Field Column="Faq_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Faq_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Faq_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Faq_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Faq_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Faq_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="ServiziCategorie_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="FaqCategorie_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="FaqCategorie_Ky" IsNull="Y" Type="int" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Lingue_Codice" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Lingue_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Faq_PubblicaWEB" IsNull="Y" Type="bit" />
+      <Field Column="Faq_Tags" IsNull="Y" Type="varchar" Lenght="200" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Faq_Vw
+AS
+SELECT        dbo.Faq.Faq_Ky, dbo.Faq.Faq_Domanda, dbo.Faq.Faq_Risposta, dbo.Faq.Faq_Data, dbo.Faq.Anagrafiche_Ky, dbo.Prodotti.Prodotti_Titolo, dbo.ProdottiCategorie.ProdottiCategorie_Titolo, 
+                         dbo.Faq.Utenti_Ky, dbo.Faq.Prodotti_Ky, dbo.Faq.ProdottiCategorie_Ky, dbo.Faq.Servizi_Ky, dbo.Faq.ServiziCategorie_Ky, 
+                         dbo.Faq.Faq_UserInsert, dbo.Faq.Faq_UserUpdate, dbo.Faq.Faq_UserDelete, dbo.Faq.Faq_DateInsert, dbo.Faq.Faq_DateUpdate, dbo.Faq.Faq_DateDelete, dbo.ServiziCategorie.ServiziCategorie_Descrizione, 
+                         dbo.Anagrafiche.Anagrafiche_RagioneSociale, dbo.FaqCategorie.FaqCategorie_Titolo, dbo.Faq.FaqCategorie_Ky, dbo.Faq.Lingue_Ky, dbo.Lingue.Lingue_Codice, dbo.Lingue.Lingue_Titolo, 
+                         dbo.Faq.Faq_PubblicaWEB, dbo.Faq.Faq_Tags
+FROM            dbo.Faq LEFT OUTER JOIN
+                         dbo.Lingue ON dbo.Faq.Lingue_Ky = dbo.Lingue.Lingue_Ky LEFT OUTER JOIN
+                         dbo.FaqCategorie ON dbo.Faq.FaqCategorie_Ky = dbo.FaqCategorie.FaqCategorie_Ky LEFT OUTER JOIN
+                         dbo.ServiziCategorie ON dbo.Faq.ServiziCategorie_Ky = dbo.ServiziCategorie.ServiziCategorie_Ky  LEFT OUTER JOIN
+                         dbo.Anagrafiche ON dbo.Faq.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky LEFT OUTER JOIN
+                         dbo.Prodotti ON dbo.Faq.Prodotti_Ky = dbo.Prodotti.Prodotti_Ky LEFT OUTER JOIN
+                         dbo.ProdottiCategorie ON dbo.Faq.ProdottiCategorie_Ky = dbo.ProdottiCategorie.ProdottiCategorie_Ky
+</SqlScriptCreate>
+</SqlTable>

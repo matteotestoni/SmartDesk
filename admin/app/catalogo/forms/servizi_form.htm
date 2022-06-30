@@ -1,0 +1,275 @@
+	<div id="schedaservizio">
+  	<ul class="tabs" role="tablist" id="servizio-tabs" data-responsive-accordion-tabs="tabs small-accordion medium-tabs large-tabs">
+			<li class="tabs-title is-active" role="presentational"><a href="#tabs-1"><i class="fa-duotone fa-user fa-lg fa-fw"></i>Scheda</a></li>
+  		<li class="tabs-title" role="presentational"><a href="#tabs-descrizione"><i class="fa-duotone fa-file-lines fa-lg fa-fw"></i>Descrizione</a></li>
+			<li class="tabs-title" role="presentational"><a href="#tabs-seo"><i class="fa-brands fa-google fa-lg fa-fw"></i>SEO</a></li>
+			<li class="tabs-title" role="presentational"><a href="#tabs-2"><i class="fa-duotone fa-image fa-lg fa-fw"></i>Foto</a></li>
+		</ul>
+	<div id="contenutotabs">
+		<div class="tabs-content" data-tabs-content="servizio-tabs">
+				<section role="tabpanel" aria-hidden="false" class="tabs-panel is-active" id="tabs-1">
+						<div class="row gx-2 gy-2">
+							<div class="col-lg-2 col-md-2 col-sm-4 cell">
+							</div>
+							<div class="col-lg-1 col-md-1 col-sm-4 cell">
+								<label for="Servizi_PubblicaWEB" class="form-label">Attivo</label>
+							</div>
+							<div class="col-lg-1 col-md-1 col-sm-8 cell">                                               
+  							<div class="form-check form-switch">                                         
+                  <input class="form-check-input" type="checkbox" name="Servizi_PubblicaWEB" id="Servizi_PubblicaWEB" value="on" <% if (GetCheckValue(dtServizi, "Servizi_PubblicaWEB")){ Response.Write("checked");} %> />
+                  <label class="form-label form-check-label" for="Servizi_PubblicaWEB">
+                  </label>
+                </div> 
+							</div>       
+							<div class="col-lg-1 col-md-1 col-sm-4 cell">
+								<label for="Servizi_InVetrina" class="form-label">In vetrina</label>
+							</div>
+							<div class="col-lg-1 col-md-1 col-sm-8 cell">                                               
+  							<div class="form-check form-switch">                                         
+                  <input class="form-check-input" type="checkbox" name="Servizi_InVetrina" id="Servizi_InVetrina" value="on" <% if (GetCheckValue(dtServizi, "Servizi_InVetrina")){ Response.Write("checked");} %> />
+                  <label class="form-check-label" for="Servizi_InVetrina">
+                  </label>
+                </div> 
+							</div>
+							<div class="col-lg-1 col-md-1 col-sm-4 cell">
+								<label for="Servizi_InOfferta" class="form-label">In Offerta</label>
+							</div>
+							<div class="col-lg-1 col-md-1 col-sm-8 cell">                                               
+  							<div class="form-check form-switch">                                         
+                  <input class="form-check-input" type="checkbox" name="Servizi_InOfferta" id="Servizi_InOfferta" value="on" <% if (GetCheckValue(dtServizi, "Servizi_InOfferta")){ Response.Write("checked");} %> />
+                  <label class="form-check-label" for="Servizi_InOfferta">
+                  </label>
+                </div> 
+							</div>
+							<div class="col-lg-1 col-md-1 col-sm-4 cell">
+								<label for="Servizi_InPromozione" class="form-label">In Promozione</label>
+							</div>
+							<div class="col-lg-1 col-md-1 col-sm-8 cell">                                               
+  							<div class="form-check form-switch">                                         
+                  <input class="form-check-input" type="checkbox" name="Servizi_InPromozione" id="Servizi_InPromozione" value="on" <% if (GetCheckValue(dtServizi, "Servizi_InPromozione")){ Response.Write("checked");} %> />
+                  <label class="form-check-label" for="Servizi_InPromozione">
+                  </label>
+                </div> 
+							</div>
+							<div class="col-lg-1 col-md-1 col-sm-4 cell">
+ 								<label for="Servizi_Outlet" class="form-label">Outlet</label>
+							</div>
+							<div class="col-lg-1 col-md-1 col-sm-8 cell">                                               
+  							<div class="form-check form-switch">                                         
+                  <input class="form-check-input" type="checkbox" name="Servizi_Outlet" id="Servizi_Outlet" value="on" <% if (GetCheckValue(dtServizi, "Servizi_Outlet")){ Response.Write("checked");} %> />
+                  <label class="form-check-label" for="Servizi_Outlet">
+                  </label>
+                </div> 
+							</div>
+						</div>        
+						<div class="row gx-2 gy-2">
+							<div class="col-lg-2 col-md-2 col-sm-12 cell text-right">
+								<label class="form-label" for="Servizi_Codice">Codice *</label>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-12 cell">
+								<input class="form-control" type="text" name="Servizi_Codice" id="Servizi_Codice" title="Codice alfanumerico del prodotto" required="required" value="<%=GetFieldValue(dtServizi, "Servizi_Codice")%>" size="15">
+								<span class="invalid-tooltip">Obbligatorio.</span>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-12 cell text-right">
+								<label class="form-label" for="Servizi_Ordine">Ordine</label>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-12 cell">
+								<input class="form-control" type="text" name="Servizi_Ordine" id="Servizi_Ordine" title="Ordine" required="required" value="<%=GetFieldValue(dtServizi, "Servizi_Ordine")%>" size="15">
+							</div>
+						</div>        
+						<div class="row gx-2 gy-2">
+							<div class="col-lg-2 col-md-2 col-sm-12 cell text-right">
+								<label class="form-label" for="Servizi_Titolo">Titolo <i class="fa-duotone fa-tag fa-fw"></i></label>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-12 cell">
+								<input class="form-control" type="text" name="Servizi_Titolo" id="Servizi_Titolo" value="<%=GetFieldValue(dtServizi, "Servizi_Titolo")%>" size="83" required="required">
+								<span class="invalid-tooltip">Obbligatorio.</span>
+		  					<p class="floatingInput">max 100 carateri</p>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-12 cell text-right">
+								<label class="form-label" for="Servizi_Sottotitolo">Sottotitolo <i class="fa-duotone fa-tag fa-fw"></i></label>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-12 cell">
+								<input class="form-control" type="text" name="Servizi_Sottotitolo" id="Servizi_Sottotitolo" value="<%=GetFieldValue(dtServizi, "Servizi_Sottotitolo")%>" size="83">
+								<span class="invalid-tooltip">Obbligatorio.</span>
+		  					<p class="floatingInput">max 100 carateri</p>
+							</div>
+						</div>        
+
+						<div class="row gx-2 gy-2">
+							<div class="col-lg-2 col-md-2 col-sm-12 cell text-right">
+								<label class="form-label" for="Servizi_Prezzo">Prezzo</label>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-12 cell">
+								<input class="form-control" type="text" name="Servizi_Prezzo" id="Servizi_Prezzo"  value="<%=GetFieldValue(dtServizi, "Servizi_Prezzo")%>" size="10" required="required">
+								<span class="invalid-tooltip">Obbligatorio.</span>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-12 cell text-right">
+								<label class="form-label" for="AliquoteIVA_Ky">Regime IVA</label>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-12 cell">
+								<select class="form-select"name="AliquoteIVA_Ky" id="AliquoteIVA_Ky" value="<%=GetFieldValue(dtServizi, "AliquoteIVA_Ky")%>" required="required">
+									<!--#include file="/var/cache/AliquoteIVA-options.htm"--> 
+								</select>
+								<span class="invalid-tooltip">Obbligatorio</span>
+								<script type="text/javascript">
+									selectSet('AliquoteIVA_Ky', '<%=GetFieldValue(dtServizi, "AliquoteIVA_Ky")%>');
+								</script>
+							</div>
+						</div>        
+
+            <div class="row gx-2 gy-2">
+              <div class="col-lg-2 col-md-2 col-sm-4 cell">
+                <label for="Servizi_CodicePadre" class="form-label">Padre 
+                  <i class="fa-duotone fa-table fa-fw" aria-hidden="true"></i>
+                </label>
+              </div>
+              <div class="col-lg-10 col-md-10 col-sm-8 cell">
+                <select class="form-select"name="Servizi_CodicePadre" id="Servizi_CodicePadre" value="<%=GetFieldValue(dtServizi, "Servizi_CodicePadre")%>" placeholder="Padre">
+                  <option></option>
+			             <% for (int i = 0; i < dtServiziElenco.Rows.Count; i++){
+                    Response.Write("<option value=\"" + dtServiziElenco.Rows[i]["Servizi_Ky"].ToString() + "\">" + dtServiziElenco.Rows[i]["Servizi_Titolo"].ToString() + "</option>");
+                   } %>
+                </select>
+								<script type="text/javascript">
+									selectSet('Servizi_CodicePadre', '<%=GetFieldValue(dtServizi, "Servizi_CodicePadre")%>');
+								</script>
+              </div>
+            </div>
+            
+						<div class="row gx-2 gy-2">
+							<div class="col-lg-2 col-md-2 col-sm-12 cell text-right">
+								<label class="form-label" for="AliquoteIVA_Ky">Categorie del servizio</label>
+							</div>
+							<div class="col-lg-10 col-md-10 col-sm-12 cell">
+								<select class="form-select"name="ServiziCategorie_Ky" id="ServiziCategorie_Ky" multiple value="<%=GetFieldValue(dtServizi, "ServiziCategorie_Ky")%>" required="required" class="select2">
+									<!--#include file="/var/cache/ServiziCategorie-options.htm"--> 
+								</select>
+								<span class="invalid-tooltip">Obbligatorio</span>
+								<script type="text/javascript">
+									selectSetMultiple('ServiziCategorie_Ky', '<%=GetFieldValue(dtServizi, "ServiziCategorie_Ky")%>');
+								</script>
+							</div>
+						</div>        
+						
+						<div class="row gx-2 gy-2">
+							<div class="col-lg-2 col-md-2 col-sm-12 cell text-right">
+								<label class="form-label" for="Produttori_Ky">Produttore</label>
+							</div>
+							<div class="col-lg-10 col-md-10 col-sm-12 cell">
+								<select class="form-select"name="Produttori_Ky" id="Produttori_Ky">
+									<!--#include file="/var/cache/Produttori-options.htm"--> 
+								</select>
+								<script type="text/javascript">
+									selectSet('Produttori_Ky', '<%=GetFieldValue(dtServizi, "Produttori_Ky")%>');
+								</script>
+							</div>
+						</div>        
+            <!--#include file=/admin/app/catalogo/scheda-servizi-attributi.inc -->
+			</section>
+			<section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-descrizione" name="tabs-descrizione">
+				<div class="row gx-2 gy-2">
+					<div class="col-lg-12 col-md-12 col-sm-12 cell">
+						<textarea name="Servizi_Descrizione" id="Servizi_Descrizione" rows="5" cols="110" class="ckeditor"><%=GetFieldValue(dtServizi, "Servizi_Descrizione")%></textarea>
+				    <script type="text/javascript">
+				    CKEDITOR.replace('Servizi_Descrizione',
+				    	{
+				      	filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+				      	filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+				    	});
+			  		CKFinder.setupCKEditor( editor, null, { type: 'Files', currentFolder: '/uploads/foto-prodotti/' } );
+				    </script>
+					</div>
+				</div>        
+			</section>
+    	<section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-seo" name="tabs-seo">
+          <div class="row gx-2 gy-2">
+          	<div class="col-lg-2 col-md-2 col-sm-4 cell text-right">
+          		<label class="form-label" for="Prodotti_Title">Titolo SEO</label>
+          	</div>
+          	<div class="col-lg-10 col-md-12 col-sm-8 cell">
+              <input class="form-control" type="text" name="Servizi_Title" id="Servizi_Title" title="Titolo SEO" value="<%=GetFieldValue(dtServizi, "Servizi_Title")%>" size="200">
+          	</div>
+          </div>
+          <div class="row gx-2 gy-2">
+          	<div class="col-lg-2 col-md-2 col-sm-12 cell">
+          		<label class="form-label" for="Servizi_Description">Descrizione SEO</label>
+          	</div>
+          	<div class="col-lg-10 col-md-10 col-sm-12 cell">
+              <textarea name="Servizi_Description" id="Servizi_Description" rows="2" cols="110"><%=GetFieldValue(dtServizi, "Servizi_Description")%></textarea>
+          	</div>
+					</div> 
+				  <div class="row gx-2 gy-2">
+				  	<div class="col-lg-2 col-md-2 col-sm-4 cell">
+				  		<label for="Servizi_Robots" class="form-label">Robots SEO<i class="fa-duotone fa-file-lines fa-fw"></i></label>
+				  	</div>
+				  	<div class="col-lg-10 col-md-10 col-sm-8 cell">
+							<select class="form-select"name="Servizi_Robots" id="Servizi_Robots" value="<%=GetFieldValue(dtServizi, "Servizi_Robots")%>">
+				        <option value="index,follow">index,follow</option>
+				        <option value="noindex,nofollow">noindex,follow</option>
+				        <option value="noindex,nofollow">noindex,nofollow</option>
+				      </select>
+			        <p class="floatingInput">i noindex non saranno nella sitemap</p>
+				      <script type="text/javascript">
+				        selectSet('Servizi_Robots', '<%=GetFieldValue(dtServizi, "Servizi_Robots")%>');
+				      </script>
+				  	</div>
+				  </div>
+      <div class="row gx-2 gy-2">
+      	<div class="col-lg-2 col-md-2 col-sm-12 cell">
+      		<label class="form-label" for="CoreResponseCode_Ky">Risposta HTTP</label>
+      	</div>
+      	<div class="col-lg-10 col-md-10 col-sm-12 cell">
+		  <select class="form-select"name="CoreResponseCode_Ky" id="CoreResponseCode_Ky">
+  			<!--#include file="/var/cache/CoreResponseCode-options.htm"--> 
+	      </select>
+	      <script type="text/javascript">
+	        selectSet('CoreResponseCode_Ky', '<%=GetFieldValue(dtServizi, "CoreResponseCode_Ky")%>');
+	      </script>
+      	</div>
+	  </div> 
+      
+      <div class="row gx-2 gy-2">
+        <div class="col-lg-2 col-md-2 col-sm-4 cell">
+            <label for="Servizi_RedirectUrl" class="form-label">RedirectUrl</label>
+        </div>
+        <div class="col-lg-10 col-md-10 col-sm-8 cell">
+            <input class="form-control" type="text" name="Servizi_RedirectUrl" id="Servizi_RedirectUrl" value="<%=GetFieldValue(dtServizi, "Servizi_RedirectUrl")%>" placeholder="RedirectUrl">
+        </div>
+      </div>      
+			</section>
+      <section role="tabpanel" aria-hidden="true" class="tabs-panel" id="tabs-2">
+          <%
+          if (GetFieldValue(dtServizi, "Servizi_Foto1").Length>0){
+            Response.Write("<div class=\"miniatura\"><a href=\"" + GetFieldValue(dtServizi, "Servizi_Foto1") + "\" id=\"f" + i + "\" target=\"_blank\"><img src=\"" + GetFieldValue(dtServizi, "Servizi_Foto1") + "\" border=\"0\" width=\"67\" height=\"50\" /></a><br /><a href=\"/admin/app/catalogo/crud/elimina-foto-servizio.aspx?Servizi_Ky=" + GetFieldValue(dtServizi, "Servizi_Ky") + "\"><i class=\"fa-duotone fa-trash-alt fa-fw\"></i></a></div>");
+          }
+          %>
+          <div class="caricadocumento">
+            Seleziona una foto sul tuo computer da associare al servizio<br>
+            <label for="foto" class="button small">Carica immagini</label>
+            <input class="form-control" type="file" class="show-for-sr fileupload" name="foto" id="foto" multiple /><br /><br />
+            <div id="galleryfotocaricate" class="gallery"></div>
+            <script>
+              jQuery(function() {
+                var imagesPreview = function(input, placeToInsertImagePreview) {
+                    if (input.files) {
+                        var filesAmount = input.files.length;
+                        for (i = 0; i < filesAmount; i++) {
+                            var reader = new FileReader();
+                            reader.onload = function(event) {
+                                jQuery(jQuery.parseHTML('<img width="150" height="100" hspace="10" vspace="10" style="border:1px solid #000000">')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                            }
+                             reader.readAsDataURL(input.files[i]);
+                        }
+                    }
+                };
+                jQuery('#foto').on('change', function() {
+                    imagesPreview(this, '#galleryfotocaricate');
+                });
+              });
+            </script>
+          </div>
+      </section>
+</div>
+</div>
+</div>

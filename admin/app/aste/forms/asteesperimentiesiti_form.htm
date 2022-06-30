@@ -1,0 +1,47 @@
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AsteEsperimentiEsiti_Titolo" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Titolo</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="AsteEsperimentiEsiti_Titolo" id="AsteEsperimentiEsiti_Titolo" title="Esito" value="<%=GetFieldValue(dtAsteEsperimentiEsiti, "AsteEsperimentiEsiti_Titolo")%>" size="150" required="required">
+  	</div>
+  </div>
+  
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell text-right">
+  		<label for="AsteEsperimentiEsiti_Icona" class="large-text-right small-text-left middle">Icona</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="AsteEsperimentiEsiti_Icona" id="AsteEsperimentiEsiti_Icona" placeholder="Icona" title="Icona" required="required" value="<%=GetFieldValue(dtAsteEsperimentiEsiti, "AsteEsperimentiEsiti_Icona")%>" size="100" maxlength="100">
+			<span class="help-text">Puoi specificare l'icona prendendo da Font Awesome. <a href="https://fontawesome.com/icons?d=gallery" target="_blank" rel="nofollow">Clicca qui</a> per maggiori informazioni.</span>
+     	<span class="form-error">Obbligatorio.</span>
+  	</div>
+	</div>
+
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell text-right">
+  		<label class="large-text-right small-text-left middle">Anteprima</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <i class="fa-duotone <%=GetFieldValue(dtAsteEsperimentiEsiti, "AsteEsperimentiEsiti_Icona")%> fa-lg fa-fw"></i>
+  	</div>
+	</div>        
+  
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label class="large-text-right small-text-left middle">Colore<i class="fa-duotone fa-paint-brush fa-fw"></i></label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="color" required="required" name="AsteEsperimentiEsiti_Colore" id="AsteEsperimentiEsiti_Colore" title="Colore" value="<%=GetFieldValue(dtAsteEsperimentiEsiti, "AsteEsperimentiEsiti_Colore")%>" size="60">
+			<span class="form-error">Obbligatorio.</span>
+  	</div>
+  </div>
+  
+	<div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AsteEsperimentiEsiti_Ordine" class="large-text-right small-text-left middle">Ordine</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="AsteEsperimentiEsiti_Ordine" id="AsteEsperimentiEsiti_Ordine" title="Esito" value="<%=GetFieldValue(dtAsteEsperimentiEsiti, "AsteEsperimentiEsiti_Ordine")%>" size="150" required="required">
+  	</div>
+  </div>  

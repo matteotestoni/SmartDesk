@@ -1,0 +1,1 @@
+<%@ Page codepage="65001" Language="C#" AutoEventWireup="true" CodeFile="/admin/app/catalogo/scheda-prodotto-foto-predefinita.aspx.cs" Inherits="_Default" Debug="true"%>

@@ -1,0 +1,47 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CoreGrids" Type="TABLE">
+    <Keys>
+      <Key Column="CoreGrids_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CoreGrids_Ky" IsNull="N" Type="int" />
+      <Field Column="CoreEntities_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreGrids_Custom" IsNull="Y" Type="bit" />
+      <Field Column="CoreGrids_Default" IsNull="Y" Type="bit" />
+      <Field Column="CoreGrids_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreGrids_Order" IsNull="Y" Type="int" />
+      <Field Column="CoreGrids_SQLFrom" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreGrids_SQLWhere" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreGrids_SQLOrder" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreGrids_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CoreGrids_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CoreGrids_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CoreGrids_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CoreGrids_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CoreGrids_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="CoreGrids_Rows" IsNull="Y" Type="smallint" />
+      <Field Column="CoreForms_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CoreGrids] (
+  [CoreGrids_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CoreEntities_Ky] int  NULL , 
+  [CoreGrids_Custom] bit  NULL DEFAULT ((0)), 
+  [CoreGrids_Default] bit  NULL DEFAULT ((0)), 
+  [CoreGrids_Title] varchar(200)  NULL , 
+  [CoreGrids_Order] int  NULL , 
+  [CoreGrids_SQLFrom] varchar(MAX)  NULL , 
+  [CoreGrids_SQLWhere] varchar(MAX)  NULL , 
+  [CoreGrids_SQLOrder] varchar(MAX)  NULL , 
+  [CoreGrids_UserInsert] int  NULL , 
+  [CoreGrids_UserUpdate] int  NULL , 
+  [CoreGrids_UserDelete] int  NULL , 
+  [CoreGrids_DateInsert] datetime  NULL , 
+  [CoreGrids_DateUpdate] datetime  NULL , 
+  [CoreGrids_DateDelete] datetime  NULL , 
+  [CoreGrids_Rows] smallint  NULL DEFAULT ((30)), 
+  [CoreForms_Ky] int  NULL  )
+ALTER TABLE [dbo].[CoreGrids] ADD CONSTRAINT PK_CoreGrids PRIMARY KEY  ([CoreGrids_Ky])
+</SqlScriptCreate>
+</SqlTable>

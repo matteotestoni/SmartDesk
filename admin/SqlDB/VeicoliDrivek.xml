@@ -1,0 +1,8 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliDrivek" Type="TABLE">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="date_created" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+</SqlTable>

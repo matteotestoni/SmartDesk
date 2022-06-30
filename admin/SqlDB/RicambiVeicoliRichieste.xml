@@ -1,0 +1,65 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="RicambiVeicoliRichieste" Type="TABLE">
+    <Keys>
+      <Key Column="RicambiVeicoliRichieste_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="RicambiVeicoliRichieste_Ky" IsNull="N" Type="int" />
+      <Field Column="RicambiVeicoliRichieste_Tipo" IsNull="Y" Type="bit" />
+      <Field Column="RicambiVeicoli_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliTipo_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="VeicoliMarca_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliModello_Ky" IsNull="Y" Type="int" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="RicambiVeicoliTipologie_Ky" IsNull="Y" Type="int" />
+      <Field Column="RicambiVeicoliCategorie_Ky" IsNull="Y" Type="int" />
+      <Field Column="RicambiVeicoliRichieste_Anno" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="RicambiVeicoliRichieste_Annuncio" IsNull="Y" Type="varchar" Lenght="1000" />
+      <Field Column="RicambiVeicoliRichieste_Note" IsNull="Y" Type="varchar" Lenght="1000" />
+      <Field Column="RicambiVeicoliRichieste_Notifica" IsNull="Y" Type="bit" />
+      <Field Column="Utenti_InsertKy" IsNull="Y" Type="int" />
+      <Field Column="Utenti_InsertDt" IsNull="Y" Type="datetime" />
+      <Field Column="Utenti_UpdateKy" IsNull="Y" Type="int" />
+      <Field Column="Utenti_UpdateDt" IsNull="Y" Type="datetime" />
+      <Field Column="RU_Marca" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="RU_Modello" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="RU_NomeCognome" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="RU_Provincia" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="RU_Email" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="RU_Cosa" IsNull="Y" Type="varchar" Lenght="1000" />
+      <Field Column="RicambiVeicoliRichieste_Provenienza" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="RicambiVeicoli_Alimentazione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="RicambiVeicoli_Cilindrata" IsNull="Y" Type="varchar" Lenght="20" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[RicambiVeicoliRichieste] (
+  [RicambiVeicoliRichieste_Ky] int IDENTITY(1,1) NOT NULL , 
+  [RicambiVeicoliRichieste_Tipo] bit  NULL DEFAULT ((0)), 
+  [RicambiVeicoli_Ky] int  NULL , 
+  [VeicoliTipo_Ky] smallint  NULL , 
+  [VeicoliMarca_Ky] int  NULL , 
+  [VeicoliModello_Ky] int  NULL , 
+  [Utenti_Ky] int  NULL , 
+  [RicambiVeicoliTipologie_Ky] int  NULL , 
+  [RicambiVeicoliCategorie_Ky] int  NULL , 
+  [RicambiVeicoliRichieste_Anno] varchar(100)  NULL , 
+  [RicambiVeicoliRichieste_Annuncio] varchar(1000)  NULL , 
+  [RicambiVeicoliRichieste_Note] varchar(1000)  NULL , 
+  [RicambiVeicoliRichieste_Notifica] bit  NULL , 
+  [Utenti_InsertKy] int  NULL , 
+  [Utenti_InsertDt] datetime  NULL , 
+  [Utenti_UpdateKy] int  NULL , 
+  [Utenti_UpdateDt] datetime  NULL , 
+  [RU_Marca] varchar(500)  NULL , 
+  [RU_Modello] varchar(500)  NULL , 
+  [RU_NomeCognome] varchar(500)  NULL , 
+  [RU_Provincia] varchar(500)  NULL , 
+  [RU_Email] varchar(500)  NULL , 
+  [RU_Cosa] varchar(1000)  NULL , 
+  [RicambiVeicoliRichieste_Provenienza] varchar(100)  NULL , 
+  [RicambiVeicoli_Alimentazione] varchar(50)  NULL , 
+  [RicambiVeicoli_Cilindrata] varchar(20)  NULL  )
+ALTER TABLE [dbo].[RicambiVeicoliRichieste] ADD CONSTRAINT PK_RicambiVeicoliRichieste PRIMARY KEY  ([RicambiVeicoliRichieste_Ky])
+</SqlScriptCreate>
+</SqlTable>

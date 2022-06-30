@@ -1,0 +1,41 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="PersoneAssenze" Type="TABLE">
+    <Keys>
+      <Key Column="PersoneAssenze_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="PersoneAssenze_Ky" IsNull="N" Type="int" />
+      <Field Column="PersoneAssenze_Anno" IsNull="Y" Type="int" />
+      <Field Column="PersoneAssenze_Data" IsNull="Y" Type="smalldatetime" />
+      <Field Column="PersoneAssenze_Descrizione" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="Persone_Ky" IsNull="Y" Type="int" />
+      <Field Column="PersoneAssenze_Ore" IsNull="Y" Type="float" />
+      <Field Column="PersoneAssenzeTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="PersoneAssenze_Lock" IsNull="Y" Type="bit" />
+      <Field Column="PersoneAssenze_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="PersoneAssenze_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="PersoneAssenze_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="PersoneAssenze_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="PersoneAssenze_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="PersoneAssenze_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[PersoneAssenze] (
+  [PersoneAssenze_Ky] int IDENTITY(1,1) NOT NULL , 
+  [PersoneAssenze_Anno] int  NULL , 
+  [PersoneAssenze_Data] smalldatetime  NULL , 
+  [PersoneAssenze_Descrizione] varchar(500)  NULL , 
+  [Persone_Ky] int  NULL , 
+  [PersoneAssenze_Ore] float  NULL , 
+  [PersoneAssenzeTipo_Ky] tinyint  NULL , 
+  [PersoneAssenze_Lock] bit  NULL DEFAULT ((0)), 
+  [PersoneAssenze_UserInsert] int  NULL , 
+  [PersoneAssenze_UserUpdate] int  NULL , 
+  [PersoneAssenze_UserDelete] int  NULL , 
+  [PersoneAssenze_DateInsert] datetime  NULL , 
+  [PersoneAssenze_DateUpdate] datetime  NULL , 
+  [PersoneAssenze_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[PersoneAssenze] ADD CONSTRAINT PK_PersoneAssenze PRIMARY KEY  ([PersoneAssenze_Ky])
+</SqlScriptCreate>
+</SqlTable>

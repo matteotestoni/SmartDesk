@@ -1,0 +1,101 @@
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="Forms_PubblicaWEB" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Pubblica</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+      <input class="switch-input" type="checkbox" name="Forms_PubblicaWEB" id="Forms_PubblicaWEB" value="on" <% if (GetCheckValue(dtForms, "Forms_PubblicaWEB")){ Response.Write("checked");} %> />
+      <label class="switch-paddle" for="Forms_PubblicaWEB">
+        <span class="show-for-sr">si</span>
+        <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+        <span class="switch-inactive" aria-hidden="true"></span>
+      </label>
+	</div>
+</div>
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="Forms_Titolo" class="text-right middle">Titolo</label>
+	</div>
+	<div class="large-10 medium-9 small-8 cell">
+		<input type="text" name="Forms_Titolo" id="Forms_Titolo" value="<%=GetFieldValue(dtForms, "Forms_Titolo")%>" size="60" required="required">
+		<small class="form-error">Obbligatorio</small>
+		<p class="help-text">max 100 carateri</p>
+	</div>
+</div>	
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell text-right">
+		<label class="large-text-right small-text-left middle" for="Lingue_Ky">Lingua <i class="fa-duotone fa-language fa-fw"></i></label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+		<select name="Lingue_Ky" id="Lingue_Ky" value="<%=GetFieldValue(dtForms, "Lingue_Ky")%>" required="required">
+      <!--#include file="/var/cache/Lingue-options.htm"--> 
+    </select>
+    <script type="text/javascript">
+      selectSet('Lingue_Ky', '<%=GetFieldValue(dtForms, "Lingue_Ky")%>');
+    </script>
+	</div>
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="Forms_Data" class="text-right middle">Data <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+		<input type="text" name="Forms_Data" id="Forms_Data" class="fdatepicker" value="<%=GetFieldValue(dtForms, "Forms_Data_IT")%>" size="60" required="required">
+		<small class="form-error">Obbligatorio</small>
+	</div>
+</div>	
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="Forms_DataInizio" class="text-right middle">Data Inizio <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+		<input type="text" name="Forms_DataInizio" id="Forms_DataInizio" class="fdatepicker" value="<%=GetFieldValue(dtForms, "Forms_DataInizio_IT")%>" size="60" required="required">
+		<small class="form-error">Obbligatorio</small>
+	</div>
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="Forms_DataTermine" class="text-right middle">Data <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+		<input type="text" name="Forms_DataTermine" id="Forms_DataTermine" class="fdatepicker" value="<%=GetFieldValue(dtForms, "Forms_DataTermine_IT")%>" size="60" required="required">
+		<small class="form-error">Obbligatorio</small>
+	</div>
+</div>	
+
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="Forms_Descrizione" class="text-right middle">Descrizione</label>
+	</div>
+	<div class="large-10 medium-9 small-8 cell">
+    <textarea name="Forms_Descrizione" id="Forms_Descrizione" rows="2" cols="110" class="ckfinder"><%=GetFieldValue(dtForms, "Forms_Descrizione")%></textarea>
+    <script type="text/javascript">
+    CKEDITOR.replace('Forms_Descrizione',
+    	{
+      	filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+      	filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+    	});
+		CKFinder.setupCKEditor( editor, null, { type: 'Files', currentFolder: '/uploads/foto-sondaggi/' } );
+    </script>
+		<small class="form-error">Obbligatorio</small>
+	</div>
+</div>	
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="CMSLink_Tags" class="text-right middle">Tags <i class="fa-duotone fa-list fa-fw"></i></label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+		<select name="Forms_Tags" id="Forms_Tags" multiple class="select2" value="<%=GetFieldValue(dtForms, "Forms_Tags")%>">
+			<option value=""></option>
+	    <%
+			for (int i = 0; i < dtCMSTags.Rows.Count; i++){
+				Response.Write("<option value=\"" + dtCMSTags.Rows[i]["CMSTags_Ky"].ToString() + "\">" + dtCMSTags.Rows[i]["CMSTags_Titolo"].ToString() + "</option>");
+			}
+			%>
+		</select>
+		<script type="text/javascript">
+			selectSetMultiple('Forms_Tags', '<%=GetFieldValue(dtForms, "Forms_Tags")%>');
+		</script>
+		<span class="form-error">Obbligatorio</span>
+		<p class="help-text">Tags: <a href="/admin/view.aspx?CoreModules_Ky=9&CoreEntities_Ky=104&CoreGrids_Ky=87" class="tiny button secondary">gestisci <i class="fa-duotone fa-pen-to-square fa-fw"></i></a></p>
+	</div>
+</div>	

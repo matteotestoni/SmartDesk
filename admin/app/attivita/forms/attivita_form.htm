@@ -1,0 +1,356 @@
+<div class="grid-x grid-padding-x">
+		<% if (boolAdmin==true){ %>
+	    <div class="large-1 medium-2 small-4 cell">
+	      <label for="Utenti_Ky" class="large-text-right small-text-left middle">Utente <i class="fa-duotone fa-user fa-fw"></i></label>
+	    </div>
+	    <div class="large-11 medium-10 small-8 cell">
+				<select name="Utenti_Ky" id="Utenti_Ky" value="<%=GetFieldValue(dtAttivita, "Utenti_Ky")%>" required="required" class="select2">
+          <!--#include file="/var/cache/Utenti-options-select2.htm"--> 
+        </select>
+        <span class="form-error">Obbligatorio</span>
+				<script type="text/javascript">
+          selectSet('Utenti_Ky', '<%=GetFieldValue(dtAttivita, "Utenti_Ky")%>');
+        </script>  
+    </div>
+		<% }else{ %>
+			<input type="hidden" id="Utenti_Ky" name="Utenti_Ky" value="<%=dtLogin.Rows[0]["Utenti_Ky"].ToString()%>">
+		<% } %>
+</div>
+		
+		
+<div class="grid-x grid-padding-x">
+		<div class="large-1 medium-2 small-4 cell align-top">
+			<label for="Anagrafiche_RagioneSociale" class="large-text-right small-text-left middle">Anagrafica <i class="fa-duotone fa-users fa-fw"></i></label>
+		</div>
+	  <div class="shrink cell hide-for-small-only">
+				<input type="text" name="Anagrafiche_Ky" id="Anagrafiche_Ky" value="<%=GetFieldValue(dtAttivita, "Anagrafiche_Ky")%>" size="3" required="required">
+				<span class="form-error">Obbligatorio</span>
+		</div>
+	  <div class="auto cell">
+				<input type="text" name="Anagrafiche_RagioneSociale" id="Anagrafiche_RagioneSociale" placeholder="Ragione Sociale" value="<%=GetFieldValue(dtAttivita, "Anagrafiche_RagioneSociale")%>" required="required">
+				<span class="form-error">Obbligatorio</span>
+        <script type="text/javascript">
+						jQuery("#Anagrafiche_RagioneSociale" ).autocomplete({
+							source: "/admin/app/anagrafiche/autosuggest-GetAnagrafiche-json.aspx",
+							minLength: 2,
+							select: function( event, ui ) {
+								jQuery("#Anagrafiche_Ky").val(ui.item.value);
+								jQuery("#Anagrafiche_RagioneSociale").val(ui.item.label);
+								return false;
+							}
+						});
+        </script>
+			</div>
+	  	<div class="shrink cell hide-for-small-only">
+        <% if (GetFieldValue(dtAttivita, "Anagrafiche_Ky")!=null && GetFieldValue(dtAttivita, "Anagrafiche_Ky").Length>0){ %>
+					<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=GetFieldValue(dtAttivita, "Anagrafiche_Ky")%>" style="margin-top:4px"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw fa-lg"></i></a>
+				<% } %>
+			</div>
+</div>
+
+	<div class="grid-x grid-padding-x grid-padding-x">
+		<div class="large-1 medium-1 small-4 cell">
+      <label for="AttivitaSettore_Ky" class="lbl text-right">Settore</label>
+    </div>
+    <div class="large-5 medium-5 small-8 cell">
+			<!--#include file="/var/cache/AttivitaSettore-radio.htm"-->
+      <span class="form-error">Obbligatorio</span>
+			<script type="text/javascript">
+				radioSet('AttivitaSettore_Ky', '<%=GetFieldValue(dtAttivita, "AttivitaSettore_Ky")%>');
+      </script>
+    </div>
+		<div class="large-6 medium-6 small-12 cell">
+  	  <% if (dtLogin.Rows[0]["UtentiGruppi_Progetti"].Equals(true) || boolAdmin==true){ %>
+        <div class="grid-x grid-padding-x" id="progetti" style="display:none">
+          <div class="large-2 medium-2 small-4 cell">
+            <label for="Commesse_Ky" class="lbl text-right">Progetto <i class="fa-duotone fa-building fa-fw"></i></label>
+          </div>
+          <div class="large-10 medium-10 small-8 cell large-text-left">
+          	<% if (dtCommesse!=null && dtCommesse.Rows.Count>0){ %>
+              <select name="Commesse_Ky" id="Commesse_Ky" value="<%=strCommesse_Ky%>">
+              <option value=""></option>
+      					<%
+      					for (int i = 0; i < dtCommesse.Rows.Count; i++){
+      						Response.Write("<option value=\"" + dtCommesse.Rows[i]["Commesse_Ky"].ToString() + "\">" + dtCommesse.Rows[i]["Commesse_Riferimenti"].ToString() + "&nbsp;-&nbsp;" + dtCommesse.Rows[i]["Commesse_Titolo"].ToString() + "&nbsp;-&nbsp;" + dtCommesse.Rows[i]["CommesseStato_Titolo"].ToString() + "</option>");
+      					}
+      					%>
+              </select>
+              <script type="text/javascript">
+                selectSet('Commesse_Ky', '<%=strCommesse_Ky%>');
+              </script>
+            <% }else{ %>
+            	Nessun progetto attivo sull'anagrafica
+            <% } %>
+          </div>
+        </div>
+      <% } %>
+
+      <% if (dtLogin.Rows[0]["UtentiGruppi_Opportunita"].Equals(true) || boolAdmin==true){ %>
+        <div class="grid-x grid-padding-x" id="trattative" style="display:none">
+          <div class="large-2 medium-2 small-4 cell">
+            <label for="Opportunita_Ky" class="lbl text-right">Trattativa</label>
+          </div>
+          <div class="large-10 medium-10 small-8 cell large-text-left">
+            	<% if (dtOpportunita!=null && dtOpportunita.Rows.Count>0){ %>
+                <select name="Opportunita_Ky" id="Opportunita_Ky" value="<%=strOpportunita_Ky%>">
+                <option value=""></option>
+      						<%
+      						for (int i = 0; i < dtOpportunita.Rows.Count; i++){
+      							Response.Write("<option value=\"" + dtOpportunita.Rows[i]["Opportunita_Ky"].ToString() + "\">" + dtOpportunita.Rows[i]["Opportunita_Titolo"].ToString() + "&nbsp;-&nbsp;" + dtOpportunita.Rows[i]["OpportunitaStati_Titolo"].ToString() + "</option>");
+      						}
+      						%>
+                </select>
+                <script type="text/javascript">
+                  selectSet('Opportunita_Ky', '<%=strOpportunita_Ky%>');
+                </script>
+              <% }else{ %>
+              	Nessuna trattativa attiva sull'anagrafica
+              <% } %>
+          </div>
+        </div>
+      <% } %>
+
+
+    </div>
+  </div>
+  
+
+	<script type="text/javascript">
+    $intAttivitaSettore_Ky="<%=GetFieldValue(dtAttivita, "AttivitaSettore_Ky")%>";
+    switch ($intAttivitaSettore_Ky){
+      case "1":
+        console.log("11");
+        jQuery("#progetti").show();
+        jQuery("#trattative").hide();
+        break;
+      case "2":
+        console.log("12");
+        jQuery("#progetti").hide();
+        jQuery("#progetti").addClass("hide");
+        jQuery("#trattative").removeClass("hide");
+        jQuery("#trattative").show();
+        break;
+      case "3":
+        console.log("13");
+        jQuery("#progetti").hide();
+        jQuery("#progetti").addClass("hide");
+        jQuery("#trattative").addClass("hide");
+        jQuery("#trattative").hide();
+        break;
+    }
+    jQuery('input[type=radio][name=AttivitaSettore_Ky]').change(function() {
+        switch (this.value){
+          case "1":
+            jQuery("#progetti").show();
+            jQuery("#trattative").hide();
+            break;
+          case "2":
+            jQuery("#progetti").hide();
+            jQuery("#trattative").show();
+            break;
+          case "3":
+            jQuery("#progetti").hide();
+            jQuery("#trattative").hide();
+            break;
+        }
+    });
+  </script>
+
+
+	<div class="grid-x grid-padding-x">
+  	<div class="large-1 medium-2 small-4 cell">
+			<label for="Attivita_Ore" class="large-text-right small-text-left middle">Ore <i class="fa-duotone fa-clock fa-fw"></i></label>
+		</div>
+    <div class="auto cell">
+        <select name="Attivita_Ore" id="Attivita_Ore" value="<%=GetDecimalValue(dtAttivita, "Attivita_Ore").ToString("N1", cien)%>">
+          <option value="" selected="selected"></option>
+          <!--#include file="/var/cache/Ore-options.htm"--> 
+        </select>
+        <script type="text/javascript">
+          selectSet('Attivita_Ore', '<%=GetDecimalValue(dtAttivita, "Attivita_Ore").ToString("N1", cien)%>');
+        </script>
+    </div>
+  </div>
+
+<div class="grid-x grid-padding-x">
+  	<div class="large-1 medium-2 small-4 cell">
+			<label for="Attivita_Inizio" class="large-text-right small-text-right middle"><span class="label">Inizio</span></label>
+		</div>
+  	<div class="shrink cell">
+      <div class="input-group">
+        <span class="input-group-label"><i class="fa-duotone fa-calendar-days fa-fw"></i></span>
+       	<input class="input-group-field fdatepicker" type="text" name="Attivita_Inizio" id="Attivita_Inizio" value="<%=GetFieldValue(dtAttivita, "Attivita_Inizio_IT")%>" required="required" size="10">
+      </div>
+    	<span class="form-error">Obbligatorio</span>
+		</div>
+  	<div class="shrink cell">
+      <div class="input-group">
+        <span class="input-group-label"><i class="fa-duotone fa-clock fa-fw"></i></span>
+        <input class="input-group-field timepicker" type="text" name="Attivita_OraInizio" id="Attivita_OraInizio" value="<%=GetFieldValue(dtAttivita, "Attivita_OraInizio")%>" size="5">
+      </div>
+      <span class="form-error">Obbligatorio</span>
+		</div>
+		
+  	<div class="large-1 medium-2 small-4 cell">
+			<label for="Attivita_Scadenza" class="large-text-right small-text-right middle"><span class="label">Scadenza</span></label>
+		</div>
+  	<div class="shrink cell">
+      <div class="input-group">
+        <span class="input-group-label"><i class="fa-duotone fa-calendar-days fa-fw"></i></span>
+    	  <input class="input-group-field fdatepicker" type="text" name="Attivita_Scadenza" id="Attivita_Scadenza" value="<%=GetFieldValue(dtAttivita, "Attivita_Scadenza_IT")%>" required="required" size="10">
+      </div>
+    	<span class="form-error">Obbligatorio</span>
+		</div>
+  	<div class="shrink cell">
+      <div class="input-group">
+        <span class="input-group-label"><i class="fa-duotone fa-clock fa-fw"></i></span>
+      	<input class="input-group-field timepicker" type="text" name="Attivita_OraScadenza" id="Attivita_OraScadenza" value="<%=GetFieldValue(dtAttivita, "Attivita_OraScadenza")%>" size="6">
+      </div>
+      <span class="form-error">Obbligatorio</span>
+		</div>
+		
+		
+  	<div class="large-1 medium-2 small-4 cell">
+			<label for="Attivita_Completo" class="large-text-right small-text-right middle"><span class="label">Chiusa?</span></label>
+		</div>
+  	<div class="shrink cell">
+      <input type="checkbox" name="Attivita_Completo" id="Attivita_Completo" value="on" <% if (GetCheckValue(dtAttivita, "Attivita_Completo")){ Response.Write("checked=\"checked\"");} %> onchange="chgCompleto()" />
+		</div>
+  	<div class="shrink cell">
+      <div class="input-group">
+        <span class="input-group-label"><i class="fa-duotone fa-calendar-days fa-fw"></i></span>
+    	  <input class="input-group-field fdatepicker" type="text" name="Attivita_Chiusura" id="Attivita_Chiusura" value="<%=GetFieldValue(dtAttivita, "Attivita_Chiusura_IT")%>" size="10">
+      </div>
+      <span class="form-error">Obbligatorio</span>
+		</div>
+	</div>	
+	
+	<div class="grid-x grid-padding-x">
+  	<div class="large-1 medium-2 small-4 cell">
+			<label for="Attivita_Descrizione" class="large-text-right small-text-left middle">Descrizione <i class="fa-duotone fa-file-lines fa-fw"></i></label>
+		</div>
+  	<div class="large-11 medium-10 small-8 cell">
+      <textarea name="Attivita_Descrizione" id="Attivita_Descrizione" cols="90" rows="3" required="required"><%=GetFieldValue(dtAttivita, "Attivita_Descrizione")%></textarea>
+      <span class="form-error">Obbligatorio</span>
+		</div>
+	</div>
+	<div class="grid-x grid-padding-x">
+    <div class="large-1 medium-1 small-4 cell">
+      <label for="AttivitaTipo_Ky" class="lbl text-right">Tipo di attivit&agrave;</label>
+    </div>
+    <div class="large-5 medium-5 small-8 cell">
+			<!--#include file="/var/cache/AttivitaTipo-radio.htm"-->
+      <span class="form-error">Obbligatorio</span>
+			<script type="text/javascript">
+				radioSet('AttivitaTipo_Ky', '<%=GetFieldValue(dtAttivita, "AttivitaTipo_Ky")%>');
+      </script>
+    </div>
+  </div>
+
+	<div class="grid-x grid-padding-x">
+    <div class="large-1 medium-1 small-4 cell">
+      <label for="Priorita_Ky" class="lbl text-right">Priorit&agrave; <i class="fa-duotone fa-bell fa-fw"></i></label>
+    </div>
+    <div class="large-5 medium-5 small-8 cell large-text-left">
+			<!--#include file="/var/cache/Priorita-radio.htm"-->
+      <span class="form-error">Obbligatorio</span>
+			<script type="text/javascript">
+				<% if (strAzione!="new"){ %>
+					radioSet('Priorita_Ky', '<%=GetFieldValue(dtAttivita, "Priorita_Ky")%>');
+				<% }else{ %>
+					radioSet('Priorita_Ky', '1');
+				<% } %>
+      </script>
+    </div>
+		<div class="large-1 medium-1 small-4 cell">
+      <label for="AttivitaStati_Ky" class="lbl text-right">Stato</label>
+    </div>
+    <div class="large-5 medium-5 small-8 cell">
+			<!--#include file="/var/cache/AttivitaStati-radio.htm"-->
+      <span class="form-error">Obbligatorio</span>
+			<script type="text/javascript">
+				radioSet('AttivitaStati_Ky', '<%=GetFieldValue(dtAttivita, "AttivitaStati_Ky")%>');
+      </script>
+    </div>
+  </div>
+
+
+	<div class="grid-x grid-padding-x">
+  	<div class="large-1 medium-2 small-4 cell">
+			<label for="Attivita_Ore" class="large-text-right small-text-left middle">Trasferta? <i class="fa-duotone fa-car fa-fw"></i></label>
+		</div>
+    <div class="large-11 medium-10 small-8 cell">
+        <input type="checkbox" name="Attivita_Trasferta" id="Attivita_Trasferta" value="on" <% if (GetCheckValue(dtAttivita, "Attivita_Trasferta")){ Response.Write("checked=\"checked\"");} %> onchange="attivaTrasferta();" />
+        (se trasferta compilare i campi con il dettaglio della trasferta)
+        <script type="text/javascript">
+          attivaTrasferta();
+        </script>
+		</div>
+	</div>
+
+<fieldset id="datitrasferta" <% if (GetCheckValue(dtAttivita, "Attivita_Trasferta")==false){ Response.Write("style=\"display:none\"");} %>>
+<legend class="radius">Dati della trasferta (<a href="#" onclick="javascript:aggiornaSpese(true);">aggiorna</a>)</legend>
+<div class="grid-x grid-padding-x">
+  <div class="large-2 medium-2 small-4 cell">
+		<label for="Attivita_Km" class="large-text-right small-text-left middle">KM percorsi</label>
+	</div>
+  <div class="auto cell">
+    <input type="text" name="Attivita_Km" id="Attivita_Km" value="<%=GetDecimalValue(dtAttivita, "Attivita_Km")%>" size="6" min="0.5" max="8" step="0.5" />
+  </div>
+  <div class="large-2 medium-2 small-4 cell">
+		<label for="Attivita_RimborsoKm" class="large-text-right small-text-left middle">X Rimborso Km &euro;</label>
+	</div>
+  <div class="auto cell">
+    <input type="text" name="Attivita_RimborsoKm" id="Attivita_RimborsoKm" value="<%=GetDecimalValue(dtAttivita, "Attivita_RimborsoKm")%>" onchange="aggiornaSpese(false);" step="0.1" size="5" min="0" max="10" />
+  </div>
+  <div class="large-2 medium-2 small-4 cell">
+		<label for="Attivita_SpeseKm" class="large-text-right small-text-left middle">= Totale Spese Km &euro;</label>
+	</div>
+  <div class="auto cell">
+    <input type="text" name="Attivita_SpeseKm" id="Attivita_SpeseKm" value="<%=GetDecimalValue(dtAttivita, "Attivita_SpeseKm")%>" onchange="aggiornaSpese(false);" size="8" min="0" max="100" readonly="readonly" />
+  </div>
+</div>
+<div class="grid-x grid-padding-x">              
+  <div class="large-2 medium-2 small-4 cell">
+		<label for="Attivita_SpeseAutostrada" class="large-text-right small-text-left middle">Autostrada &euro;</label>
+	</div>
+  <div class="auto cell">
+    <input type="text" name="Attivita_SpeseAutostrada" id="Attivita_SpeseAutostrada" value="<%=GetDecimalValue(dtAttivita, "Attivita_SpeseAutostrada")%>" onchange="aggiornaSpese(false);" size="6" min="0" max="100" />
+  </div>
+  <div class="large-2 medium-2 small-4 cell">
+		<label for="Attivita_SpeseParcheggi" class="large-text-right small-text-left middle">Parcheggi &euro;</label>
+	</div>
+  <div class="auto cell">
+    <input type="text" name="Attivita_SpeseParcheggi" id="Attivita_SpeseParcheggi" value="<%=GetDecimalValue(dtAttivita, "Attivita_SpeseParcheggi")%>" onchange="aggiornaSpese(false);" size="6" min="0" max="100" />
+  </div>
+  <div class="large-2 medium-2 small-4 cell">
+		<label for="Attivita_SpesePasti" class="large-text-right small-text-left middle">Pasti &euro;</label>
+	</div>
+  <div class="auto cell">
+    <input type="text" name="Attivita_SpesePasti" id="Attivita_SpesePasti" value="<%=GetDecimalValue(dtAttivita, "Attivita_SpesePasti")%>" onchange="aggiornaSpese(false);" size="6" min="0" max="100" />
+  </div>
+</div>
+<div class="grid-x grid-padding-x">
+  <div class="large-2 medium-2 small-4 cell">
+		<label for="Attivita_SpeseMezziPubblici" class="large-text-right small-text-left middle">Mezzi pubblici &euro;</label>
+	</div>
+  <div class="auto cell">
+    <input type="text" name="Attivita_SpeseMezziPubblici" id="Attivita_SpeseMezziPubblici" value="<%=GetDecimalValue(dtAttivita, "Attivita_SpeseMezziPubblici")%>" onchange="aggiornaSpese(false);" size="6" min="0" max="100" />
+  </div>
+  <div class="large-5 medium-6 small-12 cell">
+		<label for="Attivita_SpeseTotali" class="large-text-right small-text-left middle">Totale Spese: carburante + autostrada + parcheggi + pasti + mezzi pubblici = &euro;</label>
+	</div>
+  <div class="auto cell">
+    <input type="text" name="Attivita_SpeseTotali" id="Attivita_SpeseTotali" value="<%=GetDecimalValue(dtAttivita, "Attivita_SpeseTotali")%>" size="8" min="0" max="100" readonly="readonly" />
+  </div>
+</div>
+</fieldset>
+<div class="grid-x grid-padding-x">
+  <div class="small-12 medium-2 large-3 cell">
+		<% if (strAzione!="new"){ %>
+      <script>
+         aggiornaSpese(false);
+      </script>
+		<% } %>
+  </div>
+</div>

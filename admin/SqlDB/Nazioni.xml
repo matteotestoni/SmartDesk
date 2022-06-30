@@ -1,0 +1,49 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Nazioni" Type="TABLE">
+    <Keys>
+      <Key Column="Nazioni_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Nazioni_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="Nazioni_Codice" IsNull="Y" Type="varchar" Lenght="4" />
+      <Field Column="Nazioni_Nazione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Nazioni_Prefisso" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="Nazioni_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Nazioni_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Nazioni_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Nazioni_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Nazioni_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Nazioni_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Nazioni_Isocode2" IsNull="Y" Type="varchar" Lenght="2" />
+      <Field Column="Nazioni_Isocode3" IsNull="Y" Type="varchar" Lenght="3" />
+      <Field Column="Nazioni_Isocodenum" IsNull="Y" Type="int" />
+      <Field Column="Nazioni_Ordine" IsNull="Y" Type="int" />
+      <Field Column="Nazioni_Fatturazione" IsNull="Y" Type="bit" />
+      <Field Column="Nazioni_Spedizione" IsNull="Y" Type="bit" />
+      <Field Column="TimeZones_Ky" IsNull="Y" Type="int" />
+      <Field Column="Nazioni_UE" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Nazioni] (
+  [Nazioni_Ky] tinyint  NOT NULL , 
+  [Nazioni_Codice] varchar(4)  NULL , 
+  [Nazioni_Nazione] varchar(50)  NULL , 
+  [Nazioni_Prefisso] varchar(10)  NULL , 
+  [Nazioni_UserInsert] int  NULL , 
+  [Nazioni_UserUpdate] int  NULL , 
+  [Nazioni_UserDelete] int  NULL , 
+  [Nazioni_DateInsert] datetime  NULL , 
+  [Nazioni_DateUpdate] datetime  NULL , 
+  [Nazioni_DateDelete] datetime  NULL , 
+  [Nazioni_Isocode2] varchar(2)  NULL , 
+  [Nazioni_Isocode3] varchar(3)  NULL , 
+  [Nazioni_Isocodenum] int  NULL , 
+  [Nazioni_Ordine] int  NULL , 
+  [Nazioni_Fatturazione] bit  NULL , 
+  [Nazioni_Spedizione] bit  NULL , 
+  [TimeZones_Ky] int  NULL , 
+  [Nazioni_UE] bit  NULL DEFAULT ((0)) )
+ALTER TABLE [dbo].[Nazioni] ADD CONSTRAINT PK_Nazioni PRIMARY KEY  ([Nazioni_Ky])
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,57 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Campagne" Type="TABLE">
+    <Keys>
+      <Key Column="Campagne_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Campagne_Ky" IsNull="N" Type="int" />
+      <Field Column="Campagne_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Campagne_DataInizio" IsNull="Y" Type="datetime" />
+      <Field Column="Campagne_DataFine" IsNull="Y" Type="datetime" />
+      <Field Column="CampagneTipo_Ky" IsNull="Y" Type="int" />
+      <Field Column="Documenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Opportunita_Ky" IsNull="Y" Type="int" />
+      <Field Column="utm_source" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_medium" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_campaign" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_term" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_content" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Campagne_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Campagne_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Campagne_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Campagne_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Campagne_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Campagne_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Campagne_Link" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Campagne_Strategie" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Campagne_Budget" IsNull="Y" Type="money" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Campagne] (
+  [Campagne_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Campagne_Titolo] varchar(200)  NULL , 
+  [Campagne_DataInizio] datetime  NULL , 
+  [Campagne_DataFine] datetime  NULL , 
+  [CampagneTipo_Ky] int  NULL , 
+  [Documenti_Ky] int  NULL , 
+  [Opportunita_Ky] int  NULL , 
+  [utm_source] varchar(MAX)  NULL , 
+  [utm_medium] varchar(MAX)  NULL , 
+  [utm_campaign] varchar(MAX)  NULL , 
+  [utm_term] varchar(MAX)  NULL , 
+  [utm_content] varchar(MAX)  NULL , 
+  [Campagne_UserInsert] int  NULL , 
+  [Campagne_UserUpdate] int  NULL , 
+  [Campagne_UserDelete] int  NULL , 
+  [Campagne_DateInsert] datetime  NULL , 
+  [Campagne_DateUpdate] datetime  NULL , 
+  [Campagne_DateDelete] datetime  NULL , 
+  [Campagne_Link] varchar(MAX)  NULL , 
+  [Campagne_Strategie] varchar(MAX)  NULL , 
+  [Campagne_Budget] money  NULL , 
+  [Lingue_Ky] tinyint  NULL  )
+ALTER TABLE [dbo].[Campagne] ADD CONSTRAINT PK_Campagne PRIMARY KEY  ([Campagne_Ky])
+</SqlScriptCreate>
+</SqlTable>

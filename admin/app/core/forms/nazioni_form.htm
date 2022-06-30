@@ -1,0 +1,96 @@
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle" for="Nazioni_Nazione"><i class="fa-duotone fa-file-lines fa-fw"></i>Nazione</label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+    <input type="text" required="required" name="Nazioni_Nazione" id="Nazioni_Nazione" title="Nazione" value="<%=GetFieldValue("Nazioni_Nazione")%>" size="60">
+	</div>
+  <div class="large-2 medium-2 small-4 cell">
+      <label class="large-text-right small-text-left middle">Fuso orario <i class="fae fa-clock fa-fw"></i></label>
+  </div>
+  <div class="large-4 medium-4 small-8 cell">
+      <select name="TimeZones_Ky" id="TimeZones_Ky" value="1" required="required">
+        <!--#include file="/var/cache/TimeZones-options.htm"--> 
+      </select>
+      <span class="form-error">Obbligatorio</span>
+      <script type="text/javascript">
+        selectSet('TimeZones_Ky', '<%=GetFieldValue("TimeZones_Ky")%>');
+      </script>
+  </div>
+</div>
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle" for="Nazioni_Fatturazione">Fatturazione </label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+		<div class="switch tiny">                                         
+			<input class="switch-input" type="checkbox" name="Nazioni_Fatturazione" id="Nazioni_Fatturazione" value="on" <% if (GetCheckValue(dtNazioni, "Nazioni_Fatturazione")){ Response.Write("checked");} %> />
+			<label class="switch-paddle" for="Nazioni_Fatturazione">
+				<span class="show-for-sr">Obbligatorio</span>
+				<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+				<span class="switch-inactive" aria-hidden="true"></span>
+			</label>
+		</div>                                            
+	</div>
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle" for="Nazioni_Spedizione">Spedizione </label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+		<div class="switch tiny">                                         
+			<input class="switch-input" type="checkbox" name="Nazioni_Spedizione" id="Nazioni_Spedizione" value="on" <% if (GetCheckValue(dtNazioni, "Nazioni_Spedizione")){ Response.Write("checked");} %> />
+			<label class="switch-paddle" for="Nazioni_Spedizione">
+				<span class="show-for-sr">Obbligatorio</span>
+				<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+				<span class="switch-inactive" aria-hidden="true"></span>
+			</label>
+		</div>                                            
+	</div>
+</div>
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle" for="Nazioni_Codice">Codice</label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+    <input type="text" name="Nazioni_Codice" id="Nazioni_Codice" title="Codice" required="required" value="<%=GetFieldValue("Nazioni_Codice")%>" size="60">
+    <span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle" for="Nazioni_Isocode2">ISO 2</label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+    <input type="text" name="Nazioni_Isocode2" id="Nazioni_Isocode2" title="Codice ISO 2" required="required" value="<%=GetFieldValue("Nazioni_Isocode2")%>" size="60">
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle" for="Nazioni_Isocode3">ISO 3</label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+    <input type="text" name="Nazioni_Isocode3" id="Nazioni_Isocode3" title="Codice ISO 2" required="required" value="<%=GetFieldValue("Nazioni_Isocode3")%>" size="60">
+    <span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle" for="Nazioni_Isocodenum">ISO Numero</label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+    <input type="text" name="Nazioni_Isocodenum" id="Nazioni_Isocodenum" title="Numero ISO" required="required" value="<%=GetFieldValue("Nazioni_Isocodenum")%>" size="60">
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle">Prefisso</label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+    <input type="text" name="Nazioni_Prefisso" id="Nazioni_Prefisso" title="Prefisso" value="<%=GetFieldValue("Nazioni_Prefisso")%>" size="60">
+    <span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle" for="Nazioni_Ordine">Ordine</label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+    <input type="text" name="Nazioni_Ordine" id="Nazioni_Ordine" title="Ordine" value="<%=GetFieldValue("Nazioni_Ordine")%>" size="60">
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>

@@ -1,0 +1,45 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Negozi" Type="TABLE">
+    <Keys>
+      <Key Column="Negozi_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Negozi_Ky" IsNull="N" Type="int" />
+      <Field Column="Negozi_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Negozi_Ordine" IsNull="Y" Type="int" />
+      <Field Column="Negozi_Default" IsNull="Y" Type="bit" />
+      <Field Column="Negozi_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Negozi_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Negozi_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Negozi_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Negozi_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Negozi_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Negozi_EmailContatti" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Negozi_EmailAssitenza" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Negozi_EmailVendite" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Negozi_Decimali" IsNull="Y" Type="tinyint" />
+      <Field Column="Negozi_PartitaIVA" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Negozi_Indirizzo" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Negozi] (
+  [Negozi_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Negozi_Titolo] varchar(200)  NULL , 
+  [Negozi_Ordine] int  NULL , 
+  [Negozi_Default] bit  NULL , 
+  [Negozi_UserInsert] int  NULL , 
+  [Negozi_UserUpdate] int  NULL , 
+  [Negozi_UserDelete] int  NULL , 
+  [Negozi_DateInsert] datetime  NULL , 
+  [Negozi_DateUpdate] datetime  NULL , 
+  [Negozi_DateDelete] datetime  NULL , 
+  [Negozi_EmailContatti] varchar(MAX)  NULL , 
+  [Negozi_EmailAssitenza] varchar(MAX)  NULL , 
+  [Negozi_EmailVendite] varchar(MAX)  NULL , 
+  [Negozi_Decimali] tinyint  NULL , 
+  [Negozi_PartitaIVA] varchar(MAX)  NULL , 
+  [Negozi_Indirizzo] varchar(MAX)  NULL  )
+ALTER TABLE [dbo].[Negozi] ADD CONSTRAINT PK_Negozi PRIMARY KEY  ([Negozi_Ky])
+</SqlScriptCreate>
+</SqlTable>

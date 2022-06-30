@@ -1,0 +1,37 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CoreFormsFieldset" Type="TABLE">
+    <Keys>
+      <Key Column="CoreFormsFieldset_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CoreFormsFieldset_Ky" IsNull="N" Type="int" />
+      <Field Column="CoreForms_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsTabs_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsFieldset_Title" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreFormsFieldset_Order" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsFieldset_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsFieldset_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsFieldset_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CoreFormsFieldset_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CoreFormsFieldset_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CoreFormsFieldset_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="CoreFormTabs_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CoreFormsFieldset] (
+  [CoreFormsFieldset_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CoreForms_Ky] int  NULL , 
+  [CoreFormsTabs_Ky] int  NULL , 
+  [CoreFormsFieldset_Title] varchar(100)  NULL , 
+  [CoreFormsFieldset_Order] int  NULL , 
+  [CoreFormsFieldset_UserInsert] int  NULL , 
+  [CoreFormsFieldset_UserUpdate] int  NULL , 
+  [CoreFormsFieldset_UserDelete] int  NULL , 
+  [CoreFormsFieldset_DateInsert] datetime  NULL , 
+  [CoreFormsFieldset_DateUpdate] datetime  NULL , 
+  [CoreFormsFieldset_DateDelete] datetime  NULL , 
+  [CoreFormTabs_Ky] int  NULL  )
+ALTER TABLE [dbo].[CoreFormsFieldset] ADD CONSTRAINT PK_CoreFormsFieldset PRIMARY KEY  ([CoreFormsFieldset_Ky])
+</SqlScriptCreate>
+</SqlTable>

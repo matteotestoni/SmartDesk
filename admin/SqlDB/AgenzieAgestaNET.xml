@@ -1,0 +1,30 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AgenzieAgestaNET" Type="TABLE">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="id_agenzia" IsNull="Y" Type="int" />
+      <Field Column="username" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="password" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="nome_agenzia" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="telefono" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="fax" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="email" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="sito_web" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="logo" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="descrizione_agenzia" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="piva" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="codice_fiscale" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="cap" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="indirizzo" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="codice_istat" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="comune" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="provincia" IsNull="Y" Type="varchar" Lenght="400" />
+      <Field Column="Comuni_Ky" IsNull="Y" Type="int" />
+      <Field Column="Province_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="agenzia_esiste" IsNull="Y" Type="bit" />
+      <Field Column="Regioni_Ky" IsNull="Y" Type="int" />
+      <Field Column="Nazioni_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+</SqlTable>

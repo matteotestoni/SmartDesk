@@ -1,0 +1,23 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnnunciOfferte_Anagrafiche_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Aste_Ky" IsNull="Y" Type="int" />
+      <Field Column="AsteEsperimenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_EmailContatti" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnnunciOfferte_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.AnnunciOfferte_Anagrafiche_Vw
+AS
+SELECT        dbo.AnnunciOfferte.Aste_Ky, dbo.AnnunciOfferte.AsteEsperimenti_Ky, dbo.AnnunciOfferte.Annunci_Ky, dbo.Anagrafiche.Anagrafiche_RagioneSociale, dbo.Anagrafiche.Anagrafiche_EmailContatti, 
+                         MAX(dbo.AnnunciOfferte.AnnunciOfferte_Ky) AS AnnunciOfferte_Ky, dbo.AnnunciOfferte.Anagrafiche_Ky
+FROM            dbo.AnnunciOfferte INNER JOIN
+                         dbo.Anagrafiche ON dbo.AnnunciOfferte.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky
+GROUP BY dbo.AnnunciOfferte.Aste_Ky, dbo.AnnunciOfferte.AsteEsperimenti_Ky, dbo.AnnunciOfferte.Annunci_Ky, dbo.Anagrafiche.Anagrafiche_RagioneSociale, dbo.Anagrafiche.Anagrafiche_EmailContatti, 
+                         dbo.AnnunciOfferte.Anagrafiche_Ky
+</SqlScriptCreate>
+</SqlTable>

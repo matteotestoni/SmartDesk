@@ -1,0 +1,71 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Attributi" Type="TABLE">
+    <Keys>
+      <Key Column="Attributi_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Attributi_Ky" IsNull="N" Type="int" />
+      <Field Column="Attributi_Codice" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Attributi_Titolo" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="AttributiTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Attributi_Obbligatorio" IsNull="Y" Type="bit" />
+      <Field Column="Attributi_ClasseCSS" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Attributi_ValoreDefault" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Attributi_Validazione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Attributi_InRicerca" IsNull="Y" Type="bit" />
+      <Field Column="Attributi_InFiltri" IsNull="Y" Type="bit" />
+      <Field Column="Attributi_InComparazione" IsNull="Y" Type="bit" />
+      <Field Column="Attributi_Visibile" IsNull="Y" Type="bit" />
+      <Field Column="Attributi_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Attributi_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Attributi_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Attributi_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Attributi_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Attributi_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Attributi_Annunci" IsNull="Y" Type="bit" />
+      <Field Column="Attributi_Documenti" IsNull="Y" Type="bit" />
+      <Field Column="Attributi_Anagrafiche" IsNull="Y" Type="bit" />
+      <Field Column="Attributi_Prodotti" IsNull="Y" Type="bit" />
+      <Field Column="Attributi_Commesse" IsNull="Y" Type="bit" />
+      <Field Column="Attributi_Attivita" IsNull="Y" Type="bit" />
+      <Field Column="Attributi_Opportunita" IsNull="Y" Type="bit" />
+      <Field Column="Attributi_Ordine" IsNull="Y" Type="int" />
+      <Field Column="Attributi_Servizi" IsNull="Y" Type="bit" />
+      <Field Column="Attributi_HelpText" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Attributi_Icona" IsNull="Y" Type="varchar" Lenght="100" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Attributi] (
+  [Attributi_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Attributi_Codice] varchar(50)  NULL , 
+  [Attributi_Titolo] varchar(50)  NULL , 
+  [AttributiTipo_Ky] tinyint  NULL , 
+  [Attributi_Obbligatorio] bit  NULL , 
+  [Attributi_ClasseCSS] varchar(50)  NULL , 
+  [Attributi_ValoreDefault] varchar(100)  NULL , 
+  [Attributi_Validazione] varchar(100)  NULL , 
+  [Attributi_InRicerca] bit  NULL DEFAULT ((0)), 
+  [Attributi_InFiltri] bit  NULL DEFAULT ((0)), 
+  [Attributi_InComparazione] bit  NULL DEFAULT ((0)), 
+  [Attributi_Visibile] bit  NULL DEFAULT ((0)), 
+  [Attributi_UserInsert] int  NULL , 
+  [Attributi_UserUpdate] int  NULL , 
+  [Attributi_UserDelete] int  NULL , 
+  [Attributi_DateInsert] datetime  NULL , 
+  [Attributi_DateUpdate] datetime  NULL , 
+  [Attributi_DateDelete] datetime  NULL , 
+  [Attributi_Annunci] bit  NULL , 
+  [Attributi_Documenti] bit  NULL , 
+  [Attributi_Anagrafiche] bit  NULL , 
+  [Attributi_Prodotti] bit  NULL , 
+  [Attributi_Commesse] bit  NULL , 
+  [Attributi_Attivita] bit  NULL , 
+  [Attributi_Opportunita] bit  NULL , 
+  [Attributi_Ordine] int  NULL , 
+  [Attributi_Servizi] bit  NULL , 
+  [Attributi_HelpText] varchar(200)  NULL , 
+  [Attributi_Icona] varchar(100)  NULL  )
+ALTER TABLE [dbo].[Attributi] ADD CONSTRAINT PK_Attributi PRIMARY KEY  ([Attributi_Ky])
+</SqlScriptCreate>
+</SqlTable>

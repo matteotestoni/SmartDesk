@@ -1,0 +1,45 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AsteCategorie" Type="TABLE">
+    <Keys>
+      <Key Column="AsteCategorie_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AsteCategorie_Ky" IsNull="N" Type="smallint" />
+      <Field Column="AsteCategorie_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AsteCategorie_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AsteCategorie_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AsteCategorie_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AsteCategorie_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AsteCategorie_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AsteCategorie_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="AsteCategorie_Ordine" IsNull="Y" Type="int" />
+      <Field Column="AsteCategorie_Foto" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AsteCategorie_Url" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AsteCategorie_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AsteCategorie_Description" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AsteCategorie_Evidenza" IsNull="Y" Type="bit" />
+      <Field Column="AsteCategorie_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="AsteCategorie_Icona" IsNull="Y" Type="varchar" Lenght="200" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AsteCategorie] (
+  [AsteCategorie_Ky] smallint IDENTITY(1,1) NOT NULL , 
+  [AsteCategorie_Titolo] varchar(200)  NULL , 
+  [AsteCategorie_UserInsert] int  NULL , 
+  [AsteCategorie_UserUpdate] int  NULL , 
+  [AsteCategorie_UserDelete] int  NULL , 
+  [AsteCategorie_DateInsert] datetime  NULL , 
+  [AsteCategorie_DateUpdate] datetime  NULL , 
+  [AsteCategorie_DateDelete] datetime  NULL , 
+  [AsteCategorie_Ordine] int  NULL , 
+  [AsteCategorie_Foto] varchar(200)  NULL , 
+  [AsteCategorie_Url] varchar(200)  NULL , 
+  [AsteCategorie_Title] varchar(200)  NULL , 
+  [AsteCategorie_Description] varchar(200)  NULL , 
+  [AsteCategorie_Evidenza] bit  NULL , 
+  [AsteCategorie_Descrizione] varchar(MAX)  NULL , 
+  [AsteCategorie_Icona] varchar(200)  NULL  )
+ALTER TABLE [dbo].[AsteCategorie] ADD CONSTRAINT PK_AsteCategorie PRIMARY KEY  ([AsteCategorie_Ky])
+</SqlScriptCreate>
+</SqlTable>

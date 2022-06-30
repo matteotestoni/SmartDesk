@@ -1,0 +1,331 @@
+<div class="grid-x grid-padding-x">
+    <div class="large-2 medium-2 small-4 cell">
+        <label for="Persone_Attivo" class="large-text-right small-text-left middle">Attivo:</label>
+    </div>
+    <div class="large-2 medium-2 small-8 cell">
+				<div class="switch tiny">                                         
+          <input class="switch-input" type="checkbox" name="Persone_Attivo" id="Persone_Attivo" value="on" <% if (GetCheckValue(dtPersone, "Persone_Attivo")){ Response.Write("checked");} %> />
+          <label class="switch-paddle" for="Persone_Attivo">
+            <span class="show-for-sr">Attivo</span>
+            <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+            <span class="switch-inactive" aria-hidden="true"></span>
+          </label>
+        </div> 
+    </div>
+    <div class="large-2 medium-2 small-4 cell">
+        <label for="Persone_RiceveEmail" class="large-text-right small-text-left middle">Riceve email notifica:</label>
+    </div>
+    <div class="large-2 medium-2 small-8 cell">
+				<div class="switch tiny">                                         
+          <input class="switch-input" type="checkbox" name="Persone_RiceveEmail" id="Persone_RiceveEmail" value="on" <% if (GetCheckValue(dtPersone, "Persone_RiceveEmail")){ Response.Write("checked");} %> />
+          <label class="switch-paddle" for="Persone_RiceveEmail">
+            <span class="show-for-sr">Attivo</span>
+            <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+            <span class="switch-inactive" aria-hidden="true"></span>
+          </label>
+        </div> 
+    </div>
+    <div class="large-2 medium-2 small-4 cell">
+        <label class="large-text-right small-text-left middle">Colore<i class="fa-duotone fa-paint-brush fa-fw"></i></label>
+    </div>
+    <div class="large-2 medium-2 small-8 cell">
+        <input type="color" name="Persone_Colore" id="Persone_Colore" value="<%=GetFieldValue(dtPersone, "Persone_Colore")%>" size="30" />
+        <span class="form-error">Obbligatorio</span>
+    </div>
+</div>   
+    
+<div class="grid-x grid-padding-x">
+    <div class="large-2 medium-2 small-4 cell">
+        <label class="large-text-right small-text-left middle">Nome</label>
+    </div>
+    <div class="large-2 medium-2 small-8 cell">
+        <input type="text" name="Persone_Nome" id="Persone_Nome" value="<%=GetFieldValue(dtPersone, "Persone_Nome")%>" size="30" required="required">
+        <span class="form-error">Obbligatorio</span>
+    </div>
+    <div class="large-2 medium-2 small-4 cell">
+        <label class="large-text-right small-text-left middle">Cognome</label>
+    </div>
+    <div class="large-2 medium-2 small-8 cell">
+        <input type="text" name="Persone_Cognome" id="Persone_Cognome" value="<%=GetFieldValue(dtPersone, "Persone_Cognome")%>" size="30" required="required">
+        <span class="form-error">Obbligatorio</span>
+    </div>
+    <div class="large-2 medium-2 small-4 cell">
+        <label class="large-text-right small-text-left middle">Sigla</label>
+    </div>
+    <div class="large-2 medium-2 small-8 cell">
+        <input type="text" name="Persone_Sigla" id="Persone_Sigla" value="<%=GetFieldValue(dtPersone, "Persone_Sigla")%>" size="30" required="required">
+        <span class="form-error">Obbligatorio</span>
+    </div>
+</div>
+<div class="grid-x grid-padding-x">
+    <div class="large-2 medium-2 small-4 cell">
+        <label class="large-text-right small-text-left middle">Inizio rapporto <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+    </div>
+    <div class="large-2 medium-2 small-8 cell">
+        <input type="text" name="Persone_DataInizio" id="Persone_DataInizio" value="<%=GetFieldValue(dtPersone, "Persone_DataInizio_IT")%>" class="fdatepicker" size="30">
+        <span class="form-error">Obbligatorio</span>
+    </div>
+    <div class="large-2 medium-2 small-4 cell">
+        <label class="large-text-right small-text-left middle">Termine rapporto <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+    </div>
+    <div class="large-2 medium-2 small-8 cell">
+        <input type="text" name="Persone_DataTermine" id="Persone_DataTermine" value="<%=GetFieldValue(dtPersone, "Persone_DataTermine_IT")%>" class="fdatepicker" size="30" />
+        <span class="form-error">Obbligatorio</span>
+    </div>
+    <div class="large-2 medium-2 small-4 cell">
+        <label class="large-text-right small-text-left middle">Indirizzo email:</label>
+    </div>
+    <div class="large-2 medium-2 small-8 cell">
+        <input type="text" name="Persone_Email" id="Persone_Email" value="<%=GetFieldValue(dtPersone, "Persone_Email")%>" size="30" required="required">
+    </div>
+
+</div>
+
+<div class="grid-x grid-padding-x">
+  <div class="large-2 medium-2 small-4 cell">												
+    <label for="Nazioni_Ky" class="large-text-right small-text-left middle">Nazione 
+      <i class="fa-duotone fa-location-dot fa-fw"></i>
+    </label>											
+  </div>				              
+  <div class="large-2 medium-2 small-8 cell">				                
+    <select name="Nazioni_Ky" id="Nazioni_Ky" required="required" value="<%=GetFieldValue(dtPersone, "Nazioni_Ky")%>" onchange="loadCoreRegioni();">
+      <!--#include file="/var/cache/Nazioni-options.htm"--> 
+    </select>
+    <span class="form-error">Obbligatorio.</span>
+    <script type="text/javascript">
+      selectSet('Nazioni_Ky', '<%=GetFieldValue(dtPersone, "Nazioni_Ky")%>');
+    </script>
+  </div>		
+  <div class="large-2 medium-2 small-4 cell">												
+    <label for="Regioni_Ky" class="large-text-right small-text-left middle">Regione 
+      <i class="fa-duotone fa-location-dot fa-fw"></i>
+    </label>											
+  </div>				              
+  <div class="large-2 medium-2 small-8 cell">				                
+    <select name="Regioni_Ky" id="Regioni_Ky" value="<%=GetFieldValue(dtPersone, "Regioni_Ky")%>" onchange="loadCoreProvince();">
+      <% 
+      if (strAzione != "new" && dtRegioni.Rows.Count>0 ){
+        for (int j = 0; j < dtRegioni.Rows.Count; j++){
+          Response.Write("<option value=\"" + dtRegioni.Rows[j]["Regioni_Ky"].ToString() + "\">" + dtRegioni.Rows[j]["Regioni_Regione"].ToString() + "</option>");
+        }
+      }else{ %>
+      <% } %>
+    </select>
+    <span class="form-error">Obbligatorio.</span>
+    <script type="text/javascript">
+      selectSet('Regioni_Ky', '<%=GetFieldValue(dtPersone, "Regioni_Ky")%>');
+    </script>
+  </div>		
+  <div class="large-2 medium-2 small-4 cell">												
+    <label for="Province_Ky" class="large-text-right small-text-left middle">Provincia 
+      <i class="fa-duotone fa-location-dot fa-fw"></i>
+    </label>											
+  </div>				              
+  <div class="large-2 medium-2 small-8 cell">				                
+    <select name="Province_Ky" id="Province_Ky" value="<%=GetFieldValue(dtPersone, "Province_Ky")%>" onchange="loadCoreComuni();">
+      <% 
+      if (strAzione != "new" && dtProvince.Rows.Count>0 ){
+        for (int j = 0; j < dtProvince.Rows.Count; j++){
+          Response.Write("<option value=\"" + dtProvince.Rows[j]["Province_Ky"].ToString() + "\">" + dtProvince.Rows[j]["Province_Provincia"].ToString() + "</option>");
+        }
+      }
+      %>
+    </select>
+    <span class="form-error">Obbligatorio.</span>
+    <script type="text/javascript">
+      selectSet('Province_Ky', '<%=GetFieldValue(dtPersone, "Province_Ky")%>');
+    </script>
+  </div>		
+</div>  
+<div class="grid-x grid-padding-x">
+  <div class="large-2 medium-2 small-4 cell">												
+    <label for="Comuni_Ky" class="large-text-right small-text-left middle">Comune 
+      <i class="fa-duotone fa-location-dot fa-fw"></i>
+    </label>											
+  </div>				              
+  <div class="large-2 medium-2 small-8 cell">				                
+    <select name="Comuni_Ky" id="Comuni_Ky" value="<%=GetFieldValue(dtPersone, "Comuni_Ky")%>">
+      <% 
+      if (strAzione != "new" && dtComuni.Rows.Count>0 ){
+        for (int j = 0; j < dtComuni.Rows.Count; j++){
+          Response.Write("<option value=\"" + dtComuni.Rows[j]["Comuni_Ky"].ToString() + "\">" + dtComuni.Rows[j]["Comuni_Comune"].ToString() + "</option>");
+        }
+      }
+      %>
+    </select>
+    <span class="form-error">Obbligatorio.</span>
+    <script type="text/javascript">
+      selectSet('Comuni_Ky', '<%=GetFieldValue(dtPersone, "Comuni_Ky")%>');
+    </script>
+  </div>		
+  <div class="large-2 medium-2 small-4 cell">												
+    <label for="Persone_Indirizzo" class="large-text-right small-text-left middle">Indirizzo 
+      <i class="fa-duotone fa-location-dot fa-fw"></i>
+    </label>											
+  </div>				              
+  <div class="large-2 medium-2 small-8 cell">												
+    <input type="text" name="Persone_Indirizzo" id="Persone_Indirizzo" placeholder="Indirizzo" value="<%=GetFieldValue(dtPersone, "Persone_Indirizzo")%>" size="36" 
+    <%=GetLock()%>> 											
+  </div>				              
+  <div class="large-2 medium-2 small-4 cell">												
+    <label for="Persone_CAP" class="large-text-right small-text-left middle">CAP 
+      <i class="fa-duotone fa-location-dot fa-fw"></i>
+    </label>
+  </div>				               
+  <div class="large-2 medium-2 small-8 cell">				                			                		
+    <input type="text" name="Persone_CAP" id="Persone_CAP" placeholder="CAP" value="<%=GetFieldValue(dtPersone, "Persone_CAP")%>" size="5" 
+    <%=GetLock()%>> 				                					                													 				                 				              
+  </div>		
+</div>				            				            
+
+<div class="grid-x grid-padding-x">
+    <div class="large-2 medium-2 small-4 cell">
+        <label class="large-text-right small-text-left middle">Fuso orario <i class="fae fa-clock fa-fw"></i></label>
+    </div>
+    <div class="large-2 medium-2 small-8 cell">
+	      <select name="TimeZones_Ky" id="TimeZones_Ky" value="1" required="required">
+	        <!--#include file="/var/cache/TimeZones-options.htm"--> 
+	      </select>
+	      <span class="form-error">Obbligatorio</span>
+	      <script type="text/javascript">
+	        selectSet('TimeZones_Ky', '<%=GetFieldValue(dtPersone, "TimeZones_Ky")%>');
+	      </script>
+    </div>
+    <div class="large-2 medium-2 small-4 cell">
+        <label class="large-text-right small-text-left middle">Telefono casa <i class="fa-duotone fa-phone fa-fw"></i></label>
+    </div>
+    <div class="large-2 medium-2 small-8 cell">
+        <input type="text" name="Persone_TelefonoCasa" id="Persone_TelefonoCasa" size="35" value="<%=GetFieldValue(dtPersone, "Persone_TelefonoCasa")%>">
+        <span class="form-error">Obbligatorio</span>
+    </div>
+    <div class="large-2 medium-2 small-4 cell">
+        <label class="large-text-right small-text-left middle">Cellulare <i class="fa-duotone fa-phone fa-fw"></i></label>
+    </div>
+    <div class="large-2 medium-2 small-8 cell">
+        <input type="text" name="Persone_Cellulare" id="Persone_Cellulare" size="35" value="<%=GetFieldValue(dtPersone, "Persone_Cellulare")%>">
+    </div>
+</div>
+<div class="grid-x grid-padding-x">
+    <div class="large-2 medium-2 small-4 cell">
+        <label class="large-text-right small-text-left middle">Comune di nascita <i class="fa-duotone fa-location-dot fa-fw"></i></label>
+    </div>
+    <div class="large-2 medium-2 small-8 cell">
+        <input type="text" name="Persone_ComuneNascita" id="Persone_ComuneNascita" value="<%=GetFieldValue(dtPersone, "Persone_ComuneNascita")%>" size="35">
+        <span class="form-error">Obbligatorio</span>
+    </div>
+    <div class="large-2 medium-2 small-4 cell">
+        <label class="large-text-right small-text-left middle">Provincia Nascita <i class="fa-duotone fa-location-dot fa-fw"></i></label>
+    </div>
+    <div class="large-2 medium-2 small-8 cell">
+        <input type="text" name="Persone_ProvinciaNascita" id="Persone_ProvinciaNascita" value="<%=GetFieldValue(dtPersone, "Persone_ProvinciaNascita")%>" size="10">
+    </div>
+    <div class="large-2 medium-2 small-4 cell">
+        <label class="large-text-right small-text-left middle">Data di nascita <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+    </div>
+    <div class="large-2 medium-2 small-8 cell">
+        <input type="text" name="Persone_DataNascita" id="Persone_DataNascita" class="fdatepicker" size="10" value="<%=GetFieldValue(dtPersone, "Persone_DataNascita_IT")%>">
+        <span class="form-error">Obbligatorio</span>
+    </div>
+</div>
+
+<div class="grid-x grid-padding-x">
+    <div class="large-2 medium-2 small-4 cell">
+        <label class="large-text-right small-text-left middle">Codice Fiscale</label>
+    </div>
+    <div class="large-2 medium-2 small-8 cell">
+        <input type="text" name="Persone_CodiceFiscale" id="Persone_CodiceFiscale" value="<%=GetFieldValue(dtPersone, "Persone_CodiceFiscale")%>" size="20">
+    </div>
+    <div class="large-2 medium-2 small-4 cell">
+        <label class="large-text-right small-text-left middle">Costo orario <i class="fa-duotone fa-euro-sign fa-fw"></i></label>
+    </div>
+    <div class="large-2 medium-2 small-8 cell">
+        <input type="text" name="Persone_CostoOrario" id="Persone_CostoOrario" size="10" value="<%=GetMoneyValue("Persone_CostoOrario")%>">
+        <span class="form-error">Obbligatorio</span>
+    </div>
+		<div class="large-2 medium-2 small-4 cell">
+			<label class="large-text-right small-text-left middle">Conto <i class="fa-duotone fa-credit-card fa-fw"></i></label>
+		</div>
+		<div class="large-2 medium-2 small-8 cell end">
+	      <select name="Conti_Ky" id="Conti_Ky" value="1" required="required">
+	        <!--#include file="/var/cache/Conti-options.htm"--> 
+	      </select>
+	      <span class="form-error">Obbligatorio</span>
+	      <script type="text/javascript">
+	        selectSet('Conti_Ky', '<%=GetFieldValue(dtPersone, "Conti_Ky")%>');
+	      </script>
+		</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="Aziende_Ky" class="large-text-right small-text-left middle">Azienda</label>
+	</div>
+	<div class="large-2 medium-2 small-8 cell">
+    <select name="Aziende_Ky" id="Aziende_Ky" required="required" value="<%=GetFieldValue(dtPersone, "Aziende_Ky")%>">
+      <!--#include file="/var/cache/Aziende-options.htm"--> 
+    </select>
+    <span class="form-error">Obbligatorio</span>
+    <script type="text/javascript">
+      selectSet('Aziende_Ky', '<%=GetFieldValue(dtPersone, "Aziende_Ky")%>');
+    </script>
+	</div>
+    <div class="large-2 medium-2 small-4 cell">
+        <label class="large-text-right small-text-left middle">Ore Ferie <i class="fa-duotone fa-time fa-fw"></i></label>
+    </div>
+    <div class="large-2 medium-2 small-8 cell">
+        <input type="text" name="Persone_OreFerie" id="Persone_OreFerie" size="10" value="<%=GetMoneyValue("Persone_OreFerie")%>">
+    </div>
+    <div class="large-2 medium-2 small-4 cell">
+        <label class="large-text-right small-text-left middle">Ore Giornaliere <i class="fa-duotone fa-time fa-fw"></i></label>
+    </div>
+    <div class="large-2 medium-2 small-8 cell">
+        <input type="text" name="Persone_OreGiornaliere" id="Persone_OreGiornaliere" size="10" value="<%=GetMoneyValue("Persone_OreGiornaliere")%>">
+    </div>
+</div>
+
+	<div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="fotopersona" class="large-text-right small-text-left middle">Foto identificativa della persona</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <p>Le immagini devono essere in formato jpg<br></p>
+      <label for="fotopersona" class="button small">Carica immagini</label>
+      <input type="file" class="show-for-sr fileupload" placeholder="Foto persona" id="fotopersona" name="fotopersona" />
+      <small class="form-error">obbligatorio.</small>
+      <div id="galleryfotocaricate" class="gallery"></div>
+      <script>
+        jQuery(function() {
+          var imagesPreview = function(input, placeToInsertImagePreview) {
+              if (input.files) {
+                  var filesAmount = input.files.length;
+                  jQuery(placeToInsertImagePreview).html("");
+                  for (i = 0; i < filesAmount; i++) {
+                      var reader = new FileReader();
+                      reader.onload = function(event) {
+                          jQuery(jQuery.parseHTML('<img width="150" height="100" hspace="10" vspace="10" style="border:1px solid #000000">')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                      }
+                       reader.readAsDataURL(input.files[i]);
+                  }
+              }
+          };
+          jQuery('#fotopersona').on('change', function() {
+              imagesPreview(this, '#galleryfotocaricate');
+          });
+        });
+      </script>
+  	</div>
+  </div>
+  
+	<div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="anteprima" class="large-text-right small-text-left middle">Anteprime</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <% 
+      if (GetFieldValue(dtPersone, "Persone_Foto").Length>0){
+        Response.Write("<div class=\"thumbnail\"><a href=\"" + GetFieldValue(dtPersone, "Persone_Foto")  + "\" data-fancybox=\"images\"><img src=\"" + GetFieldValue(dtPersone, "Persone_Foto")  + "\" height=\"150\" width=\"100\" style=\"width:150px;height:100px;\" data-caption=\"immagine persona\"></a></div>");
+      }
+      %>
+    </div>
+  </div> 
+

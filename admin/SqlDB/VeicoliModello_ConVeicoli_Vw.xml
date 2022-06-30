@@ -1,0 +1,28 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliModello_ConVeicoli_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="VeicoliModello_Ky" IsNull="N" Type="smallint" />
+      <Field Column="VeicoliModello_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliModello_DescrizioneHTML" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliMarca_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="NumeroVeicoli" IsNull="Y" Type="int" />
+      <Field Column="VeicoliTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliModello_UrlKey" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliModello_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliMarca_UrlKey" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliMarca_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.VeicoliModello_ConVeicoli_Vw
+AS
+SELECT        dbo.VeicoliModello.VeicoliModello_Ky, dbo.VeicoliModello.VeicoliModello_Descrizione, dbo.VeicoliModello.VeicoliModello_DescrizioneHTML, dbo.VeicoliModello.VeicoliMarca_Ky, COUNT(dbo.Veicoli.Veicoli_Ky) 
+                         AS NumeroVeicoli, dbo.VeicoliModello.VeicoliTipo_Ky, dbo.VeicoliModello.VeicoliModello_UrlKey, dbo.VeicoliModello.VeicoliModello_Titolo, dbo.VeicoliMarca.VeicoliMarca_UrlKey, 
+                         dbo.VeicoliMarca.VeicoliMarca_Titolo
+FROM            dbo.VeicoliModello INNER JOIN
+                         dbo.Veicoli ON dbo.VeicoliModello.VeicoliModello_Ky = dbo.Veicoli.VeicoliModello_Ky INNER JOIN
+                         dbo.VeicoliMarca ON dbo.VeicoliModello.VeicoliMarca_Ky = dbo.VeicoliMarca.VeicoliMarca_Ky
+GROUP BY dbo.VeicoliModello.VeicoliModello_Ky, dbo.VeicoliModello.VeicoliModello_Descrizione, dbo.VeicoliModello.VeicoliModello_DescrizioneHTML, dbo.VeicoliModello.VeicoliMarca_Ky, 
+                         dbo.VeicoliModello.VeicoliTipo_Ky, dbo.VeicoliModello.VeicoliModello_UrlKey, dbo.VeicoliModello.VeicoliModello_Titolo, dbo.VeicoliMarca.VeicoliMarca_UrlKey, dbo.VeicoliMarca.VeicoliMarca_Titolo
+</SqlScriptCreate>
+</SqlTable>

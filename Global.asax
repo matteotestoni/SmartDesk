@@ -1,0 +1,1 @@
+<%@ Application Language="C#" Debug="true" CodeFile="Global.asax.cs" Inherits="Rswstudio.App" %>

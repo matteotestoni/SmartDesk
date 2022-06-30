@@ -1,0 +1,29 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnnunciModelloTipo" Type="TABLE">
+    <Keys>
+      <Key Column="AnnunciModelloTipo_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AnnunciModelloTipo_Ky" IsNull="N" Type="int" />
+      <Field Column="AnnunciModelloTipo_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnnunciModelloTipo_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AnnunciModelloTipo_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AnnunciModelloTipo_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AnnunciModelloTipo_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AnnunciModelloTipo_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AnnunciModelloTipo_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AnnunciModelloTipo] (
+  [AnnunciModelloTipo_Ky] int IDENTITY(1,1) NOT NULL , 
+  [AnnunciModelloTipo_Titolo] varchar(200)  NULL , 
+  [AnnunciModelloTipo_UserInsert] int  NULL , 
+  [AnnunciModelloTipo_UserUpdate] int  NULL , 
+  [AnnunciModelloTipo_UserDelete] int  NULL , 
+  [AnnunciModelloTipo_DateInsert] datetime  NULL , 
+  [AnnunciModelloTipo_DateUpdate] datetime  NULL , 
+  [AnnunciModelloTipo_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[AnnunciModelloTipo] ADD CONSTRAINT PK_AnnunciModelloTipo PRIMARY KEY  ([AnnunciModelloTipo_Ky])
+</SqlScriptCreate>
+</SqlTable>

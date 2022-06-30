@@ -1,0 +1,31 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Statistiche_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Statistiche_Ky" IsNull="N" Type="int" />
+      <Field Column="Statistiche_Data" IsNull="Y" Type="smalldatetime" />
+      <Field Column="StatisticheTipo_Ky" IsNull="Y" Type="int" />
+      <Field Column="Statistiche_Numero" IsNull="Y" Type="int" />
+      <Field Column="StatisticheTipo_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Prodotti_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Prodotti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_Disdetto" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+
+CREATE VIEW [dbo].[Statistiche_Vw]
+AS
+SELECT     dbo.Statistiche.Statistiche_Ky, dbo.Statistiche.Statistiche_Data, dbo.Statistiche.StatisticheTipo_Ky, dbo.Statistiche.Statistiche_Numero, 
+                      dbo.StatisticheTipo.StatisticheTipo_Descrizione, dbo.Prodotti.Prodotti_Titolo, dbo.Anagrafiche.Anagrafiche_RagioneSociale, dbo.Statistiche.Anagrafiche_Ky, 
+                      dbo.Statistiche.Prodotti_Ky, dbo.Anagrafiche.Anagrafiche_Disdetto
+FROM         dbo.Prodotti RIGHT OUTER JOIN
+                      dbo.Statistiche INNER JOIN
+                      dbo.StatisticheTipo ON dbo.Statistiche.StatisticheTipo_Ky = dbo.StatisticheTipo.StatisticheTipo_Ky ON 
+                      dbo.Prodotti.Prodotti_Ky = dbo.Statistiche.Prodotti_Ky LEFT OUTER JOIN
+                      dbo.Anagrafiche ON dbo.Statistiche.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky
+
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,42 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliVetrina_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="VeicoliVetrina_Ky" IsNull="N" Type="int" />
+      <Field Column="Veicoli_Ky" IsNull="Y" Type="int" />
+      <Field Column="RicambiVeicoli_Ky" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_Annuncio" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="EmailVeicolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="NominativoVeicolo" IsNull="Y" Type="varchar" Lenght="255" />
+      <Field Column="VeicoliMarca_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Veicoli_Foto1" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto1s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Modello" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Veicoli_Valore" IsNull="Y" Type="money" />
+      <Field Column="VeicoliCategoria_Descrizione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Veicoli_ValoreNascondi" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliContratto_Descrizione" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Veicoli_Riferimento" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="UtentiGruppi_Ky" IsNull="Y" Type="int" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliVetrina_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliMarca_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliMarca_UrlKey" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Veicoli_Prime" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.VeicoliVetrina_Vw
+AS
+SELECT        dbo.VeicoliVetrina.VeicoliVetrina_Ky, dbo.VeicoliVetrina.Veicoli_Ky, dbo.VeicoliVetrina.RicambiVeicoli_Ky, dbo.Veicoli.Veicoli_Annuncio, dbo.Utenti.Utenti_Email AS EmailVeicolo, 
+                         dbo.Utenti.Utenti_Nominativo AS NominativoVeicolo, dbo.VeicoliMarca.VeicoliMarca_Descrizione, dbo.Veicoli.Veicoli_Foto1, dbo.Veicoli.Veicoli_Foto1s, dbo.Veicoli.Veicoli_Modello, dbo.Veicoli.Veicoli_Valore, 
+                         dbo.VeicoliCategoria.VeicoliCategoria_Descrizione, dbo.Veicoli.Veicoli_ValoreNascondi, NEWID() AS ordine, dbo.VeicoliContratto.VeicoliContratto_Descrizione, dbo.VeicoliVetrina.Veicoli_Riferimento, 
+                         dbo.VeicoliVetrina.UtentiGruppi_Ky, dbo.VeicoliVetrina.Utenti_Ky, dbo.VeicoliVetrina.VeicoliVetrina_Titolo, dbo.VeicoliMarca.VeicoliMarca_Titolo, dbo.VeicoliMarca.VeicoliMarca_UrlKey, 
+                         dbo.Veicoli.Veicoli_Prime
+FROM            dbo.VeicoliCategoria RIGHT OUTER JOIN
+                         dbo.Veicoli ON dbo.VeicoliCategoria.VeicoliCategoria_Ky = dbo.Veicoli.VeicoliCategoria_Ky LEFT OUTER JOIN
+                         dbo.Utenti ON dbo.Veicoli.Utenti_Ky = dbo.Utenti.Utenti_Ky RIGHT OUTER JOIN
+                         dbo.VeicoliVetrina ON dbo.Veicoli.Veicoli_Ky = dbo.VeicoliVetrina.Veicoli_Ky LEFT OUTER JOIN
+                         dbo.VeicoliContratto ON dbo.Veicoli.VeicoliContratto_Ky = dbo.VeicoliContratto.VeicoliContratto_Ky LEFT OUTER JOIN
+                         dbo.VeicoliMarca ON dbo.Veicoli.VeicoliMarca_Ky = dbo.VeicoliMarca.VeicoliMarca_Ky
+</SqlScriptCreate>
+</SqlTable>

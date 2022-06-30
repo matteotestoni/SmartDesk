@@ -1,0 +1,45 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnnunciOfferte" Type="TABLE">
+    <Keys>
+      <Key Column="AnnunciOfferte_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AnnunciOfferte_Ky" IsNull="N" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Ky" IsNull="Y" Type="int" />
+      <Field Column="Aste_Ky" IsNull="Y" Type="int" />
+      <Field Column="AsteEsperimenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="AnnunciOfferte_Data" IsNull="Y" Type="smalldatetime" />
+      <Field Column="AnnunciOfferte_Millisecondi" IsNull="Y" Type="smallint" />
+      <Field Column="AnnunciOfferte_Valore" IsNull="Y" Type="money" />
+      <Field Column="AnnunciOfferte_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AnnunciOfferte_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AnnunciOfferte_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AnnunciOfferte_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AnnunciOfferte_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AnnunciOfferte_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="AnnunciOfferte_Proxybid" IsNull="Y" Type="bit" />
+      <Field Column="AsteProxyBid_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AnnunciOfferte] (
+  [AnnunciOfferte_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [Annunci_Ky] int  NULL , 
+  [Aste_Ky] int  NULL , 
+  [AsteEsperimenti_Ky] int  NULL , 
+  [AnnunciOfferte_Data] smalldatetime  NULL , 
+  [AnnunciOfferte_Millisecondi] smallint  NULL , 
+  [AnnunciOfferte_Valore] money  NULL , 
+  [AnnunciOfferte_UserInsert] int  NULL , 
+  [AnnunciOfferte_UserUpdate] int  NULL , 
+  [AnnunciOfferte_UserDelete] int  NULL , 
+  [AnnunciOfferte_DateInsert] datetime  NULL , 
+  [AnnunciOfferte_DateUpdate] datetime  NULL , 
+  [AnnunciOfferte_DateDelete] datetime  NULL , 
+  [AnnunciOfferte_Proxybid] bit  NULL , 
+  [AsteProxyBid_Ky] int  NULL  )
+ALTER TABLE [dbo].[AnnunciOfferte] ADD CONSTRAINT PK_AnnunciOfferte PRIMARY KEY  ([AnnunciOfferte_Ky])
+</SqlScriptCreate>
+</SqlTable>

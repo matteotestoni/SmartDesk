@@ -1,0 +1,23 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliModelloSpazioGroup_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="VeicoliModelloSpazioGroup_Ky" IsNull="N" Type="int" />
+      <Field Column="VeicoliModelloSpazioGroup_Modello" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliModelloSpazioGroup_ModelloHTML" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliMarcaSpazioGroup_Marca" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliMarcaSpazioGroup_MarcaHTML" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliModello_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliMarca_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliModello_Importante" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliCarrozzeria_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.VeicoliModelloSpazioGroup_Vw
+AS
+SELECT        TOP (100) PERCENT VeicoliModelloSpazioGroup_Ky, VeicoliModelloSpazioGroup_Modello, VeicoliModelloSpazioGroup_ModelloHTML, VeicoliTipo_Ky, VeicoliMarcaSpazioGroup_Marca, 
+                         VeicoliMarcaSpazioGroup_MarcaHTML, VeicoliModello_Ky, VeicoliMarca_Ky, VeicoliModello_Importante, VeicoliCarrozzeria_Ky
+FROM            dbo.VeicoliModelloSpazioGroup
+</SqlScriptCreate>
+</SqlTable>

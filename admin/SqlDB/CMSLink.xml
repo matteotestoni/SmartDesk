@@ -1,0 +1,49 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CMSLink" Type="TABLE">
+    <Keys>
+      <Key Column="CMSLink_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CMSLink_Ky" IsNull="N" Type="int" />
+      <Field Column="CMSLink_Link" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSLink_Data" IsNull="Y" Type="smalldatetime" />
+      <Field Column="CMSLink_Descrizione" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSLink_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSLink_Destinazione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Province_Ky" IsNull="Y" Type="int" />
+      <Field Column="Comuni_Ky" IsNull="Y" Type="int" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="CMSLink_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CMSLink_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CMSLink_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CMSLink_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CMSLink_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CMSLink_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="CMSCategorie_Ky" IsNull="Y" Type="int" />
+      <Field Column="CMSLink_Tags" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CMSLink] (
+  [CMSLink_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CMSLink_Link] varchar(200)  NULL , 
+  [CMSLink_Data] smalldatetime  NULL , 
+  [CMSLink_Descrizione] varchar(200)  NULL , 
+  [CMSLink_Title] varchar(200)  NULL , 
+  [CMSLink_Destinazione] varchar(100)  NULL , 
+  [Province_Ky] int  NULL , 
+  [Comuni_Ky] int  NULL , 
+  [Utenti_Ky] int  NULL , 
+  [CMSLink_UserInsert] int  NULL , 
+  [CMSLink_UserUpdate] int  NULL , 
+  [CMSLink_UserDelete] int  NULL , 
+  [CMSLink_DateInsert] datetime  NULL , 
+  [CMSLink_DateUpdate] datetime  NULL , 
+  [CMSLink_DateDelete] datetime  NULL , 
+  [CMSCategorie_Ky] int  NULL , 
+  [CMSLink_Tags] varchar(MAX)  NULL , 
+  [Lingue_Ky] tinyint  NULL  )
+ALTER TABLE [dbo].[CMSLink] ADD CONSTRAINT PK_CMSLink PRIMARY KEY  ([CMSLink_Ky])
+</SqlScriptCreate>
+</SqlTable>

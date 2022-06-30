@@ -1,0 +1,27 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ComuniConversione" Type="TABLE">
+    <Keys>
+      <Key Column="ComuniConversione_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="ComuniConversione_Ky" IsNull="N" Type="smallint" />
+      <Field Column="Comuni_Comune" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Comuni_Ky" IsNull="Y" Type="int" />
+      <Field Column="ImmobiliZona_Ky" IsNull="Y" Type="int" />
+      <Field Column="Provincie_Codice" IsNull="Y" Type="varchar" Lenght="4" />
+      <Field Column="Comuni_Cap" IsNull="Y" Type="varchar" Lenght="5" />
+      <Field Column="Province_Ky" IsNull="Y" Type="tinyint" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[ComuniConversione] (
+  [ComuniConversione_Ky] smallint  NOT NULL , 
+  [Comuni_Comune] varchar(50)  NULL , 
+  [Comuni_Ky] int  NULL , 
+  [ImmobiliZona_Ky] int  NULL , 
+  [Provincie_Codice] varchar(4)  NULL , 
+  [Comuni_Cap] varchar(5)  NULL , 
+  [Province_Ky] tinyint  NULL  )
+ALTER TABLE [dbo].[ComuniConversione] ADD CONSTRAINT PK_ComuniConversione PRIMARY KEY  ([ComuniConversione_Ky])
+</SqlScriptCreate>
+</SqlTable>

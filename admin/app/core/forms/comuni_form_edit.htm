@@ -1,0 +1,47 @@
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Comune</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" required="required" name="Comuni_Comune" id="Comuni_Comune" title="Comune" value="<%=GetFieldValue(dtComuni, "Comuni_Comune")%>" size="60">
+	</div>
+</div>
+
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle" for="Province_Ky">Provincia</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <select name="Province_Ky" id="Province_Ky" placeholder="Provincia" required="required">
+			<%
+			for (int i = 0; i < dtProvince.Rows.Count; i++){
+				Response.Write("<option value=\"" + dtProvince.Rows[i]["Province_Ky"].ToString() + "\">" + dtProvince.Rows[i]["Province_Provincia"].ToString() + "</option>");
+			}
+			%>
+    </select>
+		<span class="form-error">Obbligatorio</span>
+    <script type="text/javascript">
+      selectSet('Province_Ky', '<%=GetFieldValue(dtComuni, "Province_Ky")%>');
+    </script>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle" for="Regioni_Ky">Regione</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <select name="Regioni_Ky" id="Regioni_Ky" placeholder="Regione" required="required">
+			<%
+			for (int i = 0; i < dtRegioni.Rows.Count; i++){
+				Response.Write("<option value=\"" + dtRegioni.Rows[i]["Regioni_Ky"].ToString() + "\">" + dtRegioni.Rows[i]["Regioni_Regione"].ToString() + "</option>");
+			}
+			%>
+    </select>
+		<span class="form-error">Obbligatorio</span>
+    <script type="text/javascript">
+      selectSet('Regioni_Ky', '<%=GetFieldValue(dtComuni, "Regioni_Ky")%>');
+    </script>
+	</div>
+</div>

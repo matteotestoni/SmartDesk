@@ -1,0 +1,51 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnnunciCategorie" Type="TABLE">
+    <Keys>
+      <Key Column="AnnunciCategorie_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AnnunciCategorie_Ky" IsNull="N" Type="smallint" />
+      <Field Column="AnnunciCategorie_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="AnnunciCategorie_Padre" IsNull="Y" Type="smallint" />
+      <Field Column="AnnunciCategorie_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="AnnunciCategorie_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AnnunciCategorie_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AnnunciCategorie_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AnnunciCategorie_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AnnunciCategorie_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AnnunciCategorie_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="AnnunciCategorie_Foto" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnnunciCategorie_Url" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnnunciCategorie_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnnunciCategorie_Description" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnnunciCategorie_Attributi" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnnunciCategorie_AttributiElenchi" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnnunciCategorie_Ordine" IsNull="Y" Type="smallint" />
+      <Field Column="AnnunciCategorie_DescrizioneFooter" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="AnnunciCategorie_DescrizioneSidebar" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AnnunciCategorie] (
+  [AnnunciCategorie_Ky] smallint IDENTITY(1,1) NOT NULL , 
+  [AnnunciCategorie_Titolo] varchar(150)  NULL , 
+  [AnnunciCategorie_Padre] smallint  NULL DEFAULT ((0)), 
+  [AnnunciCategorie_Descrizione] varchar(MAX)  NULL , 
+  [AnnunciCategorie_UserInsert] int  NULL , 
+  [AnnunciCategorie_UserUpdate] int  NULL , 
+  [AnnunciCategorie_UserDelete] int  NULL , 
+  [AnnunciCategorie_DateInsert] datetime  NULL , 
+  [AnnunciCategorie_DateUpdate] datetime  NULL , 
+  [AnnunciCategorie_DateDelete] datetime  NULL , 
+  [AnnunciCategorie_Foto] varchar(200)  NULL , 
+  [AnnunciCategorie_Url] varchar(200)  NULL , 
+  [AnnunciCategorie_Title] varchar(200)  NULL , 
+  [AnnunciCategorie_Description] varchar(200)  NULL , 
+  [AnnunciCategorie_Attributi] varchar(200)  NULL , 
+  [AnnunciCategorie_AttributiElenchi] varchar(200)  NULL , 
+  [AnnunciCategorie_Ordine] smallint  NULL , 
+  [AnnunciCategorie_DescrizioneFooter] varchar(MAX)  NULL , 
+  [AnnunciCategorie_DescrizioneSidebar] varchar(MAX)  NULL  )
+ALTER TABLE [dbo].[AnnunciCategorie] ADD CONSTRAINT PK_AnnunciCategorie PRIMARY KEY  ([AnnunciCategorie_Ky])
+</SqlScriptCreate>
+</SqlTable>

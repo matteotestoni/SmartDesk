@@ -1,0 +1,49 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="OpportunitaStati" Type="TABLE">
+    <Keys>
+      <Key Column="OpportunitaStati_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="OpportunitaStati_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="OpportunitaStati_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="OpportunitaStati_Colore" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="OpportunitaStati_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="OpportunitaStati_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="OpportunitaStati_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="OpportunitaStati_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="OpportunitaStati_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="OpportunitaStati_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="OpportunitaStati_Ordine" IsNull="Y" Type="int" />
+      <Field Column="OpportunitaStati_Aperta" IsNull="Y" Type="bit" />
+      <Field Column="OpportunitaStati_Chiusa" IsNull="Y" Type="bit" />
+      <Field Column="OpportunitaStati_Probabilita" IsNull="Y" Type="tinyint" />
+      <Field Column="OpportunitaStati_Icona" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="LeadStato_Ky" IsNull="Y" Type="int" />
+      <Field Column="PreventiviAutoStati_Ky" IsNull="Y" Type="int" />
+      <Field Column="DocumentiStato_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="AnagraficheStati_Ky" IsNull="Y" Type="smallint" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[OpportunitaStati] (
+  [OpportunitaStati_Ky] tinyint  NOT NULL , 
+  [OpportunitaStati_Titolo] varchar(100)  NULL , 
+  [OpportunitaStati_Colore] varchar(100)  NULL , 
+  [OpportunitaStati_UserInsert] int  NULL , 
+  [OpportunitaStati_UserUpdate] int  NULL , 
+  [OpportunitaStati_UserDelete] int  NULL , 
+  [OpportunitaStati_DateInsert] datetime  NULL , 
+  [OpportunitaStati_DateUpdate] datetime  NULL , 
+  [OpportunitaStati_DateDelete] datetime  NULL , 
+  [OpportunitaStati_Ordine] int  NULL , 
+  [OpportunitaStati_Aperta] bit  NULL , 
+  [OpportunitaStati_Chiusa] bit  NULL , 
+  [OpportunitaStati_Probabilita] tinyint  NULL , 
+  [OpportunitaStati_Icona] varchar(200)  NULL , 
+  [LeadStato_Ky] int  NULL , 
+  [PreventiviAutoStati_Ky] int  NULL , 
+  [DocumentiStato_Ky] smallint  NULL , 
+  [AnagraficheStati_Ky] smallint  NULL  )
+ALTER TABLE [dbo].[OpportunitaStati] ADD CONSTRAINT PK_OpportunitaStati PRIMARY KEY  ([OpportunitaStati_Ky])
+</SqlScriptCreate>
+</SqlTable>

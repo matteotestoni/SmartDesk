@@ -1,0 +1,87 @@
+<div class="grid-x grid-padding-x">
+  <div class="xxlarge-1 xlarge-2 large-2 medium-2 small-4 cell">
+      <label class="checkbox text-right align-middle" for="AnagraficheIndirizzi_DefaultFatturazione">Fatturazione</label>
+  </div>
+  <div class="xxlarge-1 large-1 medium-1 small-8 cell align-middle">                                               
+			<div class="switch tiny">                                         
+        <input class="switch-input" type="checkbox" name="AnagraficheIndirizzi_DefaultFatturazione" id="AnagraficheIndirizzi_DefaultFatturazione" value="on" <% if (GetCheckValue(dtAnagraficheIndirizzi, "AnagraficheIndirizzi_DefaultFatturazione")){ Response.Write("checked");} %> />
+        <label class="switch-paddle" for="AnagraficheIndirizzi_DefaultFatturazione">
+          <span class="show-for-sr">Fatturazione</span>
+          <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+          <span class="switch-inactive" aria-hidden="true"></span>
+        </label>
+      </div> 
+   </div>       
+  <div class="xxlarge-1 xlarge-2 large-2 medium-2 small-4 cell">
+      <label class="checkbox text-right align-middle" for="AnagraficheIndirizzi_DefaultSpedizione">Spedizioni</label>
+  </div>
+  <div class="xxlarge-1 large-1 medium-1 small-8 cell align-middle">                                               
+			<div class="switch tiny">                                         
+        <input class="switch-input" type="checkbox" name="AnagraficheIndirizzi_DefaultSpedizione" id="AnagraficheIndirizzi_DefaultSpedizione" value="on" <% if (GetCheckValue(dtAnagraficheIndirizzi, "AnagraficheIndirizzi_DefaultSpedizione")){ Response.Write("checked");} %> />
+        <label class="switch-paddle" for="AnagraficheIndirizzi_DefaultSpedizione">
+          <span class="show-for-sr">Fatturazione</span>
+          <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+          <span class="switch-inactive" aria-hidden="true"></span>
+        </label>
+      </div> 
+   </div>       
+</div>
+<div class="grid-x grid-padding-x">
+  <div class="xxlarge-1 xlarge-1 large-2 medium-2 small-4 cell">
+  	<label for="AnagraficheIndirizzi_Nome" class="large-text-right small-text-left middle">Nome</label>
+  </div>
+  <div class="xxlarge--3 xlarge-3 large-2 medium-2 small-8 cell">
+    <input type="text" name="AnagraficheIndirizzi_Nome" id="AnagraficheIndirizzi_Nome" value="<%=GetFieldValue(dtAnagraficheIndirizzi, "AnagraficheIndirizzi_Nome")%>" size="60">
+  </div>
+  <div class="xxlarge-1 xlarge-1 large-2 medium-2 small-4 cell">
+  	<label class="large-text-right small-text-left middle" for="AnagraficheIndirizzi_PartitaIVA">Partita IVA</label>
+  </div>
+  <div class="xxlarge--3 xlarge-3 large-4 medium-4 small-8 cell">
+    <input type="text" name="AnagraficheIndirizzi_PartitaIVA" id="AnagraficheIndirizzi_PartitaIVA" value="<%=GetFieldValue(dtAnagraficheIndirizzi, "AnagraficheIndirizzi_PartitaIVA")%>" size="60">
+  </div>
+  <div class="xxlarge-1 xlarge-1 large-2 medium-2 small-4 cell">
+  	<label class="large-text-right small-text-left middle" for="AnagraficheIndirizzi_CodiceFiscale">Codice fiscale</label>
+  </div>
+  <div class="xxlarge--3 xlarge-3 large-2 medium-2 small-8 cell">
+    <input type="text" name="AnagraficheIndirizzi_CodiceFiscale" id="AnagraficheIndirizzi_CodiceFiscale" value="<%=GetFieldValue(dtAnagraficheIndirizzi, "AnagraficheIndirizzi_CodiceFiscale")%>" size="60">
+  	<span class="form-error">Obbligatorio.</span>
+  </div>
+</div>
+
+<div class="grid-x grid-padding-x">
+  <div class="xxlarge-1 xlarge-1 large-2 medium-2 small-4 cell">
+  	<label for="AnagraficheIndirizzi_Indirizzo" class="large-text-right small-text-left middle">Indirizzo</label>
+  </div>
+  <div class="xxlarge--3 xlarge-3 large-2 medium-2 small-8 cell">
+    <input type="text" name="AnagraficheIndirizzi_Indirizzo" id="AnagraficheIndirizzi_Indirizzo" value="<%=GetFieldValue(dtAnagraficheIndirizzi, "AnagraficheIndirizzi_Indirizzo")%>" size="60">
+  </div>
+  <div class="xxlarge-1 xlarge-1 large-2 medium-2 small-4 cell">
+  	<label class="large-text-right small-text-left middle" for="AnagraficheIndirizzi_CAP">CAP <i class="fa-duotone fa-location-dot fa-fw"></i></label>
+  </div>
+  <div class="xxlarge--3 xlarge-3 large-2 medium-2 small-8 cell">
+    <input type="text" name="AnagraficheIndirizzi_CAP" id="AnagraficheIndirizzi_CAP" value="<%=GetFieldValue(dtAnagraficheIndirizzi, "AnagraficheIndirizzi_CAP")%>" required="required" size="60">
+  	<span class="form-error">Obbligatorio.</span>
+  </div>
+  <div class="xxlarge-1 xlarge-1 large-2 medium-2 small-4 cell">
+  	<label class="large-text-right small-text-left middle" for="AnagraficheIndirizzi_Comune">Comune <i class="fa-duotone fa-location-dot fa-fw"></i></label>
+  </div>
+  <div class="xxlarge--3 xlarge-3 large-4 medium-4 small-8 cell">
+    <input type="text" name="AnagraficheIndirizzi_Comune" id="AnagraficheIndirizzi_Comune" value="<%=GetFieldValue(dtAnagraficheIndirizzi, "AnagraficheIndirizzi_Comune")%>" required="required" size="60">
+  </div>
+</div>
+
+<div class="grid-x grid-padding-x">
+  <div class="xxlarge-1 xlarge-1 large-2 medium-2 small-4 cell">
+  	<label class="large-text-right small-text-left middle" for="AnagraficheIndirizzi_Provincia">Provincia <i class="fa-duotone fa-location-dot fa-fw"></i></label>
+  </div>
+  <div class="xxlarge--3 xlarge-3 large-4 medium-4 small-8 cell">
+    <input type="text" name="AnagraficheIndirizzi_Provincia" id="AnagraficheIndirizzi_Provincia" value="<%=GetFieldValue(dtAnagraficheIndirizzi, "AnagraficheIndirizzi_Provincia")%>" size="60">
+  </div>
+  <div class="xxlarge-1 xlarge-1 large-2 medium-2 small-4 cell">
+  	<label class="large-text-right small-text-left middle" for="AnagraficheIndirizzi_Telefono">Telefono <i class="fa-duotone fa-phone fa-fw"></i></label>
+  </div>
+  <div class="xxlarge--3 xlarge-3 large-4 medium-4 small-8 cell">
+    <input type="text" name="AnagraficheIndirizzi_Telefono" id="AnagraficheIndirizzi_Telefono" value="<%=GetFieldValue(dtAnagraficheIndirizzi, "AnagraficheIndirizzi_Telefono")%>" required="required" size="60">
+  </div>
+</div>
+

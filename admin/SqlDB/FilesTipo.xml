@@ -1,0 +1,29 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="FilesTipo" Type="TABLE">
+    <Keys>
+      <Key Column="FilesTipo_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="FilesTipo_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="FilesTipo_Titolo" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="FilesTipo_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="FilesTipo_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="FilesTipo_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="FilesTipo_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="FilesTipo_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="FilesTipo_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[FilesTipo] (
+  [FilesTipo_Ky] tinyint IDENTITY(1,1) NOT NULL , 
+  [FilesTipo_Titolo] varchar(MAX)  NULL , 
+  [FilesTipo_UserInsert] int  NULL , 
+  [FilesTipo_UserUpdate] int  NULL , 
+  [FilesTipo_UserDelete] int  NULL , 
+  [FilesTipo_DateInsert] datetime  NULL , 
+  [FilesTipo_DateUpdate] datetime  NULL , 
+  [FilesTipo_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[FilesTipo] ADD CONSTRAINT PK_FilesTipo PRIMARY KEY  ([FilesTipo_Ky])
+</SqlScriptCreate>
+</SqlTable>

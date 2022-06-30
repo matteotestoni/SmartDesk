@@ -1,0 +1,61 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Forms" Type="TABLE">
+    <Keys>
+      <Key Column="Forms_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Forms_Ky" IsNull="N" Type="int" />
+      <Field Column="Forms_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Forms_Disattiva" IsNull="Y" Type="bit" />
+      <Field Column="SitiWeb_Ky" IsNull="Y" Type="int" />
+      <Field Column="Forms_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Forms_Data" IsNull="Y" Type="datetime" />
+      <Field Column="Forms_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Forms_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Forms_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Forms_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Forms_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Forms_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Forms_Robots" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Forms_PubblicaWEB" IsNull="Y" Type="bit" />
+      <Field Column="Forms_Tags" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Forms_DataInizio" IsNull="Y" Type="datetime" />
+      <Field Column="Forms_DataTermine" IsNull="Y" Type="datetime" />
+      <Field Column="Forms_EmailFrom" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Forms_EmailBcc" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Forms_EmailSubjectThankyou" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Forms_EmailBodyThankyou" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Forms_EmailSubjectRequest" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Forms_EmailBodyRequest" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Forms] (
+  [Forms_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Forms_Descrizione] varchar(MAX)  NULL , 
+  [Forms_Disattiva] bit  NULL , 
+  [SitiWeb_Ky] int  NULL , 
+  [Forms_Titolo] varchar(200)  NULL , 
+  [Forms_Data] datetime  NULL DEFAULT (getdate()), 
+  [Forms_UserInsert] int  NULL , 
+  [Forms_UserUpdate] int  NULL , 
+  [Forms_UserDelete] int  NULL , 
+  [Forms_DateInsert] datetime  NULL , 
+  [Forms_DateUpdate] datetime  NULL , 
+  [Forms_DateDelete] datetime  NULL , 
+  [Lingue_Ky] tinyint  NULL , 
+  [Forms_Robots] varchar(100)  NULL DEFAULT ('index,follow'), 
+  [Forms_PubblicaWEB] bit  NULL , 
+  [Forms_Tags] varchar(200)  NULL , 
+  [Forms_DataInizio] datetime  NULL DEFAULT (getdate()), 
+  [Forms_DataTermine] datetime  NULL DEFAULT (getdate()), 
+  [Forms_EmailFrom] varchar(MAX)  NULL , 
+  [Forms_EmailBcc] varchar(MAX)  NULL , 
+  [Forms_EmailSubjectThankyou] varchar(200)  NULL , 
+  [Forms_EmailBodyThankyou] varchar(MAX)  NULL , 
+  [Forms_EmailSubjectRequest] varchar(200)  NULL , 
+  [Forms_EmailBodyRequest] varchar(MAX)  NULL  )
+ALTER TABLE [dbo].[Forms] ADD CONSTRAINT PK_Forms PRIMARY KEY  ([Forms_Ky])
+</SqlScriptCreate>
+</SqlTable>

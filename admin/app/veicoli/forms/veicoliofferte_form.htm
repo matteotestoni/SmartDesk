@@ -1,0 +1,163 @@
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="VeicoliOfferte_Abilitata" class="large-text-right small-text-left middle">Offerta abilitata <i
+				class="fa-duotone fa-calendar-days fa-fw"></i></label>
+	</div>
+	<div class="large-2 medium-2 small-8 cell">
+		<div class="switch tiny">
+			<input class="switch-input" type="checkbox" name="VeicoliOfferte_Abilitata" id="VeicoliOfferte_Abilitata"
+				value="on"
+				<% if (GetCheckValue(dtVeicoliOfferte, "VeicoliOfferte_Abilitata")){ Response.Write("checked");} %> />
+			<label class="switch-paddle" for="VeicoliOfferte_Abilitata">
+				<span class="show-for-sr">Chiuso</span>
+				<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+				<span class="switch-inactive" aria-hidden="true"></span>
+			</label>
+		</div>
+	</div>
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="VeicoliOfferte_MostraEtichetta" class="large-text-right small-text-left middle">Mostra etichetta <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+	</div>
+	<div class="large-2 medium-2 small-8 cell">
+		<div class="switch tiny">
+			<input class="switch-input" type="checkbox" name="VeicoliOfferte_MostraEtichetta" id="VeicoliOfferte_MostraEtichetta" value="on" <% if (GetCheckValue(dtVeicoliOfferte, "VeicoliOfferte_MostraEtichetta")){ Response.Write("checked");} %> />
+			<label class="switch-paddle" for="VeicoliOfferte_MostraEtichetta">
+				<span class="show-for-sr">Chiuso</span>
+				<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+				<span class="switch-inactive" aria-hidden="true"></span>
+			</label>
+		</div>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="VeicoliOfferte_Titolo" class="text-right middle">Titolo <i class="fa-duotone fa-tag fa-fw"></i></label>
+    </div>
+	<div class="large-10 medium-9 small-8 cell">
+		<input type="text" name="VeicoliOfferte_Titolo" id="VeicoliOfferte_Titolo" value="<%=GetFieldValue(dtVeicoliOfferte, "VeicoliOfferte_Titolo","text")%>" size="80" required="required">
+		<span class="form-error">Obbligatorio</span>
+		<p class="help-text">max 100 carateri</p>
+	</div>
+</div>	
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="VeicoliOfferte_Descrizione" class="text-right middle">Descrizione</label>
+  </div>
+	<div class="large-10 medium-9 small-8 cell">
+		<textarea name="VeicoliOfferte_Descrizione" id="VeicoliOfferte_Descrizione" rows="6"><%=GetFieldValue(dtVeicoliOfferte, "VeicoliOfferte_Descrizione","text")%></textarea>
+	</div>
+</div>	
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="utm_campaign" class="text-right middle">utm_campaign</label>
+	</div>
+	<div class="large-4 medium-3 small-8 cell">
+		<input type="text" name="utm_campaign" id="utm_campaign" value="<%=GetFieldValue(dtVeicoliOfferte, "utm_campaign","text")%>" size="80" required="required">
+		<span class="form-error">Obbligatorio</span>
+		<p class="help-text">max 50 carateri</p>
+	</div>
+
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="VeicoliOfferte_Etichetta" class="text-right middle">Etichetta</label>
+	</div>
+	<div class="large-4 medium-3 small-8 cell">
+		<input type="text" name="VeicoliOfferte_Etichetta" id="VeicoliOfferte_Etichetta" value="<%=GetFieldValue(dtVeicoliOfferte, "VeicoliOfferte_Etichetta","text")%>" size="80" required="required">
+		<span class="form-error">Obbligatorio</span>
+		<p class="help-text">max 50 carateri</p>
+	</div>
+</div>    
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="VeicoliOfferte_DataInizio" class="large-text-right small-text-left middle">Data inizio <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+	</div>
+	<div class="large-4 medium-3 small-8 cell">
+			<input type="text" name="VeicoliOfferte_DataInizio" id="VeicoliOfferte_DataInizio" value="<%=GetFieldValue(dtVeicoliOfferte, "VeicoliOfferte_DataInizio","date")%>" class="fdatepicker" size="10" required="required">
+		<span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="VeicoliOfferte_DataFine" class="large-text-right small-text-left middle">Data fine <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+	</div>
+	<div class="large-4 medium-3 small-8 cell">
+			<input type="text" name="VeicoliOfferte_DataFine" id="VeicoliOfferte_DataFine" value="<%=GetFieldValue(dtVeicoliOfferte, "VeicoliOfferte_DataFine","date")%>" class="fdatepicker" size="10" required="required">
+		<span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle" for="VeicoliOfferte_ColoreTesto">Colore Testo etichetta</label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+		<input type="color" required="required" name="VeicoliOfferte_ColoreTesto" id="VeicoliOfferte_ColoreTesto" title="Colore" value="<%=GetFieldValue(dtVeicoliOfferte, "VeicoliOfferte_ColoreTesto","text")%>" size="60">
+		<span class="form-error">Obbligatorio.</span>
+	</div>
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle" for="VeicoliOfferte_ColoreSfondo">Colore Sfondo etichetta</label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+		<input type="color" required="required" name="VeicoliOfferte_ColoreSfondo" id="VeicoliOfferte_ColoreSfondo" title="Colore" value="<%=GetFieldValue(dtVeicoliOfferte, "VeicoliOfferte_ColoreSfondo","text")%>" size="60">
+		<span class="form-error">Obbligatorio.</span>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label class="large-text-right small-text-left middle" for="VeicoliOfferte_BannerTopSfondo">Colore Sfondo banner top</label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+		<input type="text" required="required" name="VeicoliOfferte_BannerTopSfondo" id="VeicoliOfferte_BannerTopSfondo" title="Colore" value="<%=GetFieldValue(dtVeicoliOfferte, "VeicoliOfferte_BannerTopSfondo","text")%>" size="60">
+		<span class="form-error">Obbligatorio.</span>
+	</div>
+</div>
+
+
+<hr>
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="VeicoliOfferte_BannerTopMobile" class="text-right middle">Banner Top Mobile <i class="fa-duotone fa-image fa-fw"></i></label>
+    </div>
+    <div class="large-4 medium-3 small-8 cell">
+        <input type="file" name="VeicoliOfferte_BannerTopMobile" id="VeicoliOfferte_BannerTopMobile" value="<%=GetFieldValue(dtVeicoliOfferte, " VeicoliOfferte_BannerTopMobile","text")%>" size="200">
+        <img src="<%=GetFieldValue(dtVeicoliOfferte, "VeicoliOfferte_BannerTopMobile","text")%>" style="max-height:200px;max-width:350px;width:auto;" />
+        <p class="help-text">Dimensione 768x400</p>
+    </div>
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="VeicoliOfferte_BannerTopDesktop" class="text-right middle">Banner Top Desktop <i class="fa-duotone fa-image fa-fw"></i></label>
+	</div>
+    <div class="large-4 medium-3 small-8 cell">
+        <input type="file" name="VeicoliOfferte_BannerTopDesktop" id="VeicoliOfferte_BannerTopDesktop"
+               value="<%=GetFieldValue(dtVeicoliOfferte, " VeicoliOfferte_BannerTopDesktop","text")%>" size="200">
+        <img src="<%=GetFieldValue(dtVeicoliOfferte, "VeicoliOfferte_BannerTopDesktop","text")%>" style="max-height:100px;max-width:350px;width:auto;" />
+        <p class="help-text">Dimensione 900x100</p>
+    </div>
+</div>
+
+<hr>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="VeicoliOfferte_BannerMobile" class="text-right middle">Banner Mobile <i class="fa-duotone fa-image fa-fw"></i></label>
+	</div>
+	<div class="large-4 medium-3 small-8 cell">
+		<input type="file" name="VeicoliOfferte_BannerMobile" id="VeicoliOfferte_BannerMobile"
+			value="<%=GetFieldValue(dtVeicoliOfferte, "VeicoliOfferte_BannerMobile","text")%>" size="200">
+        <img src="<%=GetFieldValue(dtVeicoliOfferte, "VeicoliOfferte_BannerMobile","text")%>" style="max-height:200px;max-width:350px;width:auto;" />
+        <p class="help-text">Dimensione 480x480</p>
+
+	</div>
+	<div class="large-2 medium-3 small-4 cell">
+		<label for="VeicoliOfferte_BannerDesktop" class="text-right middle">Banner Desktop <i class="fa-duotone fa-image fa-fw"></i></label>
+	</div>
+    <div class="large-4 medium-3 small-8 cell">
+        <input type="file" name="VeicoliOfferte_BannerDesktop" id="VeicoliOfferte_BannerDesktop"
+               value="<%=GetFieldValue(dtVeicoliOfferte, "VeicoliOfferte_BannerDesktop","text")%>" size="200">
+        <img src="<%=GetFieldValue(dtVeicoliOfferte, "VeicoliOfferte_BannerDesktop","text")%>" style="max-height:100px;max-width:350px;width:auto;" />
+        <p class="help-text">Dimensione 1050x500</p>
+    </div>
+</div>
+
+

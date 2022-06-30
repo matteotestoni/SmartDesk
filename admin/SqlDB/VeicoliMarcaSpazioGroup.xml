@@ -1,0 +1,27 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliMarcaSpazioGroup" Type="TABLE">
+    <Keys>
+      <Key Column="VeicoliMarcaSpazioGroup_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="VeicoliMarcaSpazioGroup_Ky" IsNull="N" Type="int" />
+      <Field Column="VeicoliMarcaSpazioGroup_Marca" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliMarcaSpazioGroup_MarcaHTML" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliMarca_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliMarca_Importante" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliMarca_Nuova" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[VeicoliMarcaSpazioGroup] (
+  [VeicoliMarcaSpazioGroup_Ky] int IDENTITY(1,1) NOT NULL , 
+  [VeicoliMarcaSpazioGroup_Marca] varchar(200)  NULL , 
+  [VeicoliMarcaSpazioGroup_MarcaHTML] varchar(200)  NULL , 
+  [VeicoliTipo_Ky] tinyint  NULL , 
+  [VeicoliMarca_Ky] int  NULL , 
+  [VeicoliMarca_Importante] bit  NULL , 
+  [VeicoliMarca_Nuova] bit  NULL  )
+ALTER TABLE [dbo].[VeicoliMarcaSpazioGroup] ADD CONSTRAINT PK_VeicoliMarcaSpazioGroup PRIMARY KEY  ([VeicoliMarcaSpazioGroup_Ky])
+</SqlScriptCreate>
+</SqlTable>

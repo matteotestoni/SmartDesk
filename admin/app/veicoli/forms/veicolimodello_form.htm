@@ -1,0 +1,171 @@
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="VeicoliModello_Importante" class="large-text-right small-text-left middle">Importante:</label>
+	</div>
+	<div class="large-2 medium-2 small-8 cell">
+		<div class="switch tiny">
+			<input class="switch-input" type="checkbox" name="VeicoliModello_Importante" id="VeicoliModello_Importante" value="on" <% if (GetCheckValue("VeicoliModello_Importante")){ Response.Write( "checked");} %> />
+			<label class="switch-paddle" for="VeicoliModello_Importante">
+				<span class="show-for-sr">Attivo</span>
+				<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+				<span class="switch-inactive" aria-hidden="true"></span>
+			</label>
+		</div>
+	</div>
+  
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="VeicoliModello_Premium" class="large-text-right small-text-left middle">Premium:</label>
+	</div>
+	<div class="large-2 medium-2 small-8 cell">
+		<div class="switch tiny">
+			<input class="switch-input" type="checkbox" name="VeicoliModello_Premium" id="VeicoliModello_Premium" value="on" <% if (GetCheckValue("VeicoliModello_Premium")){ Response.Write( "checked");} %> />
+			<label class="switch-paddle" for="VeicoliModello_Premium">
+				<span class="show-for-sr">Attivo</span>
+				<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+				<span class="switch-inactive" aria-hidden="true"></span>
+			</label>
+		</div>
+	</div>
+
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="VeicoliModello_Dismesso" class="large-text-right small-text-left middle">Dismesso:</label>
+	</div>
+	<div class="large-2 medium-2 small-8 cell">
+		<div class="switch tiny">
+			<input class="switch-input" type="checkbox" name="VeicoliModello_Dismesso" id="VeicoliModello_Dismesso" value="on" <% if (GetCheckValue("VeicoliModello_Dismesso")){ Response.Write( "checked");} %> />
+			<label class="switch-paddle" for="VeicoliModello_Dismesso">
+				<span class="show-for-sr">Attivo</span>
+				<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+				<span class="switch-inactive" aria-hidden="true"></span>
+			</label>
+		</div>
+	</div> 
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="VeicoliModello_Km0" class="large-text-right small-text-left middle">Km0:</label>
+	</div>
+	<div class="large-2 medium-2 small-8 cell">
+		<div class="switch tiny">
+			<input class="switch-input" type="checkbox" name="VeicoliModello_Km0" id="VeicoliModello_Km0" value="on" <% if (GetCheckValue("VeicoliModello_Km0")){ Response.Write( "checked");} %> />
+			<label class="switch-paddle" for="VeicoliModello_Km0">
+				<span class="show-for-sr">Attivo</span>
+				<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+				<span class="switch-inactive" aria-hidden="true"></span>
+			</label>
+		</div>
+	</div>
+  
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="VeicoliModello_Usato" class="large-text-right small-text-left middle">Usato:</label>
+	</div>
+	<div class="large-2 medium-2 small-8 cell">
+		<div class="switch tiny">
+			<input class="switch-input" type="checkbox" name="VeicoliModello_Usato" id="VeicoliModello_Usato" value="on" <% if (GetCheckValue("VeicoliModello_Usato")){ Response.Write( "checked");} %> />
+			<label class="switch-paddle" for="VeicoliModello_Usato">
+				<span class="show-for-sr">Attivo</span>
+				<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+				<span class="switch-inactive" aria-hidden="true"></span>
+			</label>
+		</div>
+	</div>
+</div>
+
+
+<div class="grid-x grid-padding-x">     
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="VeicoliModello_Titolo" class="large-text-right small-text-left middle">Titolo</label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+    <input type="text" name="VeicoliModello_Titolo" id="VeicoliModello_Titolo" value="<%=GetFieldValue("VeicoliModello_Titolo")%>" size="30" required="required">
+    <span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="VeicoliTipo_Ky" class="large-text-right small-text-left middle">Tipo di veicolo</label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+    <select name="VeicoliTipo_Ky" id="VeicoliTipo_Ky" value="<%=GetFieldValue("VeicoliTipo_Ky")%>">
+    <!--#include file="/var/cache/VeicoliTipo-options.htm"--> 
+    </select>
+    <script type="text/javascript">
+      selectSet('VeicoliTipo_Ky', '<%=GetFieldValue("VeicoliTipo_Ky")%>');
+    </script>
+	</div>
+</div>
+<div class="grid-x grid-padding-x">     
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="VeicoliCarrozzeria_Ky" class="large-text-right small-text-left middle">Carrozzeria</label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+    <select name="VeicoliCarrozzeria_Ky" id="VeicoliCarrozzeria_Ky" value="<%=GetFieldValue("VeicoliCarrozzeria_Ky")%>">
+    <option value=""></option>
+		<!--#include file="/var/cache/VeicoliCarrozzeria-options.htm"--> 
+    </select>
+    <script type="text/javascript">
+      selectSet('VeicoliCarrozzeria_Ky', '<%=GetFieldValue("VeicoliCarrozzeria_Ky")%>');
+    </script>
+	</div>
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="VeicoliModello_Ordine" class="large-text-right small-text-left middle">Ordine</label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+    <input type="text" name="VeicoliModello_Ordine" id="VeicoliModello_Ordine" value="<%=GetFieldValue("VeicoliModello_Ordine")%>" size="30">
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">     
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="VeicoliModello_Descrizione" class="large-text-right small-text-left middle">Descrizione</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <textarea name="VeicoliModello_Descrizione" id="VeicoliModello_Descrizione" rows="4" class="ckeditor"><%=GetFieldValue("VeicoliModello_Descrizione")%></textarea>
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+
+<fieldset>
+<legend>SEO</legend>
+<div class="grid-x grid-padding-x">     
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="VeicoliModello_UrlKey" class="large-text-right small-text-left middle">Friendly Url</label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+    <input type="text" name="VeicoliModello_UrlKey" id="VeicoliModello_UrlKey" value="<%=GetFieldValue("VeicoliModello_UrlKey")%>" size="30" required="required">
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell text-right">
+		<label class="large-text-right small-text-left middle" for="VeicoliModello_Title">Titolo SEO</label>
+	</div>
+	<div class="large-10 medium-12 small-8 cell">
+    <input type="text" name="VeicoliModello_Title" id="VeicoliModello_Title" title="Titolo SEO" value="<%=GetFieldValue("VeicoliModello_Title")%>" size="200">
+	</div>
+</div>
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-12 cell">
+		<label class="large-text-right small-text-left middle" for="VeicoliModello_Description">Descrizione SEO</label>
+	</div>
+	<div class="large-10 medium-10 small-12 cell">
+    <textarea name="VeicoliModello_Description" id="VeicoliModello_Description" rows="2" cols="110"><%=GetFieldValue("VeicoliModello_Description")%></textarea>
+	</div>
+</div> 
+<div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="VeicoliModello_Robots" class="large-text-right small-text-left middle">Robots SEO<i class="fa-duotone fa-file-lines fa-fw"></i></label>
+	</div>
+	<div class="large-10 medium-10 small-8 cell">
+		<select name="VeicoliModello_Robots" id="VeicoliModello_Robots" value="<%=GetFieldValue("VeicoliModello_Robots")%>">
+      <option value="index,follow">index,follow</option>
+      <option value="noindex,nofollow">noindex,follow</option>
+      <option value="noindex,nofollow">noindex,nofollow</option>
+    </select>
+    <p class="help-text">i noindex non saranno nella sitemap</p>
+    <script type="text/javascript">
+      selectSet('VeicoliModello_Robots', '<%=GetFieldValue("VeicoliModello_Robots")%>');
+    </script>
+	</div>
+</div>
+</fieldset>

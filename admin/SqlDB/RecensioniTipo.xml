@@ -1,0 +1,29 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="RecensioniTipo" Type="TABLE">
+    <Keys>
+      <Key Column="RecensioniTipo_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="RecensioniTipo_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="RecensioniTipo_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="RecensioniTipo_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="RecensioniTipo_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="RecensioniTipo_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="RecensioniTipo_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="RecensioniTipo_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="RecensioniTipo_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[RecensioniTipo] (
+  [RecensioniTipo_Ky] tinyint IDENTITY(1,1) NOT NULL , 
+  [RecensioniTipo_Titolo] varchar(100)  NULL , 
+  [RecensioniTipo_UserInsert] int  NULL , 
+  [RecensioniTipo_UserUpdate] int  NULL , 
+  [RecensioniTipo_UserDelete] int  NULL , 
+  [RecensioniTipo_DateInsert] datetime  NULL , 
+  [RecensioniTipo_DateUpdate] datetime  NULL , 
+  [RecensioniTipo_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[RecensioniTipo] ADD CONSTRAINT PK_RecensioniTipo PRIMARY KEY  ([RecensioniTipo_Ky])
+</SqlScriptCreate>
+</SqlTable>

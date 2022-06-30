@@ -1,0 +1,35 @@
+  <div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AsteVendita_Titolo" class="large-text-right small-text-left middle"><i class="fa-duotone fa-file-lines fa-fw"></i>Titolo</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="AsteVendita_Titolo" id="AsteVendita_Titolo" title="Nome" value="<%=GetFieldValue(dtAsteVendita, "AsteVendita_Titolo")%>" size="150" required="required">
+  	</div>
+  </div>
+  
+	<div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="AsteVendita_Icona" class="large-text-right small-text-left middle"><i class="fa-duotone fa-image fa-fw"></i>Icona</label>
+  	</div>
+  	<div class="large-10 medium-10 small-8 cell">
+      <input type="text" name="AsteVendita_Icona" id="AsteVendita_Icona" title="Nome" value="<%=GetFieldValue(dtAsteVendita, "AsteVendita_Icona")%>" size="150">
+			<span class="help-text">Puoi specificare l'icona prendendo da Font Awesome. <a href="https://fontawesome.com/icons?d=gallery" target="_blank" rel="nofollow">Clicca qui</a> per maggiori informazioni.</span>
+  	</div>
+  </div>
+  
+	<div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-12 cell text-right">
+   		<label class="large-text-right small-text-left middle" for="AsteVendita_Default">Predefinita</label>
+ 	  </div>
+  	<div class="large-10 medium-10 small-12 cell">
+			<select name="AsteVendita_Default" id="AsteVendita_Default" value="<%=GetCheckValue(dtAsteVendita, "AsteVendita_Default")%>">
+	      <option value="True">si</option>
+	      <option value="False">no</option>
+	    </select>
+	    <span class="form-error">Obbligatorio</span>
+	    <script type="text/javascript">
+	      selectSet('AsteVendita_Default', '<%=GetCheckValue(dtAsteVendita, "AsteVendita_Default")%>');
+	    </script>
+  	</div>
+	</div>        
+  

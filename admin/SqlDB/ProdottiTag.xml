@@ -1,0 +1,29 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="ProdottiTag" Type="TABLE">
+    <Keys>
+      <Key Column="ProdottiTag_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="ProdottiTag_Ky" IsNull="N" Type="int" />
+      <Field Column="ProdottiTag_Tag" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="ProdottiTag_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="ProdottiTag_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="ProdottiTag_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="ProdottiTag_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiTag_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="ProdottiTag_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[ProdottiTag] (
+  [ProdottiTag_Ky] int IDENTITY(1,1) NOT NULL , 
+  [ProdottiTag_Tag] varchar(100)  NULL , 
+  [ProdottiTag_UserInsert] int  NULL , 
+  [ProdottiTag_UserUpdate] int  NULL , 
+  [ProdottiTag_UserDelete] int  NULL , 
+  [ProdottiTag_DateInsert] datetime  NULL , 
+  [ProdottiTag_DateUpdate] datetime  NULL , 
+  [ProdottiTag_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[ProdottiTag] ADD CONSTRAINT PK_ProdottiTag PRIMARY KEY  ([ProdottiTag_Ky])
+</SqlScriptCreate>
+</SqlTable>

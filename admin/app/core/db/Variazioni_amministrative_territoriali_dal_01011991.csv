@@ -1,0 +1,2225 @@
+Tipo variazione;Istat vecchio;Denominazione Comune;Istat nuovo;Denominazione Comune associata alla variazione o nuova denominazione
+CD;007064;Saint-Rhémy;007064;Saint-Rhémy-en-Bosses
+CD;035018;Ciano d'Enza;035018;Canossa
+AQ;047021;Uzzano;047012;Pescia
+CD;070071;San Polomatese;070071;San Polo Matese
+CE ;092009;Cagliari;092109;Monserrato
+CS;092109;Monserrato;092009;Cagliari
+CD;095037;Ollastra Simaxis;095037;Ollastra
+AP;002001;Ailoche;096001;
+AP;002005;Andorno Micca;096002;
+AP;002010;Benna;096003;
+AP;002012;Biella;096004;
+AP;002013;Bioglio;096005;
+AP;002018;Borriana;096006;
+AP;002020;Brusnengo;096007;
+AP;002022;Callabiana;096008;
+AP;002023;Camandona;096009;
+AP;002024;Camburzano;096010;
+AP;002026;Campiglia Cervo;096011;
+AP;002027;Candelo;096012;
+AP;002028;Caprile;096013;
+AP;002034;Casapinta;096014;
+AP;002036;Castelletto Cervo;096015;
+AP;002037;Cavaglià;096016;
+AP;002039;Cerreto Castello;096017;
+AP;002040;Cerrione;096018;
+AP;002044;Coggiola;096019;
+AP;002046;Cossato;096020;
+AP;002050;Crevacuore;096021;
+AP;002051;Crosa;096022;
+AP;002053;Curino;096023;
+AP;002055;Donato;096024;
+AP;002056;Dorzano;096025;
+AP;002060;Gaglianico;096026;
+AP;002063;Gifflenga;096027;
+AP;002064;Graglia;096028;
+AP;002069;Lessona;096029;
+AP;002073;Magnano;096030;
+AP;002074;Massazza;096031;
+AP;002075;Masserano;096032;
+AP;002076;Mezzana Mortigliengo;096033;
+AP;002077;Miagliano;096034;
+AP;002080;Mongrando;096035;
+AP;002081;Mosso Santa Maria;096036;
+AP;002083;Mottalciata;096037;
+AP;002084;Muzzano;096038;
+AP;002085;Netro;096039;
+AP;002086;Occhieppo Inferiore;096040;
+AP;002087;Occhieppo Superiore;096041;
+AP;002092;Pettinengo;096042;
+AP;002094;Piatto;096043;
+AP;002095;Piedicavallo;096044;
+AP;002098;Pistolesa;096045;
+AP;002099;Pollone;096046;
+AP;002100;Ponderano;096047;
+AP;002101;Portula;096048;
+AP;002103;Pralungo;096049;
+AP;002105;Pray;096050;
+AP;002106;Quaregna;096051;
+AP;002109;Quittengo;096052;
+AP;002117;Ronco Biellese;096053;
+AP;002119;Roppolo;096054;
+AP;002120;Rosazza;096055;
+AP;002124;Sagliano Micca;096056;
+AP;002125;Sala Biellese;096057;
+AP;002129;Salussola;096058;
+AP;002130;Sandigliano;096059;
+AP;002132;San Paolo Cervo;096060;
+AP;002136;Selve Marcone;096061;
+AP;002138;Soprana;096062;
+AP;002139;Sordevolo;096063;
+AP;002140;Sostegno;096064;
+AP;002141;Strona;096065;
+AP;002143;Tavigliano;096066;
+AP;002144;Ternengo;096067;
+AP;002145;Tollegno;096068;
+AP;002146;Torrazzo;096069;
+AP;002149;Trivero;096070;
+AP;002151;Valdengo;096071;
+AP;002153;Vallanzengo;096072;
+AP;002154;Valle Mosso;096073;
+AP;002155;Valle San Nicolao;096074;
+AP;002157;Veglio;096075;
+AP;002159;Verrone;096076;
+AP;002160;Vigliano Biellese;096077;
+AP;002161;Villa del Bosco;096078;
+AP;002162;Villanova Biellese;096079;
+AP;002165;Viverone;096080;
+AP;002167;Zimone;096081;
+AP;002168;Zubiena;096082;
+AP;002169;Zumaglia;096083;
+AP;003003;Antrona Schieranco;103001;
+AP;003004;Anzola d'Ossola;103002;
+AP;003005;Arizzano;103003;
+AP;003007;Arola;103004;
+AP;003009;Aurano;103005;
+AP;003010;Baceno;103006;
+AP;003011;Bannio Anzino;103007;
+AP;003013;Baveno;103008;
+AP;003014;Bee;103009;
+AP;003015;Belgirate;103010;
+AP;003017;Beura-Cardezza;103011;
+AP;003020;Bognanco;103012;
+AP;003028;Brovello-Carpugnino;103013;
+AP;003029;Calasca-Castiglione;103014;
+AP;003031;Cambiasca;103015;
+AP;003033;Cannero Riviera;103016;
+AP;003034;Cannobio;103017;
+AP;003035;Caprezzo;103018;
+AP;003038;Casale Corte Cerro;103019;
+AP;003046;Cavaglio-Spoccia;103020;
+AP;003048;Ceppo Morelli;103021;
+AP;003050;Cesara;103022;
+AP;003053;Cossogno;103023;
+AP;003054;Craveggia;103024;
+AP;003056;Crevoladossola;103025;
+AP;003057;Crodo;103026;
+AP;003059;Cursolo-Orasso;103027;
+AP;003061;Domodossola;103028;
+AP;003063;Druogno;103029;
+AP;003064;Falmenta;103030;
+AP;003067;Formazza;103031;
+AP;003072;Germagno;103032;
+AP;003074;Ghiffa;103033;
+AP;003075;Gignese;103034;
+AP;003078;Gravellona Toce;103035;
+AP;003080;Gurro;103036;
+AP;003081;Intragna;103037;
+AP;003085;Loreglia;103038;
+AP;003086;Macugnaga;103039;
+AP;003087;Madonna del Sasso;103040;
+AP;003089;Malesco;103041;
+AP;003092;Masera;103042;
+AP;003094;Massiola;103043;
+AP;003096;Mergozzo;103044;
+AP;003099;Miazzina;103045;
+AP;003101;Montecrestese;103046;
+AP;003102;Montescheno;103047;
+AP;003105;Nonio;103048;
+AP;003107;Oggebbio;103049;
+AP;003110;Omegna;103050;
+AP;003111;Ornavasso;103051;
+AP;003113;Pallanzeno;103052;
+AP;003117;Piedimulera;103053;
+AP;003118;Pieve Vergonte;103054;
+AP;003123;Premeno;103055;
+AP;003124;Premia;103056;
+AP;003125;Premosello-Chiovenda;103057;
+AP;003126;Quarna Sopra;103058;
+AP;003127;Quarna Sotto;103059;
+AP;003128;Re;103060;
+AP;003132;San Bernardino Verbano;103061;
+AP;003136;Santa Maria Maggiore;103062;
+AP;003137;Seppiana;103063;
+AP;003142;Stresa;103064;
+AP;003145;Toceno;103065;
+AP;003147;Trarego Viggiona;103066;
+AP;003148;Trasquera;103067;
+AP;003150;Trontano;103068;
+AP;003151;Valstrona;103069;
+AP;003152;Vanzone con San Carlo;103070;
+AP;003155;Varzo;103071;
+AP;003156;Verbania;103072;
+AP;003160;Viganella;103073;
+AP;003161;Vignone;103074;
+AP;003162;Villadossola;103075;
+AP;003163;Villette;103076;
+AP;003165;Vogogna;103077;
+AP;013001;Abbadia Lariana;097001;
+AP;013002;Airuno;097002;
+AP;013008;Annone di Brianza;097003;
+AP;013014;Ballabio;097004;
+AP;013016;Barzago;097005;
+AP;013017;Barzanò;097006;
+AP;013018;Barzio;097007;
+AP;013020;Bellano;097008;
+AP;013027;Bosisio Parini;097009;
+AP;013031;Brivio;097010;
+AP;013033;Bulciago;097011;
+AP;013039;Calco;097012;
+AP;013049;Casargo;097015;
+AP;013051;Casatenovo;097016;
+AP;013054;Cassago Brianza;097017;
+AP;013056;Cassina Valsassina;097018;
+AP;013057;Castello di Brianza;097019;
+AP;013066;Cernusco Lombardone;097020;
+AP;013067;Cesana Brianza;097021;
+AP;013069;Civate;097022;
+AP;013072;Colico;097023;
+AP;013073;Colle Brianza;097024;
+AP;013078;Cortenova;097025;
+AP;013079;Costa Masnaga;097026;
+AP;013080;Crandola Valsassina;097027;
+AP;013081;Cremella;097028;
+AP;013082;Cremeno;097029;
+AP;013086;Dervio;097030;
+AP;013088;Dolzago;097031;
+AP;013091;Dorio;097032;
+AP;013094;Ello;097033;
+AP;013096;Esino Lario;097035;
+AP;013103;Galbiate;097036;
+AP;013104;Garbagnate Monastero;097037;
+AP;013105;Garlate;097038;
+AP;013115;Imbersago;097039;
+AP;013116;Introbio;097040;
+AP;013117;Introzzo;097041;
+AP;013124;Lecco;097042;
+AP;013127;Lierna;097043;
+AP;013132;Lomagna;097044;
+AP;013140;Malgrate;097045;
+AP;013141;Mandello del Lario;097046;
+AP;013142;Margno;097047;
+AP;013146;Merate;097048;
+AP;013149;Missaglia;097049;
+AP;013150;Moggio;097050;
+AP;013151;Molteno;097051;
+AP;013156;Monticello Brianza;097054;
+AP;013158;Morterone;097055;
+AP;013162;Nibionno;097056;
+AP;013164;Oggiono;097057;
+AP;013166;Olgiate Molgora;097058;
+AP;013167;Olginate;097059;
+AP;013168;Oliveto Lario;097060;
+AP;013171;Osnago;097061;
+AP;013173;Paderno d'Adda;097062;
+AP;013174;Pagnona;097063;
+AP;013176;Parlasco;097064;
+AP;013177;Pasturo;097065;
+AP;013180;Perego;097066;
+AP;013181;Perledo;097067;
+AP;013182;Pescate;097068;
+AP;013190;Premana;097069;
+AP;013191;Primaluna;097070;
+AP;013196;Robbiate;097071;
+AP;013198;Rogeno;097072;
+AP;013200;Rovagnate;097073;
+AP;013209;Santa Maria Hoè;097074;
+AP;013213;Sirone;097075;
+AP;013214;Sirtori;097076;
+AP;013219;Sueglio;097077;
+AP;013220;Suello;097078;
+AP;013221;Taceno;097079;
+AP;013224;Tremenico;097081;
+AP;013230;Valgreghentino;097082;
+AP;013231;Valmadrera;097083;
+AP;013235;Varenna;097084;
+AP;013237;Vendrogno;097085;
+AP;013240;Verderio Inferiore;097087;
+AP;013241;Verderio Superiore;097088;
+AP;013243;Vestreno;097089;
+AP;013244;Viganò;097090;
+AP;013247;Montevecchia;097053;
+AP;015001;Abbadia Cerreto;098001;
+AP;015020;Bertonico;098002;
+AP;015025;Boffalora d'Adda;098003;
+AP;015028;Borghetto Lodigiano;098004;
+AP;015029;Borgo San Giovanni;098005;
+AP;015031;Brembio;098006;
+AP;015043;Camairago;098007;
+AP;015052;Casaletto Lodigiano;098008;
+AP;015053;Casalmaiocco;098009;
+AP;015054;Casalpusterlengo;098010;
+AP;015056;Caselle Landi;098011;
+AP;015057;Caselle Lurani;098012;
+AP;015063;Castelnuovo Bocca d'Adda;098013;
+AP;015064;Castiglione d'Adda;098014;
+AP;015065;Castiraga Vidardo;098015;
+AP;015066;Cavacurta;098016;
+AP;015067;Cavenago d'Adda;098017;
+AP;015073;Cervignano d'Adda;098018;
+AP;015079;Codogno;098019;
+AP;015083;Comazzo;098020;
+AP;015089;Cornegliano Laudense;098021;
+AP;015090;Corno Giovine;098022;
+AP;015091;Cornovecchio;098023;
+AP;015094;Corte Palasio;098024;
+AP;015095;Crespiatica;098025;
+AP;015102;Fombio;098026;
+AP;015104;Galgagnano;098027;
+AP;015109;Graffignana;098028;
+AP;015111;Guardamiglio;098029;
+AP;015124;Livraga;098030;
+AP;015126;Lodi;098031;
+AP;015127;Lodi Vecchio;098032;
+AP;015128;Maccastorna;098033;
+AP;015132;Mairago;098034;
+AP;015133;Maleo;098035;
+AP;015135;Marudo;098036;
+AP;015137;Massalengo;098037;
+AP;015141;Meleti;098038;
+AP;015143;Merlino;098039;
+AP;015148;Montanaso Lombardo;098040;
+AP;015153;Mulazzano;098041;
+AP;015160;Orio Litta;098042;
+AP;015162;Ospedaletto Lodigiano;098043;
+AP;015163;Ossago Lodigiano;098044;
+AP;015174;Pieve Fissiraga;098045;
+AP;015190;Salerano sul Lambro;098046;
+AP;015193;San Fiorano;098047;
+AP;015196;San Martino in Strada;098048;
+AP;015197;San Rocco al Porto;098049;
+AP;015198;Sant'Angelo Lodigiano;098050;
+AP;015199;Santo Stefano Lodigiano;098051;
+AP;015203;Secugnago;098052;
+AP;015207;Senna Lodigiana;098053;
+AP;015214;Somaglia;098054;
+AP;015215;Sordio;098055;
+AP;015218;Terranova dei Passerini;098057;
+AP;015225;Turano Lodigiano;098058;
+AP;015228;Valera Fratta;098059;
+AP;015238;Villanova del Sillaro;098060;
+AP;015240;Tavazzano con Villavesco;098056;
+AP;015245;Zelo Buon Persico;098061;
+AP;016045;Calolziocorte;097013;
+AP;016054;Carenno;097014;
+AP;016095;Erve;097034;
+AP;016138;Monte Marenzo;097052;
+AP;016215;Torre de' Busi;097080;
+AP;016231;Vercurago;097086;
+AQ;035006;Brescello;035029;Poviglio
+CE ;035006;Brescello;035029;Poviglio
+AQ;035029;Poviglio;035006;Brescello
+CE ;035029;Poviglio;035006;Brescello
+AP;040002;Bellaria-Igea Marina;099001;
+AP;040006;Cattolica;099002;
+AP;040010;Coriano;099003;
+AP;040017;Gemmano;099004;
+AP;040021;Misano Adriatico;099005;
+AP;040023;Mondaino;099006;
+AP;040024;Monte Colombo;099007;
+AP;040025;Montefiore Conca;099008;
+AP;040026;Montegridolfo;099009;
+AP;040027;Montescudo;099010;
+AP;040029;Morciano di Romagna;099011;
+AP;040030;Poggio Berni;099012;
+AP;040034;Riccione;099013;
+AP;040035;Rimini;099014;
+AP;040038;Saludecio;099015;
+AP;040039;San Clemente;099016;
+AP;040040;San Giovanni in Marignano;099017;
+AP;040042;Santarcangelo di Romagna;099018;
+AP;040048;Torriana;099019;
+AP;040051;Verucchio;099020;
+AP;048007;Cantagallo;100001;
+AP;048009;Carmignano;100002;
+AP;048029;Montemurlo;100003;
+AP;048034;Prato;100005;
+AP;048047;Vaiano;100006;
+AP;048048;Vernio;100007;
+AP;048051;Poggio a Caiano;100004;
+CE ;058091;Roma;058120;Fiumicino
+AQ;058120;Fiumicino;058091;Roma
+CS;058120;Fiumicino;058091;Roma
+CD;062074;Telese;062074;Telese Terme
+AP;079001;Acquaro;102001;
+AP;079006;Arena;102002;
+AP;079010;Belvedere di Spinello;101001;
+AP;079013;Briatico;102003;
+AP;079014;Brognaturo;102004;
+AP;079015;Caccuri;101002;
+AP;079016;Capistrano;102005;
+AP;079019;Carfizzi;101003;
+AP;079021;Casabona;101004;
+AP;079022;Castelsilano;101005;
+AP;079026;Cerenzia;101006;
+AP;079028;Cessaniti;102006;
+AP;079031;Cirò;101007;
+AP;079032;Cirò Marina;101008;
+AP;079035;Cotronei;101009;
+AP;079037;Crotone;101010;
+AP;079038;Crucoli;101011;
+AP;079040;Cutro;101012;
+AP;079041;Dasà;102007;
+AP;079044;Dinami;102008;
+AP;079045;Drapia;102009;
+AP;079046;Fabrizia;102010;
+AP;079049;Filadelfia;102011;
+AP;079050;Filandari;102012;
+AP;079051;Filogaso;102013;
+AP;079053;Francavilla Angitola;102014;
+AP;079054;Francica;102015;
+AP;079057;Gerocarne;102016;
+AP;079062;Ionadi;102017;
+AP;079064;Isola di Capo Rizzuto;101013;
+AP;079066;Joppolo;102018;
+AP;079067;Limbadi;102019;
+AP;079070;Maierato;102020;
+AP;079075;Melissa;101014;
+AP;079076;Mesoraca;101015;
+AP;079078;Mileto;102021;
+AP;079079;Mongiana;102022;
+AP;079082;Monterosso Calabro;102023;
+AP;079084;Nardodipace;102024;
+AP;079086;Nicotera;102025;
+AP;079090;Pallagorio;101016;
+AP;079091;Parghelia;102026;
+AP;079093;Petilia Policastro;101017;
+AP;079097;Pizzo;102027;
+AP;079098;Pizzoni;102028;
+AP;079100;Polia;102029;
+AP;079101;Ricadi;102030;
+AP;079102;Roccabernarda;101018;
+AP;079103;Rocca di Neto;101019;
+AP;079104;Rombiolo;102031;
+AP;079106;San Calogero;102032;
+AP;079107;San Costantino Calabro;102033;
+AP;079109;San Gregorio d'Ippona;102034;
+AP;079111;San Mauro Marchesato;101020;
+AP;079112;San Nicola da Crissa;102035;
+AP;079113;San Nicola dell'Alto;101021;
+AP;079119;Santa Severina;101022;
+AP;079121;Sant'Onofrio;102036;
+AP;079124;Savelli;101023;
+AP;079125;Scandale;101024;
+AP;079128;Serra San Bruno;102037;
+AP;079132;Simbario;102038;
+AP;079135;Sorianello;102039;
+AP;079136;Soriano Calabro;102040;
+AP;079140;Spadola;102041;
+AP;079141;Spilinga;102042;
+AP;079144;Stefanaconi;102043;
+AP;079145;Strongoli;101025;
+AP;079149;Tropea;102044;
+AP;079150;Umbriatico;101026;
+AP;079152;Vallelonga;102045;
+AP;079153;Vazzano;102046;
+AP;079154;Verzino;101027;
+AP;079155;Vibo Valentia;102047;
+AP;079156;Zaccanopoli;102048;
+AP;079158;Zambrone;102049;
+AP;079159;Zungri;102050;
+CE;059004;Castelforte;059026;Santi Cosma e Damiano
+AQ;059026;Santi Cosma e Damiano;059004;Castelforte
+AQ;021035;Gargazzone;021066;Postal
+CE ;021066;Postal;021035;Gargazzone
+CD;022091;Garniga;022091;Garniga Terme
+AQ;028011;Battaglia Terme;028061;Pernumia
+CE ;028061;Pernumia;028011;Battaglia Terme
+CE ;058057;Marino;058121;Boville
+AQ;058121;Boville;058057;Marino
+CS;058121;Boville;058057;Marino
+CE ;073027;Taranto;073029;Statte
+AQ;073029;Statte;073027;Taranto
+CS;073029;Statte;073027;Taranto
+AQ;071030;Margherita di Savoia;072007;Barletta
+CE;072007;Barletta;071057;Trinitapoli
+CE;071057;Trinitapoli;072007;Barletta
+AQ;072007;Barletta;071030;Margherita di Savoia
+AQ;005035;Cerreto d'Asti;005086;Piovà Massaia
+CE ;005086;Piovà Massaia;005035;Cerreto d'Asti
+AQ;006037;Casal Cermelli;006047;Castellazzo Bormida
+CE ;006047;Castellazzo Bormida;006037;Casal Cermelli
+ES;029016;Contarina;029052;Porto Viro
+ES;029020;Donada;029052;Porto Viro
+CS;029052;Porto Viro;029016;Contarina
+AQ;029052;Porto Viro;029020;Donada
+CS;029052;Porto Viro;029020;Donada
+AQ;029052;Porto Viro;029016;Contarina
+CD;005001;Agliano;005001;Agliano Terme
+CE ;015015;Basiglio;015115;Lacchiarella
+AQ;015015;Basiglio;015115;Lacchiarella
+CE ;015115;Lacchiarella;015015;Basiglio
+AQ;015115;Lacchiarella;015015;Basiglio
+AQ;015139;Mediglia;015171;Peschiera Borromeo
+CE ;015139;Mediglia;015171;Peschiera Borromeo
+CE ;015171;Peschiera Borromeo;015139;Mediglia
+AQ;015171;Peschiera Borromeo;015139;Mediglia
+AQ;017127;Ospitaletto;017136;Passirano
+CE ;017136;Passirano;017127;Ospitaletto
+CE ;021056;Naturno;021064;Plaus
+AQ;021064;Plaus;021056;Naturno
+ES;028024;Carrara San Giorgio;028106;Due Carrare
+ES;028025;Carrara Santo Stefano;028106;Due Carrare
+AQ;028106;Due Carrare;028025;Carrara Santo Stefano
+CS;028106;Due Carrare;028024;Carrara San Giorgio
+CS;028106;Due Carrare;028025;Carrara Santo Stefano
+AQ;028106;Due Carrare;028024;Carrara San Giorgio
+AQ;058057;Marino;058121;Boville
+ES;058121;Boville;058057;Marino
+AQ;001206;Prascorsano;001287;Valperga
+CE ;001287;Valperga;001206;Prascorsano
+CE ;022153;Riva del Garda;022191;Tenno
+AQ;022191;Tenno;022153;Riva del Garda
+AQ;023012;Bovolone;023040;Isola della Scala
+AQ;023012;Bovolone;023055;Oppeano
+CE ;023040;Isola della Scala;023012;Bovolone
+CE ;023055;Oppeano;023012;Bovolone
+CE ;028014;Bovolenta;028068;Pontelongo
+AQ;028068;Pontelongo;028014;Bovolenta
+CE ;090017;Buddusò;090090;Padru
+CS;090090;Padru;090017;Buddusò
+AQ;090090;Padru;090017;Buddusò
+CD;090044;Nughedu di San Nicolò;090044;Nughedu San Nicolò
+AQ;012069;Ferrera di Varese;012100;Masciago Primo
+CE ;012100;Masciago Primo;012069;Ferrera di Varese
+CE ;015007;Arconate;015041;Busto Garolfo
+AQ;015007;Arconate;015041;Busto Garolfo
+AQ;015041;Busto Garolfo;015007;Arconate
+CE ;015041;Busto Garolfo;015007;Arconate
+CE ;015010;Arluno;015200;Santo Stefano Ticino
+AQ;015200;Santo Stefano Ticino;015010;Arluno
+AQ;015146;Milano;015209;Sesto San Giovanni
+CE ;015209;Sesto San Giovanni;015146;Milano
+CE ;091013;Bosa;091049;Montresta
+AQ;091049;Montresta;091013;Bosa
+AQ;098029;Guardamiglio;098054;Somaglia
+CE ;098029;Guardamiglio;098054;Somaglia
+AQ;098054;Somaglia;098029;Guardamiglio
+CE ;098054;Somaglia;098029;Guardamiglio
+ES;005043;Colcavagno;005121;Montiglio Monferrato
+ES;005078;Montiglio;005121;Montiglio Monferrato
+ES;005102;Scandeluzza;005121;Montiglio Monferrato
+CS;005121;Montiglio Monferrato;005078;Montiglio
+AQ;005121;Montiglio Monferrato;005043;Colcavagno
+CS;005121;Montiglio Monferrato;005102;Scandeluzza
+AQ;005121;Montiglio Monferrato;005078;Montiglio
+AQ;005121;Montiglio Monferrato;005102;Scandeluzza
+CS;005121;Montiglio Monferrato;005043;Colcavagno
+AQ;015115;Lacchiarella;018150;Siziano
+CE ;015115;Lacchiarella;018150;Siziano
+CE ;018150;Siziano;015115;Lacchiarella
+AQ;018150;Siziano;015115;Lacchiarella
+AQ;040007;Cesena;040015;Gambettola
+CE ;040007;Cesena;040015;Gambettola
+CE ;040015;Gambettola;040007;Cesena
+AQ;040015;Gambettola;040007;Cesena
+CE ;066057;Morino;066092;San Vincenzo Valle Roveto
+AQ;066092;San Vincenzo Valle Roveto;066057;Morino
+CE;025044;Rocca Pietore;022039;Canazei
+AQ;022039;Canazei;025044;Rocca Pietore
+CE ;010043;Pieve Ligure;010060;Sori
+AQ;010060;Sori;010043;Pieve Ligure
+CE ;014005;Ardenno;014029;Forcola
+AQ;014005;Ardenno;014029;Forcola
+CE ;014029;Forcola;014005;Ardenno
+AQ;014029;Forcola;014005;Ardenno
+CE ;022036;Campitello di Fassa;022039;Canazei
+AQ;022039;Canazei;022036;Campitello di Fassa
+AQ;022050;Cavalese;022196;Tesero
+CE ;022050;Cavalese;022196;Tesero
+CE ;022196;Tesero;022050;Cavalese
+AQ;022196;Tesero;022050;Cavalese
+CE ;027042;Venezia;027044;Cavallino-Treporti
+CS;027044;Cavallino-Treporti;027042;Venezia
+AQ;027044;Cavallino-Treporti;027042;Venezia
+CD;071049;Sannicandro Garganico;071049;San Nicandro Garganico
+CD;081003;Calatafimi;081003;Calatafimi-Segesta
+ES;096036;Mosso Santa Maria;096084;Mosso
+ES;096045;Pistolesa;096084;Mosso
+AQ;096084;Mosso;096045;Pistolesa
+AQ;096084;Mosso;096036;Mosso Santa Maria
+CS;096084;Mosso;096045;Pistolesa
+CS;096084;Mosso;096036;Mosso Santa Maria
+AQ;101002;Caccuri;101006;Cerenzia
+CE ;101002;Caccuri;101006;Cerenzia
+CE ;101006;Cerenzia;101002;Caccuri
+AQ;101006;Cerenzia;101002;Caccuri
+AQ;001109;Front;001218;Rivarossa
+CE ;001218;Rivarossa;001109;Front
+AQ;017046;Cazzago San Martino;017166;Rovato
+CE ;017166;Rovato;017046;Cazzago San Martino
+CE;023012;Bovolone;023055;Oppeano
+CE;023012;Bovolone;023040;Isola della Scala
+AQ;023040;Isola della Scala;023012;Bovolone
+AQ;023055;Oppeano;023012;Bovolone
+CE ;073023;Roccaforzata;073027;Taranto
+AQ;073023;Roccaforzata;073027;Taranto
+CE ;073027;Taranto;073023;Roccaforzata
+AQ;073027;Taranto;073023;Roccaforzata
+CE ;015027;Bollate;015250;Baranzate
+CS;015250;Baranzate;015027;Bollate
+AQ;015250;Baranzate;015027;Bollate
+CE ;058047;Guidonia Montecelio;058122;Fonte Nuova
+CE ;058059;Mentana;058122;Fonte Nuova
+CS;058122;Fonte Nuova;058047;Guidonia Montecelio
+CS;058122;Fonte Nuova;058059;Mentana
+AQ;058122;Fonte Nuova;058047;Guidonia Montecelio
+AQ;058122;Fonte Nuova;058059;Mentana
+AQ;015010;Arluno;015204;Sedriano
+CE ;015204;Sedriano;015010;Arluno
+CE ;016039;Brembilla;016196;Sedrina
+AQ;016196;Sedrina;016039;Brembilla
+AQ;016196;Sedrina;016246;Zogno
+CE ;016246;Zogno;016196;Sedrina
+CE ;018053;Copiano;018181;Vistarino
+AQ;018053;Copiano;018181;Vistarino
+AQ;018181;Vistarino;018053;Copiano
+CE ;018181;Vistarino;018053;Copiano
+CD;041035;Monte Grimano;041035;Monte Grimano Terme
+CE;017160;Remedello;017001;Acquafredda
+AQ;017001;Acquafredda;017160;Remedello
+CE;017163;Rodengo Saiano;017040;Castegnato
+AQ;017040;Castegnato;017163;Rodengo Saiano
+ES;013210;Santa Maria Rezzonico;013248;San Siro
+ES;013208;Sant'Abbondio;013248;San Siro
+CS;013248;San Siro;013210;Santa Maria Rezzonico
+AQ;013248;San Siro;013210;Santa Maria Rezzonico
+CS;013248;San Siro;013208;Sant'Abbondio
+AQ;013248;San Siro;013208;Sant'Abbondio
+AQ;015027;Bollate;015250;Baranzate
+ES;015250;Baranzate;015027;Bollate
+CD;021052;Monguelfo;021052;Monguelfo-Tesido
+AQ;093036;Roveredo in Piano;093022;Fontanafredda
+CE;093022;Fontanafredda;093036;Roveredo in Piano
+AQ;071063;Ordona;071036;Orta Nova
+CE;071036;Orta Nova;071063;Ordona
+CE ;015027;Bollate;015250;Baranzate
+CS;015250;Baranzate;015027;Bollate
+AQ;015250;Baranzate;015027;Bollate
+CD;016192;Sant'Omobono Imagna;016192;Sant'Omobono Terme
+CE;030116;Tarcento;030052;Magnano in Riviera
+AQ;030116;Tarcento;030052;Magnano in Riviera
+CE;030052;Magnano in Riviera;030116;Tarcento
+AQ;030052;Magnano in Riviera;030116;Tarcento
+CE;015117;Lazzate;015119;Lentate sul Seveso
+AQ;015119;Lentate sul Seveso;015117;Lazzate
+CE;071036;Orta Nova;071063;Ordona
+AQ;071036;Orta Nova;071063;Ordona
+CE;071063;Ordona;071036;Orta Nova
+AQ;071063;Ordona;071036;Orta Nova
+AQ;098041;Mulazzano;098018;Cervignano d'Adda
+CE;098041;Mulazzano;098018;Cervignano d'Adda
+AQ;098018;Cervignano d'Adda;098041;Mulazzano
+CE;098018;Cervignano d'Adda;098041;Mulazzano
+AQ;037050;Sala Bolognese;037009;Calderara di Reno
+CE;037009;Calderara di Reno;037050;Sala Bolognese
+AQ;037009;Calderara di Reno;037050;Sala Bolognese
+CE;037050;Sala Bolognese;037009;Calderara di Reno
+CE;097021;Cesana Brianza ;097009;Bosisio Parini
+AQ;097009;Bosisio Parini;097021;Cesana Brianza 
+CE;018119;Rea;018162;Travacò Siccomario
+AQ;018162;Travacò Siccomario;018119;Rea
+CE;037051;San Benedetto Val di Sambro;037040;Monghidoro
+AQ;037051;San Benedetto Val di Sambro;037040;Monghidoro
+CE;037040;Monghidoro;037051;San Benedetto Val di Sambro
+AQ;037040;Monghidoro;037051;San Benedetto Val di Sambro
+AQ;075029;Galatina;075075;Sogliano Cavour
+CE;075029;Galatina;075075;Sogliano Cavour
+AQ;075075;Sogliano Cavour;075029;Galatina
+CE;075075;Sogliano Cavour;075029;Galatina
+CE;018023;Bressana Bottarone;018119;Rea
+AQ;018119;Rea;018023;Bressana Bottarone
+CE;015164;Ossona;015134;Marcallo con Casone
+AQ;015134;Marcallo con Casone;015164;Ossona
+CD;022156;Roncegno;022156;Roncegno Terme
+CD;022162;Ruffrè;022162;Ruffrè-Mendola
+AQ;021029;Egna;021053;Montagna
+CE;021053;Montagna;021029;Egna
+CE;018110;Pavia;018135;San Genesio ed Uniti
+AQ;018135;San Genesio ed Uniti;018110;Pavia
+CE;050004;Calcinaia;050029;Pontedera
+CE;045004;Casola in Lunigiana;045007;Fivizzano
+AQ;045007;Fivizzano;045004;Casola in Lunigiana
+AP;090001;Aggius;104001;
+AP;090062;Aglientu;104002;
+AP;090002;Alà dei Sardi;104003;
+AP;090006;Arzachena;104004;
+AP;090009;Berchidda;104006;
+AP;090014;Bortigiadas;104007;
+AP;090017;Buddusò;104008;
+AP;091014;Budoni;104009;
+AP;090021;Calangianus;104010;
+AP;090083;Golfo Aranci;104011;
+AP;090035;La Maddalena;104012;
+AP;090084;Loiri Porto San Paolo;104013;
+AP;090036;Luogosanto;104014;
+AP;090037;Luras;104015;
+AP;090041;Monti;104016;
+AP;090047;Olbia;104017;
+AP;090049;Oschiri;104018;
+AP;090090;Padru;104019;
+AP;090054;Palau;104020;
+AP;090085;Sant'Antonio di Gallura;104021;
+AP;090063;Santa Teresa Gallura;104022;
+AP;091076;San Teodoro;104023;
+AP;090080;Telti;104024;
+AP;090070;Tempio Pausania;104025;
+AP;090074;Trinità d'Agultu e Vignola;104026;
+AP;091002;Arzana;105001;
+AP;091005;Bari Sardo;105002;
+AP;091006;Baunei;105003;
+AP;091103;Cardedu;105004;
+AP;091019;Elini;105005;
+AP;091026;Gairo;105006;
+AP;091031;Girasole;105007;
+AP;091032;Ilbono;105008;
+AP;091035;Jerzu;105009;
+AP;091037;Lanusei;105010;
+AP;091039;Loceri;105011;
+AP;091042;Lotzorai;105012;
+AP;091069;Osini;105013;
+AP;091072;Perdasdefogu;105014;
+AP;091081;Seui;105015;
+AP;091088;Talana;105016;
+AP;091089;Tertenia;105017;
+AP;091095;Tortolì;105018;
+AP;091097;Triei;105019;
+AP;091098;Ulassai;105020;
+AP;091099;Urzulei;105021;
+AP;091100;Ussassai;105022;
+AP;091101;Villagrande Strisaili;105023;
+AP;092001;Arbus;106001;
+AP;092006;Barumini;106002;
+AP;092014;Collinas;106003;
+AP;092022;Furtei;106004;
+AP;092023;Genuri;106005;
+AP;092025;Gesturi;106006;
+AP;092029;Gonnosfanadiga;106007;
+AP;092032;Guspini;106008;
+AP;092034;Las Plassas;106009;
+AP;092035;Lunamatrona;106010;
+AP;092045;Pabillonis;106011;
+AP;092046;Pauli Arbarei;106012;
+AP;092052;Samassi;106013;
+AP;092055;San Gavino Monreale;106014;
+AP;092057;Sanluri;106015;
+AP;092065;Sardara;106016;
+AP;092067;Segariu;106017;
+AP;092072;Serramanna;106018;
+AP;092073;Serrenti;106019;
+AP;092076;Setzu;106020;
+AP;092077;Siddi;106021;
+AP;092086;Tuili;106022;
+AP;092087;Turri;106023;
+AP;092089;Ussaramanna;106024;
+AP;092092;Villacidro;106025;
+AP;092093;Villamar;106026;
+AP;092095;Villanovaforru;106027;
+AP;092096;Villanovafranca;106028;
+AP;092007;Buggerru;107001;
+AP;092010;Calasetta;107002;
+AP;092012;Carbonia;107003;
+AP;092013;Carloforte;107004;
+AP;092019;Domusnovas;107005;
+AP;092021;Fluminimaggiore;107006;
+AP;092026;Giba;107007;
+AP;092028;Gonnesa;107008;
+AP;092033;Iglesias;107009;
+AP;092103;Masainas;107010;
+AP;092040;Musei;107011;
+AP;092041;Narcao;107012;
+AP;092043;Nuxis;107013;
+AP;092047;Perdaxius;107014;
+AP;092107;Piscinas;107015;
+AP;092049;Portoscuso;107016;
+AP;092056;San Giovanni Suergiu;107017;
+AP;092060;Santadi;107018;
+AP;092062;Sant'Anna Arresi;107019;
+AP;092063;Sant'Antioco;107020;
+AP;092085;Tratalias;107021;
+AP;092094;Villamassargia;107022;
+AP;092104;Villaperuccio;107023;
+AP;091020;Escalaplano;092110;
+AP;091013;Bosa;095079;
+AP;091023;Flussio;095080;
+AP;091036;Laconi;095082;
+AP;091045;Magomadas;095083;
+AP;091048;Modolo;095084;
+AP;091075;Sagama;095086;
+AP;091087;Suni;095087;
+AP;091092;Tinnura;095088;
+AP;090081;Badesi;104005;
+AP;091021;Escolca;092111;
+AP;091022;Esterzili;092112;
+AP;091029;Genoni;095081;
+AP;091030;Gergei;092113;
+AP;091034;Isili;092114;
+AP;091049;Montresta;095085;
+AP;091052;Nuragus;092115;
+AP;091053;Nurallao;092116;
+AP;091054;Nurri;092117;
+AP;091065;Orroli;092118;
+AP;091074;Sadali;092119;
+AP;091082;Seulo;092121;
+AP;091080;Serri;092120;
+AP;091102;Villanova Tulo;092122;
+CE;030117;Campolongo al Torre;030115;Tapogliano
+AQ;030115;Tapogliano;030117;Campolongo al Torre
+CE;073023;Roccaforzata;073027;Taranto
+AQ;073023;Roccaforzata;073027;Taranto
+CE;073027;Taranto;073023;Roccaforzata
+AQ;073027;Taranto;073023;Roccaforzata
+CE;016086;Costa Volpino;016128;Lovere
+AQ;016128;Lovere;016086;Costa Volpino
+CE;018011;Bastida Pancarana;018038;Castelletto di Branduzzo
+AQ;018011;Bastida Pancarana;018038;Castelletto di Branduzzo
+CE;018038;Castelletto di Branduzzo;018011;Bastida Pancarana
+AQ;018038;Castelletto di Branduzzo;018011;Bastida Pancarana
+CE;068028;Pescara;068041;Spoltore
+AQ;068041;Spoltore;068028;Pescara
+CE;030011;Bicinicco;030062;Mortegliano
+AQ;030011;Bicinicco;030062;Mortegliano
+CE;030011;Bicinicco;030074;Pavia di Udine
+AQ;030011;Bicinicco;030074;Pavia di Udine
+CE;030062;Mortegliano;030011;Bicinicco
+AQ;030062;Mortegliano;030011;Bicinicco
+CE;030062;Mortegliano;030074;Pavia di Udine
+AQ;030062;Mortegliano;030074;Pavia di Udine
+CE;030074;Pavia di Udine;030011;Bicinicco
+AQ;030074;Pavia di Udine;030011;Bicinicco
+CE;030074;Pavia di Udine;030062;Mortegliano
+AQ;030074;Pavia di Udine;030062;Mortegliano
+AQ;014001;Albaredo per San Marco;014045;Morbegno
+CE;014045;Morbegno;014001;Albaredo per San Marco
+CE;030083;Premariacco;030091;Remanzacco
+AQ;030083;Premariacco;030091;Remanzacco
+CE;030091;Remanzacco;030083;Premariacco
+AQ;030091;Remanzacco;030083;Premariacco
+CE;030031;Coseano;030095;Rive d’Arcano
+AQ;030031;Coseano;030095;Rive d’Arcano
+CE;030095;Rive d’Arcano;030031;Coseano
+AQ;030095;Rive d’Arcano;030031;Coseano
+CE;016093;Endine Gaiano;016204;Sovere
+AQ;016093;Endine Gaiano;016204;Sovere
+CE;016204;Sovere;016093;Endine Gaiano
+AQ;016204;Sovere;016093;Endine Gaiano
+CE;075020;Cavallino;075038;Lizzanello
+AQ;075020;Cavallino;075038;Lizzanello
+CE;075038;Lizzanello;075020;Cavallino
+AQ;075038;Lizzanello;075020;Cavallino
+CE;050029;Pontedera;050004;Calcinaia
+AQ;050004;Calcinaia;050029;Pontedera
+AQ;050029;Pontedera;050004;Calcinaia
+CE;100006;Vaiano;100001;Cantagallo
+CE;023004;Arcole;023098;Zimella
+AQ;023004;Arcole;023098;Zimella
+CE;023098;Zimella;023004;Arcole
+AQ;023098;Zimella;023004;Arcole
+CE;030010;Bertiolo;030048;Lestizza
+AQ;030010;Bertiolo;030048;Lestizza
+CE;030048;Lestizza;030010;Bertiolo
+AQ;030048;Lestizza;030010;Bertiolo
+CD;017092;Lonato;017092;Lonato del Garda
+CE ;047012;Pescia;047021;Uzzano
+AQ;100001;Cantagallo;100006;Vaiano
+CE;006081;Gavi;006009;Arquata Scrivia
+AQ;006009;Arquata Scrivia;006081;Gavi
+CD;021102;Trodena;021102;Trodena nel parco naturale
+CE;018008;Barbianello;018026;Campospinoso
+AQ;018026;Campospinoso;018008;Barbianello
+CE;082054;Partinico;082007;Balestrate
+AQ;082007;Balestrate;082054;Partinico
+CE;082018;Campofiorito;082034;Corleone
+AQ;082034;Corleone;082018;Campofiorito
+AQ;082018;Campofiorito;082034;Corleone
+CE;082034;Corleone;082018;Campofiorito
+CD;022029;Caderzone;022029;Caderzone Terme
+AQ;022074;Denno;022037;Campodenno
+CE;022037;Campodenno;022074;Denno
+CS;030138;Campolongo Tapogliano;030017;Campolongo al Torre
+CS;030138;Campolongo Tapogliano;030115;Tapogliano
+AQ;030138;Campolongo Tapogliano;030017;Campolongo al Torre
+AQ;030138;Campolongo Tapogliano;030115;Tapogliano
+ES;030017;Campolongo al Torre;030138;Campolongo Tapogliano
+ES;030115;Tapogliano;030138;Campolongo Tapogliano
+AQ;093016;Clauzetto;093011;Castelnovo del Friuli
+CE;093011;Castelnovo del Friuli;093016;Clauzetto
+AQ;078030;Castiglione Cosentino;078102;Rende
+CE;078102;Rende;078030;Castiglione Cosentino
+AP;015003;Agrate Brianza;108001;
+AP;015004;Aicurzio;108002;
+AP;015006;Albiate;108003;
+AP;015008;Arcore;108004;
+AP;015013;Barlassina;108005;
+AP;015017;Bellusco;108006;
+AP;015018;Bernareggio;108007;
+AP;015021;Besana in Brianza;108008;
+AP;015023;Biassono;108009;
+AP;015030;Bovisio-Masciago ;108010;
+AP;015033;Briosco;108011;
+AP;015034;Brugherio;108012;
+AP;015037;Burago di Molgora;108013;
+AP;015045;Camparada;108014;
+AP;015048;Carate Brianza;108015;
+AP;015049;Carnate;108016;
+AP;015068;Cavenago di Brianza;108017;
+AP;015069;Ceriano Laghetto;108018;
+AP;015075;Cesano Maderno;108019;
+AP;015080;Cogliate;108020;
+AP;015084;Concorezzo;108021;
+AP;015092;Correzzana;108022;
+AP;015100;Desio;108023;
+AP;015107;Giussano;108024;
+AP;015117;Lazzate ;108025;
+AP;015120;Lesmo;108026;
+AP;015121;Limbiate;108027;
+AP;015123;Lissone;108028;
+AP;015129;Macherio;108029;
+AP;015138;Meda ;108030;
+AP;015145;Mezzago;108031;
+AP;015147;Misinto;108032;
+AP;015149;Monza;108033;
+AP;015152;Muggiò;108034;
+AP;015156;Nova Milanese;108035;
+AP;015161;Ornago;108036;
+AP;015180;Renate;108037;
+AP;015187;Ronco Briantino;108038;
+AP;015208;Seregno;108039;
+AP;015212;Seveso;108040;
+AP;015216;Sovico;108041;
+AP;015217;Sulbiate;108042;
+AP;015223;Triuggio;108043;
+AP;015227;Usmate Velate;108044;
+AP;015231;Varedo;108045;
+AP;015232;Vedano al Lambro;108046;
+AP;015233;Veduggio con Colzano;108047;
+AP;015234;Verano Brianza;108048;
+AP;015239;Villasanta;108049;
+AP;015241;Vimercate;108050;
+AP;044003;Altidona;109001;
+AP;044004;Amandola;109002;
+AP;044008;Belmonte Piceno;109003;
+AP;044009;Campofilone;109004;
+AP;044018;Falerone;109005;
+AP;044019;Fermo;109006;
+AP;044022;Francavilla d'Ete;109007;
+AP;044024;Grottazzolina;109008;
+AP;044025;Lapedona;109009;
+AP;044026;Magliano di Tenna;109010;
+AP;044028;Massa Fermana;109011;
+AP;044030;Monsampietro Morico;109012;
+AP;044033;Montappone;109013;
+AP;044035;Montefalcone Appennino;109014;
+AP;044037;Montefortino;109015;
+AP;044039;Monte Giberto;109016;
+AP;044040;Montegiorgio;109017;
+AP;044041;Montegranaro;109018;
+AP;044042;Monteleone di Fermo;109019;
+AP;044043;Montelparo;109020;
+AP;044046;Monte Rinaldo;109021;
+AP;044047;Monterubbiano;109022;
+AP;044048;Monte San Pietrangeli;109023;
+AP;044049;Monte Urano;109024;
+AP;044050;Monte Vidon Combatte;109025;
+AP;044051;Monte Vidon Corrado;109026;
+AP;044052;Montottone;109027;
+AP;044053;Moresco;109028;
+AP;044055;Ortezzano;109029;
+AP;044057;Pedaso;109030;
+AP;044058;Petritoli;109031;
+AP;044059;Ponzano di Fermo;109032;
+AP;044060;Porto San Giorgio;109033;
+AP;044061;Porto Sant'Elpidio;109034;
+AP;044062;Rapagnano;109035;
+AP;044067;Santa Vittoria in Matenano;109036;
+AP;044068;Sant'Elpidio a Mare;109037;
+AP;044069;Servigliano;109038;
+AP;044070;Smerillo;109039;
+AP;044072;Torre San Patrizio;109040;
+AP;072005;Andria;110001;
+AP;072007;Barletta;110002;
+AP;072009;Bisceglie;110003;
+AP;072013;Canosa di Puglia;110004;
+AP;071030;Margherita di Savoia;110005;
+AP;072026;Minervino Murge;110006;
+AP;071045;San Ferdinando di Puglia;110007;
+AP;072042;Spinazzola;110008;
+AP;072045;Trani;110009;
+AP;071057;Trinitapoli;110010;
+CD;018122;Rivanazzano ;018122;Rivanazzano Terme
+AQ;013048;Carugo;013029;Brenna
+CE;013048;Carugo;013029;Brenna
+AQ;013029;Brenna;013048;Carugo
+CE;013029;Brenna;013048;Carugo
+AP;041011;Casteldelci;099021;
+AP;041024;Maiolo;099022;
+AP;041039;Novafeltria;099023;
+AP;041042;Pennabilli;099024;
+AP;041053;San Leo;099025;
+AP;041055;Sant'Agata Feltria;099026;
+AP;041063;Talamello;099027;
+AP;015039;Busnago;108051;
+AP;015047;Caponago;108052;
+AP;015088;Cornate d'Adda;108053;
+AP;015119;Lentate sul Seveso;108054;
+AP;015186;Roncello;108055;
+CD;031003;Doberdò del Lago;031003;Doberdò del Lago-Doberdob
+CD;031019;San Floriano del Collio;031019;San Floriano del Collio-Števerjan
+CD;031022;Savogna d'Isonzo;031022;Savogna d'Isonzo-Sovodnje ob So?i
+CD;032001;Duino-Aurisina;032001;Duino Aurisina-Devin Nabrežina
+CD;032002;Monrupino;032002;Monrupino-Repentabor
+CD;032005;Sgonico;032005;Sgonico-Zgonik
+CS;022228;Comano Terme;022016;Bleggio Inferiore
+CS;022228;Comano Terme;022107;Lomaso
+AQ;022228;Comano Terme;022016;Bleggio Inferiore
+AQ;022228;Comano Terme;022107;Lomaso
+ES;022016;Bleggio Inferiore;022228;Comano Terme
+ES;022107;Lomaso;022228;Comano Terme
+CS;022229;Ledro;022065;Concei
+CS;022229;Ledro;022014;Bezzecca
+CS;022229;Ledro;022119;Molina di Ledro
+CS;022229;Ledro;022141;Pieve di Ledro
+CS;022229;Ledro;022197;Tiarno di Sopra
+CS;022229;Ledro;022198;Tiarno di Sotto
+AQ;022229;Ledro;022065;Concei
+AQ;022229;Ledro;022014;Bezzecca
+AQ;022229;Ledro;022119;Molina di Ledro
+AQ;022229;Ledro;022141;Pieve di Ledro
+AQ;022229;Ledro;022197;Tiarno di Sopra
+AQ;022229;Ledro;022198;Tiarno di Sotto
+ES;022065;Concei;022229;Ledro
+ES;022014;Bezzecca;022229;Ledro
+ES;022119;Molina di Ledro;022229;Ledro
+ES;022141;Pieve di Ledro;022229;Ledro
+ES;022197;Tiarno di Sopra;022229;Ledro
+ES;022198;Tiarno di Sotto;022229;Ledro
+CE;016024;Bergamo;016150;Orio al Serio
+AQ;016150;Orio al Serio;016024;Bergamo
+CE;042018;Falconara Marittima;042027;Montemarciano
+AQ;042027;Montemarciano;042018;Falconara Marittima
+CE;015185;Rodano;015237;Vignate
+AQ;015237;Vignate;015185;Rodano
+CS;013249;Gravedona ed Uniti;013076;Consiglio di Rumo
+CS;013249;Gravedona ed Uniti;013108;Germasino
+CS;013249;Gravedona ed Uniti;013112;Gravedona
+AQ;013249;Gravedona ed Uniti;013076;Consiglio di Rumo
+AQ;013249;Gravedona ed Uniti;013108;Germasino
+AQ;013249;Gravedona ed Uniti;013112;Gravedona
+ES;013076;Consiglio di Rumo;013249;Gravedona ed Uniti
+ES;013108;Germasino;013249;Gravedona ed Uniti
+ES;013112;Gravedona;013249;Gravedona ed Uniti
+CE;095065;Terralba;095006;Arborea
+AQ;095065;Terralba;095006;Arborea
+CE;095006;Arborea;095065;Terralba
+AQ;095006;Arborea;095065;Terralba
+CE;104009;Budoni;104023;San Teodoro
+AQ;104009;Budoni;104023;San Teodoro
+CE;104023;San Teodoro;104009;Budoni
+AQ;104023;San Teodoro;104009;Budoni
+CE;104009;Budoni;091073;Posada
+AQ;104009;Budoni;091073;Posada
+CE;091073;Posada;104009;Budoni
+AQ;091073;Posada;104009;Budoni
+CE;021058;Nova Levante;021059;Nova Ponente
+AQ;021059;Nova Ponente;021058;Nova Levante
+CE;030070;Palmanova;030135;Visco
+AQ;030135;Visco;030070;Palmanova
+CE;016037;Brembate;016051;Capriate San Gervasio
+AQ;016037;Brembate;016051;Capriate San Gervasio
+CE;016051;Capriate San Gervasio;016037;Brembate
+AQ;016051;Capriate San Gervasio;016037;Brembate
+CE;082070;Termini Imerese;082073;Trabia
+AQ;082070;Termini Imerese;082073;Trabia
+CE;082073;Trabia;082070;Termini Imerese
+AQ;082073;Trabia;082070;Termini Imerese
+CE;082046;Marineo;082040;Godrano
+AQ;082040;Godrano;082046;Marineo
+CE;030101;San Giovanni al Natisone;030024;Chiopris-Viscone
+AQ;030024;Chiopris-Viscone;030101;San Giovanni al Natisone
+CE;075035;Lecce;075079;Squinzano
+AQ;075035;Lecce;075079;Squinzano
+CE;075079;Squinzano;075035;Lecce
+AQ;075079;Squinzano;075035;Lecce
+CE;075035;Lecce;075087;Trepuzzi
+AQ;075035;Lecce;075087;Trepuzzi
+CE;075087;Trepuzzi;075035;Lecce
+AQ;075087;Trepuzzi;075035;Lecce
+CE;030098;Ruda;030134;Villa Vicentina
+AQ;030134;Villa Vicentina;030098;Ruda
+CE;030027;Codroipo;030058;Mereto di Tomba
+AQ;030027;Codroipo;030058;Mereto di Tomba
+CE;030058;Mereto di Tomba;030027;Codroipo
+AQ;030058;Mereto di Tomba;030027;Codroipo
+CE;030058;Mereto di Tomba;030009;Basiliano
+AQ;030009;Basiliano;030058;Mereto di Tomba
+CE;030009;Basiliano;030027;Codroipo
+AQ;030027;Codroipo;030009;Basiliano
+CD;018073;Godiasco;018073;Godiasco Salice Terme
+AQ;022025;Brentonico;022123;Mori
+CE;022123;Mori;022025;Brentonico
+CE;021011;Bressanone;021111;Varna
+AQ;021111;Varna;021011;Bressanone
+CS;064121;Montoro;064061;Montoro Inferiore
+CS;064121;Montoro;064062;Montoro Superiore
+AQ;064121;Montoro;064061;Montoro Inferiore
+AQ;064121;Montoro;064062;Montoro Superiore
+ES;064061;Montoro Inferiore;064121;Montoro
+ES;064062;Montoro Superiore;064121;Montoro
+CE;013036;Cadorago;013102;Fino Mornasco
+AQ;013036;Cadorago;013102;Fino Mornasco
+CE;013102;Fino Mornasco;013036;Cadorago
+AQ;013102;Fino Mornasco;013036;Cadorago
+CD;017189;Tremosine;017189;Tremosine sul Garda
+CE;013245;Villa Guardia;013138;Lurate Caccivio
+AQ;013138;Lurate Caccivio;013245;Villa Guardia
+CS;025070;Quero Vas;025042;Quero
+CS;025070;Quero Vas;025064;Vas
+AQ;025070;Quero Vas;025042;Quero
+AQ;025070;Quero Vas;025064;Vas
+ES;025042;Quero;025070;Quero Vas
+ES;025064;Vas;025070;Quero Vas
+CS;037061;Valsamoggia;037004;Bazzano
+CS;037061;Valsamoggia;037018;Castello di Serravalle
+CS;037061;Valsamoggia;037023;Crespellano
+CS;037061;Valsamoggia;037043;Monteveglio
+CS;037061;Valsamoggia;037058;Savigno
+AQ;037061;Valsamoggia;037004;Bazzano
+AQ;037061;Valsamoggia;037018;Castello di Serravalle
+AQ;037061;Valsamoggia;037023;Crespellano
+AQ;037061;Valsamoggia;037043;Monteveglio
+AQ;037061;Valsamoggia;037058;Savigno
+ES;037004;Bazzano;037061;Valsamoggia
+ES;037018;Castello di Serravalle;037061;Valsamoggia
+ES;037023;Crespellano;037061;Valsamoggia
+ES;037043;Monteveglio;037061;Valsamoggia
+ES;037058;Savigno;037061;Valsamoggia
+CS;030188;Rivignano Teor;030096;Rivignano
+CS;030188;Rivignano Teor;030119;Teor
+AQ;030188;Rivignano Teor;030096;Rivignano
+AQ;030188;Rivignano Teor;030119;Teor
+ES;030096;Rivignano;030188;Rivignano Teor
+ES;030119;Teor;030188;Rivignano Teor
+CS;048052;Figline e Incisa Valdarno;048016;Figline Valdarno
+CS;048052;Figline e Incisa Valdarno;048023;Incisa in Val d'Arno
+AQ;048052;Figline e Incisa Valdarno;048016;Figline Valdarno
+AQ;048052;Figline e Incisa Valdarno;048023;Incisa in Val d'Arno
+ES;048016;Figline Valdarno;048052;Figline e Incisa Valdarno
+ES;048023;Incisa in Val d'Arno;048052;Figline e Incisa Valdarno
+CS;051040;Castelfranco Piandiscò;051009;Castelfranco di Sopra
+CS;051040;Castelfranco Piandiscò;051029;Pian di Scò
+AQ;051040;Castelfranco Piandiscò;051009;Castelfranco di Sopra
+AQ;051040;Castelfranco Piandiscò;051029;Pian di Scò
+ES;051009;Castelfranco di Sopra;051040;Castelfranco Piandiscò
+ES;051029;Pian di Scò;051040;Castelfranco Piandiscò
+CS;042050;Trecastelli;042009;Castel Colonna
+CS;042050;Trecastelli;042028;Monterado
+CS;042050;Trecastelli;042039;Ripe
+AQ;042050;Trecastelli;042009;Castel Colonna
+AQ;042050;Trecastelli;042028;Monterado
+AQ;042050;Trecastelli;042039;Ripe
+ES;042009;Castel Colonna;042050;Trecastelli
+ES;042028;Monterado;042050;Trecastelli
+ES;042039;Ripe;042050;Trecastelli
+CS;046036;Fabbriche di Vergemoli;046012;Fabbriche di Vallico
+CS;046036;Fabbriche di Vergemoli;046032;Vergemoli
+AQ;046036;Fabbriche di Vergemoli;046012;Fabbriche di Vallico
+AQ;046036;Fabbriche di Vergemoli;046032;Vergemoli
+ES;046012;Fabbriche di Vallico;046036;Fabbriche di Vergemoli
+ES;046032;Vergemoli;046036;Fabbriche di Vergemoli
+CS;099028;Poggio Torriana;099012;Poggio Berni
+CS;099028;Poggio Torriana;099019;Torriana
+AQ;099028;Poggio Torriana;099012;Poggio Berni
+AQ;099028;Poggio Torriana;099019;Torriana
+ES;099012;Poggio Berni;099028;Poggio Torriana
+ES;099019;Torriana;099028;Poggio Torriana
+CS;034049;Sissa Trecasali;034034;Sissa
+CS;034049;Sissa Trecasali;034043;Trecasali
+AQ;034049;Sissa Trecasali;034034;Sissa
+AQ;034049;Sissa Trecasali;034043;Trecasali
+ES;034034;Sissa;034049;Sissa Trecasali
+ES;034043;Trecasali;034049;Sissa Trecasali
+CS;038027;Fiscaglia;038026;Migliaro
+CS;038027;Fiscaglia;038015;Migliarino
+CS;038027;Fiscaglia;038013;Massa Fiscaglia
+AQ;038027;Fiscaglia;038026;Migliaro
+AQ;038027;Fiscaglia;038015;Migliarino
+AQ;038027;Fiscaglia;038013;Massa Fiscaglia
+ES;038026;Migliaro;038027;Fiscaglia
+ES;038015;Migliarino;038027;Fiscaglia
+ES;038013;Massa Fiscaglia;038027;Fiscaglia
+CS;048053;Scarperia e San Piero;048042;Scarperia
+CS;048053;Scarperia e San Piero;048040;San Piero a Sieve
+AQ;048053;Scarperia e San Piero;048042;Scarperia
+AQ;048053;Scarperia e San Piero;048040;San Piero a Sieve
+ES;048042;Scarperia;048053;Scarperia e San Piero
+ES;048040;San Piero a Sieve;048053;Scarperia e San Piero
+CS;050040;Casciana Terme Lari;050007;Casciana Terme
+CS;050040;Casciana Terme Lari;050017;Lari
+AQ;050040;Casciana Terme Lari;050007;Casciana Terme
+AQ;050040;Casciana Terme Lari;050017;Lari
+ES;050007;Casciana Terme;050040;Casciana Terme Lari
+ES;050017;Lari;050040;Casciana Terme Lari
+CS;050041;Crespina Lorenzana;050013;Crespina
+CS;050041;Crespina Lorenzana;050018;Lorenzana
+AQ;050041;Crespina Lorenzana;050013;Crespina
+AQ;050041;Crespina Lorenzana;050018;Lorenzana
+ES;050013;Crespina;050041;Crespina Lorenzana
+ES;050018;Lorenzana;050041;Crespina Lorenzana
+CS;051041;Pratovecchio Stia;051032;Pratovecchio
+CS;051041;Pratovecchio Stia;051036;Stia
+AQ;051041;Pratovecchio Stia;051032;Pratovecchio
+AQ;051041;Pratovecchio Stia;051036;Stia
+ES;051032;Pratovecchio;051041;Pratovecchio Stia
+ES;051036;Stia;051041;Pratovecchio Stia
+CS;041068;Vallefoglia;041012;Colbordolo
+CS;041068;Vallefoglia;041056;Sant'Angelo in Lizzola
+AQ;041068;Vallefoglia;041012;Colbordolo
+AQ;041068;Vallefoglia;041056;Sant'Angelo in Lizzola
+ES;041012;Colbordolo;041068;Vallefoglia
+ES;041056;Sant'Angelo in Lizzola;041068;Vallefoglia
+CS;016252;Sant'Omobono Terme;016192;Sant'Omobono Terme
+CS;016252;Sant'Omobono Terme;016228;Valsecca
+AQ;016252;Sant'Omobono Terme;016192;Sant'Omobono Terme
+AQ;016252;Sant'Omobono Terme;016228;Valsecca
+ES;016192;Sant'Omobono Terme;016252;Sant'Omobono Terme
+ES;016228;Valsecca;016252;Sant'Omobono Terme
+CS;016253;Val Brembilla;016039;Brembilla
+CS;016253;Val Brembilla;016112;Gerosa
+AQ;016253;Val Brembilla;016039;Brembilla
+AQ;016253;Val Brembilla;016112;Gerosa
+ES;016039;Brembilla;016253;Val Brembilla
+ES;016112;Gerosa;016253;Val Brembilla
+CS;013250;Bellagio;013019;Bellagio
+CS;013250;Bellagio;013070;Civenna
+AQ;013250;Bellagio;013019;Bellagio
+AQ;013250;Bellagio;013070;Civenna
+ES;013019;Bellagio;013250;Bellagio
+ES;013070;Civenna;013250;Bellagio
+CS;013251;Colverde;013093;Drezzo
+CS;013251;Colverde;013175;Parè
+CS;013251;Colverde;013109;Gironico
+AQ;013251;Colverde;013093;Drezzo
+AQ;013251;Colverde;013175;Parè
+AQ;013251;Colverde;013109;Gironico
+ES;013093;Drezzo;013251;Colverde
+ES;013175;Parè;013251;Colverde
+ES;013109;Gironico;013251;Colverde
+CS;097091;Verderio;097087;Verderio Inferiore
+CS;097091;Verderio;097088;Verderio Superiore
+AQ;097091;Verderio;097087;Verderio Inferiore
+AQ;097091;Verderio;097088;Verderio Superiore
+ES;097087;Verderio Inferiore;097091;Verderio
+ES;097088;Verderio Superiore;097091;Verderio
+CS;018191;Cornale e Bastida;018055;Cornale
+CS;018191;Cornale e Bastida;018010;Bastida de' Dossi
+AQ;018191;Cornale e Bastida;018055;Cornale
+AQ;018191;Cornale e Bastida;018010;Bastida de' Dossi
+ES;018055;Cornale;018191;Cornale e Bastida
+ES;018010;Bastida de' Dossi;018191;Cornale e Bastida
+CS;012142;Maccagno con Pino e Veddasca;012094;Maccagno
+CS;012142;Maccagno con Pino e Veddasca;012112;Pino sulla Sponda del Lago Maggiore
+CS;012142;Maccagno con Pino e Veddasca;012135;Veddasca
+AQ;012142;Maccagno con Pino e Veddasca;012094;Maccagno
+AQ;012142;Maccagno con Pino e Veddasca;012112;Pino sulla Sponda del Lago Maggiore
+AQ;012142;Maccagno con Pino e Veddasca;012135;Veddasca
+ES;012094;Maccagno;012142;Maccagno con Pino e Veddasca
+ES;012112;Pino sulla Sponda del Lago Maggiore;012142;Maccagno con Pino e Veddasca
+ES;012135;Veddasca;012142;Maccagno con Pino e Veddasca
+CS;020071;Borgo Virgilio;020069;Virgilio
+CS;020071;Borgo Virgilio;020005;Borgoforte
+AQ;020071;Borgo Virgilio;020069;Virgilio
+AQ;020071;Borgo Virgilio;020005;Borgoforte
+ES;020069;Virgilio;020071;Borgo Virgilio
+ES;020005;Borgoforte;020071;Borgo Virgilio
+CS;013252;Tremezzina;013125;Lenno
+CS;013252;Tremezzina;013172;Ossuccio
+CS;013252;Tremezzina;013225;Tremezzo
+CS;013252;Tremezzina;013148;Mezzegra
+AQ;013252;Tremezzina;013125;Lenno
+AQ;013252;Tremezzina;013172;Ossuccio
+AQ;013252;Tremezzina;013225;Tremezzo
+AQ;013252;Tremezzina;013148;Mezzegra
+ES;013125;Lenno;013252;Tremezzina
+ES;013172;Ossuccio;013252;Tremezzina
+ES;013225;Tremezzo;013252;Tremezzina
+ES;013148;Mezzegra;013252;Tremezzina
+CE;030031;Coseano;030032;Dignano
+AQ;030031;Coseano;030032;Dignano
+CE;030032;Dignano;030031;Coseano
+AQ;030032;Dignano;030031;Coseano
+CE;030039;Flaibano;030031;Coseano
+AQ;030039;Flaibano;030031;Coseano
+CE;030031;Coseano;030039;Flaibano
+AQ;030031;Coseano;030039;Flaibano
+CE;030039;Flaibano;030032;Dignano
+AQ;030039;Flaibano;030032;Dignano
+CE;030032;Dignano;030039;Flaibano
+AQ;030032;Dignano;030039;Flaibano
+CE;030039;Flaibano;030109;Sedegliano
+AQ;030039;Flaibano;030109;Sedegliano
+CE;030109;Sedegliano;030039;Flaibano
+AQ;030109;Sedegliano;030039;Flaibano
+CE;030031;Coseano;030058;Mereto di Tomba
+AQ;030031;Coseano;030058;Mereto di Tomba
+CE;030058;Mereto di Tomba;030031;Coseano
+AQ;030058;Mereto di Tomba;030031;Coseano
+CD;023014;Brenzone;023014;Brenzone sul Garda
+CS;025071;Longarone;025031;Longarone
+CS;025071;Longarone;025009;Castellavazzo
+AQ;025071;Longarone;025031;Longarone
+AQ;025071;Longarone;025009;Castellavazzo
+ES;025031;Longarone;025071;Longarone
+ES;025009;Castellavazzo;025071;Longarone
+CE;030010;Bertiolo;030048;Lestizza
+AQ;030010;Bertiolo;030048;Lestizza
+CE;030048;Lestizza;030010;Bertiolo
+AQ;030048;Lestizza;030010;Bertiolo
+CE;041013;Fano;041029;Mondolfo
+AQ;041029;Mondolfo;041013;Fano
+CS;022230;Predaia;022067;Coredo
+CS;022230;Predaia;022175;Smarano
+CS;022230;Predaia;022186;Taio
+CS;022230;Predaia;022206;Tres
+CS;022230;Predaia;022214;Vervò
+AQ;022230;Predaia;022067;Coredo
+AQ;022230;Predaia;022175;Smarano
+AQ;022230;Predaia;022186;Taio
+AQ;022230;Predaia;022206;Tres
+AQ;022230;Predaia;022214;Vervò
+ES;022067;Coredo;022230;Predaia
+ES;022175;Smarano;022230;Predaia
+ES;022186;Taio;022230;Predaia
+ES;022206;Tres;022230;Predaia
+ES;022214;Vervò;022230;Predaia
+CS;022231;San Lorenzo Dorsino;022077;Dorsino
+CS;022231;San Lorenzo Dorsino;022166;San Lorenzo in Banale
+AQ;022231;San Lorenzo Dorsino;022077;Dorsino
+AQ;022231;San Lorenzo Dorsino;022166;San Lorenzo in Banale
+ES;022077;Dorsino;022231;San Lorenzo Dorsino
+ES;022166;San Lorenzo in Banale;022231;San Lorenzo Dorsino
+CS;022232;Valdaone;022012;Bersone
+CS;022232;Valdaone;022072;Daone
+CS;022232;Valdaone;022146;Praso
+AQ;022232;Valdaone;022012;Bersone
+AQ;022232;Valdaone;022072;Daone
+AQ;022232;Valdaone;022146;Praso
+ES;022012;Bersone;022232;Valdaone
+ES;022072;Daone;022232;Valdaone
+ES;022146;Praso;022232;Valdaone
+CS;093053;Valvasone Arzene;093003;Arzene
+CS;093053;Valvasone Arzene;093048;Valvasone
+AQ;093053;Valvasone Arzene;093003;Arzene
+AQ;093053;Valvasone Arzene;093048;Valvasone
+ES;093003;Arzene;093053;Valvasone Arzene
+ES;093048;Valvasone;093053;Valvasone Arzene
+CS;046037;Sillano Giuncugnano;046016;Giuncugnano
+CS;046037;Sillano Giuncugnano;046029;Sillano
+AQ;046037;Sillano Giuncugnano;046016;Giuncugnano
+AQ;046037;Sillano Giuncugnano;046029;Sillano
+ES;046016;Giuncugnano;046037;Sillano Giuncugnano
+ES;046029;Sillano;046037;Sillano Giuncugnano
+CD;004051;Castellinaldo;004051;Castellinaldo d'Alba
+CS;097092;La Valletta Brianza;097066;Perego
+CS;097092;La Valletta Brianza;097073;Rovagnate
+AQ;097092;La Valletta Brianza;097066;Perego
+AQ;097092;La Valletta Brianza;097073;Rovagnate
+ES;097066;Perego;097092;La Valletta Brianza
+ES;097073;Rovagnate;097092;La Valletta Brianza
+ES;014042;Menarola;014032;Gordona
+AQ;014032;Gordona;014042;Menarola
+CS;022233;Dimaro Folgarida;022075;Dimaro
+CS;022233;Dimaro Folgarida;022121;Monclassico
+AQ;022233;Dimaro Folgarida;022075;Dimaro
+AQ;022233;Dimaro Folgarida;022121;Monclassico
+ES;022075;Dimaro;022233;Dimaro Folgarida
+ES;022121;Monclassico;022233;Dimaro Folgarida
+CS;022234;Pieve di Bono-Prezzo;022140;Pieve di Bono
+CS;022234;Pieve di Bono-Prezzo;022149;Prezzo
+AQ;022234;Pieve di Bono-Prezzo;022140;Pieve di Bono
+AQ;022234;Pieve di Bono-Prezzo;022149;Prezzo
+ES;022140;Pieve di Bono;022234;Pieve di Bono-Prezzo
+ES;022149;Prezzo;022234;Pieve di Bono-Prezzo
+CS;022235;Altavalle ;022082;Faver
+CS;022235;Altavalle ;022094;Grauno
+CS;022235;Altavalle ;022096;Grumes
+CS;022235;Altavalle ;022208;Valda
+AQ;022235;Altavalle ;022082;Faver
+AQ;022235;Altavalle ;022094;Grauno
+AQ;022235;Altavalle ;022096;Grumes
+AQ;022235;Altavalle ;022208;Valda
+ES;022082;Faver;022235;Altavalle 
+ES;022094;Grauno;022235;Altavalle 
+ES;022096;Grumes;022235;Altavalle 
+ES;022208;Valda;022235;Altavalle 
+CS;022236;Altopiano della Vigolana;022023;Bosentino
+CS;022236;Altopiano della Vigolana;022056;Centa San Nicolò
+CS;022236;Altopiano della Vigolana;022212;Vattaro
+CS;022236;Altopiano della Vigolana;022219;Vigolo Vattaro
+AQ;022236;Altopiano della Vigolana;022023;Bosentino
+AQ;022236;Altopiano della Vigolana;022056;Centa San Nicolò
+AQ;022236;Altopiano della Vigolana;022212;Vattaro
+AQ;022236;Altopiano della Vigolana;022219;Vigolo Vattaro
+ES;022023;Bosentino;022236;Altopiano della Vigolana
+ES;022056;Centa San Nicolò;022236;Altopiano della Vigolana
+ES;022212;Vattaro;022236;Altopiano della Vigolana
+ES;022219;Vigolo Vattaro;022236;Altopiano della Vigolana
+CS;022237;Amblar-Don;022004;Amblar
+CS;022237;Amblar-Don;022076;Don
+AQ;022237;Amblar-Don;022004;Amblar
+AQ;022237;Amblar-Don;022076;Don
+ES;022004;Amblar;022237;Amblar-Don
+ES;022076;Don;022237;Amblar-Don
+CS;022238;Borgo Chiese;022028;Brione
+CS;022238;Borgo Chiese;022057;Cimego
+CS;022238;Borgo Chiese;022066;Condino
+AQ;022238;Borgo Chiese;022028;Brione
+AQ;022238;Borgo Chiese;022057;Cimego
+AQ;022238;Borgo Chiese;022066;Condino
+ES;022028;Brione;022238;Borgo Chiese
+ES;022057;Cimego;022238;Borgo Chiese
+ES;022066;Condino;022238;Borgo Chiese
+CS;022239;Borgo Lares ;022019;Bolbeno
+CS;022239;Borgo Lares ;022227;Zuclo
+AQ;022239;Borgo Lares ;022019;Bolbeno
+AQ;022239;Borgo Lares ;022227;Zuclo
+ES;022019;Bolbeno;022239;Borgo Lares 
+ES;022227;Zuclo;022239;Borgo Lares 
+CS;022240;Castel Ivano;022178;Spera
+CS;022240;Castel Ivano;022185;Strigno
+CS;022240;Castel Ivano;022221;Villa Agnedo
+AQ;022240;Castel Ivano;022178;Spera
+AQ;022240;Castel Ivano;022185;Strigno
+AQ;022240;Castel Ivano;022221;Villa Agnedo
+ES;022178;Spera;022240;Castel Ivano
+ES;022185;Strigno;022240;Castel Ivano
+ES;022221;Villa Agnedo;022240;Castel Ivano
+CS;022241;Cembra Lisignago;022055;Cembra
+CS;022241;Cembra Lisignago;022105;Lisignago
+AQ;022241;Cembra Lisignago;022055;Cembra
+AQ;022241;Cembra Lisignago;022105;Lisignago
+ES;022055;Cembra;022241;Cembra Lisignago
+ES;022105;Lisignago;022241;Cembra Lisignago
+CS;022242;Contà;022069;Cunevo
+CS;022242;Contà;022086;Flavon
+CS;022242;Contà;022194;Terres
+AQ;022242;Contà;022069;Cunevo
+AQ;022242;Contà;022086;Flavon
+AQ;022242;Contà;022194;Terres
+ES;022069;Cunevo;022242;Contà
+ES;022086;Flavon;022242;Contà
+ES;022194;Terres;022242;Contà
+CS;022243;Madruzzo;022031;Calavino
+CS;022243;Madruzzo;022101;Lasino
+AQ;022243;Madruzzo;022031;Calavino
+AQ;022243;Madruzzo;022101;Lasino
+ES;022031;Calavino;022243;Madruzzo
+ES;022101;Lasino;022243;Madruzzo
+CS;022244;Porte di Rendena;022073;Darè
+CS;022244;Porte di Rendena;022220;Vigo Rendena
+CS;022244;Porte di Rendena;022223;Villa Rendena
+AQ;022244;Porte di Rendena;022073;Darè
+AQ;022244;Porte di Rendena;022220;Vigo Rendena
+AQ;022244;Porte di Rendena;022223;Villa Rendena
+ES;022073;Darè;022244;Porte di Rendena
+ES;022220;Vigo Rendena;022244;Porte di Rendena
+ES;022223;Villa Rendena;022244;Porte di Rendena
+CS;022245;Primiero San Martino di Castrozza ;022084;Fiera di Primiero
+CS;022245;Primiero San Martino di Castrozza ;022201;Tonadico
+CS;022245;Primiero San Martino di Castrozza ;022204;Transacqua
+CS;022245;Primiero San Martino di Castrozza ;022174;Siror
+AQ;022245;Primiero San Martino di Castrozza ;022084;Fiera di Primiero
+AQ;022245;Primiero San Martino di Castrozza ;022201;Tonadico
+AQ;022245;Primiero San Martino di Castrozza ;022204;Transacqua
+AQ;022245;Primiero San Martino di Castrozza ;022174;Siror
+ES;022084;Fiera di Primiero;022245;Primiero San Martino di Castrozza 
+ES;022201;Tonadico;022245;Primiero San Martino di Castrozza 
+ES;022204;Transacqua;022245;Primiero San Martino di Castrozza 
+ES;022174;Siror;022245;Primiero San Martino di Castrozza 
+CS;022246;Sella Giudicarie;022020;Bondo
+CS;022246;Sella Giudicarie;022024;Breguzzo
+CS;022246;Sella Giudicarie;022100;Lardaro
+CS;022246;Sella Giudicarie;022158;Roncone
+AQ;022246;Sella Giudicarie;022020;Bondo
+AQ;022246;Sella Giudicarie;022024;Breguzzo
+AQ;022246;Sella Giudicarie;022100;Lardaro
+AQ;022246;Sella Giudicarie;022158;Roncone
+ES;022020;Bondo;022246;Sella Giudicarie
+ES;022024;Breguzzo;022246;Sella Giudicarie
+ES;022100;Lardaro;022246;Sella Giudicarie
+ES;022158;Roncone;022246;Sella Giudicarie
+CS;022247;Tre Ville;022148;Preore
+CS;022247;Tre Ville;022151;Ragoli
+CS;022247;Tre Ville;022122;Montagne
+AQ;022247;Tre Ville;022148;Preore
+AQ;022247;Tre Ville;022151;Ragoli
+AQ;022247;Tre Ville;022122;Montagne
+ES;022148;Preore;022247;Tre Ville
+ES;022151;Ragoli;022247;Tre Ville
+ES;022122;Montagne;022247;Tre Ville
+CS;022248;Vallelaghi;022132;Padergnone
+CS;022248;Vallelaghi;022192;Terlago
+CS;022248;Vallelaghi;022215;Vezzano
+AQ;022248;Vallelaghi;022132;Padergnone
+AQ;022248;Vallelaghi;022192;Terlago
+AQ;022248;Vallelaghi;022215;Vezzano
+ES;022132;Padergnone;022248;Vallelaghi
+ES;022192;Terlago;022248;Vallelaghi
+ES;022215;Vezzano;022248;Vallelaghi
+CS;022249;Ville d’Anaunia;022125;Nanno
+CS;022249;Ville d’Anaunia;022187;Tassullo
+CS;022249;Ville d’Anaunia;022207;Tuenno
+AQ;022249;Ville d’Anaunia;022125;Nanno
+AQ;022249;Ville d’Anaunia;022187;Tassullo
+AQ;022249;Ville d’Anaunia;022207;Tuenno
+ES;022125;Nanno;022249;Ville d’Anaunia
+ES;022187;Tassullo;022249;Ville d’Anaunia
+ES;022207;Tuenno;022249;Ville d’Anaunia
+CS;035046;Ventasso;035007;Busana
+CS;035046;Ventasso;035019;Collagna
+CS;035046;Ventasso;035025;Ligonchio
+CS;035046;Ventasso;035031;Ramiseto
+AQ;035046;Ventasso;035007;Busana
+AQ;035046;Ventasso;035019;Collagna
+AQ;035046;Ventasso;035025;Ligonchio
+AQ;035046;Ventasso;035031;Ramiseto
+ES;035007;Busana;035046;Ventasso
+ES;035019;Collagna;035046;Ventasso
+ES;035025;Ligonchio;035046;Ventasso
+ES;035031;Ramiseto;035046;Ventasso
+CS;037062;Alto Reno Terme;037029;Granaglione
+CS;037062;Alto Reno Terme;037049;Porretta Terme
+AQ;037062;Alto Reno Terme;037029;Granaglione
+AQ;037062;Alto Reno Terme;037049;Porretta Terme
+ES;037029;Granaglione;037062;Alto Reno Terme
+ES;037049;Porretta Terme;037062;Alto Reno Terme
+CS;034050;Polesine Zibello;034029;Polesine Parmense
+CS;034050;Polesine Zibello;034048;Zibello
+AQ;034050;Polesine Zibello;034029;Polesine Parmense
+AQ;034050;Polesine Zibello;034048;Zibello
+ES;034029;Polesine Parmense;034050;Polesine Zibello
+ES;034048;Zibello;034050;Polesine Zibello
+CS;099029;Montescudo-Montecolombo;099007;Monte Colombo
+CS;099029;Montescudo-Montecolombo;099010;Montescudo
+AQ;099029;Montescudo-Montecolombo;099007;Monte Colombo
+AQ;099029;Montescudo-Montecolombo;099010;Montescudo
+ES;099007;Monte Colombo;099029;Montescudo-Montecolombo
+ES;099010;Montescudo;099029;Montescudo-Montecolombo
+CS;103078;Borgomezzavalle;103063;Seppiana
+CS;103078;Borgomezzavalle;103073;Viganella
+AQ;103078;Borgomezzavalle;103063;Seppiana
+AQ;103078;Borgomezzavalle;103073;Viganella
+ES;103063;Seppiana;103078;Borgomezzavalle
+ES;103073;Viganella;103078;Borgomezzavalle
+CS;096085;Lessona;096022;Crosa
+CS;096085;Lessona;096029;Lessona
+AQ;096085;Lessona;096022;Crosa
+AQ;096085;Lessona;096029;Lessona
+ES;096022;Crosa;096085;Lessona
+ES;096029;Lessona;096085;Lessona
+CS;096086;Campiglia Cervo;096011;Campiglia Cervo
+CS;096086;Campiglia Cervo;096052;Quittengo
+CS;096086;Campiglia Cervo;096060;San Paolo Cervo
+AQ;096086;Campiglia Cervo;096011;Campiglia Cervo
+AQ;096086;Campiglia Cervo;096052;Quittengo
+AQ;096086;Campiglia Cervo;096060;San Paolo Cervo
+ES;096011;Campiglia Cervo;096086;Campiglia Cervo
+ES;096052;Quittengo;096086;Campiglia Cervo
+ES;096060;San Paolo Cervo;096086;Campiglia Cervo
+CS;018192;Corteolona e Genzone;018056;Corteolona
+CS;018192;Corteolona e Genzone;018070;Genzone
+AQ;018192;Corteolona e Genzone;018056;Corteolona
+AQ;018192;Corteolona e Genzone;018070;Genzone
+ES;018056;Corteolona;018192;Corteolona e Genzone
+ES;018070;Genzone;018192;Corteolona e Genzone
+CS;025072;Alpago;025020;Farra d'Alpago
+CS;025072;Alpago;025038;Pieve d'Alpago
+CS;025072;Alpago;025041;Puos d'Alpago
+AQ;025072;Alpago;025020;Farra d'Alpago
+AQ;025072;Alpago;025038;Pieve d'Alpago
+AQ;025072;Alpago;025041;Puos d'Alpago
+ES;025020;Farra d'Alpago;025072;Alpago
+ES;025038;Pieve d'Alpago;025072;Alpago
+ES;025041;Puos d'Alpago;025072;Alpago
+CS;025073;Val di Zoldo;025024;Forno di Zoldo
+CS;025073;Val di Zoldo;025068;Zoldo Alto
+AQ;025073;Val di Zoldo;025024;Forno di Zoldo
+AQ;025073;Val di Zoldo;025068;Zoldo Alto
+ES;025024;Forno di Zoldo;025073;Val di Zoldo
+ES;025068;Zoldo Alto;025073;Val di Zoldo
+ES;017154;Prestine;017018;Bienno
+AQ;017018;Bienno;017154;Prestine
+CD;065025;Capaccio;065025;Capaccio Paestum
+AQ;022240;Castel Ivano;022099;Ivano-Fracena
+ES;022099;Ivano-Fracena;022240;Castel Ivano
+CD;023030;Costermano;023030;Costermano sul Garda
+AP;104001;Aggius;090001;
+AP;104003;Alà dei Sardi;090002;
+AP;104004;Arzachena;090006;
+AP;104006;Berchidda;090009;
+AP;104007;Bortigiadas;090014;
+AP;104008;Buddusò;090017;
+AP;104010;Calangianus;090021;
+AP;104012;La Maddalena;090035;
+AP;104014;Luogosanto;090036;
+AP;104015;Luras;090037;
+AP;104016;Monti;090041;
+AP;104017;Olbia;090047;
+AP;104018;Oschiri;090049;
+AP;104020;Palau;090054;
+AP;104002;Aglientu;090062;
+AP;104022;Santa Teresa Gallura;090063;
+AP;104025;Tempio Pausania;090070;
+AP;104026;Trinità d'Agultu e Vignola;090074;
+AP;104024;Teltì;090080;
+AP;104005;Badesi;090081;
+AP;104011;Golfo Aranci;090083;
+AP;104013;Loiri Porto San Paolo;090084;
+AP;104021;Sant'Antonio di Gallura;090085;
+AP;104019;Padru;090090;
+AP;104009;Budoni;090091;
+AP;104023;San Teodoro;090092;
+AP;105001;Arzana;091002;
+AP;105002;Bari Sardo;091005;
+AP;105003;Baunei;091006;
+AP;105005;Elini;091019;
+AP;105006;Gairo;091026;
+AP;105007;Girasole;091031;
+AP;105008;Ilbono;091032;
+AP;105009;Jerzu;091035;
+AP;105010;Lanusei;091037;
+AP;105011;Loceri;091039;
+AP;105012;Lotzorai;091042;
+AP;105013;Osini;091069;
+AP;105014;Perdasdefogu;091072;
+AP;105016;Talana;091088;
+AP;105017;Tertenia;091089;
+AP;105018;Tortolì;091095;
+AP;105019;Triei;091097;
+AP;105020;Ulassai;091098;
+AP;105021;Urzulei;091099;
+AP;105022;Ussassai;091100;
+AP;105023;Villagrande Strisaili;091101;
+AP;105004;Cardedu;091103;
+AP;106001;Arbus;111001;
+AP;092002;Armungia;111002;
+AP;092004;Ballao;111003;
+AP;092005;Barrali;111004;
+AP;106002;Barumini;111005;
+AP;107001;Buggerru;111006;
+AP;092008;Burcei;111007;
+AP;107002;Calasetta;111008;
+AP;107003;Carbonia;111009;
+AP;107004;Carloforte;111010;
+AP;092106;Castiadas;111011;
+AP;106003;Collinas;111012;
+AP;092016;Decimoputzu;111013;
+AP;092017;Dolianova;111014;
+AP;092018;Domus de Maria;111015;
+AP;107005;Domusnovas;111016;
+AP;092020;Donori;111017;
+AP;092110;Escalaplano;111018;
+AP;092111;Escolca;111019;
+AP;092112;Esterzili;111020;
+AP;107006;Fluminimaggiore;111021;
+AP;106004;Furtei;111022;
+AP;095081;Genoni;111023;
+AP;106005;Genuri;111024;
+AP;092113;Gergei;111025;
+AP;092024;Gesico;111026;
+AP;106006;Gesturi;111027;
+AP;107007;Giba;111028;
+AP;092027;Goni;111029;
+AP;107008;Gonnesa;111030;
+AP;106007;Gonnosfanadiga;111031;
+AP;092030;Guamaggiore;111032;
+AP;092031;Guasila;111033;
+AP;106008;Guspini;111034;
+AP;107009;Iglesias;111035;
+AP;092114;Isili;111036;
+AP;106009;Las Plassas;111037;
+AP;106010;Lunamatrona;111038;
+AP;092036;Mandas;111039;
+AP;107010;Masainas;111040;
+AP;092038;Monastir;111041;
+AP;092039;Muravera;111042;
+AP;107011;Musei;111043;
+AP;107012;Narcao;111044;
+AP;092115;Nuragus;111045;
+AP;092116;Nurallao;111046;
+AP;092042;Nuraminis;111047;
+AP;092117;Nurri;111048;
+AP;107013;Nuxis;111049;
+AP;092118;Orroli;111050;
+AP;092044;Ortacesus;111051;
+AP;106011;Pabillonis;111052;
+AP;106012;Pauli Arbarei;111053;
+AP;107014;Perdaxius;111054;
+AP;092048;Pimentel;111055;
+AP;107015;Piscinas;111056;
+AP;107016;Portoscuso;111057;
+AP;092119;Sadali;111058;
+AP;106013;Samassi;111059;
+AP;092053;Samatzai;111060;
+AP;092054;San Basilio;111061;
+AP;106014;San Gavino Monreale;111062;
+AP;107017;San Giovanni Suergiu;111063;
+AP;092058;San Nicolò Gerrei;111064;
+AP;092059;San Sperate;111065;
+AP;092064;San Vito;111066;
+AP;106015;Sanluri;111067;
+AP;107018;Santadi;111068;
+AP;092061;Sant'Andrea Frius;111069;
+AP;107019;Sant'Anna Arresi;111070;
+AP;107020;Sant'Antioco;111071;
+AP;106016;Sardara;111072;
+AP;106017;Segariu;111073;
+AP;092069;Selegas;111074;
+AP;092070;Senorbì;111075;
+AP;092071;Serdiana;111076;
+AP;106018;Serramanna;111077;
+AP;106019;Serrenti;111078;
+AP;092120;Serri;111079;
+AP;106020;Setzu;111080;
+AP;105015;Seui;111081;
+AP;092121;Seulo;111082;
+AP;106021;Siddi;111083;
+AP;092078;Siliqua;111084;
+AP;092079;Silius;111085;
+AP;092081;Siurgus Donigala;111086;
+AP;092082;Soleminis;111087;
+AP;092083;Suelli;111088;
+AP;092084;Teulada;111089;
+AP;107021;Tratalias;111090;
+AP;106022;Tuili;111091;
+AP;106023;Turri;111092;
+AP;092088;Ussana;111093;
+AP;106024;Ussaramanna;111094;
+AP;092091;Vallermosa;111095;
+AP;106025;Villacidro;111096;
+AP;106026;Villamar;111097;
+AP;107022;Villamassargia;111098;
+AP;092122;Villanova Tulo;111099;
+AP;106027;Villanovaforru;111100;
+AP;106028;Villanovafranca;111101;
+AP;107023;Villaperuccio;111102;
+AP;092097;Villaputzu;111103;
+AP;092098;Villasalto;111104;
+AP;092100;Villasimius;111105;
+AP;092101;Villasor;111106;
+AP;092102;Villaspeciosa;111107;
+AQ;082045;Lercara Friddi;082078;Vicari
+CE;082078;Vicari;082045;Lercara Friddi
+AQ;043017;Fiastra;043001;Acquacanina
+ES;043001;Acquacanina;043017;Fiastra
+CS;047023;Abetone Cutigliano;047001;Abetone
+CS;047023;Abetone Cutigliano;047004;Cutigliano
+AQ;047023;Abetone Cutigliano;047001;Abetone
+AQ;047023;Abetone Cutigliano;047004;Cutigliano
+ES;047001;Abetone;047023;Abetone Cutigliano
+ES;047004;Cutigliano;047023;Abetone Cutigliano
+CS;047024;San Marcello Piteglio;047015;Piteglio
+CS;047024;San Marcello Piteglio;047019;San Marcello Pistoiese
+AQ;047024;San Marcello Piteglio;047015;Piteglio
+AQ;047024;San Marcello Piteglio;047019;San Marcello Pistoiese
+ES;047015;Piteglio;047024;San Marcello Piteglio
+ES;047019;San Marcello Pistoiese;047024;San Marcello Piteglio
+CS;052037;Montalcino;052014;Montalcino
+CS;052037;Montalcino;052029;San Giovanni d'Asso
+AQ;052037;Montalcino;052014;Montalcino
+AQ;052037;Montalcino;052029;San Giovanni d'Asso
+ES;052014;Montalcino;052037;Montalcino
+ES;052029;San Giovanni d'Asso;052037;Montalcino
+CS;041069;Colli al Metauro;041037;Montemaggiore al Metauro
+CS;041069;Colli al Metauro;041050;Saltara
+CS;041069;Colli al Metauro;041062;Serrungarina
+AQ;041069;Colli al Metauro;041037;Montemaggiore al Metauro
+AQ;041069;Colli al Metauro;041050;Saltara
+AQ;041069;Colli al Metauro;041062;Serrungarina
+ES;041037;Montemaggiore al Metauro;041069;Colli al Metauro
+ES;041050;Saltara;041069;Colli al Metauro
+ES;041062;Serrungarina;041069;Colli al Metauro
+CS;041070;Terre Roveresche;041004;Barchi
+CS;041070;Terre Roveresche;041040;Orciano di Pesaro
+CS;041070;Terre Roveresche;041046;Piagge
+CS;041070;Terre Roveresche;041052;San Giorgio di Pesaro
+AQ;041070;Terre Roveresche;041004;Barchi
+AQ;041070;Terre Roveresche;041040;Orciano di Pesaro
+AQ;041070;Terre Roveresche;041046;Piagge
+AQ;041070;Terre Roveresche;041052;San Giorgio di Pesaro
+ES;041004;Barchi;041070;Terre Roveresche
+ES;041040;Orciano di Pesaro;041070;Terre Roveresche
+ES;041046;Piagge;041070;Terre Roveresche
+ES;041052;San Giorgio di Pesaro;041070;Terre Roveresche
+CS;038028;Terre del Reno;038016;Mirabello
+CS;038028;Terre del Reno;038021;Sant'Agostino
+AQ;038028;Terre del Reno;038016;Mirabello
+AQ;038028;Terre del Reno;038021;Sant'Agostino
+ES;038016;Mirabello;038028;Terre del Reno
+ES;038021;Sant'Agostino;038028;Terre del Reno
+AQ;096042;Pettinengo;096061;Selve Marcone
+ES;096061;Selve Marcone;096042;Pettinengo
+CS;013253;Alta Valle Intelvi;013194;Ramponio Verna
+CS;013253;Alta Valle Intelvi;013179;Pellio Intelvi
+CS;013253;Alta Valle Intelvi;013122;Lanzo d'Intelvi
+AQ;013253;Alta Valle Intelvi;013194;Ramponio Verna
+AQ;013253;Alta Valle Intelvi;013179;Pellio Intelvi
+AQ;013253;Alta Valle Intelvi;013122;Lanzo d'Intelvi
+ES;013194;Ramponio Verna;013253;Alta Valle Intelvi
+ES;013179;Pellio Intelvi;013253;Alta Valle Intelvi
+ES;013122;Lanzo d'Intelvi;013253;Alta Valle Intelvi
+ES;013061;Cavallasca;013206;San Fermo della Battaglia
+AQ;013206;San Fermo della Battaglia;013061;Cavallasca
+CS;043058;Valfornace;043037;Pievebovigliana
+CS;043058;Valfornace;043018;Fiordimonte
+AQ;043058;Valfornace;043037;Pievebovigliana
+AQ;043058;Valfornace;043018;Fiordimonte
+ES;043037;Pievebovigliana;043058;Valfornace
+ES;043018;Fiordimonte;043058;Valfornace
+CS;024123;Val Liona;024045;Grancona
+CS;024123;Val Liona;024092;San Germano dei Berici
+AQ;024123;Val Liona;024045;Grancona
+AQ;024123;Val Liona;024092;San Germano dei Berici
+ES;024045;Grancona;024123;Val Liona
+ES;024092;San Germano dei Berici;024123;Val Liona
+AQ;020061;Sermide;020023;Felonica
+ES;020023;Felonica;020061;Sermide e Felonica
+CD;020061;Sermide;020061;Sermide e Felonica
+CE;015009;Arese;015027;Bollate
+AQ;015027;Bollate;015009;Arese
+CE;015027;Bollate;015009;Arese
+AQ;015009;Arese;015027;Bollate
+AQ;021114;Villandro/Villanders;021022;Chiusa/Klausen
+CE;021114;Villandro/Villanders;021022;Chiusa/Klausen
+AQ;021022;Chiusa/Klausen;021114;Villandro/Villanders
+CE;021022;Chiusa/Klausen;021114;Villandro/Villanders
+CD;022176;Soraga;022176;Soraga di Fassa
+CD;006076;Fubine;006076;Fubine Monferrato
+CD;011020;Ortonovo;011020;Luni
+CS;001316;Mappano;001063;Caselle Torinese
+CS;001316;Mappano;001028;Borgaro Torinese
+CS;001316;Mappano;001265;Settimo Torinese
+CS;001316;Mappano;001130;Leini
+AQ;001316;Mappano;001063;Caselle Torinese
+AQ;001316;Mappano;001028;Borgaro Torinese
+AQ;001316;Mappano;001265;Settimo Torinese
+AQ;001316;Mappano;001130;Leini
+CE;001063;Caselle Torinese;001316;Mappano
+CE;001028;Borgaro Torinese;001316;Mappano
+CE;001265;Settimo Torinese;001316;Mappano
+CE;001130;Leini;001316;Mappano
+CS;078156;Casali del Manco;078028;Casole Bruzio
+CS;078156;Casali del Manco;078095;Pedace
+CS;078156;Casali del Manco;078141;Serra Pedace
+CS;078156;Casali del Manco;078144;Spezzano Piccolo
+CS;078156;Casali del Manco;078151;Trenta
+AQ;078156;Casali del Manco;078028;Casole Bruzio
+AQ;078156;Casali del Manco;078095;Pedace
+AQ;078156;Casali del Manco;078141;Serra Pedace
+AQ;078156;Casali del Manco;078144;Spezzano Piccolo
+AQ;078156;Casali del Manco;078151;Trenta
+ES;078028;Casole Bruzio;078156;Casali del Manco
+ES;078095;Pedace;078156;Casali del Manco
+ES;078141;Serra Pedace;078156;Casali del Manco
+ES;078144;Spezzano Piccolo;078156;Casali del Manco
+ES;078151;Trenta;078156;Casali del Manco
+AQ;079095;Petronà;079009;Belcastro
+CE;079009;Belcastro;079095;Petronà
+AQ;095067;Tresnuraghes;095083;Magomadas
+CE;095067;Tresnuraghes;095083;Magomadas
+AQ;095083;Magomadas;095067;Tresnuraghes
+CE;095083;Magomadas;095067;Tresnuraghes
+AP;025052;Sappada;030189;
+CS;002170;Alto Sermenza;002111;Rima San Giuseppe
+CS;002170;Alto Sermenza;002112;Rimasco
+AQ;002170;Alto Sermenza;002111;Rima San Giuseppe
+AQ;002170;Alto Sermenza;002112;Rimasco
+ES;002111;Rima San Giuseppe;002170;Alto Sermenza
+ES;002112;Rimasco;002170;Alto Sermenza
+CS;002171;Cellio con Breia;002019;Breia
+CS;002171;Cellio con Breia;002038;Cellio
+AQ;002171;Cellio con Breia;002019;Breia
+AQ;002171;Cellio con Breia;002038;Cellio
+ES;002019;Breia;002171;Cellio con Breia
+ES;002038;Cellio;002171;Cellio con Breia
+CS;006191;Cassano Spinola;006042;Cassano Spinola
+CS;006191;Cassano Spinola;006080;Gavazzana
+AQ;006191;Cassano Spinola;006042;Cassano Spinola
+AQ;006191;Cassano Spinola;006080;Gavazzana
+ES;006042;Cassano Spinola;006191;Cassano Spinola
+ES;006080;Gavazzana;006191;Cassano Spinola
+CS;006192;Alluvioni Piovera;006006;Alluvioni Cambiò
+CS;006192;Alluvioni Piovera;006130;Piovera
+AQ;006192;Alluvioni Piovera;006006;Alluvioni Cambiò
+AQ;006192;Alluvioni Piovera;006130;Piovera
+ES;006006;Alluvioni Cambiò;006192;Alluvioni Piovera
+ES;006130;Piovera;006192;Alluvioni Piovera
+AQ;002156;Varallo;002123;Sabbia
+ES;002123;Sabbia;002156;Varallo
+CS;013254;Centro Valle Intelvi;013050;Casasco d'Intelvi
+CS;013254;Centro Valle Intelvi;013060;Castiglione d'Intelvi
+CS;013254;Centro Valle Intelvi;013205;San Fedele Intelvi
+AQ;013254;Centro Valle Intelvi;013050;Casasco d'Intelvi
+AQ;013254;Centro Valle Intelvi;013060;Castiglione d'Intelvi
+AQ;013254;Centro Valle Intelvi;013205;San Fedele Intelvi
+ES;013050;Casasco d'Intelvi;013254;Centro Valle Intelvi
+ES;013060;Castiglione d'Intelvi;013254;Centro Valle Intelvi
+ES;013205;San Fedele Intelvi;013254;Centro Valle Intelvi
+CS;097093;Valvarrone;097041;Introzzo
+CS;097093;Valvarrone;097081;Tremenico
+CS;097093;Valvarrone;097089;Vestreno
+AQ;097093;Valvarrone;097041;Introzzo
+AQ;097093;Valvarrone;097089;Vestreno
+AQ;097093;Valvarrone;097081;Tremenico
+ES;097041;Introzzo;097093;Valvarrone
+ES;097089;Vestreno;097093;Valvarrone
+ES;097081;Tremenico;097093;Valvarrone
+CS;020072;Borgo Mantovano;020040;Pieve di Coriano
+CS;020072;Borgo Mantovano;020049;Revere
+CS;020072;Borgo Mantovano;020067;Villa Poma
+AQ;020072;Borgo Mantovano;020040;Pieve di Coriano
+AQ;020072;Borgo Mantovano;020049;Revere
+AQ;020072;Borgo Mantovano;020067;Villa Poma
+ES;020040;Pieve di Coriano;020072;Borgo Mantovano
+ES;020049;Revere;020072;Borgo Mantovano
+ES;020067;Villa Poma;020072;Borgo Mantovano
+CS;098062;Castelgerundo;098016;Cavacurta
+CS;098062;Castelgerundo;098007;Camairago
+AQ;098062;Castelgerundo;098016;Cavacurta
+AQ;098062;Castelgerundo;098007;Camairago
+ES;098016;Cavacurta;098062;Castelgerundo
+ES;098007;Camairago;098062;Castelgerundo
+CS;022250;Sèn Jan di Fassa-Sèn Jan;022145;Pozza di Fassa
+CS;022250;Sèn Jan di Fassa-Sèn Jan;022217;Vigo di Fassa
+AQ;022250;Sèn Jan di Fassa-Sèn Jan;022145;Pozza di Fassa
+AQ;022250;Sèn Jan di Fassa-Sèn Jan;022217;Vigo di Fassa
+ES;022145;Pozza di Fassa;022250;Sèn Jan di Fassa-Sèn Jan
+ES;022217;Vigo di Fassa;022250;Sèn Jan di Fassa-Sèn Jan
+CS;008068;Montalto Carpasio;008013;Carpasio
+CS;008068;Montalto Carpasio;008036;Montalto Ligure
+AQ;008068;Montalto Carpasio;008013;Carpasio
+AQ;008068;Montalto Carpasio;008036;Montalto Ligure
+ES;008013;Carpasio;008068;Montalto Carpasio
+ES;008036;Montalto Ligure;008068;Montalto Carpasio
+CS;033049;Alta Val Tidone;033009;Caminata
+CS;033049;Alta Val Tidone;033029;Nibbiano
+CS;033049;Alta Val Tidone;033031;Pecorara
+AQ;033049;Alta Val Tidone;033009;Caminata
+AQ;033049;Alta Val Tidone;033029;Nibbiano
+AQ;033049;Alta Val Tidone;033031;Pecorara
+ES;033009;Caminata;033049;Alta Val Tidone
+ES;033029;Nibbiano;033049;Alta Val Tidone
+ES;033031;Pecorara;033049;Alta Val Tidone
+CS;049021;Rio;049015;Rio Marina
+CS;049021;Rio;049016;Rio nell'Elba
+AQ;049021;Rio;049015;Rio Marina
+AQ;049021;Rio;049016;Rio nell'Elba
+ES;049015;Rio Marina;049021;Rio
+ES;049016;Rio nell'Elba;049021;Rio
+CS;051042;Laterina Pergine Valdarno;051019;Laterina
+CS;051042;Laterina Pergine Valdarno;051028;Pergine Valdarno
+AQ;051042;Laterina Pergine Valdarno;051019;Laterina
+AQ;051042;Laterina Pergine Valdarno;051028;Pergine Valdarno
+ES;051019;Laterina;051042;Laterina Pergine Valdarno
+ES;051028;Pergine Valdarno;051042;Laterina Pergine Valdarno
+CS;030190;Fiumicello Villa Vicentina;030038;Fiumicello
+CS;030190;Fiumicello Villa Vicentina;030134;Villa Vicentina
+AQ;030190;Fiumicello Villa Vicentina;030038;Fiumicello
+AQ;030190;Fiumicello Villa Vicentina;030134;Villa Vicentina
+ES;030038;Fiumicello;030190;Fiumicello Villa Vicentina
+ES;030134;Villa Vicentina;030190;Fiumicello Villa Vicentina
+CS;030191;Treppo Ligosullo;030125;Treppo Carnico
+CS;030191;Treppo Ligosullo;030050;Ligosullo
+AQ;030191;Treppo Ligosullo;030125;Treppo Carnico
+AQ;030191;Treppo Ligosullo;030050;Ligosullo
+ES;030125;Treppo Carnico;030191;Treppo Ligosullo
+ES;030050;Ligosullo;030191;Treppo Ligosullo
+CS;028107;Borgo Veneto;028074;Saletto
+CS;028107;Borgo Veneto;028081;Santa Margherita d'Adige
+CS;028107;Borgo Veneto;028051;Megliadino San Fidenzio
+AQ;028107;Borgo Veneto;028074;Saletto
+AQ;028107;Borgo Veneto;028081;Santa Margherita d'Adige
+AQ;028107;Borgo Veneto;028051;Megliadino San Fidenzio
+ES;028074;Saletto;028107;Borgo Veneto
+ES;028081;Santa Margherita d'Adige;028107;Borgo Veneto
+ES;028051;Megliadino San Fidenzio;028107;Borgo Veneto
+CS;024124;Barbarano Mossano;024011;Barbarano Vicentino
+CS;024124;Barbarano Mossano;024069;Mossano
+AQ;024124;Barbarano Mossano;024011;Barbarano Vicentino
+AQ;024124;Barbarano Mossano;024069;Mossano
+ES;024011;Barbarano Vicentino;024124;Barbarano Mossano
+ES;024069;Mossano;024124;Barbarano Mossano
+AP;097080;Torre de' Busi;016215;
+AQ;087018;Grammichele;087027;Mineo
+CE;087027;Mineo;087018;Grammichele
+CS;078157;Corigliano-Rossano;078044;Corigliano Calabro
+CS;078157;Corigliano-Rossano;078108;Rossano
+AQ;078157;Corigliano-Rossano;078044;Corigliano Calabro
+AQ;078157;Corigliano-Rossano;078108;Rossano
+ES;078044;Corigliano Calabro;078157;Corigliano-Rossano
+ES;078108;Rossano;078157;Corigliano-Rossano
+AQ;095067;Tresnuraghes;095083;Magomadas
+CE;095067;Tresnuraghes;095083;Magomadas
+AQ;095083;Magomadas;095067;Tresnuraghes
+CE;095083;Magomadas;095067;Tresnuraghes
+CD;022250;Sèn Jan di Fassa-Sèn Jan;022250;San Giovanni di Fassa-Sèn Jan
+CS;001317;Val di Chy;001005;Alice Superiore
+CS;001317;Val di Chy;001138;Lugnacco
+CS;001317;Val di Chy;001182;Pecco
+AQ;001317;Val di Chy;001005;Alice Superiore
+AQ;001317;Val di Chy;001138;Lugnacco
+AQ;001317;Val di Chy;001182;Pecco
+ES;001005;Alice Superiore;001317;Val di Chy
+ES;001138;Lugnacco;001317;Val di Chy
+ES;001182;Pecco;001317;Val di Chy
+CS;001318;Valchiusa;001297;Vico Canavese
+CS;001318;Valchiusa;001151;Meugliano
+CS;001318;Valchiusa;001277;Trausella
+AQ;001318;Valchiusa;001297;Vico Canavese
+AQ;001318;Valchiusa;001151;Meugliano
+AQ;001318;Valchiusa;001277;Trausella
+ES;001297;Vico Canavese;001318;Valchiusa
+ES;001151;Meugliano;001318;Valchiusa
+ES;001277;Trausella;001318;Valchiusa
+AQ;002002;Alagna Valsesia;002114;Riva Valdobbia
+ES;002114;Riva Valdobbia;002002;Alagna Valsesia
+AQ;004034;Busca;004236;Valmala
+ES;004236;Valmala;004034;Busca
+AQ;004213;Santo Stefano Belbo;004036;Camo
+ES;004036;Camo;004213;Santo Stefano Belbo
+AQ;004203;Saluzzo;004048;Castellar
+ES;004048;Castellar;004203;Saluzzo
+CS;003166;Gattico-Veruno;003071;Gattico
+CS;003166;Gattico-Veruno;003157;Veruno
+AQ;003166;Gattico-Veruno;003071;Gattico
+AQ;003166;Gattico-Veruno;003157;Veruno
+ES;003071;Gattico;003166;Gattico-Veruno
+ES;003157;Veruno;003166;Gattico-Veruno
+CS;096087;Quaregna Cerreto ;096051;Quaregna
+CS;096087;Quaregna Cerreto ;096017;Cerreto Castello
+AQ;096087;Quaregna Cerreto ;096051;Quaregna
+AQ;096087;Quaregna Cerreto ;096017;Cerreto Castello
+ES;096051;Quaregna;096087;Quaregna Cerreto 
+ES;096017;Cerreto Castello;096087;Quaregna Cerreto 
+CS;096088;Valdilana  ;096084;Mosso
+CS;096088;Valdilana  ;096062;Soprana
+CS;096088;Valdilana  ;096070;Trivero
+CS;096088;Valdilana  ;096073;Valle Mosso
+AQ;096088;Valdilana  ;096084;Mosso
+AQ;096088;Valdilana  ;096062;Soprana
+AQ;096088;Valdilana  ;096070;Trivero
+AQ;096088;Valdilana  ;096073;Valle Mosso
+ES;096084;Mosso;096088;Valdilana  
+ES;096062;Soprana;096088;Valdilana  
+ES;096070;Trivero;096088;Valdilana  
+ES;096073;Valle Mosso;096088;Valdilana  
+CS;103079;Valle Cannobina;103020;Cavaglio-Spoccia
+CS;103079;Valle Cannobina;103027;Cursolo-Orasso
+CS;103079;Valle Cannobina;103030;Falmenta
+AQ;103079;Valle Cannobina;103020;Cavaglio-Spoccia
+AQ;103079;Valle Cannobina;103027;Cursolo-Orasso
+AQ;103079;Valle Cannobina;103030;Falmenta
+ES;103020;Cavaglio-Spoccia;103079;Valle Cannobina
+ES;103027;Cursolo-Orasso;103079;Valle Cannobina
+ES;103030;Falmenta;103079;Valle Cannobina
+AQ;019107;Torre de' Picenardi;019008;Ca' d'Andrea
+ES;019008;Ca' d'Andrea;019107;Torre de' Picenardi
+CS;013255;Solbiate con Cagno;013215;Solbiate
+CS;013255;Solbiate con Cagno;013038;Cagno
+AQ;013255;Solbiate con Cagno;013215;Solbiate
+AQ;013255;Solbiate con Cagno;013038;Cagno
+ES;013215;Solbiate;013255;Solbiate con Cagno
+ES;013038;Cagno;013255;Solbiate con Cagno
+CS;018193;Colli Verdi;018028;Canevino
+CS;018193;Colli Verdi;018132;Ruino
+CS;018193;Colli Verdi;018170;Valverde
+AQ;018193;Colli Verdi;018028;Canevino
+AQ;018193;Colli Verdi;018132;Ruino
+AQ;018193;Colli Verdi;018170;Valverde
+ES;018028;Canevino;018193;Colli Verdi
+ES;018132;Ruino;018193;Colli Verdi
+ES;018170;Valverde;018193;Colli Verdi
+CS;019116;Piadena Drizzona;019042;Drizzona
+CS;019116;Piadena Drizzona;019071;Piadena
+AQ;019116;Piadena Drizzona;019042;Drizzona
+AQ;019116;Piadena Drizzona;019071;Piadena
+ES;019042;Drizzona;019116;Piadena Drizzona
+ES;019071;Piadena;019116;Piadena Drizzona
+AQ;020057;San Giorgio di Mantova;020004;Bigarello
+ES;020004;Bigarello;020057;San Giorgio di Mantova
+CD;020057;San Giorgio di Mantova;020057;San Giorgio Bigarello
+CS;020073;Borgocarbonara  ;020006;Borgofranco sul Po
+CS;020073;Borgocarbonara  ;020009;Carbonara di Po
+AQ;020073;Borgocarbonara  ;020006;Borgofranco sul Po
+AQ;020073;Borgocarbonara  ;020009;Carbonara di Po
+ES;020006;Borgofranco sul Po;020073;Borgocarbonara  
+ES;020009;Carbonara di Po;020073;Borgocarbonara  
+CS;022251;Terre d'Adige;022126;Nave San Rocco
+CS;022251;Terre d'Adige;022225;Zambana
+AQ;022251;Terre d'Adige;022126;Nave San Rocco
+AQ;022251;Terre d'Adige;022225;Zambana
+ES;022126;Nave San Rocco;022251;Terre d'Adige
+ES;022225;Zambana;022251;Terre d'Adige
+CS;034051;Sorbolo Mezzani;034021;Mezzani
+CS;034051;Sorbolo Mezzani;034037;Sorbolo
+AQ;034051;Sorbolo Mezzani;034021;Mezzani
+AQ;034051;Sorbolo Mezzani;034037;Sorbolo
+ES;034021;Mezzani;034051;Sorbolo Mezzani
+ES;034037;Sorbolo;034051;Sorbolo Mezzani
+CS;038029;Riva del Po;038002;Berra
+CS;038029;Riva del Po;038020;Ro
+AQ;038029;Riva del Po;038002;Berra
+AQ;038029;Riva del Po;038020;Ro
+ES;038002;Berra;038029;Riva del Po
+ES;038020;Ro;038029;Riva del Po
+CS;038030;Tresignana;038009;Formignana
+CS;038030;Tresignana;038024;Tresigallo
+AQ;038030;Tresignana;038009;Formignana
+AQ;038030;Tresignana;038024;Tresigallo
+ES;038009;Formignana;038030;Tresignana
+ES;038024;Tresigallo;038030;Tresignana
+CS;048054;Barberino Tavarnelle;048003;Barberino Val d'Elsa
+CS;048054;Barberino Tavarnelle;048045;Tavarnelle Val di Pesa
+AQ;048054;Barberino Tavarnelle;048003;Barberino Val d'Elsa
+AQ;048054;Barberino Tavarnelle;048045;Tavarnelle Val di Pesa
+ES;048003;Barberino Val d'Elsa;048054;Barberino Tavarnelle
+ES;048045;Tavarnelle Val di Pesa;048054;Barberino Tavarnelle
+CS;041071;Sassocorvaro Auditore;041003;Auditore
+CS;041071;Sassocorvaro Auditore;041059;Sassocorvaro
+AQ;041071;Sassocorvaro Auditore;041003;Auditore
+AQ;041071;Sassocorvaro Auditore;041059;Sassocorvaro
+ES;041003;Auditore;041071;Sassocorvaro Auditore
+ES;041059;Sassocorvaro;041071;Sassocorvaro Auditore
+CS;025074;Borgo Valbelluna;025028;Lentiai
+CS;025074;Borgo Valbelluna;025034;Mel
+CS;025074;Borgo Valbelluna;025061;Trichiana
+AQ;025074;Borgo Valbelluna;025028;Lentiai
+AQ;025074;Borgo Valbelluna;025034;Mel
+AQ;025074;Borgo Valbelluna;025061;Trichiana
+ES;025028;Lentiai;025074;Borgo Valbelluna
+ES;025034;Mel;025074;Borgo Valbelluna
+ES;025061;Trichiana;025074;Borgo Valbelluna
+CS;026096;Pieve del Grappa;026024;Crespano del Grappa
+CS;026096;Pieve del Grappa;026054;Paderno del Grappa
+AQ;026096;Pieve del Grappa;026024;Crespano del Grappa
+AQ;026096;Pieve del Grappa;026054;Paderno del Grappa
+ES;026024;Crespano del Grappa;026096;Pieve del Grappa
+ES;026054;Paderno del Grappa;026096;Pieve del Grappa
+CS;024125;Valbrenta;024023;Campolongo sul Brenta
+CS;024125;Valbrenta;024031;Cismon del Grappa
+CS;024125;Valbrenta;024093;San Nazario
+CS;024125;Valbrenta;024114;Valstagna
+AQ;024125;Valbrenta;024023;Campolongo sul Brenta
+AQ;024125;Valbrenta;024031;Cismon del Grappa
+AQ;024125;Valbrenta;024093;San Nazario
+AQ;024125;Valbrenta;024114;Valstagna
+ES;024023;Campolongo sul Brenta;024125;Valbrenta
+ES;024031;Cismon del Grappa;024125;Valbrenta
+ES;024093;San Nazario;024125;Valbrenta
+ES;024114;Valstagna;024125;Valbrenta
+CS;006193;Lu e Cuccaro Monferrato;006064;Cuccaro Monferrato
+CS;006193;Lu e Cuccaro Monferrato;006089;Lu
+AQ;006193;Lu e Cuccaro Monferrato;006064;Cuccaro Monferrato
+AQ;006193;Lu e Cuccaro Monferrato;006089;Lu
+ES;006064;Cuccaro Monferrato;006193;Lu e Cuccaro Monferrato
+ES;006089;Lu;006193;Lu e Cuccaro Monferrato
+CS;015251;Vermezzo con Zelo;015235;Vermezzo
+CS;015251;Vermezzo con Zelo;015246;Zelo Surrigone
+AQ;015251;Vermezzo con Zelo;015235;Vermezzo
+AQ;015251;Vermezzo con Zelo;015246;Zelo Surrigone
+ES;015235;Vermezzo;015251;Vermezzo con Zelo
+ES;015246;Zelo Surrigone;015251;Vermezzo con Zelo
+CS;012143;Cadrezzate con Osmate;012028;Cadrezzate
+CS;012143;Cadrezzate con Osmate;012111;Osmate
+AQ;012143;Cadrezzate con Osmate;012028;Cadrezzate
+AQ;012143;Cadrezzate con Osmate;012111;Osmate
+ES;012028;Cadrezzate;012143;Cadrezzate con Osmate
+ES;012111;Osmate;012143;Cadrezzate con Osmate
+CS;024126;Colceresa;024058;Mason Vicentino
+CS;024126;Colceresa;024059;Molvena
+AQ;024126;Colceresa;024058;Mason Vicentino
+AQ;024126;Colceresa;024059;Molvena
+ES;024058;Mason Vicentino;024126;Colceresa
+ES;024059;Molvena;024126;Colceresa
+CS;024127;Lusiana Conco;024033;Conco
+CS;024127;Lusiana Conco;024054;Lusiana
+AQ;024127;Lusiana Conco;024033;Conco
+AQ;024127;Lusiana Conco;024054;Lusiana
+ES;024033;Conco;024127;Lusiana Conco
+ES;024054;Lusiana;024127;Lusiana Conco
+CD;023052;Negrar;023052;Negrar di Valpolicella
+CS;075098;Presicce-Acquarica;075062;Presicce
+CS;075098;Presicce-Acquarica;075001;Acquarica del Capo
+AQ;075098;Presicce-Acquarica;075062;Presicce
+AQ;075098;Presicce-Acquarica;075001;Acquarica del Capo
+ES;075062;Presicce;075098;Presicce-Acquarica
+ES;075001;Acquarica del Capo;075098;Presicce-Acquarica
+CD;006045;Castellania;006045;Castellania Coppi
+AQ;019033;Corte de' Frati;019077;Pozzaglio ed Uniti
+CE;019033;Corte de' Frati;019077;Pozzaglio ed Uniti
+AQ;019077;Pozzaglio ed Uniti;019033;Corte de' Frati
+CE;019077;Pozzaglio ed Uniti;019033;Corte de' Frati
+CD;021076;Salorno/Salurn;021076;Salorno sulla strada del vino/Salurn an der Weinstraße
+AQ;095067;Tresnuraghes;095083;Magomadas
+CE;095067;Tresnuraghes;095083;Magomadas
+AQ;095083;Magomadas;095067;Tresnuraghes
+CE;095083;Magomadas;095067;Tresnuraghes
+CS;022252;Borgo d'Anaunia;022046;Castelfondo
+CS;022252;Borgo d'Anaunia;022088;Fondo
+CS;022252;Borgo d'Anaunia;022111;Malosco
+AQ;022252;Borgo d'Anaunia;022046;Castelfondo
+AQ;022252;Borgo d'Anaunia;022088;Fondo
+AQ;022252;Borgo d'Anaunia;022111;Malosco
+ES;022046;Castelfondo;022252;Borgo d'Anaunia
+ES;022088;Fondo;022252;Borgo d'Anaunia
+ES;022111;Malosco;022252;Borgo d'Anaunia
+CS;022253;Novella;022027;Brez
+CS;022253;Novella;022030;Cagnò
+CS;022253;Novella;022063;Cloz
+CS;022253;Novella;022152;Revò
+CS;022253;Novella;022154;Romallo
+AQ;022253;Novella;022027;Brez
+AQ;022253;Novella;022030;Cagnò
+AQ;022253;Novella;022063;Cloz
+AQ;022253;Novella;022152;Revò
+AQ;022253;Novella;022154;Romallo
+ES;022027;Brez;022253;Novella
+ES;022030;Cagnò;022253;Novella
+ES;022063;Cloz;022253;Novella
+ES;022152;Revò;022253;Novella
+ES;022154;Romallo;022253;Novella
+CS;022254;Ville di Fiemme;022041;Carano
+CS;022254;Ville di Fiemme;022070;Daiano
+CS;022254;Ville di Fiemme;022211;Varena
+AQ;022254;Ville di Fiemme;022041;Carano
+AQ;022254;Ville di Fiemme;022070;Daiano
+AQ;022254;Ville di Fiemme;022211;Varena
+ES;022041;Carano;022254;Ville di Fiemme
+ES;022070;Daiano;022254;Ville di Fiemme
+ES;022211;Varena;022254;Ville di Fiemme
+ES;022080;Faedo;022167;San Michele all'Adige
+AQ;022167;San Michele all'Adige;022080;Faedo
+ES;097085;Vendrogno;097008;Bellano
+AQ;097008;Bellano;097085;Vendrogno
+AQ;084003;Aragona;084017;Favara
+CE;084003;Aragona;084017;Favara
+AQ;084017;Favara;084003;Aragona
+CE;084017;Favara;084003;Aragona
+AQ;084001;Agrigento;084017;Favara
+CE;084001;Agrigento;084017;Favara
+AQ;084017;Favara;084001;Agrigento
+CE;084017;Favara;084001;Agrigento
+CE;007031;Gressan;007066;Sarre
+AQ;007066;Sarre;007031;Gressan
+ES;041032;Monteciccardo;041044;Pesaro
+AQ;041044;Pesaro;041032;Monteciccardo

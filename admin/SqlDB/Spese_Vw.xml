@@ -1,0 +1,53 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Spese_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Spese_Ky" IsNull="N" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Commesse_Ky" IsNull="Y" Type="int" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Spese_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Spese_Note" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Spese_TotaleRighe" IsNull="Y" Type="money" />
+      <Field Column="Spese_Data" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Spese_DocumentoNumero" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Spese_Totale" IsNull="Y" Type="money" />
+      <Field Column="Spese_TotaleIVA" IsNull="Y" Type="money" />
+      <Field Column="Spese_DocumentoData" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Commesse_Riferimenti" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Commesse_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Spese_Data_IT" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="Anagrafiche_EmailAmministrazione" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_Telefono" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Spese_DocumentoData_IT" IsNull="Y" Type="varchar" Lenght="30" />
+      <Field Column="CentridiCR_Ky" IsNull="Y" Type="int" />
+      <Field Column="CentridiCR_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_ParoleChiave" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_ClienteKy" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_ClienteRagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_ClienteParoleChiave" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Conti_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Conti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_SitoWeb" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_ClienteSitoWeb" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aziende_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Spese_Vw
+AS
+SELECT        dbo.Spese.Spese_Ky, dbo.Spese.Anagrafiche_Ky, dbo.Spese.Commesse_Ky, dbo.Spese.Utenti_Ky, dbo.Spese.Spese_Titolo, dbo.Spese.Spese_Note, dbo.Spese.Spese_TotaleRighe, 
+                         dbo.Spese.Spese_Data, dbo.Spese.Spese_DocumentoNumero, dbo.Spese.Spese_Totale, dbo.Spese.Spese_TotaleIVA, dbo.Spese.Spese_DocumentoData, Anagrafiche_1.Anagrafiche_RagioneSociale, 
+                         dbo.Commesse.Commesse_Riferimenti, dbo.Commesse.Commesse_Titolo, CONVERT(varchar, dbo.Spese.Spese_Data, 105) AS Spese_Data_IT, 
+                         Anagrafiche_1.Anagrafiche_EmailAmministrazione, Anagrafiche_1.Anagrafiche_Telefono, CONVERT(varchar, dbo.Spese.Spese_DocumentoData, 105) AS Spese_DocumentoData_IT, dbo.Spese.CentridiCR_Ky, 
+                         dbo.CentridiCR.CentridiCR_Titolo, Anagrafiche_1.Anagrafiche_ParoleChiave, dbo.Spese.Anagrafiche_ClienteKy, dbo.Anagrafiche.Anagrafiche_RagioneSociale AS Anagrafiche_ClienteRagioneSociale, 
+                         dbo.Anagrafiche.Anagrafiche_ParoleChiave AS Anagrafiche_ClienteParoleChiave, dbo.Conti.Conti_Titolo, dbo.Spese.Conti_Ky, Anagrafiche_1.Anagrafiche_SitoWeb, 
+                         dbo.Anagrafiche.Anagrafiche_SitoWeb AS Anagrafiche_ClienteSitoWeb, dbo.Spese.Aziende_Ky
+FROM            dbo.Spese LEFT OUTER JOIN
+                         dbo.Conti ON dbo.Spese.Conti_Ky = dbo.Conti.Conti_Ky LEFT OUTER JOIN
+                         dbo.Anagrafiche ON dbo.Spese.Anagrafiche_ClienteKy = dbo.Anagrafiche.Anagrafiche_Ky LEFT OUTER JOIN
+                         dbo.CentridiCR ON dbo.Spese.CentridiCR_Ky = dbo.CentridiCR.CentridiCR_Ky LEFT OUTER JOIN
+                         dbo.Commesse ON dbo.Spese.Commesse_Ky = dbo.Commesse.Commesse_Ky LEFT OUTER JOIN
+                         dbo.Anagrafiche AS Anagrafiche_1 ON dbo.Spese.Anagrafiche_Ky = Anagrafiche_1.Anagrafiche_Ky
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,43 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliTipo" Type="TABLE">
+    <Keys>
+      <Key Column="VeicoliTipo_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="VeicoliTipo_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="VeicoliTipo_Titolo" IsNull="Y" Type="varchar" Lenght="40" />
+      <Field Column="VeicoliTipo_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliTipo_UrlKey" IsNull="Y" Type="varchar" Lenght="40" />
+      <Field Column="VeicoliTipo_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="VeicoliTipo_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="VeicoliTipo_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="VeicoliTipo_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliTipo_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliTipo_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliTipo_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliTipo_Description" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliTipo_Robots" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliTipo_Icona" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="VeicoliTipo_Foto" IsNull="Y" Type="varchar" Lenght="200" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[VeicoliTipo] (
+  [VeicoliTipo_Ky] tinyint IDENTITY(1,1) NOT NULL , 
+  [VeicoliTipo_Titolo] varchar(40)  NULL , 
+  [VeicoliTipo_Descrizione] varchar(100)  NULL , 
+  [VeicoliTipo_UrlKey] varchar(40)  NULL , 
+  [VeicoliTipo_UserInsert] int  NULL , 
+  [VeicoliTipo_UserUpdate] int  NULL , 
+  [VeicoliTipo_UserDelete] int  NULL , 
+  [VeicoliTipo_DateInsert] datetime  NULL , 
+  [VeicoliTipo_DateUpdate] datetime  NULL , 
+  [VeicoliTipo_DateDelete] datetime  NULL , 
+  [VeicoliTipo_Title] varchar(200)  NULL , 
+  [VeicoliTipo_Description] varchar(200)  NULL , 
+  [VeicoliTipo_Robots] varchar(200)  NULL , 
+  [VeicoliTipo_Icona] varchar(MAX)  NULL , 
+  [VeicoliTipo_Foto] varchar(200)  NULL  )
+ALTER TABLE [dbo].[VeicoliTipo] ADD CONSTRAINT PK_VeicoliTipo PRIMARY KEY  ([VeicoliTipo_Ky])
+</SqlScriptCreate>
+</SqlTable>

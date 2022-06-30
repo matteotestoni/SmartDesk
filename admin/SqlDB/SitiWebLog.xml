@@ -1,0 +1,37 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="SitiWebLog" Type="TABLE">
+    <Keys>
+      <Key Column="SitiWebLog_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="SitiWebLog_Ky" IsNull="N" Type="int" />
+      <Field Column="SitiWeb_Url" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="SitiWebLog_Data" IsNull="Y" Type="smalldatetime" />
+      <Field Column="SitiWebLog_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="SitiWebLog_Valore" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="SitiWeb_Ky" IsNull="Y" Type="int" />
+      <Field Column="SitiWebLog_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="SitiWebLog_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="SitiWebLog_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="SitiWebLog_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="SitiWebLog_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="SitiWebLog_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[SitiWebLog] (
+  [SitiWebLog_Ky] int IDENTITY(1,1) NOT NULL , 
+  [SitiWeb_Url] varchar(200)  NULL , 
+  [SitiWebLog_Data] smalldatetime  NULL , 
+  [SitiWebLog_Descrizione] varchar(100)  NULL , 
+  [SitiWebLog_Valore] varchar(100)  NULL , 
+  [SitiWeb_Ky] int  NULL , 
+  [SitiWebLog_UserInsert] int  NULL , 
+  [SitiWebLog_UserUpdate] int  NULL , 
+  [SitiWebLog_UserDelete] int  NULL , 
+  [SitiWebLog_DateInsert] datetime  NULL , 
+  [SitiWebLog_DateUpdate] datetime  NULL , 
+  [SitiWebLog_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[SitiWebLog] ADD CONSTRAINT PK_SitiWebLog PRIMARY KEY  ([SitiWebLog_Ky])
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,27 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Spese_Prospetto_CentridiCR_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="chiave" IsNull="Y" Type="int" />
+      <Field Column="Spese_Totale" IsNull="Y" Type="money" />
+      <Field Column="Spese_TotaleIVA" IsNull="Y" Type="money" />
+      <Field Column="Spese_TotaleRighe" IsNull="Y" Type="money" />
+      <Field Column="Anno" IsNull="Y" Type="int" />
+      <Field Column="Mese" IsNull="Y" Type="int" />
+      <Field Column="CentridiCR_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CentridiCR_Ky" IsNull="Y" Type="int" />
+      <Field Column="CentridiCR_Icona" IsNull="Y" Type="varchar" Lenght="100" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Spese_Prospetto_CentridiCR_Vw
+AS
+SELECT        TOP (100) PERCENT MAX(dbo.Spese.Spese_Ky) AS chiave, SUM(dbo.Spese.Spese_Totale) AS Spese_Totale, SUM(dbo.Spese.Spese_TotaleIVA) AS Spese_TotaleIVA, SUM(dbo.Spese.Spese_TotaleRighe) 
+                         AS Spese_TotaleRighe, YEAR(dbo.Spese.Spese_DocumentoData) AS Anno, MONTH(dbo.Spese.Spese_DocumentoData) AS Mese, dbo.CentridiCR.CentridiCR_Titolo, dbo.Spese.CentridiCR_Ky, 
+                         dbo.CentridiCR.CentridiCR_Icona
+FROM            dbo.Spese LEFT OUTER JOIN
+                         dbo.CentridiCR ON dbo.Spese.CentridiCR_Ky = dbo.CentridiCR.CentridiCR_Ky
+WHERE        (dbo.CentridiCR.CentridiCR_Attivo = 1)
+GROUP BY YEAR(dbo.Spese.Spese_DocumentoData), MONTH(dbo.Spese.Spese_DocumentoData), dbo.CentridiCR.CentridiCR_Titolo, dbo.Spese.CentridiCR_Ky, dbo.CentridiCR.CentridiCR_Icona
+ORDER BY dbo.CentridiCR.CentridiCR_Titolo, Mese
+</SqlScriptCreate>
+</SqlTable>

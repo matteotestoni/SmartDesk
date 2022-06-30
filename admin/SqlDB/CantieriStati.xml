@@ -1,0 +1,29 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CantieriStati" Type="TABLE">
+    <Keys>
+      <Key Column="CantieriStati_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CantieriStati_Ky" IsNull="N" Type="int" />
+      <Field Column="CantieriStati_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CantieriStati_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CantieriStati_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CantieriStati_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CantieriStati_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CantieriStati_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CantieriStati_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CantieriStati] (
+  [CantieriStati_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CantieriStati_Descrizione] varchar(100)  NULL , 
+  [CantieriStati_UserInsert] int  NULL , 
+  [CantieriStati_UserUpdate] int  NULL , 
+  [CantieriStati_UserDelete] int  NULL , 
+  [CantieriStati_DateInsert] datetime  NULL , 
+  [CantieriStati_DateUpdate] datetime  NULL , 
+  [CantieriStati_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[CantieriStati] ADD CONSTRAINT PK_CantieriStati PRIMARY KEY  ([CantieriStati_Ky])
+</SqlScriptCreate>
+</SqlTable>

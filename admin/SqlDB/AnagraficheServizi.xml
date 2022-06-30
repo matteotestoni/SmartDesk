@@ -1,0 +1,63 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnagraficheServizi" Type="TABLE">
+    <Keys>
+      <Key Column="AnagraficheServizi_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AnagraficheServizi_Ky" IsNull="N" Type="int" />
+      <Field Column="AnagraficheServizi_Qta" IsNull="Y" Type="int" />
+      <Field Column="Servizi_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheServizi_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="AnagraficheServizi_Prezzo" IsNull="Y" Type="money" />
+      <Field Column="AnagraficheServizi_Importo" IsNull="Y" Type="money" />
+      <Field Column="AnagraficheServizi_Inizio" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheServizi_Termine" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheServizi_Scadenza" IsNull="Y" Type="datetime" />
+      <Field Column="AttributiGruppi_Ky" IsNull="Y" Type="int" />
+      <Field Column="attr-posizionamento" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="attr-posizionamentozone" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="attr-numeroemail" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="SitiWeb_Dominio" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnagraficheServizi_Rinnovo" IsNull="Y" Type="tinyint" />
+      <Field Column="AnagraficheServizi_Chiuso" IsNull="Y" Type="bit" />
+      <Field Column="AnagraficheServizi_DataChiusura" IsNull="Y" Type="datetime" />
+      <Field Column="Commesse_Ky" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheServizi_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheServizi_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheServizi_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheServizi_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheServizi_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheServizi_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AnagraficheServizi] (
+  [AnagraficheServizi_Ky] int IDENTITY(1,1) NOT NULL , 
+  [AnagraficheServizi_Qta] int  NULL , 
+  [Servizi_Ky] int  NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [AnagraficheServizi_Descrizione] varchar(MAX)  NULL , 
+  [AnagraficheServizi_Prezzo] money  NULL , 
+  [AnagraficheServizi_Importo] money  NULL , 
+  [AnagraficheServizi_Inizio] datetime  NULL , 
+  [AnagraficheServizi_Termine] datetime  NULL , 
+  [AnagraficheServizi_Scadenza] datetime  NULL , 
+  [AttributiGruppi_Ky] int  NULL , 
+  [attr-posizionamento] varchar(MAX)  NULL , 
+  [attr-posizionamentozone] varchar(MAX)  NULL , 
+  [attr-numeroemail] varchar(MAX)  NULL , 
+  [SitiWeb_Dominio] varchar(200)  NULL , 
+  [AnagraficheServizi_Rinnovo] tinyint  NULL , 
+  [AnagraficheServizi_Chiuso] bit  NULL , 
+  [AnagraficheServizi_DataChiusura] datetime  NULL , 
+  [Commesse_Ky] int  NULL , 
+  [AnagraficheServizi_UserInsert] int  NULL , 
+  [AnagraficheServizi_UserUpdate] int  NULL , 
+  [AnagraficheServizi_UserDelete] int  NULL , 
+  [AnagraficheServizi_DateInsert] datetime  NULL , 
+  [AnagraficheServizi_DateUpdate] datetime  NULL , 
+  [AnagraficheServizi_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[AnagraficheServizi] ADD CONSTRAINT PK_AnagraficheServizi_1 PRIMARY KEY  ([AnagraficheServizi_Ky])
+</SqlScriptCreate>
+</SqlTable>

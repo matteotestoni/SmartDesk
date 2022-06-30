@@ -1,0 +1,33 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnagraficheTag" Type="TABLE">
+    <Keys>
+      <Key Column="AnagraficheTag_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AnagraficheTag_Ky" IsNull="N" Type="int" />
+      <Field Column="AnagraficheTag_Tag" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="AnagraficheTag_Colore" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="AnagraficheTag_Icona" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="AnagraficheTag_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheTag_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheTag_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AnagraficheTag_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheTag_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheTag_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AnagraficheTag] (
+  [AnagraficheTag_Ky] int IDENTITY(1,1) NOT NULL , 
+  [AnagraficheTag_Tag] varchar(MAX)  NULL , 
+  [AnagraficheTag_Colore] varchar(MAX)  NULL , 
+  [AnagraficheTag_Icona] varchar(MAX)  NULL , 
+  [AnagraficheTag_UserInsert] int  NULL , 
+  [AnagraficheTag_UserUpdate] int  NULL , 
+  [AnagraficheTag_UserDelete] int  NULL , 
+  [AnagraficheTag_DateInsert] datetime  NULL , 
+  [AnagraficheTag_DateUpdate] datetime  NULL , 
+  [AnagraficheTag_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[AnagraficheTag] ADD CONSTRAINT PK_AnagraficheTag PRIMARY KEY  ([AnagraficheTag_Ky])
+</SqlScriptCreate>
+</SqlTable>

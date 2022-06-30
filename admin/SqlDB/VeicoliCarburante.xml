@@ -1,0 +1,31 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliCarburante" Type="TABLE">
+    <Keys>
+      <Key Column="VeicoliCarburante_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="VeicoliCarburante_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="VeicoliCarburante_Descrizione" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="VeicoliCarburante_Ecologico" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliCarburante_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="VeicoliCarburante_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="VeicoliCarburante_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="VeicoliCarburante_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliCarburante_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliCarburante_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[VeicoliCarburante] (
+  [VeicoliCarburante_Ky] tinyint IDENTITY(1,1) NOT NULL , 
+  [VeicoliCarburante_Descrizione] varchar(20)  NULL , 
+  [VeicoliCarburante_Ecologico] bit  NULL , 
+  [VeicoliCarburante_UserInsert] int  NULL , 
+  [VeicoliCarburante_UserUpdate] int  NULL , 
+  [VeicoliCarburante_UserDelete] int  NULL , 
+  [VeicoliCarburante_DateInsert] datetime  NULL , 
+  [VeicoliCarburante_DateUpdate] datetime  NULL , 
+  [VeicoliCarburante_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[VeicoliCarburante] ADD CONSTRAINT PK_VeicoliCarburante PRIMARY KEY  ([VeicoliCarburante_Ky])
+</SqlScriptCreate>
+</SqlTable>

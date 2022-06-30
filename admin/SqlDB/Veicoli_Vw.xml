@@ -1,0 +1,178 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Veicoli_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Veicoli_Ky" IsNull="N" Type="int" />
+      <Field Column="VeicoliMarca_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="VeicoliModello_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="VeicoliCarburante_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliCategoria_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_Annuncio" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Veicoli_Metallizzato" IsNull="Y" Type="bit" />
+      <Field Column="Veicoli_ImmatricolazioneMese" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_ImmatricolazioneAnno" IsNull="Y" Type="smallint" />
+      <Field Column="VeicoliNormativeEuro_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_PrvKy" IsNull="Y" Type="smallint" />
+      <Field Column="Veicoli_CmnKy" IsNull="Y" Type="int" />
+      <Field Column="VeicoliContratto_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliCambio_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliCarrozzeria_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_CVKW" IsNull="Y" Type="float" />
+      <Field Column="Veicoli_KM" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_Valore" IsNull="Y" Type="money" />
+      <Field Column="Veicoli_ValoreNascondi" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliColore_InterniKy" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliColore_EsterniKy" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_RevisioneAnno" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_RevisioneMese" IsNull="Y" Type="smallint" />
+      <Field Column="Veicoli_PesoKg" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_Cilindrata" IsNull="Y" Type="smallint" />
+      <Field Column="Veicoli_NumeroCilindri" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_NumeroSedili" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_NumeroRapporti" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_NumeroPorte" IsNull="Y" Type="tinyint" />
+      <Field Column="Utenti_InsertDt" IsNull="Y" Type="datetime" />
+      <Field Column="Utenti_UpdateKy" IsNull="Y" Type="int" />
+      <Field Column="Utenti_UpdateDt" IsNull="Y" Type="datetime" />
+      <Field Column="Veicoli_fArchiviato" IsNull="Y" Type="bit" />
+      <Field Column="Veicoli_PubblicaWEB" IsNull="Y" Type="bit" />
+      <Field Column="Comune" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Veicoli_Allestimento" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Utenti_InsertKy" IsNull="Y" Type="int" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_Inevidenza" IsNull="Y" Type="bit" />
+      <Field Column="Veicoli_Riferimento" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Veicoli_Foto" IsNull="Y" Type="bit" />
+      <Field Column="Veicoli_Foto1s" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto1" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Veicoli_Foto1b" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="VeicoliMarca_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliModello_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliModello_DescrizioneHTML" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliCategoria_Descrizione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="VeicoliTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliContratto_Descrizione" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Veicoli_Visite" IsNull="Y" Type="smallint" />
+      <Field Column="Veicoli_Modello" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Utenti_Nominativo" IsNull="Y" Type="varchar" Lenght="255" />
+      <Field Column="Veicoli_Assi" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_Ore" IsNull="Y" Type="int" />
+      <Field Column="VeicoliTipologie_Descrizione" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="VeicoliCarburante_Descrizione" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="UtentiGruppi_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliMarca_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliMarca_UrlKey" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Veicoli_Targa" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="VeicoliGruppi_Descrizione" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="VeicoliGruppi_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="VeicoliMateriale_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliColore_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliColore_Descrizione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="VeicoliMateriale_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="VeicoliTipologie_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="VeicoliTipo_Titolo" IsNull="Y" Type="varchar" Lenght="40" />
+      <Field Column="Expr1" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_HP" IsNull="Y" Type="smallint" />
+      <Field Column="Veicoli_NumeroPosti" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_NumeroMarce" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_Optional" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Veicoli_Strumentazione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Veicoli_CV" IsNull="Y" Type="smallint" />
+      <Field Column="Veicoli_Lunghezza" IsNull="Y" Type="float" />
+      <Field Column="Veicoli_Larghezza" IsNull="Y" Type="float" />
+      <Field Column="Veicoli_VelocitaMax" IsNull="Y" Type="smallint" />
+      <Field Column="Veicoli_VelocitaCrociera" IsNull="Y" Type="smallint" />
+      <Field Column="Veicoli_Altezza" IsNull="Y" Type="smallint" />
+      <Field Column="Veicoli_Autonomia" IsNull="Y" Type="smallint" />
+      <Field Column="Veicoli_MotoreTipo" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Veicoli_NumeroCabine" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_Equipaggio" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_Passegeri" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_PostiLetto" IsNull="Y" Type="smallint" />
+      <Field Column="Veicoli_Bagni" IsNull="Y" Type="smallint" />
+      <Field Column="Veicoli_Cucina" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Veicoli_SerbatoioAcqua" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Veicoli_Serbatoio" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="Veicoli_Note" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="Veicoli_PersonaRiferimento" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Veicoli_TelefonoPersonaRiferimento" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Veicoli_EmailPersonaRiferimento" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Expr2" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Comuni_Ky" IsNull="Y" Type="int" />
+      <Field Column="Province_Ky" IsNull="Y" Type="int" />
+      <Field Column="Regioni_Ky" IsNull="Y" Type="int" />
+      <Field Column="Comuni_Comune" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Veicoli_Premium" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliModello_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliNormativeEuro_Descrizione" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="VeicoliCambio_Descrizione" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="VeicoliModello_UrlKey" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="VeicoliCarrozzeria_Descrizione" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="VeicoliModello_Tipo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreResponseCode_Title" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreResponseCode_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Veicoli_RedirectUrl" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Veicoli_ValoreIniziale" IsNull="Y" Type="money" />
+      <Field Column="Veicoli_BestPrice" IsNull="Y" Type="bit" />
+      <Field Column="Veicoli_CostoKm" IsNull="Y" Type="money" />
+      <Field Column="Veicoli_CostoGiornaliero" IsNull="Y" Type="money" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Veicoli_Tags" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Veicoli_EmissioniCO2" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Veicoli_ConsumoUrbano" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Veicoli_ConsumoExtraUrbano" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Veicoli_ConsumoCombinato" IsNull="Y" Type="varchar" Lenght="20" />
+      <Field Column="Veicoli_Neopatentati" IsNull="Y" Type="bit" />
+      <Field Column="Veicoli_Vetrina" IsNull="Y" Type="bit" />
+      <Field Column="Veicoli_Indirizzo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Veicoli_NumeroProprietari" IsNull="Y" Type="tinyint" />
+      <Field Column="Veicoli_Prime" IsNull="Y" Type="bit" />
+      <Field Column="Veicoli_LastMinute" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Veicoli_Vw
+AS
+SELECT        dbo.Veicoli.Veicoli_Ky, dbo.Veicoli.VeicoliMarca_Ky, dbo.Veicoli.VeicoliModello_Ky, dbo.Veicoli.VeicoliCarburante_Ky, dbo.Veicoli.VeicoliCategoria_Ky, dbo.Veicoli.Veicoli_Annuncio, 
+                         dbo.Veicoli.Veicoli_Metallizzato, dbo.Veicoli.Veicoli_ImmatricolazioneMese, dbo.Veicoli.Veicoli_ImmatricolazioneAnno, dbo.Veicoli.VeicoliNormativeEuro_Ky, dbo.Veicoli.Veicoli_PrvKy, dbo.Veicoli.Veicoli_CmnKy, 
+                         dbo.Veicoli.VeicoliContratto_Ky, dbo.Veicoli.VeicoliCambio_Ky, dbo.Veicoli.VeicoliCarrozzeria_Ky, dbo.Veicoli.Veicoli_CVKW, dbo.Veicoli.Veicoli_KM, dbo.Veicoli.Veicoli_Valore, dbo.Veicoli.Veicoli_ValoreNascondi,
+                          dbo.Veicoli.VeicoliColore_InterniKy, dbo.Veicoli.VeicoliColore_EsterniKy, dbo.Veicoli.Veicoli_RevisioneAnno, dbo.Veicoli.Veicoli_RevisioneMese, dbo.Veicoli.Veicoli_PesoKg, dbo.Veicoli.Veicoli_Cilindrata, 
+                         dbo.Veicoli.Veicoli_NumeroCilindri, dbo.Veicoli.Veicoli_NumeroSedili, dbo.Veicoli.Veicoli_NumeroRapporti, dbo.Veicoli.Veicoli_NumeroPorte, dbo.Veicoli.Utenti_InsertDt, dbo.Veicoli.Utenti_UpdateKy, 
+                         dbo.Veicoli.Utenti_UpdateDt, dbo.Veicoli.Veicoli_fArchiviato, dbo.Veicoli.Veicoli_PubblicaWEB, Comuni_1.Comuni_Comune AS Comune, dbo.Veicoli.Veicoli_Allestimento, dbo.Veicoli.Utenti_InsertKy, 
+                         dbo.Veicoli.Utenti_Ky, dbo.Veicoli.Veicoli_Inevidenza, dbo.Veicoli.Veicoli_Riferimento, dbo.Veicoli.Veicoli_Foto, dbo.Veicoli.Veicoli_Foto1s, dbo.Veicoli.Veicoli_Foto1, dbo.Veicoli.Veicoli_Foto1b, 
+                         dbo.VeicoliMarca.VeicoliMarca_Descrizione, dbo.VeicoliModello.VeicoliModello_Descrizione, dbo.VeicoliModello.VeicoliModello_DescrizioneHTML, dbo.VeicoliCategoria.VeicoliCategoria_Descrizione, 
+                         dbo.VeicoliMarca.VeicoliTipo_Ky, dbo.VeicoliContratto.VeicoliContratto_Descrizione, dbo.Veicoli.Veicoli_Visite, dbo.Veicoli.Veicoli_Modello, dbo.Utenti.Utenti_Nominativo, dbo.Veicoli.Veicoli_Assi, 
+                         dbo.Veicoli.Veicoli_Ore, VeicoliTipologie_1.VeicoliTipologie_Descrizione, VeicoliCarburante_1.VeicoliCarburante_Descrizione, dbo.Utenti.UtentiGruppi_Ky, dbo.VeicoliMarca.VeicoliMarca_Titolo, 
+                         dbo.VeicoliMarca.VeicoliMarca_UrlKey, dbo.Veicoli.Veicoli_Targa, dbo.VeicoliGruppi.VeicoliGruppi_Descrizione, dbo.Veicoli.VeicoliGruppi_Ky, dbo.VeicoliMateriale.VeicoliMateriale_Descrizione, 
+                         dbo.Veicoli.VeicoliColore_Ky, dbo.VeicoliColore.VeicoliColore_Descrizione, dbo.Veicoli.VeicoliMateriale_Ky, dbo.Veicoli.VeicoliTipologie_Ky, dbo.VeicoliTipo.VeicoliTipo_Titolo, 
+                         dbo.Veicoli.VeicoliTipo_Ky AS Expr1, dbo.Veicoli.Veicoli_HP, dbo.Veicoli.Veicoli_NumeroPosti, dbo.Veicoli.Veicoli_NumeroMarce, dbo.Veicoli.Veicoli_Optional, dbo.Veicoli.Veicoli_Strumentazione, 
+                         dbo.Veicoli.Veicoli_CV, dbo.Veicoli.Veicoli_Lunghezza, dbo.Veicoli.Veicoli_Larghezza, dbo.Veicoli.Veicoli_VelocitaMax, dbo.Veicoli.Veicoli_VelocitaCrociera, dbo.Veicoli.Veicoli_Altezza, 
+                         dbo.Veicoli.Veicoli_Autonomia, dbo.Veicoli.Veicoli_MotoreTipo, dbo.Veicoli.Veicoli_NumeroCabine, dbo.Veicoli.Veicoli_Equipaggio, dbo.Veicoli.Veicoli_Passegeri, dbo.Veicoli.Veicoli_PostiLetto, 
+                         dbo.Veicoli.Veicoli_Bagni, dbo.Veicoli.Veicoli_Cucina, dbo.Veicoli.Veicoli_SerbatoioAcqua, dbo.Veicoli.Veicoli_Serbatoio, dbo.Veicoli.Veicoli_Note, dbo.Veicoli.Veicoli_PersonaRiferimento, 
+                         dbo.Veicoli.Veicoli_TelefonoPersonaRiferimento, dbo.Veicoli.Veicoli_EmailPersonaRiferimento, dbo.VeicoliCarburante.VeicoliCarburante_Descrizione AS Expr2, dbo.Veicoli.Comuni_Ky, dbo.Veicoli.Province_Ky, 
+                         dbo.Veicoli.Regioni_Ky, dbo.Comuni.Comuni_Comune, dbo.Veicoli.Veicoli_Premium, dbo.VeicoliModello.VeicoliModello_Titolo, dbo.VeicoliNormativeEuro.VeicoliNormativeEuro_Descrizione, 
+                         dbo.VeicoliCambio.VeicoliCambio_Descrizione, dbo.VeicoliModello.VeicoliModello_UrlKey, dbo.VeicoliCarrozzeria.VeicoliCarrozzeria_Descrizione, dbo.VeicoliModello.VeicoliModello_Tipo, 
+                         dbo.CoreResponseCode.CoreResponseCode_Title, dbo.Veicoli.CoreResponseCode_Ky, dbo.Veicoli.Veicoli_RedirectUrl, dbo.Veicoli.Veicoli_ValoreIniziale, dbo.Veicoli.Veicoli_BestPrice, 
+                         dbo.Veicoli.Veicoli_CostoKm, dbo.Veicoli.Veicoli_CostoGiornaliero, dbo.Veicoli.Anagrafiche_Ky, dbo.Veicoli.Veicoli_Tags, dbo.Veicoli.Veicoli_EmissioniCO2, dbo.Veicoli.Veicoli_ConsumoUrbano, 
+                         dbo.Veicoli.Veicoli_ConsumoExtraUrbano, dbo.Veicoli.Veicoli_ConsumoCombinato, dbo.Veicoli.Veicoli_Neopatentati, dbo.Veicoli.Veicoli_Vetrina, dbo.Veicoli.Veicoli_Indirizzo, 
+                         dbo.Veicoli.Veicoli_NumeroProprietari, dbo.Veicoli.Veicoli_Prime, dbo.Veicoli.Veicoli_LastMinute
+FROM            dbo.Veicoli LEFT OUTER JOIN
+                         dbo.CoreResponseCode ON dbo.Veicoli.CoreResponseCode_Ky = dbo.CoreResponseCode.CoreResponseCode_Ky LEFT OUTER JOIN
+                         dbo.VeicoliCarrozzeria ON dbo.Veicoli.VeicoliCarrozzeria_Ky = dbo.VeicoliCarrozzeria.VeicoliCarrozzeria_Ky LEFT OUTER JOIN
+                         dbo.VeicoliCambio ON dbo.Veicoli.VeicoliCambio_Ky = dbo.VeicoliCambio.VeicoliCambio_Ky LEFT OUTER JOIN
+                         dbo.VeicoliNormativeEuro ON dbo.Veicoli.VeicoliNormativeEuro_Ky = dbo.VeicoliNormativeEuro.VeicoliNormativeEuro_Ky LEFT OUTER JOIN
+                         dbo.VeicoliColore ON dbo.Veicoli.VeicoliColore_Ky = dbo.VeicoliColore.VeicoliColore_Ky LEFT OUTER JOIN
+                         dbo.Utenti ON dbo.Veicoli.Utenti_Ky = dbo.Utenti.Utenti_Ky LEFT OUTER JOIN
+                         dbo.Comuni ON dbo.Veicoli.Comuni_Ky = dbo.Comuni.Comuni_Ky LEFT OUTER JOIN
+                         dbo.VeicoliCarburante ON dbo.Veicoli.VeicoliCarburante_Ky = dbo.VeicoliCarburante.VeicoliCarburante_Ky LEFT OUTER JOIN
+                         dbo.VeicoliTipo ON dbo.Veicoli.VeicoliTipo_Ky = dbo.VeicoliTipo.VeicoliTipo_Ky LEFT OUTER JOIN
+                         dbo.VeicoliMateriale ON dbo.Veicoli.VeicoliMateriale_Ky = dbo.VeicoliMateriale.VeicoliMateriale_Ky LEFT OUTER JOIN
+                         dbo.VeicoliGruppi ON dbo.Veicoli.VeicoliGruppi_Ky = dbo.VeicoliGruppi.VeicoliGruppi_Ky LEFT OUTER JOIN
+                         dbo.VeicoliCarburante AS VeicoliCarburante_1 ON dbo.Veicoli.VeicoliCarburante_Ky = VeicoliCarburante_1.VeicoliCarburante_Ky LEFT OUTER JOIN
+                         dbo.VeicoliTipologie AS VeicoliTipologie_1 ON dbo.Veicoli.VeicoliTipologie_Ky = VeicoliTipologie_1.VeicoliTipologie_Ky LEFT OUTER JOIN
+                         dbo.VeicoliContratto ON dbo.Veicoli.VeicoliContratto_Ky = dbo.VeicoliContratto.VeicoliContratto_Ky LEFT OUTER JOIN
+                         dbo.VeicoliCategoria ON dbo.Veicoli.VeicoliCategoria_Ky = dbo.VeicoliCategoria.VeicoliCategoria_Ky LEFT OUTER JOIN
+                         dbo.VeicoliMarca ON dbo.Veicoli.VeicoliMarca_Ky = dbo.VeicoliMarca.VeicoliMarca_Ky LEFT OUTER JOIN
+                         dbo.VeicoliModello ON dbo.Veicoli.VeicoliModello_Ky = dbo.VeicoliModello.VeicoliModello_Ky LEFT OUTER JOIN
+                         dbo.Comuni AS Comuni_1 ON dbo.Veicoli.Veicoli_CmnKy = Comuni_1.Comuni_Ky
+</SqlScriptCreate>
+</SqlTable>

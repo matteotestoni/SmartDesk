@@ -1,0 +1,434 @@
+@font-face {
+    font-family: 'Geomanist';
+    src: url('Geomanist-ThinItalic.eot');
+    src: url('Geomanist-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('Geomanist-ThinItalic.woff2') format('woff2'),
+        url('Geomanist-ThinItalic.woff') format('woff'),
+        url('Geomanist-ThinItalic.ttf') format('truetype'),
+        url('Geomanist-ThinItalic.svg#Geomanist-ThinItalic') format('svg');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Geomanist';
+    src: url('Geomanist-MediumItalic.eot');
+    src: url('Geomanist-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('Geomanist-MediumItalic.woff2') format('woff2'),
+        url('Geomanist-MediumItalic.woff') format('woff'),
+        url('Geomanist-MediumItalic.ttf') format('truetype'),
+        url('Geomanist-MediumItalic.svg#Geomanist-MediumItalic') format('svg');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Geomanist';
+    src: url('Geomanist-Bold.eot');
+    src: url('Geomanist-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Geomanist-Bold.woff2') format('woff2'),
+        url('Geomanist-Bold.woff') format('woff'),
+        url('Geomanist-Bold.ttf') format('truetype'),
+        url('Geomanist-Bold.svg#Geomanist-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Geomanist';
+    src: url('Geomanist-ExtraLight.eot');
+    src: url('Geomanist-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('Geomanist-ExtraLight.woff2') format('woff2'),
+        url('Geomanist-ExtraLight.woff') format('woff'),
+        url('Geomanist-ExtraLight.ttf') format('truetype'),
+        url('Geomanist-ExtraLight.svg#Geomanist-ExtraLight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Geomanist';
+    src: url('Geomanist-UltraItalic.eot');
+    src: url('Geomanist-UltraItalic.eot?#iefix') format('embedded-opentype'),
+        url('Geomanist-UltraItalic.woff2') format('woff2'),
+        url('Geomanist-UltraItalic.woff') format('woff'),
+        url('Geomanist-UltraItalic.ttf') format('truetype'),
+        url('Geomanist-UltraItalic.svg#Geomanist-UltraItalic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Geomanist';
+    src: url('Geomanist-Black.eot');
+    src: url('Geomanist-Black.eot?#iefix') format('embedded-opentype'),
+        url('Geomanist-Black.woff2') format('woff2'),
+        url('Geomanist-Black.woff') format('woff'),
+        url('Geomanist-Black.ttf') format('truetype'),
+        url('Geomanist-Black.svg#Geomanist-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Geomanist';
+    src: url('Geomanist-Ultra.eot');
+    src: url('Geomanist-Ultra.eot?#iefix') format('embedded-opentype'),
+        url('Geomanist-Ultra.woff2') format('woff2'),
+        url('Geomanist-Ultra.woff') format('woff'),
+        url('Geomanist-Ultra.ttf') format('truetype'),
+        url('Geomanist-Ultra.svg#Geomanist-Ultra') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Geomanist';
+    src: url('Geomanist-BlackItalic.eot');
+    src: url('Geomanist-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('Geomanist-BlackItalic.woff2') format('woff2'),
+        url('Geomanist-BlackItalic.woff') format('woff'),
+        url('Geomanist-BlackItalic.ttf') format('truetype'),
+        url('Geomanist-BlackItalic.svg#Geomanist-BlackItalic') format('svg');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Geomanist';
+    src: url('Geomanist-BoldItalic.eot');
+    src: url('Geomanist-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Geomanist-BoldItalic.woff2') format('woff2'),
+        url('Geomanist-BoldItalic.woff') format('woff'),
+        url('Geomanist-BoldItalic.ttf') format('truetype'),
+        url('Geomanist-BoldItalic.svg#Geomanist-BoldItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Geomanist';
+    src: url('Geomanist-LightItalic.eot');
+    src: url('Geomanist-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('Geomanist-LightItalic.woff2') format('woff2'),
+        url('Geomanist-LightItalic.woff') format('woff'),
+        url('Geomanist-LightItalic.ttf') format('truetype'),
+        url('Geomanist-LightItalic.svg#Geomanist-LightItalic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Geomanist';
+    src: url('Geomanist-Thin.eot');
+    src: url('Geomanist-Thin.eot?#iefix') format('embedded-opentype'),
+        url('Geomanist-Thin.woff2') format('woff2'),
+        url('Geomanist-Thin.woff') format('woff'),
+        url('Geomanist-Thin.ttf') format('truetype'),
+        url('Geomanist-Thin.svg#Geomanist-Thin') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Geomanist';
+    src: url('Geomanist-ExtraLightItalic.eot');
+    src: url('Geomanist-ExtraLightItalic.eot?#iefix') format('embedded-opentype'),
+        url('Geomanist-ExtraLightItalic.woff2') format('woff2'),
+        url('Geomanist-ExtraLightItalic.woff') format('woff'),
+        url('Geomanist-ExtraLightItalic.ttf') format('truetype'),
+        url('Geomanist-ExtraLightItalic.svg#Geomanist-ExtraLightItalic') format('svg');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Geomanist';
+    src: url('Geomanist-Medium.eot');
+    src: url('Geomanist-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Geomanist-Medium.woff2') format('woff2'),
+        url('Geomanist-Medium.woff') format('woff'),
+        url('Geomanist-Medium.ttf') format('truetype'),
+        url('Geomanist-Medium.svg#Geomanist-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Geomanist';
+    src: url('Geomanist-Italic.eot');
+    src: url('Geomanist-Italic.eot?#iefix') format('embedded-opentype'),
+        url('Geomanist-Italic.woff2') format('woff2'),
+        url('Geomanist-Italic.woff') format('woff'),
+        url('Geomanist-Italic.ttf') format('truetype'),
+        url('Geomanist-Italic.svg#Geomanist-Italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Geomanist';
+    src: url('Geomanist-BookItalic.eot');
+    src: url('Geomanist-BookItalic.eot?#iefix') format('embedded-opentype'),
+        url('Geomanist-BookItalic.woff2') format('woff2'),
+        url('Geomanist-BookItalic.woff') format('woff'),
+        url('Geomanist-BookItalic.ttf') format('truetype'),
+        url('Geomanist-BookItalic.svg#Geomanist-BookItalic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Geomanist';
+    src: url('Geomanist.eot');
+    src: url('Geomanist.eot?#iefix') format('embedded-opentype'),
+        url('Geomanist.woff2') format('woff2'),
+        url('Geomanist.woff') format('woff'),
+        url('Geomanist.ttf') format('truetype'),
+        url('Geomanist.svg#Geomanist') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Geomanist';
+    src: url('Geomanist-Book.eot');
+    src: url('Geomanist-Book.eot?#iefix') format('embedded-opentype'),
+        url('Geomanist-Book.woff2') format('woff2'),
+        url('Geomanist-Book.woff') format('woff'),
+        url('Geomanist-Book.ttf') format('truetype'),
+        url('Geomanist-Book.svg#Geomanist-Book') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Geomanist';
+    src: url('Geomanist-Light.eot');
+    src: url('Geomanist-Light.eot?#iefix') format('embedded-opentype'),
+        url('Geomanist-Light.woff2') format('woff2'),
+        url('Geomanist-Light.woff') format('woff'),
+        url('Geomanist-Light.ttf') format('truetype'),
+        url('Geomanist-Light.svg#Geomanist-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+@media only print {
+        @font-face {
+            font-family: 'Geomanist';
+            src: url('Geomanist-ThinItalic.eot');
+            src: url('Geomanist-ThinItalic.eot?#iefix') format('embedded-opentype'),
+                url('Geomanist-ThinItalic.woff2') format('woff2'),
+                url('Geomanist-ThinItalic.woff') format('woff'),
+                url('Geomanist-ThinItalic.ttf') format('truetype'),
+                url('Geomanist-ThinItalic.svg#Geomanist-ThinItalic') format('svg');
+            font-weight: 100;
+            font-style: italic;
+        }
+        
+        @font-face {
+            font-family: 'Geomanist';
+            src: url('Geomanist-MediumItalic.eot');
+            src: url('Geomanist-MediumItalic.eot?#iefix') format('embedded-opentype'),
+                url('Geomanist-MediumItalic.woff2') format('woff2'),
+                url('Geomanist-MediumItalic.woff') format('woff'),
+                url('Geomanist-MediumItalic.ttf') format('truetype'),
+                url('Geomanist-MediumItalic.svg#Geomanist-MediumItalic') format('svg');
+            font-weight: 500;
+            font-style: italic;
+        }
+        
+        @font-face {
+            font-family: 'Geomanist';
+            src: url('Geomanist-Bold.eot');
+            src: url('Geomanist-Bold.eot?#iefix') format('embedded-opentype'),
+                url('Geomanist-Bold.woff2') format('woff2'),
+                url('Geomanist-Bold.woff') format('woff'),
+                url('Geomanist-Bold.ttf') format('truetype'),
+                url('Geomanist-Bold.svg#Geomanist-Bold') format('svg');
+            font-weight: bold;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Geomanist';
+            src: url('Geomanist-ExtraLight.eot');
+            src: url('Geomanist-ExtraLight.eot?#iefix') format('embedded-opentype'),
+                url('Geomanist-ExtraLight.woff2') format('woff2'),
+                url('Geomanist-ExtraLight.woff') format('woff'),
+                url('Geomanist-ExtraLight.ttf') format('truetype'),
+                url('Geomanist-ExtraLight.svg#Geomanist-ExtraLight') format('svg');
+            font-weight: 200;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Geomanist';
+            src: url('Geomanist-UltraItalic.eot');
+            src: url('Geomanist-UltraItalic.eot?#iefix') format('embedded-opentype'),
+                url('Geomanist-UltraItalic.woff2') format('woff2'),
+                url('Geomanist-UltraItalic.woff') format('woff'),
+                url('Geomanist-UltraItalic.ttf') format('truetype'),
+                url('Geomanist-UltraItalic.svg#Geomanist-UltraItalic') format('svg');
+            font-weight: normal;
+            font-style: italic;
+        }
+        
+        @font-face {
+            font-family: 'Geomanist';
+            src: url('Geomanist-Black.eot');
+            src: url('Geomanist-Black.eot?#iefix') format('embedded-opentype'),
+                url('Geomanist-Black.woff2') format('woff2'),
+                url('Geomanist-Black.woff') format('woff'),
+                url('Geomanist-Black.ttf') format('truetype'),
+                url('Geomanist-Black.svg#Geomanist-Black') format('svg');
+            font-weight: 900;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Geomanist';
+            src: url('Geomanist-Ultra.eot');
+            src: url('Geomanist-Ultra.eot?#iefix') format('embedded-opentype'),
+                url('Geomanist-Ultra.woff2') format('woff2'),
+                url('Geomanist-Ultra.woff') format('woff'),
+                url('Geomanist-Ultra.ttf') format('truetype'),
+                url('Geomanist-Ultra.svg#Geomanist-Ultra') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Geomanist';
+            src: url('Geomanist-BlackItalic.eot');
+            src: url('Geomanist-BlackItalic.eot?#iefix') format('embedded-opentype'),
+                url('Geomanist-BlackItalic.woff2') format('woff2'),
+                url('Geomanist-BlackItalic.woff') format('woff'),
+                url('Geomanist-BlackItalic.ttf') format('truetype'),
+                url('Geomanist-BlackItalic.svg#Geomanist-BlackItalic') format('svg');
+            font-weight: 900;
+            font-style: italic;
+        }
+        
+        @font-face {
+            font-family: 'Geomanist';
+            src: url('Geomanist-BoldItalic.eot');
+            src: url('Geomanist-BoldItalic.eot?#iefix') format('embedded-opentype'),
+                url('Geomanist-BoldItalic.woff2') format('woff2'),
+                url('Geomanist-BoldItalic.woff') format('woff'),
+                url('Geomanist-BoldItalic.ttf') format('truetype'),
+                url('Geomanist-BoldItalic.svg#Geomanist-BoldItalic') format('svg');
+            font-weight: bold;
+            font-style: italic;
+        }
+        
+        @font-face {
+            font-family: 'Geomanist';
+            src: url('Geomanist-LightItalic.eot');
+            src: url('Geomanist-LightItalic.eot?#iefix') format('embedded-opentype'),
+                url('Geomanist-LightItalic.woff2') format('woff2'),
+                url('Geomanist-LightItalic.woff') format('woff'),
+                url('Geomanist-LightItalic.ttf') format('truetype'),
+                url('Geomanist-LightItalic.svg#Geomanist-LightItalic') format('svg');
+            font-weight: 300;
+            font-style: italic;
+        }
+        
+        @font-face {
+            font-family: 'Geomanist';
+            src: url('Geomanist-Thin.eot');
+            src: url('Geomanist-Thin.eot?#iefix') format('embedded-opentype'),
+                url('Geomanist-Thin.woff2') format('woff2'),
+                url('Geomanist-Thin.woff') format('woff'),
+                url('Geomanist-Thin.ttf') format('truetype'),
+                url('Geomanist-Thin.svg#Geomanist-Thin') format('svg');
+            font-weight: 100;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Geomanist';
+            src: url('Geomanist-ExtraLightItalic.eot');
+            src: url('Geomanist-ExtraLightItalic.eot?#iefix') format('embedded-opentype'),
+                url('Geomanist-ExtraLightItalic.woff2') format('woff2'),
+                url('Geomanist-ExtraLightItalic.woff') format('woff'),
+                url('Geomanist-ExtraLightItalic.ttf') format('truetype'),
+                url('Geomanist-ExtraLightItalic.svg#Geomanist-ExtraLightItalic') format('svg');
+            font-weight: 200;
+            font-style: italic;
+        }
+        
+        @font-face {
+            font-family: 'Geomanist';
+            src: url('Geomanist-Medium.eot');
+            src: url('Geomanist-Medium.eot?#iefix') format('embedded-opentype'),
+                url('Geomanist-Medium.woff2') format('woff2'),
+                url('Geomanist-Medium.woff') format('woff'),
+                url('Geomanist-Medium.ttf') format('truetype'),
+                url('Geomanist-Medium.svg#Geomanist-Medium') format('svg');
+            font-weight: 500;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Geomanist';
+            src: url('Geomanist-Italic.eot');
+            src: url('Geomanist-Italic.eot?#iefix') format('embedded-opentype'),
+                url('Geomanist-Italic.woff2') format('woff2'),
+                url('Geomanist-Italic.woff') format('woff'),
+                url('Geomanist-Italic.ttf') format('truetype'),
+                url('Geomanist-Italic.svg#Geomanist-Italic') format('svg');
+            font-weight: normal;
+            font-style: italic;
+        }
+        
+        @font-face {
+            font-family: 'Geomanist';
+            src: url('Geomanist-BookItalic.eot');
+            src: url('Geomanist-BookItalic.eot?#iefix') format('embedded-opentype'),
+                url('Geomanist-BookItalic.woff2') format('woff2'),
+                url('Geomanist-BookItalic.woff') format('woff'),
+                url('Geomanist-BookItalic.ttf') format('truetype'),
+                url('Geomanist-BookItalic.svg#Geomanist-BookItalic') format('svg');
+            font-weight: normal;
+            font-style: italic;
+        }
+        
+        @font-face {
+            font-family: 'Geomanist';
+            src: url('Geomanist.eot');
+            src: url('Geomanist.eot?#iefix') format('embedded-opentype'),
+                url('Geomanist.woff2') format('woff2'),
+                url('Geomanist.woff') format('woff'),
+                url('Geomanist.ttf') format('truetype'),
+                url('Geomanist.svg#Geomanist') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Geomanist';
+            src: url('Geomanist-Book.eot');
+            src: url('Geomanist-Book.eot?#iefix') format('embedded-opentype'),
+                url('Geomanist-Book.woff2') format('woff2'),
+                url('Geomanist-Book.woff') format('woff'),
+                url('Geomanist-Book.ttf') format('truetype'),
+                url('Geomanist-Book.svg#Geomanist-Book') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Geomanist';
+            src: url('Geomanist-Light.eot');
+            src: url('Geomanist-Light.eot?#iefix') format('embedded-opentype'),
+                url('Geomanist-Light.woff2') format('woff2'),
+                url('Geomanist-Light.woff') format('woff'),
+                url('Geomanist-Light.ttf') format('truetype'),
+                url('Geomanist-Light.svg#Geomanist-Light') format('svg');
+            font-weight: 300;
+            font-style: normal;
+        }
+}

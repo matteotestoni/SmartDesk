@@ -1,0 +1,52 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AsteCauzioni_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="AsteEsperimenti_Numero" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Aste_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="AsteCauzioni_Ky" IsNull="N" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Aste_Ky" IsNull="Y" Type="int" />
+      <Field Column="AsteEsperimenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="AsteCauzioni_Data" IsNull="Y" Type="smalldatetime" />
+      <Field Column="AsteCauzioni_Valore" IsNull="Y" Type="money" />
+      <Field Column="AsteCauzioni_Autorizzata" IsNull="Y" Type="bit" />
+      <Field Column="AsteCauzioni_Riferimenti" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="PagamentiMetodo_Ky" IsNull="Y" Type="int" />
+      <Field Column="PagamentiMetodo_Descrizione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="AsteCauzioni_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AsteCauzioni_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AsteCauzioni_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AsteCauzioni_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AsteCauzioni_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AsteCauzioni_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="PagamentiMetodo_Icona" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="PagamentiMetodo_Colore" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="PagamentiMetodo_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Conti_Ky" IsNull="Y" Type="int" />
+      <Field Column="Conti_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AsteEsperimentiEsiti_Icona" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AsteEsperimentiEsiti_Colore" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="AsteEsperimentiEsiti_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.AsteCauzioni_Vw
+AS
+SELECT        dbo.AsteEsperimenti.AsteEsperimenti_Numero, dbo.Anagrafiche.Anagrafiche_RagioneSociale, dbo.Aste.Aste_Titolo, dbo.AsteCauzioni.AsteCauzioni_Ky, dbo.AsteCauzioni.Anagrafiche_Ky, 
+                         dbo.AsteCauzioni.Aste_Ky, dbo.AsteCauzioni.AsteEsperimenti_Ky, dbo.AsteCauzioni.AsteCauzioni_Data, dbo.AsteCauzioni.AsteCauzioni_Valore, dbo.AsteCauzioni.AsteCauzioni_Autorizzata, 
+                         dbo.AsteCauzioni.AsteCauzioni_Riferimenti, dbo.AsteCauzioni.PagamentiMetodo_Ky, dbo.PagamentiMetodo.PagamentiMetodo_Descrizione, dbo.AsteCauzioni.AsteCauzioni_UserInsert, 
+                         dbo.AsteCauzioni.AsteCauzioni_UserUpdate, dbo.AsteCauzioni.AsteCauzioni_UserDelete, dbo.AsteCauzioni.AsteCauzioni_DateInsert, dbo.AsteCauzioni.AsteCauzioni_DateUpdate, 
+                         dbo.AsteCauzioni.AsteCauzioni_DateDelete, dbo.PagamentiMetodo.PagamentiMetodo_Icona, dbo.PagamentiMetodo.PagamentiMetodo_Colore, dbo.PagamentiMetodo.PagamentiMetodo_Titolo, 
+                         dbo.AsteCauzioni.Conti_Ky, dbo.Conti.Conti_Titolo, dbo.AsteEsperimentiEsiti.AsteEsperimentiEsiti_Icona, dbo.AsteEsperimentiEsiti.AsteEsperimentiEsiti_Colore, 
+                         dbo.AsteEsperimentiEsiti.AsteEsperimentiEsiti_Titolo
+FROM            dbo.Anagrafiche RIGHT OUTER JOIN
+                         dbo.AsteCauzioni LEFT OUTER JOIN
+                         dbo.Conti ON dbo.AsteCauzioni.Conti_Ky = dbo.Conti.Conti_Ky ON dbo.Anagrafiche.Anagrafiche_Ky = dbo.AsteCauzioni.Anagrafiche_Ky LEFT OUTER JOIN
+                         dbo.PagamentiMetodo ON dbo.AsteCauzioni.PagamentiMetodo_Ky = dbo.PagamentiMetodo.PagamentiMetodo_Ky LEFT OUTER JOIN
+                         dbo.AsteEsperimentiEsiti INNER JOIN
+                         dbo.AsteEsperimenti ON dbo.AsteEsperimentiEsiti.AsteEsperimentiEsiti_Ky = dbo.AsteEsperimenti.AsteEsperimentiEsiti_Ky ON 
+                         dbo.AsteCauzioni.AsteEsperimenti_Ky = dbo.AsteEsperimenti.AsteEsperimenti_Ky LEFT OUTER JOIN
+                         dbo.Aste ON dbo.AsteCauzioni.Aste_Ky = dbo.Aste.Aste_Ky
+</SqlScriptCreate>
+</SqlTable>

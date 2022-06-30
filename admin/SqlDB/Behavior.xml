@@ -1,0 +1,29 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Behavior" Type="TABLE">
+    <Keys>
+      <Key Column="Bhr_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Bhr_Form" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Bhr_Field" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Bhr_Value" IsNull="Y" Type="varchar" Lenght="8000" />
+      <Field Column="Bhr_User" IsNull="Y" Type="int" />
+      <Field Column="Bhr_Session" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Bhr_Ky" IsNull="N" Type="int" />
+      <Field Column="Bhr_DateTime" IsNull="Y" Type="datetime" />
+      <Field Column="Bhr_Pag" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Behavior] (
+  [Bhr_Form] varchar(50)  NULL , 
+  [Bhr_Field] varchar(50)  NULL , 
+  [Bhr_Value] varchar(8000)  NULL , 
+  [Bhr_User] int  NULL , 
+  [Bhr_Session] varchar(50)  NULL , 
+  [Bhr_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Bhr_DateTime] datetime  NULL , 
+  [Bhr_Pag] int  NULL  )
+ALTER TABLE [dbo].[Behavior] ADD CONSTRAINT PK_Behavior PRIMARY KEY  ([Bhr_Ky])
+</SqlScriptCreate>
+</SqlTable>

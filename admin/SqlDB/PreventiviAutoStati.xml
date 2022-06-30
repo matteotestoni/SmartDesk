@@ -1,0 +1,41 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="PreventiviAutoStati" Type="TABLE">
+    <Keys>
+      <Key Column="PreventiviAutoStati_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="PreventiviAutoStati_Ky" IsNull="N" Type="int" />
+      <Field Column="PreventiviAutoStati_Titolo" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="PreventiviAutoStati_Colore" IsNull="Y" Type="varchar" Lenght="8" />
+      <Field Column="PreventiviAutoStati_Icona" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="PreventiviAutoStati_Ordine" IsNull="Y" Type="int" />
+      <Field Column="PreventiviAutoStati_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="PreventiviAutoStati_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="PreventiviAutoStati_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="PreventiviAutoStati_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="PreventiviAutoStati_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="PreventiviAutoStati_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="AnagraficheStati_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="OpportunitaStati_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="LeadStato_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[PreventiviAutoStati] (
+  [PreventiviAutoStati_Ky] int IDENTITY(1,1) NOT NULL , 
+  [PreventiviAutoStati_Titolo] varchar(MAX)  NULL , 
+  [PreventiviAutoStati_Colore] varchar(8)  NULL , 
+  [PreventiviAutoStati_Icona] varchar(MAX)  NULL , 
+  [PreventiviAutoStati_Ordine] int  NULL , 
+  [PreventiviAutoStati_UserInsert] int  NULL , 
+  [PreventiviAutoStati_UserUpdate] int  NULL , 
+  [PreventiviAutoStati_UserDelete] int  NULL , 
+  [PreventiviAutoStati_DateInsert] datetime  NULL , 
+  [PreventiviAutoStati_DateUpdate] datetime  NULL , 
+  [PreventiviAutoStati_DateDelete] datetime  NULL , 
+  [AnagraficheStati_Ky] smallint  NULL , 
+  [OpportunitaStati_Ky] tinyint  NULL , 
+  [LeadStato_Ky] int  NULL  )
+ALTER TABLE [dbo].[PreventiviAutoStati] ADD CONSTRAINT PK_PreventiviAutoStati PRIMARY KEY  ([PreventiviAutoStati_Ky])
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,31 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AsteTipo" Type="TABLE">
+    <Keys>
+      <Key Column="AsteTipo_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AsteTipo_Ky" IsNull="N" Type="smallint" />
+      <Field Column="AsteTipo_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AsteTipo_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AsteTipo_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AsteTipo_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AsteTipo_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AsteTipo_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AsteTipo_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="AsteTipo_Default" IsNull="Y" Type="bit" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AsteTipo] (
+  [AsteTipo_Ky] smallint IDENTITY(1,1) NOT NULL , 
+  [AsteTipo_Titolo] varchar(200)  NULL , 
+  [AsteTipo_UserInsert] int  NULL , 
+  [AsteTipo_UserUpdate] int  NULL , 
+  [AsteTipo_UserDelete] int  NULL , 
+  [AsteTipo_DateInsert] datetime  NULL , 
+  [AsteTipo_DateUpdate] datetime  NULL , 
+  [AsteTipo_DateDelete] datetime  NULL , 
+  [AsteTipo_Default] bit  NULL  )
+ALTER TABLE [dbo].[AsteTipo] ADD CONSTRAINT PK_AsteTipo PRIMARY KEY  ([AsteTipo_Ky])
+</SqlScriptCreate>
+</SqlTable>

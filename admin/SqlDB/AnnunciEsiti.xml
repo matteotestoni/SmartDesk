@@ -1,0 +1,17 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AnnunciEsiti" Type="TABLE">
+    <Keys>
+      <Key Column="AnnunciEsiti_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="AnnunciEsiti_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="AnnunciEsiti_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[AnnunciEsiti] (
+  [AnnunciEsiti_Ky] tinyint IDENTITY(1,1) NOT NULL , 
+  [AnnunciEsiti_Titolo] varchar(200)  NULL  )
+ALTER TABLE [dbo].[AnnunciEsiti] ADD CONSTRAINT PK_AnnunciEsiti PRIMARY KEY  ([AnnunciEsiti_Ky])
+</SqlScriptCreate>
+</SqlTable>

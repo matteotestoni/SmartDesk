@@ -1,0 +1,328 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Annunci_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Annunci_Ky" IsNull="N" Type="int" />
+      <Field Column="Annunci_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Annunci_UrlKey" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Nazioni_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Province_Ky" IsNull="Y" Type="int" />
+      <Field Column="Regioni_Ky" IsNull="Y" Type="int" />
+      <Field Column="Comuni_Ky" IsNull="Y" Type="int" />
+      <Field Column="AnnunciStato_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="AnnunciTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Annunci_Numero" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Valore" IsNull="Y" Type="money" />
+      <Field Column="Annunci_PrezzoRiserva" IsNull="Y" Type="money" />
+      <Field Column="Annunci_Cauzione" IsNull="Y" Type="money" />
+      <Field Column="Annunci_Rilancio" IsNull="Y" Type="money" />
+      <Field Column="AnnunciCategorie_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Annunci_Foto1" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto2" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto3" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto4" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto5" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto6" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto8" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto9" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto7" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto10" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnnunciModello_Ky" IsNull="Y" Type="int" />
+      <Field Column="AnnunciMarca_Ky" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Anno" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Visite" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Visione" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_Ky" IsNull="Y" Type="int" />
+      <Field Column="Annunci_DataInserimento" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Annunci_DataAggiornamento" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="AnnunciStato_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="AnnunciTipo_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="AnnunciMarca_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="AnnunciModello_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="AnnunciTipologie_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="AnnunciCategorie_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="AnnunciTipologie_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AnnunciEsiti_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnnunciEsiti_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Annunci_Indirizzo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Comuni_Comune" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Province_Provincia" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Annunci_Alimentazione" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Cambio" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Allestimento" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Tipologia" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Emissioni" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Cilindrata" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Assi" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Ore" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Km" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Portata" IsNull="Y" Type="float" />
+      <Field Column="Annunci_Peso" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Lunghezza" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Larghezza" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Altezza" IsNull="Y" Type="int" />
+      <Field Column="Annunci_LunghezzaBraccio" IsNull="Y" Type="int" />
+      <Field Column="Annunci_LunghezzaTaglio" IsNull="Y" Type="int" />
+      <Field Column="Annunci_AltezzaSollevamento" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Pressione" IsNull="Y" Type="int" />
+      <Field Column="Annunci_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Annunci_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Annunci_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Annunci_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Annunci_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Annunci_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Anagrafiche_Comune" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Anagrafiche_Provincia" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="AnnunciOfferte_ValoreAttuale" IsNull="Y" Type="money" />
+      <Field Column="Anagrafiche_Nazione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_Regione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Annunci_Trazione" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Carrozzeria" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_NumeroPosti" IsNull="Y" Type="int" />
+      <Field Column="Annunci_NumeroPorte" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Tara" IsNull="Y" Type="float" />
+      <Field Column="Annunci_Massa" IsNull="Y" Type="float" />
+      <Field Column="Anagrafiche_Telefono" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_Indirizzo" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Annunci_GruMunito" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_Gruppoidraulico" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_Allestimentorimorchisemirimorchi" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_SospensioniMezzi" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Retarder" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_Condizioni" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_CV" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Kw" IsNull="Y" Type="int" />
+      <Field Column="Annunci_IncavoPressePiegatrici" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_TipologiaPressePiegatrici" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_AssiMacchinariMetalmeccanica" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ControlloNumericoMacchinari" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_StrutturaPresseIdraulicheMeccanicheEcc" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_SpessoreCesoie" IsNull="Y" Type="int" />
+      <Field Column="Annunci_TipologiaTornio" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_MandrinoTornio" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnnunciCategorie_AttributiElenchi" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Potenza" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnnunciCategorie_Padre" IsNull="Y" Type="smallint" />
+      <Field Column="Annunci_Foto11" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto12" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto13" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto14" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto15" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto16" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto17" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto19" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto18" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto20" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Modello" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Aste_Numero" IsNull="Y" Type="int" />
+      <Field Column="Annunci_NumeroFoto" IsNull="Y" Type="tinyint" />
+      <Field Column="AnnunciCategorie_Attributi" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_LunghezzaModuliPrefab" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_LarghezzaModuliPrefab" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_DumperRigidoArticolato" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_TerneRigideArticolate" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_TipoligiaTrattoriAgricoli" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_TrattoriDT" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_ClimaCabina" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_AlesatriciCorsaLong" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_AlesatriciCorsaVert" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_AlesatriciCorsaTrasv" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_AlesatriciCorsaCanotto" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_AlesatriciDimensioneTavola" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_AlesatriciMassimoCarico" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_MarchioCE" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_ConsumiAuto" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_AllestimentoRimorchiAgricoli" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ClimatizzatoreAuto" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliSuperficieInterna" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliNumeroLocali" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_NBagni" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliClasseEnergetica" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliDisponibilita" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_ImmobiliCondizioni" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliSuperficieEsterna" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliClasseImmobile" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_AnnoDiCostruzione" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliTipoContratto" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliTipoProprietà" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliSpeseCondominiali" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliPrestazioneEnergetica" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliPresenzaGarage" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliAscensore" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_ImmobiliCondizionatore" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_ImmobiliTerrazzo" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_ImmobiliPiano" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliSuperficieUfficiCapannoni" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliPostiAuto" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliArredamento" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliGiardino" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliAllarme" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_ImmobileCablato" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_TipologiaAttività" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnagraficheTipologia_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Nazioni_Nazione" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Nazioni_Codice" IsNull="Y" Type="varchar" Lenght="4" />
+      <Field Column="Province_Codice" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Regioni_Codice" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="Regioni_Regione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="AnnunciStato_Icona" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AnnunciStato_Colore" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Annunci_ImmobiliDipAzienda" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_ImmobiliCatAzienda" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_PortataVeicoliComm" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_TaraVeicComm" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_MassaComplVeicComm" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_TipologiaPressaFonderia" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_TipologiaPressaLavorazioneMetalli" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Video" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Note" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Annunci_NotePubblicita" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="AnnunciStato_PubblicaWEB" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_Mq" IsNull="Y" Type="int" />
+      <Field Column="Annunci_KgCaffe" IsNull="Y" Type="int" />
+      <Field Column="Annunci_PostiSedere" IsNull="Y" Type="int" />
+      <Field Column="Annunci_NumeroBagni" IsNull="Y" Type="int" />
+      <Field Column="Annunci_NumeroCamere" IsNull="Y" Type="int" />
+      <Field Column="Annunci_NumeroVetrine" IsNull="Y" Type="int" />
+      <Field Column="Annunci_NumeroPonti" IsNull="Y" Type="int" />
+      <Field Column="Annunci_Stelle" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Robots" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Annunci_Title" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Description" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Cerco" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_Offro" IsNull="Y" Type="bit" />
+      <Field Column="ComuniZone_Ky" IsNull="Y" Type="int" />
+      <Field Column="ComuniZone_Zona" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Annunci_Foto21" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto22" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto23" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto24" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto25" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto26" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto27" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto28" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto29" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto30" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto31" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto32" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto33" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto34" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto35" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto36" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto37" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto38" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto39" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto40" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto41" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto42" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto43" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto44" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto45" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto46" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto47" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto48" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto49" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Foto50" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_PassaggioVeicoli" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Annunci_PassaggioPedoni" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Annunci_DataScadenza" IsNull="Y" Type="datetime" />
+      <Field Column="Annunci_IncassiGiornalieri" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_Logo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnnunciCategorie_Url" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Province_ProvinciaHTML" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Comuni_ComuneHTML" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Annunci_Vetrina" IsNull="Y" Type="bit" />
+      <Field Column="AnnunciSorgenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="AnnunciSorgenti_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AnnunciSorgenti_Icona" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AnnunciSorgenti_Colore" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="CoreResponseCode_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="Annunci_RedirectUrl" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CoreResponseCode_Title" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Annunci_ConRiserva" IsNull="Y" Type="bit" />
+      <Field Column="Anagrafiche_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Anagrafiche_Video" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Codice" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_GestionaleImmobiliare" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_Agestanet" IsNull="Y" Type="bit" />
+      <Field Column="Annunci_ClasseEnergetica" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_Epi" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Annunci_EpiUm" IsNull="Y" Type="varchar" Lenght="200" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.Annunci_Vw
+AS
+SELECT        dbo.Annunci.Annunci_Ky, dbo.Annunci.Annunci_Titolo, dbo.Annunci.Annunci_Descrizione, dbo.Annunci.Annunci_UrlKey, dbo.Annunci.Anagrafiche_Ky, dbo.Annunci.Nazioni_Ky, dbo.Annunci.Province_Ky, 
+                         dbo.Annunci.Regioni_Ky, dbo.Annunci.Comuni_Ky, dbo.Annunci.AnnunciStato_Ky, dbo.Annunci.AnnunciTipo_Ky, dbo.Annunci.Annunci_Numero, dbo.Annunci.Annunci_Valore, dbo.Annunci.Annunci_PrezzoRiserva, 
+                         dbo.Annunci.Annunci_Cauzione, dbo.Annunci.Annunci_Rilancio, dbo.Annunci.AnnunciCategorie_Ky, dbo.Annunci.Annunci_Foto1, dbo.Annunci.Annunci_Foto2, dbo.Annunci.Annunci_Foto3, 
+                         dbo.Annunci.Annunci_Foto4, dbo.Annunci.Annunci_Foto5, dbo.Annunci.Annunci_Foto6, dbo.Annunci.Annunci_Foto8, dbo.Annunci.Annunci_Foto9, dbo.Annunci.Annunci_Foto7, dbo.Annunci.Annunci_Foto10, 
+                         dbo.Annunci.AnnunciModello_Ky, dbo.Annunci.AnnunciMarca_Ky, dbo.Annunci.Annunci_Anno, dbo.Annunci.Annunci_Visite, dbo.Annunci.Annunci_Visione, dbo.Annunci.Aste_Ky, 
+                         dbo.Annunci.Annunci_DataInserimento, dbo.Annunci.Annunci_DataAggiornamento, dbo.Annunci.Utenti_Ky, dbo.AnnunciStato.AnnunciStato_Titolo, dbo.AnnunciTipo.AnnunciTipo_Titolo, 
+                         dbo.AnnunciMarca.AnnunciMarca_Titolo, dbo.AnnunciModello.AnnunciModello_Titolo, dbo.AnnunciTipologie.AnnunciTipologie_Titolo, dbo.AnnunciCategorie.AnnunciCategorie_Titolo, 
+                         dbo.Annunci.AnnunciTipologie_Ky, dbo.Anagrafiche.Anagrafiche_RagioneSociale, dbo.AnnunciEsiti.AnnunciEsiti_Titolo, dbo.Annunci.AnnunciEsiti_Ky, dbo.Annunci.Annunci_Indirizzo, dbo.Comuni.Comuni_Comune, 
+                         Province_1.Province_Provincia, dbo.Annunci.Annunci_Alimentazione, dbo.Annunci.Annunci_Cambio, dbo.Annunci.Annunci_Allestimento, dbo.Annunci.Annunci_Tipologia, dbo.Annunci.Annunci_Emissioni, 
+                         dbo.Annunci.Annunci_Cilindrata, dbo.Annunci.Annunci_Assi, dbo.Annunci.Annunci_Ore, dbo.Annunci.Annunci_Km, dbo.Annunci.Annunci_Portata, dbo.Annunci.Annunci_Peso, dbo.Annunci.Annunci_Lunghezza, 
+                         dbo.Annunci.Annunci_Larghezza, dbo.Annunci.Annunci_Altezza, dbo.Annunci.Annunci_LunghezzaBraccio, dbo.Annunci.Annunci_LunghezzaTaglio, dbo.Annunci.Annunci_AltezzaSollevamento, 
+                         dbo.Annunci.Annunci_Pressione, dbo.Annunci.Annunci_UserInsert, dbo.Annunci.Annunci_UserUpdate, dbo.Annunci.Annunci_UserDelete, dbo.Annunci.Annunci_DateInsert, dbo.Annunci.Annunci_DateUpdate, 
+                         dbo.Annunci.Annunci_DateDelete, dbo.Anagrafiche.Anagrafiche_Comune, dbo.Anagrafiche.Anagrafiche_Provincia, dbo.AnnunciOfferte_ValoreAttuale_Vw.AnnunciOfferte_ValoreAttuale, 
+                         dbo.Anagrafiche.Anagrafiche_Nazione, dbo.Regioni.Regioni_Regione AS Anagrafiche_Regione, dbo.Annunci.Annunci_Trazione, dbo.Annunci.Annunci_Carrozzeria, dbo.Annunci.Annunci_NumeroPosti, 
+                         dbo.Annunci.Annunci_NumeroPorte, dbo.Annunci.Annunci_Tara, dbo.Annunci.Annunci_Massa, dbo.Anagrafiche.Anagrafiche_Telefono, dbo.Anagrafiche.Anagrafiche_Indirizzo, dbo.Annunci.Annunci_GruMunito, 
+                         dbo.Annunci.Annunci_Gruppoidraulico, dbo.Annunci.Annunci_Allestimentorimorchisemirimorchi, dbo.Annunci.Annunci_SospensioniMezzi, dbo.Annunci.Annunci_Retarder, dbo.Annunci.Annunci_Condizioni, 
+                         dbo.Annunci.Annunci_CV, dbo.Annunci.Annunci_Kw, dbo.Annunci.Annunci_IncavoPressePiegatrici, dbo.Annunci.Annunci_TipologiaPressePiegatrici, dbo.Annunci.Annunci_AssiMacchinariMetalmeccanica, 
+                         dbo.Annunci.Annunci_ControlloNumericoMacchinari, dbo.Annunci.Annunci_StrutturaPresseIdraulicheMeccanicheEcc, dbo.Annunci.Annunci_SpessoreCesoie, dbo.Annunci.Annunci_TipologiaTornio, 
+                         dbo.Annunci.Annunci_MandrinoTornio, dbo.AnnunciCategorie.AnnunciCategorie_AttributiElenchi, dbo.Annunci.Annunci_Potenza, dbo.AnnunciCategorie.AnnunciCategorie_Padre, dbo.Annunci.Annunci_Foto11, 
+                         dbo.Annunci.Annunci_Foto12, dbo.Annunci.Annunci_Foto13, dbo.Annunci.Annunci_Foto14, dbo.Annunci.Annunci_Foto15, dbo.Annunci.Annunci_Foto16, dbo.Annunci.Annunci_Foto17, dbo.Annunci.Annunci_Foto19, 
+                         dbo.Annunci.Annunci_Foto18, dbo.Annunci.Annunci_Foto20, dbo.Annunci.Annunci_Modello, dbo.Aste.Aste_Numero, dbo.Annunci.Annunci_NumeroFoto, dbo.AnnunciCategorie.AnnunciCategorie_Attributi, 
+                         dbo.Annunci.Annunci_LunghezzaModuliPrefab, dbo.Annunci.Annunci_LarghezzaModuliPrefab, dbo.Annunci.Annunci_DumperRigidoArticolato, dbo.Annunci.Annunci_TerneRigideArticolate, 
+                         dbo.Annunci.Annunci_TipoligiaTrattoriAgricoli, dbo.Annunci.Annunci_TrattoriDT, dbo.Annunci.Annunci_ClimaCabina, dbo.Annunci.Annunci_AlesatriciCorsaLong, dbo.Annunci.Annunci_AlesatriciCorsaVert, 
+                         dbo.Annunci.Annunci_AlesatriciCorsaTrasv, dbo.Annunci.Annunci_AlesatriciCorsaCanotto, dbo.Annunci.Annunci_AlesatriciDimensioneTavola, dbo.Annunci.Annunci_AlesatriciMassimoCarico, 
+                         dbo.Annunci.Annunci_MarchioCE, dbo.Annunci.Annunci_ConsumiAuto, dbo.Annunci.Annunci_AllestimentoRimorchiAgricoli, dbo.Annunci.Annunci_ClimatizzatoreAuto, 
+                         dbo.Annunci.Annunci_ImmobiliSuperficieInterna, dbo.Annunci.Annunci_ImmobiliNumeroLocali, dbo.Annunci.Annunci_NBagni, dbo.Annunci.Annunci_ImmobiliClasseEnergetica, 
+                         dbo.Annunci.Annunci_ImmobiliDisponibilita, dbo.Annunci.Annunci_ImmobiliCondizioni, dbo.Annunci.Annunci_ImmobiliSuperficieEsterna, dbo.Annunci.Annunci_ImmobiliClasseImmobile, 
+                         dbo.Annunci.Annunci_AnnoDiCostruzione, dbo.Annunci.Annunci_ImmobiliTipoContratto, dbo.Annunci.Annunci_ImmobiliTipoProprietà, dbo.Annunci.Annunci_ImmobiliSpeseCondominiali, 
+                         dbo.Annunci.Annunci_ImmobiliPrestazioneEnergetica, dbo.Annunci.Annunci_ImmobiliPresenzaGarage, dbo.Annunci.Annunci_ImmobiliAscensore, dbo.Annunci.Annunci_ImmobiliCondizionatore, 
+                         dbo.Annunci.Annunci_ImmobiliTerrazzo, dbo.Annunci.Annunci_ImmobiliPiano, dbo.Annunci.Annunci_ImmobiliSuperficieUfficiCapannoni, dbo.Annunci.Annunci_ImmobiliPostiAuto, 
+                         dbo.Annunci.Annunci_ImmobiliArredamento, dbo.Annunci.Annunci_ImmobiliGiardino, dbo.Annunci.Annunci_ImmobiliAllarme, dbo.Annunci.Annunci_ImmobileCablato, dbo.Annunci.Annunci_TipologiaAttività, 
+                         dbo.AnagraficheTipologia.AnagraficheTipologia_Titolo, dbo.Nazioni.Nazioni_Nazione, dbo.Nazioni.Nazioni_Codice, Province_1.Province_Codice, Regioni_1.Regioni_Codice, Regioni_1.Regioni_Regione, 
+                         dbo.AnnunciStato.AnnunciStato_Icona, dbo.AnnunciStato.AnnunciStato_Colore, dbo.Annunci.Annunci_ImmobiliDipAzienda, dbo.Annunci.Annunci_ImmobiliCatAzienda, dbo.Annunci.Annunci_PortataVeicoliComm, 
+                         dbo.Annunci.Annunci_TaraVeicComm, dbo.Annunci.Annunci_MassaComplVeicComm, dbo.Annunci.Annunci_TipologiaPressaFonderia, dbo.Annunci.Annunci_TipologiaPressaLavorazioneMetalli, 
+                         dbo.Annunci.Annunci_Video, dbo.Annunci.Annunci_Note, dbo.Annunci.Annunci_NotePubblicita, dbo.AnnunciStato.AnnunciStato_PubblicaWEB, dbo.Annunci.Annunci_Mq, dbo.Annunci.Annunci_KgCaffe, 
+                         dbo.Annunci.Annunci_PostiSedere, dbo.Annunci.Annunci_NumeroBagni, dbo.Annunci.Annunci_NumeroCamere, dbo.Annunci.Annunci_NumeroVetrine, dbo.Annunci.Annunci_NumeroPonti, 
+                         dbo.Annunci.Annunci_Stelle, dbo.Annunci.Annunci_Robots, dbo.Annunci.Annunci_Title, dbo.Annunci.Annunci_Description, dbo.Annunci.Annunci_Cerco, dbo.Annunci.Annunci_Offro, dbo.Annunci.ComuniZone_Ky, 
+                         dbo.ComuniZone.ComuniZone_Zona, dbo.Annunci.Annunci_Foto21, dbo.Annunci.Annunci_Foto22, dbo.Annunci.Annunci_Foto23, dbo.Annunci.Annunci_Foto24, dbo.Annunci.Annunci_Foto25, 
+                         dbo.Annunci.Annunci_Foto26, dbo.Annunci.Annunci_Foto27, dbo.Annunci.Annunci_Foto28, dbo.Annunci.Annunci_Foto29, dbo.Annunci.Annunci_Foto30, dbo.Annunci.Annunci_Foto31, dbo.Annunci.Annunci_Foto32, 
+                         dbo.Annunci.Annunci_Foto33, dbo.Annunci.Annunci_Foto34, dbo.Annunci.Annunci_Foto35, dbo.Annunci.Annunci_Foto36, dbo.Annunci.Annunci_Foto37, dbo.Annunci.Annunci_Foto38, dbo.Annunci.Annunci_Foto39, 
+                         dbo.Annunci.Annunci_Foto40, dbo.Annunci.Annunci_Foto41, dbo.Annunci.Annunci_Foto42, dbo.Annunci.Annunci_Foto43, dbo.Annunci.Annunci_Foto44, dbo.Annunci.Annunci_Foto45, dbo.Annunci.Annunci_Foto46, 
+                         dbo.Annunci.Annunci_Foto47, dbo.Annunci.Annunci_Foto48, dbo.Annunci.Annunci_Foto49, dbo.Annunci.Annunci_Foto50, dbo.Annunci.Annunci_PassaggioVeicoli, dbo.Annunci.Annunci_PassaggioPedoni, 
+                         dbo.Annunci.Annunci_DataScadenza, dbo.Annunci.Annunci_IncassiGiornalieri, dbo.Anagrafiche.Anagrafiche_Logo, dbo.AnnunciCategorie.AnnunciCategorie_Url, dbo.Province.Province_ProvinciaHTML, 
+                         dbo.Comuni.Comuni_ComuneHTML, dbo.Annunci.Annunci_Vetrina, dbo.Annunci.AnnunciSorgenti_Ky, dbo.AnnunciSorgenti.AnnunciSorgenti_Titolo, dbo.AnnunciSorgenti.AnnunciSorgenti_Icona, 
+                         dbo.AnnunciSorgenti.AnnunciSorgenti_Colore, dbo.Annunci.CoreResponseCode_Ky, dbo.Annunci.Annunci_RedirectUrl, dbo.CoreResponseCode.CoreResponseCode_Title, dbo.Annunci.Annunci_ConRiserva, 
+                         dbo.Anagrafiche.Anagrafiche_Descrizione, dbo.Anagrafiche.Anagrafiche_Video, dbo.Annunci.Annunci_Codice, dbo.Annunci.Annunci_GestionaleImmobiliare, dbo.Annunci.Annunci_Agestanet, 
+                         dbo.Annunci.Annunci_ClasseEnergetica, dbo.Annunci.Annunci_Epi, dbo.Annunci.Annunci_EpiUm
+FROM            dbo.Annunci INNER JOIN
+                         dbo.Anagrafiche ON dbo.Annunci.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky LEFT OUTER JOIN
+                         dbo.CoreResponseCode ON dbo.Annunci.CoreResponseCode_Ky = dbo.CoreResponseCode.CoreResponseCode_Ky LEFT OUTER JOIN
+                         dbo.AnnunciSorgenti ON dbo.Annunci.AnnunciSorgenti_Ky = dbo.AnnunciSorgenti.AnnunciSorgenti_Ky LEFT OUTER JOIN
+                         dbo.ComuniZone ON dbo.Annunci.ComuniZone_Ky = dbo.ComuniZone.ComuniZone_Ky LEFT OUTER JOIN
+                         dbo.Nazioni ON dbo.Annunci.Nazioni_Ky = dbo.Nazioni.Nazioni_Ky LEFT OUTER JOIN
+                         dbo.AnagraficheTipologia ON dbo.Anagrafiche.AnagraficheTipologia_Ky = dbo.AnagraficheTipologia.AnagraficheTipologia_Ky LEFT OUTER JOIN
+                         dbo.Aste ON dbo.Annunci.Aste_Ky = dbo.Aste.Aste_Ky LEFT OUTER JOIN
+                         dbo.Province ON dbo.Anagrafiche.Province_Ky = dbo.Province.Province_Ky LEFT OUTER JOIN
+                         dbo.Regioni ON dbo.Province.Regioni_Ky = dbo.Regioni.Regioni_Ky LEFT OUTER JOIN
+                         dbo.AnnunciOfferte_ValoreAttuale_Vw ON dbo.Annunci.Annunci_Ky = dbo.AnnunciOfferte_ValoreAttuale_Vw.Annunci_Ky LEFT OUTER JOIN
+                         dbo.Province AS Province_1 ON dbo.Annunci.Province_Ky = Province_1.Province_Ky LEFT OUTER JOIN
+                         dbo.Regioni AS Regioni_1 ON dbo.Annunci.Regioni_Ky = Regioni_1.Regioni_Ky LEFT OUTER JOIN
+                         dbo.Comuni ON dbo.Annunci.Comuni_Ky = dbo.Comuni.Comuni_Ky LEFT OUTER JOIN
+                         dbo.AnnunciEsiti ON dbo.Annunci.AnnunciEsiti_Ky = dbo.AnnunciEsiti.AnnunciEsiti_Ky LEFT OUTER JOIN
+                         dbo.AnnunciCategorie ON dbo.Annunci.AnnunciCategorie_Ky = dbo.AnnunciCategorie.AnnunciCategorie_Ky LEFT OUTER JOIN
+                         dbo.AnnunciTipologie ON dbo.Annunci.AnnunciTipologie_Ky = dbo.AnnunciTipologie.AnnunciTipologie_Ky LEFT OUTER JOIN
+                         dbo.AnnunciModello ON dbo.Annunci.AnnunciModello_Ky = dbo.AnnunciModello.AnnunciModello_Ky LEFT OUTER JOIN
+                         dbo.AnnunciMarca ON dbo.Annunci.AnnunciMarca_Ky = dbo.AnnunciMarca.AnnunciMarca_Ky LEFT OUTER JOIN
+                         dbo.AnnunciTipo ON dbo.Annunci.AnnunciTipo_Ky = dbo.AnnunciTipo.AnnunciTipo_Ky LEFT OUTER JOIN
+                         dbo.AnnunciStato ON dbo.Annunci.AnnunciStato_Ky = dbo.AnnunciStato.AnnunciStato_Ky
+</SqlScriptCreate>
+</SqlTable>

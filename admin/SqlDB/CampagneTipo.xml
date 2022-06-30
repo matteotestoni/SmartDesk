@@ -1,0 +1,29 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CampagneTipo" Type="TABLE">
+    <Keys>
+      <Key Column="CampagneTipo_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CampagneTipo_Ky" IsNull="N" Type="int" />
+      <Field Column="CampagneTipo_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CampagneTipo_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CampagneTipo_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CampagneTipo_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CampagneTipo_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CampagneTipo_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CampagneTipo_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CampagneTipo] (
+  [CampagneTipo_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CampagneTipo_Titolo] varchar(200)  NULL , 
+  [CampagneTipo_UserInsert] int  NULL , 
+  [CampagneTipo_UserUpdate] int  NULL , 
+  [CampagneTipo_UserDelete] int  NULL , 
+  [CampagneTipo_DateInsert] datetime  NULL , 
+  [CampagneTipo_DateUpdate] datetime  NULL , 
+  [CampagneTipo_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[CampagneTipo] ADD CONSTRAINT PK_CampagneTipo PRIMARY KEY  ([CampagneTipo_Ky])
+</SqlScriptCreate>
+</SqlTable>

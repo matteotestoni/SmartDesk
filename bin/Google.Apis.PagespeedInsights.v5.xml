@@ -1,0 +1,818 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.PagespeedInsights.v5</name>
+    </assembly>
+    <members>
+        <member name="T:Google.Apis.PagespeedInsights.v5.PagespeedInsightsService">
+            <summary>The PagespeedInsights Service.</summary>
+        </member>
+        <member name="F:Google.Apis.PagespeedInsights.v5.PagespeedInsightsService.Version">
+            <summary>The API version.</summary>
+        </member>
+        <member name="F:Google.Apis.PagespeedInsights.v5.PagespeedInsightsService.DiscoveryVersionUsed">
+            <summary>The discovery version used to generate this service.</summary>
+        </member>
+        <member name="M:Google.Apis.PagespeedInsights.v5.PagespeedInsightsService.#ctor">
+            <summary>Constructs a new service.</summary>
+        </member>
+        <member name="M:Google.Apis.PagespeedInsights.v5.PagespeedInsightsService.#ctor(Google.Apis.Services.BaseClientService.Initializer)">
+            <summary>Constructs a new service.</summary>
+            <param name="initializer">The service initializer.</param>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.PagespeedInsightsService.Features">
+            <summary>Gets the service supported features.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.PagespeedInsightsService.Name">
+            <summary>Gets the service name.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.PagespeedInsightsService.BaseUri">
+            <summary>Gets the service base URI.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.PagespeedInsightsService.BasePath">
+            <summary>Gets the service base path.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.PagespeedInsightsService.BatchUri">
+            <summary>Gets the batch base URI; <c>null</c> if unspecified.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.PagespeedInsightsService.BatchPath">
+            <summary>Gets the batch base path; <c>null</c> if unspecified.</summary>
+        </member>
+        <member name="T:Google.Apis.PagespeedInsights.v5.PagespeedInsightsService.Scope">
+            <summary>Available OAuth 2.0 scopes for use with the PageSpeed Insights API.</summary>
+        </member>
+        <member name="F:Google.Apis.PagespeedInsights.v5.PagespeedInsightsService.Scope.Openid">
+            <summary>Associate you with your personal info on Google</summary>
+        </member>
+        <member name="T:Google.Apis.PagespeedInsights.v5.PagespeedInsightsService.ScopeConstants">
+            <summary>Available OAuth 2.0 scope constants for use with the PageSpeed Insights API.</summary>
+        </member>
+        <member name="F:Google.Apis.PagespeedInsights.v5.PagespeedInsightsService.ScopeConstants.Openid">
+            <summary>Associate you with your personal info on Google</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.PagespeedInsightsService.Pagespeedapi">
+            <summary>Gets the Pagespeedapi resource.</summary>
+        </member>
+        <member name="T:Google.Apis.PagespeedInsights.v5.PagespeedInsightsBaseServiceRequest`1">
+            <summary>A base abstract class for PagespeedInsights requests.</summary>
+        </member>
+        <member name="M:Google.Apis.PagespeedInsights.v5.PagespeedInsightsBaseServiceRequest`1.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new PagespeedInsightsBaseServiceRequest instance.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.PagespeedInsightsBaseServiceRequest`1.Xgafv">
+            <summary>V1 error format.</summary>
+        </member>
+        <member name="T:Google.Apis.PagespeedInsights.v5.PagespeedInsightsBaseServiceRequest`1.XgafvEnum">
+            <summary>V1 error format.</summary>
+        </member>
+        <member name="F:Google.Apis.PagespeedInsights.v5.PagespeedInsightsBaseServiceRequest`1.XgafvEnum.Value1">
+            <summary>v1 error format</summary>
+        </member>
+        <member name="F:Google.Apis.PagespeedInsights.v5.PagespeedInsightsBaseServiceRequest`1.XgafvEnum.Value2">
+            <summary>v2 error format</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.PagespeedInsightsBaseServiceRequest`1.AccessToken">
+            <summary>OAuth access token.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.PagespeedInsightsBaseServiceRequest`1.Alt">
+            <summary>Data format for response.</summary>
+        </member>
+        <member name="T:Google.Apis.PagespeedInsights.v5.PagespeedInsightsBaseServiceRequest`1.AltEnum">
+            <summary>Data format for response.</summary>
+        </member>
+        <member name="F:Google.Apis.PagespeedInsights.v5.PagespeedInsightsBaseServiceRequest`1.AltEnum.Json">
+            <summary>Responses with Content-Type of application/json</summary>
+        </member>
+        <member name="F:Google.Apis.PagespeedInsights.v5.PagespeedInsightsBaseServiceRequest`1.AltEnum.Media">
+            <summary>Media download with context-dependent Content-Type</summary>
+        </member>
+        <member name="F:Google.Apis.PagespeedInsights.v5.PagespeedInsightsBaseServiceRequest`1.AltEnum.Proto">
+            <summary>Responses with Content-Type of application/x-protobuf</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.PagespeedInsightsBaseServiceRequest`1.Callback">
+            <summary>JSONP</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.PagespeedInsightsBaseServiceRequest`1.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.PagespeedInsightsBaseServiceRequest`1.Key">
+            <summary>
+            API key. Your API key identifies your project and provides you with API access, quota, and reports. Required
+            unless you provide an OAuth 2.0 token.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.PagespeedInsightsBaseServiceRequest`1.OauthToken">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.PagespeedInsightsBaseServiceRequest`1.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.PagespeedInsightsBaseServiceRequest`1.QuotaUser">
+            <summary>
+            Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a
+            user, but should not exceed 40 characters.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.PagespeedInsightsBaseServiceRequest`1.UploadType">
+            <summary>Legacy upload protocol for media (e.g. "media", "multipart").</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.PagespeedInsightsBaseServiceRequest`1.UploadProtocol">
+            <summary>Upload protocol for media (e.g. "raw", "multipart").</summary>
+        </member>
+        <member name="M:Google.Apis.PagespeedInsights.v5.PagespeedInsightsBaseServiceRequest`1.InitParameters">
+            <summary>Initializes PagespeedInsights parameter list.</summary>
+        </member>
+        <member name="T:Google.Apis.PagespeedInsights.v5.PagespeedapiResource">
+            <summary>The "pagespeedapi" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.PagespeedInsights.v5.PagespeedapiResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.PagespeedInsights.v5.PagespeedapiResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="M:Google.Apis.PagespeedInsights.v5.PagespeedapiResource.Runpagespeed(System.String)">
+            <summary>
+            Runs PageSpeed analysis on the page at the specified URL, and returns PageSpeed scores, a list of
+            suggestions to make that page faster, and other information.
+            </summary>
+            <param name="url">Required. The URL to fetch and analyze</param>
+        </member>
+        <member name="T:Google.Apis.PagespeedInsights.v5.PagespeedapiResource.RunpagespeedRequest">
+            <summary>
+            Runs PageSpeed analysis on the page at the specified URL, and returns PageSpeed scores, a list of
+            suggestions to make that page faster, and other information.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.PagespeedInsights.v5.PagespeedapiResource.RunpagespeedRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
+            <summary>Constructs a new Runpagespeed request.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.PagespeedapiResource.RunpagespeedRequest.Url">
+            <summary>Required. The URL to fetch and analyze</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.PagespeedapiResource.RunpagespeedRequest.CaptchaToken">
+            <summary>The captcha token passed when filling out a captcha.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.PagespeedapiResource.RunpagespeedRequest.Category">
+            <summary>
+            A Lighthouse category to run; if none are given, only Performance category will be run
+            </summary>
+            <remarks>
+            Use this property to set a single value for the parameter, or <see cref="P:Google.Apis.PagespeedInsights.v5.PagespeedapiResource.RunpagespeedRequest.CategoryList"/> to set multiple
+            values. Do not set both properties.
+            </remarks>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.PagespeedapiResource.RunpagespeedRequest.CategoryList">
+            <summary>
+            A Lighthouse category to run; if none are given, only Performance category will be run
+            </summary>
+            <remarks>
+            Use this property to set one or more values for the parameter. Do not set both this property and
+            <see cref="P:Google.Apis.PagespeedInsights.v5.PagespeedapiResource.RunpagespeedRequest.Category"/>.
+            </remarks>
+        </member>
+        <member name="T:Google.Apis.PagespeedInsights.v5.PagespeedapiResource.RunpagespeedRequest.CategoryEnum">
+            <summary>
+            A Lighthouse category to run; if none are given, only Performance category will be run
+            </summary>
+        </member>
+        <member name="F:Google.Apis.PagespeedInsights.v5.PagespeedapiResource.RunpagespeedRequest.CategoryEnum.CATEGORYUNSPECIFIED">
+            <summary>Default UNDEFINED category.</summary>
+        </member>
+        <member name="F:Google.Apis.PagespeedInsights.v5.PagespeedapiResource.RunpagespeedRequest.CategoryEnum.ACCESSIBILITY">
+            <summary>
+            Accessibility (a11y), category pertaining to a website's capacity to be accessible to all users.
+            </summary>
+        </member>
+        <member name="F:Google.Apis.PagespeedInsights.v5.PagespeedapiResource.RunpagespeedRequest.CategoryEnum.BESTPRACTICES">
+            <summary>
+            Best Practices, category pertaining to a website's conformance to web best practice.
+            </summary>
+        </member>
+        <member name="F:Google.Apis.PagespeedInsights.v5.PagespeedapiResource.RunpagespeedRequest.CategoryEnum.PERFORMANCE">
+            <summary>Performance, category pertaining to a website's performance.</summary>
+        </member>
+        <member name="F:Google.Apis.PagespeedInsights.v5.PagespeedapiResource.RunpagespeedRequest.CategoryEnum.PWA">
+            <summary>
+            Progressive Web App (PWA), category pertaining to a website's ability to be run as a PWA.
+            </summary>
+        </member>
+        <member name="F:Google.Apis.PagespeedInsights.v5.PagespeedapiResource.RunpagespeedRequest.CategoryEnum.SEO">
+            <summary>
+            Search Engine Optimization (SEO), category pertaining to a website's ability to be indexed by search
+            engines.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.PagespeedapiResource.RunpagespeedRequest.Locale">
+            <summary>The locale used to localize formatted results</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.PagespeedapiResource.RunpagespeedRequest.Strategy">
+            <summary>The analysis strategy (desktop or mobile) to use, and desktop is the default</summary>
+        </member>
+        <member name="T:Google.Apis.PagespeedInsights.v5.PagespeedapiResource.RunpagespeedRequest.StrategyEnum">
+            <summary>The analysis strategy (desktop or mobile) to use, and desktop is the default</summary>
+        </member>
+        <member name="F:Google.Apis.PagespeedInsights.v5.PagespeedapiResource.RunpagespeedRequest.StrategyEnum.STRATEGYUNSPECIFIED">
+            <summary>UNDEFINED.</summary>
+        </member>
+        <member name="F:Google.Apis.PagespeedInsights.v5.PagespeedapiResource.RunpagespeedRequest.StrategyEnum.DESKTOP">
+            <summary>Fetch and analyze the URL for desktop browsers.</summary>
+        </member>
+        <member name="F:Google.Apis.PagespeedInsights.v5.PagespeedapiResource.RunpagespeedRequest.StrategyEnum.MOBILE">
+            <summary>Fetch and analyze the URL for mobile devices.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.PagespeedapiResource.RunpagespeedRequest.UtmCampaign">
+            <summary>Campaign name for analytics.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.PagespeedapiResource.RunpagespeedRequest.UtmSource">
+            <summary>Campaign source for analytics.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.PagespeedapiResource.RunpagespeedRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.PagespeedapiResource.RunpagespeedRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.PagespeedapiResource.RunpagespeedRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.PagespeedInsights.v5.PagespeedapiResource.RunpagespeedRequest.InitParameters">
+            <summary>Initializes Runpagespeed parameter list.</summary>
+        </member>
+        <member name="T:Google.Apis.PagespeedInsights.v5.Data.AuditRefs">
+            <summary>A light reference to an audit by id, used to group and weight audits in a given category.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.AuditRefs.Acronym">
+            <summary>The conventional acronym for the audit/metric.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.AuditRefs.Group">
+            <summary>The category group that the audit belongs to (optional).</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.AuditRefs.Id">
+            <summary>The audit ref id.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.AuditRefs.RelevantAudits">
+            <summary>Any audit IDs closely relevant to this one.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.AuditRefs.Weight">
+            <summary>The weight this audit's score has on the overall category score.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.AuditRefs.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PagespeedInsights.v5.Data.Bucket">
+            <summary>
+            A proportion of data in the total distribution, bucketed by a min/max percentage. Each bucket's range is bounded
+            by min &amp;lt;= x &amp;lt; max, In millisecond.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.Bucket.Max">
+            <summary>Upper bound for a bucket's range.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.Bucket.Min">
+            <summary>Lower bound for a bucket's range.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.Bucket.Proportion">
+            <summary>The proportion of data in this bucket.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.Bucket.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PagespeedInsights.v5.Data.Categories">
+            <summary>The categories in a Lighthouse run.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.Categories.Accessibility">
+            <summary>The accessibility category, containing all accessibility related audits.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.Categories.BestPractices">
+            <summary>The best practices category, containing all best practices related audits.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.Categories.Performance">
+            <summary>The performance category, containing all performance related audits.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.Categories.Pwa">
+            <summary>The Progressive-Web-App (PWA) category, containing all pwa related audits.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.Categories.Seo">
+            <summary>The Search-Engine-Optimization (SEO) category, containing all seo related audits.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.Categories.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PagespeedInsights.v5.Data.CategoryGroupV5">
+            <summary>Message containing a category</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.CategoryGroupV5.Description">
+            <summary>The description of what the category is grouping</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.CategoryGroupV5.Title">
+            <summary>The human readable title of the group</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.CategoryGroupV5.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PagespeedInsights.v5.Data.ConfigSettings">
+            <summary>Message containing the configuration settings for the Lighthouse run.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.ConfigSettings.Channel">
+            <summary>How Lighthouse was run, e.g. from the Chrome extension or from the npm module.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.ConfigSettings.EmulatedFormFactor">
+            <summary>
+            The form factor the emulation should use. This field is deprecated, form_factor should be used instead.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.ConfigSettings.FormFactor">
+            <summary>
+            How Lighthouse should interpret this run in regards to scoring performance metrics and skipping mobile-only
+            tests in desktop.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.ConfigSettings.Locale">
+            <summary>The locale setting.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.ConfigSettings.OnlyCategories">
+            <summary>List of categories of audits the run should conduct.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.ConfigSettings.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PagespeedInsights.v5.Data.Environment">
+            <summary>Message containing environment configuration for a Lighthouse run.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.Environment.BenchmarkIndex">
+            <summary>The benchmark index number that indicates rough device class.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.Environment.HostUserAgent">
+            <summary>The user agent string of the version of Chrome used.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.Environment.NetworkUserAgent">
+            <summary>The user agent string that was sent over the network.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.Environment.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PagespeedInsights.v5.Data.I18n">
+            <summary>Message containing the i18n data for the LHR - Version 1.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.I18n.RendererFormattedStrings">
+            <summary>Internationalized strings that are formatted to the locale in configSettings.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.I18n.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PagespeedInsights.v5.Data.LighthouseAuditResultV5">
+            <summary>An audit's result object in a Lighthouse result.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseAuditResultV5.Description">
+            <summary>The description of the audit.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseAuditResultV5.Details">
+            <summary>Freeform details section of the audit.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseAuditResultV5.DisplayValue">
+            <summary>The value that should be displayed on the UI for this audit.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseAuditResultV5.ErrorMessage">
+            <summary>An error message from a thrown error inside the audit.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseAuditResultV5.Explanation">
+            <summary>An explanation of the errors in the audit.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseAuditResultV5.Id">
+            <summary>The audit's id.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseAuditResultV5.NumericUnit">
+            <summary>The unit of the numeric_value field. Used to format the numeric value for display.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseAuditResultV5.NumericValue">
+            <summary>
+            A numeric value that has a meaning specific to the audit, e.g. the number of nodes in the DOM or the
+            timestamp of a specific load event. More information can be found in the audit details, if present.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseAuditResultV5.Score">
+            <summary>The score of the audit, can be null.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseAuditResultV5.ScoreDisplayMode">
+            <summary>The enumerated score display mode.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseAuditResultV5.Title">
+            <summary>The human readable title.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseAuditResultV5.Warnings">
+            <summary>Possible warnings that occurred in the audit, can be null.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseAuditResultV5.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PagespeedInsights.v5.Data.LighthouseCategoryV5">
+            <summary>A Lighthouse category.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseCategoryV5.AuditRefs">
+            <summary>An array of references to all the audit members of this category.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseCategoryV5.Description">
+            <summary>A more detailed description of the category and its importance.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseCategoryV5.Id">
+            <summary>The string identifier of the category.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseCategoryV5.ManualDescription">
+            <summary>A description for the manual audits in the category.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseCategoryV5.Score">
+            <summary>
+            The overall score of the category, the weighted average of all its audits. (The category's score, can be
+            null.)
+            </summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseCategoryV5.Title">
+            <summary>The human-friendly name of the category.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseCategoryV5.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PagespeedInsights.v5.Data.LighthouseResultV5">
+            <summary>The Lighthouse result object.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseResultV5.Audits">
+            <summary>Map of audits in the LHR.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseResultV5.Categories">
+            <summary>Map of categories in the LHR.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseResultV5.CategoryGroups">
+            <summary>Map of category groups in the LHR.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseResultV5.ConfigSettings">
+            <summary>The configuration settings for this LHR.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseResultV5.Environment">
+            <summary>Environment settings that were used when making this LHR.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseResultV5.FetchTime">
+            <summary>The time that this run was fetched.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseResultV5.FinalUrl">
+            <summary>The final resolved url that was audited.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseResultV5.I18n">
+            <summary>The internationalization strings that are required to render the LHR.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseResultV5.LighthouseVersion">
+            <summary>The lighthouse version that was used to generate this LHR.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseResultV5.RequestedUrl">
+            <summary>The original requested url.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseResultV5.RunWarnings">
+            <summary>List of all run warnings in the LHR. Will always output to at least `[]`.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseResultV5.RuntimeError">
+            <summary>
+            A top-level error message that, if present, indicates a serious enough problem that this Lighthouse result
+            may need to be discarded.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseResultV5.StackPacks">
+            <summary>The Stack Pack advice strings.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseResultV5.Timing">
+            <summary>Timing information for this LHR.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseResultV5.UserAgent">
+            <summary>The user agent that was used to run this LHR.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.LighthouseResultV5.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PagespeedInsights.v5.Data.PagespeedApiLoadingExperienceV5">
+            <summary>The CrUX loading experience object that contains CrUX data breakdowns.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.PagespeedApiLoadingExperienceV5.Id">
+            <summary>The url, pattern or origin which the metrics are on.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.PagespeedApiLoadingExperienceV5.InitialUrl">
+            <summary>The requested URL, which may differ from the resolved "id".</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.PagespeedApiLoadingExperienceV5.Metrics">
+            <summary>The map of .</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.PagespeedApiLoadingExperienceV5.OriginFallback">
+            <summary>True if the result is an origin fallback from a page, false otherwise.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.PagespeedApiLoadingExperienceV5.OverallCategory">
+            <summary>The human readable speed "category" of the id.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.PagespeedApiLoadingExperienceV5.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PagespeedInsights.v5.Data.PagespeedApiPagespeedResponseV5">
+            <summary>The Pagespeed API response object.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.PagespeedApiPagespeedResponseV5.AnalysisUTCTimestamp">
+            <summary>The UTC timestamp of this analysis.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.PagespeedApiPagespeedResponseV5.CaptchaResult">
+            <summary>The captcha verify result</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.PagespeedApiPagespeedResponseV5.Id">
+            <summary>Canonicalized and final URL for the document, after following page redirects (if any).</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.PagespeedApiPagespeedResponseV5.Kind">
+            <summary>Kind of result.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.PagespeedApiPagespeedResponseV5.LighthouseResult">
+            <summary>Lighthouse response for the audit url as an object.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.PagespeedApiPagespeedResponseV5.LoadingExperience">
+            <summary>Metrics of end users' page loading experience.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.PagespeedApiPagespeedResponseV5.OriginLoadingExperience">
+            <summary>Metrics of the aggregated page loading experience of the origin</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.PagespeedApiPagespeedResponseV5.Version">
+            <summary>The version of PageSpeed used to generate these results.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.PagespeedApiPagespeedResponseV5.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PagespeedInsights.v5.Data.PagespeedVersion">
+            <summary>The Pagespeed Version object.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.PagespeedVersion.Major">
+            <summary>The major version number of PageSpeed used to generate these results.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.PagespeedVersion.Minor">
+            <summary>The minor version number of PageSpeed used to generate these results.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.PagespeedVersion.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings">
+            <summary>Message holding the formatted strings used in the renderer.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.AuditGroupExpandTooltip">
+            <summary>The tooltip text on an expandable chevron icon.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.CalculatorLink">
+            <summary>
+            Text link pointing to the Lighthouse scoring calculator. This link immediately follows a sentence stating
+            the performance score is calculated from the perf metrics.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.CrcInitialNavigation">
+            <summary>The label for the initial request in a critical request chain.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.CrcLongestDurationLabel">
+            <summary>The label for values shown in the summary of critical request chains.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.DropdownCopyJSON">
+            <summary>Option in a dropdown menu that copies the Lighthouse JSON object to the system clipboard.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.DropdownDarkTheme">
+            <summary>
+            Option in a dropdown menu that toggles the themeing of the report between Light(default) and Dark themes.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.DropdownPrintExpanded">
+            <summary>Option in a dropdown menu that opens a full Lighthouse report in a print dialog.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.DropdownPrintSummary">
+            <summary>Option in a dropdown menu that opens a small, summary report in a print dialog.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.DropdownSaveGist">
+            <summary>Option in a dropdown menu that saves the current report as a new GitHub Gist.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.DropdownSaveHTML">
+            <summary>
+            Option in a dropdown menu that saves the Lighthouse report HTML locally to the system as a '.html' file.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.DropdownSaveJSON">
+            <summary>
+            Option in a dropdown menu that saves the Lighthouse JSON object to the local system as a '.json' file.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.DropdownViewer">
+            <summary>
+            Option in a dropdown menu that opens the current report in the Lighthouse Viewer Application.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.ErrorLabel">
+            <summary>The label shown next to an audit or metric that has had an error.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.ErrorMissingAuditInfo">
+            <summary>The error string shown next to an erroring audit.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.FooterIssue">
+            <summary>Label for button to create an issue against the Lighthouse GitHub project.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.LabDataTitle">
+            <summary>The title of the lab data performance category.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.LsPerformanceCategoryDescription">
+            <summary>The disclaimer shown under performance explaining that the network can vary.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.ManualAuditsGroupTitle">
+            <summary>The heading shown above a list of audits that were not computerd in the run.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.NotApplicableAuditsGroupTitle">
+            <summary>The heading shown above a list of audits that do not apply to a page.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.OpportunityResourceColumnLabel">
+            <summary>The heading for the estimated page load savings opportunity of an audit.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.OpportunitySavingsColumnLabel">
+            <summary>The heading for the estimated page load savings of opportunity audits.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.PassedAuditsGroupTitle">
+            <summary>The heading that is shown above a list of audits that are passing.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.RuntimeDesktopEmulation">
+            <summary>
+            Descriptive explanation for emulation setting when emulating a generic desktop form factor, as opposed to a
+            mobile-device like form factor.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.RuntimeMobileEmulation">
+            <summary>Descriptive explanation for emulation setting when emulating a Nexus 5X mobile device.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.RuntimeNoEmulation">
+            <summary>Descriptive explanation for emulation setting when no device emulation is set.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.RuntimeSettingsAxeVersion">
+            <summary>Label for a row in a table that shows the version of the Axe library used</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.RuntimeSettingsBenchmark">
+            <summary>
+            Label for a row in a table that shows the estimated CPU power of the machine running Lighthouse. Example row
+            values: 532, 1492, 783.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.RuntimeSettingsCPUThrottling">
+            <summary>
+            Label for a row in a table that describes the CPU throttling conditions that were used during a Lighthouse
+            run, if any.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.RuntimeSettingsChannel">
+            <summary>
+            Label for a row in a table that shows in what tool Lighthouse is being run (e.g. The lighthouse CLI, Chrome
+            DevTools, Lightrider, WebPageTest, etc).
+            </summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.RuntimeSettingsDevice">
+            <summary>
+            Label for a row in a table that describes the kind of device that was emulated for the Lighthouse run.
+            Example values for row elements: 'No Emulation', 'Emulated Desktop', etc.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.RuntimeSettingsFetchTime">
+            <summary>
+            Label for a row in a table that shows the time at which a Lighthouse run was conducted; formatted as a
+            timestamp, e.g. Jan 1, 1970 12:00 AM UTC.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.RuntimeSettingsNetworkThrottling">
+            <summary>
+            Label for a row in a table that describes the network throttling conditions that were used during a
+            Lighthouse run, if any.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.RuntimeSettingsTitle">
+            <summary>
+            Title of the Runtime settings table in a Lighthouse report. Runtime settings are the environment
+            configurations that a specific report used at auditing time.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.RuntimeSettingsUA">
+            <summary>
+            Label for a row in a table that shows the User Agent that was detected on the Host machine that ran
+            Lighthouse.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.RuntimeSettingsUANetwork">
+            <summary>
+            Label for a row in a table that shows the User Agent that was used to send out all network requests during
+            the Lighthouse run.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.RuntimeSettingsUrl">
+            <summary>Label for a row in a table that shows the URL that was audited during a Lighthouse run.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.RuntimeUnknown">
+            <summary>Descriptive explanation for a runtime setting that is set to an unknown value.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.ScorescaleLabel">
+            <summary>The label that explains the score gauges scale (0-49, 50-89, 90-100).</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.ShowRelevantAudits">
+            <summary>
+            Label preceding a radio control for filtering the list of audits. The radio choices are various performance
+            metrics (FCP, LCP, TBT), and if chosen, the audits in the report are hidden if they are not relevant to the
+            selected metric.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.SnippetCollapseButtonLabel">
+            <summary>The label for the button to show only a few lines of a snippet</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.SnippetExpandButtonLabel">
+            <summary>The label for the button to show all lines of a snippet</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.ThirdPartyResourcesLabel">
+            <summary>This label is for a filter checkbox above a table of items</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.ThrottlingProvided">
+            <summary>
+            Descriptive explanation for environment throttling that was provided by the runtime environment instead of
+            provided by Lighthouse throttling.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.ToplevelWarningsMessage">
+            <summary>The label shown preceding important warnings that may have invalidated an entire report.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.VarianceDisclaimer">
+            <summary>The disclaimer shown below a performance metric value.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.ViewTreemapLabel">
+            <summary>Label for a button that opens the Treemap App</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.WarningAuditsGroupTitle">
+            <summary>The heading that is shown above a list of audits that have warnings</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.WarningHeader">
+            <summary>The label shown above a bulleted list of warnings.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RendererFormattedStrings.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PagespeedInsights.v5.Data.RuntimeError">
+            <summary>Message containing a runtime error config.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RuntimeError.Code">
+            <summary>The enumerated Lighthouse Error code.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RuntimeError.Message">
+            <summary>A human readable message explaining the error code.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.RuntimeError.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PagespeedInsights.v5.Data.StackPack">
+            <summary>Message containing Stack Pack information.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.StackPack.Descriptions">
+            <summary>The stack pack advice strings.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.StackPack.IconDataURL">
+            <summary>The stack pack icon data uri.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.StackPack.Id">
+            <summary>The stack pack id.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.StackPack.Title">
+            <summary>The stack pack title.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.StackPack.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PagespeedInsights.v5.Data.Timing">
+            <summary>Message containing the performance timing data for the Lighthouse run.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.Timing.Total">
+            <summary>The total duration of Lighthouse's run.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.Timing.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PagespeedInsights.v5.Data.UserPageLoadMetricV5">
+            <summary>A CrUX metric object for a single metric and form factor.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.UserPageLoadMetricV5.Category">
+            <summary>The category of the specific time metric.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.UserPageLoadMetricV5.Distributions">
+            <summary>Metric distributions. Proportions should sum up to 1.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.UserPageLoadMetricV5.FormFactor">
+            <summary>Identifies the form factor of the metric being collected.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.UserPageLoadMetricV5.Median">
+            <summary>The median number of the metric, in millisecond.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.UserPageLoadMetricV5.MetricId">
+            <summary>Identifies the type of the metric.</summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.UserPageLoadMetricV5.Percentile">
+            <summary>
+            We use this field to store certain percentile value for this metric. For v4, this field contains pc50. For
+            v5, this field contains pc90.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.PagespeedInsights.v5.Data.UserPageLoadMetricV5.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+    </members>
+</doc>

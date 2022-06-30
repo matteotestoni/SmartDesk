@@ -1,0 +1,39 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Socialchannels" Type="TABLE">
+    <Keys>
+      <Key Column="Socialchannels_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Socialchannels_Ky" IsNull="N" Type="int" />
+      <Field Column="Socialchannelstype_Ky" IsNull="Y" Type="int" />
+      <Field Column="Socialchannels_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Socialchannels_Attivo" IsNull="Y" Type="bit" />
+      <Field Column="Socialchannels_Url" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Socialchannels_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Socialchannels_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Socialchannels_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Socialchannels_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Socialchannels_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Socialchannels_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Socialchannels] (
+  [Socialchannels_Ky] int IDENTITY(1,1) NOT NULL , 
+  [Socialchannelstype_Ky] int  NULL , 
+  [Socialchannels_Titolo] varchar(100)  NULL , 
+  [Socialchannels_Attivo] bit  NULL , 
+  [Socialchannels_Url] varchar(MAX)  NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [Socialchannels_UserInsert] int  NULL , 
+  [Socialchannels_UserUpdate] int  NULL , 
+  [Socialchannels_UserDelete] int  NULL , 
+  [Socialchannels_DateInsert] datetime  NULL , 
+  [Socialchannels_DateUpdate] datetime  NULL , 
+  [Socialchannels_DateDelete] datetime  NULL , 
+  [Lingue_Ky] tinyint  NULL  )
+ALTER TABLE [dbo].[Socialchannels] ADD CONSTRAINT PK_Socialchannels PRIMARY KEY  ([Socialchannels_Ky])
+</SqlScriptCreate>
+</SqlTable>

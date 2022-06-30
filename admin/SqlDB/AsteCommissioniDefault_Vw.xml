@@ -1,0 +1,28 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="AsteCommissioniDefault_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="AsteCommissioniDefault_Ky" IsNull="N" Type="int" />
+      <Field Column="AsteNatura_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="AsteCommissioniDefault_Da" IsNull="Y" Type="money" />
+      <Field Column="AsteCommissioniDefault_A" IsNull="Y" Type="money" />
+      <Field Column="AsteCommissioniDefault_Commissione" IsNull="Y" Type="tinyint" />
+      <Field Column="AsteCommissioniDefault_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="AsteCommissioniDefault_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="AsteCommissioniDefault_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="AsteCommissioniDefault_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="AsteCommissioniDefault_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="AsteCommissioniDefault_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="AsteNatura_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.AsteCommissioniDefault_Vw
+AS
+SELECT        dbo.AsteCommissioniDefault.AsteCommissioniDefault_Ky, dbo.AsteCommissioniDefault.AsteNatura_Ky, dbo.AsteCommissioniDefault.AsteCommissioniDefault_Da, 
+                         dbo.AsteCommissioniDefault.AsteCommissioniDefault_A, dbo.AsteCommissioniDefault.AsteCommissioniDefault_Commissione, dbo.AsteCommissioniDefault.AsteCommissioniDefault_UserInsert, 
+                         dbo.AsteCommissioniDefault.AsteCommissioniDefault_UserUpdate, dbo.AsteCommissioniDefault.AsteCommissioniDefault_DateInsert, dbo.AsteCommissioniDefault.AsteCommissioniDefault_UserDelete, 
+                         dbo.AsteCommissioniDefault.AsteCommissioniDefault_DateUpdate, dbo.AsteCommissioniDefault.AsteCommissioniDefault_DateDelete, dbo.AsteNatura.AsteNatura_Titolo
+FROM            dbo.AsteCommissioniDefault LEFT OUTER JOIN
+                         dbo.AsteNatura ON dbo.AsteCommissioniDefault.AsteNatura_Ky = dbo.AsteNatura.AsteNatura_Ky
+</SqlScriptCreate>
+</SqlTable>

@@ -1,0 +1,39 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Province" Type="TABLE">
+    <Keys>
+      <Key Column="Province_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="Province_Ky" IsNull="N" Type="tinyint" />
+      <Field Column="Province_Codice" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="Province_Provincia" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Province_ProvinciaHTML" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Regioni_Codice" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="Province_Zona" IsNull="Y" Type="varchar" Lenght="10" />
+      <Field Column="Province_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="Province_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="Province_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="Province_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="Province_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="Province_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="Regioni_Ky" IsNull="Y" Type="int" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[Province] (
+  [Province_Ky] tinyint IDENTITY(1,1) NOT NULL , 
+  [Province_Codice] varchar(10)  NULL , 
+  [Province_Provincia] varchar(50)  NULL , 
+  [Province_ProvinciaHTML] varchar(50)  NULL , 
+  [Regioni_Codice] varchar(10)  NULL , 
+  [Province_Zona] varchar(10)  NULL , 
+  [Province_UserInsert] int  NULL , 
+  [Province_UserUpdate] int  NULL , 
+  [Province_UserDelete] int  NULL , 
+  [Province_DateInsert] datetime  NULL , 
+  [Province_DateUpdate] datetime  NULL , 
+  [Province_DateDelete] datetime  NULL , 
+  [Regioni_Ky] int  NULL  )
+ALTER TABLE [dbo].[Province] ADD CONSTRAINT PK_Province PRIMARY KEY  ([Province_Ky])
+</SqlScriptCreate>
+</SqlTable>

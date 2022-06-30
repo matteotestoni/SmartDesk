@@ -1,0 +1,33 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="LeadTag" Type="TABLE">
+    <Keys>
+      <Key Column="LeadTag_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="LeadTag_Ky" IsNull="N" Type="int" />
+      <Field Column="LeadTag_Tag" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="LeadTag_Colore" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="LeadTag_Icona" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="LeadTag_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="LeadTag_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="LeadTag_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="LeadTag_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="LeadTag_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="LeadTag_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[LeadTag] (
+  [LeadTag_Ky] int IDENTITY(1,1) NOT NULL , 
+  [LeadTag_Tag] varchar(MAX)  NULL , 
+  [LeadTag_Colore] varchar(MAX)  NULL , 
+  [LeadTag_Icona] varchar(MAX)  NULL , 
+  [LeadTag_UserInsert] int  NULL , 
+  [LeadTag_UserUpdate] int  NULL , 
+  [LeadTag_UserDelete] int  NULL , 
+  [LeadTag_DateInsert] datetime  NULL , 
+  [LeadTag_DateUpdate] datetime  NULL , 
+  [LeadTag_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[LeadTag] ADD CONSTRAINT PK_LeadTag PRIMARY KEY  ([LeadTag_Ky])
+</SqlScriptCreate>
+</SqlTable>

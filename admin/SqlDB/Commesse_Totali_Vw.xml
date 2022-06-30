@@ -1,0 +1,17 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="Commesse_Totali_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Commesse_Ky" IsNull="N" Type="int" />
+      <Field Column="TotaleOreImpiegate" IsNull="Y" Type="float" />
+      <Field Column="Commesse_OrePreviste" IsNull="Y" Type="float" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW [dbo].[Commesse_Totali_Vw]
+AS
+SELECT        dbo.Commesse.Commesse_Ky, SUM(dbo.Attivita.Attivita_Ore) AS TotaleOreImpiegate, dbo.Commesse.Commesse_OrePreviste
+FROM            dbo.Commesse INNER JOIN
+                         dbo.Attivita ON dbo.Commesse.Commesse_Ky = dbo.Attivita.Commesse_Ky
+WHERE        (dbo.Attivita.AttivitaSettore_Ky = 1)
+GROUP BY dbo.Commesse.Commesse_Ky, dbo.Commesse.Commesse_OrePreviste</SqlScriptCreate>
+</SqlTable>

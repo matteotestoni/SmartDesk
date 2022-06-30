@@ -1,0 +1,29 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="DocumentiIVA_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Codice" IsNull="Y" Type="int" />
+      <Field Column="Documenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="TotaleQta" IsNull="Y" Type="float" />
+      <Field Column="Totale" IsNull="Y" Type="money" />
+      <Field Column="AliquoteIVA_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="AliquoteIVA_Aliquota" IsNull="Y" Type="money" />
+      <Field Column="AliquoteIVA_Descrizione" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="Expr2" IsNull="Y" Type="money" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW dbo.DocumentiIVA_Vw
+AS
+SELECT     MAX(dbo.DocumentiCorpo.DocumentiCorpo_Ky) AS Codice, dbo.DocumentiCorpo.Documenti_Ky, SUM(dbo.DocumentiCorpo.DocumentiCorpo_Qta) AS TotaleQta, 
+                      SUM(dbo.DocumentiCorpo.DocumentiCorpo_Totale) AS Totale, dbo.DocumentiCorpo.AliquoteIVA_Ky, dbo.DocumentiCorpo.AliquoteIVA_Aliquota, 
+                      dbo.AliquoteIVA.AliquoteIVA_Descrizione, SUM(dbo.DocumentiCorpo.DocumentiCorpo_TotaleIVA) AS Expr2
+FROM         dbo.Anagrafiche RIGHT OUTER JOIN
+                      dbo.Documenti ON dbo.Anagrafiche.Anagrafiche_Ky = dbo.Documenti.Anagrafiche_Ky RIGHT OUTER JOIN
+                      dbo.Servizi RIGHT OUTER JOIN
+                      dbo.Prodotti RIGHT OUTER JOIN
+                      dbo.DocumentiCorpo ON dbo.Prodotti.Prodotti_Ky = dbo.DocumentiCorpo.Prodotti_Ky ON dbo.Servizi.Servizi_Ky = dbo.DocumentiCorpo.Servizi_Ky ON 
+                      dbo.Documenti.Documenti_Ky = dbo.DocumentiCorpo.Documenti_Ky LEFT OUTER JOIN
+                      dbo.AliquoteIVA ON dbo.DocumentiCorpo.AliquoteIVA_Ky = dbo.AliquoteIVA.AliquoteIVA_Ky
+GROUP BY dbo.DocumentiCorpo.Documenti_Ky, dbo.DocumentiCorpo.AliquoteIVA_Ky, dbo.DocumentiCorpo.AliquoteIVA_Aliquota, dbo.AliquoteIVA.AliquoteIVA_Descrizione
+</SqlScriptCreate>
+</SqlTable>
