@@ -217,7 +217,7 @@
 						<div class="grid-x grid-padding-x">
 			        <div class="large-12 medium-12 small-12 cell">
 								<div class="card">
-								<iframe width="100%" style="width:100%;height:450px;border:0;" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCm4UkN3D3QC1QV8RzP10VYclgiTuqusN0&q=<%=strIndirizzo%>" allowfullscreen></iframe>
+								<iframe width="100%" style="width:100%;height:450px;border:0;" src="https://www.google.com/maps/embed/v1/place?key=key&q=<%=strIndirizzo%>" allowfullscreen></iframe>
 								</div>
 							 </div>
 						</div>
