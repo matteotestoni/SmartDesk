@@ -618,7 +618,7 @@
           							strWHERENet="Attributi_Ky=" + dtAttributi.Rows[j]["Attributi_Ky"].ToString();
           	            strORDERNet = "AttributiOpzioni_Ordine";
           	            strFROMNet = "AttributiOpzioni";
-          	            dtAttributiOpzioni = Smartdesk.Sql.getTablePage(strFROMNet, null, "AttributiOpzioni_Ky", strWHERENet, strORDERNet, 1, 100,Smartdesk.Config.Sql.ConnectionReadOnly);
+          	            dtAttributiOpzioni = Smartdesk.Sql.getTablePage(strFROMNet, null, "AttributiOpzioni_Ky", strWHERENet, strORDERNet, 1, 100,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
             						for (int j2 = 0; j2 < dtAttributiOpzioni.Rows.Count; j2++){
             							Response.Write("<option value=\"" + dtAttributiOpzioni.Rows[j2]["AttributiOpzioni_Opzione"].ToString() + "\">" + dtAttributiOpzioni.Rows[j2]["AttributiOpzioni_Opzione"].ToString() + "</option>");
           							}

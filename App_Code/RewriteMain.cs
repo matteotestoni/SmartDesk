@@ -11,6 +11,7 @@ namespace RewriteMain.NET
 
     public class RewriteMain : IHttpModule {
     private HttpApplication _application = null;
+    public int intNumRecords = 0;
 
     public void Init(HttpApplication context) {
        context.BeginRequest += new System.EventHandler(RewriteMain_BeginRequest);
@@ -41,7 +42,7 @@ namespace RewriteMain.NET
         strFROMNet = "CoreUrlRedirect";
         strORDERNet = "CoreUrlRedirect_Ky";
         dtCoreUrlRedirect = new DataTable("CoreUrlRedirect");
-        dtCoreUrlRedirect = Smartdesk.Sql.getTablePage(strFROMNet, null, "CoreUrlRedirect_Ky", strWHERENet, strORDERNet, 1, 1,Smartdesk.Config.Sql.ConnectionReadOnly);
+        dtCoreUrlRedirect = Smartdesk.Sql.getTablePage(strFROMNet, null, "CoreUrlRedirect_Ky", strWHERENet, strORDERNet, 1, 1,Smartdesk.Config.Sql.ConnectionReadOnly, out intNumRecords);
         if (dtCoreUrlRedirect.Rows.Count>0){
             strUrlDestination=dtCoreUrlRedirect.Rows[0]["CoreUrlRedirect_UrlDestination"].ToString();
             _application.Context.Response.RedirectPermanent(strUrlDestination);
@@ -53,7 +54,7 @@ namespace RewriteMain.NET
         strORDERNet = "CoreUrlRewrite_Ky";
     		strFROMNet = "CoreUrlRewrite";
     		strWHERENet = "CoreUrlRewrite_UrlSource='" + strUrlSource + "'";
-        dtCoreUrlRewrite = Smartdesk.Sql.getTablePage(strFROMNet, null, strKey, strWHERENet, strORDERNet, 1, 1,Smartdesk.Config.Sql.ConnectionReadOnly);
+        dtCoreUrlRewrite = Smartdesk.Sql.getTablePage(strFROMNet, null, strKey, strWHERENet, strORDERNet, 1, 1,Smartdesk.Config.Sql.ConnectionReadOnly, out intNumRecords);
         if (dtCoreUrlRewrite.Rows.Count > 0){
             strUrlDestination = dtCoreUrlRewrite.Rows[0]["CoreUrlRewrite_UrlDestination"].ToString();
             if (_application.Context.Request.QueryString.ToString().Length>0){

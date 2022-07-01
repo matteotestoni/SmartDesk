@@ -297,14 +297,14 @@
 							<%
 							for (int i = 0; i < dtProdottiCategorie.Rows.Count; i++){
               	strWHERENet="ProdottiCategorie_Padre=" + dtProdottiCategorie.Rows[i]["ProdottiCategorie_Ky"].ToString();
-  							dtProdottiCategorieFigli = Smartdesk.Sql.getTablePage("ProdottiCategorie_Vw", null, "ProdottiCategorie_Ky", strWHERENet, "ProdottiCategorie_Titolo", 1, 10000,Smartdesk.Config.Sql.ConnectionReadOnly);
+  							dtProdottiCategorieFigli = Smartdesk.Sql.getTablePage("ProdottiCategorie_Vw", null, "ProdottiCategorie_Ky", strWHERENet, "ProdottiCategorie_Titolo", 1, 10000,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
                 if (dtProdottiCategorieFigli.Rows.Count<1){
 								  Response.Write("<option value=\"" + dtProdottiCategorie.Rows[i]["ProdottiCategorie_Ky"].ToString() + "\">" + dtProdottiCategorie.Rows[i]["ProdottiCategorie_Titolo"].ToString() + "</option>");
                 }else{
 								  Response.Write("<optgroup label=\"" + dtProdottiCategorie.Rows[i]["ProdottiCategorie_Titolo"].ToString() + "\" value=\"" + dtProdottiCategorie.Rows[i]["ProdottiCategorie_Ky"].ToString() + "\">");
   								//Response.Write("<option value=\"" + dtProdottiCategorie.Rows[i]["ProdottiCategorie_Ky"].ToString() + "\">" + dtProdottiCategorie.Rows[i]["ProdottiCategorie_Titolo"].ToString() + "</option>");
                 	strWHERENet="ProdottiCategorie_Padre=" + dtProdottiCategorie.Rows[i]["ProdottiCategorie_Ky"].ToString();
-    							dtProdottiCategorieFigli = Smartdesk.Sql.getTablePage("ProdottiCategorie_Vw", null, "ProdottiCategorie_Ky", strWHERENet, "ProdottiCategorie_Titolo", 1, 10000,Smartdesk.Config.Sql.ConnectionReadOnly);
+    							dtProdottiCategorieFigli = Smartdesk.Sql.getTablePage("ProdottiCategorie_Vw", null, "ProdottiCategorie_Ky", strWHERENet, "ProdottiCategorie_Titolo", 1, 10000,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
     		    			for (int j = 0; j < dtProdottiCategorieFigli.Rows.Count; j++){
 								    Response.Write("<option value=\"" + dtProdottiCategorieFigli.Rows[j]["ProdottiCategorie_Ky"].ToString() + "\">" + dtProdottiCategorieFigli.Rows[j]["ProdottiCategorie_Titolo"].ToString() + "</option>");
     		    		  }
@@ -565,7 +565,7 @@
 								  Response.Write("<optgroup label=\"" + dtFaqCategorie.Rows[i]["FaqCategorie_Titolo"].ToString() + "\">");
                 	
                   strWHERENet="FaqCategorie_Ky=" + dtFaqCategorie.Rows[i]["FaqCategorie_Ky"].ToString();
-    							dtFaq = Smartdesk.Sql.getTablePage("Faq", null, "Faq_Ky", strWHERENet, "Faq_Domanda", 1, 10000,Smartdesk.Config.Sql.ConnectionReadOnly);
+    							dtFaq = Smartdesk.Sql.getTablePage("Faq", null, "Faq_Ky", strWHERENet, "Faq_Domanda", 1, 10000,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
     		    			for (int j = 0; j < dtFaq.Rows.Count; j++){
   									if (GetFieldValue(dtProdotto, "Prodotti_Faq").IndexOf(dtFaq.Rows[j]["Faq_Ky"].ToString())>-1){
   										strSelected=" selected";

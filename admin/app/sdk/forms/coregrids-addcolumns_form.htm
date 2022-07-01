@@ -12,7 +12,7 @@
           strWHERENet = "CoreAttributes_System<>1 AND CoreAttributes_Code<>'" + dtCoreAttributes.Rows[i]["CoreAttributes_Code"].ToString() + "' AND CoreEntities_Code='" + dtCoreAttributes.Rows[i]["CoreAttributes_Join"].ToString() + "'";
 	        strORDERNet = "CoreAttributes_Code";
 	        strFROMNet = "CoreAttributes_Vw";
-	        dtJoin = Smartdesk.Sql.getTablePage(strFROMNet, null, "CoreAttributes_Ky", strWHERENet, strORDERNet, 1, 1000,Smartdesk.Config.Sql.ConnectionReadOnly);
+	        dtJoin = Smartdesk.Sql.getTablePage(strFROMNet, null, "CoreAttributes_Ky", strWHERENet, strORDERNet, 1, 1000,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
 			    for (int j = 0; j < dtJoin.Rows.Count; j++){
 				    Response.Write("<option value=\"" + dtJoin.Rows[j]["CoreAttributes_Ky"].ToString() + "\"" + strSelected + ">" + dtJoin.Rows[j]["CoreAttributes_Title"].ToString() + " (" + dtJoin.Rows[j]["CoreAttributes_Code"].ToString() + ")</option>");
           }
@@ -27,7 +27,7 @@
           strWHERENet = "CoreAttributesType_Ky<>7 AND CoreAttributes_System<>1 AND CoreAttributes_Code<>'" + dtCoreAttributesJoin.Rows[i]["CoreAttributes_Code"].ToString() + "' AND CoreEntities_Code='" + dtCoreAttributesJoin.Rows[i]["CoreAttributes_Join"].ToString() + "'";
 	        strORDERNet = "CoreAttributes_Code";
 	        strFROMNet = "CoreAttributes_Vw";
-	        dtJoin = Smartdesk.Sql.getTablePage(strFROMNet, null, "CoreAttributes_Ky", strWHERENet, strORDERNet, 1, 1000,Smartdesk.Config.Sql.ConnectionReadOnly);
+	        dtJoin = Smartdesk.Sql.getTablePage(strFROMNet, null, "CoreAttributes_Ky", strWHERENet, strORDERNet, 1, 1000,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
 			    for (int j = 0; j < dtJoin.Rows.Count; j++){
 				    Response.Write("<option value=\"" + dtJoin.Rows[j]["CoreAttributes_Ky"].ToString() + "\"" + strSelected + ">" + dtJoin.Rows[j]["CoreAttributes_Title"].ToString() + " (" + dtJoin.Rows[j]["CoreAttributes_Code"].ToString() + ")</option>");
           }

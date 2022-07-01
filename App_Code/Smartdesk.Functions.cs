@@ -10,6 +10,7 @@ namespace Smartdesk{
   public class Functions{
 
     private static Smartdesk.Sql sql = new Smartdesk.Sql();
+
     public static string QueryString(string filed){
         string ret = "";
         try
@@ -228,7 +229,8 @@ namespace Smartdesk{
       strWHERENet="CoreModulesOptions_Code='" + strCoreModulesOptions_Code +"'";
       strORDERNet = "CoreModulesOptionsValue_Ky";
       strFROMNet = "CoreModulesOptionsValue";
-      dtCoreModulesOptionsValue = Smartdesk.Sql.getTablePage(strFROMNet, null, "CoreModulesOptionsValue_Ky", strWHERENet, strORDERNet, 1, 1, Smartdesk.Config.Sql.ConnectionReadOnly);
+      int intNumRecords=0;
+      dtCoreModulesOptionsValue = Smartdesk.Sql.getTablePage(strFROMNet, null, "CoreModulesOptionsValue_Ky", strWHERENet, strORDERNet, 1, 1, Smartdesk.Config.Sql.ConnectionReadOnly, out intNumRecords);
       if (dtCoreModulesOptionsValue.Rows.Count>0){
           strCoreModulesOptionsValue_Value=dtCoreModulesOptionsValue.Rows[0]["CoreModulesOptionsValue_Value"].ToString();
       }            

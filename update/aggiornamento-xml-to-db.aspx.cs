@@ -191,6 +191,10 @@ public partial class _Default : System.Web.UI.Page
 
             strRisultato += "<h2>Fase 4: sistemazione dati</h2>";
             
+            strSQL="UPDATE CoreEntities SET CoreEntities_CustomDelete=0 WHERE CoreEntities_CustomDelete Is Null";
+            new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
+            strSQL="UPDATE CoreEntities SET CoreEntities_CustomSave=0 WHERE CoreEntities_CustomSave Is Null";
+            new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
             strSQL="UPDATE CoreModulesOptions SET CoreModulesOptions_Type='checkbox' WHERE CoreModulesOptions_Type='boolean'";
             new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
             strSQL="UPDATE UtentiGruppi SET UtentiGruppi_Admin=1 WHERE UtentiGruppi_Ky=1";
