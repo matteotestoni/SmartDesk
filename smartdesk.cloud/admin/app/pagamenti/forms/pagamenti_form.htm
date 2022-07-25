@@ -1,0 +1,165 @@
+	<div class="grid-x grid-padding-x">
+		<div class="large-1 medium-1 small-4 cell">
+			<label class="large-text-right small-text-left middle">Importo &euro;:</label>
+		</div>
+		<div class="large-3 medium-3 small-8 cell">
+	    <input type="text" name="Pagamenti_Importo" id="Pagamenti_Importo" size="10" required="required" pattern="number" min="1" max="1000000" value="<%=GetFieldValue(dtPagamenti, "Pagamenti_Importo")%>" />
+	    <span class="form-error">Obbligatorio</span>
+		</div>
+	</div>
+	<div class="grid-x grid-padding-x">
+  	<div class="large-1 medium-1 small-4 cell">
+			<label for="Anagrafiche_RagioneSociale" class="large-text-right">Anagrafica <i class="fa-duotone fa-user fa-fw"></i></label>
+		</div>
+  	<div class="shrink cell hide-for-small-only">
+			<input type="text" name="Anagrafiche_Ky" id="Anagrafiche_Ky" value="<%=GetFieldValue(dtPagamenti, "Anagrafiche_Ky")%>" size="3" required="required">
+			<span class="form-error">Obbligatorio</span>
+		</div>
+  	<div class="auto cell">
+			<div class="input-group">
+				<input type="text" class="input-group-field" name="Anagrafiche_RagioneSociale" id="Anagrafiche_RagioneSociale" placeholder="Ragione Sociale" value="<%=GetFieldValue(dtPagamenti, "Anagrafiche_RagioneSociale")%>" required="required">
+				<span class="form-error">Obbligatorio</span>
+				<div class="input-group-button">
+		      <% if (GetFieldValue(dtPagamenti, "Anagrafiche_Ky")!=null && GetFieldValue(dtPagamenti, "Anagrafiche_Ky").Length>0){ %>
+						<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=GetFieldValue(dtPagamenti, "Anagrafiche_Ky")%>"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw"></i></a>
+					<% } %>
+			  </div>
+		  </div>
+		</div>
+  </div>
+  <script type="text/javascript">
+			jQuery("#Anagrafiche_RagioneSociale" ).autocomplete({
+				source: "/admin/app/anagrafiche/autosuggest-GetAnagrafiche-json.aspx",
+				minLength: 2,
+				select: function( event, ui ) {
+					jQuery("#Anagrafiche_Ky").val(ui.item.value);
+					jQuery("#Anagrafiche_RagioneSociale").val(ui.item.label);
+					return false;
+				}
+			});
+  </script>
+<div class="grid-x grid-padding-x">
+	<div class="large-1 medium-1 small-4 cell">
+		<label class="large-text-right small-text-left middle">Documento <i class="fa-duotone fa-file fa-fw"></i></label>
+	</div>
+	<div class="large-3 medium-3 small-8 cell">
+    	<% if (dtDocumenti!=null && dtDocumenti.Rows.Count>0){ %>
+			<div class="input-group">
+        <select name="Documenti_Ky" id="Documenti_Ky" class="input-group-field" value="<%=GetFieldValue(dtPagamenti, "Documenti_Ky")%>">
+        <option value=""></option>
+					<%
+					for (int i = 0; i < dtDocumenti.Rows.Count; i++){
+						Response.Write("<option value=\"" + dtDocumenti.Rows[i]["Documenti_Ky"].ToString() + "\">" + dtDocumenti.Rows[i]["DocumentiTipo_Descrizione"].ToString() + " " + dtDocumenti.Rows[i]["Documenti_Numero"].ToString() + " del " + dtDocumenti.Rows[i]["Documenti_Anno"].ToString() + "</option>");
+					}
+					%>
+        </select>
+        <script type="text/javascript">
+          selectSet('Documenti_Ky', '<%=GetFieldValue(dtPagamenti, "Documenti_Ky")%>');
+        </script>
+			  <div class="input-group-button">
+			    <a href="/admin/app/documenti/scheda-documenti.aspx?CoreModules_Ky=13&CoreEntities_Ky=44&CoreForms_Ky=1212&Documenti_Ky=<%=GetFieldValue(dtPagamenti, "Documenti_Ky")%>&Anagrafiche_Ky=<%=GetFieldValue(dtPagamenti, "Anagrafiche_Ky")%>"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw"></i></a>
+			  </div>
+			</div>
+      <% }else{ %>
+      	Nessun progetto attivo sull'anagrafica
+      <% } %>
+	</div>
+	<div class="large-1 medium-1 small-4 cell">
+		<label class="large-text-right small-text-left middle">Progetto <i class="fa-duotone fa-building fa-fw"></i></label>
+	</div>
+	<div class="large-3 medium-3 small-8 cell">
+    	<% if (dtCommesse!=null && dtCommesse.Rows.Count>0){ %>
+        <select name="Commesse_Ky" id="Commesse_Ky" value="<%=GetFieldValue(dtPagamenti, "Commesse_Ky")%>">
+        <option value=""></option>
+					<%
+					for (int i = 0; i < dtCommesse.Rows.Count; i++){
+						Response.Write("<option value=\"" + dtCommesse.Rows[i]["Commesse_Ky"].ToString() + "\">" + dtCommesse.Rows[i]["Commesse_Titolo"].ToString() + "</option>");
+					}
+					%>
+        </select>
+        <script type="text/javascript">
+          selectSet('Commesse_Ky', '<%=GetFieldValue(dtPagamenti, "Commesse_Ky")%>');
+        </script>
+      <% }else{ %>
+      	Nessun progetto attivo sull'anagrafica
+      <% } %>
+	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-1 medium-1 small-4 cell">
+		<label class="large-text-right small-text-left middle">Tipo <i class="fa-duotone fa-list fa-fw"></i></label>
+	</div>
+	<div class="large-3 medium-3 small-8 cell">
+      <select name="PagamentiTipo_Ky" id="PagamentiTipo_Ky" value="1" required="required">
+        <!--#include file="/var/cache/PagamentiTipo-options.htm"--> 
+      </select>
+      <span class="form-error">Obbligatorio</span>
+      <script type="text/javascript">
+        selectSet('PagamentiTipo_Ky', '<%=GetFieldValue(dtPagamenti, "PagamentiTipo_Ky")%>');
+      </script>
+	</div>
+	<div class="large-1 medium-1 small-4 cell">
+		<label class="large-text-right small-text-left middle">Conto <i class="fa-duotone fa-credit-card fa-fw"></i></label>
+	</div>
+	<div class="large-3 medium-3 small-8 cell">
+      <select name="Conti_Ky" id="Conti_Ky" value="1" required="required">
+        <!--#include file="/var/cache/Conti-options.htm"--> 
+      </select>
+      <span class="form-error">Obbligatorio</span>
+      <script type="text/javascript">
+        selectSet('Conti_Ky', '<%=GetFieldValue(dtPagamenti, "Conti_Ky")%>');
+      </script>
+	</div>
+	<div class="large-1 medium-1 small-4 cell">
+		<label class="large-text-right small-text-left middle">Tramite</label>
+	</div>
+	<div class="large-3 medium-3 small-8 cell">
+    <select name="PagamentiMetodo_Ky" id="PagamentiMetodo_Ky" required="required" value="<%=GetFieldValue(dtPagamenti, "PagamentiMetodo_Ky")%>">
+      <!--#include file="/var/cache/PagamentiMetodo-options.htm"--> 
+    </select>
+    <span class="form-error">Obbligatorio</span>
+    <script type="text/javascript">
+      selectSet('PagamentiMetodo_Ky', '<%=GetFieldValue(dtPagamenti, "PagamentiMetodo_Ky")%>');
+    </script>
+  </div>
+</div>
+
+<div class="grid-x grid-padding-x">
+	<div class="large-1 medium-1 small-4 cell">
+		<label class="large-text-right small-text-left middle">Entro il: <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+	</div>
+	<div class="large-3 medium-3 small-8 cell">
+    <input type="text" name="Pagamenti_Data" id="Pagamenti_Data" class="fdatepicker" size="10" required="required" value="<%=GetFieldValue(dtPagamenti, "Pagamenti_Data_IT")%>">
+    <span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="large-1 medium-1 small-4 cell">
+		<label class="large-text-right small-text-left middle">Pagato?:</label>
+	</div>
+	<div class="large-3 medium-3 small-8 cell">
+		<select name="Pagamenti_Pagato" id="Pagamenti_Pagato" value="<%=GetCheckValue(dtPagamenti, "Pagamenti_Pagato")%>">
+      <option value="True">si</option>
+      <option value="False">no</option>
+    </select>
+    <span class="form-error">Obbligatorio</span>
+    <script type="text/javascript">
+      selectSet('Pagamenti_Pagato', '<%=GetCheckValue(dtPagamenti, "Pagamenti_Pagato")%>');
+    </script>
+    <span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="large-1 medium-1 small-4 cell">
+		<label class="large-text-right small-text-left middle">Pagato il: <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+	</div>
+	<div class="large-3 medium-3 small-8 cell">
+    <input type="text" name="Pagamenti_DataPagato" id="Pagamenti_DataPagato" class="fdatepicker" size="10" value="<%=GetFieldValue(dtPagamenti, "Pagamenti_DataPagato_IT")%>">
+  </div>    
+</div>
+<div class="grid-x grid-padding-x">
+	<div class="large-1 medium-1 small-4 cell">
+		<label class="large-text-right small-text-left middle">Riferimenti:</label>
+	</div>
+	<div class="large-11 medium-11 small-8 cell">
+    <textarea name="Pagamenti_Riferimenti" id="Pagamenti_Riferimenti" cols="80" rows="2" required="required"><%=GetFieldValue(dtPagamenti, "Pagamenti_Riferimenti")%></textarea>
+    <span class="form-error">Obbligatorio</span>
+  </div>
+</div>    							

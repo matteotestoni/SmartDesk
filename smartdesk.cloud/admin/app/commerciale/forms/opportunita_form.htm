@@ -1,0 +1,247 @@
+<h2>Anagrafica</h2>
+  <div class="grid-x grid-padding-x">
+  	<div class="large-1 medium-3 small-4 cell">
+  		<label for="Anagrafiche_Ky" class="large-text-right small-text-left middle">Anagrafica <i class="fa-duotone fa-user fa-fw"></i></label>
+  	</div>
+  	<div class="large-1 medium-1 cell hide-for-small-only">
+  		<input type="text" name="Anagrafiche_Ky" id="Anagrafiche_Ky" value="<%=GetFieldValue(dtOpportunita, "Anagrafiche_Ky")%>" size="3" required="required">
+  		<span class="form-error">Obbligatorio</span>
+  	</div>
+  	<div class="large-8 medium-2 auto cell">
+  		<input type="text" name="Anagrafiche_RagioneSociale" id="Anagrafiche_RagioneSociale" placeholder="Ragione Sociale" value="<%=GetFieldValue(dtOpportunita, "Anagrafiche_RagioneSociale")%>" size="50" required="required">
+  		<span class="form-error">Obbligatorio</span>
+      <script type="text/javascript">
+  				jQuery("#Anagrafiche_RagioneSociale" ).autocomplete({
+  					source: "/admin/app/anagrafiche/autosuggest-GetAnagrafiche-json.aspx",
+  					minLength: 2,
+  					select: function( event, ui ) {
+  						jQuery("#Anagrafiche_Ky").val(ui.item.value);
+  						jQuery("#Anagrafiche_RagioneSociale").val(ui.item.label);
+  						return false;
+  					}
+  				});
+      </script>
+  		<p class="small-0 hide-for-small-only " style="margin:0;">
+   		<i class="fa-duotone fa-envelope fa-fw"></i> <%=GetFieldValue(dtOpportunita, "Anagrafiche_EmailContatti")%> |
+   		<i class="fa-duotone fa-phone fa-fw"></i> <%=GetFieldValue(dtOpportunita, "Anagrafiche_Telefono")%> |
+   		<i class="fa-duotone fa-user fa-fw"></i> <%=GetFieldValue(dtOpportunita, "Anagrafiche_Nome")%> <%=GetFieldValue(dtOpportunita, "Anagrafiche_Cognome")%>  
+   		</p>
+  	</div>
+  	<div class="shrink cell">
+      <% if (GetFieldValue(dtOpportunita, "Anagrafiche_Ky")!=null && GetFieldValue(dtOpportunita, "Anagrafiche_Ky").Length>0){ %>
+  			<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=GetFieldValue(dtOpportunita, "Anagrafiche_Ky")%>" style="margin-top:4px"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw fa-lg"></i></a>
+  		<% } %>
+  	</div>
+  </div> 
+      
+<h2>Dati della trattativa</h2>
+<ul class="tabs" data-responsive-accordion-tabs="tabs small-accordion medium-tabs large-tabs" role="tablist" id="opportunita-tabs">
+  <li class="tabs-title is-active" role="presentational"><a href="#tabs-1"><i class="fa-duotone fa-user fa-lg fa-fw"></i>Scheda</a></li>
+  <li class="tabs-title" role="presentational"><a href="#tabs-2"><i class="fa-duotone fa-circle-info fa-lg fa-fw"></i>Sorgente</a></li>
+  <li class="tabs-title" role="presentational"><a href="#tabs-3"><i class="fa-duotone fa-link fa-lg fa-fw"></i>Collegamenti</a></li>
+</ul>
+<div class="tabs-content" data-tabs-content="opportunita-tabs">
+<section role="tabpanel" aria-hidden="false" class="tabs-panel is-active" id="tabs-1" name="tabs-1">
+      <div class="grid-x grid-padding-x">
+      	<div class="large-1 medium-2 small-4 cell">
+      		<label for="Opportunita_Titolo" class="large-text-right small-text-left middle">Titolo <i class="fa-duotone fa-tag fa-fw"></i></label>
+      	</div>
+      	<div class="large-5 medium-4 small-8 cell contenuto">
+          <input type="text" name="Opportunita_Titolo" id="Opportunita_Titolo" value="<%=GetFieldValue(dtOpportunita, "Opportunita_Titolo")%>" size="100" required="required" />
+          <span class="form-error">Obbligatorio</span>
+        	<p class="help-text">max 100 carateri</p>
+      	</div>
+      </div> 
+      <div class="grid-x grid-padding-x">
+      	<div class="large-1 medium-2 small-4 cell">
+      		<label for="Opportunita_Data" class="large-text-right small-text-left middle">Data<i class="fa-duotone fa-calendar-days fa-fw"></i></label>
+      	</div>
+      	<div class="large-5 medium-4 small-8 cell">
+          <input type="text" name="Opportunita_Data" id="Opportunita_Data" value="<%=GetFieldValue(dtOpportunita, "Opportunita_Data_IT")%>" class="fdatepicker txt required" required="required" size="10">
+          <span class="form-error">Obbligatorio</span>
+      	</div>
+      
+		<% if (boolAdmin==true){ %>
+      	<div class="large-1 medium-1 small-4 cell">
+      		<label for="Utenti_Ky" class="large-text-right small-text-left middle">Assegnata <i class="fa-duotone fa-user fa-fw"></i></label>
+      	</div>
+      	<div class="large-5 medium-5 small-8 cell contenuto">
+          <select name="Utenti_Ky" id="Utenti_Ky" value="<%=GetFieldValue(dtOpportunita, "Utenti_Ky")%>" required="required">
+          <!--#include file="/var/cache/Utenti-options.htm"--> 
+          </select>
+          <script type="text/javascript">
+            selectSet('Utenti_Ky', '<%=GetFieldValue(dtOpportunita, "Utenti_Ky")%>');
+          </script>
+      	</div>
+		<% }else{ %>
+			<input type="hidden" id="Utenti_Ky" name="Utenti_Ky" value="<%=dtLogin.Rows[0]["Utenti_Ky"].ToString()%>">
+		<% } %>
+      </div> 
+      
+      <div class="grid-x grid-padding-x">
+      	<div class="large-1 medium-2 small-4 cell">
+      		<label for="OpportunitaStati_Ky" class="large-text-right small-text-left middle">Stato</label>
+      	</div>
+      	<div class="large-11 medium-10 small-8 cell">
+      		<!--#include file="/var/cache/OpportunitaStati-radio.htm"-->
+      		<script type="text/javascript">
+      			radioSet('OpportunitaStati_Ky', '<%=GetFieldValue(dtOpportunita, "OpportunitaStati_Ky")%>');
+          </script>
+        	<span class="form-error">Obbligatorio.</span>
+      	</div>
+      </div>
+      
+      <div class="grid-x grid-padding-x">
+      	<div class="large-1 medium-1 small-4 cell">
+      		<label for="Opportunita_Titolo" class="large-text-right small-text-left middle">Descrizione <i class="fa-duotone fa-file-lines fa-fw"></i></label>
+      	</div>
+      	<div class="large-11 medium-11 small-8 cell contenuto">
+          <textarea name="Opportunita_Descrizione" id="Opportunita_Descrizione" cols="95" rows="4"><%=GetFieldValue(dtOpportunita, "Opportunita_Descrizione")%></textarea>
+      	</div>
+      </div>
+</section>
+<section role="tabpanel" aria-hidden="false" class="tabs-panel" id="tabs-2" name="tabs-2">
+      <div class="grid-x grid-padding-x">
+      	<div class="large-2 medium-2 small-4 cell">
+      		<label for="OpportunitaSorgenti_Ky" class="large-text-right small-text-left middle">Sorgente <i class="fa-duotone fa-file-lines fa-fw"></i></label>
+      	</div>
+      	<div class="large-4 medium-4 small-8 cell contenuto">
+            <select name="OpportunitaSorgenti_Ky" id="OpportunitaSorgenti_Ky" value="<%=GetFieldValue(dtOpportunita, "OpportunitaSorgenti_Ky")%>">
+              <!--#include file="/var/cache/OpportunitaSorgenti-options.htm"--> 
+            </select>
+          	<span class="form-error">Obbligatorio.</span>
+            <script type="text/javascript">
+              selectSet('OpportunitaSorgenti_Ky', '<%=GetFieldValue(dtOpportunita, "OpportunitaSorgenti_Ky")%>');
+            </script>
+      	</div>
+      	<div class="large-2 medium-2 small-4 cell">
+      		<label for="utm_source" class="large-text-right small-text-left middle">UTM Source</label>
+      	</div>
+      	<div class="large-4 medium-4 small-8 cell contenuto">
+          <input type="text" name="utm_source" id="utm_source" value="<%=GetFieldValue(dtOpportunita, "utm_source")%>" size="100" />
+      	</div>
+      </div>
+      <div class="grid-x grid-padding-x">
+      	<div class="large-2 medium-2 small-4 cell">
+      		<label for="utm_medium" class="large-text-right small-text-left middle">UTM Medium</label>
+      	</div>
+      	<div class="large-4 medium-4 small-8 cell contenuto">
+          <input type="text" name="utm_medium" id="utm_source" value="<%=GetFieldValue(dtOpportunita, "utm_medium")%>" size="100" />
+      	</div>
+      	<div class="large-2 medium-2 small-4 cell">
+      		<label for="utm_campaign" class="large-text-right small-text-left middle">UTM Campaign </label>
+      	</div>
+      	<div class="large-4 medium-4 small-8 cell contenuto">
+          <input type="text" name="utm_campaign" id="utm_campaign" value="<%=GetFieldValue(dtOpportunita, "utm_campaign")%>" size="100" />
+      	</div>
+      </div>
+      <div class="grid-x grid-padding-x">
+      	<div class="large-2 medium-2 small-4 cell">
+      		<label for="utm_term" class="large-text-right small-text-left middle">UTM Term</label>
+      	</div>
+      	<div class="large-4 medium-4 small-8 cell contenuto">
+          <input type="text" name="utm_term" id="utm_term" value="<%=GetFieldValue(dtOpportunita, "utm_term")%>" size="100" />
+      	</div>
+      	<div class="large-2 medium-2 small-4 cell">
+      		<label for="utm_content" class="large-text-right small-text-left middle">UTM Content </label>
+      	</div>
+      	<div class="large-4 medium-4 small-8 cell contenuto">
+          <input type="text" name="utm_content" id="utm_content" value="<%=GetFieldValue(dtOpportunita, "utm_content")%>" size="100" />
+      	</div>
+      </div>
+
+</section>
+<section role="tabpanel" aria-hidden="false" class="tabs-panel" id="tabs-3" name="tabs-3">
+    <div class="grid-x grid-padding-x">
+        <div class="large-1 medium-3 small-4 cell">
+            <label for="Lead_Ky" class="large-text-right small-text-left middle">Lead <i class="fa-duotone fa-user fa-fw"></i></label>
+        </div>
+        <div class="shrink cell hide-for-small-only">
+            <input type="text" name="Lead_Ky" id="Lead_Ky" value="<%=GetFieldValue(dtOpportunita, "Lead_Ky")%>" size="3">
+            <span class="form-error">Obbligatorio</span>
+        </div>
+        <div class="auto cell">
+            <input type="text" name="Lead_Titolo" id="Lead_Titolo" placeholder="Lead" value="<%=GetFieldValue(dtOpportunita, "Lead_Titolo")%>" size="50">
+            <span class="form-error">Obbligatorio</span>
+            <script type="text/javascript">
+                jQuery("#Lead_Titolo").autocomplete({
+                    source: "/admin/app/commerciali/autosuggest-GetLead-json.aspx",
+                    minLength: 2,
+                    select: function (event, ui) {
+                        jQuery("#Lead_Ky").val(ui.item.value);
+                        jQuery("#Lead_Titolo").val(ui.item.label);
+                        return false;
+                    }
+                });
+            </script>
+        </div>
+        <div class="shrink cell">
+            <% if (GetFieldValue(dtOpportunita, "Lead_Ky")!=null && GetFieldValue(dtOpportunita, "Lead_Ky").Length>0){ %>
+            <a href="/admin/form.aspx?CoreModules_Ky=20&CoreEntities_Ky=185&CoreGrids_Ky=175&CoreForms_Ky=66&custom=0&azione=edit&Lead_Ky=<%=GetFieldValue(dtOpportunita, "Lead_Ky")%>" style="margin-top:4px"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw fa-lg"></i></a>
+            <% } %>
+        </div>
+    </div>
+
+    <div class="grid-x grid-padding-x">
+        <div class="large-1 medium-3 small-4 cell">
+            <label for="Documenti_Ky" class="large-text-right small-text-left middle">Documenti <i class="fa-duotone fa-user fa-fw"></i></label>
+        </div>
+        <div class="shrink cell hide-for-small-only">
+            <input type="text" name="Documenti_Ky" id="Documenti_Ky" value="<%=GetFieldValue(dtOpportunita, "Documenti_Ky")%>" size="3">
+            <span class="form-error">Obbligatorio</span>
+        </div>
+        <div class="auto cell">
+            <input type="text" name="Documenti_Riferimenti" id="Documenti_Riferimenti" placeholder="Rifementi documento" value="<%=GetFieldValue(dtOpportunita, "Documenti_Riferimenti")%>" size="50">
+            <span class="form-error">Obbligatorio</span>
+            <script type="text/javascript">
+                jQuery("#Documenti_Riferimenti").autocomplete({
+                    source: "/admin/app/documenti/autosuggest-GetDocumenti-json.aspx",
+                    minLength: 2,
+                    select: function (event, ui) {
+                        jQuery("#Documenti_Ky").val(ui.item.value);
+                        jQuery("#Documenti_Riferimenti").val(ui.item.label);
+                        return false;
+                    }
+                });
+            </script>
+        </div>
+        <div class="shrink cell">
+            <% if (GetFieldValue(dtOpportunita, "Documenti_Ky")!=null && GetFieldValue(dtOpportunita, "Documenti_Ky").Length>0){ %>
+            <a href="/admin/app/documenti/scheda-documenti.aspx?CoreModules_Ky=13&CoreEntities_Ky=44&CoreForms_Ky=1212&Documenti_Ky=<%=GetFieldValue(dtOpportunita, "Documenti_Ky")%>" style="margin-top:4px"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw fa-lg"></i></a>
+            <% } %>
+        </div>
+    </div>
+
+    <div class="grid-x grid-padding-x">
+        <div class="large-1 medium-3 small-4 cell">
+            <label for="Campagne_Ky" class="large-text-right small-text-left middle">Campagna <i class="fa-duotone fa-user fa-fw"></i></label>
+        </div>
+        <div class="shrink cell hide-for-small-only">
+            <input type="text" name="Campagne_Ky" id="Campagne_Ky" value="<%=GetFieldValue(dtOpportunita, "Campagne_Ky")%>" size="3">
+            <span class="form-error">Obbligatorio</span>
+        </div>
+        <div class="auto cell">
+            <input type="text" name="Campagne_Titolo" id="Campagne_Titolo" placeholder="Campagna" value="<%=GetFieldValue(dtOpportunita, "Campagne_Titolo")%>" size="50">
+            <span class="form-error">Obbligatorio</span>
+            <script type="text/javascript">
+                jQuery("#Campagne_Titolo").autocomplete({
+                    source: "/admin/app/commerciale/autosuggest-GetCampagne-json.aspx",
+                    minLength: 2,
+                    select: function (event, ui) {
+                        console.log(ui.item.value);
+                        jQuery("#Campagne_Ky").val(ui.item.value);
+                        jQuery("#Campagne_Titolo").val(ui.item.label);
+                        return false;
+                    }
+                });
+            </script>
+        </div>
+        <div class="shrink cell">
+            <% if (GetFieldValue(dtOpportunita, "Documenti_Ky")!=null && GetFieldValue(dtOpportunita, "Documenti_Ky").Length>0){ %>
+            <a href="/admin/form.aspx?CoreModules_Ky=20&CoreEntities_Ky=198&CoreGrids_Ky=206&CoreForms_Ky=88&custom=0&azione=edit&Campagne_Ky=<%=GetFieldValue(dtOpportunita, "Campagne_Ky")%>" style="margin-top:4px"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw fa-lg"></i></a>
+            <% } %>
+        </div>
+    </div>
+
+</section>
+</div>

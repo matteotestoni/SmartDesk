@@ -1,0 +1,118 @@
+<div class="grid-x grid-padding-x">
+	<div class="large-8 medium-8 small-12 cell">
+					<div class="grid-x grid-padding-x">
+						<div class="large-2 medium-2 small-4 cell">
+							<label for="VeicoliMarca_Importante" class="large-text-right small-text-left middle">Importante:</label>
+						</div>
+						<div class="large-10 medium-10 small-8 cell">
+							<div class="switch tiny">
+								<input class="switch-input" type="checkbox" name="VeicoliMarca_Importante" id="VeicoliMarca_Importante" value="on" <% if (GetCheckValue(dtVeicoliMarca, "VeicoliMarca_Importante")){ Response.Write( "checked");} %> />
+								<label class="switch-paddle" for="VeicoliMarca_Importante">
+									<span class="show-for-sr">Attivo</span>
+									<span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+									<span class="switch-inactive" aria-hidden="true"></span>
+								</label>
+							</div>
+							<span class="form-error">Obbligatorio</span>
+						</div>
+					</div>
+					<div class="grid-x grid-padding-x">     
+						<div class="large-2 medium-2 small-4 cell">
+							<label for="VeicoliMarca_Titolo" class="large-text-right small-text-left middle">Titolo</label>
+						</div>
+						<div class="large-10 medium-10 small-8 cell">
+					    <input type="text" name="VeicoliMarca_Titolo" id="VeicoliMarca_Titolo" value="<%=GetFieldValue(dtVeicoliMarca, "VeicoliMarca_Titolo")%>" size="30" required="required">
+					    <span class="form-error">Obbligatorio</span>
+						</div>
+					</div>
+					<div class="grid-x grid-padding-x">     
+						<div class="large-2 medium-2 small-4 cell">
+							<label for="VeicoliMarca_Descrizione" class="large-text-right small-text-left middle">Descrizione</label>
+						</div>
+						<div class="large-10 medium-10 small-8 cell">
+    					<textarea name="VeicoliMarca_Descrizione" id="VeicoliMarca_Descrizione" rows="4" class="ckeditor"><%=GetFieldValue(dtVeicoliMarca, "VeicoliMarca_Descrizione")%></textarea>
+					    <span class="form-error">Obbligatorio</span>
+						</div>
+					</div>
+					<div class="grid-x grid-padding-x">     
+						<div class="large-2 medium-2 small-4 cell">
+							<label for="VeicoliMarca_MesiGaranzia" class="large-text-right small-text-left middle">Mesi garanzia</label>
+						</div>
+						<div class="large-10 medium-10 small-8 cell">
+					    <input type="text" name="VeicoliMarca_MesiGaranzia" id="VeicoliMarca_MesiGaranzia" value="<%=GetFieldValue(dtVeicoliMarca, "VeicoliMarca_MesiGaranzia")%>" size="30" required="required">
+					    <span class="form-error">Obbligatorio</span>
+						</div>
+					</div>
+					<div class="grid-x grid-padding-x">     
+						<div class="large-2 medium-2 small-4 cell">
+							<label for="VeicoliTipo_Ky" class="large-text-right small-text-left middle">Tipo di veicolo</label>
+						</div>
+						<div class="large-10 medium-10 small-8 cell">
+					    <select name="VeicoliTipo_Ky" id="VeicoliTipo_Ky" value="<%=GetFieldValue(dtVeicoliMarca, "VeicoliTipo_Ky")%>">
+					    <option value=""></option>
+								<%
+								for (int i = 0; i < dtVeicoliTipo.Rows.Count; i++){
+									Response.Write("<option value=\"" + dtVeicoliTipo.Rows[i]["VeicoliTipo_Ky"].ToString() + "\">" + dtVeicoliTipo.Rows[i]["VeicoliTipo_Titolo"].ToString() + "</option>");
+								}
+								%>
+					    </select>
+					    <script type="text/javascript">
+					      selectSet('VeicoliTipo_Ky', '<%=GetFieldValue(dtVeicoliMarca, "VeicoliTipo_Ky")%>');
+					    </script>
+						</div>
+					</div>
+					<fieldset>
+					<legend>SEO</legend>
+          <div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-4 cell text-right">
+          		<label class="large-text-right small-text-left middle" for="VeicoliMarca_UrlKey">Friendly Url <i class="fa-duotone fa-link fa-fw"></i></label>
+          	</div>
+          	<div class="large-10 medium-10 small-8 cell">
+              <input type="text" name="VeicoliMarca_UrlKey" id="VeicoliMarca_UrlKey" value="<%=GetFieldValue(dtVeicoliMarca, "VeicoliMarca_UrlKey")%>" size="83" >
+          	</div>
+          </div>
+          <div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-4 cell text-right">
+          		<label class="large-text-right small-text-left middle" for="VeicoliMarca_Title">Titolo SEO</label>
+          	</div>
+          	<div class="large-10 medium-12 small-8 cell">
+              <input type="text" name="VeicoliMarca_Title" id="VeicoliMarca_Title" title="Titolo SEO" value="<%=GetFieldValue(dtVeicoliMarca, "VeicoliMarca_Title")%>" size="200">
+          	</div>
+          </div>
+          <div class="grid-x grid-padding-x">
+          	<div class="large-2 medium-2 small-12 cell">
+          		<label class="large-text-right small-text-left middle" for="VeicoliMarca_Description">Descrizione SEO</label>
+          	</div>
+          	<div class="large-10 medium-10 small-12 cell">
+              <textarea name="VeicoliMarca_Description" id="VeicoliMarca_Description" rows="2" cols="110"><%=GetFieldValue(dtVeicoliMarca, "VeicoliMarca_Description")%></textarea>
+          	</div>
+					</div> 
+				  <div class="grid-x grid-padding-x">
+				  	<div class="large-2 medium-2 small-4 cell">
+				  		<label for="VeicoliMarca_Robots" class="large-text-right small-text-left middle">Robots SEO<i class="fa-duotone fa-file-lines fa-fw"></i></label>
+				  	</div>
+				  	<div class="large-10 medium-10 small-8 cell">
+							<select name="VeicoliMarca_Robots" id="VeicoliMarca_Robots" value="<%=GetFieldValue(dtVeicoliMarca, "VeicoliMarca_Robots")%>">
+				        <option value="index,follow">index,follow</option>
+				        <option value="noindex,nofollow">noindex,follow</option>
+				        <option value="noindex,nofollow">noindex,nofollow</option>
+				      </select>
+			        <p class="help-text">i noindex non saranno nella sitemap</p>
+				      <script type="text/javascript">
+				        selectSet('VeicoliMarca_Robots', '<%=GetFieldValue(dtVeicoliMarca, "VeicoliMarca_Robots")%>');
+				      </script>
+				  	</div>
+				  </div>
+					</fieldset>
+	</div>
+	<div class="large-4 medium-4 small-12 cell">
+					<div class="grid-x grid-padding-x">
+						<div class="large-2 medium-2 small-4 cell">
+							<label for="VeicoliMarca_Logo" class="large-text-right small-text-left middle"></label>
+						</div>
+						<div class="large-10 medium-10 small-8 cell">
+							<img src="https://cdn.smartdesk.cloud/img/veicoli/marche/<%=GetFieldValue(dtVeicoliMarca, "VeicoliMarca_UrlKey")%>.png" width="200" alt="<%=GetFieldValue(dtVeicoliMarca, "VeicoliMarca_Descrizione")%>">
+						</div>
+					</div>
+	</div>
+</div>
