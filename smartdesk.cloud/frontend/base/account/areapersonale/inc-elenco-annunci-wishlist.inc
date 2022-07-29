@@ -35,7 +35,7 @@
                 </div>
                 <div class="grid-x grid-padding-x" style="margin-top:1.5rem;">
                     <div class="large-12 medium-12 small-12 cell">
-                       <span class="localizzazione-elenco"><img src="/img/icona-ita.png" style="margin-right:5px"><%=dtAnnunciWishlist.Rows[i]["Nazioni_Codice"].ToString()%> / <%=dtAnnunciWishlist.Rows[i]["Regioni_Regione"].ToString()%> / <%=dtAnnunciWishlist.Rows[i]["Comuni_Comune"].ToString()%></span>
+                       <span class="localizzazione-elenco"><img src="https://cdn.smartdesk.cloud/img/flags/it.png" style="margin-right:5px"><%=dtAnnunciWishlist.Rows[i]["Nazioni_Codice"].ToString()%> / <%=dtAnnunciWishlist.Rows[i]["Regioni_Regione"].ToString()%> / <%=dtAnnunciWishlist.Rows[i]["Comuni_Comune"].ToString()%></span>
                     </div>
                 </div>
                 <div class="grid-x grid-padding-x" style="margin-top:0.5rem;">

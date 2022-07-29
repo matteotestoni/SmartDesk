@@ -25,7 +25,7 @@
   <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.foundation.min.css" media="screen">
   <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.4/css/responsive.dataTables.min.css" media="screen">
   <link type="text/css" rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.min.css" media="screen, print">	
-  <link rel="stylesheet" href="/lib/fontawesome6/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.smartdesk.cloud/lib/fontawesome6/css/all.min.css" />
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
   <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>

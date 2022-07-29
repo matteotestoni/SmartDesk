@@ -51,7 +51,7 @@ public partial class _Default : System.Web.UI.Page
       							FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(1,"rswcrm-az",DateTime.Now,DateTime.Now.AddMinutes(600),true,dtAnagrafiche.Rows[0]["Anagrafiche_Ky"].ToString(),FormsAuthentication.FormsCookiePath);
       							string encryptedTicket = FormsAuthentication.Encrypt(ticket);
       							System.Web.HttpCookie authCookie = new System.Web.HttpCookie("rswcrm-az", encryptedTicket);
-      							authCookie.Secure = opzioni.fSSL;
+      							authCookie.Secure = true;
       							Response.Cookies.Add(authCookie);
       							//tracciamento
       							tracciaLogin(strAnagrafiche_Ky);

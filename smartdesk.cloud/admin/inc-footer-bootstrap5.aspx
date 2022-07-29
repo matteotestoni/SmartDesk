@@ -1,5 +1,5 @@
-	<footer class="container footer text-center hide-for-print">
-	  <div class="row">
+	<footer id="footer" class="container footer text-center hide-for-print">
+	  <div class="grid-x grid-padding-x">
     <div class="col-sm-12 col-md-12 col-lg-12 cell">
 				  <small>
           &copy; <%=DateTime.Now.Year.ToString()%>

@@ -26,7 +26,7 @@
                         %>
                     </div>
                 </div>
-                <div class="localizzazione-elenco"><img src="/frontend/base/img/icona-ita.png" style="margin-right:5px"><%=dtLottiWishlist.Rows[i]["Nazioni_Codice"].ToString()%> / <%=dtLottiWishlist.Rows[i]["Regioni_Regione"].ToString()%> / <%=dtLottiWishlist.Rows[i]["Comuni_Comune"].ToString()%></div>
+                <div class="localizzazione-elenco"><img src="https://cdn.smartdesk.cloud/img/flags/it.png" style="margin-right:5px"><%=dtLottiWishlist.Rows[i]["Nazioni_Codice"].ToString()%> / <%=dtLottiWishlist.Rows[i]["Regioni_Regione"].ToString()%> / <%=dtLottiWishlist.Rows[i]["Comuni_Comune"].ToString()%></div>
                 <div class="label secondary"><span style="color: #ff6c00">ID ASTA:</span>&nbsp;<%=dtLottiWishlist.Rows[i]["Aste_Numero"].ToString()%></div>
                 <div class="label secondary"><span style="color: #ff6c00">LOTTO:</span>&nbsp;<%=dtLottiWishlist.Rows[i]["Annunci_Numero"].ToString()%></div>
                 <div class="label secondary"><span style="color: #ff6c00">CATEGORIA:</span>&nbsp;<%=dtLottiWishlist.Rows[i]["AnnunciCategorie_Titolo"].ToString()%></div>

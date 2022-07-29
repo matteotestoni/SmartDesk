@@ -238,7 +238,7 @@
                                   <span class="dettaglio-asta">Localizzazione:</span>
                               </div>
                               <div class="large-9 medium-9 small-6 cell text-right">
-                                  <span class="dettaglio-asta"><img src="/frontend/base/img/icona-ita.png"><%=dtAsteEsperimenti.Rows[0]["Nazioni_Codice"].ToString()%> / <%=dtAsteEsperimenti.Rows[0]["Regioni_Regione"].ToString()%> / <%=dtAsteEsperimenti.Rows[0]["Comuni_Comune"].ToString()%></span>
+                                  <span class="dettaglio-asta"><img src="https://cdn.smartdesk.cloud/img/flags/it.png"><%=dtAsteEsperimenti.Rows[0]["Nazioni_Codice"].ToString()%> / <%=dtAsteEsperimenti.Rows[0]["Regioni_Regione"].ToString()%> / <%=dtAsteEsperimenti.Rows[0]["Comuni_Comune"].ToString()%></span>
                               </div>
                           </div>
                   </div>

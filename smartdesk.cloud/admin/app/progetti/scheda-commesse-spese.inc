@@ -45,8 +45,7 @@
 		          <td class="text-left">
 							doc. n&deg; <%=dtSpese.Rows[i]["Spese_DocumentoNumero"].ToString()%> del <%=dtSpese.Rows[i]["Spese_DocumentoData_IT"].ToString()%>
 							</td>
-
-		          <td><a href="/admin/app/amministrazione/crud/elimina-spese.aspx?azione=delete&sorgente=elenco-spese&Spese_Ky=<%=dtSpese.Rows[i]["Spese_Ky"].ToString()%>" title="elimina" class="delete"><i class="fa-duotone fa-trash-can fa-fw"></i></a></td>
+		          <td><a href="/admin/crud/elimina.aspx?ajax=&azione=delete&sorgente=view-1&Spese_Ky=<%=dtSpese.Rows[i]["Spese_Ky"].ToString()%>" title="elimina" class="delete"><i class="fa-duotone fa-trash-can fa-fw"></i></a></td>
 		        </tr>
 		    <% } %>
     	</tbody>

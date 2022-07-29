@@ -4,7 +4,7 @@
 <head>
   <title>Commessa-<%=GetFieldValue("Commesse_Ky")%>-<%=GetUTF(GetFieldValue("Anagrafiche_RagioneSociale"))%></title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <link rel="stylesheet" href="/lib/fontawesome6/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.smartdesk.cloud/lib/fontawesome6/css/all.min.css" />
   <link rel="stylesheet" type="text/css" href="../rswcrm-print.css" media="screen, print" />
   <link rel="shortcut icon" href="img/favicon.ico">
   <style>

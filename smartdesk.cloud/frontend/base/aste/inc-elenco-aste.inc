@@ -8,7 +8,7 @@
           %>
 			      <div class="cell">
               <div class="card scheda-asta-elenco">
-                <div class="card-divider"><strong><%=dtAsteEsperimenti.Rows[i]["Aste_Titolo"].ToString()%></strong></div>
+                <div class="card-divider"><h3><%=dtAsteEsperimenti.Rows[i]["Aste_Titolo"].ToString()%></h3></div>
                 <a href="/frontend/base/aste/scheda-asta.aspx?AsteEsperimenti_Ky=<%=dtAsteEsperimenti.Rows[i]["AsteEsperimenti_Ky"].ToString()%>&Aste_Ky=<%=dtAsteEsperimenti.Rows[i]["Aste_Ky"].ToString()%>"><img src="<%=dtAsteEsperimenti.Rows[i]["Aste_Foto1"].ToString()%>" class="lazy" loading="lazy"></a>
                 <div class="card-section">
     			          <span class="aggiungiwishlist" data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover="false" tabindex="1" title="Segui asta"><a href="/frontend/base/wishlist/aggiungi-wishlist.aspx?Aste_Ky=<%=dtAsteEsperimenti.Rows[i]["Aste_Ky"].ToString()%>&azione=new&cosa=aste"><i class="fa-duotone fa-heart fa-fw"></i></a></span>
@@ -40,7 +40,7 @@
         			          </div>
         			          <div class="grid-x grid-padding-x" style="margin-bottom:10px;">
         			              <div class="large-12 medium-12 small-12 cell">
-        			              	<span class="locazione-asta"><i class="fa-duotone fa-fw fa-location-dot"></i><img src="/frontend/base/img/icona-ita.png" style="margin-right:5px"><%=dtAsteEsperimenti.Rows[i]["Comuni_Comune"].ToString()%></span>
+        			              	<span class="locazione-asta"><i class="fa-duotone fa-fw fa-location-dot"></i><img src="https://cdn.smartdesk.cloud/img/flags/it.png" style="margin-right:5px"><%=dtAsteEsperimenti.Rows[i]["Comuni_Comune"].ToString()%></span>
         			              </div>
         			          </div>
         			          <div class="grid-x grid-padding-x align-middle">

@@ -1,6 +1,6 @@
 <div>
 	<div class="callout-filtri clearfix sticky">
-		<form name="layeredView" id="layeredView" method="get" action="/elenco-annunci.aspx">
+		<form name="layeredView" id="layeredView" method="get" action="/frontend/base/annunci/elenco-annunci.aspx">
 			<input type="hidden" name="search" id="searchsidebar" value="<%=Request["search"]%>">
 				<h4>Ricerca annunci</h4>
 				<% if (dtAnnunciCategorie.Rows.Count>0){ %>

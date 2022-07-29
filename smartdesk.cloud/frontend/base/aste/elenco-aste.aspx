@@ -11,14 +11,14 @@
   	<!-- #include file ="/frontend/base/inc-header.aspx" -->
     <div class="grid-container">
         <div class="grid-x grid-padding-x">
-         	<div class="large-3 medium-4 small-12 cell hide-for-small-only"> 
+         	<aside class="large-3 medium-4 small-12 cell hide-for-small-only"> 
 		  	     <!-- #include file ="/frontend/base/aste/inc-elenco-aste-sidebar.inc" -->
-          </div> 
-          <div class="large-9 medium-8 small-12 cell">
+          </aside> 
+          <main class="large-9 medium-8 small-12 cell">
             <h1>Elenco Aste on line</h1>
             <hr>
           	<!-- #include file ="/frontend/base/aste/inc-elenco-aste.inc" -->
-          </div>
+          </main>
         </div>
         <% if (dtAsteEsperimenti.Rows.Count>10){ %>  
             <div class="grid-x grid-padding-x">

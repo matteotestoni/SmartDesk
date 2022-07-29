@@ -27,13 +27,13 @@
                  <% 
   							 switch (dtAnnunci.Rows[j]["AnnunciTipo_Ky"].ToString()){
   							 	case "1":%>
-                  		<a href="/frontend/base/aste/scheda-annuncio.aspx?AsteEsperimenti_Ky=<%=dtAsteEsperimenti.Rows[0]["AsteEsperimenti_Ky"].ToString()%>&Aste_Ky=<%=dtAsteEsperimenti.Rows[0]["Aste_Ky"].ToString()%>&Annunci_Ky=<%=dtAnnunci.Rows[j]["Annunci_Ky"].ToString()%>"><span class="titolo-lotto"><%=dtAnnunci.Rows[j]["Annunci_Titolo"].ToString()%></span></a>
+                  		<a href="/frontend/base/aste/scheda-lotto.aspx?AsteEsperimenti_Ky=<%=dtAsteEsperimenti.Rows[0]["AsteEsperimenti_Ky"].ToString()%>&Aste_Ky=<%=dtAsteEsperimenti.Rows[0]["Aste_Ky"].ToString()%>&Annunci_Ky=<%=dtAnnunci.Rows[j]["Annunci_Ky"].ToString()%>"><span class="titolo-lotto"><%=dtAnnunci.Rows[j]["Annunci_Titolo"].ToString()%></span></a>
   									 <%break;
   							 	case "2":%>
                   		<a href="/frontend/base/aste/scheda-lotto.aspx?AsteEsperimenti_Ky=<%=dtAsteEsperimenti.Rows[0]["AsteEsperimenti_Ky"].ToString()%>&Aste_Ky=<%=dtAsteEsperimenti.Rows[0]["Aste_Ky"].ToString()%>&Annunci_Ky=<%=dtAnnunci.Rows[j]["Annunci_Ky"].ToString()%>"><span class="titolo-lotto"><%=dtAnnunci.Rows[j]["Annunci_Titolo"].ToString()%></span></a>
   							 		<%break;
   							 	case "3":%>
-                  		<a href="/frontend/base/aste/scheda-immobile.aspx?AsteEsperimenti_Ky=<%=dtAsteEsperimenti.Rows[0]["AsteEsperimenti_Ky"].ToString()%>&Aste_Ky=<%=dtAsteEsperimenti.Rows[0]["Aste_Ky"].ToString()%>&Annunci_Ky=<%=dtAnnunci.Rows[j]["Annunci_Ky"].ToString()%>"><span class="titolo-lotto"><%=dtAnnunci.Rows[j]["Annunci_Titolo"].ToString()%></span></a>
+                  		<a href="/frontend/base/aste/scheda-lotto.aspx?AsteEsperimenti_Ky=<%=dtAsteEsperimenti.Rows[0]["AsteEsperimenti_Ky"].ToString()%>&Aste_Ky=<%=dtAsteEsperimenti.Rows[0]["Aste_Ky"].ToString()%>&Annunci_Ky=<%=dtAnnunci.Rows[j]["Annunci_Ky"].ToString()%>"><span class="titolo-lotto"><%=dtAnnunci.Rows[j]["Annunci_Titolo"].ToString()%></span></a>
   							 		<%break;
   							 }%>
                  </div>

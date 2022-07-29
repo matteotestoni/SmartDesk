@@ -24,7 +24,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="https://cdn.smartdesk.cloud/img/favicon/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">  
-  <link rel="stylesheet" href="/lib/fontawesome6/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.smartdesk.cloud/lib/fontawesome6/css/all.min.css" />
 	<style>
 		body, table, tbody, th, td, tr, p, label, div, legend{
 			font-size:9pt !important;
@@ -39,11 +39,11 @@
 	</style>
 </head>
 <body class="reporta4verticale" style="margin-left:5px;">
-  <div class="row">
-    <div class="large-4 medium-4 small-12 columns">
+  <div class="grid-x grid-padding-x">
+    <div class="large-4 medium-4 small-12 cell">
         <img src="<%=dtAzienda.Rows[0]["Aziende_Logo"].ToString()%>" border="0" style="max-height:70px;max-width:250px;padding-top:10px;" />
     </div>
-    <div class="large-8 medium-8 small-12 columns">
+    <div class="large-8 medium-8 small-12 cell">
       <div style="border:0;padding:10px;width:7cm;text-align:left">
       </div>
     </div>
@@ -52,50 +52,50 @@
 
 	<fieldset class="fieldset">
 		<legend>Asta</legend>
-    <div class="row">
-      <div class="large-2 medium-2 small-12 columns"><label>Titolo</label></div>
-			<div class="large-10 medium-10 small-12 columns"><%=Smartdesk.Data.Field(dtAste, "Aste_Titolo")%></div>
+    <div class="grid-x grid-padding-x">
+      <div class="large-2 medium-2 small-12 cell"><label>Titolo</label></div>
+			<div class="large-10 medium-10 small-12 cell"><%=Smartdesk.Data.Field(dtAste, "Aste_Titolo")%></div>
     </div>
-    <div class="row">
-      <div class="large-2 medium-2 small-12 columns"><label>Procedura</label></div>
-			<div class="large-4 medium-4 small-12 columns"><%=Smartdesk.Data.Field(dtAste, "Aste_Procedura")%></div>
-      <div class="large-2 medium-2 small-12 columns"><label>Numero</label></div>
-			<div class="large-4 medium-4 small-12 columns"><%=Smartdesk.Data.Field(dtAste, "Aste_Numero")%></div>
+    <div class="grid-x grid-padding-x">
+      <div class="large-2 medium-2 small-12 cell"><label>Procedura</label></div>
+			<div class="large-4 medium-4 small-12 cell"><%=Smartdesk.Data.Field(dtAste, "Aste_Procedura")%></div>
+      <div class="large-2 medium-2 small-12 cell"><label>Numero</label></div>
+			<div class="large-4 medium-4 small-12 cell"><%=Smartdesk.Data.Field(dtAste, "Aste_Numero")%></div>
     </div>
-    <div class="row">
-      <div class="large-2 medium-2 small-12 columns"><label>Anagrafica</label></div>
-			<div class="large-4 medium-4 small-12 columns"><%=Smartdesk.Data.Field(dtAste, "Anagrafiche_RagioneSociale")%></div>
-      <div class="large-2 medium-2 small-12 columns"><label>Categoria</label></div>
-			<div class="large-4 medium-4 small-12 columns"><%=Smartdesk.Data.Field(dtAste, "AsteCategorie_Titolo")%></div>
+    <div class="grid-x grid-padding-x">
+      <div class="large-2 medium-2 small-12 cell"><label>Anagrafica</label></div>
+			<div class="large-4 medium-4 small-12 cell"><%=Smartdesk.Data.Field(dtAste, "Anagrafiche_RagioneSociale")%></div>
+      <div class="large-2 medium-2 small-12 cell"><label>Categoria</label></div>
+			<div class="large-4 medium-4 small-12 cell"><%=Smartdesk.Data.Field(dtAste, "AsteCategorie_Titolo")%></div>
     </div>
-    <div class="row">
-      <div class="large-2 medium-2 small-12 columns"><label>Indirizzo</label></div>
-      <div class="large-10 medium-10 small-12 columns"><%=Smartdesk.Data.Field(dtAste, "Aste_Indirizzo")%> <%=Smartdesk.Data.Field(dtAste, "Comuni_Comune")%>, <%=Smartdesk.Data.Field(dtAste, "Province_Provincia")%>, <%=Smartdesk.Data.Field(dtAste, "Regioni_Regione")%>, <%=Smartdesk.Data.Field(dtAste, "Nazioni_Nazione")%></div></div>
-    <div class="row">
-      <div class="large-2 medium-2 small-12 columns"><label>Referente</label></div>
-      <div class="large-10 medium-10 small-12 columns"><%=Smartdesk.Data.Field(dtAste, "Aste_Referente")%> <i class="fa-duotone fa-phone fa-fw"></i><%=Smartdesk.Data.Field(dtAste, "Aste_CellulareReferente")%> <i class="fa-duotone fa-envelope fa-fw"></i><%=Smartdesk.Data.Field(dtAste, "Aste_EmailReferente")%></div>
+    <div class="grid-x grid-padding-x">
+      <div class="large-2 medium-2 small-12 cell"><label>Indirizzo</label></div>
+      <div class="large-10 medium-10 small-12 cell"><%=Smartdesk.Data.Field(dtAste, "Aste_Indirizzo")%> <%=Smartdesk.Data.Field(dtAste, "Comuni_Comune")%>, <%=Smartdesk.Data.Field(dtAste, "Province_Provincia")%>, <%=Smartdesk.Data.Field(dtAste, "Regioni_Regione")%>, <%=Smartdesk.Data.Field(dtAste, "Nazioni_Nazione")%></div></div>
+    <div class="grid-x grid-padding-x">
+      <div class="large-2 medium-2 small-12 cell"><label>Referente</label></div>
+      <div class="large-10 medium-10 small-12 cell"><%=Smartdesk.Data.Field(dtAste, "Aste_Referente")%> <i class="fa-duotone fa-phone fa-fw"></i><%=Smartdesk.Data.Field(dtAste, "Aste_CellulareReferente")%> <i class="fa-duotone fa-envelope fa-fw"></i><%=Smartdesk.Data.Field(dtAste, "Aste_EmailReferente")%></div>
     </div>
-    <div class="row">
-      <div class="large-2 medium-2 small-12 columns"><label>Provvigione</label></div>
-			<div class="large-4 medium-4 small-12 columns"><%=Smartdesk.Data.Field(dtAste, "Aste_Provvigione")%></div>
-      <div class="large-2 medium-2 small-12 columns"><label>Cauzione</label></div>
-			<div class="large-4 medium-4 small-12 columns">&euro; <%=Smartdesk.Data.Field(dtAste, "Aste_Cauzione")%></div>
+    <div class="grid-x grid-padding-x">
+      <div class="large-2 medium-2 small-12 cell"><label>Provvigione</label></div>
+			<div class="large-4 medium-4 small-12 cell"><%=Smartdesk.Data.Field(dtAste, "Aste_Provvigione")%></div>
+      <div class="large-2 medium-2 small-12 cell"><label>Cauzione</label></div>
+			<div class="large-4 medium-4 small-12 cell">&euro; <%=Smartdesk.Data.Field(dtAste, "Aste_Cauzione")%></div>
     </div>
-    <div class="row">
-      <div class="large-2 medium-2 small-12 columns"><label>Rilancio</label></div>
-			<div class="large-4 medium-4 small-12 columns">&euro; <%=Smartdesk.Data.Field(dtAste, "Aste_Rilancio")%></div>
-      <div class="large-2 medium-2 small-12 columns"><label>Pagamento</label></div>
-			<div class="large-4 medium-4 small-12 columns"><%=Smartdesk.Data.Field(dtAste, "PagamentiMetodo_Descrizione")%></div>
+    <div class="grid-x grid-padding-x">
+      <div class="large-2 medium-2 small-12 cell"><label>Rilancio</label></div>
+			<div class="large-4 medium-4 small-12 cell">&euro; <%=Smartdesk.Data.Field(dtAste, "Aste_Rilancio")%></div>
+      <div class="large-2 medium-2 small-12 cell"><label>Pagamento</label></div>
+			<div class="large-4 medium-4 small-12 cell"><%=Smartdesk.Data.Field(dtAste, "PagamentiMetodo_Descrizione")%></div>
     </div>
-    <div class="row">
-      <div class="large-2 medium-2 small-12 columns"><label>Pagamento</label></div>
-			<div class="large-4 medium-4 small-12 columns"><%=Smartdesk.Data.Field(dtAste, "Aste_DataPagamento")%></div>
-      <div class="large-2 medium-2 small-12 columns"><label>Ritiro</label></div>
-			<div class="large-4 medium-4 small-12 columns"><%=Smartdesk.Data.Field(dtAste, "AsteRitiri_Titolo")%></div>
+    <div class="grid-x grid-padding-x">
+      <div class="large-2 medium-2 small-12 cell"><label>Pagamento</label></div>
+			<div class="large-4 medium-4 small-12 cell"><%=Smartdesk.Data.Field(dtAste, "Aste_DataPagamento")%></div>
+      <div class="large-2 medium-2 small-12 cell"><label>Ritiro</label></div>
+			<div class="large-4 medium-4 small-12 cell"><%=Smartdesk.Data.Field(dtAste, "AsteRitiri_Titolo")%></div>
     </div>
-    <div class="row">
-      <div class="large-2 medium-2 small-12 columns"><label>Descrizione</label></div>
-      <div class="large-10 medium-10 small-12 columns"><%=Smartdesk.Data.Field(dtAste, "Aste_Descrizione")%></div>
+    <div class="grid-x grid-padding-x">
+      <div class="large-2 medium-2 small-12 cell"><label>Descrizione</label></div>
+      <div class="large-10 medium-10 small-12 cell"><%=Smartdesk.Data.Field(dtAste, "Aste_Descrizione")%></div>
     </div>
 	</fieldset>  
   

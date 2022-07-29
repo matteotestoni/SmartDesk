@@ -63,12 +63,12 @@ jQuery(function () {
   
   function iformat(icon, color, img) {
   	var originalOption = icon.element;
-    console.log(jQuery(originalOption).data('img'));
+    //console.log(jQuery(originalOption).data('img'));
   	if (jQuery(originalOption).data('img')!=null){
-      console.log("1");
+      //console.log("1");
       return jQuery('<span><img src="' + jQuery(originalOption).data('img') + '" width="22" style="width:24px;height:24px;border-radius:50%;margin-right:5px;margin-top:-8px"> ' + icon.text + '</span>');
     }else{
-      console.log("2");
+      //console.log("2");
       return jQuery('<span style="color:' + jQuery(originalOption).data('color') + '"><i class="' + jQuery(originalOption).data('icon') + '"></i> ' + icon.text + '</span>');
     }
   }

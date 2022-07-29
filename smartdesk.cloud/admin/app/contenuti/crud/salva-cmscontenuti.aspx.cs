@@ -26,17 +26,16 @@ public partial class _Default : System.Web.UI.Page
             if (Smartdesk.Current.Request("CMSContenuti_PubblicaWEB") == "") frm.Add("CMSContenuti_PubblicaWEB", false);
             if (Smartdesk.Current.Request("CMSContenuti_InMenu") == "") frm.Add("CMSContenuti_InMenu", false);
             if (Smartdesk.Current.Request("CMSContenuti_Sitemap") == "") frm.Add("CMSContenuti_Sitemap", false);
-            strUrlKey=Smartdesk.Current.Request("CMSContenuti_UrlKey");
+            strUrlKey=System.Web.HttpUtility.HtmlEncode(Smartdesk.Current.Request("CMSContenuti_UrlKey"));
             strKy=Smartdesk.Functions.SqlWriteKey("CMSContenuti",frm);
             if (strUrlKey==null || strUrlKey.Length<2){
-              strUrlKey = Smartdesk.Current.Request("CMSContenuti_Titolo").ToLower().Replace(" ","-").Replace("/","").Replace("à","a").Replace("è","e").Replace("ì","i").Replace("ò","o").Replace("ù","u").Replace("'","") + "-" + strKy;
+              strUrlKey = System.Web.HttpUtility.HtmlEncode(Smartdesk.Current.Request("CMSContenuti_Titolo")).ToLower().Replace(" ","-").Replace("/","").Replace("à","a").Replace("è","e").Replace("ì","i").Replace("ò","o").Replace("ù","u").Replace("'","") + "-" + strKy;
               aggiornaUrlKey(strUrlKey);
             }
           	caricafiles();
             updateUrlRewrite();
           	caricafiles();
             strRedirect = "/admin/app/contenuti/scheda-cmscontenuti.aspx?salvato=salvato&azione=edit&CMSContenuti_Ky=" + strKy;
-            //Response.Write(Request["CMSContenuti_Contenuto"]);
 			      Response.Redirect(strRedirect);
         }else{
             Response.Redirect(Smartdesk.Current.LoginPageRoot);

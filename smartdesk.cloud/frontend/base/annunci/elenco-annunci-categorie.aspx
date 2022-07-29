@@ -10,7 +10,12 @@
   <body>
 	<!-- #include file ="/frontend/base/inc-header.aspx" -->
      <div class="grid-x grid-padding-x">
-      <div class="large-12 medium-12 small-12 cell">
+			<aside class="large-3 medium-3 small-12 medium-order-1 cell cellzero">
+				<div id="sidebar" class="sidebar">
+					<!-- #include file ="/frontend/base/annunci/inc-elenco-annunci-sidebar.aspx" -->
+				</div>
+			</aside>
+      <div class="large-9 medium-9 small-12 cell">
         <h1>Elenco categorie dei prodotti disponibili</h1>
         <hr>
         <div class="grid-x grid-padding-x small-up-2 medium-up-3 large-up-4 elencocategorie">

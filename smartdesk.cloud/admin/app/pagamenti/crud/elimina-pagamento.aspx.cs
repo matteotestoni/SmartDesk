@@ -34,10 +34,10 @@ public partial class _Default : System.Web.UI.Page
             		strRedirect="/admin/app/progetti/scheda-commesse.aspx?Commesse_Ky=" + strCommesse_Ky;
             		break;
             	case "scheda-anagrafiche":
-            		strRedirect="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=" + strAnagrafiche_Ky;
+            		strRedirect="/admin/app/anagrafiche/scheda-anagrafiche.aspx?CoreModules_Ky=1&CoreEntities_Ky=162&CoreForms_Ky=145&Anagrafiche_Ky=" + strAnagrafiche_Ky;
             		break;
               	case "scheda-spese":
-                	strRedirect="/admin/app/amministrazione/scheda-spese.aspx?CoreModules_Ky=2&CoreEntities_Ky=1&Spese_Ky=" + strSpese_Ky;
+                	strRedirect="/admin/app/amministrazione/scheda-spese.aspx?CoreModules_Ky=2&CoreEntities_Ky=1&CoreForms_Ky=211&Spese_Ky=" + strSpese_Ky;
                 	break;
               	case "elenco-pagamenti":
                 	strRedirect="/admin/app/pagmenti/elenco-pagamenti.aspx";

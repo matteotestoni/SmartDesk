@@ -19,7 +19,7 @@
 		if (dtVeicoli.Rows[i]["Veicoli_Foto1"].ToString().Trim().Length>0){
 			strImg=dtVeicoli.Rows[i]["Veicoli_Foto1"].ToString().Trim();
 		}else{
-			strImg="https://via.placeholder.com/400x300.webp?text=nessun+immagine";
+			strImg="https://picsum.photos/seed/" + dtVeicoli.Rows[i]["Veicoli_Ky"].ToString() + "/800/600.webp";
 		}
 	%>
 	<div class="card panelofferta <% if(dtVeicoli.Rows[i]["Veicoli_BestPrice"].Equals(true)){ %>bestprice<% } %>" id="veicolo<%=dtVeicoli.Rows[i]["Veicoli_Targa"].ToString()%>" itemprop="itemOffered" itemscope itemtype="http://schema.org/Car">

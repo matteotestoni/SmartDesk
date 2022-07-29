@@ -9,14 +9,13 @@ public partial class _Default : System.Web.UI.Page
     public DataTable dtLogin;
     public bool boolLogin = false;
     public string strUtentiLogin="";
-    
-    
     public int intNumRecords = 0;
     public int i = 0;
     public string strH1="contenuto";
     public DataTable dtAsteCategorie;
     public DataTable dtAnnunciCategorie;
     public DataTable dtCMSContenuti;
+    public DataTable dtRegioni;
     public string strTemp="";
     public string strCMSContenuti_Ky="";
 
@@ -26,9 +25,6 @@ public partial class _Default : System.Web.UI.Page
       string strFROMNet = "";
       string strORDERNet = "";
 
-  	  
-  	  
-      
       if (Request.Cookies["rswcrm-az"] != null){
           strUtentiLogin = (FormsAuthentication.Decrypt(Context.Request.Cookies["rswcrm-az"].Value)).UserData;
           strWHERENet = "Anagrafiche_Ky =" + strUtentiLogin;
@@ -56,12 +52,16 @@ public partial class _Default : System.Web.UI.Page
       dtAsteCategorie = new DataTable("AsteCategorie");
       dtAsteCategorie = Smartdesk.Sql.getTablePage("AsteCategorie", null, "AsteCategorie_Ky", strWHERENet, "AsteCategorie_Ky", 1, 100,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
 
-	  strCMSContenuti_Ky=Request["CMSContenuti_Ky"];
-	  if (strCMSContenuti_Ky!=null && strCMSContenuti_Ky.Length>0){
-		  strWHERENet = "CMSContenuti_Ky=" + strCMSContenuti_Ky;
-	      dtCMSContenuti = new DataTable("CMSContenuti");
-	      dtCMSContenuti = Smartdesk.Sql.getTablePage("CMSContenuti", null, "CMSContenuti_Ky", strWHERENet, "CMSContenuti_Ky", 1, 1,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
-	  }
+    	  strCMSContenuti_Ky=Request["CMSContenuti_Ky"];
+    	  if (strCMSContenuti_Ky!=null && strCMSContenuti_Ky.Length>0){
+    		  strWHERENet = "CMSContenuti_Ky=" + strCMSContenuti_Ky;
+    	      dtCMSContenuti = new DataTable("CMSContenuti");
+    	      dtCMSContenuti = Smartdesk.Sql.getTablePage("CMSContenuti", null, "CMSContenuti_Ky", strWHERENet, "CMSContenuti_Ky", 1, 1,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
+    	  }
+	    
+        strWHERENet = "Nazioni_Ky=105";
+      	dtRegioni = new DataTable("Regioni");
+      	dtRegioni = Smartdesk.Sql.getTablePage("Regioni", null, "Regioni_Ky", strWHERENet, "Regioni_Ky", 1, 100,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
     }    
 
 

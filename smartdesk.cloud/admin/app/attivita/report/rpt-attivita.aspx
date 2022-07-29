@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link type="text/css" rel="stylesheet" href="/fonts/Geomanist/Geomanist.css" media="screen, print" />
   <link rel="stylesheet" type="text/css" href="/admin/rswcrm-print.css" media="screen, print" />
-  <link rel="stylesheet" href="/lib/fontawesome6/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.smartdesk.cloud/lib/fontawesome6/css/all.min.css" />
   <link rel="shortcut icon" href="https://cdn.smartdesk.cloud/img/favicon/favicon.ico">
   <link rel="apple-touch-icon" sizes="57x57" href="https://cdn.smartdesk.cloud/img/favicon/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="https://cdn.smartdesk.cloud/img/favicon/apple-icon-60x60.png">

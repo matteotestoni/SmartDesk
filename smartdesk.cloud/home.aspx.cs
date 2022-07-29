@@ -10,6 +10,7 @@ public partial class _Default : System.Web.UI.Page
     public string strErrore="";
     public DataTable dtAnnunciCategorie;
     public DataTable dtCoreModulesOptionsValue;
+    public DataTable dtCMSSlide;
     public string strTheme="base";
     
     protected void Page_Load(object sender, EventArgs e)
@@ -22,6 +23,10 @@ public partial class _Default : System.Web.UI.Page
   	  strWHERENet = "AnnunciCategorie_Padre=0";
       dtAnnunciCategorie = new DataTable("AnnunciCategorie");
       dtAnnunciCategorie = Smartdesk.Sql.getTablePage("AnnunciCategorie", null, "AnnunciCategorie_Ky", strWHERENet, "AnnunciCategorie_Ordine, AnnunciCategorie_Titolo", 1, 100,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
+
+      strWHERENet = "CMSSlide_PubblicaWEB=1";
+      dtCMSSlide = new DataTable("CMSSlide");
+      dtCMSSlide = Smartdesk.Sql.getTablePage("CMSSlide", null, "CMSSlide_Ky", strWHERENet, "CMSSlide_Ky", 1, 10,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
 
       dtCoreModulesOptionsValue = new DataTable("Options");
       strWHERENet="CoreModulesOptions_Code='design'";

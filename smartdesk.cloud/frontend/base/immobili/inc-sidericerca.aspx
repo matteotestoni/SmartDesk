@@ -1,6 +1,6 @@
 <div class="ricerca">
+	<h5>Filtra Annunci Immobiliari</h5>
 	<form name="formRicercaImmobili" id="formRicercaImmobili" method="get" action="/frontend/base/immobili/elenco-immobili.aspx" data-abide novalidate>
-		<h5>Filtra Annunci Immobiliari</h5>
 		<div data-abide-error class="alert callout" style="display: none;">
 			<p><i class="fa-duotone fa-exclamation-triangle fa-fw"></i> Ci sono errori nel tuo modulo.</p>
 		</div>

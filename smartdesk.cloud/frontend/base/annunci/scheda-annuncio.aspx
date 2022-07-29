@@ -20,7 +20,7 @@
                   <div class="callout-scheda-foto" style="background-image:url(<%=dtAnnuncio.Rows[0]["Annunci_Foto1"].ToString()%>);max-height:400px">
                       <a style="display:block;width:100%;max-height:100%" href="<%=dtAnnuncio.Rows[0]["Annunci_Foto1"].ToString()%>" data-fancybox="galleriaannuncio" data-type="image" data-caption="<%=dtAnnuncio.Rows[0]["Annunci_Titolo"].ToString()%>">&nbsp</a>
                   </div>
-                  <div class="row small-up-2 medium-up-4 large-up-5 slider-nav">
+                  <div class="grid-x grid-padding-x small-up-2 medium-up-4 large-up-5 slider-nav">
                     <% 
                     string strTemp="";
                     string strClass="";
@@ -137,7 +137,7 @@
                                       <span class="dettaglio-asta">Localizzazione:</span>
                                   </div>
                                   <div class="large-9 medium-9 small-8 cell text-right">
-                                      <span class="dettaglio-asta"><img src="/img/icona-ita.png" style="margin-right:5px"><%=dtAnnuncio.Rows[0]["Nazioni_Codice"].ToString()%> / <%=dtAnnuncio.Rows[0]["Regioni_Regione"].ToString()%> / <%=dtAnnuncio.Rows[0]["Comuni_Comune"].ToString()%></span>
+                                      <span class="dettaglio-asta"><img src="https://cdn.smartdesk.cloud/img/flags/it.png" style="margin-right:5px"><%=dtAnnuncio.Rows[0]["Nazioni_Codice"].ToString()%> / <%=dtAnnuncio.Rows[0]["Regioni_Regione"].ToString()%> / <%=dtAnnuncio.Rows[0]["Comuni_Comune"].ToString()%></span>
                                   </div>
                               </div>
                           	  <div class="grid-x grid-padding-x" style="margin-top: 15px;">

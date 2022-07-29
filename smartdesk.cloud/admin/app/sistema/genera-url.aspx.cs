@@ -7,7 +7,6 @@ using System.IO;
 
 public partial class _Default : System.Web.UI.Page 
 {
-    
     public int intNumRecords = 0;
     public int i = 0;
     public System.Globalization.CultureInfo ciit = new System.Globalization.CultureInfo("it-IT");
@@ -36,7 +35,8 @@ public partial class _Default : System.Web.UI.Page
     public DataTable dtComuni;
     public DataTable dtAsteCategorie;
     
-    
+    public DataTable dtProdottiCategorie;
+
     public DataTable dtAnnunciCategorie;
     public DataTable dtAnnunciCategoriePadri;
     public DataTable dtAnnunciCategorieFigli;
@@ -157,8 +157,23 @@ public partial class _Default : System.Web.UI.Page
             strSQL+="('checkout', '', '/checkout/conferma-carrello.html','/frontend/" + strTheme + "/checkout/carrello-conferma.aspx'," + Smartdesk.Session.CurrentUser.ToString() + ",GETDATE());";
             new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
 
-            /*
-            //aste
+            //Blog
+            strRisultato+="<li>Blog</li>"; 
+            strSQL="DELETE FROM CoreUrlRewrite WHERE CoreEntities_Code='blog';";
+            new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
+            strSQL+="INSERT CoreUrlRewrite (CoreEntities_Code, CoreEntities_KeyValue,CoreUrlRewrite_UrlSource,CoreUrlRewrite_UrlDestination,CoreUrlRewrite_UserInsert,CoreUrlRewrite_DateInsert) VALUES ";
+            strSQL+="('blog', '', '/blog/','/frontend/" + strTheme + "/contenuti/elenco-contenuti.aspx'," + Smartdesk.Session.CurrentUser.ToString() + ",GETDATE());";
+            new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
+
+            //contatti
+            strRisultato+="<li>Contatti</li>"; 
+            strSQL="DELETE FROM CoreUrlRewrite WHERE CoreEntities_Code='contatti';";
+            new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
+            strSQL+="INSERT CoreUrlRewrite (CoreEntities_Code, CoreEntities_KeyValue,CoreUrlRewrite_UrlSource,CoreUrlRewrite_UrlDestination,CoreUrlRewrite_UserInsert,CoreUrlRewrite_DateInsert) VALUES ";
+            strSQL+="('contatti', '', '/contatti/contatti.html','/frontend/" + strTheme + "/contatti/contatti.aspx'," + Smartdesk.Session.CurrentUser.ToString() + ",GETDATE());";
+            new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
+
+            //catalogo: aste
             strRisultato+="<li>Aste</li>"; 
             strSQL="DELETE FROM CoreUrlRewrite WHERE CoreEntities_Code='aste';";
             new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
@@ -178,9 +193,25 @@ public partial class _Default : System.Web.UI.Page
               strSQL+="('aste', '', '/aste/" + dtAsteCategorie.Rows[i]["AsteCategorie_Url"].ToString() + "/" + dtAsteCategorie.Rows[i]["AsteCategorie_Url"].ToString() + ".html','/frontend/" + strTheme + "/aste/elenco-aste.aspx?AsteCategorie_Ky=" + dtAsteCategorie.Rows[i]["AsteCategorie_Ky"].ToString() + "'," + Smartdesk.Session.CurrentUser.ToString() + ",GETDATE());";
               new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
             }
-            */
             
-            
+            //catalogo: prodotti
+            strRisultato+="<li>prodotti</li>"; 
+            strSQL="DELETE FROM CoreUrlRewrite WHERE CoreEntities_Code='prodotti';";
+            new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
+            strSQL+="INSERT CoreUrlRewrite (CoreEntities_Code, CoreEntities_KeyValue,CoreUrlRewrite_UrlSource,CoreUrlRewrite_UrlDestination,CoreUrlRewrite_UserInsert,CoreUrlRewrite_DateInsert) VALUES ";
+            strSQL+="('prodotti', '', '/catalogo/categorie.html','/frontend/" + strTheme + "/catalogo/elenco-prodotti.aspx'," + Smartdesk.Session.CurrentUser.ToString() + ",GETDATE());";
+            new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
+            strFROMNet = "ProdottiCategorie";
+            strORDERNet = "ProdottiCategorie_Ky";
+            strWHERENet="";
+            dtProdottiCategorie = new DataTable("ProdottiCategorie");
+            dtProdottiCategorie = Smartdesk.Sql.getTablePage(strFROMNet, null, "ProdottiCategorie_Ky", strWHERENet, strORDERNet, 1, 100,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
+            for (int i = 0; i < dtAsteCategorie.Rows.Count; i++){
+              strSQL+="INSERT CoreUrlRewrite (CoreEntities_Code, CoreEntities_KeyValue,CoreUrlRewrite_UrlSource,CoreUrlRewrite_UrlDestination,CoreUrlRewrite_UserInsert,CoreUrlRewrite_DateInsert) VALUES ";
+              strSQL+="('prodotti', '', '/" + dtProdottiCategorie.Rows[i]["ProdottiCategorie_Url"].ToString() + "/" + dtProdottiCategorie.Rows[i]["ProdottiCategorie_Url"].ToString() + ".html','/frontend/" + strTheme + "/catalogo/elenco-prodotti.aspx?ProdottiCategorie_Ky=" + dtProdottiCategorie.Rows[i]["ProdottiCategorie_Ky"].ToString() + "'," + Smartdesk.Session.CurrentUser.ToString() + ",GETDATE());";
+              new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
+            }
+
             //veicoli
             /*
             strSQL="DELETE FROM CoreUrlRewrite WHERE CoreEntities_Code='VeicoliCarrozzeria';";
@@ -432,15 +463,8 @@ public partial class _Default : System.Web.UI.Page
               }
             
             }
-
-            //contatti
-            strRisultato+="<li>Contatti</li>"; 
-            strSQL="DELETE FROM CoreUrlRewrite WHERE CoreEntities_Code='contatti';";
-            new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
-            strSQL+="INSERT CoreUrlRewrite (CoreEntities_Code, CoreEntities_KeyValue,CoreUrlRewrite_UrlSource,CoreUrlRewrite_UrlDestination,CoreUrlRewrite_UserInsert,CoreUrlRewrite_DateInsert) VALUES ";
-            strSQL+="('contatti', '', '/contatti/contatti.html','/frontend/" + strTheme + "/contatti/contatti.aspx'," + Smartdesk.Session.CurrentUser.ToString() + ",GETDATE());";
-            new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
             */
+
             
             //cantieri
             /*
@@ -564,7 +588,6 @@ public partial class _Default : System.Web.UI.Page
               }
             */
 
-            /*
             //annunci
             strRisultato+="<li>Annunci</li>"; 
             strSQL="DELETE FROM CoreUrlRewrite WHERE CoreEntities_Code='annunci';";
@@ -579,6 +602,7 @@ public partial class _Default : System.Web.UI.Page
             strSQL+="('annunci', '', '/annunci/inserisci.html','/frontend/" + strTheme + "/annunci/inserimento-annuncio.aspx'," + Smartdesk.Session.CurrentUser.ToString() + ",GETDATE());";
             new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
 
+            /*
             strFROMNet = "AnnunciCategorie";
             strORDERNet = "AnnunciCategorie_Ky";
             strWHERENet="AnnunciCategorie_Padre=0";

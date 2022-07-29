@@ -25,7 +25,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="https://cdn.smartdesk.cloud/img/favicon/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">  
-  <link rel="stylesheet" href="/lib/fontawesome6/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.smartdesk.cloud/lib/fontawesome6/css/all.min.css" />
   <style>
 			a {
 			  text-decoration : underline;

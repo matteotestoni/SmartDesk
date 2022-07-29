@@ -12,17 +12,16 @@
 		<!-- #include file ="/frontend/base/inc-header.aspx" -->
 		<div class="grid-container scheda-lotto">				
       <div class="grid-x grid-padding-x">
-        <div class="large-6 medium-6 small-12 cell topasta" id="topasta">
+        <div class="large-6 medium-6 small-12 cell topasta large-text-left" id="topastatitolo">
         	<h1><%=dtAnnuncio.Rows[0]["Annunci_Titolo"].ToString()%></h1>
         </div>
-        <div class="large-6 medium-6 small-12 cell topasta" id="topasta">
-            <div class="label secondary"><a href="/frontend/base/aste/scheda-asta.aspx?AsteEsperimenti_Ky=<%=dtAsteEsperimenti.Rows[0]["AsteEsperimenti_Ky"].ToString()%>"><span style="color: #ff6c00">ID ASTA:</span> <strong><%=dtAsteEsperimenti.Rows[0]["Aste_Numero"].ToString()%></strong></a></div>
+        <div class="large-6 medium-6 small-12 cell topasta large-text-right" id="topastavalori">
+            <div class="label secondary"><a href="/frontend/base/aste/scheda-asta.aspx?Aste_Ky=<%=dtAsteEsperimenti.Rows[0]["Aste_Ky"].ToString()%>&AsteEsperimenti_Ky=<%=dtAsteEsperimenti.Rows[0]["AsteEsperimenti_Ky"].ToString()%>"><span style="color: #ff6c00">ID ASTA:</span> <strong><%=dtAsteEsperimenti.Rows[0]["Aste_Numero"].ToString()%></strong></a></div>
             <div class="label secondary"><span style="color: #ff6c00">ESP.:</span> <strong><%=dtAsteEsperimenti.Rows[0]["AsteEsperimenti_Numero"].ToString()%></strong></div>
             <div class="label secondary"><span style="color: #ff6c00">LOTTO:</span> <strong><%=dtAnnuncio.Rows[0]["Annunci_Numero"].ToString()%></strong></div>
             <div class="label secondary"><span style="color: #ff6c00">CATEGORIA:</span> <strong><%=dtAnnuncio.Rows[0]["AnnunciCategorie_Titolo"].ToString()%></strong></div>
             <div class="label secondary"><span style="color: #ff6c00">RIBASSO:</span> <strong>-<span data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover="false" tabindex="1" title="I prezzi attuali dei vari lotti sono stati ribassati della % indicata rispetto all'esperimento precedente"><%=dtAsteEsperimenti.Rows[0]["AsteEsperimenti_PercentualeRibasso"].ToString()%>%</span></strong></div>
             <div class="label secondary"><span style="color: #ff6c00">VISITE:</span> <strong><%=dtAnnuncio.Rows[0]["Annunci_Visite"].ToString()%></strong></div>
-            <div class="label secondary"><span style="color: #ff6c00">OFFERTE:</span> <strong><%=dtAnnunciOfferte.Rows.Count%></strong></div>
           	<div class="label secondary"><span style="color: #ff6c00" title="Segui lotto"><a href="/frontend/base/wishlist/aggiungi-wishlist.aspx?Annunci_Ky=<%=dtAnnuncio.Rows[0]["Annunci_Ky"].ToString()%>&azione=new&cosa=annunci"><i class="fa-duotone fa-heart fa-lg fa-fw" style="color:#48c6f4"></i>segui</a></span></div>
         </div>
   		</div>
@@ -30,7 +29,7 @@
 			<div class="grid-x grid-padding-x">
   			<div class="large-8 medium-up-12 small-12 cell">
           	<a href="<%=dtAnnuncio.Rows[0]["Annunci_Foto1"].ToString()%>" data-fancybox="galleriaannuncio" data-type="image" data-caption="<%=dtAnnuncio.Rows[0]["Annunci_Titolo"].ToString()%>">
-            <img src="<%=dtAnnuncio.Rows[0]["Annunci_Foto1"].ToString()%>" class="lazyload" loading="lazy">
+              <img src="<%=dtAnnuncio.Rows[0]["Annunci_Foto1"].ToString()%>" class="lazyload" loading="lazy">
             </a>
             <div class="grid-x grid-margin-x grid-padding-y small-up-2 medium-up-4 large-up-5 slider-nav">
               <% 
@@ -74,44 +73,43 @@
             <hr>
             <div class="grid-x grid-padding-x">
               <div class="large-12 medium-12 small-12 cell descrizione-asta">
-                  <div class="grid-x grid-padding-x">
-                    <div class="large-5 medium-5 small-12 cell">
-                        <fieldset class="fieldset">
-                          <legend class="text-left">Informazioni principali</legend>
-                          <table class="hover" style="border:1px solid #ededed;">
-                            <tr>
-                              <th width="180" class="text-right">Marca:</th>
-                              <td><strong><%=dtAnnuncio.Rows[0]["AnnunciMarca_Titolo"].ToString()%></strong></td>
-                            </tr>
-                            <tr>
-                              <th class="text-right">Modello:</th>
-                              <td><strong>
-                              <% 
-                              if (dtAnnuncio.Rows[0]["Annunci_Modello"].ToString().Length>0){
-                                Response.Write(dtAnnuncio.Rows[0]["Annunci_Modello"].ToString());
-                              }else{
-                                Response.Write(dtAnnuncio.Rows[0]["AnnunciModello_Titolo"].ToString());
-                              }
-                              
-                              %>
-                              </strong></td>
-                            </tr>
-                          </table>
-                          <% Response.Write(getAttributiTable()); %>
-                        </fieldset>
-                    </div>
-                    <div class="large-7 medium-7 small-12 cell">
-                        <fieldset class="fieldset note">
-                          <legend class="text-left">Note</legend>
-                          <%=dtAnnuncio.Rows[0]["Annunci_Descrizione"].ToString()%>
-			                    <%
-													if (dtAnnuncio.Rows[0]["Annunci_Video"].ToString().Length>0){
-														Response.Write("<iframe width=\"100%\" height=\"315\" src=\"https://www.youtube.com/embed/" + dtAnnuncio.Rows[0]["Annunci_Video"].ToString() + "\" frameborder=\"0\" gesture=\"media\" allow=\"encrypted-media\" allowfullscreen></iframe>");
-													}
-													%>
-                        </fieldset>
-                    </div>
-                  </div>
+                <fieldset class="fieldset">
+                  <legend class="text-left">Informazioni principali</legend>
+                  <table class="hover" style="border:1px solid #ededed;">
+                    <tr>
+                      <th width="180" class="text-right">Marca:</th>
+                      <td><strong><%=dtAnnuncio.Rows[0]["AnnunciMarca_Titolo"].ToString()%></strong></td>
+                    </tr>
+                    <tr>
+                      <th class="text-right">Modello:</th>
+                      <td><strong>
+                      <% 
+                      if (dtAnnuncio.Rows[0]["Annunci_Modello"].ToString().Length>0){
+                        Response.Write(dtAnnuncio.Rows[0]["Annunci_Modello"].ToString());
+                      }else{
+                        Response.Write(dtAnnuncio.Rows[0]["AnnunciModello_Titolo"].ToString());
+                      }
+                      
+                      %>
+                      </strong></td>
+                    </tr>
+                  </table>
+                  <% Response.Write(getAttributiTable()); %>
+                </fieldset>
+              </div>
+            </div>
+            
+            <div class="grid-x grid-padding-x">
+              <div class="large-12 medium-12 small-12 cell descrizione-asta">
+                <fieldset class="fieldset note">
+                  <legend class="text-left">Note</legend>
+                  <%=dtAnnuncio.Rows[0]["Annunci_Descrizione"].ToString()%>
+                  <%
+									if (dtAnnuncio.Rows[0]["Annunci_Video"].ToString().Length>0){
+										Response.Write("<iframe width=\"100%\" height=\"315\" src=\"https://www.youtube.com/embed/" + dtAnnuncio.Rows[0]["Annunci_Video"].ToString() + "\" frameborder=\"0\" gesture=\"media\" allow=\"encrypted-media\" allowfullscreen></iframe>");
+									}
+									%>
+                </fieldset>
               </div>
             </div>
             <%if (dtFilesAsta.Rows.Count>0 || dtFilesLotto.Rows.Count>0){%>
@@ -200,6 +198,14 @@
 		            </div>
 		        </div>
 		        <% } %>
+    		 <%if (dtAnnunci.Rows.Count>0){%>
+         <div class="grid-x grid-padding-x">
+         	<div class="large-12 medium-12 small-12 cell">
+              <!-- #include file ="/frontend/base/aste/inc-lotti-asta.inc" -->
+       		</div>
+         </div>
+         <% } %>
+            
         </div>
         <div class="large-4 medium-up-12 small-12 cell">
             	<div data-sticky-container>
@@ -479,7 +485,7 @@
                                     <span class="dettaglio-asta">Localizzazione:</span>
                                 </div>
                                 <div class="large-9 medium-9 small-6 cell text-right">
-                                    <span class="dettaglio-asta"><img src="/frontend/base/img/icona-ita.png" style="margin-right:5px"><%=dtAnnuncio.Rows[0]["Nazioni_Codice"].ToString()%> / <%=dtAnnuncio.Rows[0]["Regioni_Regione"].ToString()%> / <%=dtAnnuncio.Rows[0]["Comuni_Comune"].ToString()%></span>
+                                    <span class="dettaglio-asta"><img src="https://cdn.smartdesk.cloud/img/flags/it.png" style="margin-right:5px"><%=dtAnnuncio.Rows[0]["Nazioni_Codice"].ToString()%> / <%=dtAnnuncio.Rows[0]["Regioni_Regione"].ToString()%> / <%=dtAnnuncio.Rows[0]["Comuni_Comune"].ToString()%></span>
                                 </div>
                             </div>
                         </div>
@@ -496,13 +502,6 @@
         </div>       
          
          
-    		 <%if (dtAnnunci.Rows.Count>0){%>
-         <div class="grid-x grid-padding-x">
-         	<div class="large-12 medium-12 small-12 cell">
-              <!-- #include file ="/frontend/base/aste/inc-lotti-asta.inc" -->
-       		</div>
-         </div>
-         <% } %>
         
 			</div>
 		<!-- #include file ="/frontend/base/inc-footer.aspx" -->

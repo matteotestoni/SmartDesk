@@ -9,8 +9,6 @@ public partial class _Default : System.Web.UI.Page
     public DataTable dtLogin;
     public bool boolLogin = false;
     public string strUtentiLogin="";
-    
-    
     public int intNumRecords = 0;
     public int i = 0;
     public string strH1="Elenco aste";
@@ -30,10 +28,6 @@ public partial class _Default : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
       string strPage = "";
-
-	    
-		
-	  	
         if (Request.Cookies["rswcrm-az"] != null){
             strUtentiLogin = (FormsAuthentication.Decrypt(Context.Request.Cookies["rswcrm-az"].Value)).UserData;
             strWHERENet = "Anagrafiche_Ky =" + strUtentiLogin;

@@ -8,6 +8,8 @@
   </head>
   <body>
   <% Response.WriteFile("/frontend/" + strTheme + "/inc-header.aspx"); %>          
+	<!-- #include file ="/frontend/base/contenuti/slide/inc-slide-home.inc" -->
+  <% Response.WriteFile("/frontend/" + strTheme + "/inc-newsletter.aspx"); %>          
   <% Response.WriteFile("/frontend/" + strTheme + "/inc-footer.aspx"); %>          
   <% Response.WriteFile("/frontend/" + strTheme + "/inc-foot.aspx"); %>          
   </body>

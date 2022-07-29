@@ -1,1 +1,1 @@
-C:\windows\Microsoft.NET\Framework64\v4.0.30319\csc /target:library /optimize /out:..\bin\RewriteMain.NET.dll /recurse:RewriteMain.cs
+C:\windows\Microsoft.NET\Framework64\v4.0.30319\csc /reference:..\bin\Smartdesk.Sql.dll /reference:..\bin\Smartdesk.Config.dll /target:library /optimize /out:..\bin\RewriteMain.NET.dll /recurse:RewriteMain.cs

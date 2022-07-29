@@ -27,7 +27,7 @@
               if (dtVeicoliTipo.Rows[xy]["VeicoliTipo_Foto"].ToString().Length>0){
                 strFoto=dtVeicoliTipo.Rows[xy]["VeicoliTipo_Foto"].ToString();
               }else{
-                strFoto="https://via.placeholder.com/400x300.webp?text=nessun+immagine";
+                strFoto="https://picsum.photos/seed/" + dtVeicoliTipo.Rows[xy]["VeicoliTipo_Ky"].ToString() + "/800/600.webp";
               } %>
               <a href="/frontend/base/veicoli/elenco-veicoli.aspx?VeicoliTipo_Ky=<%=dtVeicoliTipo.Rows[xy]["VeicoliTipo_Ky"].ToString()%>"><img src="<%=strFoto%>" alt="<%=dtVeicoliTipo.Rows[xy]["VeicoliTipo_Titolo"].ToString()%>" class="lazy" border="0" loading="lazy" /></a>
               <div class="card-section">
@@ -39,8 +39,8 @@
                 if (dtVeicoliCategoria.Rows.Count>0){
                   Response.Write("<ul class=\"vertical\">");
         	        for (int iCategoria = 0; iCategoria < dtVeicoliCategoria.Rows.Count; iCategoria++){%>
-            					<!-- <li><h3><a href="/<%=dtVeicoliTipo.Rows[xy]["VeicoliTipo_UrlKey"].ToString()%>/<%=dtVeicoliCategoria.Rows[iCategoria]["VeicoliCategoria_UrlKey"].ToString()%>/<%=dtVeicoliCategoria.Rows[iCategoria]["VeicoliCategoria_UrlKey"].ToString()%>.html"><%=dtVeicoliCategoria.Rows[iCategoria]["VeicoliCategoria_Titolo"].ToString()%></h3></a></li> -->
-            					<li><h3><a href="/<%=dtVeicoliTipo.Rows[xy]["VeicoliTipo_urlKey"].ToString()%>/<%=dtVeicoliCategoria.Rows[iCategoria]["VeicoliCategoria_UrlKey"].ToString()%>.html"><%=dtVeicoliCategoria.Rows[iCategoria]["VeicoliCategoria_Titolo"].ToString()%></h3></a></li>
+            					<!-- <li><a href="/<%=dtVeicoliTipo.Rows[xy]["VeicoliTipo_UrlKey"].ToString()%>/<%=dtVeicoliCategoria.Rows[iCategoria]["VeicoliCategoria_UrlKey"].ToString()%>/<%=dtVeicoliCategoria.Rows[iCategoria]["VeicoliCategoria_UrlKey"].ToString()%>.html"><%=dtVeicoliCategoria.Rows[iCategoria]["VeicoliCategoria_Titolo"].ToString()%></a></li> -->
+            					<li><a href="/<%=dtVeicoliTipo.Rows[xy]["VeicoliTipo_urlKey"].ToString()%>/<%=dtVeicoliCategoria.Rows[iCategoria]["VeicoliCategoria_UrlKey"].ToString()%>.html"><%=dtVeicoliCategoria.Rows[iCategoria]["VeicoliCategoria_Titolo"].ToString()%></a></li>
         			    <% } 
                   Response.Write("</ul>");
                 }%>

@@ -1,4 +1,5 @@
 <div class="sidebar">
+	<h5>Filtra Aste</h5>
   <form name="layeredView" id="layeredView" method="get" action="/frontend/base/aste/elenco-aste.aspx">
       <input type="hidden" name="search" id="searchsidebar" value="<%=Request["search"]%>">
       <input type="hidden" name="prezzo" value="<%=Request["prezzo"]%>">

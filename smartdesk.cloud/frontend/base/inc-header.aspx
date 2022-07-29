@@ -20,7 +20,6 @@
                 </div>
               </form>
             </div>
-
       		</div> 
       		<div class="large-3 medium-3 small-7 cell">
       			<div class="top-bar">
@@ -52,7 +51,8 @@
                       <li class="menu-item" role="menuitem"><a href="/immobili/provincia.html" tabindex="4">Immobili</a></li>
                       <li class="menu-item" role="menuitem"><a href="/veicoli/tipo.html" tabindex="5">Veicoli</a></li>
                       <li class="menu-item" role="menuitem"><a href="/catalogo/categorie.html" tabindex="6">Prodotti</a></li>
-                      <li class="menu-item" role="menuitem"><a href="/contatti/contatti.html" tabindex="7">Contattaci</a></li>
+                      <li class="menu-item" role="menuitem"><a href="/blog/" tabindex="7">Blog</a></li>
+                      <li class="menu-item" role="menuitem"><a href="/contatti/contatti.html" tabindex="8">Contattaci</a></li>
                   </ul>	
               </div>
       				<div class="top-bar-right float-right show-for-small-only">
@@ -82,5 +82,5 @@
           </ul>
 				</div>				
 				<div class="off-canvas-content" data-off-canvas-content="">
-        <main>
+        <div class="bodycontent" style="padding-top:1.5rem;">
 

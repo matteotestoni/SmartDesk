@@ -38,11 +38,12 @@
         <div class="input-group">
           <select class="input-group-field" name="azionidigruppo" id="azionidigruppo">
             <option value="">Azioni di gruppo</option>
-            <option value="delete" data-action="/admin/app/amministrazione/crud/elimina-spese.aspx">Elimina</option>
+            <option value="delete" data-action="/admin/crud/elimina.aspx">Elimina</option>
           </select>
           <div class="input-group-button">
-            <input type="hidden" id="sorgente" name="sorgente" value="elenco-spese">
+            <input type="hidden" id="sorgente" name="sorgente" value="view-1">
             <input type="hidden" id="azione" name="azione" value="">
+            <input type="hidden" name="ajax" value="">
             <input type="hidden" id="deletemultiplo" name="deletemultiplo" value="deletemultiplo">
             <input type="hidden" id="azionidigruppo-ids" name="azionidigruppo-ids" value="">
             <input type="submit" id="doaction" class="button secondary" value="Applica">
@@ -107,7 +108,7 @@
 		          <td class="large-text-right small-text-left number" style="padding-right:5px"><strong>&euro; <%=((decimal)dtGridData.Rows[i]["Spese_TotaleRighe"]).ToString("N2", ci)%></strong></td>
 		          <td class="large-text-right small-text-left number" style="padding-right:5px"><strong>&euro; <%=((decimal)dtGridData.Rows[i]["Spese_TotaleIVA"]).ToString("N2", ci)%></strong></td>
 		          <td class="large-text-right small-text-left number" style="padding-right:5px"><strong>&euro; <%=((decimal)dtGridData.Rows[i]["Spese_Totale"]).ToString("N2", ci)%></strong></td>
-		          <td><a href="/admin/app/amministrazione/crud/elimina-spese.aspx?azione=delete&sorgente=elenco-spese&Spese_Ky=<%=dtGridData.Rows[i]["Spese_Ky"].ToString()%>" title="elimina" class="delete"><i class="fa-duotone fa-trash-can fa-fw"></i></a></td>
+		          <td><a href="/admin/crud/elimina.aspx?azione=delete&ajax=&CoreGrids_Ky=1&sorgente=view-1&Spese_Ky=<%=dtGridData.Rows[i]["Spese_Ky"].ToString()%>" title="elimina" class="delete"><i class="fa-duotone fa-trash-can fa-fw"></i></a></td>
 		        </tr>
 		    <% } %>
     	</tbody>

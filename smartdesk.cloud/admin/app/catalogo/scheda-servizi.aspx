@@ -25,7 +25,7 @@
   </div>
 </div>
 <div class="container px-4">
-  <div class="row">
+  <div class="grid-x grid-padding-x">
     <div class="large-12 medium-12 small-12 cell">
   	 <div class="divform">  
         <input type="hidden" name="azione" id="azione" value="<%=strAzione%>">

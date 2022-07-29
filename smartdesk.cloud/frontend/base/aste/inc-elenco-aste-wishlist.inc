@@ -30,7 +30,7 @@
 			          </div>
 			          <div class="grid-x grid-padding-x collapse" style="margin-bottom:10px;">
 			              <div class="large-12 medium-12 small-12 cell">
-			              	<span class="esperimento-asta"><img src="/frontend/base/img/icona-ita.png" style="margin-right:5px"><%=dtAsteEsperimenti.Rows[i]["Comuni_Comune"].ToString()%></span>
+			              	<span class="esperimento-asta"><img src="https://cdn.smartdesk.cloud/img/flags/it.png" style="margin-right:5px"><%=dtAsteEsperimenti.Rows[i]["Comuni_Comune"].ToString()%></span>
 			              </div>
 			          </div>
 			          <div class="grid-x grid-padding-x collapse align-middle">

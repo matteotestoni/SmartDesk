@@ -10,12 +10,9 @@
   <body>
 	<!-- #include file ="/frontend/base/inc-header.aspx" -->
 		<div class="grid-container" id="maincontainer">
-				<div class="grid-x grid-padding-x">
-          <hr style="margin: 0px 0 20px 0">
-      	</div>
         <div class="grid-x grid-padding-x">
-          	<div class="large-8 medium-8 small-12 cell medium-order-2" id="main">
-              <h2><b>Elenco Annunci</b> on line</h2>
+          	<main class="large-9 medium-9 small-12 cell medium-order-2" id="main">
+              <h1>Elenco Annunci on line</h1>
               <hr class="linea-blu"/>
               <% if ((dtBannerTop1!=null && dtBannerTop1.Rows.Count>0) || (dtBannerTop2!=null && dtBannerTop2.Rows.Count>0)) { %>
 				<% 
@@ -59,8 +56,8 @@
 								%>
 							</div>
             	<% } %>
-			</div>                           
-			<aside class="large-4 medium-4 small-12 medium-order-1 cell cellzero">
+			</main>                           
+			<aside class="large-3 medium-3 small-12 medium-order-1 cell cellzero">
 				<div id="sidebar" class="sidebar">
 					<!-- #include file ="/frontend/base/annunci/inc-elenco-annunci-sidebar.aspx" -->
 				</div>

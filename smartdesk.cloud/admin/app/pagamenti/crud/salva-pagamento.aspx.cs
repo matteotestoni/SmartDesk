@@ -5,8 +5,6 @@ using System.Collections.Generic;
 
   public partial class _Default : System.Web.UI.Page 
 	{
-    
-    
     public int intNumRecords = 0;
     public int i = 0;
     public System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("it-IT");
@@ -27,9 +25,6 @@ using System.Collections.Generic;
 
     protected void Page_Load(object sender, EventArgs e)
     {
-      
-      
-	  
       if (Smartdesk.Login.Verify){
           dtLogin = Smartdesk.Data.Read("Utenti_Vw","Utenti_Ky", Smartdesk.Session.CurrentUser.ToString());        
           strAnagrafiche_Ky=Smartdesk.Current.Request("Anagrafiche_Ky");
@@ -45,13 +40,13 @@ using System.Collections.Generic;
           //Response.Write("ci sono:" + strSorgente);
 		  		switch (strSorgente){
             case "scheda-anagrafiche":
-              Response.Redirect("/admin/app/anagrafiche/scheda-anagrafiche.aspx?salvato=salvato&Anagrafiche_Ky=" + strAnagrafiche_Ky);
+              Response.Redirect("/admin/app/anagrafiche/scheda-anagrafiche.aspx?CoreModules_Ky=1&CoreEntities_Ky=162&CoreForms_Ky=145&salvato=salvato&Anagrafiche_Ky=" + strAnagrafiche_Ky);
               break;
             case "scheda-documenti":
-              Response.Redirect("/admin/app/documenti/scheda-documenti.aspx?CoreModules_Ky=13&CoreEntities_Ky=44&salvato=salvato&Documenti_Ky=" + strDocumenti_Ky + "&Anagrafiche_Ky=" + strAnagrafiche_Ky);
+              Response.Redirect("/admin/app/documenti/scheda-documenti.aspx?CoreModules_Ky=13&CoreEntities_Ky=44&CoreForms_Ky=1212&salvato=salvato&Documenti_Ky=" + strDocumenti_Ky + "&Anagrafiche_Ky=" + strAnagrafiche_Ky);
               break;
             case "scheda-spese":
-              Response.Redirect("/admin/app/amministrazione/scheda-spese.aspx?CoreModules_Ky=2&CoreEntities_Ky=1&salvato=salvato&Spese_Ky=" + strSpese_Ky + "&Anagrafiche_Ky=" + strAnagrafiche_Ky);
+              Response.Redirect("/admin/app/amministrazione/scheda-spese.aspx?CoreModules_Ky=2&CoreEntities_Ky=1&CoreForms_Ky=211&salvato=salvato&Spese_Ky=" + strSpese_Ky + "&Anagrafiche_Ky=" + strAnagrafiche_Ky);
               break;
             case "elenco-pagamenti":
               Response.Redirect("/admin/view.aspx?CoreModules_Ky=21&CoreEntities_Ky=75&CoreGrids_Ky=233");

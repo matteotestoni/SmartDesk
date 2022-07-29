@@ -19,6 +19,27 @@
 	<div class="grid-container">
 
   	<div class="grid-x grid-padding-x">
+    	<aside class="large-3 medium-3 small-12 cell">
+        	<div id="colonnadx" class="sidebar radius">
+    			<!--#include file="/frontend/base/immobili/inc-sidericerca.aspx"-->
+    			<br>	
+    			<div class="linkseo">
+    				<%
+    				if (strComuni_Ky!=null && strComuni_Ky.Length>0){
+    					Response.Write("<h5>Immobili a " + strNomeComune + "</h5>");
+    					Response.Write(strComuniLink);
+    				}else{
+    					Response.Write("<h5>Immobili a " + strNomeProvincia + "</h5>");
+    					Response.Write(strProvinciaLink);
+    					Response.Write("<hr><h5>Cerco casa a:</h5>");
+    					Response.Write("<ul class=\"no-bullet\">");
+    					Response.WriteFile("/frontend/base/immobili/comuni/annunci-immobiliari/" + strNomeProvinciaHTML + ".htm");
+    					Response.Write("</ul>");
+    				}
+    			%>		
+    			</div>
+    		</div>
+    	</aside>
   		<div class="large-9 medium-9 small-12 cell" id="annunci">
   			<nav aria-label="Sei in:" role="navigation">
   				<ul class="breadcrumbs" id="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
@@ -86,7 +107,7 @@
               %>
               <img src="<%=dtImmobili.Rows[i]["Immobili_Foto1"].ToString()%>" alt="<%=dtImmobili.Rows[i]["Immobili_Foto1"].ToString()%>" border="0" />
               <% }else{ %>
-              <img src="https://via.placeholder.com/400x300.webp?text=nessun+immagine" alt="<%=strAlt%>" border="0" width="300" height="150" style="width:300px;height:150px" />
+              <img src="https://picsum.photos/seed/<%=dtImmobili.Rows[i]["Immobili_Ky"].ToString()%>/800/600.webp" alt="<%=strAlt%>" border="0" width="300" height="150" style="width:300px;height:150px" />
               <% } %>
               </a>
           </div>
@@ -222,27 +243,6 @@
   			<% } %>
           <asp:Label ID="PaginaSotto" runat="server" class="paginazione"></asp:Label>
       </div>
-  	<aside class="large-3 medium-3 small-12 cell">
-      	<div id="colonnadx" class="sidebar radius">
-  			<!--#include file="/frontend/base/immobili/inc-sidericerca.aspx"-->
-  			<br>	
-  			<div class="linkseo">
-  				<%
-  				if (strComuni_Ky!=null && strComuni_Ky.Length>0){
-  					Response.Write("<h5>Immobili a " + strNomeComune + "</h5>");
-  					Response.Write(strComuniLink);
-  				}else{
-  					Response.Write("<h5>Immobili a " + strNomeProvincia + "</h5>");
-  					Response.Write(strProvinciaLink);
-  					Response.Write("<hr><h5>Cerco casa a:</h5>");
-  					Response.Write("<ul class=\"no-bullet\">");
-  					Response.WriteFile("/frontend/base/immobili/comuni/annunci-immobiliari/" + strNomeProvinciaHTML + ".htm");
-  					Response.Write("</ul>");
-  				}
-  			%>		
-  			</div>
-  		</div>
-  	</aside>
   	</div>
   
   
