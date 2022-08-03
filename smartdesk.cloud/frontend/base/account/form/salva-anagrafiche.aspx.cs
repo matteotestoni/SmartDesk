@@ -4,8 +4,6 @@ using System.Data;
 
 public partial class _Default : System.Web.UI.Page {
   public string strAzione = "";
-  
-  
   public string strWHERENet = "";
   public int intNumRecords = 0;
   public DataTable dtAnagrafiche;
@@ -95,7 +93,7 @@ public partial class _Default : System.Web.UI.Page {
     public bool ReCaptchaPassed(string gRecaptchaResponse)
     {
         bool boolReturn=false;
-        string strUrl="https://www.google.com/recaptcha/api/siteverify?secret=6Lf1wK0UAAAAAAiluEdjt3urM-ejWd7HpJnb9h9S&response=" + gRecaptchaResponse;
+        string strUrl="https://www.google.com/recaptcha/api/siteverify?secret=" + Smartdesk.Functions.getOption("core.recaptchasecretkey") + "&response=" + gRecaptchaResponse;
         //Response.Write(strUrl);
         System.Net.Http.HttpClient httpClient = new System.Net.Http.HttpClient();
         var res = httpClient.GetAsync(strUrl).Result;
@@ -112,9 +110,4 @@ public partial class _Default : System.Web.UI.Page {
         }
         return boolReturn;
     }
-
-  public DataTable getTablePage (string table, string tableout, string key, string where, string orderby, int pagina, int paginamax, string App) {
-    DataTable dt = Smartdesk.Sql.getTablePage (table, tableout, key, where, orderby, pagina, paginamax, App, out this.intNumRecords);
-    return dt;
-  }
 }

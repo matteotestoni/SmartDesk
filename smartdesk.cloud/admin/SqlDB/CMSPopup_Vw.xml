@@ -1,0 +1,34 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CMSPopup_Vw" Type="VIEW">
+    <Keys></Keys>
+    <Fields>
+      <Field Column="Anagrafiche_RagioneSociale" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Anagrafiche_Codice" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Lingue_Titolo" IsNull="Y" Type="varchar" Lenght="150" />
+      <Field Column="Lingue_Codice" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CMSPopup_Ky" IsNull="N" Type="int" />
+      <Field Column="CMSPopup_Codice" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSPopup_PubblicaWEB" IsNull="Y" Type="bit" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="CMSPopup_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSPopup_Foto" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="CMSPopup_Url" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="CMSPopup_Tags" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSPopup_Categorie" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSPopup_Click" IsNull="Y" Type="int" />
+      <Field Column="CMSPopup_Province" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="CMSPopup_DataInizio" IsNull="Y" Type="datetime" />
+      <Field Column="CMSPopup_DataFine" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>CREATE VIEW [dbo].[CMSPopup_Vw]
+AS
+SELECT        dbo.Anagrafiche.Anagrafiche_RagioneSociale, dbo.Anagrafiche.Anagrafiche_Codice, dbo.Lingue.Lingue_Titolo, dbo.Lingue.Lingue_Codice, dbo.CMSPopup.CMSPopup_Ky, dbo.CMSPopup.CMSPopup_Codice, 
+                         dbo.CMSPopup.CMSPopup_PubblicaWEB, dbo.CMSPopup.Anagrafiche_Ky, dbo.CMSPopup.Lingue_Ky, dbo.CMSPopup.CMSPopup_Titolo, dbo.CMSPopup.CMSPopup_Foto, dbo.CMSPopup.CMSPopup_Url, 
+                         dbo.CMSPopup.CMSPopup_Tags, dbo.CMSPopup.CMSPopup_Categorie, dbo.CMSPopup.CMSPopup_Click, dbo.CMSPopup.CMSPopup_Province, dbo.CMSPopup.CMSPopup_DataInizio, 
+                         dbo.CMSPopup.CMSPopup_DataFine
+FROM            dbo.CMSPopup LEFT OUTER JOIN
+                         dbo.Anagrafiche ON dbo.CMSPopup.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky LEFT OUTER JOIN
+                         dbo.Lingue ON dbo.CMSPopup.Lingue_Ky = dbo.Lingue.Lingue_Ky</SqlScriptCreate>
+</SqlTable>

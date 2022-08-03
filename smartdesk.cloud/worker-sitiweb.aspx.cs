@@ -139,7 +139,7 @@ public partial class _Default : System.Web.UI.Page
 		System.Net.NetworkCredential mailAuthentication = new System.Net.NetworkCredential(Smartdesk.Functions.getOption("core.serversmptuser"), Smartdesk.Functions.getOption("core.serversmptpassword"));
 		client.UseDefaultCredentials = false;
 		client.Credentials = mailAuthentication;
-		client.EnableSsl = Smartdesk.Functions.getOption("core.serversmptssl");
+		client.EnableSsl = Convert.ToBoolean(Smartdesk.Functions.getOption("core.serversmptssl"));
 		//client.Send(mail);
     }    
 
@@ -229,11 +229,5 @@ public partial class _Default : System.Web.UI.Page
             new Smartdesk.Sql().SQLScriptExecuteNonQuery("INSERT INTO SitiWebLog (SitiWeb_Url,SitiWebLog_Data,SitiWebLog_UserInsert,SitiWebLog_DateInsert,SitiWebLog_Descrizione,SitiWebLog_Valore,SitiWeb_Ky) VALUES ('" + strSitiWeb_Url + "',GETDATE(),0,GETDATE(),'Versione' ,'" + strVersione + "'," + strSitiWeb_Ky + ")");
 		}
         return output;
-    }
-
-    public DataTable getTablePage(string table, string tableout, string key, string where, string orderby, int pagina, int paginamax, string App) //#bp
-    {
-        DataTable dt = Smartdesk.Sql.getTablePage(table, tableout, key, where, orderby, pagina, paginamax, App, out this.intNumRecords);
-        return dt;
     }
 }

@@ -25,8 +25,8 @@ using System.Collections.Generic;
         if (Smartdesk.Current.Request("CoreAttributes_Key") == "") frm.Add("CoreAttributes_Key", false);
         strKy = Smartdesk.Functions.SqlWriteKey("CoreAttributes", frm);
   			if (Smartdesk.Current.Request("CoreAttributes_Key")=="True" || Smartdesk.Current.Request("CoreAttributes_Key").Equals(true)){
-  		        strSQL = "UPDATE CoreAttributes SET CoreAttributes_Key=0 WHERE CoreAttributes_Ky<>" + strKy;
-  		        new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
+	        strSQL = "UPDATE CoreAttributes SET CoreAttributes_Key=0 WHERE CoreAttributes_Ky<>" + strKy;
+	        new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
   			}
         if (boolAjax){
           Response.Write("ok");
@@ -37,5 +37,15 @@ using System.Collections.Generic;
         Response.Redirect(Smartdesk.Current.LoginPageRoot);
       }
     }
+    
+
+    public string createField()
+    {
+      string strSQL="";
+      
+      strSQL="ALTER TABLE " +  Smartdesk.Current.Request("CoreAttributes_Table") + " ADD " Smartdesk.Current.Request("CoreAttributes_Code");
+      return strValore;
+    }
+    
 
 }

@@ -5,7 +5,6 @@ using System.Globalization;
 public partial class _Default : System.Web.UI.Page 
 {
     public NumberFormatInfo nfi = new CultureInfo( "it-IT", false ).NumberFormat;
-	
     public int intNumRecords = 0;
     public int i = 0;
     public System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("it-IT");
@@ -39,8 +38,6 @@ public partial class _Default : System.Web.UI.Page
       string strORDERNet = "";
       string strWHEREPermessi = "";
 
-      
-	  
       if (Smartdesk.Login.Verify){
           dtLogin = Smartdesk.Data.Read("Utenti_Vw","Utenti_Ky", Smartdesk.Session.CurrentUser.ToString());          
             
@@ -75,49 +72,11 @@ public partial class _Default : System.Web.UI.Page
               dtAttivitaCompletate = Smartdesk.Sql.getTablePage(strFROMNet, null, "Attivita_Ky", strWHERENet, strORDERNet, 1, 1000,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
             
             }            
-
-
 	          }
       }else{
             Response.Redirect(Smartdesk.Current.LoginPageRoot);
       }
     }    
-
-    public String getStato(string strDocumentiStato_Ky, string strDocumentiStato_Descrizione)
-    {
-      string strStatoOut="";
-      if (strDocumentiStato_Ky!=null){
-        switch (strDocumentiStato_Ky){
-          case "1":
-            strStatoOut="<span class=\"label success\">" + strDocumentiStato_Descrizione + "</span>";
-            break;
-          case "2":
-            strStatoOut="<span class=\"label warning\">" + strDocumentiStato_Descrizione + "</span>";
-            break;
-          case "3":
-            strStatoOut="<span class=\"label warning\">" + strDocumentiStato_Descrizione + "</span>";
-            break;
-          case "4":
-            strStatoOut="<span class=\"label alert animate__animated animate__headShake animate__infinite infinite\">" + strDocumentiStato_Descrizione + "</span>";
-            break;
-          case "5":
-            strStatoOut="<span class=\"label success\">" + strDocumentiStato_Descrizione + "</span>";
-            break;
-          case "6":
-            strStatoOut="<span class=\"label success\">" + strDocumentiStato_Descrizione + "</span>";
-            break;
-          case "7":
-            strStatoOut="<span class=\"label warning\">" + strDocumentiStato_Descrizione + "</span>";
-            break;
-          case "8":
-            strStatoOut="<span class=\"label alert animate__animated animate__headShake animate__infinite infinite\">" + strDocumentiStato_Descrizione + "</span>";
-            break;
-        }
-      }else{
-        strStatoOut="";
-      }
-      return strStatoOut;
-    }   
 
     public String GetDefaultValue(string strField)
     {
@@ -163,9 +122,4 @@ public partial class _Default : System.Web.UI.Page
       }
       return strValore;
     }
-    
-	public DataTable getTablePage(string table, string tableout, string key, string where, string orderby, int pagina, int paginamax, string App){
-	  DataTable dt= Smartdesk.Sql.getTablePage(table, tableout, key, where, orderby, pagina, paginamax, App,out this.intNumRecords);
-	  return dt;
-	}
 }

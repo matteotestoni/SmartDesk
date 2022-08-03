@@ -5,7 +5,6 @@ using System.Web.Security;
 
 public partial class _Default : System.Web.UI.Page 
 {
-    
     public int intNumRecords = 0;
     public int i = 0;
     public System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("it-IT");
@@ -106,59 +105,5 @@ public partial class _Default : System.Web.UI.Page
 				}
 			}
 			return strReturn;
-    }
-
-    public String GetMese(string strMeseIn)
-    {
-      string strMeseOut="";
-      if (strMeseIn!=null){
-        switch (strMeseIn){
-          case "1":
-            strMeseOut="gen";
-            break;
-          case "2":
-            strMeseOut="feb";
-            break;
-          case "3":
-            strMeseOut="mar";
-            break;
-          case "4":
-            strMeseOut="apr";
-            break;
-          case "5":
-            strMeseOut="mag";
-            break;
-          case "6":
-            strMeseOut="giu";
-            break;
-          case "7":
-            strMeseOut="lug";
-            break;
-          case "8":
-            strMeseOut="ago";
-            break;
-          case "9":
-            strMeseOut="set";
-            break;
-          case "10":
-            strMeseOut="ott";
-            break;
-          case "11":
-            strMeseOut="nov";
-            break;
-          case "12":
-            strMeseOut="dic";
-            break;
-        }
-      }else{
-        strMeseOut="";
-      }
-      return strMeseOut;
-    }
-
-    public DataTable getTablePage(string table, string tableout, string key, string where, string orderby, int pagina, int paginamax, string App) //#bp
-    {
-        DataTable dt = Smartdesk.Sql.getTablePage(table, tableout, key, where, orderby, pagina, paginamax, App, out this.intNumRecords);
-        return dt;
     }
 }

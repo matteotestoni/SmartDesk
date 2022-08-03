@@ -88,20 +88,14 @@ public partial class _Default : System.Web.UI.Page
       }
     }    
     
-public string FirstLetterToUpper(string str)
-{
-    if (str == null)
-        return null;
+  public string FirstLetterToUpper(string str)
+  {
+      if (str == null)
+          return null;
 
-    if (str.Length > 1)
-        return char.ToUpper(str[0]) + str.Substring(1);
+      if (str.Length > 1)
+          return char.ToUpper(str[0]) + str.Substring(1);
 
-    return str.ToUpper();
-}
-    
-    
-	public DataTable getTablePage(string table, string tableout, string key, string where, string orderby, int pagina, int paginamax, string App){
-	  DataTable dt= Smartdesk.Sql.getTablePage(table, tableout, key, where, orderby, pagina, paginamax, App,out this.intNumRecords);
-	  return dt;
-	}
+      return str.ToUpper();
+  }
 }

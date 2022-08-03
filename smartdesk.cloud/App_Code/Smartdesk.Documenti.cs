@@ -44,6 +44,44 @@ namespace Smartdesk{
       string strReturn="";
       return strReturn;
     }
+    
+
+    public static string getStato (string strDocumentiStato_Ky, string strDocumentiStato_Descrizione) {
+        string strStatoOut = "";
+        if (strDocumentiStato_Ky != null) {
+            switch (strDocumentiStato_Ky) {
+                case "1":
+                    strStatoOut = "<span class=\"label radius success\">" + strDocumentiStato_Descrizione + "</span>";
+                    break;
+                case "2":
+                    strStatoOut = "<span class=\"label radius warning\">" + strDocumentiStato_Descrizione + "</span>";
+                    break;
+                case "3":
+                    strStatoOut = "<span class=\"label radius warning\">" + strDocumentiStato_Descrizione + "</span>";
+                    break;
+                case "4":
+                    strStatoOut = "<span class=\"label radius alert\">" + strDocumentiStato_Descrizione + "</span>";
+                    break;
+                case "5":
+                    strStatoOut = "<span class=\"label radius success\">" + strDocumentiStato_Descrizione + "</span>";
+                    break;
+                case "6":
+                    strStatoOut = "<span class=\"label radius success\">" + strDocumentiStato_Descrizione + "</span>";
+                    break;
+                case "7":
+                    strStatoOut = "<span class=\"label radius warning\">" + strDocumentiStato_Descrizione + "</span>";
+                    break;
+                case "8":
+                    strStatoOut = "<span class=\"label radius alert\">" + strDocumentiStato_Descrizione + "</span>";
+                    break;
+            }
+        } else {
+            strStatoOut = "";
+        }
+        return strStatoOut;
+    }
+    
+    
 
   }
 

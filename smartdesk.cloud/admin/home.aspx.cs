@@ -126,10 +126,4 @@ public partial class _Default : System.Web.UI.Page
         strSQL = "INSERT INTO UtentiLog (Utenti_Ky, UtentiLog_IP, UtentiLog_UserAgent, UtentiLog_Cookie, UtentiLog_Data, UtentiLog_UserInsert,UtentiLog_DateInsert) VALUES (" + strUtenti_Ky + ", '" + strIP + "', '" + strUserAgent + "', '" + strCookie + "' ,GETDATE()," + strUtenti_Ky + ",GETDATE())";
         new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
     }
-
-	public DataTable getTablePage(string table, string tableout, string key, string where, string orderby, int pagina, int paginamax, string App){
-	  DataTable dt= Smartdesk.Sql.getTablePage(table, tableout, key, where, orderby, pagina, paginamax, App,out this.intNumRecords);
-	  return dt;
-	}
-
 }

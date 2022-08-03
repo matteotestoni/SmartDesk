@@ -405,12 +405,5 @@ namespace Smartdesk{
 
       }
 
-    public static DataTable getTablePage(string table, string tableout, string key, string where, string orderby, int pagina, int paginamax, string App)
-    {
-        int intNumRecords=0;
-        DataTable dt = Smartdesk.Sql.getTablePage(table, tableout, key, where, orderby, pagina, paginamax, App, out intNumRecords);
-        return dt;
-    }
-
   }
 }

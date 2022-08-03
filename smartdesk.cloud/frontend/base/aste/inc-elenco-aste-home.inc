@@ -8,24 +8,26 @@
              
           %>
 			      <div class="cell">
-              <div class="scheda-asta-elenco">
-                <div class="foto-elenco-aste" style="background-image:url('<%=dtAsteEsperimenti.Rows[i]["Aste_Foto1"].ToString()%>');">
-                <a class="link" href="/frontend/base/aste/scheda-asta.aspx?AsteEsperimenti_Ky=<%=dtAsteEsperimenti.Rows[i]["AsteEsperimenti_Ky"].ToString()%>&Aste_Ky=<%=dtAsteEsperimenti.Rows[i]["Aste_Ky"].ToString()%>">
-                </a>
-                </div>
-			          <span class="aggiungiwishlist" data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover="false" tabindex="1" title="Segui asta"><a href="/frontend/base/wishlist/aggiungi-wishlist.aspx?Aste_Ky=<%=dtAsteEsperimenti.Rows[i]["Aste_Ky"].ToString()%>&azione=new&cosa=aste"><i class="fa-duotone fa-heart fa-lg fa-fw"></i></a></span>
-			          <span class="percentuale-sconto">-<%=dtAsteEsperimenti.Rows[i]["AsteEsperimenti_PercentualeRibasso"].ToString()%>%</span>
-			          <span class="numero-lotti">
-                <%
-                if (dtLottiAsta.Rows.Count>1){
-                  Response.Write(dtLottiAsta.Rows.Count + " lotti");
-                }else{
-                  Response.Write(dtLottiAsta.Rows.Count + " lotto");
-                } %>
-                </span>
-			          <div class="dettagli-asta-container align-middle">
-  			          <div class="dettagli-asta" data-equalizer-watch="elenco-aste-home">
+			          <div class="card align-middle">
+  			          <div class="card-divider">
     			          <span class="titolo-asta"><%=dtAsteEsperimenti.Rows[i]["Aste_Titolo"].ToString()%></span>
+                  </div>
+  			          <div class="card-img">
+                    <a class="link" href="/frontend/base/aste/scheda-asta.aspx?AsteEsperimenti_Ky=<%=dtAsteEsperimenti.Rows[i]["AsteEsperimenti_Ky"].ToString()%>&Aste_Ky=<%=dtAsteEsperimenti.Rows[i]["Aste_Ky"].ToString()%>">
+                      <img src="<%=dtAsteEsperimenti.Rows[i]["Aste_Foto1"].ToString()%>">
+                    </a>
+    			          <span class="aggiungiwishlist" data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover="false" tabindex="1" title="Segui asta"><a href="/frontend/base/wishlist/aggiungi-wishlist.aspx?Aste_Ky=<%=dtAsteEsperimenti.Rows[i]["Aste_Ky"].ToString()%>&azione=new&cosa=aste"><i class="fa-duotone fa-heart fa-lg fa-fw"></i></a></span>
+    			          <span class="percentuale-sconto">-<%=dtAsteEsperimenti.Rows[i]["AsteEsperimenti_PercentualeRibasso"].ToString()%>%</span>
+    			          <span class="numero-lotti">
+                    <%
+                    if (dtLottiAsta.Rows.Count>1){
+                      Response.Write(dtLottiAsta.Rows.Count + " lotti");
+                    }else{
+                      Response.Write(dtLottiAsta.Rows.Count + " lotto");
+                    } %>
+                    </span>
+                  </div>
+  			          <div class="card-section" data-equalizer-watch="elenco-aste-home">
     			          <div class="grid-x grid-padding-x collapse">
     			              <div class="large-12 medium-12 small-12 cell text-left">
     			              	<span class="valore-codice-asta">ID Asta: <%=dtAsteEsperimenti.Rows[i]["Aste_Numero"].ToString()%></span>
@@ -57,10 +59,9 @@
     			          </div>
   			          </div>
                   <div class="text-center align-middle">
-  			           <a class="button small warning" href="/frontend/base/aste/scheda-asta.aspx?AsteEsperimenti_Ky=<%=dtAsteEsperimenti.Rows[i]["AsteEsperimenti_Ky"].ToString()%>&Aste_Ky=<%=dtAsteEsperimenti.Rows[i]["Aste_Ky"].ToString()%>">Scopri i lotti<i class="fa-duotone fa-angle-right fa-fw"></i></a>
+  			           <a class="button small" href="/frontend/base/aste/scheda-asta.aspx?AsteEsperimenti_Ky=<%=dtAsteEsperimenti.Rows[i]["AsteEsperimenti_Ky"].ToString()%>&Aste_Ky=<%=dtAsteEsperimenti.Rows[i]["Aste_Ky"].ToString()%>">Scopri i lotti<i class="fa-duotone fa-angle-right fa-fw"></i></a>
                   </div>
 			          </div>
-			        </div>
 			      </div>
 					<% } %>
 			</div>                

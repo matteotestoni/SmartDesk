@@ -165,12 +165,23 @@ public partial class _Default : System.Web.UI.Page
             strSQL+="('blog', '', '/blog/','/frontend/" + strTheme + "/contenuti/elenco-contenuti.aspx'," + Smartdesk.Session.CurrentUser.ToString() + ",GETDATE());";
             new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
 
+            //Blog
+            strRisultato+="<li>Contenuti</li>"; 
+            strSQL="DELETE FROM CoreUrlRewrite WHERE CoreEntities_Code='contenuti';";
+            new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
+            strSQL+="INSERT CoreUrlRewrite (CoreEntities_Code, CoreEntities_KeyValue,CoreUrlRewrite_UrlSource,CoreUrlRewrite_UrlDestination,CoreUrlRewrite_UserInsert,CoreUrlRewrite_DateInsert) VALUES ";
+            strSQL+="('blog', '', '/faq/','/frontend/" + strTheme + "/contenuti/elenco-faq.aspx'," + Smartdesk.Session.CurrentUser.ToString() + ",GETDATE());";
+            new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
+            strSQL+="INSERT CoreUrlRewrite (CoreEntities_Code, CoreEntities_KeyValue,CoreUrlRewrite_UrlSource,CoreUrlRewrite_UrlDestination,CoreUrlRewrite_UserInsert,CoreUrlRewrite_DateInsert) VALUES ";
+            strSQL+="('blog', '', '/sondaggi/','/frontend/" + strTheme + "/contenuti/elenco-sondaggi.aspx'," + Smartdesk.Session.CurrentUser.ToString() + ",GETDATE());";
+            new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
+
             //contatti
             strRisultato+="<li>Contatti</li>"; 
             strSQL="DELETE FROM CoreUrlRewrite WHERE CoreEntities_Code='contatti';";
             new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
             strSQL+="INSERT CoreUrlRewrite (CoreEntities_Code, CoreEntities_KeyValue,CoreUrlRewrite_UrlSource,CoreUrlRewrite_UrlDestination,CoreUrlRewrite_UserInsert,CoreUrlRewrite_DateInsert) VALUES ";
-            strSQL+="('contatti', '', '/contatti/contatti.html','/frontend/" + strTheme + "/contatti/contatti.aspx'," + Smartdesk.Session.CurrentUser.ToString() + ",GETDATE());";
+            strSQL+="('contatti', '', '/contatti/','/frontend/" + strTheme + "/contatti/contatti.aspx'," + Smartdesk.Session.CurrentUser.ToString() + ",GETDATE());";
             new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
 
             //catalogo: aste
@@ -665,9 +676,4 @@ public partial class _Default : System.Web.UI.Page
             Response.Redirect(Smartdesk.Current.LoginPageRoot);
       }
     }    
-    
-	public DataTable getTablePage(string table, string tableout, string key, string where, string orderby, int pagina, int paginamax, string App){
-	  DataTable dt= Smartdesk.Sql.getTablePage(table, tableout, key, where, orderby, pagina, paginamax, App,out this.intNumRecords);
-	  return dt;
-	}
 }

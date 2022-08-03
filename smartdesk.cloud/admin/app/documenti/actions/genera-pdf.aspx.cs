@@ -9,11 +9,8 @@ using System.Data.SqlClient;
 using Reportman.Drawing; 
 using Reportman.Reporting;
 
-
   public partial class _Default : System.Web.UI.Page 
 	{
-    
-    
     public int intNumRecords = 0;
     public int i = 0;
     public System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("it-IT");
@@ -22,7 +19,6 @@ using Reportman.Reporting;
     public DataTable dtDocumenti;
     public bool boolAdmin = false;
     public string strSorgente="";
-    
 	  public string strPathReport="";
 	  public string strPathPDF = "";
 	  public string strNomePDF = "";
@@ -34,9 +30,6 @@ using Reportman.Reporting;
       string strORDERNet = "";
       string strFROMNet = "";
 
-      
-      
-			
       if (Smartdesk.Login.Verify){
           dtLogin = Smartdesk.Data.Read("Utenti_Vw","Utenti_Ky", Smartdesk.Session.CurrentUser.ToString());
           strWHERENet = "Year(Documenti_Data)=2021 AND Documenti_PDF Is Null";
@@ -102,9 +95,4 @@ using Reportman.Reporting;
     }
     return strTestoOut;
   }   
-     
-	public DataTable getTablePage(string table, string tableout, string key, string where, string orderby, int pagina, int paginamax, string App){
-	  DataTable dt= Smartdesk.Sql.getTablePage(table, tableout, key, where, orderby, pagina, paginamax, App,out this.intNumRecords);
-	  return dt;
-	}
 }

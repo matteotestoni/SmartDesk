@@ -433,10 +433,4 @@ public partial class _Default : System.Web.UI.Page
     public string StripHTML(string str){
         return System.Text.RegularExpressions.Regex.Replace(str, @"<(.|\n)*?>", string.Empty);
     }
-
-    public DataTable getTablePage(string table, string tableout, string key, string where, string orderby, int pagina, int paginamax, string App)
-        {
-            DataTable dt = Smartdesk.Sql.getTablePage(table, tableout, key, where, orderby, pagina, paginamax, App, out this.intNumRecords);
-            return dt;
-        }
 }

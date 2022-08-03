@@ -9,8 +9,6 @@ public partial class _Default : System.Web.UI.Page
     public DataTable dtLogin;
     public bool boolLogin = false;
     public string strUtentiLogin="";
-    
-    
     public int intNumRecords = 0;
     public int i = 0;
     public string strH1="contenuto";
@@ -26,9 +24,6 @@ public partial class _Default : System.Web.UI.Page
       string strFROMNet = "";
       string strORDERNet = "";
 
-	  
-	  
-      
       if (Request.Cookies["rswcrm-az"] != null){
           strUtentiLogin = (FormsAuthentication.Decrypt(Context.Request.Cookies["rswcrm-az"].Value)).UserData;
           strWHERENet = "Anagrafiche_Ky =" + strUtentiLogin;
@@ -68,11 +63,4 @@ public partial class _Default : System.Web.UI.Page
           }
 	  }
     }    
-
-
-    public DataTable getTablePage(string table, string tableout, string key, string where, string orderby, int pagina, int paginamax, string App)
-    {
-        DataTable dt = Smartdesk.Sql.getTablePage(table, tableout, key, where, orderby, pagina, paginamax, App, out this.intNumRecords);
-        return dt;
-    }
 }

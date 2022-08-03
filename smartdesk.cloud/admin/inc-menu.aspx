@@ -118,6 +118,7 @@
         <li><a href="/admin/view.aspx?CoreModules_Ky=9&CoreEntities_Ky=96&CoreGrids_Ky=79">Pagine e articoli</a></li>
         <li><a href="/admin/view.aspx?CoreModules_Ky=9&CoreEntities_Ky=101&CoreGrids_Ky=84">Gallerie</a></li>
         <li><a href="/admin/view.aspx?CoreModules_Ky=9&CoreEntities_Ky=103&CoreGrids_Ky=86">Slide</a></li>
+        <li><a href="/admin/view.aspx?CoreModules_Ky=9&CoreEntities_Ky=257&CoreGrids_Ky=282">Popup</a></li>
         <li><a href="/admin/view.aspx?CoreModules_Ky=9&CoreEntities_Ky=168&CoreGrids_Ky=156">Blocchi</a></li>
         <li class="hide"><a href="/admin/app/contenuti/elenco-gallerie.aspx">Gallerie immagini</a></li>
         <li><a href="/admin/view.aspx?CoreModules_Ky=16&CoreEntities_Ky=146&CoreGrids_Ky=96">Sondaggi</a></li>

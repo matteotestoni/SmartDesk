@@ -11,7 +11,7 @@
       		</div> 
       		<div class="large-7 medium-7 small-12 cell text-right hide-for-small-only">
   				  <div class="align-middle search-container" id="search-container" data-closable>
-              <form class="hide-for-small" name="formRicercaTop" id="formRicercaTop" method="get" action="/frontend/base/aste/elenco-aste.aspx" data-abide novalidate>
+              <form class="hide-for-small" name="formRicercaTop" id="formRicercaTop" method="get" action="/aste/categorie.html" data-abide novalidate>
                 <div class="input-group">
                   <input type="text" id="search" name="search" class="input-group-field search" value="" placeholder="Cerca" required="required">
                   <div class="input-group-button">
@@ -52,7 +52,7 @@
                       <li class="menu-item" role="menuitem"><a href="/veicoli/tipo.html" tabindex="5">Veicoli</a></li>
                       <li class="menu-item" role="menuitem"><a href="/catalogo/categorie.html" tabindex="6">Prodotti</a></li>
                       <li class="menu-item" role="menuitem"><a href="/blog/" tabindex="7">Blog</a></li>
-                      <li class="menu-item" role="menuitem"><a href="/contatti/contatti.html" tabindex="8">Contattaci</a></li>
+                      <li class="menu-item" role="menuitem"><a href="/contatti/" tabindex="8">Contattaci</a></li>
                   </ul>	
               </div>
       				<div class="top-bar-right float-right show-for-small-only">
@@ -82,5 +82,5 @@
           </ul>
 				</div>				
 				<div class="off-canvas-content" data-off-canvas-content="">
-        <div class="bodycontent" style="padding-top:1.5rem;">
+        <div class="bodycontent">
 

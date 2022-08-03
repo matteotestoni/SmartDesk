@@ -1,0 +1,57 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="CMSPopup" Type="TABLE">
+    <Keys>
+      <Key Column="CMSPopup_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="CMSPopup_Ky" IsNull="N" Type="int" />
+      <Field Column="CMSPopup_Codice" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSPopup_PubblicaWEB" IsNull="Y" Type="bit" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="Lingue_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="CMSPopup_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSPopup_Foto" IsNull="Y" Type="varchar" Lenght="300" />
+      <Field Column="CMSPopup_Url" IsNull="Y" Type="varchar" Lenght="500" />
+      <Field Column="CMSPopup_Tags" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSPopup_Categorie" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSPopup_Click" IsNull="Y" Type="int" />
+      <Field Column="CMSPopup_Provincie" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CMSPopup_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="CMSPopup_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="CMSPopup_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="CMSPopup_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="CMSPopup_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="CMSPopup_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="CMSPopup_DataInizio" IsNull="Y" Type="datetime" />
+      <Field Column="CMSPopup_DataFine" IsNull="Y" Type="datetime" />
+      <Field Column="Province_Ky" IsNull="Y" Type="int" />
+      <Field Column="CMSPopup_Province" IsNull="Y" Type="varchar" Lenght="-1" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[CMSPopup] (
+  [CMSPopup_Ky] int IDENTITY(1,1) NOT NULL , 
+  [CMSPopup_Codice] varchar(200)  NULL , 
+  [CMSPopup_PubblicaWEB] bit  NULL DEFAULT ((0)), 
+  [Anagrafiche_Ky] int  NULL , 
+  [Lingue_Ky] tinyint  NULL , 
+  [CMSPopup_Titolo] varchar(200)  NULL , 
+  [CMSPopup_Foto] varchar(300)  NULL , 
+  [CMSPopup_Url] varchar(500)  NULL , 
+  [CMSPopup_Tags] varchar(200)  NULL , 
+  [CMSPopup_Categorie] varchar(200)  NULL , 
+  [CMSPopup_Click] int  NULL DEFAULT ((0)), 
+  [CMSPopup_Provincie] varchar(200)  NULL , 
+  [CMSPopup_UserInsert] int  NULL , 
+  [CMSPopup_UserUpdate] int  NULL , 
+  [CMSPopup_UserDelete] int  NULL , 
+  [CMSPopup_DateInsert] datetime  NULL , 
+  [CMSPopup_DateUpdate] datetime  NULL , 
+  [CMSPopup_DateDelete] datetime  NULL , 
+  [CMSPopup_DataInizio] datetime  NULL , 
+  [CMSPopup_DataFine] datetime  NULL , 
+  [Province_Ky] int  NULL , 
+  [CMSPopup_Province] varchar(MAX)  NULL  )
+ALTER TABLE [dbo].[CMSPopup] ADD CONSTRAINT PK_CMSPopup PRIMARY KEY  ([CMSPopup_Ky])
+</SqlScriptCreate>
+</SqlTable>

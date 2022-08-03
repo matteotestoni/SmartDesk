@@ -463,41 +463,6 @@ using System.Data.SqlClient;
           return boolReturn;
       }
 
-      public String getStato (string strDocumentiStato_Ky, string strDocumentiStato_Descrizione) {
-          string strStatoOut = "";
-          if (strDocumentiStato_Ky != null) {
-              switch (strDocumentiStato_Ky) {
-                  case "1":
-                      strStatoOut = "<span class=\"label radius success\">" + strDocumentiStato_Descrizione + "</span>";
-                      break;
-                  case "2":
-                      strStatoOut = "<span class=\"label radius warning\">" + strDocumentiStato_Descrizione + "</span>";
-                      break;
-                  case "3":
-                      strStatoOut = "<span class=\"label radius warning\">" + strDocumentiStato_Descrizione + "</span>";
-                      break;
-                  case "4":
-                      strStatoOut = "<span class=\"label radius alert\">" + strDocumentiStato_Descrizione + "</span>";
-                      break;
-                  case "5":
-                      strStatoOut = "<span class=\"label radius success\">" + strDocumentiStato_Descrizione + "</span>";
-                      break;
-                  case "6":
-                      strStatoOut = "<span class=\"label radius success\">" + strDocumentiStato_Descrizione + "</span>";
-                      break;
-                  case "7":
-                      strStatoOut = "<span class=\"label radius warning\">" + strDocumentiStato_Descrizione + "</span>";
-                      break;
-                  case "8":
-                      strStatoOut = "<span class=\"label radius alert\">" + strDocumentiStato_Descrizione + "</span>";
-                      break;
-              }
-          } else {
-              strStatoOut = "";
-          }
-          return strStatoOut;
-      }
-
       public String GetTipoRinnovo (string strRinnovoIn) {
           string strRinnovoOut = "";
           if (strRinnovoIn != null) {
@@ -651,11 +616,4 @@ using System.Data.SqlClient;
         }
         return strReturn;
       }  
-
-      public DataTable getTablePage (string table, string tableout, string key, string where, string orderby, int pagina, int paginamax, string App) //#bp
-      {
-          DataTable dt = Smartdesk.Sql.getTablePage (table, tableout, key, where, orderby, pagina, paginamax, App, out this.intNumRecords);
-          return dt;
-      }
   }
-//}

@@ -49,7 +49,7 @@ using System.Collections.Generic;
                 System.Net.NetworkCredential mailAuthentication = new System.Net.NetworkCredential(Smartdesk.Functions.getOption("core.serversmptuser"), Smartdesk.Functions.getOption("core.serversmptpassword"));
           		client.UseDefaultCredentials = false;
           		client.Credentials = mailAuthentication;
-          		client.EnableSsl = Smartdesk.Functions.getOption("core.serversmptssl");
+          		client.EnableSsl = Convert.ToBoolean(Smartdesk.Functions.getOption("core.serversmptssl"));
           		client.Send(mail);
     	        Response.Redirect("/pag/asta-inviata.html?Aste_Ky=" + strKy);
             }else{
@@ -87,9 +87,4 @@ using System.Collections.Generic;
         output=true;
         return output;
     }
-
-    public DataTable getTablePage(string table, string tableout, string key, string where, string orderby, int pagina, int paginamax, string App){
-	  DataTable dt= Smartdesk.Sql.getTablePage(table, tableout, key, where, orderby, pagina, paginamax, App,out this.intNumRecords);
-	  return dt;
-	}
 }

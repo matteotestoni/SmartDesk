@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html class="no-js" dir="ltr" lang="it-IT">
   <head>
-   	<title>Aste</title>
+   	<title>Aste online</title>
   	<meta name="description" content="Home"/>
 		<meta name="robots" content="index,follow">
   	<!-- #include file ="/frontend/base/inc-head.aspx" -->

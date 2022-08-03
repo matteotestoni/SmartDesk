@@ -1,0 +1,12 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="{TableName}" Type="TABLE">
+    <Fields>
+      <Field Column="{TableName}_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="{TableName}_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="{TableName}_UserDelete" IsNull="Y" Type="int"  />
+      <Field Column="{TableName}_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="{TableName}_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="{TableName}_DateDelete" IsNull="Y" Type="datetime"  />
+    </Fields>
+  </Tables>
+</SqlTable>

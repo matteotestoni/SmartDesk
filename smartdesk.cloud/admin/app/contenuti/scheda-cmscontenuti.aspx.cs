@@ -26,19 +26,19 @@ public partial class _Default : System.Web.UI.Page
 
       if (Smartdesk.Login.Verify){
         dtLogin = Smartdesk.Data.Read("Utenti_Vw","Utenti_Ky", Smartdesk.Session.CurrentUser.ToString());          
-		boolAdmin=(dtLogin.Rows[0]["Utenti_Admin"]).Equals(true);
-	    boolWysiwyg=(dtLogin.Rows[0]["Utenti_Wysiwyg"]).Equals(true);
-		strAzione = Request["azione"];
-		if (strAzione!="new"){
-		  strAzione = "modifica";
-		  dtCMSContenuti = Smartdesk.Data.Read("CMSContenuti", "CMSContenuti_Ky",Smartdesk.Current.QueryString("CMSContenuti_Ky"));
-		}
-		//tags
-		strWHERENet="";
-		strORDERNet = "CMSTags_Titolo";
-		strFROMNet = "CMSTags";
-		dtCMSTags = new DataTable("CMSTags");
-		dtCMSTags = Smartdesk.Sql.getTablePage(strFROMNet, null, "CMSTags_Ky", strWHERENet, strORDERNet, 1, 100,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
+        boolAdmin=(dtLogin.Rows[0]["Utenti_Admin"]).Equals(true);
+        boolWysiwyg=(dtLogin.Rows[0]["Utenti_Wysiwyg"]).Equals(true);
+        strAzione = Request["azione"];
+        if (strAzione!="new"){
+          strAzione = "modifica";
+          dtCMSContenuti = Smartdesk.Data.Read("CMSContenuti", "CMSContenuti_Ky",Smartdesk.Current.QueryString("CMSContenuti_Ky"));
+    		}
+    		//tags
+    		strWHERENet="";
+    		strORDERNet = "CMSTags_Titolo";
+    		strFROMNet = "CMSTags";
+    		dtCMSTags = new DataTable("CMSTags");
+    		dtCMSTags = Smartdesk.Sql.getTablePage(strFROMNet, null, "CMSTags_Ky", strWHERENet, strORDERNet, 1, 100,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
       }else{
         Response.Redirect(Smartdesk.Current.LoginPageRoot);
       }
@@ -69,9 +69,4 @@ public partial class _Default : System.Web.UI.Page
       return strValore;
 
     }
-    
-	public DataTable getTablePage(string table, string tableout, string key, string where, string orderby, int pagina, int paginamax, string App){
-	  DataTable dt= Smartdesk.Sql.getTablePage(table, tableout, key, where, orderby, pagina, paginamax, App,out this.intNumRecords);
-	  return dt;
-	}
 }

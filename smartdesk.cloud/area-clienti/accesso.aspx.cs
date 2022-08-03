@@ -75,9 +75,4 @@ public partial class _Default : System.Web.UI.Page
         strSQL = "INSERT INTO AnagraficheLog (Anagrafiche_Ky, AnagraficheLog_Descrizione, AnagraficheLog_Valore, AnagraficheLog_IP, AnagraficheLog_UserAgent, AnagraficheLog_Cookie, AnagraficheLog_Data, AnagraficheLog_UserInsert,AnagraficheLog_DateInsert) VALUES (" + strAnagrafiche_Ky + ",'login','ok','" + strIP + "', '" + strUserAgent + "', '" + strCookie + "' ,GETDATE(),0,GETDATE())";
         new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
     }
-
-	public DataTable getTablePage(string table, string tableout, string key, string where, string orderby, int pagina, int paginamax, string App){
-	  DataTable dt= Smartdesk.Sql.getTablePage(table, tableout, key, where, orderby, pagina, paginamax, App,out this.intNumRecords);
-	  return dt;
-	}
 }

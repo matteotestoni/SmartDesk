@@ -6,8 +6,6 @@ using System.Collections.Specialized;
 
 public partial class _Default : System.Web.UI.Page 
 {
-    
-    public string strConnNetMasterRO = "";
     public int intNumRecords = 0;
     public int i = 0;
     public System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("it-IT");
@@ -44,9 +42,6 @@ public partial class _Default : System.Web.UI.Page
     {
       string strWHERENet="";
       string strORDERNet = "";
-
-      
-      //strConnNetMasterRO = Smartdesk.Config.Sql.ConnectionMasterReadOnly;
 
     if (Smartdesk.Login.Verify){
           dtLogin = Smartdesk.Data.Read("Utenti_Vw","Utenti_Ky", Smartdesk.Session.CurrentUser.ToString());
@@ -214,9 +209,4 @@ public partial class _Default : System.Web.UI.Page
       }
       return boolValore;
     }
-    
-	public DataTable getTablePage(string table, string tableout, string key, string where, string orderby, int pagina, int paginamax, string App){
-	  DataTable dt= Smartdesk.Sql.getTablePage(table, tableout, key, where, orderby, pagina, paginamax, App,out this.intNumRecords);
-	  return dt;
-	}
 }

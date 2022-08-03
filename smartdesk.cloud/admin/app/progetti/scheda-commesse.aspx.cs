@@ -166,42 +166,6 @@ public partial class _Default : System.Web.UI.Page
       }
     }    
 
-    public String getStato(string strDocumentiStato_Ky, string strDocumentiStato_Descrizione)
-    {
-      string strStatoOut="";
-      if (strDocumentiStato_Ky!=null){
-        switch (strDocumentiStato_Ky){
-          case "1":
-            strStatoOut="<span class=\"label success\">" + strDocumentiStato_Descrizione + "</span>";
-            break;
-          case "2":
-            strStatoOut="<span class=\"label warning\">" + strDocumentiStato_Descrizione + "</span>";
-            break;
-          case "3":
-            strStatoOut="<span class=\"label warning\">" + strDocumentiStato_Descrizione + "</span>";
-            break;
-          case "4":
-            strStatoOut="<span class=\"label alert animate__animated animate__headShake animate__infinite infinite\">" + strDocumentiStato_Descrizione + "</span>";
-            break;
-          case "5":
-            strStatoOut="<span class=\"label success\">" + strDocumentiStato_Descrizione + "</span>";
-            break;
-          case "6":
-            strStatoOut="<span class=\"label success\">" + strDocumentiStato_Descrizione + "</span>";
-            break;
-          case "7":
-            strStatoOut="<span class=\"label warning\">" + strDocumentiStato_Descrizione + "</span>";
-            break;
-          case "8":
-            strStatoOut="<span class=\"label alert animate__animated animate__headShake animate__infinite infinite\">" + strDocumentiStato_Descrizione + "</span>";
-            break;
-        }
-      }else{
-        strStatoOut="";
-      }
-      return strStatoOut;
-    }   
-
     public String GetDefaultValue(string strField)
     {
       string strValore="";
@@ -246,9 +210,4 @@ public partial class _Default : System.Web.UI.Page
       }
       return strValore;
     }
-    
-	public DataTable getTablePage(string table, string tableout, string key, string where, string orderby, int pagina, int paginamax, string App){
-	  DataTable dt= Smartdesk.Sql.getTablePage(table, tableout, key, where, orderby, pagina, paginamax, App,out this.intNumRecords);
-	  return dt;
-	}
 }

@@ -98,6 +98,12 @@ public partial class _Default : System.Web.UI.Page
             {
                 Directory.CreateDirectory(strDirectory);
             }
+            strDirectory=Server.MapPath("/uploads/foto-popup/");
+            strRisultato += strDirectory + "<br>";
+            if(!Directory.Exists(strDirectory))
+            {
+                Directory.CreateDirectory(strDirectory);
+            }
             strDirectory=Server.MapPath("/uploads/foto-prodotti/");
             strRisultato += strDirectory + "<br>";
             if(!Directory.Exists(strDirectory))
@@ -1184,9 +1190,4 @@ public partial class _Default : System.Web.UI.Page
             new SqlCommand(strSQL, conn).ExecuteNonQuery();
 
    }    
-    
-	public DataTable getTablePage(string table, string tableout, string key, string where, string orderby, int pagina, int paginamax, string App){
-	  DataTable dt= Smartdesk.Sql.getTablePage(table, tableout, key, where, orderby, pagina, paginamax, App,out this.intNumRecords);
-	  return dt;
-	}
 }

@@ -57,7 +57,7 @@
 				            <a href="/admin/app/documenti/scheda-documenti.aspx?CoreModules_Ky=13&CoreEntities_Ky=44&CoreForms_Ky=1212&Documenti_Ky=<%=dtDocumenti.Rows[i]["Documenti_Ky"].ToString()%>&azione=modifica"><%=dtDocumenti.Rows[i]["Documenti_Ky"].ToString()%></a> 
 				          </td>
 				          <td class="large-text-center small-text-left"><%=dtDocumenti.Rows[i]["DocumentiTipo_Descrizione"].ToString()%></td>
-	          			<td class="large-text-center small-text-left"><%=getStato(dtDocumenti.Rows[i]["DocumentiStato_Ky"].ToString(), dtDocumenti.Rows[i]["DocumentiStato_Descrizione"].ToString())%></td>
+	          			<td class="large-text-center small-text-left"><%=Smartdesk.Documenti.getStato(dtDocumenti.Rows[i]["DocumentiStato_Ky"].ToString(), dtDocumenti.Rows[i]["DocumentiStato_Descrizione"].ToString())%></td>
 				          <td class="large-text-center small-text-left"><%=dtDocumenti.Rows[i]["Documenti_Numero"].ToString()%></td>
 				          <td class="large-text-center small-text-left date"><i class="fa-duotone fa-calendar-days fa-fw"></i><%=dtDocumenti.Rows[i]["Documenti_Data_IT"].ToString()%></td>
 				          <td class="large-text-right small-text-left"><%=((decimal)dtDocumenti.Rows[i]["Documenti_TotaleRighe"]).ToString("N2", ci)%></td>

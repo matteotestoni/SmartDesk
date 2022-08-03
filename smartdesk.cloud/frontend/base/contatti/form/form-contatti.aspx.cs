@@ -91,7 +91,7 @@ public partial class _Default : System.Web.UI.Page
         System.Net.NetworkCredential mailAuthentication = new System.Net.NetworkCredential(Smartdesk.Functions.getOption("core.serversmptuser"), Smartdesk.Functions.getOption("core.serversmptpassword"));
         client.UseDefaultCredentials = false;
         client.Credentials = mailAuthentication;
-        client.EnableSsl = Smartdesk.Functions.getOption("core.serversmptssl");
+        client.EnableSsl = Convert.ToBoolean(Smartdesk.Functions.getOption("core.serversmptssl"));
         client.Send(mail);
         output=true;
         return output;
@@ -101,7 +101,7 @@ public partial class _Default : System.Web.UI.Page
     {
         bool boolReturn=false;
         double doubScore=0;
-        string strUrl="https://www.google.com/recaptcha/api/siteverify?secret=6Lf1wK0UAAAAAAiluEdjt3urM-ejWd7HpJnb9h9S&response=" + gRecaptchaResponse;
+        string strUrl="https://www.google.com/recaptcha/api/siteverify?secret=" + Smartdesk.Functions.getOption("core.recaptchasecretkey") + "&response=" + gRecaptchaResponse;
         System.Net.Http.HttpClient httpClient = new System.Net.Http.HttpClient();
         var res = httpClient.GetAsync(strUrl).Result;
         if (res.StatusCode != System.Net.HttpStatusCode.OK)

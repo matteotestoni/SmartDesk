@@ -5,8 +5,6 @@ using System.IO;
 
 public partial class _Default : System.Web.UI.Page 
 {
-    
-    
     public int intNumRecords = 0;
     public int intNumRecordsSidebar = 0;
     public int intNumRecordsToolbar = 0;
@@ -25,7 +23,6 @@ public partial class _Default : System.Web.UI.Page
     public string strRisultato = "";
     public string strTemp = "";
     
-
     protected void Page_Load(object sender, EventArgs e)
     {
         string strDirectory="";
@@ -34,9 +31,7 @@ public partial class _Default : System.Web.UI.Page
         string strORDERNet = "";
         SqlConnection conn;
         SqlCommand cmd;
-        
-        
-        
+
         strH1="Aggiornamento DB";         
         //vecchio framework   
         strSQL="DROP TABLE IF EXISTS frkApplications;";
@@ -142,6 +137,8 @@ public partial class _Default : System.Web.UI.Page
         new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
         strSQL="ALTER TABLE CMSBlocchi DROP COLUMN IF EXISTS Persone_Ky;";  
         new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
+        strSQL="ALTER TABLE CMSPopup DROP COLUMN IF EXISTS Provincie_Ky;";  
+        new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
         strSQL="ALTER TABLE CMSContenuti DROP COLUMN IF EXISTS Persone_Ky;";  
         new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
         strSQL="ALTER TABLE CMSGallerie DROP COLUMN IF EXISTS Persone_Ky;";  
@@ -226,9 +223,4 @@ public partial class _Default : System.Web.UI.Page
         new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
         strSQL="IF OBJECT_ID(N'HangFire.State', N'U') IS NOT NULL DROP TABLE [HangFire].[State];";
  }    
-    
-	public DataTable getTablePage(string table, string tableout, string key, string where, string orderby, int pagina, int paginamax, string App){
-	  DataTable dt= Smartdesk.Sql.getTablePage(table, tableout, key, where, orderby, pagina, paginamax, App,out this.intNumRecords);
-	  return dt;
-	}
 }

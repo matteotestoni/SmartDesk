@@ -43,9 +43,4 @@ public partial class _Default : System.Web.UI.Page
         strOUT=strIN.Replace("\"","&quot;").Replace("à","&agrave;").TrimEnd(new char[] { '\r', '\n' });
         return strOUT;
     }
-
-	public DataTable getTablePage(string table, string tableout, string key, string where, string orderby, int pagina, int paginamax, string App){
-	  DataTable dt= Smartdesk.Sql.getTablePage(table, tableout, key, where, orderby, pagina, paginamax, App,out this.intNumRecords);
-	  return dt;
-	}
 }

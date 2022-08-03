@@ -81,11 +81,6 @@ public partial class _Default : System.Web.UI.Page
 	  return boolReturn;
 	}
 
-	public DataTable getTablePage(string table, string tableout, string key, string where, string orderby, int pagina, int paginamax, string App){
-	  DataTable dt= Smartdesk.Sql.getTablePage(table, tableout, key, where, orderby, pagina, paginamax, App,out this.intNumRecords);
-	  return dt;
-	}
-
     //this method only updates title and description
     //this is called when a event is clicked on the calendar
     [System.Web.Services.WebMethod(true)]

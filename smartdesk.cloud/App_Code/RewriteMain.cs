@@ -29,6 +29,7 @@ namespace RewriteMain.NET
         string strKey = "";
         DataTable dtCoreUrlRewrite;
         DataTable dtCoreUrlRedirect;
+        DataTable dtCoreModulesOptionsValue;
         string strUrlSource = "";
         string strUrlDestination = "";
         string[] strFolders;
@@ -36,15 +37,33 @@ namespace RewriteMain.NET
         string strPage;
         char[] splitter = { '/' };
         bool boolRewriteOrRedirect=false;
+        string strTheme="base";
 
-		    strUrlSource = _application.Request.Path;			
+		    strUrlSource = _application.Request.Path;
+        Uri uriUrl = new Uri(_application.Request.Url.ToString()); 
+        
+        /*
+        _application.Context.Response.Write("1:" + _application.Context.Request.Url.Host + "<br>");
+        _application.Context.Response.Write("2:" + _application.Request.Path + "<br>");
+        _application.Context.Response.Write("3" + _application.Request.Url.ToString() + "<br>");
+        _application.Context.Response.Write("4:" + _application.Request.RawUrl + "<br>");
+        _application.Context.Response.Write("5:" + _application.Request.QueryString + "<br>");
+        */
+
         strWHERENet="CoreUrlRedirect_UrlSource='" + strUrlSource + "'";
         strFROMNet = "CoreUrlRedirect";
         strORDERNet = "CoreUrlRedirect_Ky";
         dtCoreUrlRedirect = new DataTable("CoreUrlRedirect");
         dtCoreUrlRedirect = Smartdesk.Sql.getTablePage(strFROMNet, null, "CoreUrlRedirect_Ky", strWHERENet, strORDERNet, 1, 1,Smartdesk.Config.Sql.ConnectionReadOnly, out intNumRecords);
         if (dtCoreUrlRedirect.Rows.Count>0){
-            strUrlDestination=dtCoreUrlRedirect.Rows[0]["CoreUrlRedirect_UrlDestination"].ToString();
+            strUrlDestination=dtCoreUrlRedirect.Rows[0]["CoreUrlRedirect_UrlDestination"].ToString() + "";
+            if (_application.Request.QueryString.ToString().Length>0){
+              if (strUrlDestination.IndexOf("?")>0){
+                strUrlDestination+="&" +_application.Request.QueryString.ToString();
+              }else{
+                strUrlDestination+="?" +_application.Request.QueryString.ToString();
+              }
+            }
             _application.Context.Response.RedirectPermanent(strUrlDestination);
             boolRewriteOrRedirect=true;
         }   
@@ -58,7 +77,11 @@ namespace RewriteMain.NET
         if (dtCoreUrlRewrite.Rows.Count > 0){
             strUrlDestination = dtCoreUrlRewrite.Rows[0]["CoreUrlRewrite_UrlDestination"].ToString();
             if (_application.Context.Request.QueryString.ToString().Length>0){
-                strUrlDestination = strUrlDestination + "&" + _application.Context.Request.QueryString.ToString();
+                if (strUrlDestination.IndexOf("?")>0){
+                  strUrlDestination+="&" +_application.Request.QueryString.ToString();
+                }else{
+                  strUrlDestination+="?" +_application.Request.QueryString.ToString();
+                }
             }
             _application.Context.RewritePath(strUrlDestination);
             boolRewriteOrRedirect=true;
@@ -66,6 +89,18 @@ namespace RewriteMain.NET
 
         //nessun redirect impostato ma calcolato
         if (boolRewriteOrRedirect==false){
+        
+            dtCoreModulesOptionsValue = new DataTable("Options");
+            strWHERENet="CoreModulesOptions_Code='design'";
+            strORDERNet = "CoreModulesOptionsValue_Ky";
+            strFROMNet = "CoreModulesOptionsValue";
+            dtCoreModulesOptionsValue = Smartdesk.Sql.getTablePage(strFROMNet, null, "CoreModulesOptionsValue_Ky", strWHERENet, strORDERNet, 1, 1,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
+            if (dtCoreModulesOptionsValue.Rows.Count>0){
+              strTheme=dtCoreModulesOptionsValue.Rows[0]["CoreModulesOptionsValue_Value"].ToString();
+            }else{
+              strTheme="base";
+            }        
+        
             strRequestRawUrl = _application.Request.RawUrl.ToString();
             if (strRequestRawUrl.Length > 1)
             {
@@ -77,7 +112,7 @@ namespace RewriteMain.NET
                     {
                         strPage = _application.Request.Url.Segments[_application.Request.Url.Segments.Length-1];
                         strPage = strPage.Substring(0, strPage.LastIndexOf(".html"));
-                        strUrlDestination="/frontend/base/annunci/scheda-annuncio.aspx?Annunci_Ky=" + strPage;
+                        strUrlDestination="/frontend/" + strTheme + "/annunci/scheda-annuncio.aspx?Annunci_Ky=" + strPage;
                         //_application.Context.Response.Write(strUrlDestination);
                         _application.Context.RewritePath(strUrlDestination);
                     }
@@ -85,7 +120,15 @@ namespace RewriteMain.NET
                     {
                         strPage = _application.Request.Url.Segments[_application.Request.Url.Segments.Length-1];
                         strPage = strPage.Substring(0, strPage.LastIndexOf(".html"));
-                        strUrlDestination="/frontend/base/immobili/scheda-immobile.aspx?Immobili_Ky=" + strPage;
+                        strUrlDestination="/frontend/" + strTheme + "/immobili/scheda-immobile.aspx?Immobili_Ky=" + strPage;
+                        //_application.Context.Response.Write(strUrlDestination);
+                        _application.Context.RewritePath(strUrlDestination);
+                    }
+                    if (strFolders[1].ToString().ToLower() == "cantiere")
+                    {
+                        strPage = _application.Request.Url.Segments[_application.Request.Url.Segments.Length-1];
+                        strPage = strPage.Substring(0, strPage.LastIndexOf(".html"));
+                        strUrlDestination="/frontend/" + strTheme + "/immobili/scheda-cantiere.aspx?Cantieri_Ky=" + strPage;
                         //_application.Context.Response.Write(strUrlDestination);
                         _application.Context.RewritePath(strUrlDestination);
                     }
@@ -93,7 +136,7 @@ namespace RewriteMain.NET
                     {
                         strPage = _application.Request.Url.Segments[_application.Request.Url.Segments.Length-1];
                         strPage = strPage.Substring(0, strPage.LastIndexOf(".html"));
-                        strUrlDestination="/frontend/base/aste/scheda-asta.aspx?Aste_Ky=" + strPage;
+                        strUrlDestination="/frontend/" + strTheme + "/aste/scheda-asta.aspx?Aste_Ky=" + strPage;
                         //_application.Context.Response.Write(strUrlDestination);
                         _application.Context.RewritePath(strUrlDestination);
                     }
@@ -101,7 +144,23 @@ namespace RewriteMain.NET
                     {
                         strPage = _application.Request.Url.Segments[_application.Request.Url.Segments.Length-1];
                         strPage = strPage.Substring(0, strPage.LastIndexOf(".html"));
-                        strUrlDestination="/frontend/base/catalogo/scheda-prodotto.aspx?Prodotti_Ky=" + strPage;
+                        strUrlDestination="/frontend/" + strTheme + "/catalogo/scheda-prodotto.aspx?Prodotti_Ky=" + strPage;
+                        //_application.Context.Response.Write(strUrlDestination);
+                        _application.Context.RewritePath(strUrlDestination);
+                    }
+                    if (strFolders[1].ToString().ToLower() == "produttore")
+                    {
+                        strPage = _application.Request.Url.Segments[_application.Request.Url.Segments.Length-1];
+                        strPage = strPage.Substring(0, strPage.LastIndexOf(".html"));
+                        strUrlDestination="/frontend/" + strTheme + "/catalogo/scheda-produttore.aspx?Produttori_Ky=" + strPage;
+                        //_application.Context.Response.Write(strUrlDestination);
+                        _application.Context.RewritePath(strUrlDestination);
+                    }
+                    if (strFolders[1].ToString().ToLower() == "servizio")
+                    {
+                        strPage = _application.Request.Url.Segments[_application.Request.Url.Segments.Length-1];
+                        strPage = strPage.Substring(0, strPage.LastIndexOf(".html"));
+                        strUrlDestination="/frontend/" + strTheme + "/catalogo/scheda-servizio.aspx?Prodotti_Ky=" + strPage;
                         //_application.Context.Response.Write(strUrlDestination);
                         _application.Context.RewritePath(strUrlDestination);
                     }
@@ -109,7 +168,15 @@ namespace RewriteMain.NET
                     {
                         strPage = _application.Request.Url.Segments[_application.Request.Url.Segments.Length-1];
                         strPage = strPage.Substring(0, strPage.LastIndexOf(".html"));
-                        strUrlDestination="/frontend/base/veicoli/scheda-auto.aspx?Veicoli_Ky=" + strPage;
+                        strUrlDestination="/frontend/" + strTheme + "/veicoli/scheda-auto.aspx?Veicoli_Ky=" + strPage;
+                        //_application.Context.Response.Write(strUrlDestination);
+                        _application.Context.RewritePath(strUrlDestination);
+                    }
+                    if (strFolders[1].ToString().ToLower() == "pag")
+                    {
+                        strPage = _application.Request.Url.Segments[_application.Request.Url.Segments.Length-1];
+                        strPage = strPage.Substring(0, strPage.LastIndexOf(".html"));
+                        strUrlDestination="/frontend/" + strTheme + "/contenuti/scheda-contenuti.aspx?Veicoli_Ky=" + strPage;
                         //_application.Context.Response.Write(strUrlDestination);
                         _application.Context.RewritePath(strUrlDestination);
                     }

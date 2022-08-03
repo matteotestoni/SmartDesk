@@ -25,8 +25,8 @@
   				<h4 class="title">Informazioni</h4>
   				<ul class="menu vertical">
 					<li><a href="/pag/chi-siamo.html" title="chi siamo">Chi siamo</a></li>
-					<li><a href="/contatti/contatti.html" title="contattaci" rel="nofollow">Contattaci</a></li>
-        	<li><a href="/frontend/base/contenuti/elenco-contenuti.aspx"><i class="fa-duotone fa-fw fa-newspaper"></i> <span class="menu-label">News</span></a></li>
+					<li><a href="/contatti/" title="contattaci" rel="nofollow">Contattaci</a></li>
+        	<li><a href="/blog/"><i class="fa-duotone fa-fw fa-newspaper"></i> <span class="menu-label">News</span></a></li>
         	<li><a href="/frontend/base/contenuti/elenco-faq.aspx"><i class="fa-duotone fa-fw fa-circle-question"></i> <span class="menu-label">FAQ</span></a></li>
 				</ul>
   			</div>   
@@ -52,3 +52,22 @@
 		</div>
 	</div>
 </footer>
+<% 
+  System.Data.DataTable dtPopup = new System.Data.DataTable("Popup");
+  dtPopup = Smartdesk.Sql.getTablePage("CMSPopup_Vw", null, "CMSPopup_Ky", "CMSPopup_PubblicaWEB=1", "CMSPopup_Ky DESC", 1, 1,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
+  if (dtPopup.Rows.Count>0){ %>
+  <div class="reveal small text-center" id="popup<%=dtPopup.Rows[0]["CMSPopup_Codice"].ToString()%>" data-reveal data-animation-in="spin-in" data-animation-out="spin-out">
+    <a href="<%=dtPopup.Rows[0]["CMSPopup_Url"].ToString()%>"><img src="<%=dtPopup.Rows[0]["CMSPopup_Foto"].ToString()%>"></a>
+    <button class="close-button" data-close aria-label="Chiudi" type="button">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <script type="text/javascript">
+  	jQuery(document).ready(function(){
+      if (Cookies.get('popup<%=dtPopup.Rows[0]["CMSPopup_Codice"].ToString()%>') != 1) {
+          Cookies.set('popup<%=dtPopup.Rows[0]["CMSPopup_Codice"].ToString()%>', '1', { path: '/',expires: 10,secure: true, sameSite: 'strict' })
+          jQuery("#popup<%=dtPopup.Rows[0]["CMSPopup_Codice"].ToString()%>").foundation('open');
+      }
+  	});
+  </script>
+<% } %>
