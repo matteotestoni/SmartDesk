@@ -69,8 +69,7 @@ using System.Data.SqlClient;
 									}else{
                 		strSQL = "UPDATE Documenti SET DocumentiStato_Ky=6 WHERE Documenti_Ky=" + strDocumenti_Ky;
 									}
-                	cm.CommandText = strSQL;
-                	cm.ExecuteNonQuery();								
+                  new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
 								}            
 
 

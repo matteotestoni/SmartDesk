@@ -54,7 +54,7 @@
 		          <td class="large-text-center small-text-left"><a href="/admin/form.aspx?CoreModules_Ky=20&CoreEntities_Ky=185&CoreGrids_Ky=175&CoreForms_Ky=66&Lead_Ky=<%=dtLead.Rows[i]["Lead_Ky"].ToString()%>&azione=modifica"><i class="fa-duotone fa-calendar-days fa-fw"></i><strong><%=dtLead.Rows[i]["Lead_Data_IT"].ToString()%></strong></a></td>
 		          <td>
 		          	<div class="width200">
-		            <a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=dtLead.Rows[i]["Anagrafiche_Ky"].ToString()%>&Lead_Ky=<%=dtLead.Rows[i]["Lead_Ky"].ToString()%>&azione=modifica" title="<%=dtLead.Rows[i]["Anagrafiche_RagioneSociale"].ToString()%>"><i class="fa-duotone fa-users fa-fw"></i><%=dtLead.Rows[i]["Anagrafiche_RagioneSociale"].ToString()%></a>
+		            <a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=dtLead.Rows[i]["Anagrafiche_Ky"].ToString()%>&Lead_Ky=<%=dtLead.Rows[i]["Lead_Ky"].ToString()%>&azione=modifica" title="<%=dtLead.Rows[i]["Anagrafiche_RagioneSociale"].ToString()%>"><i class="fa-duotone fa-users fa-fw"></i><%=dtLead.Rows[i]["Anagrafiche_RagioneSociale"].ToString()%></a>
 								</div> 
 		          </td>
 		          <td class="large-text-center small-text-left"><%=getStato(dtLead.Rows[i]["LeadStato_Ky"].ToString(), dtLead.Rows[i]["LeadStato_Titolo"].ToString(),dtLead.Rows[i]["LeadStato_Icona"].ToString())%></td>
@@ -63,7 +63,7 @@
 								<small>
 								<%=dtLead.Rows[i]["Lead_Titolo"].ToString()%>
 								<% if (dtLead.Rows[i]["Commesse_Ky"].ToString().Length>0){ %>
-									| Progetto:<a href="/admin/app/progetti/scheda-commesse.aspx?Commesse_Ky=<%=dtLead.Rows[i]["Commesse_Ky"].ToString()%>&sorgente=elenco-documenti" title="<%=dtLead.Rows[i]["Commesse_Titolo"].ToString()%>"><i class="fa-duotone fa-circle-info fa-fw"></i><%=dtLead.Rows[i]["Commesse_Riferimenti"].ToString()%></a>
+									| Progetto:<a href="/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=<%=dtLead.Rows[i]["Commesse_Ky"].ToString()%>&sorgente=elenco-documenti" title="<%=dtLead.Rows[i]["Commesse_Titolo"].ToString()%>"><i class="fa-duotone fa-circle-info fa-fw"></i><%=dtLead.Rows[i]["Commesse_Riferimenti"].ToString()%></a>
 								<% } %>
 								</small><br>
 								<small><%=dtLead.Rows[i]["Lead_Titolo"].ToString()%></small>

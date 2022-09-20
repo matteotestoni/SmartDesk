@@ -75,7 +75,7 @@
     		    <% } %>
     				<% if (strAzione!="new"){ %>
       			<a href="/admin/form.aspx?CoreModules_Ky=1&CoreEntities_Ky=26&CoreForms_Ky=107&azione=new&sorgente=scheda-anagrafiche&Anagrafiche_Ky=<%=Smartdesk.Data.Field(dtAnagrafiche, "Anagrafiche_Ky")%>" class="tiny button clear"><i class="fa-duotone fa-square-plus fa-fw"></i>nuovo indirizzo</a>
-    		    <a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?azione=new" class="button"><i class="fa-duotone fa-square-plus fa-lg fa-fw"></i>Nuovo</a> 
+    		    <a href="/admin/goto-form.aspx?CoreEntities_Ky=162&azione=new" class="button"><i class="fa-duotone fa-square-plus fa-lg fa-fw"></i>Nuovo</a> 
     				<% } %>
     				<button type="submit" value="salva" name="salva" class="button success"><i class="fa-duotone fa-floppy-disk fa-lg fa-fw"></i>Salva</button>
     	    </div>

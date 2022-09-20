@@ -36,7 +36,7 @@ public partial class _Default : System.Web.UI.Page
             Response.Write(strJson);
           }else{
             strRedirect = "/admin/view.aspx?CoreModules_Ky=1&CoreEntities_Ky=162&CoreGrids_Ky=36";
-            strRedirect = "/admin/app/anagrafiche/scheda-anagrafiche.aspx?salvato=salvato&Anagrafiche_Ky=" + strKy;
+            strRedirect = "/admin/goto-form.aspx?CoreEntities_Ky=162&salvato=salvato&Anagrafiche_Ky=" + strKy;
             Response.Redirect(strRedirect);
           }
         //}

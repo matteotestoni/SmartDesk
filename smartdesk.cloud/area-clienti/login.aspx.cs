@@ -38,7 +38,7 @@ public partial class _Default : System.Web.UI.Page
                         strORDERNet = "Anagrafiche_Ky";
                         strFROMNet = "Anagrafiche";
                         dtLogin = new DataTable("Login");
-                        dtLogin = Smartdesk.Sql.getTablePage(strFROMNet, null, "Anagrafiche_Ky", strWHERENet, strORDERNet, 1, 1, strConnNet);
+                        dtLogin = Smartdesk.Sql.getTablePage(strFROMNet, null, "Anagrafiche_Ky", strWHERENet, strORDERNet, 1, 1, strConnNet, out this.intNumRecords);
                         if (dtLogin.Rows.Count>0){
                           Response.Redirect("/area-clienti/home.aspx");
                         }

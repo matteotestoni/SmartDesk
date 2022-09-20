@@ -1,0 +1,39 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliPrenotazioni" Type="TABLE">
+    <Keys>
+      <Key Column="VeicoliPrenotazioni_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="VeicoliPrenotazioni_Ky" IsNull="N" Type="int" />
+      <Field Column="VeicoliPrenotazioni_Data" IsNull="Y" Type="datetime" />
+      <Field Column="Veicoli_Ky" IsNull="Y" Type="int" />
+      <Field Column="Anagrafiche_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliPrenotazioni_DataInizio" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliPrenotazioni_DataFine" IsNull="Y" Type="datetime" />
+      <Field Column="Utenti_Ky" IsNull="Y" Type="int" />
+      <Field Column="VeicoliPrenotazioni_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="VeicoliPrenotazioni_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="VeicoliPrenotazioni_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="VeicoliPrenotazioni_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliPrenotazioni_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliPrenotazioni_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[VeicoliPrenotazioni] (
+  [VeicoliPrenotazioni_Ky] int IDENTITY(1,1) NOT NULL , 
+  [VeicoliPrenotazioni_Data] datetime  NULL , 
+  [Veicoli_Ky] int  NULL , 
+  [Anagrafiche_Ky] int  NULL , 
+  [VeicoliPrenotazioni_DataInizio] datetime  NULL , 
+  [VeicoliPrenotazioni_DataFine] datetime  NULL , 
+  [Utenti_Ky] int  NULL , 
+  [VeicoliPrenotazioni_UserInsert] int  NULL , 
+  [VeicoliPrenotazioni_UserUpdate] int  NULL , 
+  [VeicoliPrenotazioni_UserDelete] int  NULL , 
+  [VeicoliPrenotazioni_DateInsert] datetime  NULL , 
+  [VeicoliPrenotazioni_DateUpdate] datetime  NULL , 
+  [VeicoliPrenotazioni_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[VeicoliPrenotazioni] ADD CONSTRAINT PK_VeicoliPrenotazioni PRIMARY KEY  ([VeicoliPrenotazioni_Ky])
+</SqlScriptCreate>
+</SqlTable>

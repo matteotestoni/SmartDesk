@@ -38,10 +38,10 @@ public partial class _Default : System.Web.UI.Page
                         Response.Redirect("/admin/app/commerciale/scheda-opportunita.aspxsalvato=salvato&?Opportunita_ky=" + strOpportunita_Ky + "&Anagrafiche_Ky=" + strAnagrafiche_Ky);
                         break;
                     case "scheda-anagrafiche":
-                        Response.Redirect("/admin/app/anagrafiche/scheda-anagrafiche.aspx?salvato=salvato&Anagrafiche_Ky=" + strAnagrafiche_Ky);
+                        Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=162&salvato=salvato&Anagrafiche_Ky=" + strAnagrafiche_Ky);
                         break;
                     default:
-                        Response.Redirect("/admin/app/anagrafiche/scheda-anagrafiche.aspx?salvato=salvato&Anagrafiche_Ky=" + strAnagrafiche_Ky);
+                        Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=162&salvato=salvato&Anagrafiche_Ky=" + strAnagrafiche_Ky);
                         break;
 
                 }
@@ -63,9 +63,7 @@ public partial class _Default : System.Web.UI.Page
         strSQL = "INSERT INTO Attivita";
         strSQL += "(Attivita_Descrizione";
         strSQL += ",Attivita_Inizio";
-        strSQL += ",Attivita_OraInizio";
         strSQL += ",Attivita_Scadenza";
-        strSQL += ",Attivita_OraScadenza";
         strSQL += ",Attivita_Chiusura";
         strSQL += ",Anagrafiche_Ky";
         strSQL += ",Opportunita_Ky";
@@ -88,9 +86,7 @@ public partial class _Default : System.Web.UI.Page
         strSQL += " VALUES";
         strSQL += "('attivita commerciale'";
         strSQL += ",GETDATE()";
-        strSQL += ",CONVERT (time, SYSDATETIME())";
         strSQL += ",GETDATE()";
-        strSQL += ",CONVERT (time, SYSDATETIME())";
         strSQL += ",GETDATE()";
         strSQL += "," + strAnagrafiche_Ky;
         strSQL += "," + strOpportunita_Ky;

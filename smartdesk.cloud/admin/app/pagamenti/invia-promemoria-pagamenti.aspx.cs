@@ -141,7 +141,7 @@ public partial class _Default : System.Web.UI.Page
 										//inviaPromemoria(strTo,strSubject,strCorpo, dtPagamentiFuturi.Rows[i]["Documenti_PDF"].ToString());
 								  }else{
 					          //strTo="studiorsw@gmail.com";
-							      strRisultatoFuturi+="<tr><td>" + (i+1) + "</td><td><a href=\"/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=" + dtPagamentiFuturi.Rows[i]["Anagrafiche_Ky"].ToString() + "\"><i class=\"fa-duotone fa-user fa-fw\"></i>" + dtPagamentiFuturi.Rows[i]["Anagrafiche_RagioneSociale"].ToString() + "</a></td>";
+							      strRisultatoFuturi+="<tr><td>" + (i+1) + "</td><td><a href=\"/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=" + dtPagamentiFuturi.Rows[i]["Anagrafiche_Ky"].ToString() + "\"><i class=\"fa-duotone fa-user fa-fw\"></i>" + dtPagamentiFuturi.Rows[i]["Anagrafiche_RagioneSociale"].ToString() + "</a></td>";
 										strRisultatoFuturi+="<td>Promemoria</td>";
 										strRisultatoFuturi+="<td>" + DateTime.Now.ToString() + "</td>";
 										strRisultatoFuturi+="<td>" +  dtPagamentiFuturi.Rows[i]["Pagamenti_Data_IT"].ToString() + "</td>";
@@ -275,7 +275,7 @@ public partial class _Default : System.Web.UI.Page
           if (strAnteprima=="anteprima"){
 							//inviaPromemoria(strTo,strSubject,strCorpo,dtPagamentiScaduti.Rows[i]["Documenti_PDF"].ToString());
 				  }else{
-	            strRisultatoScaduti+="<tr><td>" + (i+1) + "</td><td><a href=\"/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=" + dtPagamentiScaduti.Rows[i]["Anagrafiche_Ky"].ToString() + "\"><i class=\"fa-duotone fa-user fa-fw\"></i>" + dtPagamentiScaduti.Rows[i]["Anagrafiche_RagioneSociale"].ToString() + "</a></td>";
+	            strRisultatoScaduti+="<tr><td>" + (i+1) + "</td><td><a href=\"/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=" + dtPagamentiScaduti.Rows[i]["Anagrafiche_Ky"].ToString() + "\"><i class=\"fa-duotone fa-user fa-fw\"></i>" + dtPagamentiScaduti.Rows[i]["Anagrafiche_RagioneSociale"].ToString() + "</a></td>";
 							strRisultatoScaduti+="<td>Sollecito</td>";
 							strRisultatoScaduti+="<td>" + DateTime.Now.ToString() + "</td>";
 							strRisultatoScaduti+="<td>" + dtPagamentiScaduti.Rows[i]["Pagamenti_Data_IT"].ToString() + "</td>";
@@ -314,9 +314,7 @@ public partial class _Default : System.Web.UI.Page
       strSQL = "INSERT INTO Attivita ";
       strSQL += "(Attivita_Descrizione";
       strSQL += ",Attivita_Inizio";
-      strSQL += ",Attivita_OraInizio";
       strSQL += ",Attivita_Scadenza";
-      strSQL += ",Attivita_OraScadenza";
       strSQL += ",Attivita_Chiusura";
       strSQL += ",Anagrafiche_Ky";
       strSQL += ",AttivitaTipo_Ky";
@@ -341,9 +339,7 @@ public partial class _Default : System.Web.UI.Page
       strSQL += " VALUES ";
       strSQL += "('Promemoria pagamento documento " + dtPagamentoOrigine.Rows[intRiga]["Pagamenti_Riferimenti"].ToString() + " per un importo di " + dtPagamentoOrigine.Rows[intRiga]["Pagamenti_Importo"].ToString() + "'";
       strSQL += ",GETDATE()";
-      strSQL += ",'08:00'";
       strSQL += ",GETDATE()";
-      strSQL += ",'08:00'";
       strSQL += ",GETDATE()";
       strSQL += "," + dtPagamentoOrigine.Rows[intRiga]["Anagrafiche_Ky"].ToString();
       strSQL += ",6";

@@ -36,7 +36,7 @@ public partial class _Default : System.Web.UI.Page
                     strRedirect="attivita-da-fare.aspx?Utenti_Ky=" + strUtenti_Ky + "&Commesse_Ky" + strCommesse_Ky;
                     break;
                 case "scheda-anagrafiche":
-                    strRedirect="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=" + strAnagrafiche_Ky;
+                    strRedirect="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=" + strAnagrafiche_Ky;
                     break;
                 case "elenco-note":
                     strRedirect="/admin/view.aspx?CoreModules_Ky=19&CoreEntities_Ky=161&CoreGrids_Ky=106&Anagrafiche_Ky=" + strAnagrafiche_Ky + "&Commesse_Ky" + strCommesse_Ky;
@@ -45,7 +45,7 @@ public partial class _Default : System.Web.UI.Page
                     strRedirect="/admin/view.aspx?CoreModules_Ky=19&CoreEntities_Ky=161&CoreGrids_Ky=106&Anagrafiche_Ky=" + strAnagrafiche_Ky + "&Commesse_Ky" + strCommesse_Ky;
                     break;
                 case "scheda-commessa":
-                    strRedirect="/admin/app/progetti/scheda-commesse.aspx?Commesse_Ky=" + strCommesse_Ky;
+                    strRedirect="/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=" + strCommesse_Ky;
                     break;
                 case "scheda-attivita":
                     strRedirect="/admin/app/attivita/scheda-attivita.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreForms_Ky=129&Attivita_Ky=" + strAttivita_Ky;

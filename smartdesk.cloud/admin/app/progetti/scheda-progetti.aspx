@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="it">
 <head>
-	<title>Progetti > Scheda progetto</title>
+	<title><%=strH1%></title>
 	<!--#include file="/admin/inc-head.aspx"-->
 </head>
 <body>
@@ -12,11 +12,11 @@
   <div class="content-header" data-sticky="content-header" data-margin-top="0" data-margin-bottom="1" style="width:100%">
       <div class="grid-x grid-padding-x align-middle">
           <div class="large-4 medium-4 small-12 cell align-middle">
-            <h1><i class="fa-duotone fa-building fa-lg fa-fw"></i><%=strH1%>:<span class="badge large secondary"><i class="fa-duotone fa-database fa-fw"></i><%=GetFieldValue(dtCommesse, "Commesse_Ky")%></span></h1>
+            <h1><i class="<%=GetFieldValue(dtCommesse, "CommesseTipo_Icona")%> fa-lg fa-fw"></i><%=strH1%>:<span class="badge large secondary"><i class="fa-duotone fa-database fa-fw"></i><%=GetFieldValue(dtCommesse, "Commesse_Ky")%></span></h1>
           </div>
           <div class="large-8 medium-8 small-12 cell float-right align-middle">
         			<div class="stacked-for-small button-group small hide-for-print align-right">
-        				<a href="/admin/app/progetti/elenco-progetti.aspx" class="button clear"><i class="fa-duotone fa-backward fa-fw"></i>Torna all'elenco</a>
+        				<a href="/admin/app/progetti/elenco-commesse.aspx?custom=1&CoreGrids_Ky=118" class="button clear"><i class="fa-duotone fa-backward fa-fw"></i>Torna all'elenco</a>
         				<% if (strAzione!="new"){ %>
         				<a href="#" class="button secondary dropdown" data-toggle="dropdownsstampa"><i class="fa-duotone fa-print fa-fw"></i>Stampa</a>
         				<div class="dropdown-pane" id="dropdownsstampa" data-dropdown data-hover="true" data-hover-pane="true">

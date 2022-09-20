@@ -88,7 +88,7 @@
 		            <td><input type="checkbox" class="checkrow" id="record<%=dtPagamentiScaduti.Rows[i]["Pagamenti_Ky"].ToString()%>" data-value="<%=dtPagamentiScaduti.Rows[i]["Pagamenti_Ky"].ToString()%>" /></td>
   		          <td>
   								<div class="width250">
-  		            	<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=dtPagamentiScaduti.Rows[i]["Anagrafiche_Ky"].ToString()%>" title="Email: <%=dtPagamentiScaduti.Rows[i]["Anagrafiche_EmailAmministrazione"].ToString()%> - Telefono: <%=dtPagamentiScaduti.Rows[i]["Anagrafiche_Telefono"].ToString()%>">
+  		            	<a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=dtPagamentiScaduti.Rows[i]["Anagrafiche_Ky"].ToString()%>" title="Email: <%=dtPagamentiScaduti.Rows[i]["Anagrafiche_EmailAmministrazione"].ToString()%> - Telefono: <%=dtPagamentiScaduti.Rows[i]["Anagrafiche_Telefono"].ToString()%>">
 	                  <% if (dtPagamentiScaduti.Rows[i]["Anagrafiche_SitoWeb"].ToString().Length>1){ %>
 	                  <img src="https://www.google.com/s2/favicons?domain=<%=dtPagamentiScaduti.Rows[i]["Anagrafiche_SitoWeb"].ToString()%>" width="16" height="16" border="0">
 	                  <% }else{ %>
@@ -208,7 +208,7 @@
 									<td><input type="checkbox" class="checkrow" id="record<%=dtPagamentiFuturi.Rows[i]["Pagamenti_Ky"].ToString()%>" data-value="<%=dtPagamentiFuturi.Rows[i]["Pagamenti_Ky"].ToString()%>" /></td>
 									<td>
 										<div class="width250">
-											<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=dtPagamentiFuturi.Rows[i]["Anagrafiche_Ky"].ToString()%>" title="Email: <%=dtPagamentiFuturi.Rows[i]["Anagrafiche_EmailAmministrazione"].ToString()%> - Telefono: <%=dtPagamentiFuturi.Rows[i]["Anagrafiche_Telefono"].ToString()%>">
+											<a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=dtPagamentiFuturi.Rows[i]["Anagrafiche_Ky"].ToString()%>" title="Email: <%=dtPagamentiFuturi.Rows[i]["Anagrafiche_EmailAmministrazione"].ToString()%> - Telefono: <%=dtPagamentiFuturi.Rows[i]["Anagrafiche_Telefono"].ToString()%>">
 											<% if (dtPagamentiFuturi.Rows[i]["Anagrafiche_SitoWeb"].ToString().Length>1){ %>
 											<img src="https://www.google.com/s2/favicons?domain=<%=dtPagamentiFuturi.Rows[i]["Anagrafiche_SitoWeb"].ToString()%>" width="16" height="16" border="0">
 											<% }else{ %>

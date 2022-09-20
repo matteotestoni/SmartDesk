@@ -4,9 +4,7 @@
 <head>	
   <title><%=strH1%></title>
   <!--#include file="/admin/inc-head.aspx"-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/10.1.0/highcharts.min.js" integrity="sha512-SogfwUFpH9rofYV9j8NNbDSOuFOBvaVR86iNy3RblVGzRBMPWLA8es+P3JrfvRLNgCZLFK3SmnTddImp3UK0pQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/10.1.0/highcharts-3d.min.js" integrity="sha512-uqz7yyIqQbcbaO6gmrXtJ+HMbXFX7YlsVG+S7Mqoq9bjSWhWhRGCCRiYgloJvntEf1r0bsRivm6BUaCWgv3TIA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/10.1.0/modules/exporting.min.js" integrity="sha512-a65yKVWaMTqOJbXD+fkCsv8ENApqxchdbBW8+PpUbPPSgTVSwJFKG3TnKfqz4p3GRHiY0fnRyjLoFMN0jyM6Sw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<!--#include file="/admin/inc-head-highcharts.aspx"-->
 </head>
 <body> 
 <!--#include file=/admin/inc-mainbar.aspx --> 
@@ -30,8 +28,8 @@
 <div class="homecontent">
   <div class="grid-container fluid">
     <div class="grid-x grid-padding-x">
-    	<div class="large-12 medium-12 small-12 cell">
-    					<ul class="tabs" data-responsive-accordion-tabs="tabs small-accordion medium-tabs large-tabs" role="tablist" id="home-tabs">
+    	<div class="large-2 medium-3 small-12 cell">
+    					<ul class="tabs vertical" data-responsive-accordion-tabs="tabs small-accordion medium-tabs large-tabs" role="tablist" id="home-tabs">
     			      	<% if (dtLogin.Rows[0]["UtentiGruppi_Amministrazione"].Equals(true)){ %>
     			    		<li class="tabs-title<%=strActiveTab%>" role="presentational"><a href="#tabs-1"><i class="fa-duotone fa-euro-sign fa-fw"></i>Amministrazione</a></li>
     			    		<%
@@ -82,7 +80,9 @@
                             }
     						%>
     			    	</ul>
-    			      <div class="tabs-content" data-tabs-content="home-tabs">
+    	</div>
+      <div class="large-10 medium-9 small-12 cell">
+    			      <div class="tabs-content vertical" data-tabs-content="home-tabs">
     						<% if (dtLogin.Rows[0]["UtentiGruppi_Amministrazione"].Equals(true)){ %>
     					  		<section role="tabpanel" aria-hidden="false" class="tabs-panel<%=strActive%>" id="tabs-1">
     					  				<%strActive="";%>
@@ -165,7 +165,23 @@
     
     
               </div>
-    		</div>
+    		</div>        
+    </div>
+    <div class="grid-x grid-padding-x">
+    	<div class="large-12 medium-12 small-12 cell">
+          <hr>
+          <div class="text-center">
+            <%
+          string strHost = "";
+          for (int i = 0; i < dtCMSLink.Rows.Count; i++){ 
+            strHost = new Uri(dtCMSLink.Rows[i]["CMSLink_Link"].ToString()).Host.ToLower();
+          %>
+    			<a href="<%=dtCMSLink.Rows[i]["CMSLink_Link"].ToString()%>" target="_blank" class="tiny button clear">
+            <img src="https://icons.duckduckgo.com/ip3/<%=strHost%>.ico" width="16" height="16" border="0" style="margin-right:3px"><%=dtCMSLink.Rows[i]["CMSLink_Descrizione"].ToString()%>
+          </a>
+        <% } %>
+        </div>
+    	</div>        
     </div>
   </div>
 </div>

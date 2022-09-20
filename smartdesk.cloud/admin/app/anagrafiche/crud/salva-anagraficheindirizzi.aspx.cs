@@ -26,11 +26,11 @@ using System.Collections.Generic;
             {
                 case "scheda-anagrafiche":
                     strRedirect="/admin/form.aspx?CoreModules_Ky=1&CoreEntities_Ky=26&CoreForms_Ky=107&salvato=salvato&AnagraficheIndirizzi_Ky=" + strKy;
-                    strRedirect="/admin/app/anagrafiche/scheda-anagrafiche.aspx?salvato=salvato&AnagraficheIndirizzi_Ky=" + strKy + "&Anagrafiche_Ky=" + strAnagrafiche_Ky + "#tabs-indirizzi";
+                    strRedirect="/admin/goto-form.aspx?CoreEntities_Ky=162&salvato=salvato&AnagraficheIndirizzi_Ky=" + strKy + "&Anagrafiche_Ky=" + strAnagrafiche_Ky + "#tabs-indirizzi";
                     break;
                 default:
                     strRedirect = "/admin/form.aspx?CoreModules_Ky=1&CoreEntities_Ky=26&CoreForms_Ky=107&salvato=salvato&AnagraficheIndirizzi_Ky=" + strKy;
-                    strRedirect="/admin/app/anagrafiche/scheda-anagrafiche.aspx?salvato=salvato&AnagraficheIndirizzi_Ky=" + strKy + "&Anagrafiche_Ky=" + strAnagrafiche_Ky + "#tabs-indirizzi";
+                    strRedirect="/admin/goto-form.aspx?CoreEntities_Ky=162&salvato=salvato&AnagraficheIndirizzi_Ky=" + strKy + "&Anagrafiche_Ky=" + strAnagrafiche_Ky + "#tabs-indirizzi";
                     break;
             }
 

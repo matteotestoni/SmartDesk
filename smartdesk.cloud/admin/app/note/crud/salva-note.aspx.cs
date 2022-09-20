@@ -19,7 +19,7 @@ public partial class _Default : System.Web.UI.Page
             strKy = Smartdesk.Functions.SqlWriteKey("Note");
 	          switch (strSorgente){
 	            case "scheda-anagrafiche":
-	              strRedirect="/admin/app/anagrafiche/scheda-anagrafiche.aspx?salvato=salvato&Anagrafiche_Ky=" + strAnagrafiche_Ky;
+	              strRedirect="/admin/goto-form.aspx?CoreEntities_Ky=162&salvato=salvato&Anagrafiche_Ky=" + strAnagrafiche_Ky;
 	              break;
 	            case "scheda-commessa":
 	              strRedirect="/admin/app/progetti/scheda-commesse.aspx?salvato=salvato&Commesse_Ky=" + strCommesse_Ky + "&Anagrafiche_Ky=" + strAnagrafiche_Ky;

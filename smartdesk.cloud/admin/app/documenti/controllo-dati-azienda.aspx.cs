@@ -8,23 +8,18 @@ using System.IO;
 
 public partial class _Default : System.Web.UI.Page 
 {
-    
-    
     public int intNumRecords = 0;
     public int i = 0;
     public System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("it-IT");
     public string strLogin="";
     public DataTable dtLogin;
-    
     public bool boolAdmin = false;
-    
     public DataTable dtTemp;
     public DataTable dtTemp2;
     public string strFROMNet = "";
     public string strH1 = "";
     public string strRisultato = "";
     
-
     protected void Page_Load(object sender, EventArgs e)
     {
       string strSQL="";
@@ -32,26 +27,11 @@ public partial class _Default : System.Web.UI.Page
       string strORDERNet = "";
       int i=0;
 
-      
-      
-			
       if (Smartdesk.Login.Verify){
-          dtLogin = Smartdesk.Data.Read("Utenti_Vw","Utenti_Ky", Smartdesk.Session.CurrentUser.ToString());          if (dtLogin.Rows.Count>0){
+          dtLogin = Smartdesk.Data.Read("Utenti_Vw","Utenti_Ky", Smartdesk.Session.CurrentUser.ToString());          
+          if (dtLogin.Rows.Count>0){
             strRisultato="<ul>";
-            
             boolAdmin=(dtLogin.Rows[0]["Utenti_Admin"]).Equals(true);
-
-	          SqlDataAdapter da = new SqlDataAdapter();
-	          DataTable dt = new DataTable("getTable");
-	         SqlConnection cn = new SqlConnection(Smartdesk.Config.Sql.ConnectionWrite);
-	          SqlCommand cm = new SqlCommand();
-	          
-	          cm.CommandType = CommandType.Text;
-	          cm.Connection = cn;
-	          cm.CommandTimeout = 300;
-	          da.SelectCommand = cm;
-	          cn.Open();
-
             strWHERENet="";
             strORDERNet = "Documenti_Ky";
             strFROMNet = "Documenti";
@@ -68,11 +48,9 @@ public partial class _Default : System.Web.UI.Page
 							}else{
             		strSQL = "UPDATE Documenti SET DocumentiStato_Ky=6 WHERE Documenti_Ky=" + dtTemp.Rows[i]["Documenti_Ky"].ToString();
 							}
-            	cm.CommandText = strSQL;
-            	cm.ExecuteNonQuery();								
+              new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
             }
             strRisultato="dati aggiornati";        
-            
           }else{
             Response.Redirect(Smartdesk.Current.LoginPageRoot);
           }

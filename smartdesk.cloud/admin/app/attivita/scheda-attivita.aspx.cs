@@ -128,20 +128,6 @@ public partial class _Default : System.Web.UI.Page
 				case "Attivita_Chiusura_IT":
 					//strValore=DateTime.Now.ToString("d");
 					break;
-				case "Attivita_OraInizio":
-					if (strStart!=null){
-						strValore=strStart;
-					}else{
-						strValore=DateTime.Now.ToString("HH:mm").Replace(".",":");
-					}
-					break;
-				case "Attivita_OraScadenza":
-					if (strEnd!=null){
-						strValore=strEnd;
-					}else{
-						strValore="18:00";
-					}
-					break;
 				case "AttivitaTipo_Ky":
 					if (strAttivitaTipo_Ky!=null){
 						strValore=strAttivitaTipo_Ky;

@@ -43,7 +43,7 @@
 			</div>
 	  	<div class="shrink cell hide-for-small-only">
         <% if (GetFieldValue(dtAttivita, "Anagrafiche_Ky")!=null && GetFieldValue(dtAttivita, "Anagrafiche_Ky").Length>0){ %>
-					<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=GetFieldValue(dtAttivita, "Anagrafiche_Ky")%>" style="margin-top:4px"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw fa-lg"></i></a>
+					<a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=GetFieldValue(dtAttivita, "Anagrafiche_Ky")%>" style="margin-top:4px"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw fa-lg"></i></a>
 				<% } %>
 			</div>
 </div>
@@ -176,50 +176,33 @@
   	<div class="large-1 medium-2 small-4 cell">
 			<label for="Attivita_Inizio" class="large-text-right small-text-right middle"><span class="label">Inizio</span></label>
 		</div>
-  	<div class="shrink cell">
+  	<div class="large-2 medium-2 small-8 cell">
       <div class="input-group">
         <span class="input-group-label"><i class="fa-duotone fa-calendar-days fa-fw"></i></span>
-       	<input class="input-group-field fdatepicker" type="text" name="Attivita_Inizio" id="Attivita_Inizio" value="<%=GetFieldValue(dtAttivita, "Attivita_Inizio_IT")%>" required="required" size="10">
+       	<input class="input-group-field fdatetimepicker" type="text" name="Attivita_Inizio" id="Attivita_Inizio" value="<%=GetFieldValue(dtAttivita, "Attivita_Inizio")%>" required="required" size="10">
       </div>
     	<span class="form-error">Obbligatorio</span>
 		</div>
-  	<div class="shrink cell">
-      <div class="input-group">
-        <span class="input-group-label"><i class="fa-duotone fa-clock fa-fw"></i></span>
-        <input class="input-group-field timepicker" type="text" name="Attivita_OraInizio" id="Attivita_OraInizio" value="<%=GetFieldValue(dtAttivita, "Attivita_OraInizio")%>" size="5">
-      </div>
-      <span class="form-error">Obbligatorio</span>
-		</div>
-		
   	<div class="large-1 medium-2 small-4 cell">
 			<label for="Attivita_Scadenza" class="large-text-right small-text-right middle"><span class="label">Scadenza</span></label>
 		</div>
-  	<div class="shrink cell">
+  	<div class="large-2 medium-2 small-8 cell">
       <div class="input-group">
         <span class="input-group-label"><i class="fa-duotone fa-calendar-days fa-fw"></i></span>
-    	  <input class="input-group-field fdatepicker" type="text" name="Attivita_Scadenza" id="Attivita_Scadenza" value="<%=GetFieldValue(dtAttivita, "Attivita_Scadenza_IT")%>" required="required" size="10">
+    	  <input class="input-group-field fdatetimepicker" type="text" name="Attivita_Scadenza" id="Attivita_Scadenza" value="<%=GetFieldValue(dtAttivita, "Attivita_Scadenza")%>" required="required" size="10">
       </div>
     	<span class="form-error">Obbligatorio</span>
 		</div>
-  	<div class="shrink cell">
-      <div class="input-group">
-        <span class="input-group-label"><i class="fa-duotone fa-clock fa-fw"></i></span>
-      	<input class="input-group-field timepicker" type="text" name="Attivita_OraScadenza" id="Attivita_OraScadenza" value="<%=GetFieldValue(dtAttivita, "Attivita_OraScadenza")%>" size="6">
-      </div>
-      <span class="form-error">Obbligatorio</span>
-		</div>
-		
-		
   	<div class="large-1 medium-2 small-4 cell">
 			<label for="Attivita_Completo" class="large-text-right small-text-right middle"><span class="label">Chiusa?</span></label>
 		</div>
   	<div class="shrink cell">
       <input type="checkbox" name="Attivita_Completo" id="Attivita_Completo" value="on" <% if (GetCheckValue(dtAttivita, "Attivita_Completo")){ Response.Write("checked=\"checked\"");} %> onchange="chgCompleto()" />
 		</div>
-  	<div class="shrink cell">
+  	<div class="large-2 medium-2 cell">
       <div class="input-group">
         <span class="input-group-label"><i class="fa-duotone fa-calendar-days fa-fw"></i></span>
-    	  <input class="input-group-field fdatepicker" type="text" name="Attivita_Chiusura" id="Attivita_Chiusura" value="<%=GetFieldValue(dtAttivita, "Attivita_Chiusura_IT")%>" size="10">
+    	  <input class="input-group-field fdatetimepicker" type="text" name="Attivita_Chiusura" id="Attivita_Chiusura" value="<%=GetFieldValue(dtAttivita, "Attivita_Chiusura")%>" size="10">
       </div>
       <span class="form-error">Obbligatorio</span>
 		</div>

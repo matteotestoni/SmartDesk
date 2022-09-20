@@ -20,10 +20,10 @@ public partial class _Default : System.Web.UI.Page
             switch (strSorgente)
             {
 	              case "scheda-anagrafiche":
-	                  strRedirect="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=" + strAnagrafiche_Ky + "&salvato=salvato";
+	                  strRedirect="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=" + strAnagrafiche_Ky + "&salvato=salvato";
 	                  break;
 	              default:
-	                  strRedirect="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=" + strAnagrafiche_Ky + "&salvato=salvato";
+	                  strRedirect="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=" + strAnagrafiche_Ky + "&salvato=salvato";
 	                  break;
             }
 	        Response.Redirect(strRedirect);

@@ -126,9 +126,7 @@
                   <td><input type="checkbox" class="checkrow" id="record<%=dtAssenze.Rows[i]["PersoneAssenze_Ky"].ToString()%>" data-value="<%=dtAssenze.Rows[i]["PersoneAssenze_Ky"].ToString()%>" /></td>
                   <td>
                     <i class="fa-duotone fa-calendar-days fa-fw"></i>
-                  <% if (dtAssenze.Rows[i]["PersoneAssenze_Lock"].Equals(false)){ %>
                   <a href="/admin/app/persone/scheda-personeassenze.aspx?PersoneAssenze_Ky=<%=dtAssenze.Rows[i]["PersoneAssenze_Ky"].ToString()%>">
-                  <% } %>
                   <%=dtAssenze.Rows[i]["PersoneAssenze_Data_IT"].ToString()%>
                   <% if (dtAssenze.Rows[i]["PersoneAssenze_Lock"].Equals(false)){ %>
                   </a> 
@@ -190,71 +188,71 @@
             decSaldo=intOreFerie+decTotRecuperi-decTotAssenze;
             %>
             <tr class="totale">
-            <td bgcolor="#ffffff" colspan="6"></td>
-            <td class="text-left">Ore Festivit&agrave;:</td>
+            <td bgcolor="#ffffff" colspan="5"></td>
+            <td class="text-right" colspan="2">Ore Festivit&agrave;:</td>
             <td class="large-text-right small-text-left"><i class="fa-duotone fa-clock fa-fw"></i><strong><%=decTotFestivita.ToString("N2", ci)%></strong></td>
             <td colspan="2">| circa <%=(decTotFestivita/intOreGiornaliere).ToString("N2", ci)%> giorni</td>
             <td bgcolor="#ffffff"></td>
             </tr>
             <tr class="totale">
-              <td bgcolor="#ffffff" colspan="6"></td>
-              <td class="text-left">Assenze <%=intAnno%>:</td>
+              <td bgcolor="#ffffff" colspan="5"></td>
+              <td class="text-right" colspan="2">Assenze <%=intAnno%>:</td>
               <td class="large-text-right small-text-left"><i class="fa-duotone fa-clock fa-fw"></i><strong><%=decTotAssenze.ToString("N2", ci)%></strong></td>
               <td colspan="2">| circa <%=(decTotAssenze/intOreGiornaliere).ToString("N2", ci)%> giorni</td>
               <td bgcolor="#ffffff"></td>
             </tr>
             <tr class="totale">
-              <td bgcolor="#ffffff" colspan="6"></td>
-              <td class="text-left">Ritardi <%=intAnno%>:</td>
+              <td bgcolor="#ffffff" colspan="5"></td>
+              <td class="text-right" colspan="2">Ritardi <%=intAnno%>:</td>
               <td class="large-text-right small-text-left"><i class="fa-duotone fa-clock fa-fw"></i><strong><%=decTotRitardi.ToString("N2", ci)%></strong></td>
               <td colspan="2">| circa <%=(decTotRitardi/intOreGiornaliere).ToString("N2", ci)%> giorni</td>
               <td bgcolor="#ffffff"></td>
             </tr>
             <tr class="totale">
-              <td bgcolor="#ffffff" colspan="6"></td>
-              <td class="text-left">Uscite anticipate <%=intAnno%>:</td>
+              <td bgcolor="#ffffff" colspan="5"></td>
+              <td class="text-right" colspan="2">Uscite anticipate <%=intAnno%>:</td>
               <td class="large-text-right small-text-left"><i class="fa-duotone fa-clock fa-fw"></i><strong><%=decTotUsciteAnticipate.ToString("N2", ci)%></strong></td>
               <td colspan="2">| circa <%=(decTotUsciteAnticipate/intOreGiornaliere).ToString("N2", ci)%> giorni</td>
               <td bgcolor="#ffffff"></td>
             </tr>
             <tr class="totale">
-            <td bgcolor="#ffffff" colspan="6"></td>
-            <td class="text-left">Recuperi <%=intAnno%>:</td>
+            <td bgcolor="#ffffff" colspan="5"></td>
+            <td class="text-right" colspan="2">Recuperi <%=intAnno%>:</td>
             <td class="large-text-right small-text-left"><i class="fa-duotone fa-clock fa-fw"></i><strong><%=decTotRecuperi.ToString("N2", ci)%></strong></td>
             <td colspan="2">| circa <%=(decTotRecuperi/intOreGiornaliere).ToString("N2", ci)%> giorni</td>
             <td bgcolor="#ffffff"></td>
             </tr>
             <tr class="totale">
-            <td bgcolor="#ffffff" colspan="6"></td>
-            <td class="text-left">Presenze ordinarie <%=intAnno%>:</td>
+            <td bgcolor="#ffffff" colspan="5"></td>
+            <td class="text-right" colspan="2">Presenze ordinarie <%=intAnno%>:</td>
             <td class="large-text-right small-text-left"><i class="fa-duotone fa-clock fa-fw"></i><strong><%=decTotPresenzeOrdinarie.ToString("N2", ci)%></strong></td>
             <td colspan="2">| circa <%=(decTotPresenzeOrdinarie/intOreGiornaliere).ToString("N2", ci)%> giorni</td>
             <td bgcolor="#ffffff"></td>
             </tr>
             <tr class="totale">
-            <td bgcolor="#ffffff" colspan="6"></td>
-            <td class="text-left">Presenze straordinarie <%=intAnno%>:</td>
+            <td bgcolor="#ffffff" colspan="5"></td>
+            <td class="text-right" colspan="2">Presenze straordinarie <%=intAnno%>:</td>
             <td class="large-text-right small-text-left"><i class="fa-duotone fa-clock fa-fw"></i><strong><%=decTotPresenzeStraordinarie.ToString("N2", ci)%></strong></td>
             <td colspan="2">| circa <%=(decTotPresenzeStraordinarie/intOreGiornaliere).ToString("N2", ci)%> giorni</td>
             <td bgcolor="#ffffff"></td>
             </tr>
             <tr class="totale">
-            <td bgcolor="#ffffff" colspan="6"></td>
-            <td class="text-left">Malattia <%=intAnno%>:</td>
+            <td bgcolor="#ffffff" colspan="5"></td>
+            <td class="text-right" colspan="2">Malattia <%=intAnno%>:</td>
             <td class="large-text-right small-text-left"><i class="fa-duotone fa-clock fa-fw"></i><strong><%=decTotMalattia.ToString("N2", ci)%></strong></td>
             <td colspan="2">| circa <%=(decTotMalattia/intOreGiornaliere).ToString("N2", ci)%> giorni</td>
             <td bgcolor="#ffffff"></td>
             </tr>
             <tr class="totale">
-            <td bgcolor="#ffffff" colspan="6"></td>
-            <td class="text-left">Cassa integrazione <%=intAnno%>:</td>
+            <td bgcolor="#ffffff" colspan="5"></td>
+            <td class="text-right" colspan="2">Cassa integrazione <%=intAnno%>:</td>
             <td class="large-text-right small-text-left"><i class="fa-duotone fa-clock fa-fw"></i><strong><%=decTotCassaIntegrazione.ToString("N2", ci)%></strong></td>
             <td colspan="2">| circa <%=(decTotCassaIntegrazione/intOreGiornaliere).ToString("N2", ci)%> giorni</td>
             <td bgcolor="#ffffff"></td>
             </tr>
             <tr class="totale hide">
-            <td bgcolor="#ffffff" colspan="6"></td>
-            <td class="text-left">Saldo <%=intAnno%>:</td>
+            <td bgcolor="#ffffff" colspan="5"></td>
+            <td class="text-right" colspan="2">Saldo <%=intAnno%>:</td>
             <td class="large-text-right small-text-left"><i class="fa-duotone fa-clock fa-fw"></i><strong><%=(intOreFerie+decTotRecuperi-decTotAssenze).ToString("N2", ci)%></strong></td>
             <td colspan="2">| circa <%=((intOreFerie+decTotRecuperi-decTotAssenze)/intOreGiornaliere).ToString("N2", ci)%> giorni</td>
             <td bgcolor="#ffffff"></td>

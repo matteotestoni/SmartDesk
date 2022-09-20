@@ -157,15 +157,13 @@ public partial class _Default : System.Web.UI.Page
             strSQL+="('checkout', '', '/checkout/conferma-carrello.html','/frontend/" + strTheme + "/checkout/carrello-conferma.aspx'," + Smartdesk.Session.CurrentUser.ToString() + ",GETDATE());";
             new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
 
-            //Blog
+            //contenuti
             strRisultato+="<li>Blog</li>"; 
             strSQL="DELETE FROM CoreUrlRewrite WHERE CoreEntities_Code='blog';";
             new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
             strSQL+="INSERT CoreUrlRewrite (CoreEntities_Code, CoreEntities_KeyValue,CoreUrlRewrite_UrlSource,CoreUrlRewrite_UrlDestination,CoreUrlRewrite_UserInsert,CoreUrlRewrite_DateInsert) VALUES ";
             strSQL+="('blog', '', '/blog/','/frontend/" + strTheme + "/contenuti/elenco-contenuti.aspx'," + Smartdesk.Session.CurrentUser.ToString() + ",GETDATE());";
             new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
-
-            //Blog
             strRisultato+="<li>Contenuti</li>"; 
             strSQL="DELETE FROM CoreUrlRewrite WHERE CoreEntities_Code='contenuti';";
             new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);

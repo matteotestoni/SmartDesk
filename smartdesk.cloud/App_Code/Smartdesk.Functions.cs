@@ -300,7 +300,7 @@ namespace Smartdesk{
      */
   	public static string GetOreResidue(string strValore){
   	string strReturn;
-  		if (strValore==null){
+  		if (strValore==null || strValore.Length<1 || strValore==""){
   			strReturn="0";
   		}else{
   			if (Convert.ToDouble(strValore)<0){

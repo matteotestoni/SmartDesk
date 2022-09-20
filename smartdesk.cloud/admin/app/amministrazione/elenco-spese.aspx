@@ -83,7 +83,7 @@
 							</td>
 		          <td>
 								<div class="width350">
-		            	Fornitore: <a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=dtGridData.Rows[i]["Anagrafiche_Ky"].ToString()%>" title="Email: <%=dtGridData.Rows[i]["Anagrafiche_EmailAmministrazione"].ToString()%> - Telefono: <%=dtGridData.Rows[i]["Anagrafiche_Telefono"].ToString()%>">
+		            	Fornitore: <a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=dtGridData.Rows[i]["Anagrafiche_Ky"].ToString()%>" title="Email: <%=dtGridData.Rows[i]["Anagrafiche_EmailAmministrazione"].ToString()%> - Telefono: <%=dtGridData.Rows[i]["Anagrafiche_Telefono"].ToString()%>">
                   <% if (dtGridData.Rows[i]["Anagrafiche_SitoWeb"].ToString().Length>1){ %>
                   <img src="https://www.google.com/s2/favicons?domain=<%=dtGridData.Rows[i]["Anagrafiche_SitoWeb"].ToString()%>" width="16" height="16" border="0">
                   <% }else{ %>
@@ -92,7 +92,7 @@
 									<%=dtGridData.Rows[i]["Anagrafiche_RagioneSociale"].ToString()%></a>
 								</div> 
 								<div class="width350">
-		            	Cliente:&nbsp;&nbsp;&nbsp;&nbsp;<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=dtGridData.Rows[i]["Anagrafiche_ClienteKy"].ToString()%>">
+		            	Cliente:&nbsp;&nbsp;&nbsp;&nbsp;<a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=dtGridData.Rows[i]["Anagrafiche_ClienteKy"].ToString()%>">
                   <% if (dtGridData.Rows[i]["Anagrafiche_ClienteSitoWeb"].ToString().Length>1){ %>
                   <img src="https://www.google.com/s2/favicons?domain=<%=dtGridData.Rows[i]["Anagrafiche_ClienteSitoWeb"].ToString()%>" width="16" height="16" border="0">
                   <% }else{ %>

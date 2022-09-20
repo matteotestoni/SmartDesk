@@ -1,6 +1,6 @@
 <ul class="menu vertical medium-horizontal hide-for-print align-middle" data-responsive-menu="drilldown medium-dropdown">
   <% if (dtLogin.Rows[0]["UtentiGruppi_Calendario"].Equals(true)){ %>
-    <li class="has-submenu"><a href="/admin/app/calendario/calendario.aspx" title="Calendario"><i class="fa-duotone fa-calendar-days fa-xl fa-fw"></i></a></li>
+    <li class="has-submenu"><a href="/admin/app/attivita/calendario.aspx" title="Calendario"><i class="fa-duotone fa-calendar-days fa-xl fa-fw"></i></a></li>
   <% } %>
   <%
       System.Data.DataTable dtCoreMenusMenu; 

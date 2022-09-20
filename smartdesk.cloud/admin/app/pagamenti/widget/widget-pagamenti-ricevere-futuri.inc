@@ -39,7 +39,7 @@
         <tr class="riga<%=i%2%>">
           <td>
             <div>
-							<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=dtPagamentiFuturi.Rows[i]["Anagrafiche_Ky"].ToString()%>" title="Fattura <%=dtPagamentiFuturi.Rows[i]["Pagamenti_Riferimenti"].ToString()%>"><i class="fa-duotone fa-users fa-fw"></i><%=dtPagamentiFuturi.Rows[i]["Anagrafiche_RagioneSociale"].ToString()%></a>
+							<a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=dtPagamentiFuturi.Rows[i]["Anagrafiche_Ky"].ToString()%>" title="Fattura <%=dtPagamentiFuturi.Rows[i]["Pagamenti_Riferimenti"].ToString()%>"><i class="fa-duotone fa-users fa-fw"></i><%=dtPagamentiFuturi.Rows[i]["Anagrafiche_RagioneSociale"].ToString()%></a>
           	</div>
           </a>
           </td>

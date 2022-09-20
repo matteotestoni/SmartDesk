@@ -41,7 +41,7 @@ using System.Data;
                 Response.Redirect("/admin/app/anagrafiche/elenco-anagrafiche-da-fatturare.aspx");
                 break;
               case "scheda-anagrafiche":
-                Response.Redirect("/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=" + strAnagrafiche_Ky);
+                Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=" + strAnagrafiche_Ky);
                 break;
             }
       }else{

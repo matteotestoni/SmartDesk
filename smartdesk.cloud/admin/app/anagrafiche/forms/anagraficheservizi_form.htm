@@ -38,7 +38,7 @@
 	</div>
 	<div class="shrink cell">
     <% if (GetFieldValue(dtAnagraficheServizi, "Anagrafiche_Ky")!=null && GetFieldValue(dtAnagraficheServizi, "Anagrafiche_Ky").Length>0){ %>
-			<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=GetFieldValue(dtAnagraficheServizi, "Anagrafiche_Ky")%>" style="margin-top:4px"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw fa-lg"></i></a>
+			<a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=GetFieldValue(dtAnagraficheServizi, "Anagrafiche_Ky")%>" style="margin-top:4px"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw fa-lg"></i></a>
 		<% } %>
 	</div>
 </div>

@@ -38,8 +38,6 @@
       <Field Column="ggRitardo" IsNull="Y" Type="int" />
       <Field Column="Commesse_OrePreviste" IsNull="Y" Type="float" />
       <Field Column="Commesse_OreImpiegate" IsNull="Y" Type="float" />
-      <Field Column="CommesseStato_Icona" IsNull="Y" Type="varchar" Lenght="100" />
-      <Field Column="CommesseStato_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
       <Field Column="Commesse_Descrizione" IsNull="Y" Type="varchar" Lenght="-1" />
       <Field Column="CommesseStato_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
       <Field Column="Nazioni_Nazione" IsNull="Y" Type="varchar" Lenght="50" />
@@ -55,23 +53,27 @@
       <Field Column="CommesseTipo_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
       <Field Column="CommesseTipo_Icona" IsNull="Y" Type="varchar" Lenght="100" />
       <Field Column="CommesseTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="CommesseStato_Icona" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CommesseStato_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CommesseStato_Colore" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Commesse_DataInizioLavori" IsNull="Y" Type="smalldatetime" />
     </Fields>
   </Tables>
-  <SqlScriptCreate>CREATE VIEW dbo.Commesse_Vw
+  <SqlScriptCreate>CREATE VIEW [dbo].[Commesse_Vw]
 AS
-SELECT        dbo.Anagrafiche.Anagrafiche_RagioneSociale, dbo.Commesse.Commesse_Ky, dbo.Commesse.Commesse_Titolo, dbo.Commesse.Commesse_Note, dbo.Commesse.Anagrafiche_Ky, 
-                         dbo.Commesse.Commesse_Riferimenti, dbo.Commesse.CommesseStato_Ky, dbo.Anagrafiche.Anagrafiche_Note, dbo.Commesse.Commesse_Valore, CONVERT(DECIMAL(10, 2), 
-                         dbo.Commesse.Commesse_Valore) AS Commesse_Valore_IT, dbo.Anagrafiche.Anagrafiche_Telefono, dbo.Anagrafiche.Anagrafiche_ParoleChiave, dbo.Commesse.Commesse_Data, 
-                         dbo.Commesse.Commesse_DataChiusura, CONVERT(varchar, dbo.Commesse.Commesse_Data, 105) AS Commesse_Data_IT, CONVERT(varchar, dbo.Commesse.Commesse_DataChiusura, 105) 
-                         AS Commesse_DataChiusura_IT, CONVERT(varchar, dbo.Commesse.Commesse_DataInizioLavori, 105) AS Commesse_DataInizioLavori_IT, dbo.Anagrafiche.Anagrafiche_Indirizzo, 
-                         dbo.Anagrafiche.Anagrafiche_Comune, dbo.Anagrafiche.Anagrafiche_Provincia, dbo.Anagrafiche.Anagrafiche_PartitaIVA, dbo.Anagrafiche.Anagrafiche_CodiceFiscale, dbo.Commesse.Utenti_Ky, 
-                         dbo.Utenti.Utenti_Iniziali, dbo.Commesse.Commesse_Avanzamento, dbo.Utenti.Utenti_Email, dbo.Utenti.UtentiGruppi_Ky, dbo.Anagrafiche.Anagrafiche_EmailContatti, dbo.Anagrafiche.Anagrafiche_Nome, 
-                         dbo.Anagrafiche.Anagrafiche_Cognome, dbo.Commesse.Commesse_DataConsegna, CONVERT(varchar, dbo.Commesse.Commesse_DataConsegna, 105) AS Commesse_DataConsegna_IT, DATEDIFF(day, 
-                         dbo.Commesse.Commesse_DataInizioLavori, GETDATE()) AS ggTrascorsi, DATEDIFF(day, dbo.Commesse.Commesse_DataConsegna, GETDATE()) AS ggRitardo, dbo.Commesse.Commesse_OrePreviste, 
-                         dbo.Commesse.Commesse_OreImpiegate, CommesseStato_1.CommesseStato_Icona, CommesseStato_1.CommesseStato_Titolo, dbo.Commesse.Commesse_Descrizione, 
+SELECT        dbo.Anagrafiche.Anagrafiche_RagioneSociale, dbo.Commesse.Commesse_Ky, dbo.Commesse.Commesse_Titolo, dbo.Commesse.Commesse_Note, dbo.Commesse.Anagrafiche_Ky, dbo.Commesse.Commesse_Riferimenti, 
+                         dbo.Commesse.CommesseStato_Ky, dbo.Anagrafiche.Anagrafiche_Note, dbo.Commesse.Commesse_Valore, CONVERT(DECIMAL(10, 2), dbo.Commesse.Commesse_Valore) AS Commesse_Valore_IT, 
+                         dbo.Anagrafiche.Anagrafiche_Telefono, dbo.Anagrafiche.Anagrafiche_ParoleChiave, dbo.Commesse.Commesse_Data, dbo.Commesse.Commesse_DataChiusura, CONVERT(varchar, dbo.Commesse.Commesse_Data, 105) 
+                         AS Commesse_Data_IT, CONVERT(varchar, dbo.Commesse.Commesse_DataChiusura, 105) AS Commesse_DataChiusura_IT, CONVERT(varchar, dbo.Commesse.Commesse_DataInizioLavori, 105) 
+                         AS Commesse_DataInizioLavori_IT, dbo.Anagrafiche.Anagrafiche_Indirizzo, dbo.Anagrafiche.Anagrafiche_Comune, dbo.Anagrafiche.Anagrafiche_Provincia, dbo.Anagrafiche.Anagrafiche_PartitaIVA, 
+                         dbo.Anagrafiche.Anagrafiche_CodiceFiscale, dbo.Commesse.Utenti_Ky, dbo.Utenti.Utenti_Iniziali, dbo.Commesse.Commesse_Avanzamento, dbo.Utenti.Utenti_Email, dbo.Utenti.UtentiGruppi_Ky, 
+                         dbo.Anagrafiche.Anagrafiche_EmailContatti, dbo.Anagrafiche.Anagrafiche_Nome, dbo.Anagrafiche.Anagrafiche_Cognome, dbo.Commesse.Commesse_DataConsegna, CONVERT(varchar, 
+                         dbo.Commesse.Commesse_DataConsegna, 105) AS Commesse_DataConsegna_IT, DATEDIFF(day, dbo.Commesse.Commesse_DataInizioLavori, GETDATE()) AS ggTrascorsi, DATEDIFF(day, 
+                         dbo.Commesse.Commesse_DataConsegna, GETDATE()) AS ggRitardo, dbo.Commesse.Commesse_OrePreviste, dbo.Commesse.Commesse_OreImpiegate, dbo.Commesse.Commesse_Descrizione, 
                          dbo.CommesseStato.CommesseStato_Descrizione, dbo.Nazioni.Nazioni_Nazione, dbo.Nazioni.Nazioni_Codice, dbo.Regioni.Regioni_Regione, dbo.Regioni.Regioni_Codice, dbo.Comuni.Comuni_Comune, 
                          dbo.Province.Province_Provincia, dbo.Commesse.Commesse_NoteAmministrative, dbo.Commesse.Opportunita_Ky, dbo.Commesse.Commesse_Tags, dbo.Commesse.Commesse_OreResidue, 
-                         dbo.CommesseTipo.CommesseTipo_Titolo, dbo.CommesseTipo.CommesseTipo_Icona, dbo.Commesse.CommesseTipo_Ky
+                         dbo.CommesseTipo.CommesseTipo_Titolo, dbo.CommesseTipo.CommesseTipo_Icona, dbo.Commesse.CommesseTipo_Ky, dbo.CommesseStato.CommesseStato_Icona, dbo.CommesseStato.CommesseStato_Titolo, 
+                         dbo.CommesseStato.CommesseStato_Colore, dbo.Commesse.Commesse_DataInizioLavori
 FROM            dbo.Utenti RIGHT OUTER JOIN
                          dbo.Commesse LEFT OUTER JOIN
                          dbo.CommesseTipo ON dbo.Commesse.CommesseTipo_Ky = dbo.CommesseTipo.CommesseTipo_Ky LEFT OUTER JOIN
@@ -80,7 +82,5 @@ FROM            dbo.Utenti RIGHT OUTER JOIN
                          dbo.Anagrafiche ON dbo.Province.Province_Ky = dbo.Anagrafiche.Province_Ky LEFT OUTER JOIN
                          dbo.Comuni ON dbo.Anagrafiche.Comuni_Ky = dbo.Comuni.Comuni_Ky LEFT OUTER JOIN
                          dbo.Regioni ON dbo.Anagrafiche.Regioni_Ky = dbo.Regioni.Regioni_Ky LEFT OUTER JOIN
-                         dbo.Nazioni ON dbo.Anagrafiche.Nazioni_Ky = dbo.Nazioni.Nazioni_Ky ON dbo.Commesse.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky LEFT OUTER JOIN
-                         dbo.CommesseStato AS CommesseStato_1 ON dbo.Commesse.CommesseStato_Ky = CommesseStato_1.CommesseStato_Ky
-</SqlScriptCreate>
+                         dbo.Nazioni ON dbo.Anagrafiche.Nazioni_Ky = dbo.Nazioni.Nazioni_Ky ON dbo.Commesse.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky</SqlScriptCreate>
 </SqlTable>

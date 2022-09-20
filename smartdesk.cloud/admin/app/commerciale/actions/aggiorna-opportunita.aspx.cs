@@ -4,11 +4,8 @@ using System.Web;
 using System.Data;
 using System.Data.SqlClient;
 
-
   public partial class _Default : System.Web.UI.Page 
 	{
-    
-    
     public int intNumRecords = 0;
     public int i = 0;
     public System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("it-IT");
@@ -16,15 +13,11 @@ using System.Data.SqlClient;
     public DataTable dtLogin;
     public DataTable dtAttivitaTotali;
     public DataTable dtOpportunita;
-    
     public bool boolAdmin = false;
-    
     public string strAnagrafiche_Ky="";
     public string strOpportunita_Ky="";
     public string strOpportunita_Stato="";
     public string strSorgente="";
-    
-
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -32,9 +25,6 @@ using System.Data.SqlClient;
       string strWHERENet="";
       string strORDERNet = "";
       string strFROMNet = "";
-
-      
-      
 	  
       if (Smartdesk.Login.Verify){
           dtLogin = Smartdesk.Data.Read("Utenti_Vw","Utenti_Ky", Smartdesk.Session.CurrentUser.ToString());          if (dtLogin.Rows.Count>0){
@@ -72,8 +62,7 @@ using System.Data.SqlClient;
                             strOpportunita_Stato=strOpportunita_Stato.Replace("'","''");
 							if (strOpportunita_Stato!=dtOpportunita.Rows[i]["Opportunita_Stato"].ToString()){
 								strSQL = "UPDATE Opportunita SET Opportunita_Stato='" + strOpportunita_Stato + "' WHERE Opportunita_Ky=" + strOpportunita_Ky;
-			                	cm.CommandText = strSQL;
-			                	cm.ExecuteNonQuery();								
+                new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
 							}else{
 								strSQL="";	
 							}

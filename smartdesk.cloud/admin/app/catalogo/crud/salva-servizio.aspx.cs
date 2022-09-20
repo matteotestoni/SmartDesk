@@ -20,7 +20,7 @@ public partial class _Default : System.Web.UI.Page
             if (Smartdesk.Current.Request("AnagraficheServizi_Chiuso") == "") frm.Add("AnagraficheServizi_Chiuso", false);
             strKy = Smartdesk.Functions.SqlWriteKey("AnagraficheServizi", frm);
             //aggiornaAttributi();
-            strRedirect = "/admin/app/anagrafiche/scheda-anagrafiche.aspx?salvato=salvato&Anagrafiche_Ky=" + strAnagrafiche_Ky;
+            strRedirect = "/admin/goto-form.aspx?CoreEntities_Ky=162&salvato=salvato&Anagrafiche_Ky=" + strAnagrafiche_Ky;
 	        Response.Redirect(strRedirect);
         }else{
           Response.Redirect(Smartdesk.Current.LoginPageRoot);

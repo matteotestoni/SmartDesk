@@ -99,45 +99,11 @@ public partial class _Default : System.Web.UI.Page{
     {
         string strSQL="";
         bool output = false;
-        SqlDataAdapter da = new SqlDataAdapter();
-        DataTable dt = new DataTable("getTable");
-
-       SqlConnection cn = new SqlConnection(Smartdesk.Config.Sql.ConnectionWrite);
-        SqlCommand cm = new SqlCommand();
-        
         strSQL = "UPDATE SitiWeb SET SitiWeb_BackLink='" + strBackLink + "' WHERE SitiWeb_Ky = " + strSitiWeb_Ky;
-        cm.CommandText = strSQL;
-        cm.CommandType = CommandType.Text;
-        cm.Connection = cn;
-
-        cm.CommandTimeout = 300;
-        da.SelectCommand = cm;
-        cn.Open();
-        try
-        {
-            cm.ExecuteNonQuery();
-        }
-        catch (SqlException ex)
-        {
-            Exception err = new Exception("csLoadData->CreateXslInsUpdXls_In: " + ex.Message);
-            throw err;
-        }
+        new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
 				strSQL = "INSERT INTO SitiWebLog ([SitiWeb_Url],[SitiWebLog_Data],[SitiWebLog_Descrizione],[SitiWebLog_Valore]) VALUES ('" + strSitiWeb_Url + "' ,GETDATE() ,'Back Link' ,'" + strBackLink + "')";
 				//Response.Write(strSQL);        
-        cm.CommandText = strSQL;
-        try
-        {
-            cm.ExecuteNonQuery();
-        }
-        catch (SqlException ex)
-        {
-            Exception err = new Exception("csLoadData->CreateXslInsUpdXls_In: " + ex.Message);
-            throw err;
-        }
-        finally
-        {
-            cn.Close();
-        }
+        new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
         return output;
     }
 }

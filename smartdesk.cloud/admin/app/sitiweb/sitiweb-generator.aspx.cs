@@ -6,8 +6,6 @@ using System.Collections.Specialized;
 using HtmlAgilityPack;
 
 public partial class _Default : System.Web.UI.Page{
-    
-    
     public int i = 0;
     public System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("it-IT");
     public string strLogin="";
@@ -15,7 +13,6 @@ public partial class _Default : System.Web.UI.Page{
     public DataTable dtSitiWeb;
     public DataTable dtVecchiaVersione;
     public int intNumRecords = 0;
-    
     public string strLog="";
     public string strSitiWeb_Ky="";
     public string strAnagrafiche_Ky="";
@@ -28,8 +25,6 @@ public partial class _Default : System.Web.UI.Page{
       string strUrl="";
       string strValue="";
 
-      
-      
       if (Smartdesk.Login.Verify){
         dtLogin = Smartdesk.Data.Read("Utenti_Vw","Utenti_Ky", Smartdesk.Session.CurrentUser.ToString());          
         strSorgente=Smartdesk.Current.Request("sorgente");
@@ -67,7 +62,7 @@ public partial class _Default : System.Web.UI.Page{
         Response.Write(strLog);
         switch (strSorgente){
   				case "scheda-anagrafiche":
-  					Response.Redirect("/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=" + strAnagrafiche_Ky);
+  					Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=" + strAnagrafiche_Ky);
   					break;
   				case "scheda-sitoweb":
   					Response.Redirect("/admin/app/sitiweb/scheda-sitiweb.aspx?SitiWeb_Ky=" + strSitiWeb_Ky);
@@ -154,40 +149,12 @@ public partial class _Default : System.Web.UI.Page{
 			 strVecchiaVersione=dtVecchiaVersione.Rows[0]["SitiWeb_Versione"].ToString();
 		  }   
   		if (strVecchiaVersione!=strVersione){
-  				SqlConnection cn = new SqlConnection(Smartdesk.Config.Sql.ConnectionWrite);
-	        SqlCommand cm = new SqlCommand();
 	        strSQL = "UPDATE SitiWeb SET SitiWeb_VersioneData=GETDATE(), SitiWeb_Versione='" + strVersione + "' WHERE SitiWeb_Ky = " + strSitiWeb_Ky;
-	        cm.CommandText = strSQL;
-	        cm.CommandType = CommandType.Text;
-	        cm.Connection = cn;
-	        cm.CommandTimeout = 300;
-	        da.SelectCommand = cm;
-	        cn.Open();
-	        try
-	        {
-	            cm.ExecuteNonQuery();
-	        }
-	        catch (SqlException ex)
-	        {
-	            Exception err = new Exception("csLoadData->CreateXslInsUpdXls_In: " + ex.Message);
-	            throw err;
-	        }
-  				strSQL = "INSERT INTO SitiWebLog (SitiWeb_Url,SitiWebLog_Data,SitiWebLog_UserInsert,SitiWebLog_DateInsert,SitiWebLog_Descrizione,SitiWebLog_Valore,SitiWeb_Ky) VALUES ('" + strSitiWeb_Url + "' ,GETDATE(),0,GETDATE(),'Versione' ,'" + strVersione + "'," + strSitiWeb_Ky + ")";
+   				//Response.Write(strSQL);        
+          new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
+ 				  strSQL = "INSERT INTO SitiWebLog (SitiWeb_Url,SitiWebLog_Data,SitiWebLog_UserInsert,SitiWebLog_DateInsert,SitiWebLog_Descrizione,SitiWebLog_Valore,SitiWeb_Ky) VALUES ('" + strSitiWeb_Url + "' ,GETDATE(),0,GETDATE(),'Versione' ,'" + strVersione + "'," + strSitiWeb_Ky + ")";
   				//Response.Write(strSQL);        
-	        cm.CommandText = strSQL;
-	        try
-	        {
-	            cm.ExecuteNonQuery();
-	        }
-	        catch (SqlException ex)
-	        {
-	            Exception err = new Exception("csLoadData->CreateXslInsUpdXls_In: " + ex.Message);
-	            throw err;
-	        }
-	        finally
-	        {
-	            cn.Close();
-	        }
+          new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
   		}
       return output;
     }

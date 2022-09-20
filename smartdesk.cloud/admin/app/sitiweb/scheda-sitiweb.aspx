@@ -4,12 +4,7 @@
 <head>
 	<title>Siti web > Scheda sito</title>
 	<!--#include file="/admin/inc-head.aspx"-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/10.1.0/highcharts.min.js" integrity="sha512-SogfwUFpH9rofYV9j8NNbDSOuFOBvaVR86iNy3RblVGzRBMPWLA8es+P3JrfvRLNgCZLFK3SmnTddImp3UK0pQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/10.1.0/highcharts-3d.min.js" integrity="sha512-uqz7yyIqQbcbaO6gmrXtJ+HMbXFX7YlsVG+S7Mqoq9bjSWhWhRGCCRiYgloJvntEf1r0bsRivm6BUaCWgv3TIA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/10.1.0/modules/exporting.min.js" integrity="sha512-a65yKVWaMTqOJbXD+fkCsv8ENApqxchdbBW8+PpUbPPSgTVSwJFKG3TnKfqz4p3GRHiY0fnRyjLoFMN0jyM6Sw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/10.1.0/highcharts-more.min.js" integrity="sha512-vyQCPWvkkRhBFoJ2X0Ic8uPVV/He0xcrqxxj1Wp9yGablDaRN5UGmVYae/KC7H6WwEh1dWBj2U0DyoouN7xxGg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/10.1.0/modules/solid-gauge.min.js" integrity="sha512-P2tw7vLTRya9pbk6MMg0uVx0nPQadevReZELJ3ENdaxT8aa1pIwZoU/rs0NXJj6pSxrHS+g8M9q3125XuOgOvw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/highchartTable/2.0.0/jquery.highchartTable.min.js" integrity="sha512-N4ZC+PdklXwKtMjVBFZCv1aVI4onPyMa1HK/Sv25npvCQAB1ASBiCoVG5LREjwQM//XVH5VQF4UDOspefcelXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<!--#include file="/admin/inc-head-highcharts.aspx"-->
 	<script>
 		jQuery(document).ready(function() {
 		  jQuery("table.highchart").highchartTable();

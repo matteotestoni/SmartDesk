@@ -5,7 +5,7 @@
 		<input type="text" class="input-group-field" name="Anagrafiche_RagioneSociale" id="Anagrafiche_RagioneSociale" placeholder="Ragione Sociale" value="<%=GetFieldValue(dtNote, "Anagrafiche_RagioneSociale")%>" required="required" autocomplete="off">
 	  <% if (GetFieldValue(dtNote, "Anagrafiche_Ky")!=null && GetFieldValue(dtNote, "Anagrafiche_Ky").Length>0){ %>
 	  <div class="input-group-button">
-				<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=GetFieldValue(dtNote, "Anagrafiche_Ky")%>" style="margin-top:4px"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw fa-lg"></i></a>
+				<a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=GetFieldValue(dtNote, "Anagrafiche_Ky")%>" style="margin-top:4px"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw fa-lg"></i></a>
 	  </div>
 		<% } %>
 		<span class="form-error">Obbligatorio</span>

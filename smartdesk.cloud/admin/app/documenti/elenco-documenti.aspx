@@ -88,7 +88,7 @@
 		          <td class="large-text-center small-text-left"><a href="/admin/app/documenti/scheda-documenti.aspx?CoreModules_Ky=13&CoreEntities_Ky=44&CoreForms_Ky=1212&Documenti_Ky=<%=dtDocumenti.Rows[i]["Documenti_Ky"].ToString()%>&azione=modifica"><i class="fa-duotone fa-calendar-days fa-fw"></i><strong><%=dtDocumenti.Rows[i]["Documenti_Data_IT"].ToString()%></strong></a></td>
 		          <td>
 		          	<div class="width300">
-		            <a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=dtDocumenti.Rows[i]["Anagrafiche_Ky"].ToString()%>&Documenti_Ky=<%=dtDocumenti.Rows[i]["Documenti_Ky"].ToString()%>&azione=modifica" title="Telefono: <%=dtDocumenti.Rows[i]["Anagrafiche_Telefono"].ToString()%>"><i class="fa-duotone fa-users fa-fw"></i><%=dtDocumenti.Rows[i]["Anagrafiche_RagioneSociale"].ToString()%></a>
+		            <a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=dtDocumenti.Rows[i]["Anagrafiche_Ky"].ToString()%>&Documenti_Ky=<%=dtDocumenti.Rows[i]["Documenti_Ky"].ToString()%>&azione=modifica" title="Telefono: <%=dtDocumenti.Rows[i]["Anagrafiche_Telefono"].ToString()%>"><i class="fa-duotone fa-users fa-fw"></i><%=dtDocumenti.Rows[i]["Anagrafiche_RagioneSociale"].ToString()%></a>
 								</div> 
 		          </td>
 		          <td class="large-text-center small-text-left"><%=getStato(dtDocumenti.Rows[i]["DocumentiStato_Ky"].ToString(), dtDocumenti.Rows[i]["DocumentiStato_Descrizione"].ToString())%></td>
@@ -100,7 +100,7 @@
 								<small>
 								<%=dtDocumenti.Rows[i]["Documenti_Riferimenti"].ToString()%>
 								<% if (dtDocumenti.Rows[i]["Commesse_Ky"].ToString().Length>0){ %>
-									| Progetto:<a href="/admin/app/progetti/scheda-commesse.aspx?Commesse_Ky=<%=dtDocumenti.Rows[i]["Commesse_Ky"].ToString()%>&sorgente=elenco-documenti" title="<%=dtDocumenti.Rows[i]["Commesse_Titolo"].ToString()%>"><i class="fa-duotone fa-circle-info fa-fw"></i><%=dtDocumenti.Rows[i]["Commesse_Riferimenti"].ToString()%></a>
+									| Progetto:<a href="/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=<%=dtDocumenti.Rows[i]["Commesse_Ky"].ToString()%>&sorgente=elenco-documenti" title="<%=dtDocumenti.Rows[i]["Commesse_Titolo"].ToString()%>"><i class="fa-duotone fa-circle-info fa-fw"></i><%=dtDocumenti.Rows[i]["Commesse_Riferimenti"].ToString()%></a>
 								<% } %>
 								</small><br>
 								<small><%=dtDocumenti.Rows[i]["Documenti_Descrizione"].ToString()%></small>

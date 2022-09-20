@@ -30,7 +30,7 @@ decTot=0;
 	    	<td class="small-text-left large-text-left show-for-medium-up"><a href="/admin/app/attivita/scheda-attivita.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreForms_Ky=129&Attivita_Ky=<%=dtAttivitaCommerciali.Rows[j]["Attivita_Ky"].ToString()%>&sorgente=home"><%=dtAttivitaCommerciali.Rows[j]["Attivita_Ky"].ToString()%></a></td>
 	      <td>
 	        <div class="width200">
-						<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=dtAttivitaCommerciali.Rows[j]["Anagrafiche_Ky"].ToString()%>"><i class="fa-duotone fa-users fa-fw"></i><%=dtAttivitaCommerciali.Rows[j]["Anagrafiche_RagioneSociale"].ToString()%></a> 
+						<a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=dtAttivitaCommerciali.Rows[j]["Anagrafiche_Ky"].ToString()%>"><i class="fa-duotone fa-users fa-fw"></i><%=dtAttivitaCommerciali.Rows[j]["Anagrafiche_RagioneSociale"].ToString()%></a> 
 	        </div>
 	      </td>
 				<td><div class="width150"><i class="fa-duotone fa-phone fa-fw"></i><%=dtAttivitaCommerciali.Rows[j]["Anagrafiche_Telefono"].ToString()%></div></td>

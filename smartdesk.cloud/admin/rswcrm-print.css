@@ -115,13 +115,14 @@ table.headerhor{
 /* 4. Footer */ 
 /* --------- */ 
 #footer_container { 
-  background:#eee; 
+  background:#ffffff; 
   border-top:1px solid #666; 
   bottom:0; 
   height:1.5cm; 
   left:0; 
   position:fixed; 
-  width:100%; }
+  width:100%; 
+}
 #footer_content { 
   margin:0 auto; 
   width:19cm; 

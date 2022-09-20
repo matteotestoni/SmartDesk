@@ -192,9 +192,7 @@ if (strAzione!="new"){
               <input type="hidden" name="Attivita_OrePreviste" id="Attivita_OrePreviste" value="0">
               <input type="hidden" name="Attivita_Ore" id="Attivita_Ore" value="0">
               <input type="hidden" name="Attivita_Inizio" id="Attivita_Inizio" value="<%=DateTime.Now.ToString("dd-MM-yyyy HH:mm")%>">
-              <input type="hidden" name="Attivita_OraInizio" id="Attivita_OraInizio" value="<%=DateTime.Now.ToString("HH:mm tt")%>">
               <input type="hidden" name="Attivita_Scadenza" id="Attivita_Scadenza" value="<%=DateTime.Now.ToString("dd-MM-yyyy HH:mm")%>">
-              <input type="hidden" name="Attivita_OraScadenza" id="Attivita_OraScadenza" value="<%=DateTime.Now.ToString("HH:mm")%>">
               <input type="hidden" name="Attivita_Chiusura" id="Attivita_Chiusura" value="<%=DateTime.Now.ToString("dd-MM-yyyy HH:mm")%>">
               <input type="hidden" name="AttivitaTipo_Ky" id="AttivitaTipo_Ky" value="1">
               <input type="hidden" name="Priorita_Ky" id="Priorita_Ky" value="1">

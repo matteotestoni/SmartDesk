@@ -77,45 +77,21 @@ using System.Data.SqlClient;
 
     public bool aggiornaCodice(){
       string strSQL="";
-      
-	  SqlDataAdapter da = new SqlDataAdapter();
-      DataTable dt = new DataTable("getTable");
-      SqlConnection cn = new SqlConnection(Smartdesk.Config.Sql.ConnectionWrite);
-      SqlCommand cm = new SqlCommand();
-      
       strSQL = "UPDATE VeicoliVetrina set VeicoliVetrina.Veicoli_Ky=Veicoli.Veicoli_Ky";
-	  strSQL += " FROM VeicoliVetrina INNER JOIN Veicoli ON dbo.VeicoliVetrina.Veicoli_Riferimento = dbo.Veicoli.Veicoli_Riferimento";
-	  strSQL += " WHERE VeicoliVetrina.UtentiGruppi_Ky=11";
+  	  strSQL += " FROM VeicoliVetrina INNER JOIN Veicoli ON dbo.VeicoliVetrina.Veicoli_Riferimento = dbo.Veicoli.Veicoli_Riferimento";
+  	  strSQL += " WHERE VeicoliVetrina.UtentiGruppi_Ky=11";
       //Response.Write(strSQL);
-      cm.CommandText = strSQL;
-      cm.CommandType = CommandType.Text;
-      cm.Connection = cn;
-      cm.CommandTimeout = 300;
-      da.SelectCommand = cm;
-      cn.Open();
-      cm.ExecuteNonQuery();	
+      new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
 	  return true;		
 	}
 
     public bool aggiornaPremium(){
       string strSQL="";
-      
-	  SqlDataAdapter da = new SqlDataAdapter();
-      DataTable dt = new DataTable("getTable");
-      SqlConnection cn = new SqlConnection(Smartdesk.Config.Sql.ConnectionWrite);
-      SqlCommand cm = new SqlCommand();
-      
+
       strSQL = "UPDATE Veicoli SET Veicoli.Veicoli_Premium=1"; 
-	  strSQL += " FROM Veicoli INNER JOIN VeicoliVetrina ON Veicoli.Veicoli_Ky = VeicoliVetrina.Veicoli_Ky";
-	  strSQL += " WHERE VeicoliVetrina_Titolo='premium' AND VeicoliVetrina.UtentiGruppi_Ky=11";
-      //Response.Write(strSQL);
-      cm.CommandText = strSQL;
-      cm.CommandType = CommandType.Text;
-      cm.Connection = cn;
-      cm.CommandTimeout = 300;
-      da.SelectCommand = cm;
-      cn.Open();
-      cm.ExecuteNonQuery();	
+  	  strSQL += " FROM Veicoli INNER JOIN VeicoliVetrina ON Veicoli.Veicoli_Ky = VeicoliVetrina.Veicoli_Ky";
+  	  strSQL += " WHERE VeicoliVetrina_Titolo='premium' AND VeicoliVetrina.UtentiGruppi_Ky=11";
+      new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
 	  return true;		
 	}
 

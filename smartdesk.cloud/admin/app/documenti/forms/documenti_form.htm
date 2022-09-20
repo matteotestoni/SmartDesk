@@ -87,7 +87,7 @@
       <input style="width:70%" type="text" class="input-group-field" name="Anagrafiche_RagioneSociale" id="Anagrafiche_RagioneSociale" value="<%=GetFieldValue(dtDocumenti, "Anagrafiche_RagioneSociale")%>" placeholder="Anagrafica">
       <div class="input-group-button">
 				<% if (GetFieldValue(dtDocumenti, "Anagrafiche_Ky")!=null && GetFieldValue(dtDocumenti, "Anagrafiche_Ky").Length>0){ %>
-				<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=GetFieldValue(dtDocumenti, "Anagrafiche_Ky")%>" style="margin-top:4px"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw fa-lg"></i></a>
+				<a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=GetFieldValue(dtDocumenti, "Anagrafiche_Ky")%>" style="margin-top:4px"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw fa-lg"></i></a>
 				<% } %>
         <a style="margin-top:4px" data-toggle="dropdownmenu-anagrafiche"><i class="fa-duotone fa-bars fa-fw fa-lg"></i></a>
         <div class="dropdown-pane bottom" id="dropdownmenu-anagrafiche" data-dropdown>

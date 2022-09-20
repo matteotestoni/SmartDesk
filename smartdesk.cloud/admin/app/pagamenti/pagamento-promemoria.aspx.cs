@@ -32,21 +32,10 @@ using System.Data.SqlClient;
                 strPagamenti_AttivaPromemoria=Request["Pagamenti_AttivaPromemoria"];
                 strAnagrafiche_Ky=Smartdesk.Current.Request("Anagrafiche_Ky");
                 strSorgente=Smartdesk.Current.Request("sorgente");
-                SqlDataAdapter da = new SqlDataAdapter();
-                DataTable dt = new DataTable("getTable");
-                SqlConnection cn = new SqlConnection(Smartdesk.Config.Sql.ConnectionWrite);
-                SqlCommand cm = new SqlCommand();
-                
                 strSQL = "UPDATE Pagamenti SET Pagamenti_AttivaPromemoria=" + strPagamenti_AttivaPromemoria + " WHERE Pagamenti_Ky=" + strPagamenti_Ky;
                 //Response.Write(strSQL);
-                cm.CommandText = strSQL;
-                cm.CommandType = CommandType.Text;
-                cm.Connection = cn;
-                cm.CommandTimeout = 300;
-                da.SelectCommand = cm;
-                cn.Open();
-                cm.ExecuteNonQuery();
-                cn.Close();
+                new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
+
                 switch (strSorgente){
                   case "home":
                     Response.Redirect("/admin/home.aspx?Anagrafiche_Ky=" + strAnagrafiche_Ky);
@@ -55,7 +44,7 @@ using System.Data.SqlClient;
                     Response.Redirect("/admin/app/pagamenti/elenco-pagamenti.aspx");
                     break;
                   case "scheda-anagrafiche":
-                    Response.Redirect("/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=" + strAnagrafiche_Ky);
+                    Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=" + strAnagrafiche_Ky);
                     break;
                 }
           }else{

@@ -35,16 +35,17 @@
       <Field Column="Utenti_Colore" IsNull="Y" Type="varchar" Lenght="10" />
       <Field Column="Utenti_Cognome" IsNull="Y" Type="varchar" Lenght="200" />
       <Field Column="Utenti_Nome" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Priorita_Colore" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="Priorita_Icona" IsNull="Y" Type="varchar" Lenght="200" />
     </Fields>
   </Tables>
-  <SqlScriptCreate>CREATE VIEW dbo.Note_Vw
+  <SqlScriptCreate>CREATE VIEW [dbo].[Note_Vw]
 AS
-SELECT        dbo.Note.Note_Ky, dbo.Note.Note_Titolo, dbo.Note.Note_Descrizione, dbo.Note.Anagrafiche_Ky, dbo.Note.Note_Data, dbo.Note.Priorita_Ky, dbo.Anagrafiche.Anagrafiche_RagioneSociale, 
-                         dbo.Priorita.Priorita_Descrizione, CONVERT(varchar, dbo.Note.Note_Data, 105) AS Note_Data_IT, dbo.Anagrafiche.Anagrafiche_Telefono, dbo.Note.Attivita_Ky, dbo.AttivitaTipo.AttivitaTipo_Descrizione, 
-                         dbo.Attivita.Attivita_Descrizione, dbo.Note.Commesse_Ky, dbo.Commesse.Commesse_Riferimenti, dbo.Commesse.Commesse_Titolo, dbo.Note.Utenti_Ky, dbo.Utenti.Utenti_Email, dbo.Utenti.Utenti_Iniziali, 
-                         dbo.Utenti.UtentiGruppi_Ky, dbo.Note.NoteCategorie_Ky, dbo.NoteCategorie.NoteCategorie_Titolo, dbo.Anagrafiche.Anagrafiche_SitoWeb, dbo.Note.Lingue_Ky, dbo.Lingue.Lingue_Codice, 
-                         dbo.Lingue.Lingue_Titolo, dbo.Note.Documenti_Ky, dbo.Note.Note_Tags, dbo.Utenti.Utenti_Nominativo, dbo.Utenti.Utenti_Logo, dbo.Utenti.Utenti_Colore, dbo.Utenti.Utenti_Cognome, 
-                         dbo.Utenti.Utenti_Nome
+SELECT        dbo.Note.Note_Ky, dbo.Note.Note_Titolo, dbo.Note.Note_Descrizione, dbo.Note.Anagrafiche_Ky, dbo.Note.Note_Data, dbo.Note.Priorita_Ky, dbo.Anagrafiche.Anagrafiche_RagioneSociale, dbo.Priorita.Priorita_Descrizione, 
+                         CONVERT(varchar, dbo.Note.Note_Data, 105) AS Note_Data_IT, dbo.Anagrafiche.Anagrafiche_Telefono, dbo.Note.Attivita_Ky, dbo.AttivitaTipo.AttivitaTipo_Descrizione, dbo.Attivita.Attivita_Descrizione, dbo.Note.Commesse_Ky, 
+                         dbo.Commesse.Commesse_Riferimenti, dbo.Commesse.Commesse_Titolo, dbo.Note.Utenti_Ky, dbo.Utenti.Utenti_Email, dbo.Utenti.Utenti_Iniziali, dbo.Utenti.UtentiGruppi_Ky, dbo.Note.NoteCategorie_Ky, 
+                         dbo.NoteCategorie.NoteCategorie_Titolo, dbo.Anagrafiche.Anagrafiche_SitoWeb, dbo.Note.Lingue_Ky, dbo.Lingue.Lingue_Codice, dbo.Lingue.Lingue_Titolo, dbo.Note.Documenti_Ky, dbo.Note.Note_Tags, 
+                         dbo.Utenti.Utenti_Nominativo, dbo.Utenti.Utenti_Logo, dbo.Utenti.Utenti_Colore, dbo.Utenti.Utenti_Cognome, dbo.Utenti.Utenti_Nome, dbo.Priorita.Priorita_Colore, dbo.Priorita.Priorita_Icona
 FROM            dbo.Lingue RIGHT OUTER JOIN
                          dbo.Note ON dbo.Lingue.Lingue_Ky = dbo.Note.Lingue_Ky LEFT OUTER JOIN
                          dbo.NoteCategorie ON dbo.Note.NoteCategorie_Ky = dbo.NoteCategorie.NoteCategorie_Ky LEFT OUTER JOIN
@@ -53,6 +54,5 @@ FROM            dbo.Lingue RIGHT OUTER JOIN
                          dbo.AttivitaTipo INNER JOIN
                          dbo.Attivita ON dbo.AttivitaTipo.AttivitaTipo_Ky = dbo.Attivita.AttivitaTipo_Ky ON dbo.Note.Attivita_Ky = dbo.Attivita.Attivita_Ky LEFT OUTER JOIN
                          dbo.Anagrafiche ON dbo.Note.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky LEFT OUTER JOIN
-                         dbo.Priorita ON dbo.Note.Priorita_Ky = dbo.Priorita.Priorita_Ky
-</SqlScriptCreate>
+                         dbo.Priorita ON dbo.Note.Priorita_Ky = dbo.Priorita.Priorita_Ky</SqlScriptCreate>
 </SqlTable>

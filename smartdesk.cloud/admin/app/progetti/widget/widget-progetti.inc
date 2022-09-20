@@ -40,9 +40,9 @@
 							</td>
 		          <td>
 								<div class="width300">
-									<a href="/admin/app/progetti/scheda-progetti.aspx?Commesse_Ky=<%=dtCommesse.Rows[j]["Commesse_Ky"].ToString()%>"><i class="fa-duotone fa-building fa-fw"></i><strong><%=dtCommesse.Rows[j]["Commesse_Titolo"].ToString()%></strong></a><br>
+									<a href="/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=<%=dtCommesse.Rows[j]["Commesse_Ky"].ToString()%>"><i class="fa-duotone fa-building fa-fw"></i><strong><%=dtCommesse.Rows[j]["Commesse_Titolo"].ToString()%></strong></a><br>
 								</div>
-	            	<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=dtCommesse.Rows[j]["Anagrafiche_Ky"].ToString()%>" title="Telefono: <%=dtCommesse.Rows[j]["Anagrafiche_Telefono"].ToString()%>"><i class="fa-duotone fa-user fa-fw"></i><%=dtCommesse.Rows[j]["Anagrafiche_RagioneSociale"].ToString()%></a>
+	            	<a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=dtCommesse.Rows[j]["Anagrafiche_Ky"].ToString()%>" title="Telefono: <%=dtCommesse.Rows[j]["Anagrafiche_Telefono"].ToString()%>"><i class="fa-duotone fa-user fa-fw"></i><%=dtCommesse.Rows[j]["Anagrafiche_RagioneSociale"].ToString()%></a>
 							</td>
 		          <td>
 								<a href="/admin/app/progetti/scheda-progetti.aspx?Commesse_Ky=<%=dtCommesse.Rows[j]["Commesse_Ky"].ToString()%>"><i class="fa-duotone fa-gears fa-fw"></i>Attivit&agrave;</a><br>
@@ -65,7 +65,7 @@
 		          <td class="large-text-right small-text-left" style="padding-right:4px">&euro; <%=dtCommesse.Rows[j]["Commesse_Valore_IT"].ToString()%></td>
 	        		<% } %>
 		          <td class="show-for-medium-up text-center nowrap">
-                <a href="/admin/app/progetti/scheda-progetti.aspx?Commesse_Ky=<%=dtCommesse.Rows[j]["Commesse_Ky"].ToString()%>" title="modifica" class="edit"><i class="fa-duotone fa-pen-to-square fa-fw"></i></a>
+                <a href="/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=<%=dtCommesse.Rows[j]["Commesse_Ky"].ToString()%>" title="modifica" class="edit"><i class="fa-duotone fa-pen-to-square fa-fw"></i></a>
                 <a href="/admin/app/progetti/crud/elimina-commesse.aspx?azione=delete&Commesse_Ky=<%=dtCommesse.Rows[j]["Commesse_Ky"].ToString()%>" title="elimina" class="delete"><i class="fa-duotone fa-trash-can fa-fw"></i></a>
               </td>
 		        </tr>

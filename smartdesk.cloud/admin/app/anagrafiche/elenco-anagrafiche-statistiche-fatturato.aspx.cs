@@ -54,7 +54,7 @@ public partial class _Default : System.Web.UI.Page
             dtAnagrafiche = new DataTable("Anagrafiche");
             dtAnagrafiche = Smartdesk.Sql.getTablePage(strFROMNet, null, "chiave", strWHERENet, strORDERNet, intPage,2000,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
 						if (dtAnagrafiche.Rows.Count==1){
-							Response.Redirect("/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=" + dtAnagrafiche.Rows[0]["Anagrafiche_Ky"].ToString());
+							Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=" + dtAnagrafiche.Rows[0]["Anagrafiche_Ky"].ToString());
 						}else{
 		        		intNumPagine = intNumRecords / intRecxPag;
 				        if ((intNumRecords % intRecxPag) != 0)

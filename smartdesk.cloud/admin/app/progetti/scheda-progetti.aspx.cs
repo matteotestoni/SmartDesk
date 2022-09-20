@@ -42,12 +42,12 @@ public partial class _Default : System.Web.UI.Page
           dtLogin = Smartdesk.Data.Read("Utenti_Vw","Utenti_Ky", Smartdesk.Session.CurrentUser.ToString());          
             
             boolAdmin=(dtLogin.Rows[0]["Utenti_Admin"]).Equals(true);
-            strH1="Scheda progetto";
 			      strAzione = Request["azione"];
             strCommesse_Ky=Smartdesk.Current.Request("Commesse_Ky");
             if (strAzione!="new"){
             strAzione = "modifica";
 	        	dtCommesse = Smartdesk.Data.Read("Commesse_Vw", "Commesse_Ky",Smartdesk.Current.QueryString("Commesse_Ky"));
+            strH1="Progetti > " + GetFieldValue(dtCommesse, "CommesseTipo_Titolo");
 
 			  //note
         	  dtNote = Smartdesk.Data.Read("Note_Vw", "Commesse_Ky",Smartdesk.Current.QueryString("Commesse_Ky"));

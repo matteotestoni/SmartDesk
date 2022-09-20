@@ -137,11 +137,6 @@
         selectSet('VeicoliCarrozzeria_Ky', '<%=GetFieldValue(dtVeicoli, "VeicoliCarrozzeria_Ky")%>');
       </script>
   	</div>
-
-
-
-
-
   </div>
  	<div class="grid-x grid-padding-x">     
   	<div class="large-2 medium-2 small-4 cell">
@@ -251,6 +246,46 @@
       <span class="form-error">Obbligatorio</span>
   	</div>
   </div>
+</fieldset>
+<fieldset class="fieldset">
+	<legend class="radius"><i class="fa-duotone fa-user fa-fw"></i>Anagrafica</legend>
+  <div class="input-group">
+    <input style="width:60px;margin-right:5px;" type="text" name="Anagrafiche_Ky" id="Anagrafiche_Ky" value="<%=GetFieldValue(dtVeicoli, "Anagrafiche_Ky")%>" placeholder="Anagrafica">
+    <input style="width:70%" type="text" class="input-group-field" name="Anagrafiche_RagioneSociale" id="Anagrafiche_RagioneSociale" value="<%=GetFieldValue(dtVeicoli, "Anagrafiche_RagioneSociale")%>" placeholder="Anagrafica">
+    <div class="input-group-button">
+			<% if (GetFieldValue(dtVeicoli, "Anagrafiche_Ky")!=null && GetFieldValue(dtVeicoli, "Anagrafiche_Ky").Length>0){ %>
+			<a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=GetFieldValue(dtVeicoli, "Anagrafiche_Ky")%>" style="margin-top:4px"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw fa-lg"></i></a>
+			<% } %>
+      <a style="margin-top:4px" data-toggle="dropdownmenu-anagrafiche"><i class="fa-duotone fa-bars fa-fw fa-lg"></i></a>
+      <div class="dropdown-pane bottom" id="dropdownmenu-anagrafiche" data-dropdown>
+        <div class="text-left">
+          <a onclick="javascript:gotoSchedaAnagrafica()"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw"></i>Vai a scheda</a><br>
+          <a data-open="formQuickEditAnagrafiche" onclick="javascript:inserisciAnagrafica()"><i class="fa-duotone fa-plus fa-fw"></i>Inserisci</a><br>
+          <a data-open="formQuickEditAnagrafiche" onclick="javascript:modificaAnagrafica()"><i class="fa-duotone fa-edit fa-fw"></i>Modifica</a><br>
+        </div>
+      </div>
+    </div>
+  </div>
+	<div class="grid-x grid-padding-x">
+		<div class="large-12 medium-12 small-12 cell">
+			Partita IVA: <span id="Anagrafiche_PartitaIVA"><%=GetFieldValue(dtVeicoli, "Anagrafiche_PartitaIVA")%></span> -
+			Codice Fiscale: <span id="Anagrafiche_CodiceFiscale"><%=GetFieldValue(dtVeicoli, "Anagrafiche_CodiceFiscale")%></span> -
+			Email: <%=GetFieldValue(dtVeicoli, "Anagrafiche_EmailAmministrazione")%>
+		</div>
+	</div>
+	<script type="text/javascript">
+		jQuery("#Anagrafiche_RagioneSociale").autocomplete({
+			source: "/admin/app/anagrafiche/autosuggest-GetAnagrafiche-json.aspx",
+			minLength: 2,
+			select: function (event, ui) {
+				jQuery("#Anagrafiche_Ky").val(ui.item.value);
+				jQuery("#Anagrafiche_RagioneSociale").val(ui.item.label);
+				jQuery("#Anagrafiche_PartitaIVA").val(ui.item.piva);
+				jQuery("#Anagrafiche_CodiceFiscale").val(ui.item.codfisc);
+				return false;
+			}
+		});
+	</script>
 </fieldset>
 <fieldset class="fieldset">
   <legend>Spese</legend>  

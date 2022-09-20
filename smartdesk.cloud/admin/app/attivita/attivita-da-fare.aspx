@@ -27,13 +27,12 @@
       accept: '.drag-drop',
       overlap: 0.75,
       ondrop: function (event) {
+        /*
         alert(event.relatedTarget.id
               + ' was dropped into '
               + event.target.id);
-
-        strUrl="admin/app/attivita/actions/attivita-cambiastato.aspx?Attivita_Ky=29625&AttivitaStati_Ky=1&sorgente=prospetto";              
-        window.location.reload();
-        //event.relatedTarget.textContent = 'Dropped'
+        */
+        changeScadenza(jQuery("#" + event.relatedTarget.id).data("attivita"), event.target.id);
       }
     });
     
@@ -48,7 +47,24 @@
         autoScroll: true,
         // dragMoveListener from the dragging demo above
         listeners: { move: dragMoveListener }
-      })
+      });
+      
+    function changeScadenza(intAttivita_Ky, intTipo){
+    	$strUrl="/admin/app/attivita/actions/attivita-cambiascadenza.aspx";
+    	console.log($strUrl);
+      $data= { ajax:true, Attivita_Ky: intAttivita_Ky, tipo: intTipo };
+    	console.log($data);
+    	jQuery.ajax({
+    		type: "POST",
+    		url: $strUrl,
+    		data: $data
+    	})
+    	.done(function( data ) {
+        window.location.reload();
+      });	
+    
+    }
+      
 
   </script> 
   <style>
@@ -70,7 +86,6 @@
             			<a href="/admin/app/attivita/report/rpt-attivita.aspx?Utenti_Ky=<%=dtLogin.Rows[0]["Utenti_Ky"].ToString()%>" target="_blank" class="clear"><i class="fa-duotone fa-print fa-fw"></i>Stampa attivit&agrave; persona</a><br>
             			<a href="/admin/app/attivita/report/rpt-attivita-planning.aspx?sorgente=elenco-attivita" class="clear" target="_blank"><i class="fa-duotone fa-print fa-lg fa-fw"></i>Stampa planning</a> 
                 </div>      
-          			<a href="/admin/app/calendario/calendario.aspx" class="tiny button clear"><i class="fa-duotone fa-calendar-days fa-fw"></i>Vai al calendario</a>
           			<a href="/admin/app/attivita/scheda-attivita.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreForms_Ky=129&azione=new" class="tiny button"><i class="fa-duotone fa-square-plus fa-lg fa-fw"></i>Nuovo</a>
           		</div>	
   	      </div>
@@ -85,94 +100,83 @@
   </div>
   <div class="large-10 medium-9 small-12 cell">
       <ul class="tabs" data-tabs id="attivita-tabs">
-        <li class="tabs-title"><a href="/admin/app/attivita/elenco-attivita.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreGrids_Ky=62" aria-selected="true"><i class="fa-duotone fa-calendar fa-fw"></i>Elenco attivit&agrave;</a></li>
-        <li class="tabs-title is-active"><a href="#panel1"><i class="fa-duotone fa-square-kanban fa-fw"></i>Prospetto per scadenza</a></li>
+        <li class="tabs-title"><a href="/admin/app/attivita/elenco-attivita.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreGrids_Ky=276" aria-selected="true"><i class="fa-duotone fa-calendar fa-fw"></i>Elenco attivit&agrave;</a></li>
+        <li class="tabs-title is-active"><a href="#panel2"><i class="fa-duotone fa-square-kanban fa-fw"></i>Prospetto per scadenza</a></li>
         <li class="tabs-title"><a href="/admin/app/attivita/attivita-da-fare-stato.aspx?attivita-scadute=1&prossime-scadenze=1&scadenze-future=1"><i class="fa-duotone fa-square-kanban fa-fw"></i>Prospetto per stato</a></li>
+        <li class="tabs-title"><a href="/admin/app/attivita/calendario.aspx?attivita-scadute=1&prossime-scadenze=1&scadenze-future=1"><i class="fa-duotone fa-calendar-days fa-fw"></i>Calendario</a></li>
       </ul>		  
       <div class="tabs-content" data-tabs-content="attivita-tabs" style="background-color:transparent">
-        <div class="tabs-panel is-active" id="panel1">
-    <%	
-        if (intNumeroColonne>0){
-            intNumeroColonneResponsive=12/intNumeroColonne;
-        }else{
-            intNumeroColonneResponsive=12;
-        }
-        for (int j = 0; j < dtUtenti.Rows.Count; j++){
-            strHtml+="<div><div class=\"grid-x grid-padding-x\"><div class=\"small-12 medium-12 large-12 cell align-middle\"><img src=\"" + dtUtenti.Rows[i]["Utenti_Logo"].ToString() + "\" width=\"40\" height=\"40\" align=\"left\" class=\"align-middle\" style=\"border-radius:50%\"><h2>" + dtUtenti.Rows[j]["Utenti_Nominativo"].ToString() + "</h2></div></div></div>";
-
-            strHtml+="<div class=\"grid-x grid-padding-x\">";
-            strHtml+="<div class=\"auto cell\">";
-            strHtml+="<h2 class=\"text-center\" style=\"color:#ff7a59\">Scaduti da oltre 30gg (" + dtDaFareScaduti.Rows.Count + ")<i class=\"fa-duotone fa-arrow-right fa-fw\"></i></h2>";
-            strHtml+="<div class=\"appenascaduti dropzone\" id=\"appenascaduti\">";
-            intNumeroAttivita=0;
-            strHtmlCorpo="";
-            for (i = 0; i < dtDaFareScaduti.Rows.Count; i++){
-                if (dtDaFareScaduti.Rows[i]["Utenti_Ky"].ToString()==dtUtenti.Rows[j]["Utenti_Ky"].ToString()){
-                    strHtml+=renderAttivita(dtDaFareScaduti.Rows[i],"scaduti");
-                    intNumeroAttivita++;
+        <div class="tabs-panel is-active" id="panel2">
+            <div class="grid-x grid-padding-x">
+              <div class="auto cell">
+                <%
+                strHtml="<h2 class=\"text-center\" style=\"color:#ff0000\">Scaduti da oltre 30gg (" + dtDaFareScaduti.Rows.Count + ")<i class=\"fa-duotone fa-arrow-right fa-fw\"></i></h2>";
+                strHtml+="<div class=\"scaduti dropzone\" id=\"scaduti\">";
+                for (i = 0; i < dtDaFareScaduti.Rows.Count; i++){
+                    intNumeroAttivita=0;
+                    strHtmlCorpo="";
+                    for (i = 0; i < dtDaFareScaduti.Rows.Count; i++){
+                            strHtml+=renderAttivita(dtDaFareScaduti.Rows[i],"scaduti");
+                            intNumeroAttivita++;
+                    }
+                    strHtml+=strHtmlCorpo;
                 }
-            }
-            strHtml+=strHtmlCorpo;
-            strHtml+="</div>";
-            strHtml+="</div>";
-
-            strHtml+="<div class=\"auto cell\">";
-            strHtml+="<h2 class=\"text-center\" style=\"color:#FFA726\">Scaduti da meno di 30gg (" + dtDaFareAppenaScaduti.Rows.Count + ")<i class=\"fa-duotone fa-arrow-right fa-fw\"></i></h2>";
-            strHtml+="<div class=\"scaduti dropzone\">";
-            intNumeroAttivita=0;
-            strHtmlCorpo="";
-            for (i = 0; i < dtDaFareAppenaScaduti.Rows.Count; i++){
-                if (dtDaFareAppenaScaduti.Rows[i]["Utenti_Ky"].ToString()==dtUtenti.Rows[j]["Utenti_Ky"].ToString()){
-                    strHtml+=renderAttivita(dtDaFareAppenaScaduti.Rows[i],"appenascaduti");
-                    intNumeroAttivita++;
+                strHtml+="</div>";                    
+                Response.Write(strHtml);
+                %>
+              </div>
+              <div class="auto cell">
+                <%
+                strHtml="<h2 class=\"text-center\" style=\"color:#ff7a59\">Scaduti da meno 30gg (" + dtDaFareAppenaScaduti.Rows.Count + ")<i class=\"fa-duotone fa-arrow-right fa-fw\"></i></h2>";
+                strHtml+="<div class=\"appenascaduti dropzone\" id=\"appenascaduti\">";
+                for (i = 0; i < dtDaFareAppenaScaduti.Rows.Count; i++){
+                    intNumeroAttivita=0;
+                    strHtmlCorpo="";
+                    for (i = 0; i < dtDaFareAppenaScaduti.Rows.Count; i++){
+                            strHtml+=renderAttivita(dtDaFareAppenaScaduti.Rows[i],"appenascaduti");
+                            intNumeroAttivita++;
+                    }
+                    strHtml+=strHtmlCorpo;
                 }
-            }
-            if (intNumeroAttivita==0){
-                strHtmlCorpo+="<div>Nessuna attivit&agrave;</div>";
-            }
-            strHtml+=strHtmlCorpo;
-            strHtml+="</div>";
-            strHtml+="</div>";
-
-            strHtml+="<div class=\"auto cell\">";
-            strHtml+="<h2 class=\"text-center\" style=\"color:#43ac6a\">Prossime scadenze (" + dtDaFareProssimi.Rows.Count + ")<i class=\"fa-duotone fa-arrow-right fa-fw\"></i></h2>";
-            strHtml+="<div class=\"prossimi dropzone\">";
-            intNumeroAttivita=0;
-            strHtmlCorpo="";
-            for (i = 0; i < dtDaFareProssimi.Rows.Count; i++){
-                if (dtDaFareProssimi.Rows[i]["Utenti_Ky"].ToString()==dtUtenti.Rows[j]["Utenti_Ky"].ToString()){
-                    strHtml+=renderAttivita(dtDaFareProssimi.Rows[i],"prossimi");
-                    intNumeroAttivita++;
+                strHtml+="</div>";                    
+                Response.Write(strHtml);
+                %>
+              </div>
+              <div class="auto cell">
+                <%
+                strHtml="<h2 class=\"text-center\" style=\"color:#43ac6a\">Prossime scadenze (" + dtDaFareProssimi.Rows.Count + ")<i class=\"fa-duotone fa-arrow-right fa-fw\"></i></h2>";
+                strHtml+="<div class=\"prossimi dropzone\" id=\"prossimi\">";
+                for (i = 0; i < dtDaFareProssimi.Rows.Count; i++){
+                    intNumeroAttivita=0;
+                    strHtmlCorpo="";
+                    for (i = 0; i < dtDaFareProssimi.Rows.Count; i++){
+                            strHtml+=renderAttivita(dtDaFareProssimi.Rows[i],"prossimi");
+                            intNumeroAttivita++;
+                    }
+                    strHtml+=strHtmlCorpo;
                 }
-            }
-            if (intNumeroAttivita==0){
-                strHtmlCorpo+="<div>Nessuna attivit&agrave;</div>";
-            }
-            strHtml+=strHtmlCorpo;
-            strHtml+="</div>";
-            strHtml+="</div>";
-
-            strHtml+="<div class=\"auto cell\">";
-            strHtml+="<h2 class=\"text-center\" style=\"color:#000000\">Scadenze future (" + dtDaFareFuturi.Rows.Count + ")<i class=\"fa-duotone fa-arrow-right fa-fw\"></i></h2>";
-            strHtml+="<div class=\"futuri dropzone\">";
-            intNumeroAttivita=0;
-            strHtmlCorpo="";
-            for (i = 0; i < dtDaFareFuturi.Rows.Count; i++){
-                if (dtDaFareFuturi.Rows[i]["Utenti_Ky"].ToString()==dtUtenti.Rows[j]["Utenti_Ky"].ToString()){
-                    strHtml+=renderAttivita(dtDaFareFuturi.Rows[i],"prossimi");
-                    intNumeroAttivita++;
+                strHtml+="</div>";                    
+                Response.Write(strHtml);
+                %>
+              </div>
+              <div class="auto cell">
+                <%
+                strHtml="<h2 class=\"text-center\" style=\"color:green\">Scadenze future (" + dtDaFareFuturi.Rows.Count + ")<i class=\"fa-duotone fa-arrow-right fa-fw\"></i></h2>";
+                strHtml+="<div class=\"futuri dropzone\" id=\"futuri\">";
+                for (i = 0; i < dtDaFareFuturi.Rows.Count; i++){
+                    intNumeroAttivita=0;
+                    strHtmlCorpo="";
+                    for (i = 0; i < dtDaFareFuturi.Rows.Count; i++){
+                            strHtml+=renderAttivita(dtDaFareFuturi.Rows[i],"futuri");
+                            intNumeroAttivita++;
+                    }
+                    strHtml+=strHtmlCorpo;
                 }
-            }
-            if (intNumeroAttivita==0){
-                strHtmlCorpo+="<div>Nessuna attivit&agrave;</div>";
-            }
-            strHtml+=strHtmlCorpo;
-            strHtml+="</div>";
-            strHtml+="</div>";
-            strHtml+="</div>";
-        }
-        Response.Write(strHtml);
-    %>
+                strHtml+="</div>";                    
+                Response.Write(strHtml);
+                %>
+              </div>
+            </div>
         </div>
       </div>
   </div>

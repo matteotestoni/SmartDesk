@@ -16,13 +16,13 @@ using System.Collections.Generic;
     public string strUrlKey= "";
   	public DataTable dtCoreUrlRewrite;
     public DataTable dtAnnunci;
-    
-    
+    public DataTable dtCoreModulesOptionsValue;
     public int intNumRecords = 0;
 	  public string strFROMNet = "";
 	  public string strWHERENet = "";
 	  public string strORDERNet = "";
 	  public string strSQL = "";
+    public string strTheme="";
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -32,25 +32,22 @@ using System.Collections.Generic;
 			string strORDERNet = "";
       bool boolAjax = false;
 
-			  
-			  
-
         if (Smartdesk.Login.Verify)
         {
             Dictionary<string, object> frm = new Dictionary<string, object>();
             if (Smartdesk.Current.Request("Annunci_GruMunito") == "") frm.Add("Annunci_GruMunito", false);
             if (Smartdesk.Current.Request("Annunci_Gruppoidraulico") == "") frm.Add("Annunci_Gruppoidraulico", false);
             if (Smartdesk.Current.Request("Annunci_Retarder") == "") frm.Add("Annunci_Retarder", false);
-			if (Smartdesk.Current.Request("Annunci_TrattoriDT") == "") frm.Add("Annunci_TrattoriDT", false);
-			if (Smartdesk.Current.Request("Annunci_ClimaCabina") == "") frm.Add("Annunci_ClimaCabina", false);
-			if (Smartdesk.Current.Request("Annunci_MarchioCE") == "") frm.Add("Annunci_MarchioCE", false);
-			if (Smartdesk.Current.Request("Annunci_ImmobiliDisponibilita") == "") frm.Add("Annunci_ImmobiliDisponibilita", false);
-			if (Smartdesk.Current.Request("Annunci_ImmobiliAscensore") == "") frm.Add("Annunci_ImmobiliAscensore", false);
-			if (Smartdesk.Current.Request("Annunci_ImmobiliCondizionatore") == "") frm.Add("Annunci_ImmobiliCondizionatore", false);
-			if (Smartdesk.Current.Request("Annunci_ImmobiliTerrazzo") == "") frm.Add("Annunci_ImmobiliTerrazzo", false);
-			if (Smartdesk.Current.Request("Annunci_ImmobiliAllarme") == "") frm.Add("Annunci_ImmobiliAllarme", false);
-			if (Smartdesk.Current.Request("Annunci_ImmobileCablato") == "") frm.Add("Annunci_ImmobileCablato", false);
-			if (Smartdesk.Current.Request("Annunci_Cerco") == "") frm.Add("Annunci_Cerco", false);
+      			if (Smartdesk.Current.Request("Annunci_TrattoriDT") == "") frm.Add("Annunci_TrattoriDT", false);
+      			if (Smartdesk.Current.Request("Annunci_ClimaCabina") == "") frm.Add("Annunci_ClimaCabina", false);
+      			if (Smartdesk.Current.Request("Annunci_MarchioCE") == "") frm.Add("Annunci_MarchioCE", false);
+      			if (Smartdesk.Current.Request("Annunci_ImmobiliDisponibilita") == "") frm.Add("Annunci_ImmobiliDisponibilita", false);
+      			if (Smartdesk.Current.Request("Annunci_ImmobiliAscensore") == "") frm.Add("Annunci_ImmobiliAscensore", false);
+      			if (Smartdesk.Current.Request("Annunci_ImmobiliCondizionatore") == "") frm.Add("Annunci_ImmobiliCondizionatore", false);
+      			if (Smartdesk.Current.Request("Annunci_ImmobiliTerrazzo") == "") frm.Add("Annunci_ImmobiliTerrazzo", false);
+      			if (Smartdesk.Current.Request("Annunci_ImmobiliAllarme") == "") frm.Add("Annunci_ImmobiliAllarme", false);
+      			if (Smartdesk.Current.Request("Annunci_ImmobileCablato") == "") frm.Add("Annunci_ImmobileCablato", false);
+      			if (Smartdesk.Current.Request("Annunci_Cerco") == "") frm.Add("Annunci_Cerco", false);
             if (Smartdesk.Current.Request("Annunci_Offro") == "") frm.Add("Annunci_Offro", false);
             if (Smartdesk.Current.Request("Annunci_ConRiserva") == "") frm.Add("Annunci_ConRiserva", false);
             if (Smartdesk.Current.Request("Annunci_GestionaleImmobiliare") == "") frm.Add("Annunci_GestionaleImmobiliare", false);
@@ -82,7 +79,7 @@ using System.Collections.Generic;
               aggiornaUrlKey(strUrlKey);
             }
           	caricafiles();
-            updateUrlRewrite();
+            //updateUrlRewrite();
             switch (strSorgente)
             {
               case "scheda-aste":
@@ -105,30 +102,44 @@ using System.Collections.Generic;
     string strSource="";
     string strDestination="";
 		
+		
+    dtCoreModulesOptionsValue = new DataTable("Options");
+    strWHERENet="CoreModulesOptions_Code='design'";
+    strORDERNet = "CoreModulesOptionsValue_Ky";
+    strFROMNet = "CoreModulesOptionsValue";
+    dtCoreModulesOptionsValue = Smartdesk.Sql.getTablePage(strFROMNet, null, "CoreModulesOptionsValue_Ky", strWHERENet, strORDERNet, 1, 1,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
+    if (dtCoreModulesOptionsValue.Rows.Count>0){
+      strTheme=dtCoreModulesOptionsValue.Rows[0]["CoreModulesOptionsValue_Value"].ToString();
+    }else{
+      strTheme="base";
+    }        
+
 		strWHERENet = "Annunci_Ky=" + strKy;
-        strORDERNet = "Annunci_Ky";
-        strFROMNet = "Annunci_Vw";
-        dtAnnunci = Smartdesk.Sql.getTablePage(strFROMNet, null, "Annunci_Ky", strWHERENet, strORDERNet, 1, 1,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
-    		strSource="/attivita/" + dtAnnunci.Rows[0]["Province_ProvinciaHTML"].ToString().ToLower() + "/" + dtAnnunci.Rows[0]["Comuni_ComuneHTML"].ToString().ToLower() + "/" + dtAnnunci.Rows[0]["Annunci_UrlKey"].ToString() + ".html";
-    		strDestination="/scheda-annuncio.aspx?Annunci_Ky=" + strKy;
-    		strWHERENet = "CoreEntities_Code='annunci' AND CoreEntities_KeyValue='" + strKy + "'";
-    		//Response.Write(strWHERENet);
-        strORDERNet = "CoreUrlRewrite_Ky";
-        strFROMNet = "CoreUrlRewrite";
-        dtCoreUrlRewrite = Smartdesk.Sql.getTablePage(strFROMNet, null, "CoreUrlRewrite_Ky", strWHERENet, strORDERNet, 1, 1,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
-        if (dtCoreUrlRewrite.Rows.Count>0){
-            strSQL = "UPDATE CoreUrlRewrite SET ";
-            strSQL += "CoreUrlRewrite_UrlSource='" + strSource + "',";
-            strSQL += "CoreUrlRewrite_UrlDestination='" + strDestination + "'";
-            strSQL += " WHERE CoreUrlRewrite_Ky=" + dtCoreUrlRewrite.Rows[0]["CoreUrlRewrite_Ky"].ToString();
-    	}else{
-          strSQL = "INSERT INTO CoreUrlRewrite (CoreEntities_Code,CoreEntities_KeyValue,CoreUrlRewrite_UrlSource,CoreUrlRewrite_UrlDestination) VALUES (";
-          strSQL += " 'annunci',";
-          strSQL += "'" + strKy + "',";
-          strSQL += "'" + strSource + "',";
-          strSQL += "'" + strDestination + "'";
-          strSQL += ")";
-		}
+    strORDERNet = "Annunci_Ky";
+    strFROMNet = "Annunci_Vw";
+    dtAnnunci = Smartdesk.Sql.getTablePage(strFROMNet, null, "Annunci_Ky", strWHERENet, strORDERNet, 1, 1,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
+		strSource="/attivita/" + dtAnnunci.Rows[0]["Province_ProvinciaHTML"].ToString().ToLower() + "/" + dtAnnunci.Rows[0]["Comuni_ComuneHTML"].ToString().ToLower() + "/" + dtAnnunci.Rows[0]["Annunci_UrlKey"].ToString() + ".html";
+		strDestination="/frontend/" + strTheme + "/annunci/scheda-annuncio.aspx?Annunci_Ky=" + strKy;
+		strWHERENet = "CoreEntities_Code='annunci' AND CoreEntities_KeyValue='" + strKy + "'";
+		//Response.Write(strWHERENet);
+    strORDERNet = "CoreUrlRewrite_Ky";
+    strFROMNet = "CoreUrlRewrite";
+    dtCoreUrlRewrite = Smartdesk.Sql.getTablePage(strFROMNet, null, "CoreUrlRewrite_Ky", strWHERENet, strORDERNet, 1, 1,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
+    if (dtCoreUrlRewrite.Rows.Count>0){
+        strSQL = "UPDATE CoreUrlRewrite SET ";
+        strSQL += "CoreUrlRewrite_UrlSource='" + strSource + "',";
+        strSQL += "CoreUrlRewrite_UrlDestination='" + strDestination + "',";
+        strSQL += "CoreUrlRewrite_DateUpdate=GETDATE()";
+        strSQL += " WHERE CoreUrlRewrite_Ky=" + dtCoreUrlRewrite.Rows[0]["CoreUrlRewrite_Ky"].ToString();
+  	}else{
+        strSQL = "INSERT INTO CoreUrlRewrite (CoreEntities_Code,CoreEntities_KeyValue,CoreUrlRewrite_UrlSource,CoreUrlRewrite_UrlDestination,CoreUrlRewrite_DateInsert) VALUES (";
+        strSQL += " 'annunci',";
+        strSQL += "'" + strKy + "',";
+        strSQL += "'" + strSource + "',";
+        strSQL += "'" + strDestination + "',";
+        strSQL += "GETDATE()";
+       strSQL += ")";
+	  }
 		//Response.Write(strSQL);
     new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
   }

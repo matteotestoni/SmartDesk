@@ -79,7 +79,7 @@
 			          <td><%=dtProdotti.Rows[i]["Prodotti_Codice"].ToString()%></td>
 			          <td><div class="width200"><a href="/admin/app/catalogo/scheda-prodotto.aspx?Prodotti_Ky=<%=dtProdotti.Rows[i]["Prodotti_Ky"].ToString()%>"><%=dtProdotti.Rows[i]["Prodotti_Titolo"].ToString()%></a></div></td>
 			          <td><%=dtProdotti.Rows[i]["ProdottiCategorie_Titolo"].ToString()%></td>
-			          <td><a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=dtProdotti.Rows[i]["Anagrafiche_Ky"].ToString()%>" title="Telefono: <%=dtProdotti.Rows[i]["Anagrafiche_Telefono"].ToString()%>"><i class="fa-duotone fa-users fa-fw"></i><%=dtProdotti.Rows[i]["Anagrafiche_RagioneSociale"].ToString()%></a></td>
+			          <td><a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=dtProdotti.Rows[i]["Anagrafiche_Ky"].ToString()%>" title="Telefono: <%=dtProdotti.Rows[i]["Anagrafiche_Telefono"].ToString()%>"><i class="fa-duotone fa-users fa-fw"></i><%=dtProdotti.Rows[i]["Anagrafiche_RagioneSociale"].ToString()%></a></td>
 			          <td>
 									<%=getStato(dtProdotti.Rows[i]["Prodotti_InPromozione"].Equals(true), "Promozione", "red",dtProdotti.Rows[i]["Prodotti_Ky"].ToString())%> 
 									<%=getStato(dtProdotti.Rows[i]["Prodotti_InVetrina"].Equals(true), "Vetrina","blue",dtProdotti.Rows[i]["Prodotti_Ky"].ToString())%> 

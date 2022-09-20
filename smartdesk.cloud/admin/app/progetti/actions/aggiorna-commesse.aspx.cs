@@ -7,8 +7,6 @@ using System.Data.SqlClient;
 
   public partial class _Default : System.Web.UI.Page 
 	{
-    
-    
     public int intNumRecords = 0;
     public int i = 0;
     public System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("it-IT");
@@ -149,15 +147,14 @@ using System.Data.SqlClient;
   						}
   						strSQL = "UPDATE Commesse SET Commesse_OreImpiegate=" + strTotOreImpiegate + ", Commesse_OreResidue=" + strTotOreResidue + ", Commesse_Avanzamento=" + intAvanzamento + " WHERE Commesse_Ky=" + strCommesse_Ky;
   	          Response.Write(strSQL + "<br>");
-  						cm.CommandText = strSQL;
-  	          cm.ExecuteNonQuery();								
+              new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
   					}
             cn.Close();
             Response.Write("<hr>");            
 
    				   switch (strSorgente){
     					case "scheda-commessa":
-    					  Response.Redirect("/admin/app/progetti/scheda-commesse.aspx?Commesse_Ky=" + strCommesse_Ky);
+    					  Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=" + strCommesse_Ky);
     					  break;
     					case "elenco-commesse":
     					  Response.Redirect("/admin/app/progetti/elenco-commesse.aspx?CoreModules_Ky=24&CoreEntities_Ky=107&CoreGrids_Ky=118");

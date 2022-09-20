@@ -104,22 +104,7 @@ using System.Data.SqlClient;
             strSQL = sql.UpdateCreate();
         }
         //Response.Write(strSQL);
-        cm.CommandText = strSQL;
-        cm.CommandType = CommandType.Text;
-        cm.Connection = cn;
-
-        cm.CommandTimeout = 300;
-        da.SelectCommand = cm;
-        cn.Open();
-        try
-        {
-            cm.ExecuteNonQuery();
-        }
-        catch (SqlException ex)
-        {
-            Exception err = new Exception("csLoadData->CreateXslInsUpdXls_In: " + ex.Message);
-            throw err;
-        }
+        new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
         if (strAzione=="new"){
           strORDERNet = "Documenti_Ky DESC";
           strFROMNet = "Documenti";
@@ -151,29 +136,18 @@ using System.Data.SqlClient;
 
     public bool aggiornaStato()
     {
-		SqlDataAdapter da = new SqlDataAdapter();
-		DataTable dt = new DataTable("getTable");
-		SqlConnection cn = new SqlConnection(Smartdesk.Config.Sql.ConnectionWrite);
-		SqlCommand cm = new SqlCommand();
-		
-		strWHERENet="(Pagamenti_Pagato=0 Or Pagamenti_Pagato Is Null) And (Documenti_Ky=" + strDocumenti_Ky + ")";
-		strORDERNet = "Pagamenti_Ky";
-		strFROMNet = "Pagamenti";
-		dtPagamenti = new DataTable("Pagamenti");
-		dtPagamenti = Smartdesk.Sql.getTablePage(strFROMNet, null, "Pagamenti_Ky", strWHERENet, strORDERNet, 1, 1,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
-		if (dtPagamenti!=null && dtPagamenti.Rows.Count>0){
-			strSQL = "UPDATE Documenti SET DocumentiStato_Ky=2 WHERE DocumentiTipo_Ky<>4 AND Documenti_Ky=" + strDocumenti_Ky;
-		}else{
-			strSQL = "UPDATE Documenti SET DocumentiStato_Ky=6 WHERE DocumentiTipo_Ky<>4 AND Documenti_Ky=" + strDocumenti_Ky;
-		}
-        cm.CommandText = strSQL;
-        cm.CommandType = CommandType.Text;
-        cm.Connection = cn;
-        cm.CommandTimeout = 300;
-        da.SelectCommand = cm;
-        cn.Open();
-		cm.ExecuteNonQuery();								
-        return true;
+  		strWHERENet="(Pagamenti_Pagato=0 Or Pagamenti_Pagato Is Null) And (Documenti_Ky=" + strDocumenti_Ky + ")";
+  		strORDERNet = "Pagamenti_Ky";
+  		strFROMNet = "Pagamenti";
+  		dtPagamenti = new DataTable("Pagamenti");
+  		dtPagamenti = Smartdesk.Sql.getTablePage(strFROMNet, null, "Pagamenti_Ky", strWHERENet, strORDERNet, 1, 1,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
+  		if (dtPagamenti!=null && dtPagamenti.Rows.Count>0){
+  			strSQL = "UPDATE Documenti SET DocumentiStato_Ky=2 WHERE DocumentiTipo_Ky<>4 AND Documenti_Ky=" + strDocumenti_Ky;
+  		}else{
+  			strSQL = "UPDATE Documenti SET DocumentiStato_Ky=6 WHERE DocumentiTipo_Ky<>4 AND Documenti_Ky=" + strDocumenti_Ky;
+  		}
+      new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
+      return true;
     }
 
 

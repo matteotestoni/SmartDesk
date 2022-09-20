@@ -95,7 +95,7 @@ jQuery(function () {
 		pickTime: true
 	});		
 	jQuery('.fdatetimepicker').fdatepicker({
-		format: 'dd-mm-yyyy hh:ii',
+		format: 'dd-mm-yyyy hh:ii:00',
 		closeButton: false,
 		weekStart: 1,
 		startView: 2,
@@ -103,7 +103,7 @@ jQuery(function () {
 		pickTime: true
 	});		
 	jQuery('.datetimepicker').fdatepicker({
-		format: 'dd-mm-yyyy hh:ii',
+		format: 'dd-mm-yyyy hh:ii:00',
 		closeButton: false,
 		weekStart: 1,
 		startView: 2,
@@ -270,11 +270,6 @@ if (jQuery("#Attivita_SpeseMezziPubblici").val()!=null){
 	}
 	dblTotale=dblTotale.roundTo(4);
 	jQuery("#Attivita_SpeseTotali").val(dblTotale);
-}
-
-function chgData(){
-jQuery("#Attivita_Scadenza").val(jQuery("#Attivita_Inizio").val());
-jQuery("#Attivita_Chiusura").val(jQuery("#Attivita_Inizio").val());
 }
 
 function chgCompleto(){

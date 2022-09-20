@@ -65,7 +65,7 @@
 		        <tr class="riga<%=i%2%>">
 		          <td><input type="checkbox" class="checkrow" id="record<%=dtGridData.Rows[i]["AsteCauzioni_Ky"].ToString()%>" data-value="<%=dtGridData.Rows[i]["AsteCauzioni_Ky"].ToString()%>" /></td>
 		          <td><a href="/admin/app/aste/scheda-astecauzioni.aspx?AsteEsperimenti_Ky=<%=dtGridData.Rows[i]["AsteEsperimenti_Ky"].ToString()%>&Aste_Ky=<%=dtGridData.Rows[i]["Aste_Ky"].ToString()%>&AsteCauzioni_Ky=<%=dtGridData.Rows[i]["AsteCauzioni_Ky"].ToString()%>"><%=dtGridData.Rows[i]["AsteCauzioni_Ky"].ToString()%></a></td>
-		          <td><a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=dtGridData.Rows[i]["Anagrafiche_Ky"].ToString()%>"><i class="fa-duotone fa-tag fa-fw"></i><%=dtGridData.Rows[i]["Anagrafiche_RagioneSociale"].ToString()%></a></td>
+		          <td><a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=dtGridData.Rows[i]["Anagrafiche_Ky"].ToString()%>"><i class="fa-duotone fa-tag fa-fw"></i><%=dtGridData.Rows[i]["Anagrafiche_RagioneSociale"].ToString()%></a></td>
 		          <td><a href="/admin/app/aste/scheda-astecauzioni.aspx?AsteEsperimenti_Ky=<%=dtGridData.Rows[i]["AsteEsperimenti_Ky"].ToString()%>&Aste_Ky=<%=dtGridData.Rows[i]["Aste_Ky"].ToString()%>&AsteCauzioni_Ky=<%=dtGridData.Rows[i]["AsteCauzioni_Ky"].ToString()%>"><i class="fa-duotone fa-calendar-days fa-fw"></i><%=dtGridData.Rows[i]["AsteCauzioni_Data"].ToString()%></a></td>
 		          <td class="text-right"><%=((decimal)dtGridData.Rows[i]["AsteCauzioni_Valore"]).ToString("N2",ci)%></td>
               <td class="text-left">

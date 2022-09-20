@@ -42,7 +42,7 @@
             strFormUrl="/admin/form.aspx?CoreModules_Ky=" + dtCoreForms.Rows[0]["CoreModules_Ky"].ToString() + "&CoreEntities_Ky=" + dtCoreForms.Rows[0]["CoreEntities_Ky"].ToString() + "&CoreForms_Ky=" + dtCoreForms.Rows[0]["CoreForms_Ky"].ToString() + "&custom=0";
           }
         }else{
-          strFormUrl="/admin/app/anagrafiche/scheda-anagrafiche.aspx?custom=1&CoreEntities_Ky=162";
+          strFormUrl="/admin/goto-form.aspx?CoreEntities_Ky=162&custom=1";
         }
       
       %>
@@ -140,7 +140,7 @@
             strFormUrl="/admin/form.aspx?CoreModules_Ky=" + dtCoreForms.Rows[0]["CoreModules_Ky"].ToString() + "&CoreEntities_Ky=" + dtCoreForms.Rows[0]["CoreEntities_Ky"].ToString() + "&CoreForms_Ky=" + dtCoreForms.Rows[0]["CoreForms_Ky"].ToString() + "&custom=0";
           }
         }else{
-          strFormUrl="/admin/app/progetti/scheda-progetti.aspx?custom=1&CoreEntities_Ky=162";
+          strFormUrl="/admin/goto-form.aspx?CoreEntities_Ky=107";
         }
       %>
         <div class="divgrid">
@@ -209,7 +209,7 @@
       								</div>
       							</td>
       		          <td>
-      								<a href="/admin/app/progetti/scheda-progetti.aspx?Commesse_Ky=<%=dtCommesse.Rows[i]["Commesse_Ky"].ToString()%>"><i class="fa-duotone fa-gears fa-fw"></i>Attivit&agrave;</a><br>
+      								<a href="/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=<%=dtCommesse.Rows[i]["Commesse_Ky"].ToString()%>"><i class="fa-duotone fa-gears fa-fw"></i>Attivit&agrave;</a><br>
       							</td>
       							<td>
       									<div class="width250">

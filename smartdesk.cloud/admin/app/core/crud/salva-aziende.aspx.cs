@@ -59,34 +59,9 @@ using System.Collections.Generic;
     {
         string strSQL="";
         bool output = false;
-        SqlDataAdapter da = new SqlDataAdapter();
-        DataTable dt = new DataTable("getTable");
-
-        SqlConnection cn = new SqlConnection(Smartdesk.Config.Sql.ConnectionWrite);
-        SqlCommand cm = new SqlCommand();
-        
         strSQL = "UPDATE Aziende SET Aziende_Logo='" + strFoto + "' WHERE Aziende_Ky = " + strKy;
         //Response.Write(strSQL);
-        cm.CommandText = strSQL;
-        cm.CommandType = CommandType.Text;
-        cm.Connection = cn;
-
-        cm.CommandTimeout = 300;
-        da.SelectCommand = cm;
-        cn.Open();
-        try
-        {
-            cm.ExecuteNonQuery();
-        }
-        catch (SqlException ex)
-        {
-            Exception err = new Exception("csLoadData->CreateXslInsUpdXls_In: " + ex.Message);
-            throw err;
-        }
-        finally
-        {
-            cn.Close();
-        }
+        new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
         return output;
     }
 }

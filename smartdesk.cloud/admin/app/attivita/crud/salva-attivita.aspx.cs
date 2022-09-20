@@ -75,13 +75,13 @@ public partial class _Default : System.Web.UI.Page
                     Response.Redirect("/admin/app/attivita/attivita-da-fare.aspx?attivita-scadute=1&prossime-scadenze=1&scadenze-future=1&salvato=salvato&Attivita_Ky=" + strAttivita_Ky + "&Utenti_Ky=" + strUtenti_Ky + "#attivita");
                     break;
                 case "scheda-anagrafiche":
-                    Response.Redirect("/admin/app/anagrafiche/scheda-anagrafiche.aspx?salvato=salvato&Anagrafiche_Ky=" + strAnagrafiche_Ky + "#attivita");
+                    Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=162&salvato=salvato&Anagrafiche_Ky=" + strAnagrafiche_Ky + "#attivita");
                     break;
                 case "scheda-commessa":
                     Response.Redirect("/admin/app/progetti/scheda-commesse.aspx?salvato=salvato&Commesse_Ky=" + strCommesse_Ky + "&Utenti_Ky=" + strUtenti_Ky + "#attivita");
                     break;
                 case "scheda-progetti":
-                    Response.Redirect("/admin/app/progetti/scheda-progetti.aspx?salvato=salvato&Commesse_Ky=" + strCommesse_Ky + "&Utenti_Ky=" + strUtenti_Ky + "#attivita");
+                    Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=107&salvato=salvato&Commesse_Ky=" + strCommesse_Ky + "&Utenti_Ky=" + strUtenti_Ky + "#attivita");
                     break;
                 case "scheda-opportunita":
                     Response.Redirect("/admin/app/commerciale/scheda-opportunita.aspx?salvato=salvato&Opportunita_Ky=" + strOpportunita_Ky + "&Utenti_Ky=" + strUtenti_Ky + "#attivita");
@@ -200,6 +200,17 @@ public partial class _Default : System.Web.UI.Page
         }
         return strReturn;
     }
+    public string datetime2EN(string strData)
+    {
+        string strReturn = strData;
+        if (strReturn != null && strReturn.Length == 10)
+        {
+            DateTime datatimeresult = DateTime.ParseExact(strData, "dd-MMM-yyyy HH\\:mm", new System.Globalization.CultureInfo("it-IT"));
+			strReturn = datatimeresult.ToString();
+			//strReturn = strReturn.Substring(3, 2) + "/" + strReturn.Substring(0, 2) + "/" + strReturn.Substring(6, 4);
+        }
+        return strReturn;
+    }
 
     public bool aggiornaAnnuncio()
     {
@@ -225,8 +236,9 @@ public partial class _Default : System.Web.UI.Page
         strValue = Request["Attivita_Chiusura"];
         if (strValue!=null && strValue.Length > 0)
         {
-            strValue = dta2EN(strValue);
-            switch (strAttivitaSettore_Ky)
+            strValue = datetime2EN(strValue);
+            /*
+			switch (strAttivitaSettore_Ky)
             {
                 case "1":
                     strSQL = "UPDATE Anagrafiche SET Anagrafiche_AttivitaTecnica='" + strValue + "' WHERE Anagrafiche_Ky=" + strAnagrafiche_Ky;
@@ -250,7 +262,7 @@ public partial class _Default : System.Web.UI.Page
                     strSQL = "UPDATE Anagrafiche SET Anagrafiche_AttivitaAmministrazione='" + strValue + "' WHERE Anagrafiche_Ky=" + strAnagrafiche_Ky;
                     new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
                     break;
-            }
+            }*/
         }
         output=true;
         return output;

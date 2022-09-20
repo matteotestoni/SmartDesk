@@ -31,10 +31,10 @@ public partial class _Default : System.Web.UI.Page
             		strRedirect="/admin/app/documenti/scheda-documenti.aspx?CoreModules_Ky=13&CoreEntities_Ky=44&CoreForms_Ky=1212&Documenti_Ky=" + strDocumenti_Ky;
            			break;
           		case "scheda-commessa":
-            		strRedirect="/admin/app/progetti/scheda-commesse.aspx?Commesse_Ky=" + strCommesse_Ky;
+            		strRedirect="/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=" + strCommesse_Ky;
             		break;
             	case "scheda-anagrafiche":
-            		strRedirect="/admin/app/anagrafiche/scheda-anagrafiche.aspx?CoreModules_Ky=1&CoreEntities_Ky=162&CoreForms_Ky=145&Anagrafiche_Ky=" + strAnagrafiche_Ky;
+            		strRedirect="/admin/goto-form.aspx?CoreEntities_Ky=162&CoreForms_Ky=145&Anagrafiche_Ky=" + strAnagrafiche_Ky;
             		break;
               	case "scheda-spese":
                 	strRedirect="/admin/app/amministrazione/scheda-spese.aspx?CoreModules_Ky=2&CoreEntities_Ky=1&CoreForms_Ky=211&Spese_Ky=" + strSpese_Ky;

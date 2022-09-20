@@ -58,7 +58,7 @@
 		              <td class="large-text-right small-text-left" style="padding-right:5px">&euro; <%=dtPagamenti.Rows[i]["Pagamenti_Importo_IT"].ToString()%></td>
 		              <td class="text-left"><i class="fa-duotone <%=dtPagamenti.Rows[i]["PagamentiMetodo_icona"].ToString()%> fa-fw" style="color:<%=dtPagamenti.Rows[i]["PagamentiMetodo_Colore"].ToString()%>"></i><%=dtPagamenti.Rows[i]["PagamentiMetodo_Titolo"].ToString()%> su <%=dtPagamenti.Rows[i]["Conti_Titolo"].ToString()%></td>
 		              <td class="text-left"><i class="fa-duotone fa-users fa-fw"></i><%=dtPagamenti.Rows[i]["Anagrafiche_RagioneSociale"].ToString()%></td>
-		              <td class="large-text-center small-text-left"><% if (dtPagamenti.Rows[i]["Commesse_Ky"].ToString().Length>0){ %><a href="/admin/app/progetti/scheda-commesse.aspx?Commesse_Ky=<%=dtPagamenti.Rows[i]["Commesse_Ky"].ToString()%>&sorgente=scheda-documenti" style="float:left"><%=dtPagamenti.Rows[i]["Commesse_Riferimenti"].ToString()%></a><% } %></td>
+		              <td class="large-text-center small-text-left"><% if (dtPagamenti.Rows[i]["Commesse_Ky"].ToString().Length>0){ %><a href="/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=<%=dtPagamenti.Rows[i]["Commesse_Ky"].ToString()%>&sorgente=scheda-documenti" style="float:left"><%=dtPagamenti.Rows[i]["Commesse_Riferimenti"].ToString()%></a><% } %></td>
 		              <td class="text-left">
 										<% if (dtPagamenti.Rows[i]["Pagamenti_Pagato"].ToString()=="si"){ %>
 											<span class="label success"><i class="fa-duotone fa-check fa-lg fa-fw" style="--fa-primary-color:green;--fa-primary-opacity: 1.0"></i><%=dtPagamenti.Rows[i]["Pagamenti_Pagato"].ToString()%></span> 

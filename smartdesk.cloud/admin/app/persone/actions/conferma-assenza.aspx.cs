@@ -31,22 +31,10 @@ using System.Data.SqlClient;
           if (dtLogin.Rows.Count>0){
                 strPersoneAssenze_Ky=Request["PersoneAssenze_Ky"];
                 strPersone_Ky=Smartdesk.Current.Request("Persone_Ky");
-          		strSorgente=Smartdesk.Current.Request("sorgente");
-                SqlDataAdapter da = new SqlDataAdapter();
-                DataTable dt = new DataTable("getTable");
-                SqlConnection cn = new SqlConnection(Smartdesk.Config.Sql.ConnectionWrite);
-                SqlCommand cm = new SqlCommand();
-                
+          		  strSorgente=Smartdesk.Current.Request("sorgente");
                 strSQL = "UPDATE PersoneAssenze SET PersoneAssenze_Lock=1 WHERE PersoneAssenze_Ky=" + strPersoneAssenze_Ky;
                 //Response.Write(strSQL);
-                cm.CommandText = strSQL;
-                cm.CommandType = CommandType.Text;
-                cm.Connection = cn;
-                cm.CommandTimeout = 300;
-                da.SelectCommand = cm;
-                cn.Open();
-                cm.ExecuteNonQuery();
-                cn.Close();
+                new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
                 switch (strSorgente){
                     case "elenco-personeassenze":
                         Response.Redirect("/admin/app/persone/elenco-personeassenze.aspx?Persone_Ky=" + strPersone_Ky);

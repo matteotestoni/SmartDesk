@@ -14,7 +14,7 @@
 			</div>
 			<div class="shrink cell">
 				<% if (GetFieldValue(dtCommesse, "Anagrafiche_Ky")!=null && GetFieldValue(dtCommesse, "Anagrafiche_Ky").Length>0){ %>
-				<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=GetFieldValue(dtCommesse, "Anagrafiche_Ky")%>" style="margin-top:4px"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw fa-lg"></i></a>
+				<a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=GetFieldValue(dtCommesse, "Anagrafiche_Ky")%>" style="margin-top:4px"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw fa-lg"></i></a>
 				<% } %>
 			</div>
 		</div>
@@ -70,11 +70,11 @@
       		<label for="Utenti_Ky" class="large-text-right small-text-left middle">Assegnata <i class="fa-duotone fa-user fa-fw"></i></label>
       	</div>
       	<div class="large-10 medium-10 small-8 cell contenuto">
-          <select name="Utenti_Ky" id="Utenti_Ky" value="<%=GetFieldValue(dtOpportunita, "Utenti_Ky")%>" required="required">
+          <select name="Utenti_Ky" id="Utenti_Ky" value="<%=GetFieldValue(dtCommesse, "Utenti_Ky")%>" required="required">
           <!--#include file="/var/cache/Utenti-options.htm"--> 
           </select>
           <script type="text/javascript">
-            selectSet('Utenti_Ky', '<%=GetFieldValue(dtOpportunita, "Utenti_Ky")%>');
+            selectSet('Utenti_Ky', '<%=GetFieldValue(dtCommesse, "Utenti_Ky")%>');
           </script>
       	</div>
   	</div>	

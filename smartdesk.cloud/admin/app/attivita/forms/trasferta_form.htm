@@ -23,7 +23,7 @@
 			</div>
 	  	<div class="shrink cell hide-for-small-only">
         <% if (GetFieldValue(dtAttivita, "Anagrafiche_Ky")!=null && GetFieldValue(dtAttivita, "Anagrafiche_Ky").Length>0){ %>
-					<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=GetFieldValue(dtAttivita, "Anagrafiche_Ky")%>" style="margin-top:4px"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw fa-lg"></i></a>
+					<a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=GetFieldValue(dtAttivita, "Anagrafiche_Ky")%>" style="margin-top:4px"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw fa-lg"></i></a>
 				<% } %>
 			</div>
 </div>
@@ -33,7 +33,7 @@
       <label for="Attivita_Inizio" class="large-text-right small-text-left middle">Data <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
     </div>
     <div class="large-4 medium-4 small-8 cell">
-      <input type="text" name="Attivita_Inizio" id="Attivita_Inizio" value="<%=GetFieldValue(dtAttivita, "Attivita_Inizio_IT")%>" class="fdatepicker" required="required" size="10" onchange="chgData()">
+      <input type="text" name="Attivita_Inizio" id="Attivita_Inizio" value="<%=GetFieldValue(dtAttivita, "Attivita_Inizio")%>" class="fdatetimepicker" required="required" size="10" onchange="chgData()">
       <span class="form-error">Obbligatorio</span>
 		</div>
     <div class="large-2 medium-2 small-4 cell">

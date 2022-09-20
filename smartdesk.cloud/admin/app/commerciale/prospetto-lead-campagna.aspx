@@ -50,10 +50,10 @@
   	   <tbody>
   		  <% for (int i = 0; i < dtProspettoLead.Rows.Count; i++){ %>
   	     <tr>
-  				<td><a href="/admin/app/commerciale/prospetto-lead-utm_medium-utm_campaign.aspx?Campagne_Ky=<%=dtProspettoLead.Rows[i]["Campagne_Ky"].ToString()%>&utm_campaign=<%=dtProspettoLead.Rows[i]["utm_campaign"].ToString()%>"><i class="fa-duotone fa-bullhorn fa-fw"></i><%=dtProspettoLead.Rows[i]["Campagne_Titolo"].ToString()%></a></td>
+  				<td><a href="/admin/app/commerciale/prospetto-lead-utm_medium-utm_campaign.aspx?Campagne_Ky=<%=dtProspettoLead.Rows[i]["Campagne_Ky"].ToString()%>"><i class="fa-duotone fa-bullhorn fa-fw"></i><%=dtProspettoLead.Rows[i]["Campagne_Titolo"].ToString()%></a></td>
   				<td><%=dtProspettoLead.Rows[i]["LeadCategorie_Titolo"].ToString()%></td>
   				<td><%=Smartdesk.Functions.GetMese(dtProspettoLead.Rows[i]["Mese"].ToString())%> / <%=dtProspettoLead.Rows[i]["Anno"].ToString()%></td>
-  				<td class="large-text-right small-text-left"><strong></strong><%=dtProspettoLead.Rows[i]["Conteggio"].ToString()%></strong></td>
+  				<td class="large-text-right small-text-left"><strong><%=dtProspettoLead.Rows[i]["Conteggio"].ToString()%></strong></td>
   				<td><a href="/admin/view.aspx?CoreModules_Ky=20&CoreEntities_Ky=185&CoreGrids_Ky=175&Campagne_Ky=<%=dtProspettoLead.Rows[i]["Campagne_Ky"].ToString()%>&LeadCategorie_Ky=<%=dtProspettoLead.Rows[i]["LeadCategorie_Ky"].ToString()%>">Vedi lead<i class="fa-duotone fa-angle-right fa-fw"></i></a></td>
         </tr>
   			<% 

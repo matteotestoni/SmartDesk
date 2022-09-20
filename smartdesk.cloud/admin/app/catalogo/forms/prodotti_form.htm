@@ -535,7 +535,7 @@
 								  Response.Write("<optgroup label=\"" + dtProdottiApplicazioniCategorie.Rows[i]["ProdottiApplicazioniCategorie_Titolo"].ToString() + "\">");
                 	
                   strWHERENet="ProdottiApplicazioniCategorie_Ky=" + dtProdottiApplicazioniCategorie.Rows[i]["ProdottiApplicazioniCategorie_Ky"].ToString();
-    							dtProdottiApplicazioni = Smartdesk.Sql.getTablePage("ProdottiApplicazioni", null, "ProdottiApplicazioni_Ky", strWHERENet, "ProdottiApplicazioni_Titolo", 1, 10000,Smartdesk.Config.Sql.ConnectionReadOnly);
+    							dtProdottiApplicazioni = Smartdesk.Sql.getTablePage("ProdottiApplicazioni", null, "ProdottiApplicazioni_Ky", strWHERENet, "ProdottiApplicazioni_Titolo", 1, 10000,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
     		    			for (int j = 0; j < dtProdottiApplicazioni.Rows.Count; j++){
   									if (GetFieldValue(dtProdotto, "Prodotti_Applicazioni").IndexOf(dtProdottiApplicazioni.Rows[j]["ProdottiApplicazioni_Ky"].ToString())>-1){
   										strSelected=" selected";

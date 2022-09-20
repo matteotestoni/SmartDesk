@@ -28,7 +28,7 @@ public class EventDAO
         List<CalendarEvent> events = new List<CalendarEvent>();
         SqlConnection con = new SqlConnection(Smartdesk.Config.Sql.ConnectionReadOnly);
         SqlConnection con2 = new SqlConnection(Smartdesk.Config.Sql.ConnectionReadOnly);
-    		strSQL="SELECT Attivita_Ky, Attivita_Descrizione, AttivitaTipo_Descrizione, Convert(date, Attivita_Inizio) As Attivita_Inizio, Attivita_OraInizio, Convert(date, Attivita_Scadenza) As Attivita_Scadenza, Attivita_OraScadenza, Utenti_Ky, Utenti_Nominativo, Utenti_Colore, Anagrafiche_Ky, Anagrafiche_RagioneSociale FROM Attivita_Vw WHERE (Attivita_Chiusura Is Null Or Attivita_Chiusura=0) And (Attivita_Scadenza>=@start AND Attivita_Scadenza<=@end)";
+    		strSQL="SELECT Attivita_Ky, Attivita_Descrizione, AttivitaTipo_Descrizione, Attivita_Inizio As Attivita_Inizio, Attivita_Scadenza As Attivita_Scadenza, Utenti_Ky, Utenti_Nominativo, Utenti_Colore, Anagrafiche_Ky, Anagrafiche_RagioneSociale FROM Attivita_Vw WHERE (Attivita_Chiusura Is Null Or Attivita_Chiusura=0) And (Attivita_Scadenza>=@start AND Attivita_Scadenza<=@end)";
     		SqlCommand cmd = new SqlCommand(strSQL, con);
 		    cmd.Parameters.Add("@start", SqlDbType.DateTime).Value = start;
         cmd.Parameters.Add("@end", SqlDbType.DateTime).Value = end;
@@ -49,8 +49,8 @@ public class EventDAO
 				//}
 				cevent.description = strTemp;
 				dtTemp = (DateTime)reader["Attivita_Scadenza"];
-				tmTemp = (TimeSpan)reader["Attivita_OraScadenza"];
-				dtTemp = new DateTime(dtTemp.Year, dtTemp.Month, dtTemp.Day, tmTemp.Hours, tmTemp.Minutes, tmTemp.Seconds);
+				//tmTemp = (TimeSpan)reader["Attivita_OraScadenza"];
+				dtTemp = new DateTime(dtTemp.Year, dtTemp.Month, dtTemp.Day, dtTemp.Hour, dtTemp.Minute, dtTemp.Second);
 				cevent.start = dtTemp;
                 strTemp=(string)reader["Utenti_Nominativo"] + "-" + (string)reader["Anagrafiche_RagioneSociale"] + "-" + strTemp;
                 //if (strTemp.Length>20){
@@ -58,8 +58,8 @@ public class EventDAO
 				//}
 				cevent.title = strTemp;
 				dtTemp = (DateTime)reader["Attivita_Scadenza"];
-				tmTemp = (TimeSpan)reader["Attivita_OraScadenza"];
-				dtTemp = new DateTime(dtTemp.Year, dtTemp.Month, dtTemp.Day, tmTemp.Hours, tmTemp.Minutes, tmTemp.Seconds);
+				//tmTemp = (TimeSpan)reader["Attivita_OraScadenza"];
+				dtTemp = new DateTime(dtTemp.Year, dtTemp.Month, dtTemp.Day, dtTemp.Hour, dtTemp.Minute, dtTemp.Second);
                 cevent.end = dtTemp;
                 cevent.bgcolor = (string)reader["Utenti_Colore"];
                 cevent.color = (string)reader["Utenti_Colore"];

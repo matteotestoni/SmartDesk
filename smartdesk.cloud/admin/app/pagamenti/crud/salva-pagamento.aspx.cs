@@ -40,7 +40,7 @@ using System.Collections.Generic;
           //Response.Write("ci sono:" + strSorgente);
 		  		switch (strSorgente){
             case "scheda-anagrafiche":
-              Response.Redirect("/admin/app/anagrafiche/scheda-anagrafiche.aspx?CoreModules_Ky=1&CoreEntities_Ky=162&CoreForms_Ky=145&salvato=salvato&Anagrafiche_Ky=" + strAnagrafiche_Ky);
+              Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=162&CoreForms_Ky=145&salvato=salvato&Anagrafiche_Ky=" + strAnagrafiche_Ky);
               break;
             case "scheda-documenti":
               Response.Redirect("/admin/app/documenti/scheda-documenti.aspx?CoreModules_Ky=13&CoreEntities_Ky=44&CoreForms_Ky=1212&salvato=salvato&Documenti_Ky=" + strDocumenti_Ky + "&Anagrafiche_Ky=" + strAnagrafiche_Ky);
@@ -52,7 +52,7 @@ using System.Collections.Generic;
               Response.Redirect("/admin/view.aspx?CoreModules_Ky=21&CoreEntities_Ky=75&CoreGrids_Ky=233");
               break;
            default:
-              Response.Redirect("/admin/app/anagrafiche/scheda-anagrafiche.aspx?salvato=salvato&Anagrafiche_Ky=" + strAnagrafiche_Ky);
+              Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=162&salvato=salvato&Anagrafiche_Ky=" + strAnagrafiche_Ky);
               break;
           }
       }else{
@@ -176,33 +176,21 @@ using System.Collections.Generic;
         return output;
     }
 
-    public bool aggiornaStato()
-    {
-		SqlDataAdapter da = new SqlDataAdapter();
-		DataTable dt = new DataTable("getTable");
-		SqlConnection cn = new SqlConnection(Smartdesk.Config.Sql.ConnectionWrite);
-		SqlCommand cm = new SqlCommand();
-		
-		if (strDocumenti_Ky!=null && strDocumenti_Ky.Length>0){
-					strWHERENet="(Pagamenti_Pagato=0 Or Pagamenti_Pagato Is Null) And (Documenti_Ky=" + strDocumenti_Ky + ")";
-					strORDERNet = "Pagamenti_Ky";
-					strFROMNet = "Pagamenti";
-					dtPagamenti = new DataTable("Pagamenti");
-					dtPagamenti = Smartdesk.Sql.getTablePage(strFROMNet, null, "Pagamenti_Ky", strWHERENet, strORDERNet, 1, 1,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
-					if (dtPagamenti!=null && dtPagamenti.Rows.Count>0){
-						strSQL = "UPDATE Documenti SET DocumentiStato_Ky=2 WHERE Documenti_Ky=" + strDocumenti_Ky;
-					}else{
-						strSQL = "UPDATE Documenti SET DocumentiStato_Ky=6 WHERE Documenti_Ky=" + strDocumenti_Ky;
-					}
-	        cm.CommandText = strSQL;
-	        cm.CommandType = CommandType.Text;
-	        cm.Connection = cn;
-	        cm.CommandTimeout = 300;
-	        da.SelectCommand = cm;
-	        cn.Open();
-					cm.ExecuteNonQuery();								
-    }
-		    return true;
+    public bool aggiornaStato(){
+  		if (strDocumenti_Ky!=null && strDocumenti_Ky.Length>0){
+  					strWHERENet="(Pagamenti_Pagato=0 Or Pagamenti_Pagato Is Null) And (Documenti_Ky=" + strDocumenti_Ky + ")";
+  					strORDERNet = "Pagamenti_Ky";
+  					strFROMNet = "Pagamenti";
+  					dtPagamenti = new DataTable("Pagamenti");
+  					dtPagamenti = Smartdesk.Sql.getTablePage(strFROMNet, null, "Pagamenti_Ky", strWHERENet, strORDERNet, 1, 1,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
+  					if (dtPagamenti!=null && dtPagamenti.Rows.Count>0){
+  						strSQL = "UPDATE Documenti SET DocumentiStato_Ky=2 WHERE Documenti_Ky=" + strDocumenti_Ky;
+  					}else{
+  						strSQL = "UPDATE Documenti SET DocumentiStato_Ky=6 WHERE Documenti_Ky=" + strDocumenti_Ky;
+  					}
+            new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
+      }
+		  return true;
     }
 
 

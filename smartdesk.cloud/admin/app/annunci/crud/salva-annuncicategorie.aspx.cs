@@ -5,15 +5,16 @@ public partial class _Default : System.Web.UI.Page
 {
   public string strKy = "";
   public string strFoto= "";
-  
   public DataTable dtCoreUrlRewrite;
   public DataTable dtAnnunciCategorie;
   public DataTable dtProvince;
+  public DataTable dtCoreModulesOptionsValue;
   public int intNumRecords = 0;
   public string strFROMNet = "";
   public string strWHERENet = "";
   public string strORDERNet = "";
   public string strSQL = "";
+  public string strTheme="";
 
   protected void Page_Load(object sender, EventArgs e)
   {
@@ -37,6 +38,18 @@ public partial class _Default : System.Web.UI.Page
     string strDestination="";
     string strChiave="";
 
+		
+    dtCoreModulesOptionsValue = new DataTable("Options");
+    strWHERENet="CoreModulesOptions_Code='design'";
+    strORDERNet = "CoreModulesOptionsValue_Ky";
+    strFROMNet = "CoreModulesOptionsValue";
+    dtCoreModulesOptionsValue = Smartdesk.Sql.getTablePage(strFROMNet, null, "CoreModulesOptionsValue_Ky", strWHERENet, strORDERNet, 1, 1,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
+    if (dtCoreModulesOptionsValue.Rows.Count>0){
+      strTheme=dtCoreModulesOptionsValue.Rows[0]["CoreModulesOptionsValue_Value"].ToString();
+    }else{
+      strTheme="base";
+    }        
+
 		strWHERENet = "AnnunciCategorie_Ky=" + strKy;
     strORDERNet = "AnnunciCategorie_Ky";
     strFROMNet = "AnnunciCategorie";
@@ -52,14 +65,16 @@ public partial class _Default : System.Web.UI.Page
     if (dtCoreUrlRewrite.Rows.Count>0){
         strSQL = "UPDATE CoreUrlRewrite SET ";
         strSQL += "CoreUrlRewrite_UrlSource='" + strSource + "',";
-        strSQL += "CoreUrlRewrite_UrlDestination='" + strDestination + "'";
+        strSQL += "CoreUrlRewrite_UrlDestination='" + strDestination + "',";
+        strSQL += "CoreUrlRewrite_DateUpdate=GETDATE()";
         strSQL += " WHERE CoreUrlRewrite_Ky=" + dtCoreUrlRewrite.Rows[0]["CoreUrlRewrite_Ky"].ToString();
 		}else{
-        strSQL = "INSERT INTO CoreUrlRewrite (CoreEntities_Code,CoreEntities_KeyValue,CoreUrlRewrite_UrlSource,CoreUrlRewrite_UrlDestination) VALUES (";
+        strSQL = "INSERT INTO CoreUrlRewrite (CoreEntities_Code,CoreEntities_KeyValue,CoreUrlRewrite_UrlSource,CoreUrlRewrite_UrlDestination,CoreUrlRewrite_DateInsert) VALUES (";
         strSQL += " 'annuncicategorie',";
         strSQL += "'" + strKy + "',";
         strSQL += "'" + strSource + "',";
-        strSQL += "'" + strDestination + "'";
+        strSQL += "'" + strDestination + "',";
+        strSQL += "GETDATE()";
         strSQL += ")";
 		}
 		//Response.Write(strSQL);
@@ -73,7 +88,7 @@ public partial class _Default : System.Web.UI.Page
     for (int i = 0; i < dtProvince.Rows.Count; i++){
 				strChiave=strKy + "-" + dtProvince.Rows[i]["Province_Ky"].ToString();
 				strSource="/attivita/" + dtProvince.Rows[i]["Province_ProvinciaHTML"].ToString().ToLower() + "/" + dtAnnunciCategorie.Rows[0]["AnnunciCategorie_Url"].ToString() + "-" + dtProvince.Rows[i]["Province_ProvinciaHTML"].ToString().ToLower() + ".html";
-				strDestination="/visualizza-categoria.aspx?AnnunciCategorie_Ky_Corrente=" + strKy + "&AnnunciCategorie_Ky=" + strKy + "&Province_Ky=" + dtProvince.Rows[i]["Province_Ky"].ToString();
+				strDestination="/frontend/" + strTheme + "/annunci/visualizza-categoria.aspx?AnnunciCategorie_Ky_Corrente=" + strKy + "&AnnunciCategorie_Ky=" + strKy + "&Province_Ky=" + dtProvince.Rows[i]["Province_Ky"].ToString();
 				strWHERENet = "CoreEntities_Code='annuncicategorie_province' AND CoreEntities_KeyValue='" + strChiave + "'";
 		    strORDERNet = "CoreUrlRewrite_Ky";
 		    strFROMNet = "CoreUrlRewrite";
@@ -81,14 +96,16 @@ public partial class _Default : System.Web.UI.Page
 		    if (dtCoreUrlRewrite.Rows.Count>0){
 		        strSQL = "UPDATE CoreUrlRewrite SET ";
 		        strSQL += "CoreUrlRewrite_UrlSource='" + strSource + "',";
-		        strSQL += "CoreUrlRewrite_UrlDestination='" + strDestination + "'";
+		        strSQL += "CoreUrlRewrite_UrlDestination='" + strDestination + "',";
+            strSQL += "CoreUrlRewrite_DateUpdate=GETDATE()";
 		        strSQL += " WHERE CoreUrlRewrite_Ky=" + dtCoreUrlRewrite.Rows[0]["CoreUrlRewrite_Ky"].ToString();
 				}else{
-		        strSQL = "INSERT INTO CoreUrlRewrite (CoreEntities_Code,CoreEntities_KeyValue,CoreUrlRewrite_UrlSource,CoreUrlRewrite_UrlDestination) VALUES (";
+		        strSQL = "INSERT INTO CoreUrlRewrite (CoreEntities_Code,CoreEntities_KeyValue,CoreUrlRewrite_UrlSource,CoreUrlRewrite_UrlDestination,CoreUrlRewrite_DateInsert) VALUES (";
 		        strSQL += " 'annuncicategorie_province',";
 		        strSQL += "'" + strChiave + "',";
 		        strSQL += "'" + strSource + "',";
-		        strSQL += "'" + strDestination + "'";
+		        strSQL += "'" + strDestination + "',";
+            strSQL += "GETDATE()";
 		        strSQL += ")";
 				}
     		//Response.Write(strSQL + "<br>");

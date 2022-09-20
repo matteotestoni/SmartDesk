@@ -16,7 +16,7 @@
           <div class="large-8 medium-7 small-12 cell float-right align-middle">
         			<div class="stacked-for-small button-group small hide-for-print align-right">
         				<a class="button clear" data-toggle="filtri"><i class="fa-duotone fa-magnifying-glass fa-lg fa-fw"></i>Cerca anagrafiche</a>
-        				<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?azione=new" class="tiny button"><i class="fa-duotone fa-square-plus fa-lg fa-fw"></i>Nuovo</a>
+        				<a href="/admin/goto-form.aspx?CoreEntities_Ky=162&azione=new" class="tiny button"><i class="fa-duotone fa-square-plus fa-lg fa-fw"></i>Nuovo</a>
           		</div>
         </div>
   	</div>
@@ -81,7 +81,7 @@
 		            <% if (dtAnagrafiche.Rows[i]["Anagrafiche_Disdetto"].Equals(true)){ %>
 				            <i class="fa-duotone fa-circle-info fa-fw" style="color:#ec5840" title="chiuso"></i>
 		            <% } %>
-								<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=dtAnagrafiche.Rows[i]["Anagrafiche_Ky"].ToString()%>"><i class="fa-duotone fa-users fa-fw"></i><%=dtAnagrafiche.Rows[i]["Anagrafiche_RagioneSociale"].ToString()%></a>
+								<a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=dtAnagrafiche.Rows[i]["Anagrafiche_Ky"].ToString()%>"><i class="fa-duotone fa-users fa-fw"></i><%=dtAnagrafiche.Rows[i]["Anagrafiche_RagioneSociale"].ToString()%></a>
 						</div>
 					</td>
           <td><i class="fa-duotone fa-calendar-days fa-fw"></i><strong><%=dtAnagrafiche.Rows[i]["AnagraficheServizi_Scadenza_IT"].ToString()%></strong></td>

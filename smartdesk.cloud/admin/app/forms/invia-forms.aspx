@@ -23,7 +23,7 @@
     				<a href="/admin/view.aspx?CoreModules_Ky=1&CoreEntities_Ky=162&CoreGrids_Ky=198&Anagrafiche_Disdetto=1" class="button clear"><i class="fa-duotone fa-filter fa-lg fa-fw"></i>Anagrafiche chiuse</a>
     				<a href="/admin/view.aspx?CoreModules_Ky=1&CoreEntities_Ky=162&CoreGrids_Ky=198&tutti=tutti" class="button clear"><i class="fa-duotone fa-filter fa-lg fa-fw"></i>Tutte le anagrafiche</a>
           </div>   
-  				<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?azione=new" class="button"><i class="fa-duotone fa-square-plus fa-lg fa-fw"></i>Aggiungi nuova anagrafica</a>
+  				<a href="/admin/goto-form.aspx?CoreEntities_Ky=162&azione=new" class="button"><i class="fa-duotone fa-square-plus fa-lg fa-fw"></i>Aggiungi nuova anagrafica</a>
   			</div>
 			</div>
 		</div>
@@ -73,13 +73,13 @@
 		    <%for (int i = 0; i < dtAnagrafiche.Rows.Count; i++){ %>
 		        <tr class="riga<%=i%2%>">
 		          <td><input type="checkbox" class="checkrow" id="record<%=dtAnagrafiche.Rows[i]["Anagrafiche_Ky"].ToString()%>" data-value="<%=dtAnagrafiche.Rows[i]["Anagrafiche_Ky"].ToString()%>" /></td>
-		          <td class="show-for-medium-up large-text-center small-text-left nowrap"><a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=dtAnagrafiche.Rows[i]["Anagrafiche_Ky"].ToString()%>"><%=dtAnagrafiche.Rows[i]["Anagrafiche_Ky"].ToString()%></a></td>
+		          <td class="show-for-medium-up large-text-center small-text-left nowrap"><a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=dtAnagrafiche.Rows[i]["Anagrafiche_Ky"].ToString()%>"><%=dtAnagrafiche.Rows[i]["Anagrafiche_Ky"].ToString()%></a></td>
 		          <td>
 								<div class="width300">
 			            <% if (dtAnagrafiche.Rows[i]["Anagrafiche_Disdetto"].Equals(true)){ %>
 				            <i class="fa-duotone fa-circle-info fa-fw" style="color:#ec5840" title="chiuso"></i>
 				          <% } %>
-									<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=dtAnagrafiche.Rows[i]["Anagrafiche_Ky"].ToString()%>">
+									<a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=dtAnagrafiche.Rows[i]["Anagrafiche_Ky"].ToString()%>">
                   <% if (dtAnagrafiche.Rows[i]["Anagrafiche_SitoWeb"].ToString().Length>1){ %>
                   <img src="https://www.google.com/s2/favicons?domain=<%=dtAnagrafiche.Rows[i]["Anagrafiche_SitoWeb"].ToString()%>&size=16" width="16" height="16" border="0">
                   <% }else{ %>

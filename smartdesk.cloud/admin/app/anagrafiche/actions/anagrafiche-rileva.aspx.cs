@@ -31,7 +31,7 @@ public partial class _Default : System.Web.UI.Page{
       if (Smartdesk.Login.Verify){
       strSorgente=Smartdesk.Current.Request("sorgente");
       strAnagrafiche_Ky=Smartdesk.Current.Request("Anagrafiche_Ky");
-      strWHERENet=getWhere();;
+      strWHERENet=getWhere();
       strFROMNet = "Anagrafiche";
       strORDERNet = "Anagrafiche_RagioneSociale";
       dtAnagrafiche = new DataTable("Anagrafiche");
@@ -127,10 +127,10 @@ public partial class _Default : System.Web.UI.Page{
 					/*
           switch (strSorgente){
 						case "scheda-anagrafiche":
-		          Response.Redirect("/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=" + strAnagrafiche_Ky);
+		          Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=" + strAnagrafiche_Ky);
 							break;
 						default:
-		          Response.Redirect("/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=" + strAnagrafiche_Ky);
+		          Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=" + strAnagrafiche_Ky);
 							break;
 					}*/
       }else{

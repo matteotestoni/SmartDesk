@@ -66,9 +66,7 @@ using System.Data.SqlClient;
 			strSQL="INSERT INTO Documenti ([DocumentiTipo_Ky],[DocumentiStato_Ky],[Documenti_Riferimenti],[Documenti_Numero],[Documenti_Data],[Anagrafiche_Ky],[Documenti_TotaleRighe],[Documenti_TotaleIVA],[Documenti_Totale],[Documenti_Descrizione],[Documenti_Note],[Documenti_PDF],[Commesse_Ky], Aziende_Ky)";
 			strSQL+="VALUES (1,2,'servizi'," + strNumero + ",GETDATE(),"+ strAnagrafiche_Ky + ",0,0,0,'Rinnovo servizi',null,null,null,1)";
 			//Response.Write(strSQL);
-            cmd = new SqlCommand(strSQL, conn);
-            cmd.CommandTimeout = 0;
-            cmd.ExecuteNonQuery();
+      new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
 
 		    strWHERENet = "Anagrafiche_Ky=" + strAnagrafiche_Ky;
             strFROMNet = "Documenti_Vw";
@@ -89,9 +87,7 @@ using System.Data.SqlClient;
 				strSQL+="," + dtAnagraficheServizi.Rows[i]["Servizi_Ky"].ToString() + "," + strAttributiGruppi_Ky;
 				strSQL+=")";
 				//Response.Write(strSQL + "<hr>");
-	            cmd = new SqlCommand(strSQL, conn);
-	            cmd.CommandTimeout = 0;
-	            cmd.ExecuteNonQuery();
+        new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
 	            
 				intRinnovo=Convert.ToInt32(dtAnagraficheServizi.Rows[i]["AnagraficheServizi_Rinnovo"]);
                 switch (intRinnovo){
@@ -136,7 +132,7 @@ using System.Data.SqlClient;
                         break;    
                 }
                 //Response.Write(strSQL);
-				new SqlCommand(strSQL, conn).ExecuteNonQuery();
+        new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
 		        
 				//aggiorno totali
 				strSQL="UPDATE Documenti SET "; 
@@ -146,7 +142,7 @@ using System.Data.SqlClient;
 		        strSQL+=" FROM Documenti inner JOIN Documenti_Totali_Vw ON Documenti.Documenti_Ky=Documenti_Totali_Vw.Documenti_Ky";
 		        strSQL+=" WHERE Documenti.Documenti_Ky=" + strDocumenti_Ky;
 		        //Response.Write(strSQL);
-		        new SqlCommand(strSQL, conn).ExecuteNonQuery();
+            new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
 
 			}
 		    strWHERENet = "Documenti_Ky=" + strDocumenti_Ky;
@@ -162,10 +158,7 @@ using System.Data.SqlClient;
 			strDescrizione=dtDocumenti.Rows[0]["Documenti_Numero"].ToString() + " del " + dtDocumenti.Rows[0]["Documenti_Data_IT"].ToString() + " per Rinnovo servizi";
 			strSQL="INSERT INTO Pagamenti ([PagamentiTipo_Ky],[Pagamenti_Data],[Pagamenti_Importo],[Pagamenti_Riferimenti],[Anagrafiche_Ky],[Pagamenti_Pagato],[Pagamenti_NumeroPromemoria],[Pagamenti_NumeroChiamate],[Pagamenti_AttivaPromemoria],[Documenti_Ky],[Pagamenti_UltimoPromemoria],[Pagamenti_DataPagato],[Commesse_Ky],[PagamentiMetodo_Ky])";
 			strSQL+=" VALUES (1 ,DATEADD(s,-1,DATEADD(mm, DATEDIFF(m,0,GETDATE())+2,0)) ," + decTotDocumento.ToString("0.##") + ",'" + strDescrizione + "'," + strAnagrafiche_Ky + ",0,0,0,1," + strDocumenti_Ky + ",Null,Null,Null,1)";
-            cmd = new SqlCommand(strSQL, conn);
-            cmd.CommandTimeout = 0;
-	        //Response.Write(strSQL);
-            cmd.ExecuteNonQuery();
+      new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
 
 			strPath="/admin/app/documenti/scheda-documenti.aspx?CoreModules_Ky=13&CoreEntities_Ky=44&CoreForms_Ky=1212&Documenti_Ky=" + strDocumenti_Ky;
             conn.Close();

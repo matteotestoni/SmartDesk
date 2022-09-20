@@ -4,7 +4,6 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Collections.Specialized;
 
-
 public partial class _Default : System.Web.UI.Page 
 {
     public int intNumRecords = 0;

@@ -29,7 +29,7 @@
         			<a href="/admin/app/progetti/report/rpt-commesse-elenco.aspx?sorgente=elenco-progetti" target="_blank"><i class="fa-duotone fa-print fa-lg fa-fw"></i>Stampa elenco</a>
             </div>      
       			<a href="/admin/app/progetti/actions/aggiorna-commesse.aspx?sorgente=elenco-progetti" class="button secondary"><i class="fa-duotone fa-sync fa-lg fa-fw"></i>Aggiorna stato progetti</a>
-      			<a href="/admin/app/progetti/scheda-progetti.aspx?azione=new&sorgente=elenco-progetti" class=" button"><i class="fa-duotone fa-square-plus fa-lg fa-fw"></i>Nuovo</a>
+      			<a href="/admin/goto-form.aspx?CoreEntities_Ky=107&azione=new&sorgente=elenco-progetti" class=" button"><i class="fa-duotone fa-square-plus fa-lg fa-fw"></i>Nuovo</a>
       		</div>
         </div>
 	 </div>
@@ -94,11 +94,12 @@
 							</td>
 		          <td>
 								<div class="width400">
-									<a href="/admin/app/progetti/scheda-progetti.aspx?Commesse_Ky=<%=dtGridData.Rows[i]["Commesse_Ky"].ToString()%>"><i class="fa-duotone fa-building fa-fw"></i><strong><%=dtGridData.Rows[i]["Commesse_Titolo"].ToString()%></strong></a><br>
+									<a href="/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=<%=dtGridData.Rows[i]["Commesse_Ky"].ToString()%>"><i class="fa-duotone fa-building fa-fw"></i><strong><%=dtGridData.Rows[i]["Commesse_Titolo"].ToString()%></strong></a><br>
 								</div>
-	            	<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=dtGridData.Rows[i]["Anagrafiche_Ky"].ToString()%>" title="Telefono: <%=dtGridData.Rows[i]["Anagrafiche_Telefono"].ToString()%>"><i class="fa-duotone fa-user fa-fw"></i><%=dtGridData.Rows[i]["Anagrafiche_RagioneSociale"].ToString()%></a>
+	            	<a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=dtGridData.Rows[i]["Anagrafiche_Ky"].ToString()%>" title="Telefono: <%=dtGridData.Rows[i]["Anagrafiche_Telefono"].ToString()%>"><i class="fa-duotone fa-user fa-fw"></i><%=dtGridData.Rows[i]["Anagrafiche_RagioneSociale"].ToString()%></a>
 							</td>
 							<td>
+									<span class="label" style="background-color:<%=dtGridData.Rows[i]["CommesseStato_Colore"].ToString()%>"><i class="<%=dtGridData.Rows[i]["CommesseStato_Icona"].ToString()%> fa-fw"></i><%=dtGridData.Rows[i]["CommesseStato_Titolo"].ToString()%></span><br>
 									<div style="margin-top:5px" class="progress success" role="progressbar" tabindex="0" aria-valuenow="<%=dtGridData.Rows[i]["Commesse_Avanzamento"].ToString()%>" aria-valuemin="0" aria-valuetext="<%=dtGridData.Rows[i]["Commesse_Avanzamento"].ToString()%>%" aria-valuemax="100">
 									  <span class="progress-meter" style="width:<%=dtGridData.Rows[i]["Commesse_Avanzamento"].ToString()%>%">
 									    <p class="progress-meter-text"><%=dtGridData.Rows[i]["Commesse_Avanzamento"].ToString()%>%</p>

@@ -21,27 +21,27 @@
 </ul>
 <ul class="menu vertical medium-horizontal hide-for-print" data-responsive-menu="drilldown medium-dropdown">
   <% if (dtLogin.Rows[0]["UtentiGruppi_Calendario"].Equals(true)){ %>
-  <li class="has-submenu"><a href="/admin/app/calendario/calendario.aspx" title="Calendario"><i class="fa-duotone fa-calendar-days fa-xl fa-fw"></i></a></li>
+  <li class="has-submenu"><a href="/admin/app/attivita/calendario.aspx" title="Calendario"><i class="fa-duotone fa-calendar-days fa-xl fa-fw"></i></a></li>
   <% } %>
   <% if (dtLogin.Rows[0]["UtentiGruppi_Anagrafiche"].Equals(true)){ %>
-  <li class="has-submenu"><a href="/admin/view.aspx?CoreModules_Ky=1&CoreEntities_Ky=162&CoreGrids_Ky=198" title="Anagrafiche">Anagrafiche</a>
+  <li class="has-submenu"><a href="/admin/goto-view.aspx?CoreEntities_Ky=162&CoreGrids_Ky=198" title="Anagrafiche">Anagrafiche</a>
     <ul class="submenu menu vertical" data-submenu>
   		<% if (dtLogin.Rows[0]["UtentiGruppi_AnagraficheClienti"].Equals(true)){ %>
   		<li><a href="/admin/view.aspx?CoreModules_Ky=1&CoreEntities_Ky=162&CoreGrids_Ky=36" title="Clienti">Clienti</a></li>
   		<% } %>
   		<% if (dtLogin.Rows[0]["UtentiGruppi_AnagraficheConcorrenti"].Equals(true)){ %>
-  		<li><a href="/admin/view.aspx?CoreModules_Ky=1&CoreEntities_Ky=162&CoreGrids_Ky=197" title="Concorrenti">Concorrenti</a></li>
+  		<li><a href="/admin/goto-view.aspx?CoreEntities_Ky=162&CoreGrids_Ky=197" title="Concorrenti">Concorrenti</a></li>
   		<% } %>
   		<% if (dtLogin.Rows[0]["UtentiGruppi_AnagraficheFornitori"].Equals(true)){ %>
-  		<li><a href="/admin/view.aspx?CoreModules_Ky=1&CoreEntities_Ky=162&CoreGrids_Ky=196" title="Fornitori">Fornitori</a></li>
+  		<li><a href="/admin/goto-view.aspx?CoreEntities_Ky=162&CoreGrids_Ky=196" title="Fornitori">Fornitori</a></li>
   		<% } %>
   		<% if (dtLogin.Rows[0]["UtentiGruppi_AnagraficheFornitori"].Equals(true)){ %>
-  		<li><a href="/admin/view.aspx?CoreModules_Ky=1&CoreEntities_Ky=162&CoreGrids_Ky=243" title="Fornitori">Rivenditori</a></li>
+  		<li><a href="/admin/goto-view.aspx?CoreEntities_Ky=162&CoreGrids_Ky=243" title="Fornitori">Rivenditori</a></li>
   		<% } %>
   		<% if (dtLogin.Rows[0]["UtentiGruppi_Lead"].Equals(true)){ %>
-  		<li><a href="/admin/view.aspx?CoreModules_Ky=1&CoreEntities_Ky=162&CoreGrids_Ky=199" title="Lead">Lead</a></li>
+  		<li><a href="/admin/goto-view.aspx?CoreEntities_Ky=162&CoreGrids_Ky=199" title="Lead">Lead</a></li>
   		<% } %>
-  		<li><a href="/admin/view.aspx?CoreModules_Ky=1&CoreEntities_Ky=24&CoreGrids_Ky=28" title="Contatti">Contatti</a></li>
+  		<li><a href="/admin/goto-view.aspx?CoreEntities_Ky=24" title="Contatti">Contatti</a></li>
       <% if (dtLogin.Rows[0]["UtentiGruppi_Rapporti"].Equals(true)){ %>
       <li><a href="#Rapporti" title="Rapporti">Rapporti</a>
 	        <ul class="submenu menu vertical" data-submenu>
@@ -173,7 +173,9 @@
       <li class="has-submenu"><a href="/admin/view.aspx?CoreModules_Ky=29&CoreEntities_Ky=109&CoreGrids_Ky=130" title="Veicoli">Veicoli</a>
         <ul class="submenu menu vertical" data-submenu>
             <li><a href="/admin/view.aspx?CoreModules_Ky=29&CoreEntities_Ky=109&CoreGrids_Ky=130">Veicoli</a></li>
+            <li><a href="/admin/view.aspx?CoreModules_Ky=29&CoreEntities_Ky=109&CoreGrids_Ky=284">Auto Sostitutive</a></li>
             <li><a href="/admin/view.aspx?CoreModules_Ky=29&CoreEntities_Ky=126&CoreGrids_Ky=147">Offerte veicoli</a></li>
+            <li><a href="/admin/view.aspx?CoreModules_Ky=29&CoreEntities_Ky=258&CoreGrids_Ky=283">Prenotazioni veicoli</a></li>
             <li><a href="/admin/view.aspx?CoreModules_Ky=29&CoreEntities_Ky=127&CoreGrids_Ky=148">Ricerce veicoli</a></li>
             <li><a href="/admin/view.aspx?CoreModules_Ky=29&CoreEntities_Ky=252&CoreGrids_Ky=275">Veicoli in vetrina</a></li>
             <li><a href="/admin/view.aspx?CoreModules_Ky=29&CoreEntities_Ky=214&CoreGrids_Ky=223">Testi SEO</a></li>
@@ -297,8 +299,7 @@
   <li class="has-submenu"><a href="#" title="Produzione">Produzione</a>
     <ul class="submenu menu vertical" data-submenu>
       <% if (dtLogin.Rows[0]["UtentiGruppi_Progetti"].Equals(true)){ %>
-        <li><a href="/admin/app/progetti/elenco-commesse.aspx?CommesseTipo_Ky=1&CommesseStato_Ky=4&CoreModules_Ky=24&CoreEntities_Ky=107&CoreGrids_Ky=118&custom=1"><i class="fa-duotone fa-building fa-fw"></i>Progetti</a></li>
-        <li><a href="/admin/app/progetti/elenco-commesse.aspx?CommesseTipo_Ky=2&CommesseStato_Ky=4&CoreModules_Ky=24&CoreEntities_Ky=107&CoreGrids_Ky=118&custom=1"><i class="fa-duotone fa-clock fa-fw"></i>Contratti</a></li>
+        <li><a href="/admin/app/progetti/elenco-commesse.aspx?CommesseStato_Ky=4&CoreModules_Ky=24&CoreEntities_Ky=107&CoreGrids_Ky=118&custom=1"><i class="fa-duotone fa-building fa-fw"></i>Progetti e Contratti</a></li>
   		<% } %>
       <% if (dtLogin.Rows[0]["UtentiGruppi_Attivita"].Equals(true)){ %>
         <li><a href="/admin/app/attivita/attivita-da-fare.aspx?attivita-scadute=1&prossime-scadenze=1&scadenze-future=1"><i class="fa-duotone fa-calendar-days fa-fw"></i>Prospetto per scadenza</a></li>

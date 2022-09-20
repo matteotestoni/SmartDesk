@@ -21,7 +21,7 @@
 				<span class="form-error">Obbligatorio</span>
 				<div class="input-group-button">
 		      <% if (GetFieldValue(dtPagamenti, "Anagrafiche_Ky")!=null && GetFieldValue(dtPagamenti, "Anagrafiche_Ky").Length>0){ %>
-						<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=GetFieldValue(dtPagamenti, "Anagrafiche_Ky")%>"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw"></i></a>
+						<a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=GetFieldValue(dtPagamenti, "Anagrafiche_Ky")%>"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw"></i></a>
 					<% } %>
 			  </div>
 		  </div>

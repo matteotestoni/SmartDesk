@@ -50,7 +50,7 @@
 			            <% if (dtAnagrafiche.Rows[i]["Anagrafiche_Disdetto"].Equals(true)){ %>
 			            <strong>>>DISDETTA<<</strong>
 			            <% } %>
-									<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=dtAnagrafiche.Rows[i]["Anagrafiche_Ky"].ToString()%>"><i class="fa-duotone fa-users fa-fw"></i><%=dtAnagrafiche.Rows[i]["Anagrafiche_RagioneSociale"].ToString()%></a>
+									<a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=dtAnagrafiche.Rows[i]["Anagrafiche_Ky"].ToString()%>"><i class="fa-duotone fa-users fa-fw"></i><%=dtAnagrafiche.Rows[i]["Anagrafiche_RagioneSociale"].ToString()%></a>
 							</div>
 						</td>
 	          <td><%=dtAnagrafiche.Rows[i]["Province_Provincia"].ToString()%></td>

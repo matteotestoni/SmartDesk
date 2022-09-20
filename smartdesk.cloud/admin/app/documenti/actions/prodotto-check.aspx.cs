@@ -49,21 +49,10 @@ using System.Data.SqlClient;
 							strUPDATE="Prodotti_Outlet=" + strValore;
 							break;
 					}
-          SqlDataAdapter da = new SqlDataAdapter();
-          DataTable dt = new DataTable("getTable");
-          SqlConnection cn = new SqlConnection(Smartdesk.Config.Sql.ConnectionWrite);
-          SqlCommand cm = new SqlCommand();
-          
+                    
           strSQL = "UPDATE Prodotti SET " + strUPDATE + " WHERE Prodotti_Ky=" + strProdotti_Ky;
           //Response.Write(strSQL);
-          cm.CommandText = strSQL;
-          cm.CommandType = CommandType.Text;
-          cm.Connection = cn;
-          cm.CommandTimeout = 300;
-          da.SelectCommand = cm;
-          cn.Open();
-          cm.ExecuteNonQuery();
-          cn.Close();
+          new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
 					switch (strSorgente){
             case "home":
               Response.Redirect("/admin/home.aspx");

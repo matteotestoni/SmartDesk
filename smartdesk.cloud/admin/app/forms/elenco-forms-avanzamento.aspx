@@ -79,7 +79,7 @@
             <tr>
 		          <td><input type="checkbox" class="checkrow" id="record<%=dtGridData.Rows[i]["FormsAvanzamento_Ky"].ToString()%>" data-value="<%=dtGridData.Rows[i]["FormsAvanzamento_Ky"].ToString()%>" /></td>
 		          <td><%=dtGridData.Rows[i]["FormsAvanzamento_Ky"].ToString()%></td>
-              <td class="text-left"><a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=dtGridData.Rows[i]["Anagrafiche_Ky"].ToString()%>&sorgente=elenco-forms"><i class="fa-duotone fa-users fa-fw"></i><%=dtGridData.Rows[i]["Anagrafiche_RagioneSociale"].ToString()%></a></td>
+              <td class="text-left"><a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=dtGridData.Rows[i]["Anagrafiche_Ky"].ToString()%>&sorgente=elenco-forms"><i class="fa-duotone fa-users fa-fw"></i><%=dtGridData.Rows[i]["Anagrafiche_RagioneSociale"].ToString()%></a></td>
               <td class="text-left"><%=dtGridData.Rows[i]["Forms_Titolo"].ToString()%></td>
               <td class="large-text-center small-text-left"><i class="fa-duotone fa-calendar-days fa-fw"></i><%=dtGridData.Rows[i]["FormsAvanzamento_Data"].ToString()%></a></td>
               <td class="text-left">

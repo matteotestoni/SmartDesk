@@ -99,33 +99,9 @@ using System.Collections.Generic;
     {
         string strSQL="";
         bool output = false;
-        SqlDataAdapter da = new SqlDataAdapter();
-        DataTable dt = new DataTable("getTable");
-
-        SqlConnection cn = new SqlConnection(Smartdesk.Config.Sql.ConnectionWrite);
-        SqlCommand cm = new SqlCommand();
-        
         strSQL = "UPDATE Prodotti SET Prodotti_Documento" + intNumeroDocumentoPar + "='" + strProdotti_Documento + "' WHERE Prodotti_Ky = " + strProdotti_Ky;
         //Response.Write(strSQL);
-        cm.CommandText = strSQL;
-        cm.CommandType = CommandType.Text;
-        cm.Connection = cn;
-        cm.CommandTimeout = 300;
-        da.SelectCommand = cm;
-        cn.Open();
-        try
-        {
-            cm.ExecuteNonQuery();
-        }
-        catch (SqlException ex)
-        {
-            Exception err = new Exception("csLoadData->CreateXslInsUpdXls_In: " + ex.Message);
-            throw err;
-        }
-        finally
-        {
-            cn.Close();
-        }
+        new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
         return output;
     }
 
@@ -133,36 +109,12 @@ using System.Collections.Generic;
     {
         string strSQL="";
         bool output = false;
-        SqlDataAdapter da = new SqlDataAdapter();
-        DataTable dt = new DataTable("getTable");
-
-        SqlConnection cn = new SqlConnection(Smartdesk.Config.Sql.ConnectionWrite);
-        SqlCommand cm = new SqlCommand();
-        
         strSQL = "UPDATE Prodotti SET ";
         strSQL+= " Prodotti_Foto" + intNumeroFotoPar + "s='" + strProdotti_Foto1s + "',";
         strSQL+= " Prodotti_Foto" + intNumeroFotoPar + "='" + strProdotti_Foto1 + "'";
         strSQL+= " WHERE Prodotti_Ky = " + strProdotti_Ky;
         //Response.Write(strSQL);
-        cm.CommandText = strSQL;
-        cm.CommandType = CommandType.Text;
-        cm.Connection = cn;
-        cm.CommandTimeout = 300;
-        da.SelectCommand = cm;
-        cn.Open();
-        try
-        {
-            cm.ExecuteNonQuery();
-        }
-        catch (SqlException ex)
-        {
-            Exception err = new Exception("csLoadData->CreateXslInsUpdXls_In: " + ex.Message);
-            throw err;
-        }
-        finally
-        {
-            cn.Close();
-        }
+        new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
         return output;
     }
 
@@ -171,7 +123,7 @@ using System.Collections.Generic;
         string strSQL="";
         bool output = false;
         strSQL = "UPDATE Prodotti SET Prodotti_UrlKey='" + strUrlKey + "' WHERE Prodotti_Ky=" + strProdotti_Ky;
-        Response.Write(strSQL);
+        //Response.Write(strSQL);
       	new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
         output=true;
         return output;

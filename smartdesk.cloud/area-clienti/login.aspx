@@ -24,7 +24,6 @@
 					<div data-abide-error class="alert callout" style="display: none;">
 			    	<p><i class="fa-duotone fa-triangle-exclamation fa-fw"></i> Ci sono errori nel form.</p>
 			  	</div>
-	        <h1>Accedi all'area riservata</h1>
 					<div class="grid-x grid-padding-x">
 	      		<div class="large-12 medium-12 small-12 cell">
 		      			<input type="email" name="email" id="email" aria-describedby="helptext-email" autocomplete="username" tabindex="1" required="required" placeholder="Il tuo indirizzo Email">
@@ -39,6 +38,13 @@
 								<p class="help-text" id="helptext-password"><i class="fa-duotone fa-key fa-fw"></i>Inserisci la tua password</p>
 	      		</div>
 	      	</div>
+					<div class="grid-x grid-padding-x">
+	      		<div class="large-12 medium-12 small-12 cell">
+		      			<input type="checkbox" name="chkPersistCookie" id="chkPersistCookie" checked value="1" tabindex="3">
+		      			<label for="chkPersistCookie">Resta collegato</label>
+	      		</div>
+	      	</div>
+
 	      	<div class="grid-x grid-padding-x">
 	      		<div class="large-12 medium-12 small-12 cell text-right">
 							<input type="hidden" value="<%=strReturnUrl%>" id="ReturnUrl" name="ReturnUrl">

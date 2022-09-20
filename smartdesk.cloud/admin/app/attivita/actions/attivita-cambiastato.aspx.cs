@@ -52,10 +52,10 @@ using System.Data.SqlClient;
                     Response.Redirect("/admin/app/anagrafiche/elenco-anagrafiche-da-fare.aspx?Utenti_Ky=" + dtLogin.Rows[0]["Utenti_Ky"].ToString() + "#attivita");
                     break;
                   case "scheda-anagrafiche":
-                    Response.Redirect("/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=" + strAnagrafiche_Ky + "#attivita");
+                    Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=" + strAnagrafiche_Ky + "#attivita");
                     break;
                   case "scheda-commessa":
-                    Response.Redirect("/admin/app/progetti/scheda-commesse.aspx?Commesse_Ky=" + strCommesse_Ky + "#attivita");
+                    Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=" + strCommesse_Ky + "#attivita");
                     break;
                   case "scheda-opportunita":
                     Response.Redirect("/admin/app/commerciale/scheda-opportunita.aspx?Opportunita_Ky=" + strOpportunita_Ky + "#attivita");
@@ -64,7 +64,7 @@ using System.Data.SqlClient;
                     Response.Redirect("/admin/app/attivita/attivita-da-fare-stato.aspx?Utenti_Ky=" + dtLogin.Rows[0]["Utenti_Ky"].ToString() + "&attivita-scadute=1&prossime-scadenze=1&scadenze-future=1#attivita");
                     break;
     		          case "commessa":
-                    Response.Redirect("/admin/app/progetti/scheda-commesse.aspx?Commesse_Ky=" + strCommesse_Ky + "#attivita");
+                    Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=" + strCommesse_Ky + "#attivita");
                     break;
                 }            
             }

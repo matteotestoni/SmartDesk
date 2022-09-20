@@ -23,7 +23,7 @@ public partial class _Default : System.Web.UI.Page
     public string strFROMNet = "";
     public string strHtml = "";
     public string strHtmlCorpo = "";
-    public string strH1 = "Attivit&agrave; da fare";
+    public string strH1 = "Attivit&agrave; da fare per scadenza";
     public string strWHERENet="";
     
     public int intNumeroColonne = 0;
@@ -40,8 +40,6 @@ public partial class _Default : System.Web.UI.Page
           dtLogin = Smartdesk.Data.Read("Utenti_Vw","Utenti_Ky", Smartdesk.Session.CurrentUser.ToString());          if (dtLogin.Rows.Count>0){
             
             boolAdmin=(dtLogin.Rows[0]["Utenti_Admin"]).Equals(true);
-			      strH1="Attivit&agrave;";
-						
 			      strFROMNet = "Utenti";
 			      strWHERENet= getWhereUtenti();
 			      strORDERNet = "Utenti_Ky";
@@ -85,21 +83,22 @@ public partial class _Default : System.Web.UI.Page
     {
 	    string strReturn;
         strReturn = "<div id=\"attivita" + dtAttivita["Attivita_Ky"].ToString() + "\" data-attivita=\"" + dtAttivita["Attivita_Ky"].ToString() + "\" class=\"card card-" + strClass + " drag-drop\">";
+        strReturn += "<div class=\"card-divider\"><i class=\"fa-duotone " + dtAttivita["AttivitaTipo_Icona"].ToString() + " fa-fw \"></i><small>" + dtAttivita["Attivita_Descrizione"].ToString() + "</small></div>\n";
         strReturn += "<div class=\"card-section\">";
         strReturn += "<div class=\"grid-x\"><div class=\"large-11 medium-10 small-10 cell\">";
-        strReturn += "<div><i class=\"fa-duotone " + dtAttivita["AttivitaTipo_Icona"].ToString() + " fa-fw \"></i><small>" + dtAttivita["Attivita_Descrizione"].ToString() + "</small></div>\n";
-        strReturn += "<i class=\"fa-duotone fa-clock fa-fw\"></i>Ore:</i>" + dtAttivita["Attivita_Ore"].ToString() + "\n";
+        strReturn += "<i class=\"fa-duotone fa-clock fa-fw\"></i>Ore:</i>" + dtAttivita["Attivita_Ore"].ToString() + "<br>\n";
+        strReturn += "<i class=\"fa-duotone fa-user fa-fw\"></i></i>" + dtAttivita["Utenti_Nominativo"].ToString() + "\n";
         strReturn += "</div><div class=\"large-1 medium-2 small-2 cell\">";
         strReturn += "<a href=\"/admin/app/attivita/actions/attivita-completa.aspx?Utenti_Ky=" + dtAttivita["Utenti_Ky"].ToString() + "&Anagrafiche_Ky=" + dtAttivita["Anagrafiche_Ky"].ToString() + "&Attivita_Ky=" + dtAttivita["Attivita_Ky"].ToString() + "&AttivitaSettore_Ky=" + dtAttivita["AttivitaSettore_Ky"].ToString() + "&Attivita_Completo=1&sorgente=prospetto\" class=\"funzione\" data-tooltip title=\"Segna come completata\"><i class=\"fa-duotone fa-check fa-fw\"></i></a>";
         strReturn += "<a href=\"/admin/app/attivita/scheda-attivita.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreForms_Ky=129&Attivita_Ky=" + dtAttivita["Attivita_Ky"].ToString() + "&sorgente=prospetto\" data-tooltip title=\"modifica\"><i class=\"fa-duotone fa-pen-to-square fa-fw\"></i></a>";
         strReturn += "</div></div>\n";
         strReturn += "<div style=\"float:left;width:120px\"><i class=\"fa-duotone fa-calendar-days fa-fw\"></i>" + dtAttivita["Attivita_Scadenza_IT"].ToString() + "</div>\n";
         strReturn += "<div style=\"float:left;width:60px\">" + Smartdesk.Functions.getGGDaFare(dtAttivita["ggTrascorsi"].ToString()) + "</div>\n";
-        strReturn += "<div style=\"float:left;overflow:hidden\"><a href=\"/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=" + dtAttivita["Anagrafiche_Ky"].ToString() + "&sorgente=prospetto\" class=\"funzione\"><i class=\"fa-duotone fa-user fa-fw\"></i>" + dtAttivita["Anagrafiche_RagioneSociale"].ToString() + "</a></div>\n";
+        strReturn += "<div style=\"float:left;overflow:hidden\"><a href=\"/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=" + dtAttivita["Anagrafiche_Ky"].ToString() + "&sorgente=prospetto\" class=\"funzione\"><i class=\"fa-duotone fa-user fa-fw\"></i>" + dtAttivita["Anagrafiche_RagioneSociale"].ToString() + "</a></div>\n";
         strReturn += getPriorita(dtAttivita["Priorita_Ky"].ToString());
         if (dtAttivita["Commesse_Ky"].ToString().Length > 0 && dtAttivita["Commesse_Ky"].ToString() != "0")
         {
-            strReturn += "<br><i class=\"fa-duotone fa-building fa-fw\"></i><a href=\"/admin/app/progetti/scheda-commesse.aspx?Commesse_Ky=" + dtAttivita["Commesse_Ky"].ToString() + "\">" + dtAttivita["Commesse_Riferimenti"].ToString() + "</a>\n";
+            strReturn += "<br><i class=\"fa-duotone fa-building fa-fw\"></i><a href=\"/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=" + dtAttivita["Commesse_Ky"].ToString() + "\">" + dtAttivita["Commesse_Riferimenti"].ToString() + "</a>\n";
         }
         strReturn += "</div></div>\n";
         return strReturn;
@@ -146,13 +145,12 @@ public partial class _Default : System.Web.UI.Page
         string strValue="";
 
         strWHERE="";
-        strH1="Attivit&agrave; da fare";
 				switch (intTipo){
 					case 1:
 		        strWHERE="(Attivita_Completo='no') AND (Attivita_Scadenza>=GETDATE()) AND (Attivita_Scadenza<=GETDATE()+30)";
 						break;
 					case 2:
-		      	strWHERE="(Attivita_Completo='no') AND (Attivita_Scadenza>=GETDATE()+30)";
+		      	strWHERE="(Attivita_Completo='no') AND (Attivita_Scadenza>GETDATE()+30)";
 						break;
 					case 3:
 		        strWHERE="(Attivita_Completo='no') AND (Attivita_Scadenza<=GETDATE() AND (Attivita_Scadenza>=GETDATE()-30))";

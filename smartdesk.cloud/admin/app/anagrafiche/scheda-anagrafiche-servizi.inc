@@ -52,7 +52,7 @@ string strValoreAttributo;
 										<div class="width450">
 											<%=dtAnagraficheServiziAttivi.Rows[i]["Servizi_Titolo"].ToString()%><br>
 											<small>
-												<% if (dtAnagraficheServiziAttivi.Rows[i]["Commesse_Ky"].ToString().Length>0){ %><a href="/admin/app/progetti/scheda-commesse.aspx?Commesse_Ky=<%=dtAnagraficheServiziAttivi.Rows[i]["Commesse_Ky"].ToString()%>&sorgente=scheda-anagrafiche" title="progetto"><i class="fa-duotone fa-circle-info fa-fw"></i><%=dtAnagraficheServiziAttivi.Rows[i]["Commesse_Riferimenti"].ToString()%></a><% } %>
+												<% if (dtAnagraficheServiziAttivi.Rows[i]["Commesse_Ky"].ToString().Length>0){ %><a href="/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=<%=dtAnagraficheServiziAttivi.Rows[i]["Commesse_Ky"].ToString()%>&sorgente=scheda-anagrafiche" title="progetto"><i class="fa-duotone fa-circle-info fa-fw"></i><%=dtAnagraficheServiziAttivi.Rows[i]["Commesse_Riferimenti"].ToString()%></a><% } %>
 											</small>
 											<small>
 												<%
@@ -148,7 +148,7 @@ string strValoreAttributo;
 		              <td>
 										<div class="width400"><%=dtAnagraficheServiziChiusi.Rows[i]["Servizi_Titolo"].ToString()%></div>
 										<small>
-											<% if (dtAnagraficheServiziChiusi.Rows[i]["Commesse_Ky"].ToString().Length>0){ %><a href="/admin/app/progetti/scheda-commesse.aspx?Commesse_Ky=<%=dtAnagraficheServiziChiusi.Rows[i]["Commesse_Ky"].ToString()%>&sorgente=scheda-anagrafiche" title="progetto"><i class="fa-duotone fa-circle-info fa-fw"></i><%=dtAnagraficheServiziChiusi.Rows[i]["Commesse_Riferimenti"].ToString()%></a><% } %>
+											<% if (dtAnagraficheServiziChiusi.Rows[i]["Commesse_Ky"].ToString().Length>0){ %><a href="/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=<%=dtAnagraficheServiziChiusi.Rows[i]["Commesse_Ky"].ToString()%>&sorgente=scheda-anagrafiche" title="progetto"><i class="fa-duotone fa-circle-info fa-fw"></i><%=dtAnagraficheServiziChiusi.Rows[i]["Commesse_Riferimenti"].ToString()%></a><% } %>
 										</small>
 										<small>
 											Dominio: <%=dtAnagraficheServiziChiusi.Rows[i]["SitiWeb_Dominio"].ToString()%> - 

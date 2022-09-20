@@ -98,11 +98,11 @@ public partial class _Default : System.Web.UI.Page
         strReturn += "<i class=\"fa-duotone fa-clock fa-fw\"></i>Ore:</i>" + dtAttivita["Attivita_Ore"].ToString() + "\n";
         strReturn += "<div style=\"float:left;width:120px\"><i class=\"fa-duotone fa-calendar-days fa-fw\"></i>" + dtAttivita["Attivita_Scadenza_IT"].ToString() + "</div>\n";
         strReturn += "<div style=\"float:left;width:60px\">" + Smartdesk.Functions.getGGDaFare(dtAttivita["ggTrascorsi"].ToString()) + "</div>\n";
-        strReturn += "<div style=\"float:left;overflow:hidden\"><a href=\"/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=" + dtAttivita["Anagrafiche_Ky"].ToString() + "&sorgente=prospetto\" class=\"funzione\"><i class=\"fa-duotone fa-user fa-fw\"></i>" + dtAttivita["Anagrafiche_RagioneSociale"].ToString() + "</a></div>\n";
+        strReturn += "<div style=\"float:left;overflow:hidden\"><a href=\"/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=" + dtAttivita["Anagrafiche_Ky"].ToString() + "&sorgente=prospetto\" class=\"funzione\"><i class=\"fa-duotone fa-user fa-fw\"></i>" + dtAttivita["Anagrafiche_RagioneSociale"].ToString() + "</a></div>\n";
         strReturn += getPriorita(dtAttivita["Priorita_Ky"].ToString());
         if (dtAttivita["Commesse_Ky"].ToString().Length > 0 && dtAttivita["Commesse_Ky"].ToString() != "0")
         {
-            strReturn += "<br><i class=\"fa-duotone fa-building fa-fw\"></i><a href=\"/admin/app/progetti/scheda-commesse.aspx?Commesse_Ky=" + dtAttivita["Commesse_Ky"].ToString() + "\">" + dtAttivita["Commesse_Riferimenti"].ToString() + "</a>\n";
+            strReturn += "<br><i class=\"fa-duotone fa-building fa-fw\"></i><a href=\"/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=" + dtAttivita["Commesse_Ky"].ToString() + "\">" + dtAttivita["Commesse_Riferimenti"].ToString() + "</a>\n";
         }
         strReturn += "</div><div class=\"large-1 medium-2 small-2 cell\">";
         strReturn += "<a href=\"/admin/app/attivita/actions/attivita-completa.aspx?Anagrafiche_Ky=" + dtAttivita["Anagrafiche_Ky"].ToString() + "&Attivita_Ky=" + dtAttivita["Attivita_Ky"].ToString() + "&AttivitaSettore_Ky=" + dtAttivita["AttivitaSettore_Ky"].ToString() + "&Attivita_Completo=1&sorgente=prospetto\" class=\"funzione\" data-tooltip title=\"Segna come completata\"><i class=\"fa-duotone fa-check fa-fw\"></i></a>";

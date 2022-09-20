@@ -35,7 +35,7 @@
 			<label for="CommesseStato_Ky" class="large-text-right small-text-left">Stato <i class="fa-duotone fa-file-lines fa-fw"></i></label>
 		</div>
 		<div class="auto cell end">
-      <%=GetFieldValue(dtCommesse, "CommesseStato_Titolo")%>
+      <label class="label" style="background-color:<%=GetFieldValue(dtCommesse, "CommesseStato_Colore")%>"><i class="<%=GetFieldValue(dtCommesse, "CommesseStato_Icona")%> fa-fw"></i> <%=GetFieldValue(dtCommesse, "CommesseStato_Titolo")%></label>
 		</div>
 		<div class="large-2 medium-2 small-4 cell">
 			<label for="Commesse_Data" class="large-text-right small-text-left">Data <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
@@ -44,6 +44,27 @@
       <%=GetFieldValue(dtCommesse, "Commesse_Data_IT")%>
 		</div>
 	</div>
+  
+	<div class="grid-x grid-padding-x">
+  	<div class="large-2 medium-2 small-4 cell">
+  		<label for="Utenti_Ky" class="large-text-right small-text-left middle">Assegnata <i class="fa-duotone fa-user fa-fw"></i></label>
+  	</div>
+  	<div class="large-4 medium-4 small-8 cell contenuto">
+      <%=GetFieldValue(dtCommesse, "Utenti_Nominativo")%> <%=GetFieldValue(dtCommesse, "Utenti_Email")%>
+  	</div>
+  	<div class="large-2 medium-2 small-4 cell">
+			<label for="CommesseStato_Ky" class="large-text-right small-text-left">Ore <i class="fa-duotone fa-clock fa-fw"></i></label>
+		</div>
+		<div class="auto cell end">
+								previste: <i class="fa-duotone fa-clock fa-fw"></i> <%=dtCommesse.Rows[0]["Commesse_OrePreviste"].ToString()%> - 
+								impiegate: <i class="fa-duotone fa-clock fa-fw"></i> <%=dtCommesse.Rows[0]["Commesse_OreImpiegate"].ToString()%> -
+								<% if (dtCommesse.Rows[0]["CommesseTipo_Ky"].ToString()=="2"){ %>
+                residue: <i class="fa-duotone fa-clock fa-fw"></i><%=Smartdesk.Functions.GetOreResidue(dtCommesse.Rows[0]["Commesse_OreResidue"].ToString())%>
+                <% } %>
+		</div>
+	</div>
+
+  
 
 	<% if (GetFieldValue(dtCommesse, "Commesse_Note").Length>0){ %>
   <div class="grid-x grid-padding-x">

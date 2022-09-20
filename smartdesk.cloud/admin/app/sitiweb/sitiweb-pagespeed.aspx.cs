@@ -93,7 +93,7 @@ public partial class _Default : System.Web.UI.Page{
       
       switch (strSorgente){
 					case "scheda-anagrafiche":
-					Response.Redirect("/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=" + strAnagrafiche_Ky);
+					Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=" + strAnagrafiche_Ky);
 					break;
 				case "scheda-sitoweb":
 					Response.Redirect("/admin/app/sitiweb/scheda-sitiweb.aspx?SitiWeb_Ky=" + strSitiWeb_Ky);

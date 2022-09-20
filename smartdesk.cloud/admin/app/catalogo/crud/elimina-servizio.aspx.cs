@@ -15,7 +15,7 @@ public partial class _Default : System.Web.UI.Page
             }else{
                 Smartdesk.Functions.SqlDeleteKey("AnagraficheServizi");
             }
-            strRedirect="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=" + strAnagrafiche_Ky;
+            strRedirect="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=" + strAnagrafiche_Ky;
         	Response.Redirect(strRedirect);
         }else{
             Response.Redirect(Smartdesk.Current.LoginPageRoot);

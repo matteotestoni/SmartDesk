@@ -233,14 +233,20 @@
         <td valign="top" width="150" align="right"><strong style="margin-right:10px">Destinatario:</strong></td>
     	    <td valign="top">
     	      <div class="spettabile">Spettabile</div>
-    	      <div class="ragionesociale"><%=dtDocumenti.Rows[0]["Anagrafiche_RagioneSociale"].ToString()%></div>
-    	      <%=dtDocumenti.Rows[0]["Anagrafiche_Indirizzo"].ToString()%><br />
-    	      <%=dtDocumenti.Rows[0]["Anagrafiche_CAP"].ToString()%> <%=dtDocumenti.Rows[0]["Comuni_Comune"].ToString()%> (<%=dtDocumenti.Rows[0]["Province_Provincia"].ToString()%>)<br />
-    	      <% if (dtDocumenti.Rows[0]["Anagrafiche_PartitaIVA"].ToString().Length>0){ %>
-    		      <strong>Partita IVA: <%=dtDocumenti.Rows[0]["Anagrafiche_PartitaIVA"].ToString()%></strong><br />
+    	      <div class="ragionesociale"><%=dtAnagrafiche.Rows[0]["Anagrafiche_RagioneSociale"].ToString()%></div>
+    	      <%=dtAnagrafiche.Rows[0]["Anagrafiche_Indirizzo"].ToString()%><br />
+    	      <%=dtAnagrafiche.Rows[0]["Anagrafiche_CAP"].ToString()%> <%=dtAnagrafiche.Rows[0]["Comuni_Comune"].ToString()%> (<%=dtAnagrafiche.Rows[0]["Province_Provincia"].ToString()%>)<br />
+    	      <% if (dtAnagrafiche.Rows[0]["Anagrafiche_PartitaIVA"].ToString().Length>0){ %>
+    		      <strong>Partita IVA: <%=dtAnagrafiche.Rows[0]["Anagrafiche_PartitaIVA"].ToString()%></strong><br />
     	      <% } %>
-    	      <% if (dtDocumenti.Rows[0]["Anagrafiche_CodiceFiscale"].ToString().Length>0){ %>
-    	        <strong>Codice Fiscale: <%=dtDocumenti.Rows[0]["Anagrafiche_CodiceFiscale"].ToString()%></strong><br />
+    	      <% if (dtAnagrafiche.Rows[0]["Anagrafiche_CodiceFiscale"].ToString().Length>0){ %>
+    	        - <strong>Codice Fiscale: <%=dtAnagrafiche.Rows[0]["Anagrafiche_CodiceFiscale"].ToString()%></strong><br />
+    	      <% } %>
+    	      <% if (dtAnagrafiche.Rows[0]["Anagrafiche_CodiceDestinatario"].ToString().Length>0){ %>
+    	        <strong>SDI: <%=dtAnagrafiche.Rows[0]["Anagrafiche_CodiceDestinatario"].ToString()%></strong> 
+    	      <% } %>
+    	      <% if (dtAnagrafiche.Rows[0]["Anagrafiche_PEC"].ToString().Length>0){ %>
+    	        - <strong>PEC: <%=dtAnagrafiche.Rows[0]["Anagrafiche_PEC"].ToString()%></strong><br />
     	      <% } %>
     	    </td>
     	  </tr>

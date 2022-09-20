@@ -90,7 +90,7 @@
 							</td>
 		          <td>
 								<div class="width300">
-									<a href="/admin/app/progetti/scheda-progetti.aspx?Commesse_Ky=<%=dtGridData.Rows[i]["Commesse_Ky"].ToString()%>"><i class="fa-duotone fa-building fa-fw"></i><strong><%=dtGridData.Rows[i]["Commesse_Titolo"].ToString()%></strong></a><br>
+									<a href="/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=<%=dtGridData.Rows[i]["Commesse_Ky"].ToString()%>"><i class="fa-duotone fa-building fa-fw"></i><strong><%=dtGridData.Rows[i]["Commesse_Titolo"].ToString()%></strong></a><br>
 								</div>
 	            	<i class="fa-duotone fa-user fa-fw"></i><%=dtGridData.Rows[i]["Anagrafiche_RagioneSociale"].ToString()%><br>
                 <small>
@@ -108,8 +108,9 @@
 								<a href="/admin/app/progetti/scheda-progetti.aspx?Commesse_Ky=<%=dtGridData.Rows[i]["Commesse_Ky"].ToString()%>"><i class="fa-duotone fa-gears fa-fw"></i>Attivit&agrave;</a><br>
 							</td>
 							<td>
-									<div style="margin-top:5px" class="progress success" role="progressbar" tabindex="0" aria-valuenow="<%=dtGridData.Rows[i]["Commesse_Avanzamento"].ToString()%>" aria-valuemin="0" aria-valuetext="<%=dtGridData.Rows[i]["Commesse_Avanzamento"].ToString()%>%" aria-valuemax="100">
-									  <span class="progress-meter" style="width:<%=dtGridData.Rows[i]["Commesse_Avanzamento"].ToString()%>%">
+									<span class="label" style="background-color:<%=dtGridData.Rows[i]["CommesseStato_Colore"].ToString()%>"><i class="<%=dtGridData.Rows[i]["CommesseStato_Icona"].ToString()%> fa-fw"></i><%=dtGridData.Rows[i]["CommesseStato_Titolo"].ToString()%></span><br>
+                  <div style="margin-top:5px" class="progress success" role="progressbar" tabindex="0" aria-valuenow="<%=dtGridData.Rows[i]["Commesse_Avanzamento"].ToString()%>" aria-valuemin="0" aria-valuetext="<%=dtGridData.Rows[i]["Commesse_Avanzamento"].ToString()%>%" aria-valuemax="100">
+                    <span class="progress-meter" style="width:<%=dtGridData.Rows[i]["Commesse_Avanzamento"].ToString()%>%">
 									    <p class="progress-meter-text"><%=dtGridData.Rows[i]["Commesse_Avanzamento"].ToString()%>%</p>
 									  </span>
 									</div>
@@ -125,7 +126,7 @@
 		          <td class="large-text-right small-text-left" style="padding-right:4px">&euro; <%=dtGridData.Rows[i]["Commesse_Valore_IT"].ToString()%></td>
 	        		<% } %>
 		          <td class="show-for-medium-up text-center nowrap">
-                <a href="/admin/app/progetti/scheda-commesse.aspx?Commesse_Ky=<%=dtGridData.Rows[i]["Commesse_Ky"].ToString()%>" title="modifica" class="edit"><i class="fa-duotone fa-pen-to-square fa-fw"></i></a>
+                <a href="/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=<%=dtGridData.Rows[i]["Commesse_Ky"].ToString()%>" title="modifica" class="edit"><i class="fa-duotone fa-pen-to-square fa-fw"></i></a>
                 <a href="/admin/app/progetti/crud/elimina-commesse.aspx?azione=delete&Commesse_Ky=<%=dtGridData.Rows[i]["Commesse_Ky"].ToString()%>" title="elimina" class="delete"><i class="fa-duotone fa-trash-can fa-fw"></i></a>
               </td>
 		        </tr>

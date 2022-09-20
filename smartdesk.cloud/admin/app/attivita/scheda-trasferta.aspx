@@ -4,6 +4,7 @@
 <head>
 	<title>Attivit&agrave; > Scheda trasferta</title>
 	<!--#include file="/admin/inc-head.aspx"-->
+	<script src="/admin/app/attivita/attivita.js?id=<%=new Random().Next(0, 100)%>"></script>
 </head>
 <body>
 <!--#include file=/admin/inc-mainbar.aspx --> 
@@ -37,11 +38,9 @@
         <input type="hidden" name="Utenti_Ky" id="Utenti_Ky" value="<%=Smartdesk.Session.CurrentUser.ToString()%>">
         <input type="hidden" name="Attivita_Ky" id="Attivita_Ky" value="<%=GetFieldValue(dtAttivita, "Attivita_Ky")%>">
         <input type="hidden" name="Priorita_Ky" id="Attivita_Ky" value="1">
-        <input type="hidden" name="Attivita_OraInizio" id="Attivita_OraInizio" value="08:00" class="timepicker" size="6">
-        <input type="hidden" name="Attivita_OraScadenza" id="Attivita_OraScadenza" value="18:00" class="timepicker" size="6">
         <input type="hidden" name="Attivita_Completo" id="Attivita_Completo" value="on" checked="checked" />
-        <input type="hidden" name="Attivita_Scadenza" id="Attivita_Scadenza" value="<%=GetFieldValue(dtAttivita, "Attivita_Scadenza_IT")%>" class="fdatepicker" size="10">
-        <input type="hidden" name="Attivita_Chiusura" id="Attivita_Chiusura" value="<%=GetFieldValue(dtAttivita, "Attivita_Chiusura_IT")%>" class="fdatepicker" size="10">
+        <input type="hidden" name="Attivita_Scadenza" id="Attivita_Scadenza" value="<%=GetFieldValue(dtAttivita, "Attivita_Scadenza")%>" size="10">
+        <input type="hidden" name="Attivita_Chiusura" id="Attivita_Chiusura" value="<%=GetFieldValue(dtAttivita, "Attivita_Chiusura")%>" size="10">
         <!--#include file=/admin/forms_messaggi.inc -->
         <!--#include file=/admin/app/attivita/forms/trasferta_form.htm -->
       </div>

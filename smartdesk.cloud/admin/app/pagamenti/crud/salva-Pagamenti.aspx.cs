@@ -19,7 +19,7 @@ public partial class _Default : System.Web.UI.Page
             strKy = Smartdesk.Functions.SqlWriteKey("Pagamenti", frm);
             switch (strSorgente){
               case "scheda-anagrafiche":
-                Response.Redirect("/admin/app/anagrafiche/scheda-anagrafiche.aspx?CoreModules_Ky=1&CoreEntities_Ky=162&CoreForms_Ky=145&salvato=salvato&Anagrafiche_Ky=" + strAnagrafiche_Ky);
+                Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=162&CoreForms_Ky=145&salvato=salvato&Anagrafiche_Ky=" + strAnagrafiche_Ky);
                 break;
               case "scheda-documenti":
                 Response.Redirect("/admin/app/documenti/scheda-documenti.aspx?CoreModules_Ky=13&CoreEntities_Ky=44&CoreForms_Ky=1212&salvato=salvato&Documenti_Ky=" + Smartdesk.Current.Request("Documenti_Ky") + "&Anagrafiche_Ky=" + Smartdesk.Current.Request("Anagrafiche_Ky"));

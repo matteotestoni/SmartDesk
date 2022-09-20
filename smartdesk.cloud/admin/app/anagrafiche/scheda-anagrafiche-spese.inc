@@ -37,7 +37,7 @@
 				          <td><a href="/admin/app/amministrazione/scheda-spese.aspx?CoreModules_Ky=2&CoreEntities_Ky=1&Spese_Ky=<%=dtSpese.Rows[i]["Spese_Ky"].ToString()%>"><i class="fa-duotone fa-file-lines fa-fw"></i><small><%=dtSpese.Rows[i]["Spese_Titolo"].ToString()%></small></a></td>
 				          <td>
 										<div class="width200">
-				            	<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=dtSpese.Rows[i]["Anagrafiche_Ky"].ToString()%>" title="Email: <%=dtSpese.Rows[i]["Anagrafiche_EmailAmministrazione"].ToString()%> - Telefono: <%=dtSpese.Rows[i]["Anagrafiche_Telefono"].ToString()%>"><i class="fa-duotone fa-users fa-fw"></i><%=dtSpese.Rows[i]["Anagrafiche_RagioneSociale"].ToString()%></a>
+				            	<a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=dtSpese.Rows[i]["Anagrafiche_Ky"].ToString()%>" title="Email: <%=dtSpese.Rows[i]["Anagrafiche_EmailAmministrazione"].ToString()%> - Telefono: <%=dtSpese.Rows[i]["Anagrafiche_Telefono"].ToString()%>"><i class="fa-duotone fa-users fa-fw"></i><%=dtSpese.Rows[i]["Anagrafiche_RagioneSociale"].ToString()%></a>
 										</div> 
 				          </td>
 				          <td><i class="fa-duotone fa-file-lines fa-fw"></i><%=dtSpese.Rows[i]["CentridiCR_Titolo"].ToString()%></td>

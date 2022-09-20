@@ -32,18 +32,18 @@
 				    <%for (int i = 0; i < dtCommesse.Rows.Count; i++){ %>
 				        <tr class="riga<%=i%2%>">
 		          		<td><input type="checkbox" class="checkrow" id="record<%=dtCommesse.Rows[i]["Commesse_Ky"].ToString()%>" data-value="<%=dtCommesse.Rows[i]["Commesse_Ky"].ToString()%>" /></td>
-				          <td><a href="/admin/app/progetti/scheda-commesse.aspx?Commesse_Ky=<%=dtCommesse.Rows[i]["Commesse_Ky"].ToString()%>"><%=dtCommesse.Rows[i]["Commesse_Ky"].ToString()%></a></td>
+				          <td><a href="/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=<%=dtCommesse.Rows[i]["Commesse_Ky"].ToString()%>"><%=dtCommesse.Rows[i]["Commesse_Ky"].ToString()%></a></td>
 				          <td><%=dtCommesse.Rows[i]["Commesse_Riferimenti"].ToString()%></td>
 				          <td><%=dtCommesse.Rows[i]["CommesseTipo_Titolo"].ToString()%></td>
 				          <td><i class="<%=dtCommesse.Rows[i]["CommesseStato_Icona"].ToString()%> fa-fw"></i><%=dtCommesse.Rows[i]["CommesseStato_Titolo"].ToString()%></td>
 				          <td><i class="fa-duotone fa-calendar-days fa-fw"></i><%=dtCommesse.Rows[i]["Commesse_Data"].ToString()%></td>
-				          <td><a href="/admin/app/progetti/scheda-progetti.aspx?Commesse_Ky=<%=dtCommesse.Rows[i]["Commesse_Ky"].ToString()%>"><i class="fa-duotone fa-file-lines fa-fw"></i><small><%=dtCommesse.Rows[i]["Commesse_Titolo"].ToString()%></small></a></td>
-    		          <td><a href="/admin/app/progetti/scheda-progetti.aspx?Commesse_Ky=<%=dtCommesse.Rows[i]["Commesse_Ky"].ToString()%>"><i class="fa-duotone fa-gears fa-fw"></i>Attivit&agrave;</a></td>
+				          <td><a href="/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=<%=dtCommesse.Rows[i]["Commesse_Ky"].ToString()%>"><i class="fa-duotone fa-file-lines fa-fw"></i><small><%=dtCommesse.Rows[i]["Commesse_Titolo"].ToString()%></small></a></td>
+    		          <td><a href="/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=<%=dtCommesse.Rows[i]["Commesse_Ky"].ToString()%>"><i class="fa-duotone fa-gears fa-fw"></i>Attivit&agrave;</a></td>
 				          <td class="text-center"><%=dtCommesse.Rows[i]["Commesse_OrePreviste"].ToString()%></td>
 				          <td class="text-center"><%=dtCommesse.Rows[i]["Commesse_OreImpiegate"].ToString()%></td>
 				          <td class="text-center"><%=Smartdesk.Functions.GetOreResidue(dtCommesse.Rows[i]["Commesse_OreResidue"].ToString())%></td>
 				          <td>
-                    <a href="/admin/app/progetti/scheda-commesse.aspx?Commesse_Ky=<%=dtCommesse.Rows[i]["Commesse_Ky"].ToString()%>" title="modifica" class="edit"><i class="fa-duotone fa-pen-to-square fa-fw"></i></a>
+                    <a href="/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=<%=dtCommesse.Rows[i]["Commesse_Ky"].ToString()%>" title="modifica" class="edit"><i class="fa-duotone fa-pen-to-square fa-fw"></i></a>
                     <a href="/admin/app/progetti/crud/elimina-commesse.aspx?azione=delete&sorgente=scheda-anagrafica&Commesse_Ky=<%=dtCommesse.Rows[i]["Commesse_Ky"].ToString()%>" title="elimina" class="delete"><i class="fa-duotone fa-trash-can fa-fw"></i></a>
                   </td>
 				        </tr>

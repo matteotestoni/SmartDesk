@@ -115,34 +115,9 @@ public partial class _Default : System.Web.UI.Page
     {
         string strSQL="";
         bool output = false;
-        SqlDataAdapter da = new SqlDataAdapter();
-        DataTable dt = new DataTable("getTable");
-
-        SqlConnection cn = new SqlConnection(Smartdesk.Config.Sql.ConnectionWrite);
-        SqlCommand cm = new SqlCommand();
-        
         strSQL = "INSERT INTO FormsAvanzamento (Forms_Ky, Anagrafiche_Ky,FormsAvanzamento_Data, FormsAvanzamento_Descrizione, FormsAvanzamento_Stato)";
         strSQL += " VALUES (" + strForms_Ky + "," + strAnagrafiche_Ky + ", GETDATE(), 'Inviata email richiesta compilazione', 1)";
-        cm.CommandText = strSQL;
-        cm.CommandType = CommandType.Text;
-        cm.Connection = cn;
-
-        cm.CommandTimeout = 300;
-        da.SelectCommand = cm;
-        cn.Open();
-        try
-        {
-            cm.ExecuteNonQuery();
-        }
-        catch (SqlException ex)
-        {
-            Exception err = new Exception("csLoadData->CreateXslInsUpdXls_In: " + ex.Message);
-            throw err;
-        }
-        finally
-        {
-            cn.Close();
-        }
+        new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
         return output;
     }
 }

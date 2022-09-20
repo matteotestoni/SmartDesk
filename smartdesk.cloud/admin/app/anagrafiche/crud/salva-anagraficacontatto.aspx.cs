@@ -26,7 +26,7 @@ using System.Collections.Generic;
             switch (strSorgente)
             {
                 case "scheda-anagrafiche":
-                    strRedirect="/admin/app/anagrafiche/scheda-anagrafiche.aspx?salvato=salvato&Anagrafiche_Ky=" + strAnagrafiche_Ky;
+                    strRedirect="/admin/goto-form.aspx?CoreEntities_Ky=162&salvato=salvato&Anagrafiche_Ky=" + strAnagrafiche_Ky;
                     break;
                 case "scheda-sitoweb":
                     strRedirect = "/admin/app/sitiweb/scheda-sitiweb.aspx?salvato=salvato&Anagrafiche_Ky=" + strAnagrafiche_Ky + "&SitiWeb_Ky=" + strSitiWeb_Ky;
@@ -35,7 +35,7 @@ using System.Collections.Generic;
                     strRedirect = "/admin/app/sitiweb/scheda-sitiweb.aspx?salvato=salvato&Anagrafiche_Ky=" + strAnagrafiche_Ky + "&SitiWeb_Ky=" + strSitiWeb_Ky;
                     break;
                 default:
-                    strRedirect = "/admin/app/anagrafiche/scheda-anagrafiche.aspx?salvato=salvato&Anagrafiche_Ky=" + strAnagrafiche_Ky;
+                    strRedirect = "/admin/goto-form.aspx?CoreEntities_Ky=162&salvato=salvato&Anagrafiche_Ky=" + strAnagrafiche_Ky;
                     break;
             }
 

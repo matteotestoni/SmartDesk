@@ -3,14 +3,13 @@ using System.Data;
 
 public partial class _Default : System.Web.UI.Page 
 {
-    
-    
     public int intNumRecords = 0;
     public int i = 0;
     public System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("it-IT");
     public string strLogin="";
     public DataTable dtLogin;
     public bool boolAdmin = false;
+    public DataTable dtCMSLink;
     public DataTable dtPagamentiScaduti;
     public DataTable dtPagamentiFuturi;
     public DataTable dtPagamentiDaFare;
@@ -27,7 +26,6 @@ public partial class _Default : System.Web.UI.Page
     public DateTime dt;
     public int intPersone_Ky = 0;
     public int intUtenti_Ky = 0;
-    
     public string strActive=" is-active";
     public string strActiveTab = " is-active";
     public string strH1="Smartdesk > Home";
@@ -37,9 +35,7 @@ public partial class _Default : System.Web.UI.Page
       string strWHERENet="";
       string strFROMNet = "";
       string strORDERNet = "";
-      
-	    
-      
+
       if (Context.Request.Cookies["rswcrm"]!=null){
         dtLogin = Smartdesk.Data.Read("Utenti_Vw","Utenti_Ky", Smartdesk.Session.CurrentUser.ToString());          
       		if (dtLogin.Rows.Count>0){
@@ -49,12 +45,19 @@ public partial class _Default : System.Web.UI.Page
       				intUtenti_Ky=Convert.ToInt32(dtLogin.Rows[0]["Utenti_Ky"]);				
       			}else{
       				intPersone_Ky=0;				
-      				intUtenti_Ky=0;				
+      				intUtenti_Ky=0;
       			}
       			tracciaLogin(Smartdesk.Session.CurrentUser.ToString());
       			dt=DateTime.Now;
       			int intYear=dt.Year;
       			int intMonth=dt.Month+1;
+
+    				strWHERENet="";
+    				strFROMNet = "CMSLink_Vw";
+    				strORDERNet = "CMSLink_Destinazione ASC";
+    				dtCMSLink = new DataTable("CMSLink");
+    				dtCMSLink = Smartdesk.Sql.getTablePage(strFROMNet, null, "CMSLink_Ky", strWHERENet, strORDERNet, 1,2000,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
+
       			if (dtLogin.Rows[0]["UtentiGruppi_Servizi"].Equals(true)){
       				//servizi da fatturare
       				strWHERENet="(Anagrafiche_Disdetto!=1 Or Anagrafiche_Disdetto Is Null) And (Month(AnagraficheServizi_Scadenza)<=" + intMonth + ") And (Year(AnagraficheServizi_Scadenza)=" + intYear + ")";
@@ -92,9 +95,8 @@ public partial class _Default : System.Web.UI.Page
       				dtFormsAvanzamento = new DataTable("FormsAvanzamento");
       				dtFormsAvanzamento = Smartdesk.Sql.getTablePage(strFROMNet, null, "FormsAvanzamento_Ky", strWHERENet, strORDERNet, 1,2000,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);            
       			}
-      						
-                  //attivita
-                  if (intPersone_Ky>0){
+            //attivita
+            if (intPersone_Ky>0){
       				strWHERENet="(AttivitaSettore_Ky=2) And (Anagrafiche_Disdetto!=1) And (Attivita_Completo='no') AND (scadenzawhere<=(getdate()+120)) And Persone_Ky=" + intPersone_Ky.ToString();
       			}else{
       				strWHERENet="(AttivitaSettore_Ky=2) And (Anagrafiche_Disdetto!=1) And (Attivita_Completo='no') AND (scadenzawhere<=(getdate()+120))";

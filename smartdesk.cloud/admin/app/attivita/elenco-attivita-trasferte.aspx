@@ -186,14 +186,14 @@
 		          <td><input type="checkbox" class="checkrow" id="record<%=dtGridData.Rows[i]["Attivita_Ky"].ToString()%>" data-value="<%=dtGridData.Rows[i]["Attivita_Ky"].ToString()%>" /></td>
 				      <td class="text-left nowrap"><a href="/admin/app/attivita/scheda-trasferta.aspx?Attivita_Ky=<%=dtGridData.Rows[i]["Attivita_Ky"].ToString()%>&Utenti_Ky=<%=dtGridData.Rows[i]["Utenti_Ky"].ToString()%>&sorgente=elenco-trasferte"><%=dtGridData.Rows[i]["Attivita_Ky"].ToString()%></td>
 		          <td>
-								<i class="fa-duotone fa-calendar-days fa-fw"></i><%=dtGridData.Rows[i]["Attivita_Scadenza_IT"].ToString()%>-<%=dtGridData.Rows[i]["Mese"].ToString()%><br>
+								<i class="fa-duotone fa-calendar-days fa-fw"></i><%=dtGridData.Rows[i]["Attivita_Scadenza"].ToString()%>-<%=dtGridData.Rows[i]["Mese"].ToString()%><br>
 							</td>
 		          <td>
 								<div class="width300">
 				            <% if (dtGridData.Rows[i]["Anagrafiche_Disdetto"].Equals(true)){ %>
 				            <strong>>>DISDETTA<<</strong>
 				            <% } %>
-										<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=dtGridData.Rows[i]["Anagrafiche_Ky"].ToString()%>">
+										<a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=dtGridData.Rows[i]["Anagrafiche_Ky"].ToString()%>">
 	                  <% if (dtGridData.Rows[i]["Anagrafiche_SitoWeb"].ToString().Length>1){ %>
 	                  <img src="https://www.google.com/s2/favicons?domain=<%=dtGridData.Rows[i]["Anagrafiche_SitoWeb"].ToString()%>" width="16" height="16" border="0">
 	                  <% }else{ %>

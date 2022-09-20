@@ -3,9 +3,6 @@ using System.Data;
 using System.Data.SqlClient;
 
 public partial class _Default : System.Web.UI.Page{
-
-    
-    
     public int i = 0;
     public System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("it-IT");
     public string strLogin="";
@@ -14,7 +11,6 @@ public partial class _Default : System.Web.UI.Page{
     public DataTable dtSitiWeb;
     public DataTable dtTemp;
     public int intNumRecords = 0;
-    
     public string strLog="";
     public string strSitiWeb_Ky="";
     public string strAnagrafiche_Ky="";
@@ -29,9 +25,6 @@ public partial class _Default : System.Web.UI.Page{
       string strDominio2="";
       string strValue="";
 
-      
-      
-	  
       if (Smartdesk.Login.Verify){
         dtLogin = Smartdesk.Data.Read("Utenti_Vw","Utenti_Ky", Smartdesk.Session.CurrentUser.ToString());          
         boolAdmin=(dtLogin.Rows[0]["Utenti_Admin"]).Equals(true);
@@ -72,7 +65,7 @@ public partial class _Default : System.Web.UI.Page{
     		Response.Write(strLog);
           switch (strSorgente){
 						case "scheda-anagrafiche":
-		            			Response.Redirect("/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=" + strAnagrafiche_Ky);
+		            			Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=" + strAnagrafiche_Ky);
 								break;
 							case "scheda-sitoweb":
 		            			Response.Redirect("/admin/app/sitiweb/scheda-sitiweb.aspx?SitiWeb_Ky=" + strSitiWeb_Ky);

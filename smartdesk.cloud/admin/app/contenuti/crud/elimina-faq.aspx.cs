@@ -26,7 +26,7 @@ public partial class _Default : System.Web.UI.Page
             switch (strSorgente)
             {
                 case "scheda-anagrafiche":
-                    strRedirect="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=" + strAnagrafiche_Ky;
+                    strRedirect="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=" + strAnagrafiche_Ky;
                     break;
                 case "scheda-faq":
                     strRedirect="/admin/view.aspx?CoreModules_Ky=9&CoreEntities_Ky=73&CoreGrids_Ky=94&Anagrafiche_Ky=" + strAnagrafiche_Ky + "&Prodotti_Ky" + strProdotti_Ky + "&ProdottiCategorie_Ky" + strProdottiCategorie_Ky;

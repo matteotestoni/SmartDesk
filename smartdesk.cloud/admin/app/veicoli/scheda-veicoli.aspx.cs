@@ -35,7 +35,7 @@ public partial class _Default : System.Web.UI.Page
               if (strAzione!="new"){
                 strAzione = "modifica";
 		            strVeicoli_Ky=Smartdesk.Current.Request("Veicoli_Ky");
-	    	  	  	dtVeicoli = Smartdesk.Data.Read("Veicoli", "Veicoli_Ky",Smartdesk.Current.QueryString("Veicoli_Ky"));
+	    	  	  	dtVeicoli = Smartdesk.Data.Read("Veicoli_Vw", "Veicoli_Ky",Smartdesk.Current.QueryString("Veicoli_Ky"));
 
                 //regioni
                 if (dtVeicoli.Rows[0]["Nazioni_Ky"].ToString()!=""){

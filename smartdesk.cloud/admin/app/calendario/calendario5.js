@@ -150,8 +150,8 @@ jQuery(document).ready(function() {
 
         //events: 'calendario.ashx',
         eventSources: [
-          'holidays.aspx',
-          'calendario.ashx'
+          '/admin/app/calendario/holidays.aspx',
+          '/admin/app/calendario/calendario.ashx'
         ],
         
         navLinks: true,

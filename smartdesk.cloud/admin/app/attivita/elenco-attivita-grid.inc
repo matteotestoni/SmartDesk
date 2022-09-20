@@ -26,12 +26,13 @@
 		      <tr>
 	          <th width="10"><input type="checkbox" id="selectall" name="selectall" /></th>
           	<th width="40" class="text-left">Cod.</th>
-		        <th width="120" class="text-center">Data Consegna<br>Settimana</th>
+		        <th width="120" class="text-center">Data Consegna</th>
 		        <th width="120" class="text-center">Data Chiusura</th>
-		        <th width="250" data-orderable="false">Anagrafica<br>Progetto</th>
+		        <th width="150" data-orderable="false">Anagrafica</th>
+		        <th width="150" data-orderable="false">Progetto</th>
 		        <th width="350" data-orderable="false">Descrizione attivit&agrave;</th>
 		        <th width="60" data-orderable="false" class="text-right">Ore</th>
-      			<th width="60" class="text-right">Utente</th>
+      			<th width="80" class="text-right">Utente</th>
 		        <th width="12" class="nowrap" data-orderable="false"></th>
 		      </tr>
 	    	</thead>
@@ -41,11 +42,11 @@
 		        <tr class="riga<%=i%2%>">
 		          <td><input type="checkbox" class="checkrow" id="record<%=dtGridData.Rows[i]["Attivita_Ky"].ToString()%>" data-value="<%=dtGridData.Rows[i]["Attivita_Ky"].ToString()%>" /></td>
 				      <td class="text-left nowrap"><a href="/admin/app/attivita/scheda-attivita.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreForms_Ky=129&Attivita_Ky=<%=dtGridData.Rows[i]["Attivita_Ky"].ToString()%>&Utenti_Ky=<%=dtGridData.Rows[i]["Utenti_Ky"].ToString()%>&sorgente=elenco-attivita"><%=dtGridData.Rows[i]["Attivita_Ky"].ToString()%></a></td>
-		          <td class="text-center"><i class="fa-duotone fa-calendar-days fa-fw"></i><%=dtGridData.Rows[i]["Attivita_Scadenza_IT"].ToString()%><br><span class="badge"><%=Smartdesk.Functions.GetSettimana(dtGridData.Rows[i]["Attivita_Scadenza"].ToString())%></span></td>
+		          <td class="text-center"><i class="fa-duotone fa-calendar-days fa-fw"></i><%=dtGridData.Rows[i]["Attivita_Scadenza_IT"].ToString()%></td>
 		          <td class="text-center"><i class="fa-duotone fa-calendar-days fa-fw"></i><%=dtGridData.Rows[i]["Attivita_Chiusura_IT"].ToString()%></td>
 		          <td>
 								<div class="width200">
-									<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=dtGridData.Rows[i]["Anagrafiche_Ky"].ToString()%>">
+									<a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=dtGridData.Rows[i]["Anagrafiche_Ky"].ToString()%>">
                   <% if (dtGridData.Rows[i]["Anagrafiche_SitoWeb"].ToString().Length>1){ %>
                   <img src="https://www.google.com/s2/favicons?domain=<%=dtGridData.Rows[i]["Anagrafiche_SitoWeb"].ToString()%>" width="16" height="16" border="0">
                   <% }else{ %>
@@ -53,9 +54,11 @@
                   <% } %>  
 									<%=dtGridData.Rows[i]["Anagrafiche_RagioneSociale"].ToString()%></a>
 								</div>
+							</td>
+							<td>
 								<% if (dtGridData.Rows[i]["Commesse_Ky"].ToString().Length>0 && dtGridData.Rows[i]["Commesse_Ky"].ToString()!="0"){ %>
 								<div class="width200">
-									<a href="/admin/app/progetti/scheda-commesse.aspx?Commesse_Ky=<%=dtGridData.Rows[i]["Commesse_Ky"].ToString()%>"><i class="fa-duotone fa-building fa-fw"></i><%=dtGridData.Rows[i]["Commesse_Riferimenti"].ToString()%></a>
+									<a href="/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=<%=dtGridData.Rows[i]["Commesse_Ky"].ToString()%>"><i class="fa-duotone fa-building fa-fw"></i><%=dtGridData.Rows[i]["Commesse_Riferimenti"].ToString()%></a>
 								</div>
 								<% } %>
 							</td>

@@ -83,14 +83,16 @@ public partial class _Default : System.Web.UI.Page
         if (dtCoreUrlRewrite.Rows.Count>0){
             strSQL = "UPDATE CoreUrlRewrite SET ";
             strSQL += "CoreUrlRewrite_UrlSource='" + strSource + "',";
-            strSQL += "CoreUrlRewrite_UrlDestination='" + strDestination + "'";
+            strSQL += "CoreUrlRewrite_UrlDestination='" + strDestination + "',";
+            strSQL += "CoreUrlRewrite_DateUpdate=GETDATE()";
             strSQL += " WHERE CoreUrlRewrite_Ky=" + dtCoreUrlRewrite.Rows[0]["CoreUrlRewrite_Ky"].ToString();
     		}else{
-            strSQL = "INSERT INTO CoreUrlRewrite (CoreEntities_Code,CoreEntities_KeyValue,CoreUrlRewrite_UrlSource,CoreUrlRewrite_UrlDestination) VALUES (";
+            strSQL = "INSERT INTO CoreUrlRewrite (CoreEntities_Code,CoreEntities_KeyValue,CoreUrlRewrite_UrlSource,CoreUrlRewrite_UrlDestination,CoreUrlRewrite_DateInsert) VALUES (";
             strSQL += " 'CMSContenuti',";
             strSQL += "'" + strKy + "',";
             strSQL += "'" + strSource + "',";
-            strSQL += "'" + strDestination + "'";
+            strSQL += "'" + strDestination + "',";
+            strSQL += "GETDATE()";
             strSQL += ")";
     		}
     		//Response.Write(strSQL);

@@ -27,7 +27,7 @@
         <tr class="riga<%=i%2%>">
           <td class="text-left">
             <div>
-							<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=dtAnagraficheServizi.Rows[i]["Anagrafiche_Ky"].ToString()%>" title="<%=dtAnagraficheServizi.Rows[i]["Anagrafiche_Note"].ToString()%>"><i class="fa-duotone fa-users fa-fw"></i><%=dtAnagraficheServizi.Rows[i]["Anagrafiche_RagioneSociale"].ToString()%></a>
+							<a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=dtAnagraficheServizi.Rows[i]["Anagrafiche_Ky"].ToString()%>" title="<%=dtAnagraficheServizi.Rows[i]["Anagrafiche_Note"].ToString()%>"><i class="fa-duotone fa-users fa-fw"></i><%=dtAnagraficheServizi.Rows[i]["Anagrafiche_RagioneSociale"].ToString()%></a>
           	</div>
           </td>
           <td class="small-text-left large-text-left number"><i class="fa-duotone fa-circle-info fa-fw fa-lg" data-tooltip title="<%=dtAnagraficheServizi.Rows[i]["Servizi_Codice"].ToString()%>" style="z-index:999;--fa-primary-color: white;--fa-secondary-color: blue;"></i></td>

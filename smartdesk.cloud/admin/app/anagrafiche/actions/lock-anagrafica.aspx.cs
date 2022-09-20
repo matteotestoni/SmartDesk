@@ -28,7 +28,7 @@ using System.Data.SqlClient;
                 new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
                 switch (strSorgente){
                   case "scheda-anagrafiche":
-                    Response.Redirect("/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=" + strAnagrafiche_Ky);
+                    Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=" + strAnagrafiche_Ky);
                     break;
                   case "elenco-anagrafiche":
                     Response.Redirect("/admin/view.aspx?CoreModules_Ky=1&CoreEntities_Ky=162&CoreGrids_Ky=199&Anagrafiche_Ky=" + strAnagrafiche_Ky);
@@ -37,7 +37,7 @@ using System.Data.SqlClient;
                     Response.Redirect("/admin/app/documenti/elenco-documenti.aspx?Anagrafiche_Ky=" + strAnagrafiche_Ky);
                     break;
     		          case "scheda-commessa":
-    		            Response.Redirect("/admin/app/progetti/scheda-commesse.aspx?Commesse_Ky=" + strCommesse_Ky);
+    		            Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=" + strCommesse_Ky);
     		            break;
                 }
       }else{

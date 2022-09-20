@@ -61,7 +61,7 @@
 														<small><%=dtAttivitaDaFare.Rows[i]["Attivita_Descrizione"].ToString()%></small>
 													</div>
 												</td>
-					              <td class="text-left"><% if (dtAttivitaDaFare.Rows[i]["Commesse_Ky"].ToString().Length>0){ %><a href="/admin/app/progetti/scheda-commesse.aspx?Commesse_Ky=<%=dtAttivitaDaFare.Rows[i]["Commesse_Ky"].ToString()%>&sorgente=scheda-anagrafiche"><i class="fa-duotone fa-circle-info fa-fw" title="<%=dtAttivitaDaFare.Rows[i]["Commesse_Titolo"].ToString()%>"></i><%=dtAttivitaDaFare.Rows[i]["Commesse_Riferimenti"].ToString()%></a><% } %></td>
+					              <td class="text-left"><% if (dtAttivitaDaFare.Rows[i]["Commesse_Ky"].ToString().Length>0){ %><a href="/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=<%=dtAttivitaDaFare.Rows[i]["Commesse_Ky"].ToString()%>&sorgente=scheda-anagrafiche"><i class="fa-duotone fa-circle-info fa-fw" title="<%=dtAttivitaDaFare.Rows[i]["Commesse_Titolo"].ToString()%>"></i><%=dtAttivitaDaFare.Rows[i]["Commesse_Riferimenti"].ToString()%></a><% } %></td>
 					              <td class="large-text-center small-text-left"><i class="fa-duotone fa-calendar-days fa-fw"></i><%=dtAttivitaDaFare.Rows[i]["Attivita_Scadenza_IT"].ToString()%></td>
 			        					<td class="large-text-center small-text-left"><strong><%=Smartdesk.Functions.getGGDaFare(dtAttivitaDaFare.Rows[i]["ggTrascorsi"].ToString())%></strong></td>
 					              <td class="large-text-center small-text-left"><i class="fa-duotone fa-calendar-days fa-fw"></i><%=dtAttivitaDaFare.Rows[i]["Attivita_Chiusura_IT"].ToString()%></td>
@@ -119,7 +119,7 @@
 														<small><%=dtAttivitaCompletateTecniche.Rows[i]["Attivita_Descrizione"].ToString()%></small>
 													</div>
 												</td>
-					              <td class="text-left"><% if (dtAttivitaCompletateTecniche.Rows[i]["Commesse_Ky"].ToString().Length>0){ %><a href="/admin/app/progetti/scheda-commesse.aspx?Commesse_Ky=<%=dtAttivitaCompletateTecniche.Rows[i]["Commesse_Ky"].ToString()%>&sorgente=scheda-anagrafiche"><i class="fa-duotone fa-circle-info fa-fw" title="<%=dtAttivitaCompletateTecniche.Rows[i]["Commesse_Titolo"].ToString()%>"></i><%=dtAttivitaCompletateTecniche.Rows[i]["Commesse_Riferimenti"].ToString()%></a><% } %></td>
+					              <td class="text-left"><% if (dtAttivitaCompletateTecniche.Rows[i]["Commesse_Ky"].ToString().Length>0){ %><a href="/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=<%=dtAttivitaCompletateTecniche.Rows[i]["Commesse_Ky"].ToString()%>&sorgente=scheda-anagrafiche"><i class="fa-duotone fa-circle-info fa-fw" title="<%=dtAttivitaCompletateTecniche.Rows[i]["Commesse_Titolo"].ToString()%>"></i><%=dtAttivitaCompletateTecniche.Rows[i]["Commesse_Riferimenti"].ToString()%></a><% } %></td>
 					              <td class="large-text-center small-text-left"><i class="fa-duotone fa-calendar-days fa-fw"></i><%=dtAttivitaCompletateTecniche.Rows[i]["Attivita_Scadenza_IT"].ToString()%></td>
 					              <td class="large-text-center small-text-left"><i class="fa-duotone fa-calendar-days fa-fw"></i><%=dtAttivitaCompletateTecniche.Rows[i]["Attivita_Chiusura_IT"].ToString()%></td>
 					              <td class="large-text-right small-text-left"><i class="fa-duotone fa-clock fa-fw"></i><%=dtAttivitaCompletateTecniche.Rows[i]["Attivita_Ore"].ToString()%></td>
@@ -186,7 +186,7 @@
 														<small><%=dtAttivitaCompletateAmministrative.Rows[i]["Attivita_Descrizione"].ToString()%></small>
 													</div>
 												</td>
-					              <td class="text-left"><% if (dtAttivitaCompletateAmministrative.Rows[i]["Commesse_Ky"].ToString().Length>0){ %><a href="/admin/app/progetti/scheda-commesse.aspx?Commesse_Ky=<%=dtAttivitaCompletateAmministrative.Rows[i]["Commesse_Ky"].ToString()%>&sorgente=scheda-anagrafiche"><i class="fa-duotone fa-circle-info fa-fw" title="<%=dtAttivitaCompletateAmministrative.Rows[i]["Commesse_Titolo"].ToString()%>"></i><%=dtAttivitaCompletateAmministrative.Rows[i]["Commesse_Riferimenti"].ToString()%></a><% } %></td>
+					              <td class="text-left"><% if (dtAttivitaCompletateAmministrative.Rows[i]["Commesse_Ky"].ToString().Length>0){ %><a href="/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=<%=dtAttivitaCompletateAmministrative.Rows[i]["Commesse_Ky"].ToString()%>&sorgente=scheda-anagrafiche"><i class="fa-duotone fa-circle-info fa-fw" title="<%=dtAttivitaCompletateAmministrative.Rows[i]["Commesse_Titolo"].ToString()%>"></i><%=dtAttivitaCompletateAmministrative.Rows[i]["Commesse_Riferimenti"].ToString()%></a><% } %></td>
 					              <td class="large-text-center small-text-left"><i class="fa-duotone fa-calendar-days fa-fw"></i><%=dtAttivitaCompletateAmministrative.Rows[i]["Attivita_Scadenza_IT"].ToString()%></td>
 					              <td class="large-text-center small-text-left"><i class="fa-duotone fa-calendar-days fa-fw"></i><%=dtAttivitaCompletateAmministrative.Rows[i]["Attivita_Chiusura_IT"].ToString()%></td>
 					              <td class="large-text-right small-text-left"><i class="fa-duotone fa-clock fa-fw"></i><%=dtAttivitaCompletateAmministrative.Rows[i]["Attivita_Ore"].ToString()%></td>
@@ -255,7 +255,7 @@
 														<small><%=dtAttivitaCompletateCommerciali.Rows[i]["Attivita_Descrizione"].ToString()%></small>
 													</div>
 												</td>
-					              <td class="text-left"><% if (dtAttivitaCompletateCommerciali.Rows[i]["Commesse_Ky"].ToString().Length>0){ %><a href="/admin/app/progetti/scheda-commesse.aspx?Commesse_Ky=<%=dtAttivitaCompletateCommerciali.Rows[i]["Commesse_Ky"].ToString()%>&sorgente=scheda-anagrafiche"><i class="fa-duotone fa-circle-info fa-fw" title="<%=dtAttivitaCompletateCommerciali.Rows[i]["Commesse_Titolo"].ToString()%>"></i><%=dtAttivitaCompletateCommerciali.Rows[i]["Commesse_Riferimenti"].ToString()%></a><% } %></td>
+					              <td class="text-left"><% if (dtAttivitaCompletateCommerciali.Rows[i]["Commesse_Ky"].ToString().Length>0){ %><a href="/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=<%=dtAttivitaCompletateCommerciali.Rows[i]["Commesse_Ky"].ToString()%>&sorgente=scheda-anagrafiche"><i class="fa-duotone fa-circle-info fa-fw" title="<%=dtAttivitaCompletateCommerciali.Rows[i]["Commesse_Titolo"].ToString()%>"></i><%=dtAttivitaCompletateCommerciali.Rows[i]["Commesse_Riferimenti"].ToString()%></a><% } %></td>
 					              <td class="large-text-center small-text-left"><i class="fa-duotone fa-calendar-days fa-fw"></i><%=dtAttivitaCompletateCommerciali.Rows[i]["Attivita_Scadenza_IT"].ToString()%></td>
 					              <td class="large-text-center small-text-left"><i class="fa-duotone fa-calendar-days fa-fw"></i><%=dtAttivitaCompletateCommerciali.Rows[i]["Attivita_Chiusura_IT"].ToString()%></td>
 					              <td class="large-text-right small-text-left"><i class="fa-duotone fa-clock fa-fw"></i><%=dtAttivitaCompletateCommerciali.Rows[i]["Attivita_Ore"].ToString()%></td>

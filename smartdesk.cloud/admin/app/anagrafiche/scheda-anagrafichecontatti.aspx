@@ -17,7 +17,7 @@
           <div class="large-8 medium-8 small-12 cell float-right align-middle">
       			<div class="stacked-for-small button-group small hide-for-print align-right">
       				<% if (dtAnagraficheContatti!=null){ %>
-      				<a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=GetFieldValue(dtAnagraficheContatti, "Anagrafiche_Ky")%>" class="button secondary"><i class="fa-duotone fa-backward fa-fw"></i>Torna alla scheda</a>
+      				<a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=GetFieldValue(dtAnagraficheContatti, "Anagrafiche_Ky")%>" class="button secondary"><i class="fa-duotone fa-backward fa-fw"></i>Torna alla scheda</a>
       				<% } %>
       				<a href="/admin/app/anagrafiche/scheda-anagrafichecontatti.aspx?azione=new" class="button"><i class="fa-duotone fa-square-plus fa-lg fa-fw"></i>Nuovo</a>
             	<button type="submit" value="salva" name="salva" class="button success"><i class="fa-duotone fa-floppy-disk fa-lg fa-fw"></i>Salva</button>

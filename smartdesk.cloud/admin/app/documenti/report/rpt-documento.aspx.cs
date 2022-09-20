@@ -78,20 +78,9 @@ public partial class _Default : System.Web.UI.Page
             dtPagamenti = new DataTable("Pagamenti");
             dtPagamenti = Smartdesk.Sql.getTablePage(strFROMNet, null, "Pagamenti_Ky", strWHERENet, strORDERNet, 1, 100,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);            
 						//blocco l'anagrafica
-	          SqlDataAdapter da = new SqlDataAdapter();
-	          DataTable dt = new DataTable("getTable");
-	         SqlConnection cn = new SqlConnection(Smartdesk.Config.Sql.ConnectionWrite);
-	          SqlCommand cm = new SqlCommand();
-	          
 	          strSQL = "UPDATE Anagrafiche SET Anagrafiche_Lock=1 WHERE Anagrafiche_Ky=" + dtDocumenti.Rows[0]["Anagrafiche_Ky"].ToString();
 	          //Response.Write(strSQL);
-	          cm.CommandText = strSQL;
-	          cm.CommandType = CommandType.Text;
-	          cm.Connection = cn;
-	          cm.CommandTimeout = 300;
-	          da.SelectCommand = cm;
-	          cn.Open();
-	          cm.ExecuteNonQuery();
+            new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
 	
 
           }else{

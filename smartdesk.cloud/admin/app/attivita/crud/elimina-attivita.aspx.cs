@@ -58,13 +58,13 @@ public partial class _Default : System.Web.UI.Page
                         strRedirect="/admin/app/attivita/attivita-da-fare.aspx?Utenti_Ky=" + strUtenti_Ky + "#attivita";
                         break;
                     case "scheda-anagrafiche":
-                        strRedirect="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=" + strAnagrafiche_Ky + "#attivita";
+                        strRedirect="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=" + strAnagrafiche_Ky + "#attivita";
                         break;
                     case "scheda-commessa":
-                        strRedirect="/admin/app/progetti/scheda-commesse.aspx?Commesse_Ky=" + strCommesse_Ky + "#attivita";
+                        strRedirect="/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=" + strCommesse_Ky + "#attivita";
                         break;
                     case "scheda-progetti":
-                        strRedirect="/admin/app/progetti/scheda-progetti.aspx?Commesse_Ky=" + strCommesse_Ky + "#attivita";
+                        strRedirect="/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=" + strCommesse_Ky + "#attivita";
                         break;
                     case "scheda-opportunita":
                         strRedirect="/admin/app/commerciale/scheda-opportunita.aspx?Opportunita_Ky=" + strOpportunita_Ky + "#attivita";

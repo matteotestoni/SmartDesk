@@ -17,7 +17,7 @@ public partial class _Default : System.Web.UI.Page
             switch (strSorgente)
             {
                 case "scheda-anagrafiche":
-                    strRedirect = "/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=" + Smartdesk.Current.Request("Anagrafiche_Ky"); ;
+                    strRedirect = "/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=" + Smartdesk.Current.Request("Anagrafiche_Ky"); ;
                     break;
                 default:
                     strRedirect = "/admin/view.aspx?CoreModules_Ky=30&CoreEntities_Ky=166&CoreGrids_Ky=153";

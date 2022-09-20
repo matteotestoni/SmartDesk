@@ -57,11 +57,11 @@ namespace Smartdesk{
 					
                     if (intPaginaCorrente>1){
                       strHTML = "<div class=\"float-left align-middle\">";
-    				  strHTML += "<div class=\"tiny button-group\">";
-                	  if (intNumeroPagine>2){
-                        strHTML += "<a href=\"" + strNomePagina + "?page=1&" + strParametri + "\" rel=\"nofollow\" class=\"button secondary tiny\"><i class=\"fa-duotone fa-angles-left fa-fw\"></i></a>";
+    				          strHTML += "<div class=\"tiny button-group\">";
+                	    if (intNumeroPagine>2 && intPaginaCorrente>2){
+                        strHTML += "<a href=\"" + strNomePagina + "?page=1&" + strParametri + "\" rel=\"nofollow\" class=\"button tiny clear\" title=\"Vai a pagina 1\" data-tooltip><i class=\"fa-duotone fa-angles-left fa-fw\"></i></a>";
                       }
-                      strHTML += "<a href=\"" + strNomePagina + "?page=" + (intPaginaCorrente-1) + "&" + strParametri + "\" rel=\"nofollow\" class=\"button secondary tiny\"><i class=\"fa-duotone fa-angle-left fa-fw\"></i></a>";
+                      strHTML += "<a href=\"" + strNomePagina + "?page=" + (intPaginaCorrente-1) + "&" + strParametri + "\" rel=\"nofollow\" class=\"button tiny clear\" title=\"Vai a pagina " + (intPaginaCorrente-1).ToString() + "\" data-tooltip><i class=\"fa-duotone fa-angle-left fa-fw\"></i></a>";
                       strHTML += "</div>";
                       strHTML += "</div>";
 		            }
@@ -77,9 +77,9 @@ namespace Smartdesk{
     					strHTML += "<div class=\"float-left align-middle\">";
     					strHTML += "<div class=\"tiny button-group\">";
                 	    if (intNumeroPagine!=intPaginaCorrente){
-        				   strHTML += "<a href=\"" + strNomePagina + "?page=" + (intPaginaCorrente+1) + "&" + strParametri + "\" rel=\"nofollow\" class=\"button secondary\"><i class=\"fa-duotone fa-angle-right fa-fw\"></i></a>";
+        				   strHTML += "<a href=\"" + strNomePagina + "?page=" + (intPaginaCorrente+1) + "&" + strParametri + "\" rel=\"nofollow\" class=\"button tiny clear\" title=\"Vai a pagina " + (intPaginaCorrente+1) + "\" data-tooltip><i class=\"fa-duotone fa-angle-right fa-fw\"></i></a>";
                 	       if (intNumeroPagine>2){
-    					     strHTML += "<a href=\"" + strNomePagina + "?page=" + intNumeroPagine.ToString() + "&" + strParametri + "\" rel=\"nofollow\" class=\"button secondary\"><i class=\"fa-duotone fa-angles-right fa-fw\"></i></a>";
+    					     strHTML += "<a href=\"" + strNomePagina + "?page=" + intNumeroPagine.ToString() + "&" + strParametri + "\" rel=\"nofollow\" class=\"button tiny clear\" title=\"Vai a pagina " + intNumeroPagine.ToString() + "\" data-tooltip><i class=\"fa-duotone fa-angles-right fa-fw\"></i></a>";
                            }
                         }
     					strHTML += "</div>";

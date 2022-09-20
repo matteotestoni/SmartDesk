@@ -14,6 +14,7 @@
       <Field Column="CommesseStato_DateInsert" IsNull="Y" Type="datetime" />
       <Field Column="CommesseStato_DateUpdate" IsNull="Y" Type="datetime" />
       <Field Column="CommesseStato_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="CommesseStato_Colore" IsNull="Y" Type="varchar" Lenght="100" />
     </Fields>
   </Tables>
   <SqlScriptCreate>
@@ -27,7 +28,8 @@ CREATE TABLE [dbo].[CommesseStato] (
   [CommesseStato_UserDelete] int  NULL , 
   [CommesseStato_DateInsert] datetime  NULL , 
   [CommesseStato_DateUpdate] datetime  NULL , 
-  [CommesseStato_DateDelete] datetime  NULL  )
+  [CommesseStato_DateDelete] datetime  NULL , 
+  [CommesseStato_Colore] varchar(100)  NULL  )
 ALTER TABLE [dbo].[CommesseStato] ADD CONSTRAINT PK_CommesseStato PRIMARY KEY  ([CommesseStato_Ky])
 </SqlScriptCreate>
 </SqlTable>

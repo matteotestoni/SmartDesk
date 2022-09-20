@@ -143,11 +143,11 @@
 		      <% }else{ %>
 		        <tr class="riga<%=i%2%>" rel="<%=getMese(dtAnagrafiche.Rows[i]["AnagraficheServizi_MeseScadenza"].ToString())%>-<%=getAnno(dtAnagrafiche.Rows[i]["AnagraficheServizi_AnnoScadenza"].ToString())%>">
 		          <td>
-			            <a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=dtAnagrafiche.Rows[i]["Anagrafiche_Ky"].ToString()%>" title="Telefono: <%=dtAnagrafiche.Rows[i]["Anagrafiche_Telefono"].ToString()%>"><%=dtAnagrafiche.Rows[i]["Anagrafiche_Ky"].ToString()%></a> 
+			            <a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=dtAnagrafiche.Rows[i]["Anagrafiche_Ky"].ToString()%>" title="Telefono: <%=dtAnagrafiche.Rows[i]["Anagrafiche_Telefono"].ToString()%>"><%=dtAnagrafiche.Rows[i]["Anagrafiche_Ky"].ToString()%></a> 
 							</td>
 		          <td>
 								<div class="width200">
-			            <a href="/admin/app/anagrafiche/scheda-anagrafiche.aspx?Anagrafiche_Ky=<%=dtAnagrafiche.Rows[i]["Anagrafiche_Ky"].ToString()%>" title="Telefono: <%=dtAnagrafiche.Rows[i]["Anagrafiche_Telefono"].ToString()%>">
+			            <a href="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=<%=dtAnagrafiche.Rows[i]["Anagrafiche_Ky"].ToString()%>" title="Telefono: <%=dtAnagrafiche.Rows[i]["Anagrafiche_Telefono"].ToString()%>">
                   <% if (dtAnagrafiche.Rows[i]["Anagrafiche_SitoWeb"].ToString().Length>1){ %>
                   <img src="https://www.google.com/s2/favicons?domain=<%=dtAnagrafiche.Rows[i]["Anagrafiche_SitoWeb"].ToString()%>" width="16" height="16" border="0">
                   <% }else{ %>

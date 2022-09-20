@@ -66,7 +66,7 @@
 										<div class="width150">
 										<%=dtDocumenti.Rows[i]["Documenti_Riferimenti"].ToString()%>
 										<% if (dtDocumenti.Rows[i]["Commesse_Ky"].ToString().Length>0){ %>
-											| Progetto:<a href="/admin/app/progetti/scheda-commesse.aspx?Commesse_Ky=<%=dtDocumenti.Rows[i]["Commesse_Ky"].ToString()%>&sorgente=scheda-commessa" title="<%=dtDocumenti.Rows[i]["Commesse_Titolo"].ToString()%>"><i class="fa-duotone fa-circle-info fa-fw"></i><%=dtDocumenti.Rows[i]["Commesse_Riferimenti"].ToString()%></a>
+											| Progetto:<a href="/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=<%=dtDocumenti.Rows[i]["Commesse_Ky"].ToString()%>&sorgente=scheda-commessa" title="<%=dtDocumenti.Rows[i]["Commesse_Titolo"].ToString()%>"><i class="fa-duotone fa-circle-info fa-fw"></i><%=dtDocumenti.Rows[i]["Commesse_Riferimenti"].ToString()%></a>
 										<% } %>
 										</div>
 									</td>

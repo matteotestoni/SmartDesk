@@ -87,7 +87,7 @@ using System.Text;
           //sistemazioni chiavi tabella
             strSQL="UPDATE CoreAttributes SET CoreAttributes_Key=1 WHERE CoreAttributes_Key=0 AND CoreAttributes_Code='" + dtCoreEntities.Rows[i]["CoreEntities_Key"].ToString() + "' AND CoreEntities_Ky=" +  dtCoreEntities.Rows[i]["CoreEntities_Ky"].ToString();
             //Response.Write(strSQL);
-            new SqlCommand(strSQL, conn).ExecuteNonQuery();
+            new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
           
           if (strEntities.Length>0){
             strEntities+=",\"" + dtCoreEntities.Rows[i]["CoreEntities_Code"].ToString() + "\"";
@@ -253,7 +253,7 @@ using System.Text;
           if (dtCoreModulesOptionsValue.Rows.Count<1){
             strSQL="INSERT INTO CoreModulesOptionsValue (CoreModulesOptions_Code,CoreModulesOptionsValue_Value) VALUES ('" + dtCoreModulesOptions.Rows[i]["CoreModulesOptions_Code"].ToString() + "','" + dtCoreModulesOptions.Rows[i]["CoreModulesOptions_Default"].ToString() + "')";
             //Response.Write(strSQL);
-            new SqlCommand(strSQL, conn).ExecuteNonQuery();
+            new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
           }
           
         }

@@ -1,4 +1,4 @@
-<% if (strAzione!="new" && dtLogin.Rows[0]["UtentiGruppi_Attivita"].Equals(true)){ %>
+<% if (strAzione!="new" && dtLogin.Rows[0]["UtentiGruppi_Attivita"].Equals(true) && dtCommesse.Rows[0]["CommesseStato_Ky"].ToString()!="6"){ %>
 <div class="grid-x grid-padding-x">
   <div class="small-12 medium-12 large-12 cell">
   <a name="attivita"></a>
@@ -14,7 +14,7 @@
                   <th width="10"><input type="checkbox" id="selectall" name="selectall" /></th>
                   <th width="30" class="text-left">Cod.</th>
                   <th width="300" align="left">Descrizione</th>
-									<th width="70" align="center">Data</th>
+									<th width="120" align="center">Data</th>
 									<th width="100" class="text-center">Priorit&agrave;</th>
 									<th width="100" class="text-center">Stato</th>
 									<th width="40" align="center">gg</th>
@@ -33,7 +33,7 @@
 							     <input type="text" id="Attivita_Descrizione<%=dtAttivita.Rows[i]["Attivita_Ky"].ToString()%>" name="Attivita_Descrizione" value="<%=dtAttivita.Rows[i]["Attivita_Descrizione"].ToString()%>" onchange="attivitaAggiorna('Attivita_Descrizione','string',<%=dtAttivita.Rows[i]["Attivita_Ky"].ToString()%>)">
 							  </td>
 				              <td class="large-text-left small-text-left">
-                        <input type="text" id="Attivita_Scadenza<%=dtAttivita.Rows[i]["Attivita_Ky"].ToString()%>" name="Attivita_Scadenza" value="<%=dtAttivita.Rows[i]["Attivita_Scadenza_IT"].ToString()%>" class="fdatepicker" required="required" onchange="attivitaAggiorna('Attivita_Scadenza','string',<%=dtAttivita.Rows[i]["Attivita_Ky"].ToString()%>)">
+                        <input type="text" id="Attivita_Scadenza<%=dtAttivita.Rows[i]["Attivita_Ky"].ToString()%>" name="Attivita_Scadenza" value="<%=dtAttivita.Rows[i]["Attivita_Scadenza"].ToString()%>" class="fdatetimepicker" required="required" onchange="attivitaAggiorna('Attivita_Scadenza','string',<%=dtAttivita.Rows[i]["Attivita_Ky"].ToString()%>)">
                       </td>
 				              <td class="large-text-center small-text-left">
                         <select id="Priorita_Ky<%=dtAttivita.Rows[i]["Attivita_Ky"].ToString()%>" name="Priorita_Ky" class="select2" style="width:100%" onchange="attivitaAggiorna('Priorita_Ky','string',<%=dtAttivita.Rows[i]["Attivita_Ky"].ToString()%>,<%=dtAttivita.Rows[i]["Attivita_Ky"].ToString()%>)"><option value=""></option><!--#include file="/var/cache/Priorita-options-select2.htm"--></select>
@@ -87,6 +87,7 @@
 	</div>
 <% } %>
 
+<% if (strAzione!="new" && dtCommesse.Rows[0]["CommesseStato_Ky"].ToString()!="6"){ %>
 <div class="grid-x grid-padding-x">
   <div class="small-12 medium-12 large-12 cell">
     <a name="nuovaattivita"></a>
@@ -96,14 +97,11 @@
   			<h2><i class="fa-duotone fa-calendar-days fa-lg fa-fw"></i>Nuova Attivit&agrave;</h2>
   		</div>
   	  <div class="card-section">
-
-
-
               <form id="form-attivita" action="/admin/app/attivita/crud/salva-attivita.aspx" method="post" data-abide novalidate>
               <input type="hidden" name="sorgente" value="scheda-progetti">
               <input type="hidden" name="azione" value="new">
               <input type="hidden" id="Attivita_Ky0" name="Attivita_Ky" value="">                
-              <input type="hidden" id="Attivita_Chiusura0" name="Attivita_Chiusura" value="<%=DateTime.Now.ToString("dd-MM-yyyy")%>">                
+              <input type="hidden" id="Attivita_Chiusura0" name="Attivita_Chiusura" value="<%=DateTime.Now.ToString("dd-MM-yyyy HH:mm")%>">                
               <input type="hidden" id="AttivitaTipo_Ky0" name="AttivitaTipo_Ky" value="1">                
               <input type="hidden" id="Commesse_Ky0" name="Commesse_Ky" value="<%=GetFieldValue(dtCommesse, "Commesse_Ky")%>">                
               <input type="hidden" id="Anagrafiche_Ky0" name="Anagrafiche_Ky" value="<%=GetFieldValue(dtCommesse, "Anagrafiche_Ky")%>">                
@@ -113,7 +111,7 @@
                   <th width="10"></th>
                   <th width="30" class="text-left"></th>
                   <th width="330" align="left">Descrizione</th>
-									<th width="70" align="center">Data</th>
+									<th width="100" align="center">Data</th>
 									<th width="100" class="text-center">Priorit&agrave;</th>
 									<th width="100" class="text-center">Stato</th>
 									<th width="40" align="center">gg</th>
@@ -126,7 +124,7 @@
 					    	<tbody>
     		            <tr class="newrecord">
     		              <td class="text-left nowrap" colspan="3"><input type="text" id="Attivita_Descrizione" name="Attivita_Descrizione" value="" required="required" style="margin-bottom:0"></td>
-    		              <td class="text-left nowrap"><input type="text" id="Attivita_Scadenza0" name="Attivita_Scadenza" value="<%=DateTime.Now.ToString("dd-MM-yyyy")%>" class="fdatepicker" required="required" style="margin-bottom:0" autocomplete="off"></td>
+    		              <td class="text-left nowrap"><input type="text" id="Attivita_Scadenza0" name="Attivita_Scadenza" value="<%=DateTime.Now.ToString("dd-MM-yyyy HH:mm")%>" class="fdatetimepicker" required="required" style="margin-bottom:0" autocomplete="off"></td>
     		              <td class="text-left nowrap">
                         <select id="Priorita_Ky0" name="Priorita_Ky" class="select2" style="margin-bottom:0"><option value=""></option><!--#include file="/var/cache/Priorita-options-select2.htm"--></select>
                 				<script type="text/javascript">
@@ -177,6 +175,7 @@
   	</div>
   </div>
 </div>
+<% } %>
 
 
 

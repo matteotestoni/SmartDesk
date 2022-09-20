@@ -1,4 +1,13 @@
 // JavaScript Document
+
+function printPrenotazione(){
+  var strKy=jQuery("#VeicoliPrenotazioni_Ky").val();
+  var strUrl="/admin/app/veicoli/report/rpt-VeicoliPrenotazioni.aspx?VeicoliPrenotazioni_Ky=" + strKy;
+  //console.log(strUrl);
+  window.open(strUrl,'_blank');
+}
+
+
   function XMLDoc(strXML){
     if (document.implementation.createDocument){ 
       var parser = new DOMParser(); 
