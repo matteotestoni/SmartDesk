@@ -17,6 +17,11 @@
       <Field Column="VeicoliPrenotazioni_DateInsert" IsNull="Y" Type="datetime" />
       <Field Column="VeicoliPrenotazioni_DateUpdate" IsNull="Y" Type="datetime" />
       <Field Column="VeicoliPrenotazioni_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliPrenotazioni_Kasko" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliPrenotazioni_Infortuniconducente" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliPrenotazioni_Polizzarc" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliPrenotazioni_Collisione" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliPrenotazioni_gg" IsNull="Y" Type="int" />
     </Fields>
   </Tables>
   <SqlScriptCreate>
@@ -33,7 +38,12 @@ CREATE TABLE [dbo].[VeicoliPrenotazioni] (
   [VeicoliPrenotazioni_UserDelete] int  NULL , 
   [VeicoliPrenotazioni_DateInsert] datetime  NULL , 
   [VeicoliPrenotazioni_DateUpdate] datetime  NULL , 
-  [VeicoliPrenotazioni_DateDelete] datetime  NULL  )
+  [VeicoliPrenotazioni_DateDelete] datetime  NULL , 
+  [VeicoliPrenotazioni_Kasko] bit  NULL DEFAULT ((0)), 
+  [VeicoliPrenotazioni_Infortuniconducente] bit  NULL DEFAULT ((1)), 
+  [VeicoliPrenotazioni_Polizzarc] bit  NULL DEFAULT ((1)), 
+  [VeicoliPrenotazioni_Collisione] bit  NULL DEFAULT ((0)), 
+  [VeicoliPrenotazioni_gg] int  NULL DEFAULT ((0)) )
 ALTER TABLE [dbo].[VeicoliPrenotazioni] ADD CONSTRAINT PK_VeicoliPrenotazioni PRIMARY KEY  ([VeicoliPrenotazioni_Ky])
 </SqlScriptCreate>
 </SqlTable>

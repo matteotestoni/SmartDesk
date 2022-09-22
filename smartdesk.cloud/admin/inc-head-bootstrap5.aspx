@@ -20,7 +20,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="https://cdn.smartdesk.cloud/img/favicon/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">  
-  <link type="text/css" rel="stylesheet" href="/fonts/Geomanist/Geomanist.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="https://cdn.smartdesk.cloud/fonts/Geomanist/Geomanist.css" media="screen, print" />
   <link type="text/css" rel="stylesheet" href="https://cdn.smartdesk.cloud/lib/bootstrap/css/bootstrap.min.css" media="screen">
   <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.foundation.min.css" media="screen">
   <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.4/css/responsive.dataTables.min.css" media="screen">

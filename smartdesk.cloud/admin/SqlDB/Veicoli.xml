@@ -15,7 +15,6 @@
       <Field Column="ImposizioniIVA_Ky" IsNull="Y" Type="smallint" />
       <Field Column="VeicoliCarburante_Ky" IsNull="Y" Type="tinyint" />
       <Field Column="VeicoliTipo_Ky" IsNull="Y" Type="tinyint" />
-      <Field Column="VeicoliTipologia_Ky" IsNull="Y" Type="tinyint" />
       <Field Column="VeicoliTipologie_Ky" IsNull="Y" Type="tinyint" />
       <Field Column="VeicoliCategoria_Ky" IsNull="Y" Type="tinyint" />
       <Field Column="VeicoliNormativeEuro_Ky" IsNull="Y" Type="tinyint" />
@@ -193,7 +192,6 @@ CREATE TABLE [dbo].[Veicoli] (
   [ImposizioniIVA_Ky] smallint  NULL , 
   [VeicoliCarburante_Ky] tinyint  NULL , 
   [VeicoliTipo_Ky] tinyint  NULL , 
-  [VeicoliTipologia_Ky] tinyint  NULL , 
   [VeicoliTipologie_Ky] tinyint  NULL , 
   [VeicoliCategoria_Ky] tinyint  NULL , 
   [VeicoliNormativeEuro_Ky] tinyint  NULL , 

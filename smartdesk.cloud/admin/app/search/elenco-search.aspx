@@ -136,8 +136,10 @@
           //Response.Write(dtCoreForms.Rows[0]["CoreForms_Ky"].ToString());
           if (dtCoreForms.Rows[0]["CoreForms_Custom"].Equals(true)){
             strFormUrl="/admin/app/" + dtCoreForms.Rows[0]["CoreModules_Code"].ToString() + "/scheda-" + dtCoreForms.Rows[0]["CoreEntities_Code"].ToString() + ".aspx?custom=1&CoreModules_Ky=" + dtCoreForms.Rows[0]["CoreModules_Ky"].ToString() + "&CoreEntities_Ky=" + dtCoreForms.Rows[0]["CoreEntities_Ky"].ToString() + "&CoreForms_Ky=" + dtCoreForms.Rows[0]["CoreForms_Ky"].ToString();
+            strFormUrl="/admin/goto-form.aspx?CoreEntities_Ky=" + dtCoreForms.Rows[0]["CoreEntities_Ky"].ToString();
           }else{
-            strFormUrl="/admin/form.aspx?CoreModules_Ky=" + dtCoreForms.Rows[0]["CoreModules_Ky"].ToString() + "&CoreEntities_Ky=" + dtCoreForms.Rows[0]["CoreEntities_Ky"].ToString() + "&CoreForms_Ky=" + dtCoreForms.Rows[0]["CoreForms_Ky"].ToString() + "&custom=0";
+            strFormUrl="/admin/goto-form.aspx?CoreModules_Ky=" + dtCoreForms.Rows[0]["CoreModules_Ky"].ToString() + "&CoreEntities_Ky=" + dtCoreForms.Rows[0]["CoreEntities_Ky"].ToString() + "&CoreForms_Ky=" + dtCoreForms.Rows[0]["CoreForms_Ky"].ToString() + "&custom=0";
+            strFormUrl="/admin/goto-form.aspx?CoreEntities_Ky=" + dtCoreForms.Rows[0]["CoreEntities_Ky"].ToString();
           }
         }else{
           strFormUrl="/admin/goto-form.aspx?CoreEntities_Ky=107";
@@ -173,10 +175,11 @@
       	        <th width="10"><input type="checkbox" id="selectall" name="selectall" /></th>
       	        <th width="100">Codice</th>
       	        <th width="200" class="text-left">Anagrafica</th>
-      	        <th width="220">Date</th>
+      	        <th width="120">Data</th>
+      	        <th width="120">Tipo</th>
       	        <th width="300">Progetto</th>
       	        <th width="100">Azioni</th>
-      	        <th width="250">Stato</th>
+      	        <th width="150">Stato</th>
       	        <th width="130">Ore</th>
       	      	<% if (boolAdmin && dtLogin.Rows[0]["UtentiGruppi_Amministrazione"].Equals(true)){ %>
       	        <th width="100" class="text-right">Valore</th>
@@ -198,21 +201,19 @@
       								</div>
       							</td>
       		          <td>
-      								<div style="float:left;width:70px;text-align:right">Inserita:</div><i class="fa-duotone fa-calendar-days fa-fw"></i><%=dtCommesse.Rows[i]["Commesse_Data_IT"].ToString()%><br>
-      								<% if (dtCommesse.Rows[i]["Commesse_DataConsegna_IT"].ToString().Length>0){ %>
-                      <div style="float:left;width:70px;text-align:right">Consegna:</div><i class="fa-duotone fa-calendar-days fa-fw"></i><%=dtCommesse.Rows[i]["Commesse_DataConsegna_IT"].ToString()%>
-                      <% } %>
+      								<i class="fa-duotone fa-calendar-days fa-fw"></i><%=dtCommesse.Rows[i]["Commesse_Data_IT"].ToString()%><br>
       							</td>
+      		          <td><i class="<%=dtCommesse.Rows[i]["CommesseTipo_Icona"].ToString()%> fa-fw"></i><%=dtCommesse.Rows[i]["CommesseTipo_Titolo"].ToString()%></td>
       		          <td>
       								<div class="width300">
       									<a href="<%=strFormUrl%>&Commesse_Ky=<%=dtCommesse.Rows[i]["Commesse_Ky"].ToString()%>"><i class="fa-duotone fa-building fa-fw"></i><strong><%=dtCommesse.Rows[i]["Commesse_Titolo"].ToString()%></strong></a><br>
       								</div>
       							</td>
       		          <td>
-      								<a href="/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=<%=dtCommesse.Rows[i]["Commesse_Ky"].ToString()%>"><i class="fa-duotone fa-gears fa-fw"></i>Attivit&agrave;</a><br>
+      								<a href="/admin/app/progetti/scheda-progetti.aspx?CoreEntities_Ky=107&Commesse_Ky=<%=dtCommesse.Rows[i]["Commesse_Ky"].ToString()%>"><i class="fa-duotone fa-gears fa-fw"></i>Attivit&agrave;</a><br>
       							</td>
       							<td>
-      									<div class="width250">
+      									<div class="width150">
                             <i class="fa-duotone fa-user fa-fw"></i> <%=dtCommesse.Rows[i]["Utenti_Iniziali"].ToString()%>
       									</div> 
       									<div style="margin-top:5px" class="progress success" role="progressbar" tabindex="0" aria-valuenow="<%=dtCommesse.Rows[i]["Commesse_Avanzamento"].ToString()%>" aria-valuemin="0" aria-valuetext="<%=dtCommesse.Rows[i]["Commesse_Avanzamento"].ToString()%>%" aria-valuemax="100">

@@ -221,10 +221,10 @@ public partial class _Default : System.Web.UI.Page
 
     public void RenderField (int iCoreAttributes, int iCoreEntities) {
 			sw.WriteLine("<div class=\"grid-x grid-padding-x\">");
-			sw.WriteLine("<div class=\"xlarge1 large-2 medium-2 small-4 cell\">");
+			sw.WriteLine("<div class=\"xlarge-1 large-2 medium-2 small-4 cell\">");
 			sw.WriteLine("<label for=\"" + dtCoreAttributes.Rows[iCoreAttributes]["CoreAttributes_Code"].ToString() + "\" class=\"large-text-right small-text-left middle\">" + dtCoreAttributes.Rows[iCoreAttributes]["CoreAttributes_Label"].ToString() + "</label>");
 			sw.WriteLine("</div>");
-			sw.WriteLine("<div class=\"xlarge11 large-10 medium-10 small-8 cell\">");
+			sw.WriteLine("<div class=\"xlarge-11 large-10 medium-10 small-8 cell\">");
 			switch (dtCoreAttributes.Rows[iCoreAttributes]["CoreAttributesType_Code"].ToString()){
 				case "text":
 						switch (dtCoreAttributes.Rows[iCoreAttributes]["CoreAttributesFormat_Code"].ToString()){

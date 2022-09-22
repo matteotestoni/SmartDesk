@@ -2,7 +2,7 @@
   <div class="large-2 medium-2 small-4 cell">
 		<label for="CoreGrids_Default" class="large-text-right small-text-left middle">Default</label>
 	</div>
-  <div class="large-2 medium-2 small-8 cell">
+  <div class="large-4 medium-4 small-8 cell">
 		<div class="switch tiny">                                         
     	<input class="switch-input" type="checkbox" name="CoreGrids_Default" id="CoreGrids_Default" value="on" <% if (GetCheckValue(dtCoreGrids,"CoreGrids_Default")){ Response.Write("checked");} %> />
 			<label class="switch-paddle" for="CoreGrids_Default">
@@ -15,7 +15,7 @@
   <div class="large-2 medium-2 small-4 cell">
 		<label for="CoreGrids_Custom" class="large-text-right small-text-left middle">Custom</label>
 	</div>
-  <div class="large-2 medium-2 small-8 cell">
+  <div class="large-4 medium-4 small-8 cell">
 		<div class="switch tiny">                                         
     	<input class="switch-input" type="checkbox" name="CoreGrids_Custom" id="CoreGrids_Custom" value="on" <% if (GetCheckValue(dtCoreGrids,"CoreGrids_Custom")){ Response.Write("checked");} %> />
 			<label class="switch-paddle" for="CoreGrids_Custom">
@@ -25,17 +25,17 @@
 			</label>
 		</div>                                            
 	</div>
-	<div class="large-2 medium-2 small-4 cell">
-		<label for="CoreGrids_Order" class="large-text-right small-text-left middle">Order</label>
-	</div>
-	<div class="large-2 medium-2 small-8 cell">
-    <input type="text" name="CoreGrids_Order" id="CoreGrids_Order" value="<%=GetFieldValue(dtCoreGrids, "CoreGrids_Order")%>" size="100" required="required" />
-    <span class="form-error">Obbligatorio</span>
-	</div>
 </div>
 
 
 <div class="grid-x grid-padding-x">
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="CoreGrids_Code" class="large-text-right small-text-left middle">Code</label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+    <input type="text" name="CoreGrids_Code" id="CoreGrids_Code" value="<%=GetFieldValue(dtCoreGrids, "CoreGrids_Code")%>" size="100" required="required" />
+    <span class="form-error">Obbligatorio</span>
+	</div>
 	<div class="large-2 medium-2 small-4 cell">
 		<label for="CoreGrids_Title" class="large-text-right small-text-left middle">Title <i class="fa-duotone fa-tag fa-fw"></i></label>
 	</div>
@@ -43,6 +43,37 @@
     <input type="text" name="CoreGrids_Title" id="CoreGrids_Title" value="<%=GetFieldValue(dtCoreGrids, "CoreGrids_Title")%>" size="100" required="required" />
     <span class="form-error">Obbligatorio</span>
 	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+  <div class="large-2 medium-2 small-4 cell">												
+    <label for="CoreForms_Ky" class="large-text-right small-text-left middle">Form di default</label>											
+  </div>				              
+  <div class="large-4 medium-4 small-8 cell">				                
+    <select name="CoreForms_Ky" id="CoreForms_Ky" value="<%=GetFieldValue(dtCoreGrids, "CoreForms_Ky")%>">
+      <option value=""></option>
+      <% 
+      if (strAzione != "new" && dtCoreForms.Rows.Count>0 ){
+        for (int j = 0; j < dtCoreForms.Rows.Count; j++){
+          Response.Write("<option value=\"" + dtCoreForms.Rows[j]["CoreForms_Ky"].ToString() + "\">" + dtCoreForms.Rows[j]["CoreForms_Title"].ToString() + "</option>");
+        }
+      }
+      %>
+    </select>
+    <span class="form-error">Obbligatorio.</span>
+    <script type="text/javascript">
+      selectSet('CoreForms_Ky', '<%=GetFieldValue(dtCoreGrids, "CoreForms_Ky")%>');
+    </script>
+  </div>		
+	<div class="large-2 medium-2 small-4 cell">
+		<label for="CoreGrids_Order" class="large-text-right small-text-left middle">Order</label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+    <input type="text" name="CoreGrids_Order" id="CoreGrids_Order" value="<%=GetFieldValue(dtCoreGrids, "CoreGrids_Order")%>" size="100" required="required" />
+    <span class="form-error">Obbligatorio</span>
+	</div>
+</div>
+<div class="grid-x grid-padding-x">
 	<div class="large-2 medium-2 small-4 cell">
 		<label for="CoreGrids_SQLFrom" class="large-text-right small-text-left middle">SQL From <i class="fa-duotone fa-tag fa-fw"></i></label>
 	</div>
@@ -50,8 +81,6 @@
     <input type="text" name="CoreGrids_SQLFrom" id="CoreGrids_SQLFrom" value="<%=GetFieldValue(dtCoreGrids, "CoreGrids_SQLFrom")%>" size="100" />
     <span class="form-error">Obbligatorio</span>
 	</div>
-</div>
-<div class="grid-x grid-padding-x">
 	<div class="large-2 medium-2 small-4 cell">
 		<label for="CoreGrids_SQLWhere" class="large-text-right small-text-left middle">SQL Where <i class="fa-duotone fa-tag fa-fw"></i></label>
 	</div>
@@ -59,6 +88,9 @@
     <input type="text" name="CoreGrids_SQLWhere" id="CoreGrids_SQLWhere" value="<%=GetFieldValue(dtCoreGrids, "CoreGrids_SQLWhere")%>" size="100" />
     <span class="form-error">Obbligatorio</span>
 	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
 	<div class="large-2 medium-2 small-4 cell">
 		<label for="CoreGrids_SQLOrder" class="large-text-right small-text-left middle">SQL Order <i class="fa-duotone fa-tag fa-fw"></i></label>
 	</div>
@@ -66,8 +98,6 @@
     <input type="text" name="CoreGrids_SQLOrder" id="CoreGrids_SQLOrder" value="<%=GetFieldValue(dtCoreGrids, "CoreGrids_SQLOrder")%>" size="100" />
     <span class="form-error">Obbligatorio</span>
 	</div>
-</div>
-<div class="grid-x grid-padding-x">
 	<div class="large-2 medium-2 small-4 cell">
 		<label for="CoreGrids_Rows" class="large-text-right small-text-left middle">Rows</label>
 	</div>
@@ -75,27 +105,7 @@
     <input type="text" name="CoreGrids_Rows" id="CoreGrids_Rows" value="<%=GetFieldValue(dtCoreGrids, "CoreGrids_Rows")%>" size="4" required="required" />
     <span class="form-error">Obbligatorio</span>
 	</div>
-    <div class="large-2 medium-2 small-4 cell">												
-      <label for="CoreForms_Ky" class="large-text-right small-text-left middle">Form di default</label>											
-    </div>				              
-    <div class="large-4 medium-4 small-8 cell">				                
-      <select name="CoreForms_Ky" id="CoreForms_Ky" value="<%=GetFieldValue(dtCoreGrids, "CoreForms_Ky")%>">
-        <option value=""></option>
-        <% 
-        if (strAzione != "new" && dtCoreForms.Rows.Count>0 ){
-          for (int j = 0; j < dtCoreForms.Rows.Count; j++){
-            Response.Write("<option value=\"" + dtCoreForms.Rows[j]["CoreForms_Ky"].ToString() + "\">" + dtCoreForms.Rows[j]["CoreForms_Title"].ToString() + "</option>");
-          }
-        }
-        %>
-      </select>
-      <span class="form-error">Obbligatorio.</span>
-      <script type="text/javascript">
-        selectSet('CoreForms_Ky', '<%=GetFieldValue(dtCoreGrids, "CoreForms_Ky")%>');
-      </script>
-    </div>		
 </div>
-
 
 <div class="grid-x grid-padding-x hide">
 	<div class="large-2 medium-2 small-4 cell">

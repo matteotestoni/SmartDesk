@@ -40,6 +40,7 @@ public partial class _Default : System.Web.UI.Page
     public string strQuali = "";
     public string strUtentiGruppi_Ky = "";
     public string strDeleteAction = "";
+    public string strCaret = "";
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -102,7 +103,7 @@ public partial class _Default : System.Web.UI.Page
   		if (dtCoreForms.Rows.Count>0){
           intCoreForms_Ky=Convert.ToInt32(dtCoreForms.Rows[0]["CoreForms_Ky"]);
           if (dtCoreForms.Rows[0]["CoreForms_Custom"].Equals(true)){
-            strFormUrl="/admin/app/" + dtCoreModules.Rows[0]["CoreModules_Code"].ToString() + "/scheda-" + dtCoreEntities.Rows[0]["CoreEntities_Code"].ToString() + ".aspx?custom=1&CoreModules_Ky=" + intCoreModules_Ky + "&CoreEntities_Ky=" + intCoreEntities_Ky + "&CoreGrids_Ky=" + intCoreGrids_Ky + "&CoreForms_Ky=" + intCoreForms_Ky;
+            strFormUrl="/admin/app/" + dtCoreModules.Rows[0]["CoreModules_Code"].ToString() + "/scheda-" + dtCoreForms.Rows[0]["CoreForms_Code"].ToString() + ".aspx?custom=1&CoreModules_Ky=" + intCoreModules_Ky + "&CoreEntities_Ky=" + intCoreEntities_Ky + "&CoreGrids_Ky=" + intCoreGrids_Ky + "&CoreForms_Ky=" + intCoreForms_Ky;
           }else{
             strFormUrl="/admin/form.aspx?CoreModules_Ky=" + intCoreModules_Ky + "&CoreEntities_Ky=" + intCoreEntities_Ky + "&CoreGrids_Ky=" + intCoreGrids_Ky + "&CoreForms_Ky=" + intCoreForms_Ky + "&custom=0";
           }

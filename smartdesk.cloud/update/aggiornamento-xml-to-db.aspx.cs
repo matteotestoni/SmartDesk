@@ -37,7 +37,7 @@ public partial class _Default : System.Web.UI.Page
             strRisultato += Smartdesk.Functions.ManutenzioneAddFieldDBToXML();
             strRisultato += "<h2>Fase 2: Aggiornamento Viste da XML a DB da cartella /admin/SqlDB/</h2>";
             strRisultato += Smartdesk.Functions.ManutenzioneAddViewXMLTotDB();
-            strRisultato += "<h2>Fase 3: creazione tabelle in  /uploads/</h2>";
+            strRisultato += "<h2>Fase 3: creazione cartelle in  /uploads/</h2>";
             strDirectory=Server.MapPath("/uploads/allegati-prodotti/");
             strRisultato += strDirectory + "<br>";
             if(!Directory.Exists(strDirectory))

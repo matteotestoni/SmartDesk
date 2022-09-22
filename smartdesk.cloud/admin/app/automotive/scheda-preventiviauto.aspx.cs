@@ -19,7 +19,6 @@ public partial class _Default : System.Web.UI.Page
     public string strFROMNet = "";
     public string strH1 = "Automotive > Preventivo auto";
     public string strAzione = "modifica";
-    
     public string strAnagrafiche_Ky = "";
     public string strAnagrafiche_RagioneSociale = "";
     public DataTable dtTemp;
@@ -132,10 +131,10 @@ public partial class _Default : System.Web.UI.Page
 				strValore=strAnagrafiche_RagioneSociale;
 				break;
 			case "PreventiviAuto_Data":
-				strValore=DateTime.Now.ToString("dd-MM-yyyy hh:mm");
+				strValore=DateTime.Now.ToString("dd-MM-yyyy HH:mm");
 				break;
 			case "PreventiviAuto_Data_IT":
-				strValore=DateTime.Now.ToString("dd-MM-yyyy hh:mm");
+				strValore=DateTime.Now.ToString("dd-MM-yyyy HH:mm");
 				break;
       case "PreventiviAuto_Numero":
         strValore = GetNewNumDoc(DateTime.Now.Year);

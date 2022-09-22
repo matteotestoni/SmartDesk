@@ -24,7 +24,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="/img/favicon/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">  
-  <link type="text/css" rel="stylesheet" href="/fonts/Geomanist/Geomanist.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="https://cdn.smartdesk.cloud/fonts/Geomanist/Geomanist.css" media="screen, print" />
   <link type="text/css" rel="stylesheet" href="https://cdn.smartdesk.cloud/lib/foundation6.7.5/css/app.css" media="screen">
   <link type="text/css" rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.min.css" media="screen, print">	
   <link type="text/css" rel="stylesheet" href="/login.css" media="screen, print" />

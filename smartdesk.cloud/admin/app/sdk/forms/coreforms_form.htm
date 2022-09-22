@@ -37,9 +37,16 @@
 
 <div class="grid-x grid-padding-x">
 	<div class="large-2 medium-2 small-4 cell">
+		<label for="CoreForms_Code" class="large-text-right small-text-left middle">Code</label>
+	</div>
+	<div class="large-4 medium-4 small-8 cell">
+    <input type="text" name="CoreForms_Code" id="CoreForms_Code" value="<%=GetFieldValue(dtCoreForms, "CoreForms_Code")%>" size="100" required="required" />
+    <span class="form-error">Obbligatorio</span>
+	</div>
+	<div class="large-2 medium-2 small-4 cell">
 		<label for="CoreForms_Title" class="large-text-right small-text-left middle">Title <i class="fa-duotone fa-tag fa-fw"></i></label>
 	</div>
-	<div class="large-10 medium-10 small-8 cell">
+	<div class="large-4 medium-4 small-8 cell">
     <input type="text" name="CoreForms_Title" id="CoreForms_Title" value="<%=GetFieldValue(dtCoreForms, "CoreForms_Title")%>" size="100" required="required" />
     <span class="form-error">Obbligatorio</span>
 	</div>

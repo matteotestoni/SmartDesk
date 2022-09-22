@@ -5,7 +5,7 @@
   <title><%=Smartdesk.Data.Field(dtAnagrafiche, "Anagrafiche_RagioneSociale")%></title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link type="text/css" rel="stylesheet" href="/fonts/Geomanist/Geomanist.css" media="screen, print" />
+  <link type="text/css" rel="stylesheet" href="https://cdn.smartdesk.cloud/fonts/Geomanist/Geomanist.css" media="screen, print" />
   <link rel="stylesheet" type="text/css" href="/admin/rswcrm-print.css" media="screen, print" />
   <link rel="shortcut icon" href="https://cdn.smartdesk.cloud/img/favicon/favicon.ico">
   <link rel="apple-touch-icon" sizes="57x57" href="https://cdn.smartdesk.cloud/img/favicon/apple-icon-57x57.png">

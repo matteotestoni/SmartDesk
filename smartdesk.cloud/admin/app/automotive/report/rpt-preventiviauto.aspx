@@ -4,7 +4,7 @@
 <head>
   <title><%=dtPreventiviAuto.Rows[0]["PreventiviAuto_Numero"]%>-<%=GetUTF(dtPreventiviAuto.Rows[0]["Anagrafiche_RagioneSociale"].ToString().Trim())%>-<%=GetUTF(dtPreventiviAuto.Rows[0]["Utenti_Email"].ToString().Trim())%></title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <link type="text/css" rel="stylesheet" href="/fonts/Geomanist/Geomanist.css" media="screen, print" />
+  <link type="text/css" rel="stylesheet" href="https://cdn.smartdesk.cloud/fonts/Geomanist/Geomanist.css" media="screen, print" />
   <link rel="stylesheet" type="text/css" href="/admin/rswcrm-print.css" media="screen, print" />
   <link rel="stylesheet" href="https://cdn.smartdesk.cloud/lib/fontawesome6/css/all.min.css" />
   <link rel="shortcut icon" href="https://cdn.smartdesk.cloud/img/favicon/favicon.ico">

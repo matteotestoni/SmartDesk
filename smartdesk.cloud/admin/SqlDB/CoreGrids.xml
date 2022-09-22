@@ -21,6 +21,7 @@
       <Field Column="CoreGrids_DateDelete" IsNull="Y" Type="datetime" />
       <Field Column="CoreGrids_Rows" IsNull="Y" Type="smallint" />
       <Field Column="CoreForms_Ky" IsNull="Y" Type="int" />
+      <Field Column="CoreGrids_Code" IsNull="Y" Type="varchar" Lenght="200" />
     </Fields>
   </Tables>
   <SqlScriptCreate>
@@ -41,7 +42,8 @@ CREATE TABLE [dbo].[CoreGrids] (
   [CoreGrids_DateUpdate] datetime  NULL , 
   [CoreGrids_DateDelete] datetime  NULL , 
   [CoreGrids_Rows] smallint  NULL DEFAULT ((30)), 
-  [CoreForms_Ky] int  NULL  )
+  [CoreForms_Ky] int  NULL , 
+  [CoreGrids_Code] varchar(200)  NULL  )
 ALTER TABLE [dbo].[CoreGrids] ADD CONSTRAINT PK_CoreGrids PRIMARY KEY  ([CoreGrids_Ky])
 </SqlScriptCreate>
 </SqlTable>

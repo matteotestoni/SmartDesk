@@ -18,6 +18,7 @@
       <Field Column="CoreForms_DateInsert" IsNull="Y" Type="datetime" />
       <Field Column="CoreForms_DateUpdate" IsNull="Y" Type="datetime" />
       <Field Column="CoreForms_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="CoreForms_Code" IsNull="Y" Type="varchar" Lenght="200" />
     </Fields>
   </Tables>
   <SqlScriptCreate>
@@ -35,7 +36,8 @@ CREATE TABLE [dbo].[CoreForms] (
   [CoreForms_UserDelete] int  NULL , 
   [CoreForms_DateInsert] datetime  NULL , 
   [CoreForms_DateUpdate] datetime  NULL , 
-  [CoreForms_DateDelete] datetime  NULL  )
+  [CoreForms_DateDelete] datetime  NULL , 
+  [CoreForms_Code] varchar(200)  NULL  )
 ALTER TABLE [dbo].[CoreForms] ADD CONSTRAINT PK_CoreForms PRIMARY KEY  ([CoreForms_Ky])
 </SqlScriptCreate>
 </SqlTable>

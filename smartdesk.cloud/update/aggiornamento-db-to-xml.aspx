@@ -24,7 +24,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="/img/favicon/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">  
-  <link type="text/css" rel="stylesheet" href="/fonts/Geomanist/Geomanist.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="https://cdn.smartdesk.cloud/fonts/Geomanist/Geomanist.css" media="screen, print" />
   <link type="text/css" rel="stylesheet" href="https://cdn.smartdesk.cloud/lib/foundation6.7.5/css/app.css" media="screen">
   <link type="text/css" rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.min.css" media="screen, print">	
   <link type="text/css" rel="stylesheet" href="/login.css" media="screen, print" />
@@ -35,14 +35,22 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/foundation.min.js" integrity="sha512-xpawU2EKh0HLTLWu8khGczejw+OaWWr+JBcbFBWtRUIkkhuMRZZeEFxY0n51aeC9YF4jxOMzd0pTR9m0tiSvsQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
 <body>
-<div class="grid-container fluid">
-<div class="grid-x grid-padding-x">
-  <div class="large-12 medium-12 small-12 cell">
-	<h1><i class="fa-duotone fa-cog fa-lg fa-fw"></i><%=strH1%></h1>
-    <%=strRisultato%>
-  </div>
-</div>
-</div>
+  <header data-sticky-container>
+  	<div class="content-header" id="content-header" data-sticky="content-header" data-margin-top="0" data-margin-bottom="1" style="width:100%">
+      <div class="grid-x grid-padding-x">
+        <div class="large-12 medium-12 small-12 cell">
+      	<h1><i class="fa-duotone fa-cog fa-lg fa-fw"></i><%=strH1%></h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="grid-container">
+   		<div class="divform" id="divscheda" data-magellan-target="divscheda">
+        <%=strRisultato%>
+      </div>
+  </main>
+
 	<footer id="footer" class="grid-container fluid footer text-center hide-for-print">
 	  <div class="grid-x grid-margin-x">
 	  <div class="small-12 medium-12 large-12 cell">

@@ -43,8 +43,9 @@ using System.Collections.Generic;
     {
       string strSQL="";
       
-      strSQL="ALTER TABLE " +  Smartdesk.Current.Request("CoreAttributes_Table") + " ADD " Smartdesk.Current.Request("CoreAttributes_Code");
-      return strValore;
+      strSQL="ALTER TABLE " +  Smartdesk.Current.Request("CoreAttributes_Table") + " ADD "  + Smartdesk.Current.Request("CoreAttributes_Code");
+	    new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
+      return "ok";
     }
     
 

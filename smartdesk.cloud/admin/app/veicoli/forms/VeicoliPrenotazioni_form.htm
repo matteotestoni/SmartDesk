@@ -1,0 +1,209 @@
+<fieldset class="fieldset">
+  <legend><i class="fa-duotone fa-square-info fa-fw"></i>Scheda</legend>
+  <div class="grid-x grid-padding-x">
+    <div class="large-2 medium-2 small-4 cell">
+      <label for="VeicoliPrenotazioni_Data" class="large-text-right small-text-left middle">Data scheda <i class="fa-duotone fa-calendar fa-fw"></i></label>
+    </div>
+    <div class="large-10 medium-10 small-8 cell">
+      <input type="text" class="fdatetimepicker" name="VeicoliPrenotazioni_Data" id="VeicoliPrenotazioni_Data" value="<%=GetFieldValue(dtFormsData, "VeicoliPrenotazioni_Data")%>" placeholder="Data">
+    </div>
+  </div>
+</fieldset>
+<fieldset class="fieldset">
+  <legend><i class="fa-duotone fa-calendar-days fa-fw"></i>Prenotazione</legend>
+  <div class="grid-x grid-padding-x">
+    <div class="large-2 medium-2 small-4 cell">
+      <label for="VeicoliPrenotazioni_gg" class="large-text-right small-text-left middle">Giorni previsti</label>
+    </div>
+    <div class="large-2 medium-2 small-8 cell">
+	    <select name="VeicoliPrenotazioni_gg" id="VeicoliPrenotazioni_gg" value="<%=GetFieldValue(dtFormsData, "VeicoliPrenotazioni_gg")%>">
+        <option value=""></option>
+        <option value="1">1 giorno</option>
+        <option value="2">2 giorni</option>
+        <option value="3">3 giorni</option>
+        <option value="4">4 giorni</option>
+        <option value="5">5 giorni</option>
+        <option value="6">6 giorni</option>
+        <option value="7">7 giorni</option>
+        <option value="8">8 giorni</option>
+        <option value="9">9 giorni</option>
+        <option value="10">10 giorni</option>
+      </select>
+      <script type="text/Veicoli_Ky">
+        selectSet('VeicoliPrenotazioni_gg', '<%=GetFieldValue(dtFormsData, "VeicoliPrenotazioni_gg")%>');
+      </script>
+    </div>
+    <div class="large-2 medium-2 small-4 cell">
+      <label for="VeicoliPrenotazioni_DataInizio" class="large-text-right small-text-left middle">Data Inizio <i class="fa-duotone fa-calendar fa-fw"></i></label>
+    </div>
+    <div class="large-2 medium-2 small-8 cell">
+      <input type="text" class="datetimepicker" name="VeicoliPrenotazioni_DataInizio" id="VeicoliPrenotazioni_DataInizio" value="<%=GetFieldValue(dtFormsData, "VeicoliPrenotazioni_DataInizio")%>" placeholder="Data Inizio">
+    </div>
+    <div class="large-2 medium-2 small-4 cell">
+      <label for="VeicoliPrenotazioni_DataFine" class="large-text-right small-text-left middle">Data Fine <i class="fa-duotone fa-calendar fa-fw"></i></label>
+    </div>
+    <div class="large-2 medium-2 small-8 cell">
+      <input type="text" class="datetimepicker" name="VeicoliPrenotazioni_DataFine" id="VeicoliPrenotazioni_DataFine" value="<%=GetFieldValue(dtFormsData, "VeicoliPrenotazioni_DataFine")%>" placeholder="Data Fine">
+    </div>
+  </div>
+
+</fieldset>
+<fieldset class="fieldset">
+  <legend><i class="fa-duotone fa-car fa-fw"></i>Veicolo</legend>
+    <div class="grid-x grid-padding-x">
+      <div class="large-2 medium-2 small-4 cell">
+      <label for="Veicoli_Ky" class="large-text-right small-text-left middle">Veicolo</label>
+      </div>
+      <div class="large-10 medium-10 small-8 cell">
+  	    <select name="Veicoli_Ky" id="Veicoli_Ky" value="<%=GetFieldValue(dtVeicoli, "Veicoli_Ky")%>">
+          <option value=""></option>
+  				<%
+  				for (int i = 0; i < dtVeicoli.Rows.Count; i++){
+  					//controllo se non ci sono prenotazioni aperte
+            if (GetFieldValue(dtFormsData, "Veicoli_Ky")==dtVeicoli.Rows[i]["Veicoli_Ky"].ToString()){
+              strSelected=" selected='selected' ";
+            }else{
+              strSelected="";
+            }
+            
+            
+            strWHERENet = "Veicoli_Ky=" + dtVeicoli.Rows[i]["Veicoli_Ky"].ToString() + " AND VeicoliPrenotazioni_DataFine Is Null";
+            //Response.Write(strWHERENet);
+            strFROMNet = "VeicoliPrenotazioni";
+            strORDERNet = "VeicoliPrenotazioni_Ky";
+            dtVeicoliPrenotazioni = Smartdesk.Sql.getTablePage(strFROMNet, null, "VeicoliPrenotazioni_Ky", strWHERENet, strORDERNet, 1, 1, Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
+            if (dtVeicoliPrenotazioni.Rows.Count<1){
+              Response.Write("<option value=\"" + dtVeicoli.Rows[i]["Veicoli_Ky"].ToString() + "\"" + strSelected + ">" + dtVeicoli.Rows[i]["VeicoliMarca_Titolo"].ToString() + " " + dtVeicoli.Rows[i]["VeicoliModello_Titolo"].ToString() + " " + dtVeicoli.Rows[i]["Veicoli_Targa"].ToString() + " (libera)</option>");
+            }else{
+              Response.Write("<option disabled=\"disabled\" value=\"" + dtVeicoli.Rows[i]["Veicoli_Ky"].ToString() + "\"" + strSelected + ">" + dtVeicoli.Rows[i]["VeicoliMarca_Titolo"].ToString() + " " + dtVeicoli.Rows[i]["VeicoliModello_Titolo"].ToString() + " " + dtVeicoli.Rows[i]["Veicoli_Targa"].ToString() + " (prenotata)</option>");
+            }
+  				}
+  				%>
+        </select>
+        <script type="text/Veicoli_Ky">
+          selectSet('Veicoli_Ky', '<%=GetFieldValue(dtFormsData, "Veicoli_Ky")%>');
+        </script>
+    </div>
+  </div>
+</fieldset>
+
+<fieldset class="fieldset">
+  <legend><i class="fa-duotone fa-user fa-fw"></i>Anagrafica</legend>
+    <div class="grid-x grid-padding-x">
+      <div class="large-2 medium-2 small-4 cell">
+        <label for="Anagrafiche_Ky" class="large-text-right small-text-left middle">Anagrafica</label>
+      </div>
+      <div class="large-10 medium-4 small-8 cell">
+        <div class="input-group">
+          <input style="width:60px;margin-right:5px;" type="text" name="Anagrafiche_Ky" id="Anagrafiche_Ky" value="<%=GetFieldValue(dtFormsData, "Anagrafiche_Ky")%>" placeholder="Anagrafica">
+          <input style="width:70%" type="text" class="input-group-field" name="Anagrafiche_RagioneSociale" id="Anagrafiche_RagioneSociale" value="<%=GetFieldValue(dtFormsData, "Anagrafiche_RagioneSociale")%>" placeholder="Anagrafica">
+          <div class="input-group-button">
+            <a style="margin-top:4px" data-toggle="dropdownmenu-anagrafiche"><i class="fa-duotone fa-bars fa-fw fa-lg"></i></a>
+            <div class="dropdown-pane bottom" id="dropdownmenu-anagrafiche" data-dropdown>
+              <div class="text-left">
+                <a onclick="javascript:gotoSchedaAnagrafica()"><i class="fa-duotone fa-arrow-alt-circle-right fa-fw"></i>Vai a scheda</a><br>
+                <a data-open="formQuickEditAnagrafiche" onclick="javascript:inserisciAnagrafica()"><i class="fa-duotone fa-plus fa-fw"></i>Inserisci</a><br>
+                <a data-open="formQuickEditAnagrafiche" onclick="javascript:modificaAnagrafica()"><i class="fa-duotone fa-edit fa-fw"></i>Modifica</a><br>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:-15px;">
+          
+          <a style="margin-left:5px" class="button tiny clear" data-open="formQuickEditAnagrafiche" onclick="javascript:inserisciAnagrafica()">inserisci<i class="fa-duotone fa-plus fa-fw"></i></a>
+          <a style="margin-left:5px" class="button tiny clear" data-open="formQuickEditAnagrafiche" onclick="javascript:modificaAnagrafica()">modifica<i class="fa-duotone fa-edit fa-fw"></i></a>
+        </div>
+        
+        <script type="text/javascript">
+        		jQuery("#Anagrafiche_RagioneSociale").autocomplete({
+        			source: "/admin/app/anagrafiche/autosuggest-GetAnagrafiche-json.aspx",
+        			minLength: 2,
+        			select: function( event, ui ) {
+        				jQuery("#Anagrafiche_Ky").val(ui.item.value);
+        				jQuery("#Anagrafiche_RagioneSociale").val(ui.item.label);
+        				selectSet('AnagraficheTipologia_Ky', ui.item.AnagraficheTipologia_Ky);
+                jQuery("#AnagraficheTipologia_Ky").val(ui.item.AnagraficheTipologia_Ky);
+        				jQuery("#Anagrafiche_Nome").val(ui.item.nome);
+        				jQuery("#infoAnagrafiche_Nome").text(ui.item.nome);
+        				jQuery("#Anagrafiche_Cognome").val(ui.item.cognome);
+        				jQuery("#infoAnagrafiche_Cognome").text(ui.item.cognome);
+        				jQuery("#Anagrafiche_Telefono").val(ui.item.telefono);
+        				jQuery("#infoAnagrafiche_Telefono").text(ui.item.telefono);
+        				jQuery("#Anagrafiche_EmailContatti").val(ui.item.emailcontatti);
+        				jQuery("#infoAnagrafiche_EmailContatti").text(ui.item.emailcontatti);
+        				jQuery("#Anagrafiche_Indirizzo").val(ui.item.indirizzo);
+        				jQuery("#infoAnagrafiche_Indirizzo").text(ui.item.indirizzo);
+        				jQuery("#Anagrafiche_CAP").val(ui.item.cap);
+        				jQuery("#infoAnagrafiche_CAP").text(ui.item.cap);
+        				return false;
+        			}
+        		});
+        </script>
+        <i class="fa-duotone fa-location-dot fa-fw"></i><span id="infoAnagrafiche_Indirizzo"><%=GetFieldValue(dtFormsData, "Anagrafiche_Indirizzo")%></span> - <span id="infoAnagrafiche_CAP"><%=GetFieldValue(dtFormsData, "Anagrafiche_CAP")%></span><br>
+        <i class="fa-duotone fa-user fa-fw"></i><span id="infoAnagrafiche_Nome"><%=GetFieldValue(dtFormsData, "Anagrafiche_Nome")%></span> <span id="infoAnagrafiche_Cognome"><%=GetFieldValue(dtFormsData, "Anagrafiche_Cognome")%></span> - <i class="fa-duotone fa-phone fa-fw"></i><span id="infoAnagrafiche_Telefono"><%=GetFieldValue(dtFormsData, "Anagrafiche_Telefono")%></span> - <i class="fa-duotone fa-envelope fa-fw"></i><span id="infoAnagrafiche_EmailContatti"><%=GetFieldValue(dtFormsData, "Anagrafiche_EmailContatti")%></span>
+      </div>
+    </div>
+</fieldset>
+
+<fieldset class="fieldset">
+  <legend><i class="fa-duotone fa-gavel fa-fw"></i>Polizze</legend>
+    <div class="grid-x grid-padding-x">
+      <div class="large-2 medium-2 small-4 cell">
+        <label for="VeicoliPrenotazioni_Kasko" class="large-text-right small-text-left middle">Kasko</label>
+      </div>
+      <div class="large-4 medium-4 small-8 cell">
+      <div class="switch tiny">
+      <input class="switch-input" type="checkbox" name="VeicoliPrenotazioni_Kasko" id="VeicoliPrenotazioni_Kasko" value="on" <% if (GetCheckValue(dtFormsData, "VeicoliPrenotazioni_Kasko")){ Response.Write("checked");} %>  />
+      <label class="switch-paddle" for="VeicoliPrenotazioni_Kasko">
+      <span class="show-for-sr">Ok</span>
+      <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+      <span class="switch-inactive" aria-hidden="true"></span>
+      </label>
+      </div>
+      </div>
+      <div class="large-2 medium-2 small-4 cell">
+        <label for="VeicoliPrenotazioni_Infortuniconducente" class="large-text-right small-text-left middle">Infortuni conducente</label>
+      </div>
+      <div class="large-4 medium-4 small-8 cell">
+        <div class="switch tiny">
+        <input class="switch-input" type="checkbox" name="VeicoliPrenotazioni_Infortuniconducente" id="VeicoliPrenotazioni_Infortuniconducente" value="on" <% if (GetCheckValue(dtFormsData, "VeicoliPrenotazioni_Infortuniconducente")){ Response.Write("checked");} %>  />
+        <label class="switch-paddle" for="VeicoliPrenotazioni_Infortuniconducente">
+        <span class="show-for-sr">Ok</span>
+        <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+        <span class="switch-inactive" aria-hidden="true"></span>
+        </label>
+        </div>
+      </div>
+    </div>
+    <div class="grid-x grid-padding-x">
+      <div class="large-2 medium-2 small-4 cell">
+        <label for="VeicoliPrenotazioni_Polizzarc" class="large-text-right small-text-left middle">Polizza RC</label>
+      </div>
+      <div class="large-4 medium-4 small-8 cell">
+        <div class="switch tiny">
+        <input class="switch-input" type="checkbox" name="VeicoliPrenotazioni_Polizzarc" id="VeicoliPrenotazioni_Polizzarc" value="on" <% if (GetCheckValue(dtFormsData, "VeicoliPrenotazioni_Polizzarc")){ Response.Write("checked");} %>  />
+        <label class="switch-paddle" for="VeicoliPrenotazioni_Polizzarc">
+        <span class="show-for-sr">Ok</span>
+        <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+        <span class="switch-inactive" aria-hidden="true"></span>
+        </label>
+        </div>
+      </div>
+      <div class="large-2 medium-2 small-4 cell">
+        <label for="VeicoliPrenotazioni_Collisione" class="large-text-right small-text-left middle">Collisione</label>
+      </div>
+      <div class="large-4 medium-4 small-8 cell">
+        <div class="switch tiny">
+        <input class="switch-input" type="checkbox" name="VeicoliPrenotazioni_Collisione" id="VeicoliPrenotazioni_Collisione" value="on" <% if (GetCheckValue(dtFormsData, "VeicoliPrenotazioni_Collisione")){ Response.Write("checked");} %>  />
+        <label class="switch-paddle" for="VeicoliPrenotazioni_Collisione">
+        <span class="show-for-sr">Ok</span>
+        <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+        <span class="switch-inactive" aria-hidden="true"></span>
+        </label>
+        </div>
+      </div>
+    </div>
+</fieldset>
+
+
+

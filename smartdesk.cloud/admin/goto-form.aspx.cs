@@ -45,24 +45,25 @@ public partial class _Default : System.Web.UI.Page
           dtCoreEntities = new DataTable ("CoreEntities");
           dtCoreEntities = Smartdesk.Sql.getTablePage(strFROMNet, null, "CoreEntities_Ky", strWHERENet, strORDERNet, 1, 1,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
 
-          strWHERENet = "(UtentiGruppi_Ky=" + strUtentiGruppi_Ky + ") AND (CoreEntities_Ky=" + intCoreEntities_Ky + ")";
+          if (intCoreForms_Ky!=null && intCoreForms_Ky!=0){
+            strWHERENet = "(UtentiGruppi_Ky=" + strUtentiGruppi_Ky + ") AND (CoreForms_Ky=" + intCoreForms_Ky + ")";
+          }else{
+            strWHERENet = "(UtentiGruppi_Ky=" + strUtentiGruppi_Ky + ") AND (CoreEntities_Ky=" + intCoreEntities_Ky + ")";
+          }
           strFROMNet = "UsergroupsForms_Vw";
           strORDERNet = "CoreForms_Ky";
           dtCoreForms = new DataTable ("CoreForms");
           dtCoreForms = Smartdesk.Sql.getTablePage(strFROMNet, null, "UsergroupsForms_Ky", strWHERENet, strORDERNet, 1, 1,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
-
-          if (intCoreForms_Ky == 0){
-              intCoreForms_Ky = Convert.ToInt32(dtCoreForms.Rows[0]["CoreForms_Ky"]);
-          }
+          intCoreForms_Ky = Convert.ToInt32(dtCoreForms.Rows[0]["CoreForms_Ky"]);
 
           if (dtCoreForms.Rows[0]["CoreForms_Custom"].Equals (true)){
-              strFormUrl = "/admin/app/" + dtCoreForms.Rows[0]["CoreModules_Code"].ToString() + "/scheda-" + dtCoreForms.Rows[0]["CoreEntities_Code"].ToString() + ".aspx?custom=1";
+              strFormUrl = "/admin/app/" + dtCoreForms.Rows[0]["CoreModules_Code"].ToString() + "/scheda-" + dtCoreForms.Rows[0]["CoreForms_Code"].ToString() + ".aspx?custom=1";
           } else {
               strFormUrl = "/admin/form.aspx?CoreModules_Ky=" + dtCoreForms.Rows[0]["CoreModules_Ky"].ToString() + "&CoreEntities_Ky=" + dtCoreForms.Rows[0]["CoreEntities_Ky"].ToString() + "&CoreForms_Ky=" + dtCoreForms.Rows[0]["CoreForms_Ky"].ToString();
           }
           
 			    foreach (String key in Request.QueryString.AllKeys){
-            if (key!="CoreEntities_Ky"){
+            if (key!="CoreEntities_Ky" && key!="CoreForms_Ky"){
               strFormUrl+="&" + key + "=" + Request.QueryString[key].ToString();
             }
             //Response.Write(key);

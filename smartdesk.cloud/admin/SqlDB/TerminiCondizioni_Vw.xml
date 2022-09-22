@@ -18,16 +18,18 @@
       <Field Column="TerminiCondizioni_DateInsert" IsNull="Y" Type="datetime" />
       <Field Column="TerminiCondizioni_DateUpdate" IsNull="Y" Type="datetime" />
       <Field Column="TerminiCondizioni_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="TerminiCondizioni_Codice" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Divise_Ky" IsNull="Y" Type="int" />
     </Fields>
   </Tables>
-  <SqlScriptCreate>CREATE VIEW dbo.TerminiCondizioni_Vw
+  <SqlScriptCreate>CREATE VIEW [dbo].[TerminiCondizioni_Vw]
 AS
 SELECT        dbo.Negozi.Negozi_Titolo, dbo.Lingue.Lingue_Titolo, dbo.Lingue.Lingue_Codice, dbo.TerminiCondizioni.TerminiCondizioni_Ky, dbo.TerminiCondizioni.TerminiCondizioni_Titolo, 
                          dbo.TerminiCondizioni.TerminiCondizioni_Abilitato, dbo.TerminiCondizioni.TerminiCondizioni_TestoAccettazione, dbo.TerminiCondizioni.TerminiCondizioni_Contenuto, dbo.TerminiCondizioni.Lingue_Ky, 
                          dbo.TerminiCondizioni.Negozi_Ky, dbo.TerminiCondizioni.TerminiCondizioni_UserInsert, dbo.TerminiCondizioni.TerminiCondizioni_UserUpdate, dbo.TerminiCondizioni.TerminiCondizioni_UserDelete, 
-                         dbo.TerminiCondizioni.TerminiCondizioni_DateInsert, dbo.TerminiCondizioni.TerminiCondizioni_DateUpdate, dbo.TerminiCondizioni.TerminiCondizioni_DateDelete
+                         dbo.TerminiCondizioni.TerminiCondizioni_DateInsert, dbo.TerminiCondizioni.TerminiCondizioni_DateUpdate, dbo.TerminiCondizioni.TerminiCondizioni_DateDelete, dbo.TerminiCondizioni.TerminiCondizioni_Codice, 
+                         dbo.Lingue.Divise_Ky
 FROM            dbo.TerminiCondizioni LEFT OUTER JOIN
                          dbo.Negozi ON dbo.TerminiCondizioni.Negozi_Ky = dbo.Negozi.Negozi_Ky LEFT OUTER JOIN
-                         dbo.Lingue ON dbo.TerminiCondizioni.Lingue_Ky = dbo.Lingue.Lingue_Ky
-</SqlScriptCreate>
+                         dbo.Lingue ON dbo.TerminiCondizioni.Lingue_Ky = dbo.Lingue.Lingue_Ky</SqlScriptCreate>
 </SqlTable>

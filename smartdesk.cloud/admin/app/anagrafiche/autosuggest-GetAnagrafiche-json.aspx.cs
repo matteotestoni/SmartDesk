@@ -38,7 +38,7 @@ public partial class _Default : System.Web.UI.Page
 		          strWHERE = "Not (Anagrafiche_RagioneSociale Is Null And Anagrafiche_Disdetto=0)";  
 		        }
 		        strWHERE = getWhere();
-		        strSQL = "SELECT TOP 10 Anagrafiche_Ky,Anagrafiche_RagioneSociale,Anagrafiche_EmailContatti,Anagrafiche_PartitaIVA,Anagrafiche_CodiceFiscale FROM Anagrafiche WHERE " + strWHERE + " ORDER BY Anagrafiche_RagioneSociale";
+		        strSQL = "SELECT TOP 10 Anagrafiche_Ky,Anagrafiche_RagioneSociale,AnagraficheTipologia_Ky,Anagrafiche_Cognome,Anagrafiche_Nome,Anagrafiche_Indirizzo,Anagrafiche_CAP,Anagrafiche_Telefono,Anagrafiche_EmailContatti,Anagrafiche_PartitaIVA,Anagrafiche_CodiceFiscale FROM Anagrafiche WHERE " + strWHERE + " ORDER BY Anagrafiche_RagioneSociale";
 		        Response.Write(strSQL);
             SqlCommand objCommand = new SqlCommand(strSQL, objConnection);
 		        SqlDataReader objReader = objCommand.ExecuteReader();
@@ -54,6 +54,13 @@ public partial class _Default : System.Web.UI.Page
 			                objX.WriteLine("\"id\" : \"" + objReader["Anagrafiche_Ky"].ToString() + "\",");
 			                objX.WriteLine("\"label\" : \"" + objReader["Anagrafiche_RagioneSociale"].ToString() + "\",");
 			                objX.WriteLine("\"value\" : \"" + objReader["Anagrafiche_Ky"].ToString() + "\",");
+			                objX.WriteLine("\"AnagraficheTipologia_Ky\" : \"" + objReader["AnagraficheTipologia_Ky"].ToString() + "\",");
+			                objX.WriteLine("\"nome\" : \"" + objReader["Anagrafiche_Nome"].ToString() + "\",");
+			                objX.WriteLine("\"cognome\" : \"" + objReader["Anagrafiche_Cognome"].ToString() + "\",");
+			                objX.WriteLine("\"indirizzo\" : \"" + objReader["Anagrafiche_Indirizzo"].ToString() + "\",");
+			                objX.WriteLine("\"cap\" : \"" + objReader["Anagrafiche_CAP"].ToString() + "\",");
+			                objX.WriteLine("\"telefono\" : \"" + objReader["Anagrafiche_Telefono"].ToString() + "\",");
+			                objX.WriteLine("\"emailcontatti\" : \"" + objReader["Anagrafiche_EmailContatti"].ToString() + "\",");
 			                objX.WriteLine("\"piva\" : \"" + objReader["Anagrafiche_PartitaIVA"].ToString() + "\",");
 			                objX.WriteLine("\"codfisc\" : \"" + objReader["Anagrafiche_CodiceFiscale"].ToString() + "\"");
 			                objX.WriteLine("}");

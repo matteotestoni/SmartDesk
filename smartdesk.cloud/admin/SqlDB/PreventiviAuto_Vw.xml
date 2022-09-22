@@ -54,27 +54,28 @@
       <Field Column="Utenti_Colore" IsNull="Y" Type="varchar" Lenght="10" />
       <Field Column="Utenti_Cognome" IsNull="Y" Type="varchar" Lenght="200" />
       <Field Column="Utenti_Nome" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Anagrafiche_Indirizzo" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="Anagrafiche_CAP" IsNull="Y" Type="varchar" Lenght="50" />
     </Fields>
   </Tables>
-  <SqlScriptCreate>CREATE VIEW dbo.PreventiviAuto_Vw
+  <SqlScriptCreate>CREATE VIEW [dbo].[PreventiviAuto_Vw]
 AS
 SELECT        dbo.Opportunita.Opportunita_Titolo, dbo.PreventiviAuto.PreventiviAuto_Ky, dbo.PreventiviAuto.PreventiviAuto_Numero, dbo.PreventiviAuto.PreventiviAuto_Data, dbo.PreventiviAuto.Anagrafiche_Ky, 
                          dbo.PreventiviAuto.Opportunita_Ky, dbo.PreventiviAuto.PreventiviAuto_Marca, dbo.PreventiviAuto.PreventiviAuto_Modello, dbo.PreventiviAuto.PreventiviAuto_Km, dbo.PreventiviAuto.PreventiviAuto_Colore, 
                          dbo.PreventiviAuto.PreventiviAuto_Anno, dbo.PreventiviAuto.PreventiviAuto_Prezzo, dbo.PreventiviAuto.PreventiviAuto_Voltura, dbo.PreventiviAuto.PreventiviAuto_VolturaPrezzo, 
                          dbo.PreventiviAuto.PreventiviAuto_Immatricolazione, dbo.PreventiviAuto.PreventiviAuto_ImmatricolazionePrezzo, dbo.PreventiviAuto.PreventiviAuto_Sconto, dbo.PreventiviAuto.PreventiviAuto_UserInsert, 
-                         dbo.Anagrafiche.Anagrafiche_RagioneSociale, dbo.Anagrafiche.Anagrafiche_Telefono, dbo.Anagrafiche.Anagrafiche_EmailContatti, dbo.PreventiviAuto.Utenti_Ky, dbo.Utenti.Utenti_Nominativo, 
-                         dbo.Utenti.Utenti_Email, dbo.Utenti.Utenti_Logo, dbo.Utenti.Utenti_Telefono1, dbo.PreventiviAuto.PreventiviAuto_ScontoPromozione, dbo.PreventiviAuto.PreventiviAuto_Permuta, 
-                         dbo.PreventiviAuto.PreventiviAuto_PermutaAuto, dbo.PreventiviAuto.PreventiviAuto_PermutaVoltura, dbo.PreventiviAuto.PreventiviAuto_Note, dbo.PreventiviAuto.PreventiviAuto_PermutaValore, 
-                         dbo.PreventiviAuto.PagamentiMetodo_Ky, dbo.PagamentiMetodo.PagamentiMetodo_Descrizione, dbo.PagamentiMetodo.PagamentiMetodo_Colore, dbo.PagamentiMetodo.PagamentiMetodo_Icona, 
-                         dbo.PagamentiMetodo.PagamentiMetodo_Default, dbo.PagamentiMetodo.PagamentiMetodo_Titolo, dbo.PreventiviAuto.PreventiviAuto_NotePagamento, dbo.PreventiviAuto.PreventiviAuto_AccessoriExtra, 
-                         dbo.Anagrafiche.Anagrafiche_Nome, dbo.Anagrafiche.Anagrafiche_Cognome, dbo.PreventiviAutoStati.PreventiviAutoStati_Titolo, dbo.PreventiviAutoStati.PreventiviAutoStati_Colore, 
-                         dbo.PreventiviAutoStati.PreventiviAutoStati_Icona, dbo.PreventiviAuto.PreventiviAutoStati_Ky, dbo.Anagrafiche.Anagrafiche_Privacy, dbo.Anagrafiche.AnagraficheTipologia_Ky, dbo.Opportunita.Lead_Ky, 
-                         dbo.Utenti.Utenti_Colore, dbo.Utenti.Utenti_Cognome, dbo.Utenti.Utenti_Nome
+                         dbo.Anagrafiche.Anagrafiche_RagioneSociale, dbo.Anagrafiche.Anagrafiche_Telefono, dbo.Anagrafiche.Anagrafiche_EmailContatti, dbo.PreventiviAuto.Utenti_Ky, dbo.Utenti.Utenti_Nominativo, dbo.Utenti.Utenti_Email, 
+                         dbo.Utenti.Utenti_Logo, dbo.Utenti.Utenti_Telefono1, dbo.PreventiviAuto.PreventiviAuto_ScontoPromozione, dbo.PreventiviAuto.PreventiviAuto_Permuta, dbo.PreventiviAuto.PreventiviAuto_PermutaAuto, 
+                         dbo.PreventiviAuto.PreventiviAuto_PermutaVoltura, dbo.PreventiviAuto.PreventiviAuto_Note, dbo.PreventiviAuto.PreventiviAuto_PermutaValore, dbo.PreventiviAuto.PagamentiMetodo_Ky, 
+                         dbo.PagamentiMetodo.PagamentiMetodo_Descrizione, dbo.PagamentiMetodo.PagamentiMetodo_Colore, dbo.PagamentiMetodo.PagamentiMetodo_Icona, dbo.PagamentiMetodo.PagamentiMetodo_Default, 
+                         dbo.PagamentiMetodo.PagamentiMetodo_Titolo, dbo.PreventiviAuto.PreventiviAuto_NotePagamento, dbo.PreventiviAuto.PreventiviAuto_AccessoriExtra, dbo.Anagrafiche.Anagrafiche_Nome, 
+                         dbo.Anagrafiche.Anagrafiche_Cognome, dbo.PreventiviAutoStati.PreventiviAutoStati_Titolo, dbo.PreventiviAutoStati.PreventiviAutoStati_Colore, dbo.PreventiviAutoStati.PreventiviAutoStati_Icona, 
+                         dbo.PreventiviAuto.PreventiviAutoStati_Ky, dbo.Anagrafiche.Anagrafiche_Privacy, dbo.Anagrafiche.AnagraficheTipologia_Ky, dbo.Opportunita.Lead_Ky, dbo.Utenti.Utenti_Colore, dbo.Utenti.Utenti_Cognome, 
+                         dbo.Utenti.Utenti_Nome, dbo.Anagrafiche.Anagrafiche_Indirizzo, dbo.Anagrafiche.Anagrafiche_CAP
 FROM            dbo.PreventiviAuto LEFT OUTER JOIN
                          dbo.PreventiviAutoStati ON dbo.PreventiviAuto.PreventiviAutoStati_Ky = dbo.PreventiviAutoStati.PreventiviAutoStati_Ky LEFT OUTER JOIN
                          dbo.PagamentiMetodo ON dbo.PreventiviAuto.PagamentiMetodo_Ky = dbo.PagamentiMetodo.PagamentiMetodo_Ky LEFT OUTER JOIN
                          dbo.Utenti ON dbo.PreventiviAuto.Utenti_Ky = dbo.Utenti.Utenti_Ky LEFT OUTER JOIN
                          dbo.Opportunita ON dbo.PreventiviAuto.Opportunita_Ky = dbo.Opportunita.Opportunita_Ky LEFT OUTER JOIN
-                         dbo.Anagrafiche ON dbo.PreventiviAuto.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky
-</SqlScriptCreate>
+                         dbo.Anagrafiche ON dbo.PreventiviAuto.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky</SqlScriptCreate>
 </SqlTable>

@@ -32,21 +32,20 @@
       <Field Column="CoreModules_Version" IsNull="Y" Type="varchar" Lenght="20" />
       <Field Column="CoreModules_Active" IsNull="Y" Type="bit" />
       <Field Column="UtentiGruppi_Descrizione" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="CoreForms_Code" IsNull="Y" Type="varchar" Lenght="200" />
     </Fields>
   </Tables>
-  <SqlScriptCreate>CREATE VIEW dbo.UsergroupsForms_Vw
+  <SqlScriptCreate>CREATE VIEW [dbo].[UsergroupsForms_Vw]
 AS
 SELECT        dbo.UsergroupsForms.UsergroupsForms_Ky, dbo.UsergroupsForms.CoreForms_Ky, dbo.UsergroupsForms.UtentiGruppi_Ky, dbo.CoreForms.CoreEntities_Ky, dbo.CoreForms.CoreForms_Custom, 
-                         dbo.CoreForms.CoreForms_Default, dbo.CoreForms.CoreForms_Title, dbo.CoreForms.CoreForms_Order, dbo.CoreForms.CoreForms_WhichFields, dbo.CoreForms.CoreForms_SQLFrom, 
-                         dbo.CoreEntities.CoreEntities_Code, dbo.CoreEntities.CoreEntities_Title, dbo.CoreEntities.CoreEntities_Description, dbo.CoreEntities.CoreEntities_LabelSingular, dbo.CoreEntities.CoreEntities_LabelPlural, 
-                         dbo.CoreEntities.CoreEntities_Icon, dbo.CoreEntities.CoreEntities_Config, dbo.CoreEntities.CoreEntities_Order, dbo.CoreEntities.CoreEntities_Key, dbo.CoreEntities.CoreModules_Ky, 
-                         dbo.CoreModules.CoreModules_Code, dbo.CoreModules.CoreModules_Title, dbo.CoreModules.CoreModules_AdminMenuTitle, dbo.CoreModules.CoreModules_Order, 
-                         dbo.CoreModules.CoreModules_LabelSingular, dbo.CoreModules.CoreModules_LabelPlural, dbo.CoreModules.CoreModules_Icon, dbo.CoreModules.CoreModules_Version, 
-                         dbo.CoreModules.CoreModules_Active, dbo.UtentiGruppi.UtentiGruppi_Descrizione
+                         dbo.CoreForms.CoreForms_Default, dbo.CoreForms.CoreForms_Title, dbo.CoreForms.CoreForms_Order, dbo.CoreForms.CoreForms_WhichFields, dbo.CoreForms.CoreForms_SQLFrom, dbo.CoreEntities.CoreEntities_Code, 
+                         dbo.CoreEntities.CoreEntities_Title, dbo.CoreEntities.CoreEntities_Description, dbo.CoreEntities.CoreEntities_LabelSingular, dbo.CoreEntities.CoreEntities_LabelPlural, dbo.CoreEntities.CoreEntities_Icon, 
+                         dbo.CoreEntities.CoreEntities_Config, dbo.CoreEntities.CoreEntities_Order, dbo.CoreEntities.CoreEntities_Key, dbo.CoreEntities.CoreModules_Ky, dbo.CoreModules.CoreModules_Code, dbo.CoreModules.CoreModules_Title, 
+                         dbo.CoreModules.CoreModules_AdminMenuTitle, dbo.CoreModules.CoreModules_Order, dbo.CoreModules.CoreModules_LabelSingular, dbo.CoreModules.CoreModules_LabelPlural, dbo.CoreModules.CoreModules_Icon, 
+                         dbo.CoreModules.CoreModules_Version, dbo.CoreModules.CoreModules_Active, dbo.UtentiGruppi.UtentiGruppi_Descrizione, dbo.CoreForms.CoreForms_Code
 FROM            dbo.UsergroupsForms INNER JOIN
                          dbo.CoreForms ON dbo.UsergroupsForms.CoreForms_Ky = dbo.CoreForms.CoreForms_Ky INNER JOIN
                          dbo.CoreEntities ON dbo.CoreForms.CoreEntities_Ky = dbo.CoreEntities.CoreEntities_Ky INNER JOIN
                          dbo.CoreModules ON dbo.CoreEntities.CoreModules_Ky = dbo.CoreModules.CoreModules_Ky INNER JOIN
-                         dbo.UtentiGruppi ON dbo.UsergroupsForms.UtentiGruppi_Ky = dbo.UtentiGruppi.UtentiGruppi_Ky
-</SqlScriptCreate>
+                         dbo.UtentiGruppi ON dbo.UsergroupsForms.UtentiGruppi_Ky = dbo.UtentiGruppi.UtentiGruppi_Ky</SqlScriptCreate>
 </SqlTable>

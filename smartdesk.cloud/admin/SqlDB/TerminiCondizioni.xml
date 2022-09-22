@@ -17,6 +17,7 @@
       <Field Column="TerminiCondizioni_DateInsert" IsNull="Y" Type="datetime" />
       <Field Column="TerminiCondizioni_DateUpdate" IsNull="Y" Type="datetime" />
       <Field Column="TerminiCondizioni_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="TerminiCondizioni_Codice" IsNull="Y" Type="varchar" Lenght="200" />
     </Fields>
   </Tables>
   <SqlScriptCreate>
@@ -33,7 +34,8 @@ CREATE TABLE [dbo].[TerminiCondizioni] (
   [TerminiCondizioni_UserDelete] int  NULL , 
   [TerminiCondizioni_DateInsert] datetime  NULL , 
   [TerminiCondizioni_DateUpdate] datetime  NULL , 
-  [TerminiCondizioni_DateDelete] datetime  NULL  )
+  [TerminiCondizioni_DateDelete] datetime  NULL , 
+  [TerminiCondizioni_Codice] varchar(200)  NULL  )
 ALTER TABLE [dbo].[TerminiCondizioni] ADD CONSTRAINT PK_TerminiCondizioni PRIMARY KEY  ([TerminiCondizioni_Ky])
 </SqlScriptCreate>
 </SqlTable>

@@ -155,9 +155,9 @@
       <% if (dtLogin.Rows[0]["UtentiGruppi_Prodotti"].Equals(true)){ %>
       <li class="has-submenu"><a href="/admin/app/catalogo/elenco-prodotti.aspx?CoreModules_Ky=8&CoreEntities_Ky=83&CoreGrids_Ky=66" title="Prodotti">Prodotti</a>
         <ul class="submenu menu vertical" data-submenu>
-          <li><a href="/admin/app/catalogo/elenco-prodotti.aspx?CoreModules_Ky=8&CoreEntities_Ky=83&CoreGrids_Ky=66">Prodotti</a></li>
-          <li><a href="/admin/view.aspx?CoreModules_Ky=8&CoreEntities_Ky=203&CoreGrids_Ky=211">Categorie prodotti</a></li>
-          <li><a href="/admin/view.aspx?CoreModules_Ky=8&CoreEntities_Ky=89&CoreGrids_Ky=72">Gruppi di prodotti</a></li>
+          <li><a href="/admin/goto-view.aspx?CoreEntities_Ky=83">Prodotti</a></li>
+          <li><a href="/admin/goto-view.aspx?CoreEntities_Ky=203">Categorie prodotti</a></li>
+          <li><a href="/admin/goto-view.aspx?CoreEntities_Ky=89">Gruppi di prodotti</a></li>
         </ul>
       </li>
       <% } %>
@@ -172,8 +172,8 @@
       <% if (dtLogin.Rows[0]["UtentiGruppi_Veicoli"].Equals(true)){ %>
       <li class="has-submenu"><a href="/admin/view.aspx?CoreModules_Ky=29&CoreEntities_Ky=109&CoreGrids_Ky=130" title="Veicoli">Veicoli</a>
         <ul class="submenu menu vertical" data-submenu>
-            <li><a href="/admin/view.aspx?CoreModules_Ky=29&CoreEntities_Ky=109&CoreGrids_Ky=130">Veicoli</a></li>
-            <li><a href="/admin/view.aspx?CoreModules_Ky=29&CoreEntities_Ky=109&CoreGrids_Ky=284">Auto Sostitutive</a></li>
+            <li><a href="/admin/goto-view.aspx?CoreEntities_Ky=109">Veicoli</a></li>
+            <li><a href="/admin/goto-view.aspx?CoreEntities_Ky=109&CoreGrids_Ky=284">Auto Sostitutive</a></li>
             <li><a href="/admin/view.aspx?CoreModules_Ky=29&CoreEntities_Ky=126&CoreGrids_Ky=147">Offerte veicoli</a></li>
             <li><a href="/admin/view.aspx?CoreModules_Ky=29&CoreEntities_Ky=258&CoreGrids_Ky=283">Prenotazioni veicoli</a></li>
             <li><a href="/admin/view.aspx?CoreModules_Ky=29&CoreEntities_Ky=127&CoreGrids_Ky=148">Ricerce veicoli</a></li>

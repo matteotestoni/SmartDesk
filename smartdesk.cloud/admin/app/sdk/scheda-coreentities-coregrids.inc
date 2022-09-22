@@ -14,14 +14,13 @@
 	        <tr>
 	          <th width="10"><input type="checkbox" id="selectall" name="selectall" /></th>
 	          <th width="30" align="left">id</th>
-	          <th width="150" align="left">Title</th>
+	          <th width="120" align="left">Code</th>
+	          <th width="120" align="left">Title</th>
 	          <th width="120" align="left">SQL From</th>
-	          <th width="150" align="left">SQL Where</th>
-	          <th width="120" align="left">SQL Order</th>
 	          <th width="50" class="large-text-center small-text-left">Custom</th>
 	          <th width="50" class="large-text-center small-text-left">Default</th>
 	          <th width="50" align="left">Order</th>
-						<th width="50" class="text-center nowrap" data-orderable="false"></th>
+						<th width="120" class="text-center nowrap" data-orderable="false"></th>
 	        </tr>
 	      </thead>
 	   		<tbody>
@@ -29,10 +28,9 @@
             <tr>
   		        <td><input type="checkbox" class="checkrow" id="record<%=dtCoreGrids.Rows[i]["CoreGrids_Ky"].ToString()%>" data-value="<%=dtCoreGrids.Rows[i]["CoreGrids_Ky"].ToString()%>" /></td>
               <td class="text-left"><a href="/admin/app/sdk/scheda-coregrids.aspx?CoreGrids_Ky=<%=dtCoreGrids.Rows[i]["CoreGrids_Ky"].ToString()%>&CoreModules_Ky=<%=dtCoreGrids.Rows[i]["CoreModules_Ky"].ToString()%>&sorgente=scheda-entities"><%=dtCoreGrids.Rows[i]["CoreGrids_Ky"].ToString()%></a></td>
+              <td class="text-left"><a href="/admin/app/sdk/scheda-coregrids.aspx?CoreGrids_Ky=<%=dtCoreGrids.Rows[i]["CoreGrids_Ky"].ToString()%>&CoreModules_Ky=<%=dtCoreGrids.Rows[i]["CoreModules_Ky"].ToString()%>&sorgente=scheda-entities"><%=dtCoreGrids.Rows[i]["CoreGrids_Code"].ToString()%></a></td>
               <td class="text-left"><a href="/admin/app/sdk/scheda-coregrids.aspx?CoreGrids_Ky=<%=dtCoreGrids.Rows[i]["CoreGrids_Ky"].ToString()%>&CoreModules_Ky=<%=dtCoreGrids.Rows[i]["CoreModules_Ky"].ToString()%>&sorgente=scheda-entities"><%=dtCoreGrids.Rows[i]["CoreGrids_Title"].ToString()%></a></td>
               <td class="text-left"><%=dtCoreGrids.Rows[i]["CoreGrids_SQLFrom"].ToString()%></td>
-              <td class="text-left"><%=dtCoreGrids.Rows[i]["CoreGrids_SQLWhere"].ToString()%></td>
-              <td class="text-left"><%=dtCoreGrids.Rows[i]["CoreGrids_SQLOrder"].ToString()%></td>
 		          <td class="large-text-center small-text-left">
 								<% if (dtCoreGrids.Rows[i]["CoreGrids_Custom"].Equals(true)){ %>
 									<i class="fa-duotone fa-check fa-lg fa-fw" style="--fa-primary-color:green;--fa-primary-opacity: 1.0"></i>

@@ -15,7 +15,7 @@
       		action="<%=strFormAction%>"
       		enctype="multipart/form-data"
       		method="post" data-abide novalidate>
-      	<div data-sticky-container style="width:100%">
+      	<header data-sticky-container style="width:100%">
         <div class="content-header sticky" data-sticky="content-header" data-margin-top="0" data-margin-bottom="1" style="width:100%">
       		<div class="grid-x grid-padding-x">
       			<div class="large-6 medium-6 small-12 cell">
@@ -73,13 +73,13 @@
       			</div>
       		</div>
       	</div>
-        </div>
+        </header>
         
-      <div class="grid-x grid-padding-x">
+      <section class="grid-x grid-padding-x">
         <% if (dtCoreEntities.Rows[0]["CoreEntities_Config"].Equals(true) && boolAdmin==true){ %>
-          <div class="large-2 medium-2 small-12 cell sidebar-left hide-for-small-only">
+          <aside class="large-2 medium-2 small-12 cell sidebar-left hide-for-small-only">
           	<!--#include file=/admin/impostazioni-sidebar.aspx -->
-          </div>
+          </aside>
           <div class="large-10 medium-10 small-12 cell">
         <% }else{ %>
         	<div class="large-12 medium-12 small-12 cell"> 
@@ -88,6 +88,8 @@
       					<input type="hidden" name="azione" id="azione" value="<%=strAzione%>">
       					<input type="hidden" name="sorgente" id="sorgente" value="<%=strSorgente%>">
       					<input type="hidden" name="<%=dtCoreEntities.Rows[0]["CoreEntities_Key"].ToString()%>" id="<%=dtCoreEntities.Rows[0]["CoreEntities_Key"].ToString()%>" value="<%=GetFieldValue(dtFormsData, dtCoreEntities.Rows[0]["CoreEntities_Key"].ToString())%>">
+      					<input type="hidden" name="CoreModules_Ky" id="CoreModules_Ky" value="<%=intCoreModules_Ky%>">
+      					<input type="hidden" name="CoreEntities_Ky" id="CoreEntities_Ky" value="<%=intCoreEntities_Ky%>">
       					<input type="hidden" name="CoreGrids_Ky" id="CoreGrids_Ky" value="<%=intCoreGrids_Ky%>">
       					<input type="hidden" name="CoreForms_Ky" id="CoreForms_Ky" value="<%=intCoreForms_Ky%>">
       					<% if (dtCoreEntities.Rows[0]["CoreEntities_Key"].ToString()!="Utenti_Ky"){ %>
@@ -228,7 +230,7 @@
       			</div>
       		</div>
         </div>
-        </div>
+        </section>
       	</form>
       
       	<%

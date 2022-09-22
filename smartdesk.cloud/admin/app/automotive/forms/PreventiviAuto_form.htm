@@ -71,7 +71,6 @@
           </div>
         </div>
         <div style="margin-top:-15px;">
-          
           <a style="margin-left:5px" class="button tiny clear" data-open="formQuickEditAnagrafiche" onclick="javascript:inserisciAnagrafica()">inserisci<i class="fa-duotone fa-plus fa-fw"></i></a>
           <a style="margin-left:5px" class="button tiny clear" data-open="formQuickEditAnagrafiche" onclick="javascript:modificaAnagrafica()">modifica<i class="fa-duotone fa-edit fa-fw"></i></a>
         </div>
@@ -170,10 +169,25 @@
         			select: function( event, ui ) {
         				jQuery("#Anagrafiche_Ky").val(ui.item.value);
         				jQuery("#Anagrafiche_RagioneSociale").val(ui.item.label);
+        				selectSet('AnagraficheTipologia_Ky', ui.item.AnagraficheTipologia_Ky);
+                jQuery("#AnagraficheTipologia_Ky").val(ui.item.AnagraficheTipologia_Ky);
+        				jQuery("#Anagrafiche_Nome").val(ui.item.nome);
+        				jQuery("#infoAnagrafiche_Nome").text(ui.item.nome);
+        				jQuery("#Anagrafiche_Cognome").val(ui.item.cognome);
+        				jQuery("#infoAnagrafiche_Cognome").text(ui.item.cognome);
+        				jQuery("#Anagrafiche_Telefono").val(ui.item.telefono);
+        				jQuery("#infoAnagrafiche_Telefono").text(ui.item.telefono);
+        				jQuery("#Anagrafiche_EmailContatti").val(ui.item.emailcontatti);
+        				jQuery("#infoAnagrafiche_EmailContatti").text(ui.item.emailcontatti);
+        				jQuery("#Anagrafiche_Indirizzo").val(ui.item.indirizzo);
+        				jQuery("#infoAnagrafiche_Indirizzo").text(ui.item.indirizzo);
+        				jQuery("#Anagrafiche_CAP").val(ui.item.cap);
+        				jQuery("#infoAnagrafiche_CAP").text(ui.item.cap);
         				return false;
         			}
         		});
         </script>
+        <i class="fa-duotone fa-location-dot fa-fw"></i><span id="infoAnagrafiche_Indirizzo"><%=GetFieldValue(dtFormsData, "Anagrafiche_Indirizzo")%></span> - <span id="infoAnagrafiche_CAP"><%=GetFieldValue(dtFormsData, "Anagrafiche_CAP")%></span><br>
         <i class="fa-duotone fa-user fa-fw"></i><span id="infoAnagrafiche_Nome"><%=GetFieldValue(dtFormsData, "Anagrafiche_Nome")%></span> <span id="infoAnagrafiche_Cognome"><%=GetFieldValue(dtFormsData, "Anagrafiche_Cognome")%></span> - <i class="fa-duotone fa-phone fa-fw"></i><span id="infoAnagrafiche_Telefono"><%=GetFieldValue(dtFormsData, "Anagrafiche_Telefono")%></span> - <i class="fa-duotone fa-envelope fa-fw"></i><span id="infoAnagrafiche_EmailContatti"><%=GetFieldValue(dtFormsData, "Anagrafiche_EmailContatti")%></span>
       </div>
       <div class="large-2 medium-2 small-4 cell ">

@@ -24,8 +24,8 @@
         <%for (int i = 0; i < dtCoreGridsButtons.Rows.Count; i++){ %>
             <tr>
   		        <td><input type="checkbox" class="checkrow" id="record<%=dtCoreGridsButtons.Rows[i]["CoreGridsButtons_Ky"].ToString()%>" data-value="<%=dtCoreGridsButtons.Rows[i]["CoreGridsButtons_Ky"].ToString()%>" /></td>
-              <td class="large-text-center small-text-left"><a href="/admin/form.aspx?CoreModules_Ky=26&CoreEntities_Ky=207&CoreGrids_Ky=215&CoreGrids_Ky=120&CoreGridsButtons_Ky=<%=dtCoreGridsButtons.Rows[i]["CoreGridsButtons_Ky"].ToString()%>&sorgente=scheda-coregrids"><%=dtCoreGridsButtons.Rows[i]["CoreGridsButtons_Ky"].ToString()%></a></td>
-              <td><a href="/admin/form.aspx?CoreModules_Ky=26&CoreEntities_Ky=218&CoreForms_Ky=142&CoreGridsButtons_Ky=<%=dtCoreGridsButtons.Rows[i]["CoreGridsButtons_Ky"].ToString()%>&sorgente=scheda-coregrids"><%=dtCoreGridsButtons.Rows[i]["CoreGridsButtons_Title"].ToString()%></a></td>
+              <td class="large-text-center small-text-left"><a href="/admin/form.aspxCoreEntities_Ky=218&CoreGrids_Ky=227&CoreGridsButtons_Ky=<%=dtCoreGridsButtons.Rows[i]["CoreGridsButtons_Ky"].ToString()%>&sorgente=scheda-coregrids"><%=dtCoreGridsButtons.Rows[i]["CoreGridsButtons_Ky"].ToString()%></a></td>
+              <td><a href="/admin/form.aspx?CoreEntities_Ky=218&CoreGrids_Ky=227&CoreForms_Ky=142&CoreGridsButtons_Ky=<%=dtCoreGridsButtons.Rows[i]["CoreGridsButtons_Ky"].ToString()%>&sorgente=scheda-coregrids"><%=dtCoreGridsButtons.Rows[i]["CoreGridsButtons_Title"].ToString()%></a></td>
               <td><i class="<%=dtCoreGridsButtons.Rows[i]["CoreGridsButtons_Icon"].ToString()%> fa-fw"></i></td>
               <td><%=dtCoreGridsButtons.Rows[i]["CoreGridsButtons_Order"].ToString()%></td>
               <td class="text-center nowrap"><a href="/admin/app/sdk/crud/elimina-CoreGridsButtons.aspx?azione=delete&CoreModules_Ky=26&CoreEntities_Ky=194&CoreGridsButtons_Ky=<%=dtCoreGridsButtons.Rows[i]["CoreGridsButtons_Ky"].ToString()%>&CoreGrids_Ky=93&sorgente=scheda-coregrids" title="elimina" class="delete"><i class="fa-duotone fa-trash-can fa-fw"></i></a></td>

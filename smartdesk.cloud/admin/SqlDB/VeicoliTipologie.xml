@@ -12,6 +12,10 @@
       <Field Column="VeicoliTipologie_DateInsert" IsNull="Y" Type="datetime" />
       <Field Column="VeicoliTipologie_DateUpdate" IsNull="Y" Type="datetime" />
       <Field Column="VeicoliTipologie_DateDelete" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliTipologie_Usato" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliTipologie_Nuovo" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliTipologie_Km0" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliTipologie_Sostitutiva" IsNull="Y" Type="bit" />
     </Fields>
   </Tables>
   <SqlScriptCreate>
@@ -23,7 +27,11 @@ CREATE TABLE [dbo].[VeicoliTipologie] (
   [VeicoliTipologie_UserDelete] int  NULL , 
   [VeicoliTipologie_DateInsert] datetime  NULL , 
   [VeicoliTipologie_DateUpdate] datetime  NULL , 
-  [VeicoliTipologie_DateDelete] datetime  NULL  )
+  [VeicoliTipologie_DateDelete] datetime  NULL , 
+  [VeicoliTipologie_Usato] bit  NULL DEFAULT ((0)), 
+  [VeicoliTipologie_Nuovo] bit  NULL DEFAULT ((0)), 
+  [VeicoliTipologie_Km0] bit  NULL DEFAULT ((0)), 
+  [VeicoliTipologie_Sostitutiva] bit  NULL DEFAULT ((0)) )
 ALTER TABLE [dbo].[VeicoliTipologie] ADD CONSTRAINT PK_VeicoliTipologie PRIMARY KEY  ([VeicoliTipologie_Ky])
 </SqlScriptCreate>
 </SqlTable>

@@ -66,7 +66,7 @@ public partial class _Default : System.Web.UI.Page
           }
 
           if (dtCoreGrids.Rows[0]["CoreGrids_Custom"].Equals (true)){
-              strFormUrl = "/admin/app/" + dtCoreGrids.Rows[0]["CoreModules_Code"].ToString() + "/elenco-" + dtCoreGrids.Rows[0]["CoreEntities_Code"].ToString() + ".aspx?custom=1";
+              strFormUrl = "/admin/app/" + dtCoreGrids.Rows[0]["CoreModules_Code"].ToString() + "/elenco-" + dtCoreGrids.Rows[0]["CoreGrids_Code"].ToString() + ".aspx?custom=1&CoreModules_Ky=" + dtCoreGrids.Rows[0]["CoreModules_Ky"].ToString() + "&CoreEntities_Ky=" + dtCoreGrids.Rows[0]["CoreEntities_Ky"].ToString() + "&CoreGrids_Ky=" + dtCoreGrids.Rows[0]["CoreGrids_Ky"].ToString();
           } else {
               strFormUrl = "/admin/view.aspx?CoreModules_Ky=" + dtCoreGrids.Rows[0]["CoreModules_Ky"].ToString() + "&CoreEntities_Ky=" + dtCoreGrids.Rows[0]["CoreEntities_Ky"].ToString() + "&CoreGrids_Ky=" + dtCoreGrids.Rows[0]["CoreGrids_Ky"].ToString();
           }

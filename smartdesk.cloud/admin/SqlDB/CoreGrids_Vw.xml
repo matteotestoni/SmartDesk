@@ -41,21 +41,21 @@
       <Field Column="CoreForms_Default" IsNull="Y" Type="bit" />
       <Field Column="CoreForms_SQLFrom" IsNull="Y" Type="varchar" Lenght="-1" />
       <Field Column="CoreForms_WhichFields" IsNull="Y" Type="tinyint" />
+      <Field Column="CoreGrids_Code" IsNull="Y" Type="varchar" Lenght="200" />
     </Fields>
   </Tables>
-  <SqlScriptCreate>CREATE VIEW dbo.CoreGrids_Vw
+  <SqlScriptCreate>CREATE VIEW [dbo].[CoreGrids_Vw]
 AS
 SELECT        dbo.CoreGrids.CoreGrids_Ky, dbo.CoreGrids.CoreEntities_Ky, dbo.CoreGrids.CoreGrids_Title, dbo.CoreGrids.CoreGrids_Order, dbo.CoreEntities.CoreModules_Ky, dbo.CoreGrids.CoreGrids_Custom, 
-                         dbo.CoreGrids.CoreGrids_Default, dbo.CoreGrids.CoreGrids_SQLWhere, dbo.CoreGrids.CoreGrids_SQLOrder, dbo.CoreGrids.CoreGrids_SQLFrom, dbo.CoreModules.CoreModules_Code, 
-                         dbo.CoreModules.CoreModules_Icon, dbo.CoreEntities.CoreEntities_Icon, dbo.CoreEntities.CoreEntities_Code, dbo.CoreEntities.CoreEntities_Title, dbo.CoreGrids.CoreGrids_Rows, 
-                         dbo.CoreEntities.CoreEntities_Tree, dbo.CoreEntities.CoreEntities_TreeAttribute, dbo.CoreGrids.CoreForms_Ky, dbo.CoreForms.CoreForms_Title, dbo.CoreEntities.CoreEntities_Order, 
-                         dbo.CoreModules.CoreModules_Order, dbo.CoreForms.CoreForms_Order, dbo.CoreEntities.CoreEntities_Key, dbo.CoreEntities.CoreEntities_Description, dbo.CoreEntities.CoreEntities_LabelSingular, 
-                         dbo.CoreEntities.CoreEntities_LabelPlural, dbo.CoreEntities.CoreEntities_Config, dbo.CoreModules.CoreModules_Title, dbo.CoreModules.CoreModules_AdminMenuTitle, 
-                         dbo.CoreModules.CoreModules_LabelSingular, dbo.CoreModules.CoreModules_LabelPlural, dbo.CoreModules.CoreModules_Version, dbo.CoreModules.CoreModules_Active, 
-                         dbo.CoreForms.CoreEntities_Ky AS Expr1, dbo.CoreForms.CoreForms_Custom, dbo.CoreForms.CoreForms_Default, dbo.CoreForms.CoreForms_SQLFrom, dbo.CoreForms.CoreForms_WhichFields
+                         dbo.CoreGrids.CoreGrids_Default, dbo.CoreGrids.CoreGrids_SQLWhere, dbo.CoreGrids.CoreGrids_SQLOrder, dbo.CoreGrids.CoreGrids_SQLFrom, dbo.CoreModules.CoreModules_Code, dbo.CoreModules.CoreModules_Icon, 
+                         dbo.CoreEntities.CoreEntities_Icon, dbo.CoreEntities.CoreEntities_Code, dbo.CoreEntities.CoreEntities_Title, dbo.CoreGrids.CoreGrids_Rows, dbo.CoreEntities.CoreEntities_Tree, dbo.CoreEntities.CoreEntities_TreeAttribute, 
+                         dbo.CoreGrids.CoreForms_Ky, dbo.CoreForms.CoreForms_Title, dbo.CoreEntities.CoreEntities_Order, dbo.CoreModules.CoreModules_Order, dbo.CoreForms.CoreForms_Order, dbo.CoreEntities.CoreEntities_Key, 
+                         dbo.CoreEntities.CoreEntities_Description, dbo.CoreEntities.CoreEntities_LabelSingular, dbo.CoreEntities.CoreEntities_LabelPlural, dbo.CoreEntities.CoreEntities_Config, dbo.CoreModules.CoreModules_Title, 
+                         dbo.CoreModules.CoreModules_AdminMenuTitle, dbo.CoreModules.CoreModules_LabelSingular, dbo.CoreModules.CoreModules_LabelPlural, dbo.CoreModules.CoreModules_Version, dbo.CoreModules.CoreModules_Active, 
+                         dbo.CoreForms.CoreEntities_Ky AS Expr1, dbo.CoreForms.CoreForms_Custom, dbo.CoreForms.CoreForms_Default, dbo.CoreForms.CoreForms_SQLFrom, dbo.CoreForms.CoreForms_WhichFields, 
+                         dbo.CoreGrids.CoreGrids_Code
 FROM            dbo.CoreGrids INNER JOIN
                          dbo.CoreEntities ON dbo.CoreGrids.CoreEntities_Ky = dbo.CoreEntities.CoreEntities_Ky INNER JOIN
                          dbo.CoreModules ON dbo.CoreEntities.CoreModules_Ky = dbo.CoreModules.CoreModules_Ky LEFT OUTER JOIN
-                         dbo.CoreForms ON dbo.CoreGrids.CoreForms_Ky = dbo.CoreForms.CoreForms_Ky
-</SqlScriptCreate>
+                         dbo.CoreForms ON dbo.CoreGrids.CoreForms_Ky = dbo.CoreForms.CoreForms_Ky</SqlScriptCreate>
 </SqlTable>

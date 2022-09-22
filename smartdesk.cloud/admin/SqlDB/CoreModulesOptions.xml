@@ -18,7 +18,7 @@
       <Field Column="CoreModulesOptions_DateInsert" IsNull="Y" Type="datetime" />
       <Field Column="CoreModulesOptions_DateUpdate" IsNull="Y" Type="datetime" />
       <Field Column="CoreModulesOptions_DateDelete" IsNull="Y" Type="datetime" />
-      <Field Column="CoreModulesOptions_Default" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="CoreModulesOptions_Default" IsNull="Y" Type="varchar" Lenght="-1" />
     </Fields>
   </Tables>
   <SqlScriptCreate>
@@ -37,7 +37,7 @@ CREATE TABLE [dbo].[CoreModulesOptions] (
   [CoreModulesOptions_DateInsert] datetime  NULL , 
   [CoreModulesOptions_DateUpdate] datetime  NULL , 
   [CoreModulesOptions_DateDelete] datetime  NULL , 
-  [CoreModulesOptions_Default] varchar(200)  NULL  )
+  [CoreModulesOptions_Default] varchar(MAX)  NULL  )
 ALTER TABLE [dbo].[CoreModulesOptions] ADD CONSTRAINT PK_CoreModulesOptions PRIMARY KEY  ([CoreModulesOptions_Ky])
 </SqlScriptCreate>
 </SqlTable>

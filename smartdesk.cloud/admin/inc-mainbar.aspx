@@ -1,7 +1,7 @@
 <%
 System.Data.DataTable dtLogin=Smartdesk.Data.Read("Utenti_Vw", "Utenti_Ky", Smartdesk.Session.CurrentUser.ToString());
 %>
-<div id="header-bar">
+<header id="header-bar">
 	<div class="title-bar show-for-small-only" data-responsive-toggle="main-menu" data-hide-for="medium">
 		<button class="menu-icon" type="button" data-toggle="main-menu"></button>
 		<div class="title-bar-title">
@@ -78,8 +78,5 @@ System.Data.DataTable dtLogin=Smartdesk.Data.Read("Utenti_Vw", "Utenti_Ky", Smar
           </ul>
       
         </div>
-        
-        
-        
 		</div>
-</div>
+</header>

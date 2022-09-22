@@ -16,13 +16,13 @@
 	        <tr>
 	          <th width="10"><input type="checkbox" id="selectall" name="selectall" /></th>
 	          <th width="30" align="left">id</th>
-	          <th width="150" align="left">Title</th>
+	          <th width="120" align="left">Code</th>
+	          <th width="120" align="left">Title</th>
 	          <th width="120" align="left">SQL From</th>
 	          <th width="50" class="large-text-center small-text-left">Custom</th>
 	          <th width="50" class="large-text-center small-text-left">Default</th>
-	          <th width="50" class="large-text-center small-text-left">Fields</th>
 	          <th width="50" align="left">Order</th>
-						<th width="50" class="text-center nowrap" data-orderable="false"></th>
+						<th width="120" class="text-center nowrap" data-orderable="false"></th>
 	        </tr>
 	      </thead>
 	   		<tbody>
@@ -30,6 +30,7 @@
             <tr>
   		        <td><input type="checkbox" class="checkrow" id="record<%=dtCoreForms.Rows[i]["CoreForms_Ky"].ToString()%>" data-value="<%=dtCoreForms.Rows[i]["CoreForms_Ky"].ToString()%>" /></td>
               <td class="text-left"><a href="/admin/app/sdk/scheda-CoreForms.aspx?CoreForms_Ky=<%=dtCoreForms.Rows[i]["CoreForms_Ky"].ToString()%>&CoreModules_Ky=<%=dtCoreForms.Rows[i]["CoreModules_Ky"].ToString()%>&sorgente=scheda-entities"><%=dtCoreForms.Rows[i]["CoreForms_Ky"].ToString()%></a></td>
+              <td class="text-left"><a href="/admin/app/sdk/scheda-CoreForms.aspx?CoreForms_Ky=<%=dtCoreForms.Rows[i]["CoreForms_Ky"].ToString()%>&CoreModules_Ky=<%=dtCoreForms.Rows[i]["CoreModules_Ky"].ToString()%>&sorgente=scheda-entities"><%=dtCoreForms.Rows[i]["CoreForms_Code"].ToString()%></a></td>
               <td class="text-left"><a href="/admin/app/sdk/scheda-CoreForms.aspx?CoreForms_Ky=<%=dtCoreForms.Rows[i]["CoreForms_Ky"].ToString()%>&CoreModules_Ky=<%=dtCoreForms.Rows[i]["CoreModules_Ky"].ToString()%>&sorgente=scheda-entities"><%=dtCoreForms.Rows[i]["CoreForms_Title"].ToString()%></a></td>
               <td class="text-left"><%=dtCoreForms.Rows[i]["CoreForms_SQLFrom"].ToString()%></td>
 		          <td class="large-text-center small-text-left">
@@ -46,15 +47,11 @@
 									<i class="fa-duotone fa-xmark fa-lg fa-fw" style="--fa-secondary-color:red;--fa-secondary-opacity: 1.0"></i>
 								<% } %>
 							</td>
-		          <td class="large-text-center small-text-left">
-								<% if (dtCoreForms.Rows[i]["CoreForms_WhichFields"].Equals(1)){ %>
-									All
-								<% }else{ %>
-									Selected
-								<% } %>
-							</td>
               <td class="text-left"><%=dtCoreForms.Rows[i]["CoreForms_Order"].ToString()%></td>
-              <td class="text-center nowrap"><a href="/admin/app/sdk/crud/elimina-CoreForms.aspx?azione=delete&CoreForms_Ky=<%=dtCoreForms.Rows[i]["CoreForms_Ky"].ToString()%>&CoreEntities_Ky=<%=dtCoreForms.Rows[i]["CoreEntities_Ky"].ToString()%>&sorgente=scheda-entities" title="elimina" class="delete"><i class="fa-duotone fa-trash-can fa-fw"></i></a></td>
+              <td class="text-center nowrap">
+              	<a href="/admin/goto-form.aspx?CoreEntities_Ky=<%=dtCoreForms.Rows[i]["CoreEntities_Ky"].ToString()%>&CoreForms_Ky=<%=dtCoreForms.Rows[i]["CoreForms_Ky"].ToString()%>&azione=new" target="_blank"><i class="fa-duotone fa-eye fa-fw"></i>Preview</a> 
+                <a href="/admin/app/sdk/crud/elimina-CoreForms.aspx?azione=delete&CoreForms_Ky=<%=dtCoreForms.Rows[i]["CoreForms_Ky"].ToString()%>&CoreEntities_Ky=<%=dtCoreForms.Rows[i]["CoreEntities_Ky"].ToString()%>&sorgente=scheda-entities" title="elimina" class="delete"><i class="fa-duotone fa-trash-can fa-fw"></i>Delete</a>
+              </td>
             </tr>
         <% } %>
 	   		</tbody>

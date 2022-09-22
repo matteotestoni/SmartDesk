@@ -5,7 +5,7 @@
   <title><%=Smartdesk.Data.Field(dtVeicoliPrenotazioni, "VeicoliPrenotazioni_Nominativo")%></title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link type="text/css" rel="stylesheet" href="/fonts/Geomanist/Geomanist.css" media="screen, print" />
+  <link type="text/css" rel="stylesheet" href="https://cdn.smartdesk.cloud/fonts/Geomanist/Geomanist.css" media="screen, print" />
   <link rel="stylesheet" type="text/css" href="/admin/rswcrm-print.css" media="screen, print" />
   <link rel="shortcut icon" href="https://cdn.smartdesk.cloud/img/favicon/favicon.ico">
   <link rel="apple-touch-icon" sizes="57x57" href="https://cdn.smartdesk.cloud/img/favicon/apple-icon-57x57.png">
@@ -35,7 +35,7 @@
     </td>
     <td width="60%" align="right">
       <div style="border:0;padding:20px;width:7cm;text-align:left">
-        <div class="tipodocumento">Prenotazione auto</div>
+        <div class="tipodocumento"></div>
           <div class="riferimenti">Numero: </div><strong><%=dtVeicoliPrenotazioni.Rows[0]["VeicoliPrenotazioni_Ky"].ToString()%></strong>
 					<br style="clear:both">
         </div>
@@ -44,9 +44,55 @@
   </table>
 	
   <div class="corpodocumento">
-	<h1 style="text-align:center;text-transform:uppercase">Targa <%=Smartdesk.Data.Field(dtVeicoliPrenotazioni, "Veicoli_Targa")%> dal <%=Smartdesk.Data.Field(dtVeicoliPrenotazioni, "VeicoliPrenotazioni_DataInizio")%> al <%=Smartdesk.Data.Field(dtVeicoliPrenotazioni, "VeicoliPrenotazioni_DataFine")%></h1>
+	<h1 style="text-align:center;text-transform:uppercase">Concessione in comodato di AUTOVETTURA</h1>
     <fieldset class="fieldset">
-      <legend>Prenotazione</legend>
+      <legend><i class="fa-duotone fa-user fa-fw"></i>Dati anagrafica</legend>
+    	      <div class="ragionesociale"><%=dtAnagrafiche.Rows[0]["Anagrafiche_RagioneSociale"].ToString()%><br>
+    	      <% if (dtAnagrafiche.Rows[0]["Anagrafiche_Cognome"].ToString().Length>0){ %>
+    	       <%=dtAnagrafiche.Rows[0]["Anagrafiche_Cognome"].ToString()%> 
+    	      <% } %>
+    	      <% if (dtAnagrafiche.Rows[0]["Anagrafiche_Nome"].ToString().Length>0){ %>
+    	       <%=dtAnagrafiche.Rows[0]["Anagrafiche_Nome"].ToString()%><br />
+    	      <% } %>
+            </div>
+    	      <% if (dtAnagrafiche.Rows[0]["Anagrafiche_Indirizzo"].ToString().Length>0){ %>
+    	       <%=dtAnagrafiche.Rows[0]["Anagrafiche_Indirizzo"].ToString()%><br />
+    	      <% } %>
+    	      <% if (dtAnagrafiche.Rows[0]["Comuni_Comune"].ToString().Length>0){ %>
+    	       <%=dtAnagrafiche.Rows[0]["Anagrafiche_CAP"].ToString()%> <%=dtAnagrafiche.Rows[0]["Comuni_Comune"].ToString()%> 
+    	      <% } %>
+    	      <% if (dtAnagrafiche.Rows[0]["Province_Provincia"].ToString().Length>0){ %>
+            (<%=dtAnagrafiche.Rows[0]["Province_Provincia"].ToString()%>)<br />
+    	      <% } %>
+    	      <% if (dtAnagrafiche.Rows[0]["Anagrafiche_PartitaIVA"].ToString().Length>0){ %>
+    		      <strong>Partita IVA: <%=dtAnagrafiche.Rows[0]["Anagrafiche_PartitaIVA"].ToString()%></strong><br />
+    	      <% } %>
+    	      <% if (dtAnagrafiche.Rows[0]["Anagrafiche_CodiceFiscale"].ToString().Length>0){ %>
+    	        <strong>Codice Fiscale: <%=dtAnagrafiche.Rows[0]["Anagrafiche_CodiceFiscale"].ToString()%></strong><br />
+    	      <% } %>
+    	      <i class="fa-duotone fa-envelope fa-fw"></i><%=dtAnagrafiche.Rows[0]["Anagrafiche_EmailContatti"].ToString()%><br />
+    	      <i class="fa-duotone fa-phone fa-fw"></i><%=dtAnagrafiche.Rows[0]["Anagrafiche_Telefono"].ToString()%><br />
+          	<table border="0" cellpadding="10" cellspacing="10" style="width:100%" class="corpo">
+              <tr>
+                <td width="140" align="left">Nato/a</td>
+                <td><div style="width:100%;border-bottom:1px solid #000000"></div></td>
+              </tr>
+              <tr>
+                <td width="140" align="left">Patente n&deg;</td>
+                <td><div style="width:100%;border-bottom:1px solid #000000"></div></td>
+              </tr>
+              <tr>
+                <td width="140" align="left">Rilasciata il</td>
+                <td><div style="width:100%;border-bottom:1px solid #000000"></div></td>
+              </tr>
+              <tr>
+                <td width="140" align="left">Dalla prefettura di</td>
+                <td><div style="width:100%;border-bottom:1px solid #000000"></div></td>
+              </tr>
+            </table>
+    </fieldset>
+    <fieldset class="fieldset">
+      <legend><i class="fa-duotone fa-calendar fa-fw"></i>Prenotazione</legend>
       	<table border="0" style="width:100%" class="corpo">
           <tr>
             <td class="labelField" width="110">Prenotazione del <i class="fa-duotone fa-calendar-days fa-fw"></i></td>
@@ -66,7 +112,7 @@
     </fieldset>
 
     <fieldset class="fieldset">
-      <legend>Dati vettura</legend>
+      <legend><i class="fa-duotone fa-car fa-fw"></i>Dati vettura</legend>
       	<table border="0" style="width:100%" class="corpo">
           <tr>
             <td class="labelField" width="100">Tipo auto <i class="fa-duotone fa-car fa-fw"></i></td>
@@ -84,26 +130,41 @@
           </tr>
         </table>
     </fieldset>
-
     <fieldset class="fieldset">
-      <legend>Dati anagrafica</legend>
+      <legend><i class="fa-duotone fa-shield-check fa-fw"></i>Polizze</legend>
       	<table border="0" style="width:100%" class="corpo">
           <tr>
-            <td class="labelField" width="100">Nominativo <i class="fa-duotone fa-user fa-fw"></i></td>
+            <td class="labelField" width="100">Collisione</td>
             <td class="ValueField">
-              <%=Smartdesk.Data.Field(dtAnagrafiche, "Anagrafiche_RagioneSociale")%>
+              <%=GetCheckValueSiNo(dtVeicoliPrenotazioni, "VeicoliPrenotazioni_Collisione")%>
             </td>
-            <td class="labelField" width="100">Email <i class="fa-duotone fa-envelope fa-fw"></i></td>
+            <td class="labelField" width="100">Polizza RC</td>
             <td class="ValueField">
-              <%=Smartdesk.Data.Field(dtAnagrafiche, "Anagrafiche_EmailContatti")%>
+              <%=GetCheckValueSiNo(dtVeicoliPrenotazioni, "VeicoliPrenotazioni_Polizzarc")%>
             </td>
-            <td class="labelField" width="100">Telefono <i class="fa-duotone fa-phone fa-fw"></i></td>
+            <td class="labelField" width="100">Infortuni conducente</td>
             <td class="ValueField">
-              <%=Smartdesk.Data.Field(dtAnagrafiche, "Anagrafiche_Telefono")%>
+              <%=GetCheckValueSiNo(dtVeicoliPrenotazioni, "VeicoliPrenotazioni_Infortuniconducente")%>
             </td>
           </tr>
         </table>
     </fieldset>
+
+    <fieldset class="fieldset">
+      <legend><i class="fa-duotone fa-gavel fa-fw"></i>Condizioni</legend>
+      <% Response.Write(Smartdesk.Functions.getOption("Veicoli_Condizioniprenotazione")); %>
+    </fieldset>
+    
+      	<table border="0" cellspacing="10" cellpadding="10" style="width:100%" class="corpo">
+          <tr>
+            <td width="50%" align="center" style="text-align:center">Firma comodatario al ritiro</td>
+            <td width="50%" align="center" style="text-align:center">Firma comodatario alla riconsegna</td>
+          </tr>
+          <tr>
+            <td><div style="border:1px solid #000000;width:100%;height:35px;"></div></td>
+            <td><div style="border:1px solid #000000;width:100%;height:35px;"></div></td>
+          </tr>
+        </table>
     
   </div>
 
