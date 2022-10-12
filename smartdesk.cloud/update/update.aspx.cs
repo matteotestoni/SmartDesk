@@ -22,6 +22,7 @@ public partial class _Default : System.Web.UI.Page
     public string strH1 = "";
     public string strRisultato = "";
     public string strTemp = "";
+    public int intTemp = 0;
     
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -235,8 +236,9 @@ public partial class _Default : System.Web.UI.Page
         
         strRisultato += "<h2>4: Aggiornamento update.sql</h2>";
         //Response.Write(Server.MapPath("/update/update.sql"));
-        //strSQL = File.ReadAllText(Server.MapPath("/update/update.sql"));
-        //new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
+        strSQL = File.ReadAllText(Server.MapPath("/update/update.sql"));
+        intTemp=new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
+        strRisultato += intTemp.ToString();
         
         strRisultato += "<h2>5: creazione cartelle in /uploads/ e /var/</h2>";
         strDirectory=Server.MapPath("/uploads/allegati-prodotti/");

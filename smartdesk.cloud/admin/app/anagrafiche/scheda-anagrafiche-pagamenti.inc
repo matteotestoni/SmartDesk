@@ -16,7 +16,7 @@
 			  	</div>
 		  </div>
 		  <div class="card-section-tabs">
-    	<ul class="tabs" data-responsive-accordion-tabs="tabs small-accordion medium-tabs large-tabs" role="tablist" id="pagamenti-tabs">
+    	<ul class="horizontal tabs" data-responsive-accordion-tabs="tabs small-accordion medium-tabs large-tabs" role="tablist" id="pagamenti-tabs">
     		<li id="li1" class="tabs-title is-active" role="presentational"><a href="#tabpagamenti-1"><i class="fa-duotone fa-triangle-exclamation fa-lg fa-fw" style="--fa-primary-color:red;--fa-primary-opacity: 1.0"></i> Pagamenti in entrata (<%=dtPagamenti.Rows.Count%>)</a></li>
     		<li id="li2" class="tabs-title" role="presentational"><a href="#tabpagamenti-2"><i class="fa-duotone fa-check fa-lg fa-fw" style="--fa-primary-color:green;--fa-primary-opacity: 1.0"></i> Pagamenti incassati ultimi 5 anni (<%=dtPagamentiRicevuti.Rows.Count%>)</a></li>
     		<li id="li3" class="tabs-title" role="presentational"><a href="#tabpagamenti-3"><i class="fa-duotone fa-triangle-exclamation fa-lg fa-fw" style="--fa-primary-color:red;--fa-primary-opacity: 1.0"></i> Pagamenti in uscita (<%=dtPagamentiDaFare.Rows.Count%>)</a></li>

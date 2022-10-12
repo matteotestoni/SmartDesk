@@ -49,7 +49,7 @@
                             }
     						  %>
     			    		<%if (dtLogin.Rows[0]["UtentiGruppi_Attivita"].Equals(true)){%>
-    			    		<li class="tabs-title<%=strActiveTab%>" role="presentational"><a href="#tabs-attivita"><i class="fa-duotone fa-calendar-days fa-fw"></i>Attivit&agrave;</a></li>
+    			    		<li class="tabs-title<%=strActiveTab%>" role="presentational"><a href="#tabs-attivita"><i class="fa-duotone fa-calendar-days fa-fw"></i>Attivit&agrave; da fare</a></li>
     			    		<%
                                 strActiveTab = "";
                             }
@@ -61,7 +61,7 @@
                             }
     						  %>
     			    		<%if (dtLogin.Rows[0]["UtentiGruppi_Progetti"].Equals(true)){%>
-    			    		<li class="tabs-title<%=strActiveTab%>" role="presentational"><a href="#tabs-progetti"><i class="fa-duotone fa-buildings fa-fw"></i>Progetti</a></li>
+    			    		<li class="tabs-title<%=strActiveTab%>" role="presentational"><a href="#tabs-progetti"><i class="fa-duotone fa-buildings fa-fw"></i>Progetti importanti</a></li>
     			    		<%
                                 strActiveTab = "";
                             }
@@ -180,6 +180,7 @@
             <img src="https://icons.duckduckgo.com/ip3/<%=strHost%>.ico" width="16" height="16" border="0" style="margin-right:3px"><%=dtCMSLink.Rows[i]["CMSLink_Descrizione"].ToString()%>
           </a>
         <% } %>
+    			<a href="/admin/view.aspx?CoreModules_Ky=9&CoreEntities_Ky=102&CoreGrids_Ky=85" class="tiny button clear"><i class="fa-duotone fa-edit fa-fw"></i>gestisci</a>
         </div>
     	</div>        
     </div>

@@ -4,10 +4,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Collections.Specialized;
 
-
 public partial class _Default : System.Web.UI.Page 
 {
-    
     public int intNumRecords = 0;
     public int i = 0;
     public System.Globalization.CultureInfo ciit = new System.Globalization.CultureInfo("it-IT");
@@ -22,8 +20,8 @@ public partial class _Default : System.Web.UI.Page
     public int intMonth;
     public string strAnno="";
     public string strMese="";
-    
     public int intTotLead=0;
+    
     protected void Page_Load(object sender, EventArgs e)
     {
       string strWHERENet="";

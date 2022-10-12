@@ -46,6 +46,7 @@
               <option value="delete" data-action="/admin/app/catalogo/crud/elimina-prodotto.aspx">Elimina</option>
             </select>
             <div class="input-group-button">
+              <input type="hidden" name="grid" value="elencoprodotti">
               <input type="hidden" id="azione" name="azione" value="">
               <input type="hidden" id="deletemultiplo" name="deletemultiplo" value="deletemultiplo">
               <input type="hidden" id="azionidigruppo-ids" name="azionidigruppo-ids" value="">
@@ -84,7 +85,7 @@
 			<div class="filtriapplicati hide">
 				<%=strWHERENet%>
 			</div>
-			<table class="grid table-scroll hover">
+			<table id="elencoprodotti" class="grid table-scroll hover">
 	    	<thead>
 		      <tr>
 	          <th width="10"><input type="checkbox" id="selectall" name="selectall" /></th>

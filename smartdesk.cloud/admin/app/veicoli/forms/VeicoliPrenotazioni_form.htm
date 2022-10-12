@@ -18,16 +18,16 @@
     <div class="large-2 medium-2 small-8 cell">
 	    <select name="VeicoliPrenotazioni_gg" id="VeicoliPrenotazioni_gg" value="<%=GetFieldValue(dtFormsData, "VeicoliPrenotazioni_gg")%>">
         <option value=""></option>
-        <option value="1">1 giorno</option>
-        <option value="2">2 giorni</option>
-        <option value="3">3 giorni</option>
-        <option value="4">4 giorni</option>
-        <option value="5">5 giorni</option>
-        <option value="6">6 giorni</option>
-        <option value="7">7 giorni</option>
-        <option value="8">8 giorni</option>
-        <option value="9">9 giorni</option>
-        <option value="10">10 giorni</option>
+        <option value="1" <% if (GetFieldValue(dtFormsData, "VeicoliPrenotazioni_gg")=="1") { Response.Write(" selected"); }%>>1 giorno</option>
+        <option value="2" <% if (GetFieldValue(dtFormsData, "VeicoliPrenotazioni_gg")=="2") { Response.Write(" selected"); }%>>2 giorni</option>
+        <option value="3" <% if (GetFieldValue(dtFormsData, "VeicoliPrenotazioni_gg")=="3") { Response.Write(" selected"); }%>>3 giorni</option>
+        <option value="4" <% if (GetFieldValue(dtFormsData, "VeicoliPrenotazioni_gg")=="4") { Response.Write(" selected"); }%>>4 giorni</option>
+        <option value="5" <% if (GetFieldValue(dtFormsData, "VeicoliPrenotazioni_gg")=="5") { Response.Write(" selected"); }%>>5 giorni</option>
+        <option value="6" <% if (GetFieldValue(dtFormsData, "VeicoliPrenotazioni_gg")=="6") { Response.Write(" selected"); }%>>6 giorni</option>
+        <option value="7" <% if (GetFieldValue(dtFormsData, "VeicoliPrenotazioni_gg")=="7") { Response.Write(" selected"); }%>>7 giorni</option>
+        <option value="8" <% if (GetFieldValue(dtFormsData, "VeicoliPrenotazioni_gg")=="8") { Response.Write(" selected"); }%>>8 giorni</option>
+        <option value="9" <% if (GetFieldValue(dtFormsData, "VeicoliPrenotazioni_gg")=="9") { Response.Write(" selected"); }%>>9 giorni</option>
+        <option value="10" <% if (GetFieldValue(dtFormsData, "VeicoliPrenotazioni_gg")=="10") { Response.Write(" selected"); }%>>10 giorni</option>
       </select>
       <script type="text/Veicoli_Ky">
         selectSet('VeicoliPrenotazioni_gg', '<%=GetFieldValue(dtFormsData, "VeicoliPrenotazioni_gg")%>');

@@ -33,6 +33,7 @@
             <option value="delete" data-action="/admin/app/aste/crud/elimina-astecauzioni.aspx">Elimina</option>
           </select>
           <div class="input-group-button">
+            <input type="hidden" name="grid" value="elencoastecauzioni">
             <input type="hidden" id="sorgente" name="sorgente" value="elenco-astecauzioni">
             <input type="hidden" id="azione" name="azione" value="">
             <input type="hidden" id="deletemultiplo" name="deletemultiplo" value="deletemultiplo">
@@ -44,7 +45,7 @@
       </div>
     </div>
 
-    <table class="grid hover scroll" border="0" width="100%" id="griddatatables">
+    <table id="elencoastecauzioni" class="grid hover scroll" border="0" width="100%" id="griddatatables">
     	<thead>
 	      <tr>
 	        <th width="10"><input type="checkbox" id="selectall" name="selectall" /></th>

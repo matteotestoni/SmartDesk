@@ -59,6 +59,7 @@
                   <option value="delete" data-action="/admin/app/anagrafiche/crud/elimina-anagrafiche.aspx">Elimina</option>
                 </select>
                 <div class="input-group-button">
+                  <input type="hidden" name="grid" value="elencoanagrafiche">
                   <input type="hidden" id="sorgente" name="sorgente" value="elenco-anagrafiche">
                   <input type="hidden" id="azione" name="azione" value="">
                   <input type="hidden" id="deletemultiplo" name="deletemultiplo" value="deletemultiplo">
@@ -70,7 +71,7 @@
             </div>
           </div>
     
-    		  <table class="grid hover scroll">
+    		  <table id="elencoanagrafiche" class="grid hover scroll">
     		    <thead>
     		      <tr>
     	        	<th width="10"><input type="checkbox" id="selectall" name="selectall" /></th>
@@ -158,6 +159,7 @@
                   <option value="delete" data-action="/admin/app/Commesse/crud/elimina-Commesse.aspx">Elimina</option>
                 </select>
                 <div class="input-group-button">
+                  <input type="hidden" name="grid" value="elencocommesse">
                   <input type="hidden" id="sorgente" name="sorgente" value="elenco-Commesse">
                   <input type="hidden" id="azione" name="azione" value="">
                   <input type="hidden" id="deletemultiplo" name="deletemultiplo" value="deletemultiplo">
@@ -169,7 +171,7 @@
             </div>
           </div>
     
-          <table class="grid hover scroll" border="0" width="100%">
+          <table id="elencocommesse" class="grid hover scroll" border="0" width="100%">
           	<thead>
       	      <tr>
       	        <th width="10"><input type="checkbox" id="selectall" name="selectall" /></th>
@@ -272,6 +274,7 @@
                   <option value="delete" data-action="/admin/app/passwordmanager/crud/elimina-passwordmanager.aspx">Elimina</option>
                 </select>
                 <div class="input-group-button">
+                  <input type="hidden" name="grid" value="elencopasswordmanager">
                   <input type="hidden" id="sorgente" name="sorgente" value="elenco-passwordmanager">
                   <input type="hidden" id="azione" name="azione" value="">
                   <input type="hidden" id="deletemultiplo" name="deletemultiplo" value="deletemultiplo">
@@ -283,7 +286,7 @@
             </div>
           </div>
           
-          <table class="grid hover scroll" border="0" width="100%">
+          <table id="elencopasswordmanager" class="grid hover scroll" border="0" width="100%">
           	<thead>
       	      <tr>
       	        <th width="10"><input type="checkbox" id="selectall" name="selectall" /></th>
@@ -352,6 +355,7 @@
                   <option value="delete" data-action="/admin/app/sitiweb/crud/elimina-sitiweb.aspx">Elimina</option>
                 </select>
                 <div class="input-group-button">
+                  <input type="hidden" name="grid" value="elencositiweb">
                   <input type="hidden" id="sorgente" name="sorgente" value="elenco-sitiweb">
                   <input type="hidden" id="azione" name="azione" value="">
                   <input type="hidden" id="deletemultiplo" name="deletemultiplo" value="deletemultiplo">
@@ -363,7 +367,7 @@
             </div>
           </div>
           
-		      <table class="grid hover scroll" border="0" width="100%">
+		      <table id="elencositiweb" class="grid hover scroll" border="0" width="100%">
 			    	<thead>
 		        <tr>
 	        		<th width="10"><input type="checkbox" id="selectall" name="selectall" /></th>

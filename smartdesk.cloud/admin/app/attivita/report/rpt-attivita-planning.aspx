@@ -54,7 +54,7 @@
     </td>
   </tr>
   </table>
-	<table border="0" cellpadding="4" cellspacing="0" class="corpo" style="margin:0.2cm 0 0 0;width:20cm;border-collapse:collapse;"">
+	<table border="0" cellpadding="4" cellspacing="0" class="corpo" style="margin:0.2cm 0 0 0;width:20cm;border-collapse:collapse;">
     <%
 			for (int i = 0; i < dtAttivita.Rows.Count; i++){
 		      if (strAnagrafiche_Ky!=dtAttivita.Rows[i]["Anagrafiche_Ky"].ToString()){ %>

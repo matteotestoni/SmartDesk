@@ -39,6 +39,9 @@
         <input type="hidden" name="Attivita_Ky" id="Attivita_Ky" value="<%=GetFieldValue(dtAttivita, "Attivita_Ky")%>">
         <input type="hidden" name="Documenti_Ky" id="Documenti_Ky" value="<%=GetFieldValue(dtAttivita, "Documenti_Ky")%>">
         <input type="hidden" name="Pagamenti_Ky" id="Pagamenti_Ky" value="<%=GetFieldValue(dtAttivita, "Pagamenti_Ky")%>">
+        <input type="hidden" name="CoreForms_Ky" id="CoreForms_Ky" value="<%=Request["CoreForms_Ky"]%>">
+        <input type="hidden" name="CoreEntities_Ky" id="CoreEntities_Ky" value="<%=Request["CoreEntities_Ky"]%>">
+        <input type="hidden" name="CoreModules_Ky" id="CoreModules_Ky" value="<%=Request["CoreModules_Ky"]%>">
         <!--#include file=/admin/forms_messaggi.inc -->
         <!--#include file=/admin/app/attivita/forms/attivita_form.htm -->
       </div>

@@ -219,7 +219,7 @@
 	</div>
 	<div class="grid-x grid-padding-x">
     <div class="large-1 medium-1 small-4 cell">
-      <label for="AttivitaTipo_Ky" class="lbl text-right">Tipo di attivit&agrave;</label>
+      <label for="AttivitaTipo_Ky" class="lbl text-right">Tipo</label>
     </div>
     <div class="large-5 medium-5 small-8 cell">
 			<!--#include file="/var/cache/AttivitaTipo-radio.htm"-->
@@ -227,6 +227,18 @@
 			<script type="text/javascript">
 				radioSet('AttivitaTipo_Ky', '<%=GetFieldValue(dtAttivita, "AttivitaTipo_Ky")%>');
       </script>
+    </div>
+    <div class="large-1 medium-1 small-4 cell">
+      <label for="AttivitaCategorie_Ky" class="lbl text-right">Categoria</label>
+    </div>
+    <div class="large-5 medium-5 small-8 cell">
+        <select name="AttivitaCategorie_Ky" id="AttivitaCategorie_Ky" value="<%=GetFieldValue(dtAttivita, "AttivitaCategorie_Ky")%>" class="select2">
+          <option value="" selected="selected"></option>
+          <!--#include file="/var/cache/AttivitaCategorie-options-select2.htm"--> 
+        </select>
+        <script type="text/javascript">
+          selectSet('AttivitaCategorie_Ky', '<%=GetFieldValue(dtAttivita, "AttivitaCategorie_Ky")%>');
+        </script>
     </div>
   </div>
 

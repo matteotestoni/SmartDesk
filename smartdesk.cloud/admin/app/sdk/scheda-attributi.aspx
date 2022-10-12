@@ -58,6 +58,7 @@
               <option value="delete" data-action="/admin/app/sdk/crud/elimina-attributiopzione.aspx">Elimina</option>
             </select>
             <div class="input-group-button">
+              <input type="hidden" name="grid" value="elencoattributiopzioni">
               <input type="hidden" name="Attributi_Ky" value="<%=GetFieldValue(dtAttributi, "Attributi_Ky")%>">
               <input type="hidden" id="sorgente" name="sorgente" value="scheda-attributi">
               <input type="hidden" id="azione" name="azione" value="">
@@ -70,7 +71,7 @@
         </div>
       </div>
   
-      <table class="grid hover scroll" border="0" width="100%">
+      <table id="elencoattributiopzioni" class="grid hover scroll" border="0" width="100%">
 	    	<thead>
         <tr>
 	        <th width="10"><input type="checkbox" id="selectall" name="selectall" /></th>

@@ -31,6 +31,7 @@
           <option value="delete" data-action="/admin/app/pagamenti/crud/elimina-pagamento.aspx">Elimina</option>
         </select>
         <div class="input-group-button">
+          <input type="hidden" name="grid" value="elencopagamentidafarescaduti">
           <input type="hidden" id="sorgente" name="sorgente" value="elenco-pagamenti-da-fare">
           <input type="hidden" id="azione" name="azione" value="">
           <input type="hidden" id="deletemultiplo" name="deletemultiplo" value="deletemultiplo">
@@ -44,7 +45,7 @@
     
   <div class="grid-x grid-padding-x">
     <div class="large-12 medium-12 small-12 cell">
-      <table class="grid hover scroll" border="0" width="100%">
+      <table id="elencopagamentidafarescaduti" class="grid hover scroll" border="0" width="100%">
   		<thead>
         <tr>
 	       <th width="10"><input type="checkbox" id="selectall" name="selectall" /></th>
@@ -156,6 +157,7 @@
 						<option value="delete" data-action="/admin/app/pagamenti/crud/elimina-pagamento.aspx">Elimina</option>
 					</select>
 					<div class="input-group-button">
+            <input type="hidden" name="grid" value="elencopagamentidafarefuturi">
 						<input type="hidden" id="sorgente" name="sorgente" value="elenco-pagamenti-da-fare">
 						<input type="hidden" id="azione" name="azione" value="">
 						<input type="hidden" id="deletemultiplo" name="deletemultiplo" value="deletemultiplo">
@@ -169,7 +171,7 @@
 		
 		<div class="grid-x grid-padding-x">
 			<div class="small-12 medium-12 large-12 cell">
-				<table class="grid hover scroll" border="0" width="100%">
+				<table id="elencopagamentidafarefuturi" class="grid hover scroll" border="0" width="100%">
 				<thead>
 					<tr>
 						<th width="10"><input type="checkbox" id="selectall" name="selectall" /></th>

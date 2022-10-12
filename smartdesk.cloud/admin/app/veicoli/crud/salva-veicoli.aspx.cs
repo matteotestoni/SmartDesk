@@ -21,7 +21,7 @@ public partial class _Default : System.Web.UI.Page
 					if (Smartdesk.Current.Request("Veicoli_LastMinute") == "") frm.Add("Veicoli_LastMinute", false);
           strKy = Smartdesk.Functions.SqlWriteKey("Veicoli",frm);
 		      caricafiles();
-          strRedirect = "/admin/goto-form.aspx?CoreForms_Ky=" + strCoreForms_Ky + "&salvato=salvato&Veicoli_Ky=" + strKy;
+          strRedirect = "/admin/goto-form.aspx?CoreEntities_Ky=109&CoreForms_Ky=" + strCoreForms_Ky + "&salvato=salvato&Veicoli_Ky=" + strKy;
 	        Response.Redirect(strRedirect);
         }else{
           Response.Redirect(Smartdesk.Current.LoginPageRoot);

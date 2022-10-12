@@ -113,7 +113,7 @@
       			  			}
       			      }else{
       			        if (dtCoreFormsTabs.Rows.Count>1){
-      			          Response.Write("<ul class=\"tabs\" data-responsive-accordion-tabs=\"tabs small-accordion medium-tabs large-tabs\" role=\"tablist\" id=\"anagrafica-tabs\">");
+      			          Response.Write("<ul class=\"horizontal tabs\" data-responsive-accordion-tabs=\"tabs small-accordion medium-tabs large-tabs\" role=\"tablist\" id=\"anagrafica-tabs\">");
       			          for (int iCoreFormsTabs = 0; iCoreFormsTabs < dtCoreFormsTabs.Rows.Count; iCoreFormsTabs++){
       			    		    if (iCoreFormsTabs==0){
       			              strActive=" is-active";
@@ -320,6 +320,7 @@
                                     <option value="delete" data-action="/admin/app/<%=dtCoreModulesGrid.Rows[0]["CoreModules_Code"].ToString()%>/crud/elimina-<%=dtCoreEntitiesGrid.Rows[0]["CoreEntities_Code"].ToString()%>.aspx">Elimina</option>
                                   </select>
                                   <div class="input-group-button">
+																		<input type="hidden" name="grid" value="table<%=dtCurrentCoreGrids.Rows[0]["CoreGrids_Ky"].ToString()%>">
 																		<input type="hidden" id="<%=dtCoreEntities.Rows[0]["CoreEntities_Key"].ToString()%>" name="<%=dtCoreEntities.Rows[0]["CoreEntities_Key"].ToString()%>" value="<%=GetFieldValue(dtFormsData, dtCoreEntities.Rows[0]["CoreEntities_Key"].ToString())%>">
 																		<input type="hidden" id="azionidigruppo-grid-<%=dtCurrentCoreGrids.Rows[0]["CoreGrids_Ky"].ToString()%>-sorgente" name="sorgente" value="scheda-<%=dtCoreEntities.Rows[0]["CoreEntities_Code"].ToString()%>">
                                     <input type="hidden" id="azionidigruppo-grid-<%=dtCurrentCoreGrids.Rows[0]["CoreGrids_Ky"].ToString()%>-azione" name="azione" value="">
@@ -335,7 +336,7 @@
                             </div>
                           </div>
                   			
-                  	    <table class="grid hover scroll" id="griddatatables">
+                  	    <table id="table<%=dtCurrentCoreGrids.Rows[0]["CoreGrids_Ky"].ToString()%>" class="grid hover scroll" id="griddatatables">
                   	    	<thead>
                   	      <tr>
                           	<th width="10"><input type="checkbox" id="selectall" name="selectall" /></th>
@@ -446,7 +447,7 @@
                         													    Response.Write("<td class=\"" + dtCoreGridsColumns.Rows[j]["CoreAttributesType_Code"].ToString() + "\"><i class=\"fa-duotone fa-file-lines fa-fw\"></i>" + dtGridData.Rows[iGridData][dtCoreGridsColumns.Rows[j]["CoreAttributes_Code"].ToString()].ToString()  + "</td>\n");
                             												  break;
                               											case "password":
-                        													    Response.Write("<td class=\"" + dtCoreGridsColumns.Rows[j]["CoreAttributesType_Code"].ToString() + "\"><i class=\"fa-duotone fa-file-lines fa-fw\"></i><span id=\"passwordgrid" + i + "\" class=\"passwordgrid\" data-password=\"" + dtGridData.Rows[iGridData][dtCoreGridsColumns.Rows[j]["CoreAttributes_Code"].ToString()].ToString() + "\">xxxxxxxxxxxxxxx</span><a><i onclick=\"showPasswordGrid('passwordgrid" + i + "')\" class=\"fa-duotone fa-eye fa-fw\"></i></a><a><i onclick=\"copyToClipboard('passwordgrid" + i + "',false)\" class=\"fa-duotone fa-copy fa-fw\"></i></a></td>\n");
+                        													    Response.Write("<td class=\"" + dtCoreGridsColumns.Rows[j]["CoreAttributesType_Code"].ToString() + "\"><i class=\"fa-duotone fa-file-lines fa-fw\"></i><span id=\"passwordgrid" + iGridData + "\" class=\"passwordgrid\" data-password=\"" + dtGridData.Rows[iGridData][dtCoreGridsColumns.Rows[j]["CoreAttributes_Code"].ToString()].ToString() + "\">xxxxxxxxxxxxxxx</span><a><i onclick=\"showPasswordGrid('passwordgrid" + iGridData + "')\" class=\"fa-duotone fa-eye fa-fw\"></i></a><a><i onclick=\"copyToClipboard('passwordgrid" + iGridData + "',false)\" class=\"fa-duotone fa-copy fa-fw\"></i></a></td>\n");
                             												  break;
                               											case "phone":
                         													    Response.Write("<td class=\"" + dtCoreGridsColumns.Rows[j]["CoreAttributesType_Code"].ToString() + "\"><a href=\"tel:" + dtGridData.Rows[iGridData][dtCoreGridsColumns.Rows[j]["CoreAttributes_Code"].ToString()].ToString()  + "\"><i class=\"fa-duotone fa-phone fa-fw\"></i>" + dtGridData.Rows[iGridData][dtCoreGridsColumns.Rows[j]["CoreAttributes_Code"].ToString()].ToString()  + "</a></td>\n");

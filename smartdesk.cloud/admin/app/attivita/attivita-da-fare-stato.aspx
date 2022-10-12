@@ -94,7 +94,7 @@
           <!--#include file=/admin/app/attivita/elenco-attivita-where.aspx -->
   </div>
   <div class="large-10 medium-9 small-12 cell">
-    <ul class="tabs" data-tabs id="attivita-tabs">
+    <ul class="horizontal tabs" data-tabs id="attivita-tabs">
         <li class="tabs-title"><a href="/admin/app/attivita/elenco-attivita.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreGrids_Ky=276" aria-selected="true"><i class="fa-duotone fa-calendar fa-fw"></i>Elenco attivit&agrave;</a></li>
       <li class="tabs-title"><a href="/admin/app/attivita/attivita-da-fare.aspx?attivita-scadute=1&prossime-scadenze=1&scadenze-future=1"><i class="fa-duotone fa-square-kanban fa-fw"></i>Prospetto per scadenza</a></li>
       <li class="tabs-title is-active"><a href="#panel1"><i class="fa-duotone fa-square-kanban fa-fw"></i>Prospetto per stato</a></li>

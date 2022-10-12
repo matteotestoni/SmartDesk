@@ -14,6 +14,10 @@ public partial class _Default : System.Web.UI.Page
         if (Smartdesk.Login.Verify)
           {
   		  	Dictionary<string, object> frm = new Dictionary<string, object>();
+        	if (Smartdesk.Current.Request("Commesse_AbilitaCampagna") == "") frm.Add("Commesse_AbilitaCampagna", false);
+          if (Smartdesk.Current.Request("Commesse_AbilitaBudget") == "") frm.Add("Commesse_AbilitaBudget", false);
+          if (Smartdesk.Current.Request("Commesse_AbilitaFatturato") == "") frm.Add("Commesse_AbilitaFatturato", false);
+          if (Smartdesk.Current.Request("Commesse_Importante") == "") frm.Add("Commesse_Importante", false);
   		  	if (Smartdesk.Current.Request("Commesse_DataConsegna") == "") frm.Add("Commesse_DataConsegna", null);
   		  	if (Smartdesk.Current.Request("Commesse_DataChiusura") == "") frm.Add("Commesse_DataChiusura", null);
           strKy = Smartdesk.Functions.SqlWriteKey("Commesse", frm);

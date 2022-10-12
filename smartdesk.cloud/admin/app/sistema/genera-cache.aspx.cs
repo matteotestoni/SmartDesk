@@ -22,7 +22,6 @@ public partial class _Default : System.Web.UI.Page
     public string strRisultato = "";
     public string strTemp = "";
     
-
     protected void Page_Load(object sender, EventArgs e)
     {
       string strWHERENet="";
@@ -31,8 +30,6 @@ public partial class _Default : System.Web.UI.Page
       StreamWriter swJson;
       int i=0;
 
-      
-	  
       if (Smartdesk.Login.Verify){
           dtLogin = Smartdesk.Data.Read("Utenti_Vw","Utenti_Ky", Smartdesk.Session.CurrentUser.ToString());          
             strH1="Aggiornamento cache";
@@ -533,6 +530,46 @@ public partial class _Default : System.Web.UI.Page
               }
             sw.Close();
             strRisultato=strRisultato + "<li>" + intNumRecords + " stati attivit&agrave; (select)</li>";        
+
+            //categorie attivita select2
+            sw = new StreamWriter(Server.MapPath("/var/cache/AttivitaCategorie-options-select2.htm"), false, System.Text.Encoding.Default);
+              strWHERENet="";
+              strORDERNet = "AttivitaCategorie_Ordine";
+              strFROMNet = "AttivitaCategorie";
+              dtTemp = new DataTable("Temp");
+              dtTemp = Smartdesk.Sql.getTablePage(strFROMNet, null, "AttivitaCategorie_Ky", strWHERENet, strORDERNet, 1, 100,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);            
+              for (i = 0; i < dtTemp.Rows.Count; i++){
+                  sw.WriteLine("<option value=\"" + dtTemp.Rows[i]["AttivitaCategorie_Ky"].ToString() + "\" data-icon=\"" + dtTemp.Rows[i]["AttivitaCategorie_Icona"].ToString() + "\" data-color=\"" + dtTemp.Rows[i]["AttivitaCategorie_Colore"].ToString() + "\">" + dtTemp.Rows[i]["AttivitaCategorie_Titolo"].ToString() + "</option>");
+              }
+            sw.Close();
+            strRisultato=strRisultato + "<li>" + intNumRecords + " categorie attivit&agrave; (select)</li>";        
+			      
+            //Categorie attivita radio
+            sw = new StreamWriter(Server.MapPath("/var/cache/AttivitaCategorie-radio.htm"), false, System.Text.Encoding.Default);
+              strWHERENet="AttivitaCategorie_Attiva=1";
+              strORDERNet = "AttivitaCategorie_Ordine";
+              strFROMNet = "AttivitaCategorie";
+              dtTemp = new DataTable("Temp");
+              dtTemp = Smartdesk.Sql.getTablePage(strFROMNet, null, "AttivitaCategorie_Ky", strWHERENet, strORDERNet, 1, 100,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);            
+              sw.WriteLine("<div class=\"button-group round toggle small\">");
+              for (i = 0; i < dtTemp.Rows.Count; i++){
+                  sw.WriteLine("<input class=\"button\" type=\"radio\" id=\"attivita-" + dtTemp.Rows[i]["AttivitaCategorie_Ky"].ToString() + "\" name=\"AttivitaCategorie_Ky\" value=\"" + dtTemp.Rows[i]["AttivitaCategorie_Ky"].ToString() + "\" /><label class=\"button\" for=\"attivita-" + dtTemp.Rows[i]["AttivitaCategorie_Ky"].ToString() + "\"><i class=\"" + dtTemp.Rows[i]["AttivitaCategorie_Icona"].ToString() + " fa-fw fa-lg\"></i>" + dtTemp.Rows[i]["AttivitaCategorie_Titolo"].ToString() + "</label>");
+              }
+              sw.WriteLine("</div>");
+            sw.Close();
+            strRisultato=strRisultato + "<li>" + intNumRecords + " categorie attivit&agrave; (radio)</li>";        
+            //Categorie attivita select
+            sw = new StreamWriter(Server.MapPath("/var/cache/AttivitaCategorie-options.htm"), false, System.Text.Encoding.Default);
+              strWHERENet="AttivitaCategorie_Attiva=1";
+              strORDERNet = "AttivitaCategorie_Ordine";
+              strFROMNet = "AttivitaCategorie";
+              dtTemp = new DataTable("Temp");
+              dtTemp = Smartdesk.Sql.getTablePage(strFROMNet, null, "AttivitaCategorie_Ky", strWHERENet, strORDERNet, 1, 100,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);            
+              for (i = 0; i < dtTemp.Rows.Count; i++){
+                  sw.WriteLine("<option value=\"" + dtTemp.Rows[i]["AttivitaCategorie_Ky"].ToString() + "\">" + dtTemp.Rows[i]["AttivitaCategorie_Titolo"].ToString() + "</option>");
+              }
+            sw.Close();
+            strRisultato=strRisultato + "<li>" + intNumRecords + " categorie attivit&agrave; (select)</li>";        
 
             //Tipo attivita select
             sw = new StreamWriter(Server.MapPath("/var/cache/AttivitaTipo-options.htm"), false, System.Text.Encoding.Default);

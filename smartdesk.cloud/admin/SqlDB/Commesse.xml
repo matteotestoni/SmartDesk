@@ -31,6 +31,10 @@
       <Field Column="Commesse_Tags" IsNull="Y" Type="varchar" Lenght="-1" />
       <Field Column="Commesse_OreResidue" IsNull="Y" Type="float" />
       <Field Column="CommesseTipo_Ky" IsNull="Y" Type="tinyint" />
+      <Field Column="Commesse_AbilitaCampagna" IsNull="Y" Type="bit" />
+      <Field Column="Commesse_AbilitaBudget" IsNull="Y" Type="bit" />
+      <Field Column="Commesse_AbilitaFatturato" IsNull="Y" Type="bit" />
+      <Field Column="Commesse_Importante" IsNull="Y" Type="bit" />
     </Fields>
   </Tables>
   <SqlScriptCreate>
@@ -61,7 +65,11 @@ CREATE TABLE [dbo].[Commesse] (
   [Opportunita_Ky] int  NULL , 
   [Commesse_Tags] varchar(MAX)  NULL , 
   [Commesse_OreResidue] float  NULL DEFAULT ((0)), 
-  [CommesseTipo_Ky] tinyint  NULL  )
+  [CommesseTipo_Ky] tinyint  NULL , 
+  [Commesse_AbilitaCampagna] bit  NULL DEFAULT ((0)), 
+  [Commesse_AbilitaBudget] bit  NULL DEFAULT ((0)), 
+  [Commesse_AbilitaFatturato] bit  NULL DEFAULT ((0)), 
+  [Commesse_Importante] bit  NULL DEFAULT ((0)) )
 ALTER TABLE [dbo].[Commesse] ADD CONSTRAINT PK_Commesse PRIMARY KEY  ([Commesse_Ky])
 </SqlScriptCreate>
 </SqlTable>

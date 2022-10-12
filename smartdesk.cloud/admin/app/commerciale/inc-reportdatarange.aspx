@@ -69,10 +69,12 @@
               "alwaysShowCalendars": true,
               "startDate": strReportdatarangestart,
               "endDate": strReportdatarangeend,
-              "drops": "auto"
+              "drops": "auto",
+              "autoApply": true,
+              "autoUpdateInput": true
           }, function(start, end, label) {
-            Cookies.set("reportdatarangestart", start.format('MM-DD-YYYY'), { secure: true, sameSite: 'Lax', expires: 180, path: '/' });
-            Cookies.set("reportdatarangeend", end.format('MM-DD-YYYY'), { secure: true, sameSite: 'Lax', expires: 180, path: '/' });
+            Cookies.set("reportdatarangestart", start.format('MM-DD-YYYY'), { secure: true, sameSite: 'Lax', expires: 1, path: '/' });
+            Cookies.set("reportdatarangeend", end.format('MM-DD-YYYY'), { secure: true, sameSite: 'Lax', expires: 1, path: '/' });
             //console.log('New date range selected: ' + start.format('MM-DD-YYYY') + ' to ' + end.format('MM-DD-YYYY') + ' (predefined range: ' + label + ')');
             location.reload();
           });

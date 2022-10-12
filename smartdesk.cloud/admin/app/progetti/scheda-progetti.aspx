@@ -4,6 +4,10 @@
 <head>
 	<title><%=strH1%></title>
 	<!--#include file="/admin/inc-head.aspx"-->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js" integrity="sha256-0H3Nuz3aug3afVbUlsu12Puxva3CP4EhJtPExqs54Vg=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 </head>
 <body>
 <!--#include file=/admin/inc-mainbar.aspx --> 
@@ -18,11 +22,13 @@
         			<div class="stacked-for-small button-group small hide-for-print align-right">
         				<a href="/admin/app/progetti/elenco-commesse.aspx?custom=1&CoreGrids_Ky=118" class="button clear"><i class="fa-duotone fa-backward fa-fw"></i>Torna all'elenco</a>
         				<% if (strAzione!="new"){ %>
-        				<a href="#" class="button secondary dropdown" data-toggle="dropdownsstampa"><i class="fa-duotone fa-print fa-fw"></i>Stampa</a>
+                <a href="#" class="button secondary dropdown" data-toggle="dropdownsstampa"><i class="fa-duotone fa-print fa-fw"></i>Stampa</a>
         				<div class="dropdown-pane" id="dropdownsstampa" data-dropdown data-hover="true" data-hover-pane="true">
         				  <ul class="no-bullet">
-        		      	<li><a href="/admin/app/progetti/report/rpt-commesse.aspx?Commesse_Ky=<%=GetFieldValue(dtCommesse, "Commesse_Ky")%>&periodo=mese" target="_blank" id="print2"><i class="fa-duotone fa-print fa-fw"></i>Report ultimo mese (per cliente)</a></li>
-        		      	<li><a href="/admin/app/progetti/report/rpt-commesse.aspx?Commesse_Ky=<%=GetFieldValue(dtCommesse, "Commesse_Ky")%>&periodo=tutti" target="_blank" id="print3"><i class="fa-duotone fa-print fa-fw"></i>Tutte le attivita (per cliente)</a></li>
+        		      	<li><a href="/admin/app/progetti/report/rpt-commesse-campagna.aspx?Commesse_Ky=<%=GetFieldValue(dtCommesse, "Commesse_Ky")%>&periodo=mese" target="_blank" id="print2"><i class="fa-duotone fa-print fa-fw"></i>Report (mese corrente)</a></li>
+        		      	<li><a href="/admin/app/progetti/report/rpt-commesse-campagna.aspx?Commesse_Ky=<%=GetFieldValue(dtCommesse, "Commesse_Ky")%>&periodo=meseprecedente" target="_blank" id="print2"><i class="fa-duotone fa-print fa-fw"></i>Report (mese precedente)</a></li>
+        		      	<li><a href="/admin/app/progetti/report/rpt-commesse-campagna.aspx?Commesse_Ky=<%=GetFieldValue(dtCommesse, "Commesse_Ky")%>&periodo=tutti" target="_blank" id="print3"><i class="fa-duotone fa-print fa-fw"></i>Report (tutto)</a></li>
+        		      	<li><a href="/admin/app/progetti/report/rpt-commesse-campagna.aspx?Commesse_Ky=<%=GetFieldValue(dtCommesse, "Commesse_Ky")%>&periodo=tutti&tipo=trasferte" target="_blank" id="print4"><i class="fa-duotone fa-print fa-fw"></i>Trasferte</a></li>
         				  </ul>
         				</div>
         				<% } %>

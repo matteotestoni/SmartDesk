@@ -16,7 +16,7 @@ string strValoreAttributo;
 				</div>
 		  </div>
 		  <div class="card-section">
-    	<ul class="tabs" data-responsive-accordion-tabs="tabs small-accordion medium-tabs large-tabs" role="tablist" id="servizi-tabs">
+    	<ul class="horizontal tabs" data-responsive-accordion-tabs="tabs small-accordion medium-tabs large-tabs" role="tablist" id="servizi-tabs">
     		<li class="tabs-title is-active" role="presentational"><a href="#tabservizi-1"><i class="fa-duotone fa-triangle-exclamation fa-lg fa-fw" style="--fa-primary-color:red;--fa-primary-opacity: 1.0"></i> Servizi attivi (<%=dtAnagraficheServiziAttivi.Rows.Count%>)</a></li>
     		<li class="tabs-title" role="presentational"><a href="#tabservizi-2"><i class="fa-duotone fa-check fa-lg fa-fw" style="--fa-primary-color:green;--fa-primary-opacity: 1.0"></i> Servizi chiusi (<%=dtAnagraficheServiziChiusi.Rows.Count%>)</a></li>
     	</ul>

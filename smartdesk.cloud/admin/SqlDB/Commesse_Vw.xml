@@ -57,6 +57,10 @@
       <Field Column="CommesseStato_Titolo" IsNull="Y" Type="varchar" Lenght="100" />
       <Field Column="CommesseStato_Colore" IsNull="Y" Type="varchar" Lenght="100" />
       <Field Column="Commesse_DataInizioLavori" IsNull="Y" Type="smalldatetime" />
+      <Field Column="Commesse_AbilitaCampagna" IsNull="Y" Type="bit" />
+      <Field Column="Commesse_AbilitaBudget" IsNull="Y" Type="bit" />
+      <Field Column="Commesse_AbilitaFatturato" IsNull="Y" Type="bit" />
+      <Field Column="Commesse_Importante" IsNull="Y" Type="bit" />
     </Fields>
   </Tables>
   <SqlScriptCreate>CREATE VIEW [dbo].[Commesse_Vw]
@@ -73,7 +77,8 @@ SELECT        dbo.Anagrafiche.Anagrafiche_RagioneSociale, dbo.Commesse.Commesse_
                          dbo.CommesseStato.CommesseStato_Descrizione, dbo.Nazioni.Nazioni_Nazione, dbo.Nazioni.Nazioni_Codice, dbo.Regioni.Regioni_Regione, dbo.Regioni.Regioni_Codice, dbo.Comuni.Comuni_Comune, 
                          dbo.Province.Province_Provincia, dbo.Commesse.Commesse_NoteAmministrative, dbo.Commesse.Opportunita_Ky, dbo.Commesse.Commesse_Tags, dbo.Commesse.Commesse_OreResidue, 
                          dbo.CommesseTipo.CommesseTipo_Titolo, dbo.CommesseTipo.CommesseTipo_Icona, dbo.Commesse.CommesseTipo_Ky, dbo.CommesseStato.CommesseStato_Icona, dbo.CommesseStato.CommesseStato_Titolo, 
-                         dbo.CommesseStato.CommesseStato_Colore, dbo.Commesse.Commesse_DataInizioLavori
+                         dbo.CommesseStato.CommesseStato_Colore, dbo.Commesse.Commesse_DataInizioLavori, dbo.Commesse.Commesse_AbilitaCampagna, dbo.Commesse.Commesse_AbilitaBudget, 
+                         dbo.Commesse.Commesse_AbilitaFatturato, dbo.Commesse.Commesse_Importante
 FROM            dbo.Utenti RIGHT OUTER JOIN
                          dbo.Commesse LEFT OUTER JOIN
                          dbo.CommesseTipo ON dbo.Commesse.CommesseTipo_Ky = dbo.CommesseTipo.CommesseTipo_Ky LEFT OUTER JOIN

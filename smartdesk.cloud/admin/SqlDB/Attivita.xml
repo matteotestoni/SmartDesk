@@ -40,6 +40,11 @@
       <Field Column="AttivitaStati_Ky" IsNull="Y" Type="int" />
       <Field Column="Lead_Ky" IsNull="Y" Type="int" />
       <Field Column="Ticket_Ky" IsNull="Y" Type="int" />
+      <Field Column="AttivitaCategorie_Ky" IsNull="Y" Type="int" />
+      <Field Column="Campagne_Ky" IsNull="Y" Type="int" />
+      <Field Column="Attivita_Budget" IsNull="Y" Type="money" />
+      <Field Column="Attivita_Campagna" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Attivita_Fatturato" IsNull="Y" Type="bit" />
     </Fields>
   </Tables>
   <SqlScriptCreate>
@@ -47,7 +52,9 @@ CREATE TABLE [dbo].[Attivita] (
   [Attivita_Ky] int IDENTITY(1,1) NOT NULL , 
   [Attivita_Descrizione] varchar(4000)  NULL , 
   [Attivita_Inizio] datetime  NULL DEFAULT (getdate()), 
+  [Attivita_OraInizio] time  NULL DEFAULT (getdate()), 
   [Attivita_Scadenza] datetime  NULL , 
+  [Attivita_OraScadenza] time  NULL DEFAULT (getdate()), 
   [Attivita_Chiusura] datetime  NULL , 
   [Anagrafiche_Ky] int  NULL , 
   [AttivitaTipo_Ky] int  NULL , 
@@ -79,7 +86,12 @@ CREATE TABLE [dbo].[Attivita] (
   [Attivita_DateDelete] datetime  NULL , 
   [AttivitaStati_Ky] int  NULL , 
   [Lead_Ky] int  NULL , 
-  [Ticket_Ky] int  NULL  )
+  [Ticket_Ky] int  NULL , 
+  [AttivitaCategorie_Ky] int  NULL , 
+  [Campagne_Ky] int  NULL , 
+  [Attivita_Budget] money  NULL DEFAULT ((0)), 
+  [Attivita_Campagna] varchar(200)  NULL , 
+  [Attivita_Fatturato] bit  NULL DEFAULT ((0)) )
 ALTER TABLE [dbo].[Attivita] ADD CONSTRAINT PK_Attivita PRIMARY KEY  ([Attivita_Ky])
 </SqlScriptCreate>
 </SqlTable>

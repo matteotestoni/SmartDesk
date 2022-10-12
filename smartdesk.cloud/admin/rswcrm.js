@@ -576,8 +576,8 @@ if (strRegioni_Ky!=""){
 
 jQuery(document).ready(function() {  
 
-jQuery('#selectall').on( "click", function() {
-    if(document.getElementById('selectall').checked) {
+jQuery('input[name="selectall"]').on( "click", function() {
+    if(this.checked) {
     	jQuery('.checkrow').prop("checked", true);
     }else{
     	jQuery('.checkrow').prop("checked", false);
@@ -589,10 +589,12 @@ jQuery('.doaction').on( "click", function() {
     var intI = 0;
     var strIdForm;
     var strAction;
+    var strIdGrid;
    
-    strIdForm = "#" + this.form.id
+    strIdForm = "#" + this.form.id;
+    strIdGrid = "#" + jQuery(strIdForm + ' input[name="grid"]').val();
     intI = 0;
-    jQuery('.grid input[type=checkbox].checkrow:checked').each(function () {
+    jQuery(strIdGrid + ' input[type=checkbox].checkrow:checked').each(function () {
         if (intI>0){
             strIds=strIds + "," + jQuery(this).attr('data-value');
         }else{
@@ -600,25 +602,15 @@ jQuery('.doaction').on( "click", function() {
         }
         intI=intI+1;
     }); 
-    //console.log(strIds);
-    jQuery(strIdForm + '-azionidigruppo-ids').val(strIds);
-    /*
-    jQuery(strIdForm).submit(function (e) {
-        e.preventDefault();
-    });*/
+    console.log(strIds);
+    jQuery(strIdForm + ' input[name="azionidigruppo-ids"]').val(strIds);
       
     if (strIds!=undefined && strIds.length>0){
         strAction = jQuery(strIdForm).find(':selected').attr('data-action');
-        //console.log(strAction);   
-        console.log(strIdForm + '-azionidigruppo');
-        switch (jQuery(strIdForm + '-azionidigruppo').val()) {
-            case "delete":
-                jQuery(strIdForm + '-azione').val("delete");
-                jQuery(strIdForm + '-sorgente').val(document.URL);
-                jQuery(strIdForm).attr('action',strAction );
-                jQuery(strIdForm).submit();
-                break;
-        }
+        jQuery(strIdForm + ' input[name="sorgente"]').val(document.URL);
+        jQuery(strIdForm + ' input[name="azione"]').val(jQuery(strIdForm + ' select[name="azionidigruppo"]').val());
+        jQuery(strIdForm).attr('action',strAction );
+        jQuery(strIdForm).submit();
         return false;
     }
       

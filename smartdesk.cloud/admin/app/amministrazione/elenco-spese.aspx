@@ -41,6 +41,7 @@
             <option value="delete" data-action="/admin/crud/elimina.aspx">Elimina</option>
           </select>
           <div class="input-group-button">
+            <input type="hidden" name="grid" value="elencospese">
             <input type="hidden" id="sorgente" name="sorgente" value="view-1">
             <input type="hidden" id="azione" name="azione" value="">
             <input type="hidden" name="ajax" value="">
@@ -53,7 +54,7 @@
       </div>
     </div>
     
-    <table class="grid hover scroll" border="0" width="100%">
+    <table id="elencospese" class="grid hover scroll" border="0" width="100%">
     	<thead>
 	      <tr>
 	        <th width="10"><input type="checkbox" id="selectall" name="selectall" /></th>

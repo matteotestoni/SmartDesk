@@ -197,6 +197,7 @@
       <td width="70" class="titololast" align="center">Chiusura</td>
       <td class="titolo1">Descrizione dell'attivit&agrave;</td>
      	<td width="120" class="titololast" align="center">Utente</td>
+     	<td width="100" class="titololast" align="center">Categoria</td>
       <td width="30" class="titololast" align="right">Ore</td>
     </tr>
     <%
@@ -207,7 +208,7 @@
         intAnno=Convert.ToDateTime(dtAttivita.Rows[i]["Attivita_Chiusura"]).Year;
       %>
       <tr>
-        <td align="center"><strong><%=dtAttivita.Rows[i]["Attivita_Chiusura_IT"].ToString()%></strong></td>
+        <td align="center"><strong><%=dtAttivita.Rows[i]["Attivita_Chiusura"].ToString()%></strong></td>
         <td align="left" style="padding:5px">
 					<i class="<%=dtAttivita.Rows[i]["AttivitaTipo_Icona"].ToString()%> fa-fw "></i>
 				 	<% if (dtAttivita.Rows[i]["Attivita_Trasferta"].Equals(true)){ %>
@@ -216,6 +217,7 @@
           <%=dtAttivita.Rows[i]["Attivita_Descrizione"].ToString()%>
         </td>
         <td align="center"><%=dtAttivita.Rows[i]["Utenti_Nominativo"].ToString()%></td>
+        <td align="center"><i class="<%=dtAttivita.Rows[i]["AttivitaCategorie_Icona"].ToString()%> fa-fw"></i><%=dtAttivita.Rows[i]["AttivitaCategorie_Titolo"].ToString()%></td>
         <td align="right" class="large-text-right small-text-left">
 					<% if (dtAttivita.Rows[i]["Attivita_Ore"]!=System.DBNull.Value){ %>
 						<strong><%=Convert.ToDouble(dtAttivita.Rows[i]["Attivita_Ore"]).ToString("N2", ci)%></strong>

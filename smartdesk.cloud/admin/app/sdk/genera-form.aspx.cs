@@ -124,7 +124,7 @@ public partial class _Default : System.Web.UI.Page
 								sw = new StreamWriter(Server.MapPath("/admin/app/" + dtCoreModules.Rows[iCoreModules]["CoreModules_Code"].ToString() + "/forms/" + dtCoreEntities.Rows[iCoreEntities]["CoreEntities_Code"].ToString() + "_form.htm"), false, System.Text.Encoding.Default);
 
 								if (dtCoreFormsTabs.Rows.Count>1){
-									sw.WriteLine("<ul class=\"tabs\" data-responsive-accordion-tabs=\"tabs small-accordion medium-tabs large-tabs\" role=\"tablist\" id=\"anagrafica-tabs\">");
+									sw.WriteLine("<ul class=\"horizontal tabs\" data-responsive-accordion-tabs=\"tabs small-accordion medium-tabs large-tabs\" role=\"tablist\" id=\"anagrafica-tabs\">");
 									for (int iCoreFormsTabs = 0; iCoreFormsTabs < dtCoreFormsTabs.Rows.Count; iCoreFormsTabs++){
 										if (iCoreFormsTabs==0){
 											strActive=" is-active";

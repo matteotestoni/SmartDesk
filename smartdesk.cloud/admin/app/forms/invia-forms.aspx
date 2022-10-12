@@ -43,6 +43,7 @@
               <option value="delete" data-action="/admin/app/anagrafiche/crud/elimina-anagrafiche.aspx">Elimina</option>
             </select>
             <div class="input-group-button">
+              <input type="hidden" name="grid" value="inviaforms">
               <input type="hidden" id="sorgente" name="sorgente" value="elenco-anagrafiche">
               <input type="hidden" id="azione" name="azione" value="">
               <input type="hidden" id="deletemultiplo" name="deletemultiplo" value="deletemultiplo">
@@ -54,7 +55,7 @@
         </div>
       </div>
 
-		    <table class="grid hover scroll" id="griddatatables">
+		    <table id="inviaforms" class="grid hover scroll" id="griddatatables">
 		    	<thead>
 		      <tr>
 	        	<th width="10"><input type="checkbox" id="selectall" name="selectall" /></th>

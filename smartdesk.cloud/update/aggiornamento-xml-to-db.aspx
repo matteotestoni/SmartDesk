@@ -35,17 +35,24 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/foundation.min.js" integrity="sha512-xpawU2EKh0HLTLWu8khGczejw+OaWWr+JBcbFBWtRUIkkhuMRZZeEFxY0n51aeC9YF4jxOMzd0pTR9m0tiSvsQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
-<div class="grid-container fluid">
-<div class="grid-x grid-padding-x">
-  <div class="large-12 medium-12 small-12 cell">
-		<h1><i class="fa-duotone fa-cog fa-lg fa-fw"></i><%=strH1%></h1>
-  	<div class="grid-x grid-padding-x">
-      <div class="large-12 medium-12 small-12 cell">
-        <%=strRisultato%>
+  <header data-sticky-container>
+  	<div class="content-header" id="content-header" data-sticky="content-header" data-margin-top="0" data-margin-bottom="1" style="width:100%">
+      <div class="grid-x grid-padding-x">
+        <div class="large-12 medium-12 small-12 cell">
+      	<h1><i class="fa-duotone fa-cog fa-lg fa-fw"></i><%=strH1%></h1>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-</div>
+  </header>
+
+  <main class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="large-12 medium-12 small-12 cell">
+        <div class="divform">
+          <%=strRisultato%>
+        </div>
+      </div>
+    </div>
+  </main>
 </body>
 </html>

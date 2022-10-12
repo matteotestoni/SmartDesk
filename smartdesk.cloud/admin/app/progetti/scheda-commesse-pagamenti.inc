@@ -7,7 +7,7 @@
   		<h2><i class="fa-duotone fa-euro-sign fa-lg fa-fw"></i>Pagamenti in entrata del progetto (<%=dtPagamenti.Rows.Count+dtPagamentiRicevuti.Rows.Count%>)</h2>
 		</div>
 	  <div class="card-section">
-				<ul class="tabs" data-responsive-accordion-tabs="tabs small-accordion medium-tabs large-tabs" role="tablist" id="pagamenti-tabs">
+				<ul class="horizontal tabs" data-responsive-accordion-tabs="tabs small-accordion medium-tabs large-tabs" role="tablist" id="pagamenti-tabs">
 	    		<li class="tabs-title" role="presentational"><a href="#tabs-1">Pagamenti in entrata (<%=dtPagamenti.Rows.Count%>)</a></li>
 	    		<li class="tabs-title" role="presentational"><a href="#tabs-2">Pagamenti incassati (<%=dtPagamentiRicevuti.Rows.Count%>)</a></li>
 	    	</ul>

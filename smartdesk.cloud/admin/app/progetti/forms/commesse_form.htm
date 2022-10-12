@@ -173,6 +173,65 @@
     
 	</div>					
 	<div class="large-4 medium-4 small-12 cell">
+      <div class="grid-x grid-padding-x">
+      	<div class="large-4 medium-4 small-4 cell">
+      		<label for="Commesse_AbilitaCampagna" class="large-text-right">Abilita campagna</label>
+      	</div>
+      	<div class="large-2 medium-2 small-8 cell">
+      		<div class="switch tiny">                                         
+            <input class="switch-input" type="checkbox" name="Commesse_AbilitaCampagna" id="Commesse_AbilitaCampagna" value="on" <% if (GetCheckValue(dtCommesse, "Commesse_AbilitaCampagna")){ Response.Write("checked");} %> />
+            <label class="switch-paddle" for="Commesse_AbilitaCampagna">
+              <span class="show-for-sr">Ok</span>
+              <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+              <span class="switch-inactive" aria-hidden="true"></span>
+            </label>
+          </div> 
+      	</div>
+      	<div class="large-4 medium-4 small-4 cell">
+      		<label for="Commesse_AbilitaBudget" class="large-text-right">Abilita Budget</label>
+      	</div>
+      	<div class="large-2 medium-2 small-8 cell">
+      		<div class="switch tiny">                                         
+            <input class="switch-input" type="checkbox" name="Commesse_AbilitaBudget" id="Commesse_AbilitaBudget" value="on" <% if (GetCheckValue(dtCommesse, "Commesse_AbilitaBudget")){ Response.Write("checked");} %> />
+            <label class="switch-paddle" for="Commesse_AbilitaBudget">
+              <span class="show-for-sr">Ok</span>
+              <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+              <span class="switch-inactive" aria-hidden="true"></span>
+            </label>
+          </div> 
+      	</div>
+      </div>
+      
+      <div class="grid-x grid-padding-x">
+      	<div class="large-4 medium-4 small-4 cell">
+      		<label for="Commesse_AbilitaFatturato" class="large-text-right">Abilita Fatturato</label>
+      	</div>
+      	<div class="large-2 medium-2 small-8 cell">
+      		<div class="switch tiny">                                         
+            <input class="switch-input" type="checkbox" name="Commesse_AbilitaFatturato" id="Commesse_AbilitaFatturato" value="on" <% if (GetCheckValue(dtCommesse, "Commesse_AbilitaFatturato")){ Response.Write("checked");} %> />
+            <label class="switch-paddle" for="Commesse_AbilitaFatturato">
+              <span class="show-for-sr">Ok</span>
+              <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+              <span class="switch-inactive" aria-hidden="true"></span>
+            </label>
+          </div> 
+      	</div>
+      	<div class="large-4 medium-4 small-4 cell">
+      		<label for="Commesse_Importante" class="large-text-right">Importante</label>
+      	</div>
+      	<div class="large-2 medium-2 small-8 cell">
+      		<div class="switch tiny">                                         
+            <input class="switch-input" type="checkbox" name="Commesse_Importante" id="Commesse_Importante" value="on" <% if (GetCheckValue(dtCommesse, "Commesse_Importante")){ Response.Write("checked");} %> />
+            <label class="switch-paddle" for="Commesse_Importante">
+              <span class="show-for-sr">Ok</span>
+              <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+              <span class="switch-inactive" aria-hidden="true"></span>
+            </label>
+          </div> 
+      	</div>
+      </div>
+      
+      
 			<div class="grid-x grid-padding-x">
 		  	<div class="large-4 medium-4 small-4 cell">
 					<label for="CommesseStato_Ky" class="large-text-right small-text-left middle">Stato <i class="fa-duotone fa-file-lines fa-fw"></i></label>
@@ -193,8 +252,8 @@
 					<label for="Commesse_Data" class="large-text-right small-text-left middle">Data <i class="fa-duotone fa-calendar-days fa-fw"></i></label>
 				</div>
 				<div class="auto cell end">
-            		<input type="text" name="Commesse_Data" id="Commesse_Data" value="<%=GetFieldValue(dtCommesse, "Commesse_Data_IT")%>" size="10" required="required">
-            		<span class="form-error">Obbligatorio</span>
+      		<input type="text" name="Commesse_Data" id="Commesse_Data" value="<%=GetFieldValue(dtCommesse, "Commesse_Data_IT")%>" class="fdatepicker" size="10" required="required">
+      		<span class="form-error">Obbligatorio</span>
 				</div>
 			</div>
 			<div class="grid-x grid-padding-x">

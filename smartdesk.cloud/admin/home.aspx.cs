@@ -29,6 +29,7 @@ public partial class _Default : System.Web.UI.Page
     public string strActive=" is-active";
     public string strActiveTab = " is-active";
     public string strH1="Smartdesk > Home";
+    public DataTable dtGridData;
 
     protected void Page_Load(object sender, EventArgs e)
     {

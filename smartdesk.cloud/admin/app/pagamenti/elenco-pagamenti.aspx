@@ -31,6 +31,7 @@
           <option value="delete" data-action="/admin/app/pagamenti/crud/elimina-pagamento.aspx">Elimina</option>
         </select>
         <div class="input-group-button">
+          <input type="hidden" name="grid" value="elencopagamenti">
           <input type="hidden" id="sorgente" name="sorgente" value="elenco-pagamenti">
           <input type="hidden" id="azione" name="azione" value="">
           <input type="hidden" id="deletemultiplo" name="deletemultiplo" value="deletemultiplo">
@@ -45,7 +46,7 @@
   <div class="grid-x grid-padding-x">
     <div class="large-12 medium-12 small-12 cell">
       <div class="divgrid">
-  		<table class="grid hover scroll" border="0" width="100%">
+  		<table id="elencopagamenti" class="grid hover scroll" border="0" width="100%">
   		<thead>
         <tr>
 	        <th width="10"><input type="checkbox" id="selectall" name="selectall" /></th>

@@ -165,6 +165,20 @@ public partial class _Default : System.Web.UI.Page
             Response.Redirect(Smartdesk.Current.LoginPageRoot);
       }
     }    
+                                                                                                                       
+    public Boolean GetCheckValue(DataTable dtTabella, string strField)
+    {
+        Boolean boolValore = false;
+        if (strAzione == "new")
+        {
+            boolValore = false;
+        }
+        else
+        {
+            boolValore = Smartdesk.Data.FieldBool(dtTabella,strField);
+        }
+        return boolValore;
+    }
 
     public String GetDefaultValue(string strField)
     {

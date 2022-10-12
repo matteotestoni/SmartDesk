@@ -13,7 +13,7 @@ public partial class _Default : System.Web.UI.Page
       using (SqlCommand cmd = new SqlCommand("frk_Create_Field", conn))
       {
         cmd.CommandType = CommandType.StoredProcedure;
-        cmd.Parameters.Add("@XmlDoc", "<db><rs><Vw>VeicoliPrenotazioni</Vw><App>29</App></rs></db>");
+        cmd.Parameters.Add("@XmlDoc", "<db><rs><Vw>Commesse</Vw><App>24</App></rs></db>");
         using (SqlDataReader reader = cmd.ExecuteReader())
         {
             if (reader.HasRows)
@@ -26,6 +26,5 @@ public partial class _Default : System.Web.UI.Page
         }
       }
       Response.Write("ok");
-    
     }    
 }

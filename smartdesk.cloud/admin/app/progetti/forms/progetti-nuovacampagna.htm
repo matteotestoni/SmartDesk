@@ -1,0 +1,194 @@
+            <form id="form-campagna" action="/admin/app/attivita/crud/salva-campagna.aspx" method="post" data-abide novalidate>
+              <input type="hidden" name="sorgente" value="scheda-progetti">
+              <input type="hidden" name="azione" value="new">
+              <input type="hidden" id="Attivita_Ky0" name="Attivita_Ky" value="">                
+              <input type="hidden" id="Attivita_Chiusura0" name="Attivita_Chiusura" value="">                
+              <input type="hidden" id="AttivitaTipo_Ky0" name="AttivitaTipo_Ky" value="1">                
+              <input type="hidden" id="Commesse_Ky0" name="Commesse_Ky" value="<%=GetFieldValue(dtCommesse, "Commesse_Ky")%>">                
+              <input type="hidden" id="Anagrafiche_Ky0" name="Anagrafiche_Ky" value="<%=GetFieldValue(dtCommesse, "Anagrafiche_Ky")%>">                
+              <input type="hidden" id="Priorita_Ky0" name="Priorita_Ky" value="1">                
+              <input type="hidden" id="AttivitaSettore_Ky0" name="AttivitaSettore_Ky" value="1">  
+              <input type="hidden" id="CoreForms_Ky0" name="CoreForms_Ky" value="1217">  
+                <div class="grid-x grid-padding-x grid-padding-y">
+                  <div class="small-4 medium-2 large-2 cell">
+                      <label class="text-right" for="Attivita_Campagna">Campagna</label>
+                  </div>
+                  <div class="small-8 medium-10 large-10 cell">         
+                    <input type="text" id="Attivita_Campagna00" name="Attivita_Campagna" value="" style="margin-bottom:0" autocomplete="off">
+                  </div>     
+                </div>                                 
+                <div class="grid-x grid-padding-x grid-padding-y">
+                  <div class="small-4 medium-2 large-2 cell">
+                      <label class="text-right" for="Attivita_Campagna_LP">Landing page</label>
+                  </div>
+                  <div class="small-8 medium-2 large-1 cell">
+										<span class="switch tiny">                                         
+                      <input class="switch-input" type="checkbox" name="Attivita_Campagna_LP" id="Attivita_Campagna_LP" value="on" />
+                      <label class="switch-paddle" for="Attivita_Campagna_LP">
+                        <span class="show-for-sr">S&igrave;</span>
+                        <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+                        <span class="switch-inactive" aria-hidden="true"></span>
+                      </label>
+                    </span> 
+                  </div>
+                  <div class="small-4 medium-2 large-1 cell">         
+                    <label class="text-right" for="Attivita_Campagna_LP_Budget">Budget</label>
+                  </div>
+                  <div class="small-8 medium-2 large-2 cell">         
+                      <input type="text" id="Attivita_Campagna_LP_Budget" name="Attivita_Campagna_LP_Budget" value="0" style="margin-bottom:0" autocomplete="off">
+                  </div>
+                  <div class="small-4 medium-2 large-1 cell">         
+                    <label class="text-right" for="Attivita_Campagna_LP_Utente">Assegnata a</label>
+                  </div>
+                  <div class="small-8 medium-2 large-5 cell">         
+              				<select name="Attivita_Campagna_LP_Utente" id="Attivita_Campagna_LP_Utente" value="" required="required" class="select2" style="margin-bottom:0">
+                        <option value="" selected="selected"></option>
+                        <!--#include file="/var/cache/Utenti-options-select2.htm"--> 
+                      </select>
+              				<script type="text/javascript">
+              					selectSet('Attivita_Campagna_LP_Utente', '<%=dtLogin.Rows[0]["Utenti_Ky"].ToString()%>');
+              				</script>
+                  </div>
+                </div>  
+                                               
+                
+                <div class="grid-x grid-padding-x grid-padding-y">
+                  <div class="small-4 medium-2 large-2 cell">
+                      <label class="text-right" for="Attivita_Campagna_FB">Facebook Ads</label>
+                  </div>
+                  <div class="small-8 medium-2 large-1 cell">
+										<span class="switch tiny">                                         
+                      <input class="switch-input" type="checkbox" name="Attivita_Campagna_FB" id="Attivita_Campagna_FB" value="on" />
+                      <label class="switch-paddle" for="Attivita_Campagna_FB">
+                        <span class="show-for-sr">S&igrave;</span>
+                        <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+                        <span class="switch-inactive" aria-hidden="true"></span>
+                      </label>
+                    </span> 
+                  </div>
+                  <div class="small-4 medium-2 large-1 cell">         
+                    <label class="text-right" for="Attivita_Campagna_FB_Budget">Budget</label>
+                  </div>
+                  <div class="small-8 medium-2 large-2 cell">         
+                      <input type="text" id="Attivita_Campagna_FB_Budget" name="Attivita_Campagna_FB_Budget" value="0" style="margin-bottom:0" autocomplete="off">
+                  </div>
+                  <div class="small-4 medium-2 large-1 cell">         
+                    <label class="text-right" for="Attivita_Campagna_FB_Utente">Assegnata a</label>
+                  </div>
+                  <div class="small-8 medium-2 large-5 cell">         
+              				<select name="Attivita_Campagna_FB_Utente" id="Attivita_Campagna_FB_Utente" value="" required="required" class="select2" style="margin-bottom:0">
+                        <option value="" selected="selected"></option>
+                        <!--#include file="/var/cache/Utenti-options-select2.htm"--> 
+                      </select>
+              				<script type="text/javascript">
+              					selectSet('Attivita_Campagna_FB_Utente', '<%=dtLogin.Rows[0]["Utenti_Ky"].ToString()%>');
+              				</script>
+                  </div>
+                </div>  
+                                               
+                <div class="grid-x grid-padding-x grid-padding-y">
+                  <div class="small-4 medium-2 large-2 cell">
+                      <label class="text-right" for="Attivita_Campagna_Google">Google Ads</label>
+                  </div>
+                  <div class="small-8 medium-4 large-1 cell">         
+										<span class="switch tiny">                                         
+                      <input class="switch-input" type="checkbox" name="Attivita_Campagna_Google" id="Attivita_Campagna_Google" value="on" />
+                      <label class="switch-paddle" for="Attivita_Campagna_Google">
+                        <span class="show-for-sr">S&igrave;</span>
+                        <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+                        <span class="switch-inactive" aria-hidden="true"></span>
+                      </label>
+                    </span> 
+                  </div>
+                  <div class="small-12 medium-2 large-1 cell">         
+                    <label class="text-right" for="Attivita_Campagna_Google_Budget">Budget</label>
+                  </div>
+                  <div class="small-12 medium-2 large-2 cell">         
+                      <input type="text" id="Attivita_Campagna_Google_Budget" name="Attivita_Campagna_Google_Budget" value="0" style="margin-bottom:0" autocomplete="off">
+                  </div>
+                  <div class="small-12 medium-2 large-1 cell">         
+                    <label class="text-right" for="Attivita_Campagna_Google_Utente">Assegnata a</label>
+                  </div>
+                  <div class="small-12 medium-4 large-5 cell">         
+              				<select name="Attivita_Campagna_Google_Utente" id="Attivita_Campagna_Google_Utente" value="" required="required" class="select2" style="margin-bottom:0">
+                        <option value="" selected="selected"></option>
+                        <!--#include file="/var/cache/Utenti-options-select2.htm"--> 
+                      </select>
+              				<script type="text/javascript">
+              					selectSet('Attivita_Campagna_Google_Utente', '<%=dtLogin.Rows[0]["Utenti_Ky"].ToString()%>');
+              				</script>
+                  </div>     
+                </div>  
+                <div class="grid-x grid-padding-x grid-padding-y">
+                  <div class="small-4 medium-2 large-2 cell">
+                      <label class="text-right" for="Attivita_Campagna_Linkedin">Linkedin Ads</label>
+                  </div>
+                  <div class="small-8 medium-4 large-1 cell">         
+										<span class="switch tiny">                                         
+                      <input class="switch-input" type="checkbox" name="Attivita_Campagna_Linkedin" id="Attivita_Campagna_Linkedin" value="on" />
+                      <label class="switch-paddle" for="Attivita_Campagna_Linkedin">
+                        <span class="show-for-sr">S&igrave;</span>
+                        <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+                        <span class="switch-inactive" aria-hidden="true"></span>
+                      </label>
+                    </span> 
+                  </div>
+                  <div class="small-12 medium-2 large-1 cell">         
+                    <label class="text-right" for="Attivita_Campagna_Linkedin_Budget">Budget</label>
+                  </div>
+                  <div class="small-12 medium-2 large-2 cell">         
+                      <input type="text" id="Attivita_Campagna_Linkedin_Budget" name="Attivita_Campagna_Linkedin_Budget" value="0" style="margin-bottom:0" autocomplete="off">
+                  </div>
+                  <div class="small-12 medium-2 large-1 cell">         
+                    <label class="text-right" for="Attivita_Campagna_Linkedin_Utente">Assegnata a</label>
+                  </div>
+                  <div class="small-12 medium-4 large-5 cell end">         
+              				<select name="Attivita_Campagna_Linkedin_Utente" id="Attivita_Campagna_Linkedin_Utente" value="" required="required" class="select2" style="margin-bottom:0">
+                        <option value="" selected="selected"></option>
+                        <!--#include file="/var/cache/Utenti-options-select2.htm"--> 
+                      </select>
+              				<script type="text/javascript">
+              					selectSet('Attivita_Campagna_Linkedin_Utente', '<%=dtLogin.Rows[0]["Utenti_Ky"].ToString()%>');
+              				</script>
+                  </div>
+                </div>                                 
+                <div class="grid-x grid-padding-x grid-padding-y">                  
+                  <div class="small-4 medium-2 large-2 cell">
+                      <label class="text-right" for="Attivita_Campagna_Banner">Banner</label>
+                  </div>
+                  <div class="small-8 medium-4 large-1 cell">         
+										<span class="switch tiny">                                         
+                      <input class="switch-input" type="checkbox" name="Attivita_Campagna_Banner" id="Attivita_Campagna_Banner" value="on" />
+                      <label class="switch-paddle" for="Attivita_Campagna_Banner">
+                        <span class="show-for-sr">S&igrave;</span>
+                        <span class="switch-active" aria-hidden="true"><i class="fa-duotone fa-square-check fa-fw fa-lg"></i></span>
+                        <span class="switch-inactive" aria-hidden="true"></span>
+                      </label>
+                    </span> 
+                  </div>
+                  <div class="small-4 medium-2 large-1 cell">         
+                    <label class="text-right" for="Attivita_Campagna_Banner_Numero">Numero</label>
+                  </div>
+                  <div class="small-8 medium-2 large-2 cell end">         
+                      <input type="text" id="Attivita_Campagna_Banner_Numero" name="Attivita_Campagna_Banner_Numero" value="0" style="margin-bottom:0" autocomplete="off">
+                  </div>
+                  <div class="small-4 medium-2 large-1 cell">         
+                    <label class="text-right" for="Attivita_Campagna_Banner_Utente">Assegnata a</label>
+                  </div>
+                  <div class="small-8 medium-4 large-5 cell end">         
+              				<select name="Attivita_Campagna_Banner_Utente" id="Attivita_Campagna_Banner_Utente" value="" required="required" class="select2" style="margin-bottom:0">
+                        <option value="" selected="selected"></option>
+                        <!--#include file="/var/cache/Utenti-options-select2.htm"--> 
+                      </select>
+              				<script type="text/javascript">
+              					selectSet('Attivita_Campagna_Banner_Utente', '<%=dtLogin.Rows[0]["Utenti_Ky"].ToString()%>');
+              				</script>
+                  </div>
+                </div>  
+                <div class="grid-x grid-padding-x grid-padding-y">
+                  <div class="small-12 medium-12 large-12 cell text-center">
+								      <button type="submit" class="button success large"><i class="fa-duotone fa-floppy-disk fa-fw fa-lg" style="--fa-primary-color: grey;--fa-secondary-color: white;"></i>Inserisci campagna</button>
+                  </div>
+                </div>
+              </form>
+

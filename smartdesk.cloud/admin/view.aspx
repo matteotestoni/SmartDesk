@@ -66,6 +66,7 @@
                     <option value="delete" data-action="<%=strDeleteAction%>">Elimina</option>
                   </select>
                   <div class="input-group-button">
+                    <input type="hidden" name="grid" value="table<%=dtCurrentCoreGrids.Rows[0]["CoreGrids_Ky"].ToString()%>">
                     <input type="hidden" id="azionidigruppo-grid-<%=dtCurrentCoreGrids.Rows[0]["CoreGrids_Ky"].ToString()%>-ajax" name="ajax" value="">
                     <input type="hidden" id="azionidigruppo-grid-<%=dtCurrentCoreGrids.Rows[0]["CoreGrids_Ky"].ToString()%>-sorgente" name="sorgente" value="elenco-<%=dtCoreEntities.Rows[0]["CoreEntities_Code"].ToString()%>">
                     <input type="hidden" id="azionidigruppo-grid-<%=dtCurrentCoreGrids.Rows[0]["CoreGrids_Ky"].ToString()%>-azione" name="azione" value="">
@@ -84,7 +85,7 @@
       <% if (boolWhere){
 				Response.WriteFile(strPathWhere, true);
 			} %>
-	    <table class="grid hover scroll" id="griddatatableszz">
+	    <table id="table<%=dtCurrentCoreGrids.Rows[0]["CoreGrids_Ky"].ToString()%>" class="grid hover scroll" id="griddatatableszz">
 	    	<thead>
 	      <tr>
         	<th width="10"><input type="checkbox" id="selectall" name="selectall" /></th>

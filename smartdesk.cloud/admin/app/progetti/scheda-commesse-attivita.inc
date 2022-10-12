@@ -11,7 +11,7 @@
     	</div>    
 		</div>
 	  <div class="card-section">
-	    	<ul class="tabs" data-responsive-accordion-tabs="tabs small-accordion medium-tabs large-tabs" role="tablist" id="attivita-tabs">
+	    	<ul class="horizontal tabs" data-responsive-accordion-tabs="tabs small-accordion medium-tabs large-tabs" role="tablist" id="attivita-tabs">
 	    		<li class="tabs-title is-active" role="presentational"><a href="#tabattivita-1"><i class="fa-duotone fa-triangle-exclamation fa-lg fa-fw" style="--fa-primary-color:red;--fa-primary-opacity: 1.0"></i> Attivit&agrave; da fare (<%=dtAttivitaDaFare.Rows.Count%>)</a></li>
 	    		<li class="tabs-title" role="presentational"><a href="#tabattivita-2"><i class="fa-duotone fa-check fa-lg fa-fw" style="--fa-primary-color:green;--fa-primary-opacity: 1.0"></i> Attivit&agrave; tecniche completate (<%=dtAttivitaCompletateTecniche.Rows.Count%>)</a></li>
 	    		<% if (dtLogin.Rows[0]["UtentiGruppi_Amministrazione"].Equals(true)){  %>

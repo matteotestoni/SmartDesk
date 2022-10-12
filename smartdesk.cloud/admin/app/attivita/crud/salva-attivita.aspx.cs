@@ -29,17 +29,16 @@ public partial class _Default : System.Web.UI.Page
     public string strSorgente = "";
     public string strAttivitaSettore_Ky = "1";
     public string strAttivitaStati_Ky = "";
-    
+    public string strCoreForms_Ky = "";
+
     public string strKy = "";
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        
-        
-
         if (Smartdesk.Login.Verify)
         {
             dtLogin = Smartdesk.Data.Read("Utenti_Vw", "Utenti_Ky", Smartdesk.Session.CurrentUser.ToString()); 
+            strCoreForms_Ky = Smartdesk.Current.Request("CoreForms_Ky");
             strAnagrafiche_Ky = Smartdesk.Current.Request("Anagrafiche_Ky");
             strUtenti_Ky = Smartdesk.Current.Request("Utenti_Ky");
             strCommesse_Ky = Smartdesk.Current.Request("Commesse_Ky");
@@ -59,6 +58,7 @@ public partial class _Default : System.Web.UI.Page
             }
             if (Smartdesk.Current.Request("Attivita_Trasferta") == "") frm.Add("Attivita_Trasferta", false);
             if (Smartdesk.Current.Request("AttivitaSettore_Ky") == "") frm.Add("AttivitaSettore_Ky", 1);
+            if (Smartdesk.Current.Request("Attivita_Fatturato") == "") frm.Add("Attivita_Fatturato", false);
         		strKy = Smartdesk.Functions.SqlWriteKey("Attivita", frm);
             aggiornaAnnuncio();
             if (strTicket_Ky.Length>0){
@@ -81,7 +81,7 @@ public partial class _Default : System.Web.UI.Page
                     Response.Redirect("/admin/app/progetti/scheda-commesse.aspx?salvato=salvato&Commesse_Ky=" + strCommesse_Ky + "&Utenti_Ky=" + strUtenti_Ky + "#attivita");
                     break;
                 case "scheda-progetti":
-                    Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=107&salvato=salvato&Commesse_Ky=" + strCommesse_Ky + "&Utenti_Ky=" + strUtenti_Ky + "#attivita");
+                    Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=107&CoreForms_Ky=" + strCoreForms_Ky + "&salvato=salvato&Commesse_Ky=" + strCommesse_Ky + "&Utenti_Ky=" + strUtenti_Ky + "#attivita");
                     break;
                 case "scheda-opportunita":
                     Response.Redirect("/admin/app/commerciale/scheda-opportunita.aspx?salvato=salvato&Opportunita_Ky=" + strOpportunita_Ky + "&Utenti_Ky=" + strUtenti_Ky + "#attivita");

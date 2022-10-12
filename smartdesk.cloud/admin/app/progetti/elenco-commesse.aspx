@@ -46,6 +46,7 @@
             <option value="delete" data-action="/admin/app/progetti/crud/elimina-commesse.aspx">Elimina</option>
           </select>
           <div class="input-group-button">
+            <input type="hidden" name="grid" value="elencocommesse">
             <input type="hidden" id="sorgente" name="sorgente" value="elenco-commesse">
             <input type="hidden" id="azione" name="azione" value="">
             <input type="hidden" id="deletemultiplo" name="deletemultiplo" value="deletemultiplo">
@@ -57,7 +58,7 @@
       </div>
     </div>
 
-    <table class="grid hover scroll" border="0" width="100%">
+    <table id="elencocommesse" class="grid hover scroll" border="0" width="100%">
     	<thead>
 	      <tr>
 	        <th width="10"><input type="checkbox" id="selectall" name="selectall" /></th>
@@ -105,7 +106,7 @@
                 </small>
 							</td>
 		          <td>
-								<a href="/admin/app/progetti/scheda-progetti.aspx?Commesse_Ky=<%=dtGridData.Rows[i]["Commesse_Ky"].ToString()%>"><i class="fa-duotone fa-gears fa-fw"></i>Attivit&agrave;</a><br>
+								<a href="/admin/app/progetti/scheda-progetti.aspx?CoreModules_Ky=24&CoreEntities_Ky=107&CoreGrids_Ky=11&CoreForms_Ky=1217&Commesse_Ky=<%=dtGridData.Rows[i]["Commesse_Ky"].ToString()%>"><i class="fa-duotone fa-gears fa-fw"></i>Attivit&agrave;</a><br>
 							</td>
 							<td>
 									<span class="label" style="background-color:<%=dtGridData.Rows[i]["CommesseStato_Colore"].ToString()%>"><i class="<%=dtGridData.Rows[i]["CommesseStato_Icona"].ToString()%> fa-fw"></i><%=dtGridData.Rows[i]["CommesseStato_Titolo"].ToString()%></span><br>
@@ -127,7 +128,7 @@
 	        		<% } %>
 		          <td class="show-for-medium-up text-center nowrap">
                 <a href="/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=<%=dtGridData.Rows[i]["Commesse_Ky"].ToString()%>" title="modifica" class="edit"><i class="fa-duotone fa-pen-to-square fa-fw"></i></a>
-                <a href="/admin/app/progetti/crud/elimina-commesse.aspx?azione=delete&Commesse_Ky=<%=dtGridData.Rows[i]["Commesse_Ky"].ToString()%>" title="elimina" class="delete"><i class="fa-duotone fa-trash-can fa-fw"></i></a>
+                <a href="/admin/app/progetti/crud/elimina-commesse.aspx?azione=delete&CoreModules_Ky=24&CoreEntities_Ky=107&CoreGrids_Ky=11&Commesse_Ky=<%=dtGridData.Rows[i]["Commesse_Ky"].ToString()%>" title="elimina" class="delete"><i class="fa-duotone fa-trash-can fa-fw"></i></a>
               </td>
 		        </tr>
 					<% } %>

@@ -1,7 +1,7 @@
  <%
 	System.Data.DataTable dtCommesse;
   string strWHERENet="";
-	strWHERENet="(CommesseStato_Ky=4)";
+	strWHERENet="(CommesseStato_Ky=4 AND Commesse_Importante=1)";
 	string strFROMNet = "Commesse_Vw";
 	string strORDERNet = "Commesse_Data DESC";
 	dtCommesse = new System.Data.DataTable("Commesse");

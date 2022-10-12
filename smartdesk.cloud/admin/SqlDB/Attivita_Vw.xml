@@ -79,25 +79,37 @@
       <Field Column="AttivitaStati_Icona" IsNull="Y" Type="varchar" Lenght="200" />
       <Field Column="Utenti_Nominativo" IsNull="Y" Type="varchar" Lenght="255" />
       <Field Column="Utenti_Logo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AttivitaCategorie_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AttivitaCategorie_Ky" IsNull="Y" Type="int" />
+      <Field Column="Campagne_Ky" IsNull="Y" Type="int" />
+      <Field Column="Campagne_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="AttivitaCategorie_Colore" IsNull="Y" Type="varchar" Lenght="100" />
+      <Field Column="AttivitaCategorie_Icona" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Attivita_Budget" IsNull="Y" Type="money" />
+      <Field Column="Attivita_Campagna" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="Attivita_Fatturato" IsNull="Y" Type="bit" />
     </Fields>
   </Tables>
-  <SqlScriptCreate>CREATE VIEW dbo.Attivita_Vw
+  <SqlScriptCreate>CREATE VIEW [dbo].[Attivita_Vw]
 AS
-SELECT        dbo.Attivita.Attivita_Ky, dbo.Attivita.Attivita_Descrizione, dbo.Attivita.Anagrafiche_Ky, dbo.fnBit(dbo.Attivita.Attivita_Completo) AS Attivita_Completo, dbo.Anagrafiche.Anagrafiche_RagioneSociale, 
-                         dbo.Attivita.Attivita_Scadenza, dbo.Anagrafiche.Anagrafiche_Telefono, dbo.Attivita.Attivita_Scadenza AS scadenzawhere, dbo.Anagrafiche.Anagrafiche_Disdetto, dbo.Attivita.Persone_Ky, dbo.Attivita.Priorita_Ky, 
-                         dbo.Priorita.Priorita_Descrizione, dbo.Persone.Persone_Colore, dbo.Persone.Persone_Sigla, dbo.Persone.Persone_Cognome, dbo.Persone.Persone_Nome, CONVERT(varchar, dbo.Attivita.Attivita_Scadenza, 105) 
-                         AS Attivita_Scadenza_IT, dbo.Attivita.Attivita_Chiusura, CONVERT(varchar, dbo.Attivita.Attivita_Chiusura, 105) AS Attivita_Chiusura_IT, dbo.Anagrafiche.Anagrafiche_Note, dbo.Attivita.Commesse_Ky, 
-                         dbo.Attivita.Attivita_Ore, dbo.Commesse.Commesse_Titolo, dbo.Commesse.Commesse_Riferimenti, dbo.Commesse.CommesseStato_Ky, dbo.AttivitaTipo.AttivitaTipo_Descrizione, dbo.Attivita.AttivitaTipo_Ky, 
-                         dbo.Attivita.Attivita_Trasferta, dbo.Attivita.Attivita_Km, dbo.Attivita.Attivita_SpeseAutostrada, dbo.Attivita.Attivita_SpeseParcheggi, dbo.Attivita.Attivita_SpesePasti, dbo.Attivita.Attivita_SpeseTotali, 
-                         CONVERT(varchar, dbo.Attivita.Attivita_Inizio, 105) AS Attivita_Inizio_IT, dbo.Attivita.Attivita_Inizio, dbo.Attivita.Attivita_OraInizio, dbo.Attivita.Attivita_OraScadenza, dbo.Attivita.Attivita_SpeseMezziPubblici, 
-                         dbo.Attivita.Attivita_RimborsoKm, dbo.Attivita.Attivita_SpeseKm, dbo.Attivita.AttivitaSettore_Ky, dbo.AttivitaSettore.AttivitaSettore_Titolo, dbo.Persone.Persone_Foto, DATEDIFF(day, dbo.Attivita.Attivita_Scadenza, 
-                         GETDATE()) AS ggTrascorsi, dbo.Attivita.Opportunita_Ky, dbo.Opportunita.Opportunita_Titolo, dbo.Attivita.Utenti_Ky, dbo.Utenti.Utenti_Email, dbo.Utenti.Utenti_Iniziali, dbo.Utenti.UtentiGruppi_Ky, 
-                         dbo.AttivitaTipo.AttivitaTipo_Icona, dbo.Persone.Persone_Attivo, dbo.Persone.Persone_DataInizio, MONTH(dbo.Attivita.Attivita_Scadenza) AS Mese, YEAR(dbo.Attivita.Attivita_Scadenza) AS Anno, 
-                         dbo.Attivita.Attivita_OrePreviste, dbo.Persone.Persone_CostoOrario, dbo.Priorita.Priorita_Icona, dbo.Priorita.Priorita_Colore, dbo.Attivita.Pagamenti_Ky, dbo.Attivita.Documenti_Ky, 
-                         dbo.Anagrafiche.Anagrafiche_SitoWeb, dbo.Comuni.Comuni_Comune, dbo.Province.Province_Provincia, dbo.Attivita.AttivitaStati_Ky, dbo.AttivitaStati.AttivitaStati_Titolo, dbo.Utenti.Utenti_Colore, 
-                         dbo.Utenti.Utenti_Nome, dbo.Utenti.Utenti_Cognome, dbo.Attivita.Lead_Ky, dbo.Attivita.Ticket_Ky, dbo.Ticket.Ticket_Titolo, dbo.Ticket.Ticket_Data, dbo.AttivitaStati.AttivitaStati_Colore, 
-                         dbo.AttivitaStati.AttivitaStati_Aperta, dbo.AttivitaStati.AttivitaStati_Chiusa, dbo.AttivitaStati.AttivitaStati_Icona, dbo.Utenti.Utenti_Nominativo, dbo.Utenti.Utenti_Logo
+SELECT        dbo.Attivita.Attivita_Ky, dbo.Attivita.Attivita_Descrizione, dbo.Attivita.Anagrafiche_Ky, dbo.fnBit(dbo.Attivita.Attivita_Completo) AS Attivita_Completo, dbo.Anagrafiche.Anagrafiche_RagioneSociale, dbo.Attivita.Attivita_Scadenza, 
+                         dbo.Anagrafiche.Anagrafiche_Telefono, dbo.Attivita.Attivita_Scadenza AS scadenzawhere, dbo.Anagrafiche.Anagrafiche_Disdetto, dbo.Attivita.Persone_Ky, dbo.Attivita.Priorita_Ky, dbo.Priorita.Priorita_Descrizione, 
+                         dbo.Persone.Persone_Colore, dbo.Persone.Persone_Sigla, dbo.Persone.Persone_Cognome, dbo.Persone.Persone_Nome, CONVERT(varchar, dbo.Attivita.Attivita_Scadenza, 105) AS Attivita_Scadenza_IT, 
+                         dbo.Attivita.Attivita_Chiusura, CONVERT(varchar, dbo.Attivita.Attivita_Chiusura, 105) AS Attivita_Chiusura_IT, dbo.Anagrafiche.Anagrafiche_Note, dbo.Attivita.Commesse_Ky, dbo.Attivita.Attivita_Ore, 
+                         dbo.Commesse.Commesse_Titolo, dbo.Commesse.Commesse_Riferimenti, dbo.Commesse.CommesseStato_Ky, dbo.AttivitaTipo.AttivitaTipo_Descrizione, dbo.Attivita.AttivitaTipo_Ky, dbo.Attivita.Attivita_Trasferta, 
+                         dbo.Attivita.Attivita_Km, dbo.Attivita.Attivita_SpeseAutostrada, dbo.Attivita.Attivita_SpeseParcheggi, dbo.Attivita.Attivita_SpesePasti, dbo.Attivita.Attivita_SpeseTotali, CONVERT(varchar, dbo.Attivita.Attivita_Inizio, 105) 
+                         AS Attivita_Inizio_IT, dbo.Attivita.Attivita_Inizio, dbo.Attivita.Attivita_OraInizio, dbo.Attivita.Attivita_OraScadenza, dbo.Attivita.Attivita_SpeseMezziPubblici, dbo.Attivita.Attivita_RimborsoKm, dbo.Attivita.Attivita_SpeseKm, 
+                         dbo.Attivita.AttivitaSettore_Ky, dbo.AttivitaSettore.AttivitaSettore_Titolo, dbo.Persone.Persone_Foto, DATEDIFF(day, dbo.Attivita.Attivita_Scadenza, GETDATE()) AS ggTrascorsi, dbo.Attivita.Opportunita_Ky, 
+                         dbo.Opportunita.Opportunita_Titolo, dbo.Attivita.Utenti_Ky, dbo.Utenti.Utenti_Email, dbo.Utenti.Utenti_Iniziali, dbo.Utenti.UtentiGruppi_Ky, dbo.AttivitaTipo.AttivitaTipo_Icona, dbo.Persone.Persone_Attivo, 
+                         dbo.Persone.Persone_DataInizio, MONTH(dbo.Attivita.Attivita_Scadenza) AS Mese, YEAR(dbo.Attivita.Attivita_Scadenza) AS Anno, dbo.Attivita.Attivita_OrePreviste, dbo.Persone.Persone_CostoOrario, dbo.Priorita.Priorita_Icona, 
+                         dbo.Priorita.Priorita_Colore, dbo.Attivita.Pagamenti_Ky, dbo.Attivita.Documenti_Ky, dbo.Anagrafiche.Anagrafiche_SitoWeb, dbo.Comuni.Comuni_Comune, dbo.Province.Province_Provincia, dbo.Attivita.AttivitaStati_Ky, 
+                         dbo.AttivitaStati.AttivitaStati_Titolo, dbo.Utenti.Utenti_Colore, dbo.Utenti.Utenti_Nome, dbo.Utenti.Utenti_Cognome, dbo.Attivita.Lead_Ky, dbo.Attivita.Ticket_Ky, dbo.Ticket.Ticket_Titolo, dbo.Ticket.Ticket_Data, 
+                         dbo.AttivitaStati.AttivitaStati_Colore, dbo.AttivitaStati.AttivitaStati_Aperta, dbo.AttivitaStati.AttivitaStati_Chiusa, dbo.AttivitaStati.AttivitaStati_Icona, dbo.Utenti.Utenti_Nominativo, dbo.Utenti.Utenti_Logo, 
+                         dbo.AttivitaCategorie.AttivitaCategorie_Titolo, dbo.Attivita.AttivitaCategorie_Ky, dbo.Attivita.Campagne_Ky, dbo.Campagne.Campagne_Titolo, dbo.AttivitaCategorie.AttivitaCategorie_Colore, 
+                         dbo.AttivitaCategorie.AttivitaCategorie_Icona, dbo.Attivita.Attivita_Budget, dbo.Attivita.Attivita_Campagna, dbo.Attivita.Attivita_Fatturato
 FROM            dbo.Attivita LEFT OUTER JOIN
+                         dbo.Campagne ON dbo.Attivita.Campagne_Ky = dbo.Campagne.Campagne_Ky LEFT OUTER JOIN
+                         dbo.AttivitaCategorie ON dbo.Attivita.AttivitaCategorie_Ky = dbo.AttivitaCategorie.AttivitaCategorie_Ky LEFT OUTER JOIN
                          dbo.Anagrafiche ON dbo.Attivita.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky LEFT OUTER JOIN
                          dbo.Ticket ON dbo.Attivita.Ticket_Ky = dbo.Ticket.Ticket_Ky LEFT OUTER JOIN
                          dbo.AttivitaStati ON dbo.Attivita.AttivitaStati_Ky = dbo.AttivitaStati.AttivitaStati_Ky LEFT OUTER JOIN
@@ -109,6 +121,5 @@ FROM            dbo.Attivita LEFT OUTER JOIN
                          dbo.AttivitaTipo ON dbo.Attivita.AttivitaTipo_Ky = dbo.AttivitaTipo.AttivitaTipo_Ky LEFT OUTER JOIN
                          dbo.Commesse ON dbo.Attivita.Commesse_Ky = dbo.Commesse.Commesse_Ky LEFT OUTER JOIN
                          dbo.Priorita ON dbo.Attivita.Priorita_Ky = dbo.Priorita.Priorita_Ky LEFT OUTER JOIN
-                         dbo.Persone ON dbo.Attivita.Persone_Ky = dbo.Persone.Persone_Ky
-</SqlScriptCreate>
+                         dbo.Persone ON dbo.Attivita.Persone_Ky = dbo.Persone.Persone_Ky</SqlScriptCreate>
 </SqlTable>

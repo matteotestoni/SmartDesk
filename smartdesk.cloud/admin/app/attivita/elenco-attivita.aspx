@@ -34,7 +34,7 @@
   </div>
   <div class="large-10 medium-9 small-12 cell">
 	  <% if (dtGridData!=null && dtGridData.Rows.Count>0){ %>
-      <ul class="tabs" data-tabs id="attivita-tabs">
+      <ul class="horizontal tabs" data-tabs id="attivita-tabs">
         <li class="tabs-title is-active"><a href="#panel1" aria-selected="true"><i class="fa-duotone fa-calendar fa-fw"></i>Elenco attivit&agrave;</a></li>
         <li class="tabs-title"><a href="/admin/app/attivita/attivita-da-fare.aspx?attivita-scadute=1&prossime-scadenze=1&scadenze-future=1"><i class="fa-duotone fa-square-kanban fa-fw"></i>Prospetto per scadenza</a></li>
         <li class="tabs-title"><a href="/admin/app/attivita/attivita-da-fare-stato.aspx?attivita-scadute=1&prossime-scadenze=1&scadenze-future=1"><i class="fa-duotone fa-square-kanban fa-fw"></i>Prospetto per stato</a></li>

@@ -3,7 +3,6 @@ using System.Data;
 
 public partial class _Default : System.Web.UI.Page
 {
-  
     public string strAttivita_Ky = "";
     public string strAnagrafiche_Ky = "";
     public string strCommesse_Ky = "";
@@ -14,6 +13,7 @@ public partial class _Default : System.Web.UI.Page
     public string strDocumenti_Ky = "";
     public string strTicket_Ky = "";
     public string strAzione = "";
+    public string strCoreForms_Ky="";
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -23,6 +23,7 @@ public partial class _Default : System.Web.UI.Page
 
         if (Smartdesk.Login.Verify)
         {
+                strCoreForms_Ky=Smartdesk.Current.Request("CoreForms_Ky");
                 strAttivita_Ky = Smartdesk.Current.Request("Attivita_Ky");
                 strUtenti_Ky = Smartdesk.Current.Request("Utenti_Ky");
                 strAnagrafiche_Ky = Smartdesk.Current.Request("Anagrafiche_Ky");
@@ -58,19 +59,19 @@ public partial class _Default : System.Web.UI.Page
                         strRedirect="/admin/app/attivita/attivita-da-fare.aspx?Utenti_Ky=" + strUtenti_Ky + "#attivita";
                         break;
                     case "scheda-anagrafiche":
-                        strRedirect="/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=" + strAnagrafiche_Ky + "#attivita";
+                        strRedirect="/admin/goto-form.aspx?CoreEntities_Ky=162&CoreForms_Ky=" + strCoreForms_Ky + "&Anagrafiche_Ky=" + strAnagrafiche_Ky + "#attivita";
                         break;
                     case "scheda-commessa":
-                        strRedirect="/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=" + strCommesse_Ky + "#attivita";
+                        strRedirect="/admin/goto-form.aspx?CoreEntities_Ky=107&CoreForms_Ky=" + strCoreForms_Ky + "&Commesse_Ky=" + strCommesse_Ky + "#attivita";
                         break;
                     case "scheda-progetti":
-                        strRedirect="/admin/goto-form.aspx?CoreEntities_Ky=107&Commesse_Ky=" + strCommesse_Ky + "#attivita";
+                        strRedirect="/admin/goto-form.aspx?CoreEntities_Ky=107&CoreForms_Ky=" + strCoreForms_Ky + "&Commesse_Ky=" + strCommesse_Ky + "#attivita";
                         break;
                     case "scheda-opportunita":
-                        strRedirect="/admin/app/commerciale/scheda-opportunita.aspx?Opportunita_Ky=" + strOpportunita_Ky + "#attivita";
+                        strRedirect="/admin/app/commerciale/scheda-opportunita.aspx?CoreForms_Ky=" + strCoreForms_Ky + "&Opportunita_Ky=" + strOpportunita_Ky + "#attivita";
                         break;
                     case "scheda-pagamenti":
-                        strRedirect="/admin/app/pagamenti/scheda-pagamenti.aspx?Pagamenti_Ky=" + strPagamenti_Ky + "#attivita";
+                        strRedirect="/admin/app/pagamenti/scheda-pagamenti.aspx?CoreForms_Ky=" + strCoreForms_Ky + "&Pagamenti_Ky=" + strPagamenti_Ky + "#attivita";
                         break;
                     case "scheda-documenti":
                         strRedirect="/admin/app/documenti/scheda-documenti.aspx?CoreModules_Ky=13&CoreEntities_Ky=44&CoreForms_Ky=1212&Documenti_Ky=" + strDocumenti_Ky + "#attivita";

@@ -32,6 +32,7 @@
             <option value="delete" data-action="/admin/app/annunci/crud/elimina-annunciofferte.aspx">Elimina</option>
           </select>
           <div class="input-group-button">
+            <input type="hidden" name="grid" value="elencoannunciofferte">
             <input type="hidden" id="sorgente" name="sorgente" value="elenco-annunciofferte">
             <input type="hidden" id="azione" name="azione" value="">
             <input type="hidden" id="deletemultiplo" name="deletemultiplo" value="deletemultiplo">
@@ -43,7 +44,7 @@
       </div>
     </div>
     
-    <table class="grid hover scroll" border="0" width="100%">
+    <table id="elencoannunciofferte" class="grid hover scroll" border="0" width="100%">
     	<thead>
 	      <tr>
 	        <th width="10"><input type="checkbox" id="selectall" name="selectall" /></th>
