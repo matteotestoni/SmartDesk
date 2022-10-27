@@ -118,7 +118,8 @@ function saveOrderCoreFormsFields(intCoreFormsFields_Ky, intRow){
 	jQuery.ajax({
 		type: "POST",
 		url: $url,
-		data: $data
+  	data: $data,
+    contentType: "application/json"
 	})
 	.done(function( data ) {
     	jQuery($orderfield).css('border-color', "green");
@@ -134,7 +135,8 @@ function saveLabelCoreFormsFields(intCoreFormsFields_Ky, intRow){
 	jQuery.ajax({
 		type: "POST",
 		url: $url,
-		data: $data
+  	data: $data,
+    contentType: "application/json"
 	})
 	.done(function( data ) {
     	jQuery($labelfield).css('border-color', "green");
@@ -154,7 +156,8 @@ function saveColumnsCoreFormsFields(intCoreFormsFields_Ky, intRow){
 	jQuery.ajax({
 		type: "POST",
 		url: $url,
-		data: $data
+  	data: $data,
+    contentType: "application/json"
 	})
 	.done(function( data ) {
     	jQuery($columnsfield).css('border-color', "green");
@@ -170,7 +173,8 @@ function saveHiddenCoreFormsFields(intCoreFormsFields_Ky, intRow, intValue){
 	jQuery.ajax({
 		type: "POST",
 		url: $url,
-		data: $data
+  	data: $data,
+    contentType: "application/json"
 	})
 	.done(function( data ) {
     if (intValue==1){
@@ -190,7 +194,8 @@ function saveReadonlyCoreFormsFields(intCoreFormsFields_Ky, intRow, intValue){
 	jQuery.ajax({
 		type: "POST",
 		url: $url,
-		data: $data
+  	data: $data,
+    contentType: "application/json"
 	})
 	.done(function( data ) {
     if (intValue==1){
@@ -214,7 +219,8 @@ function saveFieldsetCoreFormsFields(intCoreFormsFields_Ky, intRow){
 	jQuery.ajax({
 		type: "POST",
 		url: $url,
-		data: $data
+  	data: $data,
+    contentType: "application/json"
 	})
 	.done(function( data ) {
     	jQuery($field).css('border-color', "green");
@@ -232,7 +238,8 @@ function saveTabCoreFormsFields(selectObject, intCoreFormsFields_Ky){
 	jQuery.ajax({
 		type: "POST",
 		url: $url,
-		data: $data
+  	data: $data,
+    contentType: "application/json"
 	})
 	.done(function( data ) {
     	$field="#";

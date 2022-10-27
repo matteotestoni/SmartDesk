@@ -28,8 +28,10 @@
                   'Ieri': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
                   'Ultimi 7 giorni': [moment().subtract(6, 'days'), moment()],
                   'Ultimi 30 giorni': [moment().subtract(29, 'days'), moment()],
+                  'Ultimi 45 giorni': [moment().subtract(44, 'days'), moment()],
                   'Questo mese': [moment().startOf('month'), moment().endOf('month')],
-                  'Ultimo mese': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                  'Ultimo mese': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')],
+                  'Anno intero': [moment().startOf('year'), moment().endOf('year')]
               },
               "locale": {
                   "format": "MM/DD/YYYY",

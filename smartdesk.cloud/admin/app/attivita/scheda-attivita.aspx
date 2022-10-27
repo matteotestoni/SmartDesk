@@ -16,8 +16,8 @@
           </div>
           <div class="large-8 medium-8 small-12 cell float-right align-middle">
       			<div class="stacked-for-small button-group small hide-for-print align-right">
-      				<a href="/admin/app/attivita/attivita-da-fare.aspx?attivita-scadute=1&prossime-scadenze=1&scadenze-future=1" class="tiny button clear"><i class="fa-duotone fa-square-kanban fa-fw"></i>Prospetto per scadenza</a>
-      				<a href="/admin/app/attivita/attivita-da-fare-stato.aspx?attivita-scadute=1&prossime-scadenze=1&scadenze-future=1" class="tiny button clear"><i class="fa-duotone fa-square-kanban fa-fw"></i>Prospetto per stato</a>
+      				<a href="/admin/app/attivita/attivita-da-fare.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreGrids_Ky=276&attivita-scadute=1&prossime-scadenze=1&scadenze-future=1" class="tiny button clear"><i class="fa-duotone fa-square-kanban fa-fw"></i>Prospetto per scadenza</a>
+      				<a href="/admin/app/attivita/attivita-da-fare-stato.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreGrids_Ky=276&attivita-scadute=1&prossime-scadenze=1&scadenze-future=1" class="tiny button clear"><i class="fa-duotone fa-square-kanban fa-fw"></i>Prospetto per stato</a>
       				<a href="/admin/app/attivita/elenco-attivita.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreGrids_Ky=62" class="tiny button clear"><i class="fa-duotone fa-list-check fa-fw"></i>Elenco</a>
       				<a href="/admin/app/calendario/calendario.aspx" class="tiny button clear"><i class="fa-duotone fa-calendar-days fa-fw"></i>Calendario</a>
       				<% if (strAzione!="new"){ %>

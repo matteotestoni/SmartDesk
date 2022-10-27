@@ -140,13 +140,13 @@ public partial class _Default : System.Web.UI.Page
         strValore = GetNewNumDoc(DateTime.Now.Year);
         break;
       case "PreventiviAuto_Sconto":
-        strValore = "0";
+        strValore = "";
         break;
       case "PreventiviAuto_Prezzo":
-        strValore = "0";
+        strValore = "";
         break;
       case "PreventiviAuto_IVA":
-        strValore = "0";
+        strValore = "";
         break;
       case "Opportunita_Ky":
         strValore = Request["Opportunita_Ky"];

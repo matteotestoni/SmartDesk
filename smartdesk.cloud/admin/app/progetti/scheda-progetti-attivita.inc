@@ -1,13 +1,20 @@
 <% if (strAzione!="new" && dtLogin.Rows[0]["UtentiGruppi_Attivita"].Equals(true) && dtCommesse.Rows[0]["CommesseStato_Ky"].ToString()!="6"){ %>
 <div class="grid-x grid-padding-x">
   <div class="small-12 medium-12 large-12 cell">
-  <a name="attivitaaperte"></a>
-	<br>
-	<div class="card">
-	  <div class="card-divider">
-			<h2><i class="fa-duotone fa-person-digging fa-lg fa-fw"></i>Attivit&agrave; da fare</h2>
-		</div>
-	  <div class="card-section">
+    <div class="divgrid">
+    <a name="attivitaaperte"></a>
+          <div class="grid-x grid-padding-x">
+            <div class="small-12 medium-5 large-2 cell">
+          			<h2><i class="fa-duotone fa-person-digging fa-lg fa-fw"></i>Attivit&agrave; da fare</h2>
+            </div>
+            <div class="small-12 medium-7 large-10 cell">
+                  <div class="button-group tiny">
+          			     <a href="/admin/app/attivita/elenco-attivita.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreGrids_Ky=62&Commesse_Ky=<%=Smartdesk.Data.Field(dtCommesse, "Commesse_Ky")%>&Anagrafiche_Ky=<%=Smartdesk.Data.Field(dtCommesse, "Anagrafiche_Ky")%>&Attivita_Completo=no&sorgente=scheda-progetti" class="tiny button secondary"><i class="fa-duotone fa-eye fa-fw"></i> Tutte le attivit&agrave; da fare</a>
+                  </div>
+                </h2>
+            </div>
+          </div>        
+    			
 							<style>
                 table input, table select{ margin:0;}
               </style>          
@@ -92,8 +99,9 @@
 				        <% } %>
 					    	</tbody>
 				      </table>
-		</div>
+	 </div>
 	</div>
+</div>
 <% } %>
 
 <% if (strAzione!="new" && dtCommesse.Rows[0]["CommesseStato_Ky"].ToString()!="6"){ %>
@@ -210,7 +218,8 @@
     jQuery.ajax({
   		type: "POST",
   		url: $url,
-  		data: $data
+  		data: $data,
+      contentType: "application/json"
   	})
   	.done(function( data ) {
       	jQuery($field).css('border-color', "green");

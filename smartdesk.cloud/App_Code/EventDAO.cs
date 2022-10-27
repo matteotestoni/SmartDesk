@@ -19,17 +19,25 @@ public class EventDAO
     private static string connectionString = ConfigurationManager.AppSettings["DBConnString"];
 
 	//this method retrieves all events within range start-end
-    public static List<CalendarEvent> getEvents(DateTime start, DateTime end)
+    public static List<CalendarEvent> getEvents(DateTime start, DateTime end, int user, int project)
     {   
  		string strSQL = "";
+ 		string strWHERE = "";
 		string strTemp = "";
 		DateTime dtTemp;
 		TimeSpan tmTemp;
         List<CalendarEvent> events = new List<CalendarEvent>();
         SqlConnection con = new SqlConnection(Smartdesk.Config.Sql.ConnectionReadOnly);
         SqlConnection con2 = new SqlConnection(Smartdesk.Config.Sql.ConnectionReadOnly);
-    		strSQL="SELECT Attivita_Ky, Attivita_Descrizione, AttivitaTipo_Descrizione, Attivita_Inizio As Attivita_Inizio, Attivita_Scadenza As Attivita_Scadenza, Utenti_Ky, Utenti_Nominativo, Utenti_Colore, Anagrafiche_Ky, Anagrafiche_RagioneSociale FROM Attivita_Vw WHERE (Attivita_Chiusura Is Null Or Attivita_Chiusura=0) And (Attivita_Scadenza>=@start AND Attivita_Scadenza<=@end)";
-    		SqlCommand cmd = new SqlCommand(strSQL, con);
+    		
+        strSQL="SELECT Attivita_Ky, Attivita_Descrizione, AttivitaTipo_Descrizione, Attivita_Inizio As Attivita_Inizio, Attivita_Scadenza As Attivita_Scadenza, Utenti_Ky, Utenti_Nominativo, Utenti_Colore, Anagrafiche_Ky, Anagrafiche_RagioneSociale FROM Attivita_Vw WHERE (Attivita_Chiusura Is Null Or Attivita_Chiusura=0) And (Attivita_Scadenza>=@start AND Attivita_Scadenza<=@end)";
+        if (user!=null && user!=-1){
+          strSQL+=" AND (Utenti_Ky=" + user + ")";
+        }
+        if (project!=null && project!=-1){
+          strSQL+=" AND (Commesse_Ky=" + project + ")";
+        }
+        SqlCommand cmd = new SqlCommand(strSQL, con);
 		    cmd.Parameters.Add("@start", SqlDbType.DateTime).Value = start;
         cmd.Parameters.Add("@end", SqlDbType.DateTime).Value = end;
         

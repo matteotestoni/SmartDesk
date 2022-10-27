@@ -25,11 +25,13 @@ public partial class _Default : System.Web.UI.Page
     public string strAnno="";
     public string strMese="";
     public int intGiorni=0;
-    
     public int intTotLead=0;
     public string strWHERENet="";
     public string strORDERNet = "";
     public string strFROMNet = "";
+    public string strReportdatarangestart = "";
+    public string strReportdatarangeend = "";
+
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -37,8 +39,6 @@ public partial class _Default : System.Web.UI.Page
       SqlConnection conn;
       SqlCommand cmd;
       
-      string strReportdatarangestart = "";
-      string strReportdatarangeend = "";
 	  
       if (Smartdesk.Login.Verify){
             dtLogin = Smartdesk.Data.Read("Utenti_Vw","Utenti_Ky", Smartdesk.Session.CurrentUser.ToString());          
@@ -70,8 +70,6 @@ public partial class _Default : System.Web.UI.Page
               strMese=intMonth.ToString();
             }
             intGiorni=DateTime.DaysInMonth(Convert.ToInt32(strAnno),Convert.ToInt32(strMese) );
-            
-            
             strWHERENet="";
 	          strFROMNet = "LeadCategorie";
             strORDERNet = "LeadCategorie_Ordine";

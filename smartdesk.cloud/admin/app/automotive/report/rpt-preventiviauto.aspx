@@ -278,7 +278,7 @@
                <tr style="border-bottom:1px solid #000000">
                 <td style="padding:1rem 0;">
     	            <div class="riga">
-    	              <div class="titoloriga">Voltura <%=dtPreventiviAuto.Rows[0]["PreventiviAuto_Marca"].ToString()%> <%=dtPreventiviAuto.Rows[0]["PreventiviAuto_Modello"].ToString()%></div>
+    	              <div class="titoloriga">Voltura</div>
     	            </div>
                 </td>
                 <td align="right">

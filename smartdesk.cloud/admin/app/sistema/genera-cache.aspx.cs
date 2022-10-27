@@ -1079,6 +1079,20 @@ public partial class _Default : System.Web.UI.Page
             sw.Close();
             strRisultato=strRisultato + "<li>" + intNumRecords + " categorie veicoli generati</li>";        
 
+            //Veicoli stati prenotazione
+            sw = new StreamWriter(Server.MapPath("/var/cache/VeicoliPrenotazioniStati-options.htm"), false, System.Text.Encoding.Default);
+              strWHERENet="";
+              strORDERNet = "VeicoliPrenotazioniStati_Ordine";
+              strFROMNet = "VeicoliPrenotazioniStati";
+              dtTemp = new DataTable("Temp");
+              dtTemp = Smartdesk.Sql.getTablePage(strFROMNet, null, "VeicoliPrenotazioniStati_Ky", strWHERENet, strORDERNet, 1, 100,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);            
+              sw.WriteLine("<option value=\"\"></option>");
+              for (i = 0; i < dtTemp.Rows.Count; i++){
+                  sw.WriteLine("<option value=\"" + dtTemp.Rows[i]["VeicoliPrenotazioniStati_Ky"].ToString() + "\">" + dtTemp.Rows[i]["VeicoliPrenotazioniStati_Titolo"].ToString() + "</option>");
+              }
+            sw.Close();
+            strRisultato=strRisultato + "<li>" + intNumRecords + " stati prenotazione veicoli generati</li>";        
+
             //Veicoli normative
             sw = new StreamWriter(Server.MapPath("/var/cache/VeicoliNormativeEuro-options.htm"), false, System.Text.Encoding.Default);
               strWHERENet="VeicoliNormativeEuro_Attiva=1";

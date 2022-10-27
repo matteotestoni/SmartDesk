@@ -6,12 +6,11 @@
   <div class="divgrid">
       <div class="grid-x grid-padding-x">
         <div class="small-12 medium-2 large-2 cell">
-      			<h2><i class="fa-duotone fa-person-digging fa-lg fa-fw"></i>Attivit&agrave; completate
-            </h2>
+      			<h2><i class="fa-duotone fa-person-digging fa-lg fa-fw"></i>Attivit&agrave; completate</h2>
         </div>
         <div class="small-12 medium-3 large-3 cell">
               <div class="button-group tiny">
-      			     <a href="/admin/app/attivita/elenco-attivita.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreGrids_Ky=62&Commesse_Ky=<%=Smartdesk.Data.Field(dtCommesse, "Commesse_Ky")%>&Anagrafiche_Ky=<%=Smartdesk.Data.Field(dtCommesse, "Anagrafiche_Ky")%>&sorgente=scheda-progetti" class="tiny button secondary"><i class="fa-duotone fa-eye fa-fw"></i> Tutte le attivit&agrave;</a>
+      			     <a href="/admin/app/attivita/elenco-attivita.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreGrids_Ky=62&Commesse_Ky=<%=Smartdesk.Data.Field(dtCommesse, "Commesse_Ky")%>&Anagrafiche_Ky=<%=Smartdesk.Data.Field(dtCommesse, "Anagrafiche_Ky")%>&Attivita_Completo=si&sorgente=scheda-progetti" class="tiny button secondary"><i class="fa-duotone fa-eye fa-fw"></i> Tutte le attivit&agrave; completate</a>
     			       <a class="button tiny secondary hide" data-toggle="filtri"><i class="fa-duotone fa-filter fa-lg fa-fw"></i>Filtra</a>
     			       <a href="/admin/app/progetti/scheda-progetti.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreGrids_Ky=62&Commesse_Ky=<%=Smartdesk.Data.Field(dtCommesse, "Commesse_Ky")%>#attivitacompletate" class="button tiny secondary" data-toggle="filtri"><i class="fa-duotone fa-filter-slash fa-lg fa-fw"></i>Rimuovi filtri</a>
               </div>

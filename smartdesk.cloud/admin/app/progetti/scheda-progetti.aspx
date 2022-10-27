@@ -51,8 +51,24 @@
   </div>
 </form>
 
-<!--#include file=/admin/app/progetti/scheda-progetti-attivita.inc -->
-<!--#include file=/admin/app/progetti/scheda-progetti-attivita-completate.inc -->
+  <div class="grid-x grid-padding-x">
+    <div class="large-12 medium-12 small-12 cell">
+        <ul class="tabs horizontal" data-tabs id="progetto-tabs">
+          <li class="tabs-title is-active"><a href="#tab-attivita" aria-selected="true">Attivit&agrave;</a></li>
+          <li class="tabs-title"><a data-tabs-target="tab-uploads" href="#tab-uploads">Files</a></li>
+        </ul>
+        <div class="tabs-content" data-tabs-content="progetto-tabs">
+          <div class="tabs-panel is-active" id="tab-attivita">
+              <!--#include file=/admin/app/progetti/scheda-progetti-attivita.inc -->
+              <!--#include file=/admin/app/progetti/scheda-progetti-attivita-completate.inc -->
+          </div>
+          <div class="tabs-panel" id="tab-uploads">
+          </div>
+        </div>
+  	</div>
+  </div>
+
+
 
 <!--#include file=/admin/inc-footer.aspx -->
 </body>

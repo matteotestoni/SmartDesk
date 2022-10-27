@@ -1,8 +1,8 @@
-<%@ Page codepage="65001" Language="C#" AutoEventWireup="true" CodeFile="/admin/app/commerciale/prospetto-lead-utm_medium.aspx.cs" Inherits="_Default" Debug="true"%>
+<%@ Page codepage="65001" Language="C#" AutoEventWireup="true" CodeFile="/admin/app/commerciale/prospetto-lead-utm_campaign.aspx.cs" Inherits="_Default" Debug="true"%>
 <!DOCTYPE html>
 <html class="no-js" lang="it">
 <head>
-	<title>Commerciale > Prospetto lead per UTM Medium</title>
+	<title>Commerciale > Prospetto lead per UTM Campaign</title>
 	<!--#include file="/admin/inc-head.aspx"-->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js" integrity="sha256-0H3Nuz3aug3afVbUlsu12Puxva3CP4EhJtPExqs54Vg=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
@@ -31,7 +31,7 @@
   		<table id="grid1" class="grid">
   		<thead>
           <tr>
-  	        <th class="text-left">UTM Medium</th>
+  	        <th class="text-left">UTM Campaign</th>
   	        <th class="text-left">Tipo</th>
   	        <th class="large-text-right small-text-left">Numero Lead</th>
   	        <th width="200">Vedi lead</th>
@@ -41,11 +41,11 @@
   	   <tbody>
   		  <% for (int i = 0; i < dtProspettoLead.Rows.Count; i++){ %>
   	      <tr>
-    				<td><a href="/admin/app/commerciale/prospetto-lead-utm_medium-utm_campaign.aspx?utm_medium=<%=dtProspettoLead.Rows[i]["utm_medium"].ToString()%>"><%=dtProspettoLead.Rows[i]["utm_medium"].ToString()%></a></td>
+    				<td><a href="/admin/app/commerciale/prospetto-lead-utm_medium-utm_campaign.aspx?utm_campaign=<%=dtProspettoLead.Rows[i]["utm_campaign"].ToString()%>"><%=dtProspettoLead.Rows[i]["utm_campaign"].ToString()%></a></td>
     				<td><%=dtProspettoLead.Rows[i]["LeadCategorie_Titolo"].ToString()%></td>
     				<td class="large-text-right small-text-left"><strong></strong><%=dtProspettoLead.Rows[i]["Conteggio"].ToString()%></strong></td>
-    				<td><a href="/admin/view.aspx?CoreModules_Ky=20&CoreEntities_Ky=185&CoreGrids_Ky=175&utm_medium=<%=dtProspettoLead.Rows[i]["utm_medium"].ToString()%>&LeadCategorie_Ky=<%=dtProspettoLead.Rows[i]["LeadCategorie_Ky"].ToString()%>">Vedi lead<i class="fa-duotone fa-angle-right fa-fw"></i></a></td>
-    				<td><a href="/admin/app/commerciale/prospetto-lead-utm_medium-utm_campaign.aspx?utm_medium=<%=dtProspettoLead.Rows[i]["utm_medium"].ToString()%>">Vedi dettaglio utm medium <i class="fa-duotone fa-angle-right fa-fw"></i></a></td>
+    				<td><a href="/admin/view.aspx?CoreModules_Ky=20&CoreEntities_Ky=185&CoreGrids_Ky=175&utm_campaign=<%=dtProspettoLead.Rows[i]["utm_campaign"].ToString()%>&LeadCategorie_Ky=<%=dtProspettoLead.Rows[i]["LeadCategorie_Ky"].ToString()%>">Vedi lead<i class="fa-duotone fa-angle-right fa-fw"></i></a></td>
+    				<td><a href="/admin/app/commerciale/prospetto-lead-utm_medium-utm_campaign.aspx?utm_campaign=<%=dtProspettoLead.Rows[i]["utm_campaign"].ToString()%>">Vedi dettaglio utm medium <i class="fa-duotone fa-angle-right fa-fw"></i></a></td>
           </tr>
   			<% 
   				intTotLead=intTotLead+((int)dtProspettoLead.Rows[i]["conteggio"]);

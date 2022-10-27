@@ -98,53 +98,54 @@
                   strCaret="";
                 }
               }
+              strLinkOrder="/admin/view.aspx?CoreEntities_Ky=" + intCoreEntities_Ky + "&CoreGrids_Ky=" + intCoreGrids_Ky + "&orderby=" + dtCoreGridsColumns.Rows[i]["CoreAttributes_Code"].ToString();
               
               switch (dtCoreGridsColumns.Rows[i]["CoreAttributesType_Code"].ToString()){
 								case "text":
 										switch (dtCoreGridsColumns.Rows[i]["CoreAttributesFormat_Code"].ToString()){
 											case "icon":
-					  				    Response.Write("<th class=\"text-center " + dtCoreGridsColumns.Rows[i]["CoreAttributesType_Code"].ToString() + "\" width=\"" + dtCoreGridsColumns.Rows[i]["CoreGridsColumns_Width"].ToString() + "\" title=\"" + dtCoreGridsColumns.Rows[i]["CoreAttributes_Code"].ToString() + "\">" + getLabel(dtCoreGridsColumns.Rows[i]) + strCaret + "</th>");
+					  				    Response.Write("<th class=\"text-center " + dtCoreGridsColumns.Rows[i]["CoreAttributesType_Code"].ToString() + " " + dtCoreGridsColumns.Rows[i]["CoreAttributesFormat_Code"].ToString() + "\" width=\"" + dtCoreGridsColumns.Rows[i]["CoreGridsColumns_Width"].ToString() + "\" title=\"" + dtCoreGridsColumns.Rows[i]["CoreAttributes_Code"].ToString() + "\">" + getLabel(dtCoreGridsColumns.Rows[i]) + strCaret + "</th>");
 											  break;
 											case "color":
-					  				    Response.Write("<th class=\"text-center " + dtCoreGridsColumns.Rows[i]["CoreAttributesType_Code"].ToString() + "\" width=\"" + dtCoreGridsColumns.Rows[i]["CoreGridsColumns_Width"].ToString() + "\" title=\"" + dtCoreGridsColumns.Rows[i]["CoreAttributes_Code"].ToString() + "\">" + getLabel(dtCoreGridsColumns.Rows[i]) + strCaret + "</th>");
+					  				    Response.Write("<th class=\"text-center " + dtCoreGridsColumns.Rows[i]["CoreAttributesType_Code"].ToString() + " " + dtCoreGridsColumns.Rows[i]["CoreAttributesFormat_Code"].ToString() + "\" width=\"" + dtCoreGridsColumns.Rows[i]["CoreGridsColumns_Width"].ToString() + "\" title=\"" + dtCoreGridsColumns.Rows[i]["CoreAttributes_Code"].ToString() + "\">" + getLabel(dtCoreGridsColumns.Rows[i]) + strCaret + "</th>");
 											  break;
 											case "text":
-					  				    Response.Write("<th class=\"text-left " + dtCoreGridsColumns.Rows[i]["CoreAttributesType_Code"].ToString() + "\" width=\"" + dtCoreGridsColumns.Rows[i]["CoreGridsColumns_Width"].ToString() + "\" title=\"" + dtCoreGridsColumns.Rows[i]["CoreAttributes_Code"].ToString() + "\">" + getLabel(dtCoreGridsColumns.Rows[i]) + strCaret + "</th>");
+					  				    Response.Write("<th class=\"text-left " + dtCoreGridsColumns.Rows[i]["CoreAttributesType_Code"].ToString() + " " + dtCoreGridsColumns.Rows[i]["CoreAttributesFormat_Code"].ToString() + "\" width=\"" + dtCoreGridsColumns.Rows[i]["CoreGridsColumns_Width"].ToString() + "\" title=\"" + dtCoreGridsColumns.Rows[i]["CoreAttributes_Code"].ToString() + "\"><a href=\"" + strLinkOrder + "\">" + getLabel(dtCoreGridsColumns.Rows[i]) + strCaret + "</a></th>");
 											  break;
 											case "image":
-					  				    Response.Write("<th class=\"text-center " + dtCoreGridsColumns.Rows[i]["CoreAttributesType_Code"].ToString() + "\" width=\"" + dtCoreGridsColumns.Rows[i]["CoreGridsColumns_Width"].ToString() + "\" title=\"" + dtCoreGridsColumns.Rows[i]["CoreAttributes_Code"].ToString() + "\">" + getLabel(dtCoreGridsColumns.Rows[i]) + strCaret + "</th>");
+					  				    Response.Write("<th class=\"text-center " + dtCoreGridsColumns.Rows[i]["CoreAttributesType_Code"].ToString() + " " + dtCoreGridsColumns.Rows[i]["CoreAttributesFormat_Code"].ToString() + "\" width=\"" + dtCoreGridsColumns.Rows[i]["CoreGridsColumns_Width"].ToString() + "\" title=\"" + dtCoreGridsColumns.Rows[i]["CoreAttributes_Code"].ToString() + "\">" + getLabel(dtCoreGridsColumns.Rows[i]) + strCaret + "</th>");
 											  break;
 											case "link":
-					  				    Response.Write("<th class=\"text-left " + dtCoreGridsColumns.Rows[i]["CoreAttributesType_Code"].ToString() + "\" width=\"" + dtCoreGridsColumns.Rows[i]["CoreGridsColumns_Width"].ToString() + "\" title=\"" + dtCoreGridsColumns.Rows[i]["CoreAttributes_Code"].ToString() + "\">" + getLabel(dtCoreGridsColumns.Rows[i]) + strCaret + "</th>");
+					  				    Response.Write("<th class=\"text-left " + dtCoreGridsColumns.Rows[i]["CoreAttributesType_Code"].ToString() + " " + dtCoreGridsColumns.Rows[i]["CoreAttributesFormat_Code"].ToString() + "\" width=\"" + dtCoreGridsColumns.Rows[i]["CoreGridsColumns_Width"].ToString() + "\" title=\"" + dtCoreGridsColumns.Rows[i]["CoreAttributes_Code"].ToString() + "\"><a href=\"" + strLinkOrder + "\">" + getLabel(dtCoreGridsColumns.Rows[i]) + strCaret + "</a></th>");
 											  break;
 											case "email":
-					  				    Response.Write("<th class=\"text-left " + dtCoreGridsColumns.Rows[i]["CoreAttributesType_Code"].ToString() + "\" width=\"" + dtCoreGridsColumns.Rows[i]["CoreGridsColumns_Width"].ToString() + "\" title=\"" + dtCoreGridsColumns.Rows[i]["CoreAttributes_Code"].ToString() + "\">" + getLabel(dtCoreGridsColumns.Rows[i]) + strCaret + "</th>");
+					  				    Response.Write("<th class=\"text-left " + dtCoreGridsColumns.Rows[i]["CoreAttributesType_Code"].ToString() + " " + dtCoreGridsColumns.Rows[i]["CoreAttributesFormat_Code"].ToString() + "\" width=\"" + dtCoreGridsColumns.Rows[i]["CoreGridsColumns_Width"].ToString() + "\" title=\"" + dtCoreGridsColumns.Rows[i]["CoreAttributes_Code"].ToString() + "\"><a href=\"" + strLinkOrder + "\">" + getLabel(dtCoreGridsColumns.Rows[i]) + strCaret + "</a></th>");
 											  break;
 											case "phone":
-					  				    Response.Write("<th class=\"text-left " + dtCoreGridsColumns.Rows[i]["CoreAttributesType_Code"].ToString() + " " + dtCoreGridsColumns.Rows[i]["CoreAttributesFormat_Code"].ToString() + "\" width=\"" + dtCoreGridsColumns.Rows[i]["CoreGridsColumns_Width"].ToString() + "\" title=\"" + dtCoreGridsColumns.Rows[i]["CoreAttributes_Code"].ToString() + "\">" + getLabel(dtCoreGridsColumns.Rows[i]) + strCaret + "</th>");
+					  				    Response.Write("<th class=\"text-left " + dtCoreGridsColumns.Rows[i]["CoreAttributesType_Code"].ToString() + " " + dtCoreGridsColumns.Rows[i]["CoreAttributesFormat_Code"].ToString() + "\" width=\"" + dtCoreGridsColumns.Rows[i]["CoreGridsColumns_Width"].ToString() + "\" title=\"" + dtCoreGridsColumns.Rows[i]["CoreAttributes_Code"].ToString() + "\"><a href=\"" + strLinkOrder + "\">" + getLabel(dtCoreGridsColumns.Rows[i]) + strCaret + "</a></th>");
 											  break;
 											case "password":
-					  				    Response.Write("<th class=\"text-left " + dtCoreGridsColumns.Rows[i]["CoreAttributesType_Code"].ToString() + "\" width=\"" + dtCoreGridsColumns.Rows[i]["CoreGridsColumns_Width"].ToString() + "\" title=\"" + dtCoreGridsColumns.Rows[i]["CoreAttributes_Code"].ToString() + "\">" + getLabel(dtCoreGridsColumns.Rows[i]) + strCaret + "</th>");
+					  				    Response.Write("<th class=\"text-left " + dtCoreGridsColumns.Rows[i]["CoreAttributesType_Code"].ToString() + " " + dtCoreGridsColumns.Rows[i]["CoreAttributesFormat_Code"].ToString() + "\" width=\"" + dtCoreGridsColumns.Rows[i]["CoreGridsColumns_Width"].ToString() + "\" title=\"" + dtCoreGridsColumns.Rows[i]["CoreAttributes_Code"].ToString() + "\"><a href=\"" + strLinkOrder + "\">" + getLabel(dtCoreGridsColumns.Rows[i]) + strCaret + "</a></th>");
 											  break;
 											default:
-					  				    Response.Write("<th class=\"text-left " + dtCoreGridsColumns.Rows[i]["CoreAttributesType_Code"].ToString() + "\" width=\"" + dtCoreGridsColumns.Rows[i]["CoreGridsColumns_Width"].ToString() + "\" title=\"" + dtCoreGridsColumns.Rows[i]["CoreAttributes_Code"].ToString() + "\">" + getLabel(dtCoreGridsColumns.Rows[i]) + strCaret + "</th>");
+					  				    Response.Write("<th class=\"text-left " + dtCoreGridsColumns.Rows[i]["CoreAttributesType_Code"].ToString() + " " + dtCoreGridsColumns.Rows[i]["CoreAttributesFormat_Code"].ToString() + "\" width=\"" + dtCoreGridsColumns.Rows[i]["CoreGridsColumns_Width"].ToString() + "\" title=\"" + dtCoreGridsColumns.Rows[i]["CoreAttributes_Code"].ToString() + "\"><a href=\"" + strLinkOrder + "\">" + getLabel(dtCoreGridsColumns.Rows[i]) + strCaret + "</a></th>");
 											  break;
                     }
 									break;
 								case "textarea":
-					  				Response.Write("<th class=\"text-left " + dtCoreGridsColumns.Rows[i]["CoreAttributesType_Code"].ToString() + "\" width=\"" + dtCoreGridsColumns.Rows[i]["CoreGridsColumns_Width"].ToString() + "\" title=\"" + dtCoreGridsColumns.Rows[i]["CoreAttributes_Code"].ToString() + "\">" + getLabel(dtCoreGridsColumns.Rows[i]) + strCaret + "</th>");
+					  				Response.Write("<th class=\"text-left " + dtCoreGridsColumns.Rows[i]["CoreAttributesType_Code"].ToString() + "\" width=\"" + dtCoreGridsColumns.Rows[i]["CoreGridsColumns_Width"].ToString() + "\" title=\"" + dtCoreGridsColumns.Rows[i]["CoreAttributes_Code"].ToString() + "\"><a href=\"" + strLinkOrder + "\">" + getLabel(dtCoreGridsColumns.Rows[i]) + strCaret + "</a></th>");
 									break;
 								case "data":
-					  				Response.Write("<th class=\"large-text-center small-text-left " + dtCoreGridsColumns.Rows[i]["CoreAttributesType_Code"].ToString() + "\" width=\"" + dtCoreGridsColumns.Rows[i]["CoreGridsColumns_Width"].ToString() + "\" title=\"" + dtCoreGridsColumns.Rows[i]["CoreAttributes_Code"].ToString() + "\">" + getLabel(dtCoreGridsColumns.Rows[i]) + strCaret + "</th>");
+					  				Response.Write("<th class=\"large-text-center small-text-left " + dtCoreGridsColumns.Rows[i]["CoreAttributesType_Code"].ToString() + "\" width=\"" + dtCoreGridsColumns.Rows[i]["CoreGridsColumns_Width"].ToString() + "\" title=\"" + dtCoreGridsColumns.Rows[i]["CoreAttributes_Code"].ToString() + "\"><a href=\"" + strLinkOrder + "\">" + getLabel(dtCoreGridsColumns.Rows[i]) + strCaret + "</a></th>");
 									break;
 								case "number":
-					  				Response.Write("<th class=\"text-right " + dtCoreGridsColumns.Rows[i]["CoreAttributesType_Code"].ToString() + "\" width=\"" + dtCoreGridsColumns.Rows[i]["CoreGridsColumns_Width"].ToString() + "\" style=\"width:40px\" title=\"" + dtCoreGridsColumns.Rows[i]["CoreAttributes_Code"].ToString() + "\">" + getLabel(dtCoreGridsColumns.Rows[i]) + strCaret + "</th>");
+					  				Response.Write("<th class=\"text-right " + dtCoreGridsColumns.Rows[i]["CoreAttributesType_Code"].ToString() + "\" width=\"" + dtCoreGridsColumns.Rows[i]["CoreGridsColumns_Width"].ToString() + "\" style=\"width:40px\" title=\"" + dtCoreGridsColumns.Rows[i]["CoreAttributes_Code"].ToString() + "\"><a href=\"" + strLinkOrder + "\">" + getLabel(dtCoreGridsColumns.Rows[i]) + strCaret + "</a></th>");
 									break;
 								case "checkbox":
 					  				Response.Write("<th class=\"large-text-center small-text-left " + dtCoreGridsColumns.Rows[i]["CoreAttributesType_Code"].ToString() + "\" width=\"" + dtCoreGridsColumns.Rows[i]["CoreGridsColumns_Width"].ToString() + "\" title=\"" + dtCoreGridsColumns.Rows[i]["CoreAttributes_Code"].ToString() + "\">" + getLabel(dtCoreGridsColumns.Rows[i]) + strCaret + "</th>");
 									break;
 								default:
-					  				Response.Write("<th class=\"text-left " + dtCoreGridsColumns.Rows[i]["CoreAttributesType_Code"].ToString() + "\" width=\"" + dtCoreGridsColumns.Rows[i]["CoreGridsColumns_Width"].ToString() + "\" title=\"" + dtCoreGridsColumns.Rows[i]["CoreAttributes_Code"].ToString() + "\">" + getLabel(dtCoreGridsColumns.Rows[i]) + strCaret + "</th>");
+					  				Response.Write("<th class=\"text-left " + dtCoreGridsColumns.Rows[i]["CoreAttributesType_Code"].ToString() + "\" width=\"" + dtCoreGridsColumns.Rows[i]["CoreGridsColumns_Width"].ToString() + "\" title=\"" + dtCoreGridsColumns.Rows[i]["CoreAttributes_Code"].ToString() + "\"><a href=\"" + strLinkOrder + "\">" + getLabel(dtCoreGridsColumns.Rows[i]) + strCaret + "</a></th>");
 									break;
 							}
 						}

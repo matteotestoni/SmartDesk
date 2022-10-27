@@ -4,9 +4,15 @@
 <head>
   <title>Attivit&agrave; > Calendario</title>
 	<!--#include file="/admin/inc-head.aspx"-->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js" integrity="sha256-0H3Nuz3aug3afVbUlsu12Puxva3CP4EhJtPExqs54Vg=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" integrity="sha256-5veQuRbWaECuYxwap/IOE/DAwNxgm4ikX7nrgsqYp88=" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js" integrity="sha256-7PzqE1MyWa/IV5vZumk1CVO6OQbaJE4ns7vmxuUP/7g=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/locales-all.min.js" integrity="sha256-lomiTyENeSGOpm5TiwjdxUn87bSv1TL581KZ7bhEEh0=" crossorigin="anonymous"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.0.0-beta.1/main.min.js" integrity="sha256-c4doXULXQ0gMSZGKpmX/LkbOrfilyX1qiMseZ5oloAQ=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.0.0-beta.1/locales-all.min.js" integrity="sha256-GcByKJnun2NoPMzoBsuCb4O2MKiqJZLlHTw3PJeqSkI=" crossorigin="anonymous"></script>
+  
   <script src="/admin/app/calendario/calendario5.js?id=2" type="text/javascript"></script>
 </head>
 <body>
@@ -36,13 +42,13 @@
         <!--#include file=/admin/app/attivita/elenco-attivita-where.aspx -->
     </div>
     <div class="large-10 medium-9 small-12 cell">
-        <ul class="horizontal tabs" data-tabs id="attivita-tabs">
+        <ul class="horizontal tabs" id="calendario-tabs">
           <li class="tabs-title"><a href="/admin/app/attivita/elenco-attivita.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreGrids_Ky=276" aria-selected="true"><i class="fa-duotone fa-calendar fa-fw"></i>Elenco attivit&agrave;</a></li>
-          <li class="tabs-title"><a href="/admin/app/attivita/attivita-da-fare.aspx?attivita-scadute=1&prossime-scadenze=1&scadenze-future=1"><i class="fa-duotone fa-square-kanban fa-fw"></i>Prospetto per scadenza</a></li>
+          <li class="tabs-title"><a href="/admin/app/attivita/attivita-da-fare.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreGrids_Ky=276&attivita-scadute=1&prossime-scadenze=1&scadenze-future=1"><i class="fa-duotone fa-square-kanban fa-fw"></i>Prospetto per scadenza</a></li>
           <li class="tabs-title"><a href="/admin/app/attivita/attivita-da-fare-stato.aspx?attivita-scadute=1&prossime-scadenze=1&scadenze-future=1"><i class="fa-duotone fa-square-kanban fa-fw"></i>Prospetto per stato</a></li>
           <li class="tabs-title is-active"><a href="#panel4"><i class="fa-duotone fa-calendar-days fa-fw"></i>Calendario</a></li>
         </ul>		  
-        <div class="tabs-content" data-tabs-content="attivita-tabs">
+        <div class="tabs-content" data-tabs-content="calendario-tabs">
           <div class="tabs-panel is-active" id="panel4">
   			    <div id="calendar" style="height:100%;"></div>
           </div>

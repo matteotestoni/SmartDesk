@@ -18,6 +18,7 @@ using System.Data.SqlClient;
     public string strCommesse_Ky="";
     public string strOpportunita_Ky="";
     public string strCoreForms_Ky="";
+    public string strCoreGrids_Ky="";
     
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -32,6 +33,7 @@ using System.Data.SqlClient;
             strSorgente=Smartdesk.Current.Request("sorgente");
 	        	strCommesse_Ky=Smartdesk.Current.Request("Commesse_Ky");
             strCoreForms_Ky=Smartdesk.Current.Request("CoreForms_Ky");
+            strCoreGrids_Ky=Smartdesk.Current.Request("CoreGrids_Ky");
 		        	strOpportunita_Ky=Smartdesk.Current.Request("Opportunita_Ky");
                 if (strAttivita_Completo=="0"){
                   strSQL = "UPDATE Attivita SET AttivitaStati_Ky=3, Attivita_Completo=" + strAttivita_Completo + ", Attivita_Chiusura=Null WHERE Attivita_Ky=" + strAttivita_Ky;
@@ -60,25 +62,25 @@ using System.Data.SqlClient;
                     Response.Redirect("/admin/home.aspx?Anagrafiche_Ky=" + strAnagrafiche_Ky);
                     break;
                   case "dafare":
-                    Response.Redirect("/admin/app/anagrafiche/elenco-anagrafiche-da-fare.aspx?Utenti_Ky=" + dtLogin.Rows[0]["Utenti_Ky"].ToString() + "#attivita");
+                    Response.Redirect("/admin/app/anagrafiche/elenco-anagrafiche-da-fare.aspx?CoreGrids_Ky=" + strCoreGrids_Ky + "&Utenti_Ky=" + dtLogin.Rows[0]["Utenti_Ky"].ToString() + "#attivita");
                     break;
                   case "scheda-anagrafiche":
-                    Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=162&CoreForms_Ky=" + strCoreForms_Ky + "&Anagrafiche_Ky=" + strAnagrafiche_Ky);
+                    Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=162&CoreGrids_Ky=" + strCoreGrids_Ky + "&CoreForms_Ky=" + strCoreForms_Ky + "&Anagrafiche_Ky=" + strAnagrafiche_Ky);
                     break;
                   case "scheda-commessa":
-                    Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=107&CoreForms_Ky=" + strCoreForms_Ky + "&Commesse_Ky=" + strCommesse_Ky);
+                    Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=107&CoreGrids_Ky=" + strCoreGrids_Ky + "&CoreForms_Ky=" + strCoreForms_Ky + "&Commesse_Ky=" + strCommesse_Ky);
                     break;
                   case "scheda-progetti":
-                    Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=107&CoreForms_Ky=" + strCoreForms_Ky + "&Commesse_Ky=" + strCommesse_Ky);
+                    Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=107&CoreGrids_Ky=" + strCoreGrids_Ky + "&CoreForms_Ky=" + strCoreForms_Ky + "&Commesse_Ky=" + strCommesse_Ky);
                     break;
                   case "scheda-opportunita":
-                    Response.Redirect("/admin/app/commerciale/scheda-opportunita.aspx?CoreForms_Ky=" + strCoreForms_Ky + "&Opportunita_Ky=" + strOpportunita_Ky);
+                    Response.Redirect("/admin/app/commerciale/scheda-opportunita.aspx?CoreGrids_Ky=" + strCoreGrids_Ky + "&CoreForms_Ky=" + strCoreForms_Ky + "&Opportunita_Ky=" + strOpportunita_Ky);
                     break;
                   case "prospetto":
-                    Response.Redirect("/admin/app/attivita/attivita-da-fare.aspx?CoreForms_Ky=" + strCoreForms_Ky + "&Utenti_Ky=" + dtLogin.Rows[0]["Utenti_Ky"].ToString() + "&attivita-scadute=1&prossime-scadenze=1&scadenze-future=1#attivita");
+                    Response.Redirect("/admin/app/attivita/attivita-da-fare.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreGrids_Ky=" + strCoreGrids_Ky + "&CoreForms_Ky=" + strCoreForms_Ky + "&Utenti_Ky=" + dtLogin.Rows[0]["Utenti_Ky"].ToString() + "&attivita-scadute=1&prossime-scadenze=1&scadenze-future=1#attivita");
                     break;
     		          case "commessa":
-    	                Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=107&CoreForms_Ky=" + strCoreForms_Ky + "&Commesse_Ky=" + strCommesse_Ky);
+    	                Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=107&CoreGrids_Ky=" + strCoreGrids_Ky + "&CoreForms_Ky=" + strCoreForms_Ky + "&Commesse_Ky=" + strCommesse_Ky);
     	                break;
                 }
       }else{

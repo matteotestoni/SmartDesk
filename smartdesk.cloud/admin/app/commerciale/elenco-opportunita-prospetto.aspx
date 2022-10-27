@@ -54,7 +54,8 @@
     	jQuery.ajax({
     		type: "POST",
     		url: $strUrl,
-    		data: $data
+    		data: $data,
+        contentType: "application/json"
     	})
     	.done(function( data ) {
         window.location.reload();

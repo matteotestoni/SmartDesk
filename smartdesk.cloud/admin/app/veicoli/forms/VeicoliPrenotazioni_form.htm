@@ -4,13 +4,29 @@
     <div class="large-2 medium-2 small-4 cell">
       <label for="VeicoliPrenotazioni_Data" class="large-text-right small-text-left middle">Data scheda <i class="fa-duotone fa-calendar fa-fw"></i></label>
     </div>
-    <div class="large-10 medium-10 small-8 cell">
+    <div class="large-4 medium-4 small-8 cell">
       <input type="text" class="fdatetimepicker" name="VeicoliPrenotazioni_Data" id="VeicoliPrenotazioni_Data" value="<%=GetFieldValue(dtFormsData, "VeicoliPrenotazioni_Data")%>" placeholder="Data">
     </div>
+    
+    <div class="large-2 medium-2 small-4 cell">
+        <label for="VeicoliPrenotazioniStati_Ky" class="large-text-right small-text-left middle">Stato</label>
+    </div>
+    <div class="large-4 medium-4 small-8 cell">
+      <select name="VeicoliPrenotazioniStati_Ky" id="VeicoliPrenotazioniStati_Ky" placeholder="Stato" value="<%=GetFieldValue(dtFormsData, "VeicoliPrenotazioniStati_Ky")%>">
+        <!--#include file="/var/cache/VeicoliPrenotazioniStati-options.htm"--> 
+      </select>
+      <span class="form-error">Obbligatorio.</span>
+      <script type="text/javascript">
+        selectSetMultiple('VeicoliPrenotazioniStati_Ky', '<%=GetFieldValue(dtFormsData, "VeicoliPrenotazioniStati_Ky")%>');
+      </script>
+    </div>                                       
+    
+    
+    
   </div>
 </fieldset>
 <fieldset class="fieldset">
-  <legend><i class="fa-duotone fa-calendar-days fa-fw"></i>Prenotazione</legend>
+  <legend><i class="fa-duotone fa-calendar-days fa-fw"></i>Concessione</legend>
   <div class="grid-x grid-padding-x">
     <div class="large-2 medium-2 small-4 cell">
       <label for="VeicoliPrenotazioni_gg" class="large-text-right small-text-left middle">Giorni previsti</label>
@@ -34,13 +50,13 @@
       </script>
     </div>
     <div class="large-2 medium-2 small-4 cell">
-      <label for="VeicoliPrenotazioni_DataInizio" class="large-text-right small-text-left middle">Data Inizio <i class="fa-duotone fa-calendar fa-fw"></i></label>
+      <label for="VeicoliPrenotazioni_DataInizio" class="large-text-right small-text-left middle">Data Inizio concessione <i class="fa-duotone fa-calendar fa-fw"></i></label>
     </div>
     <div class="large-2 medium-2 small-8 cell">
       <input type="text" class="datetimepicker" name="VeicoliPrenotazioni_DataInizio" id="VeicoliPrenotazioni_DataInizio" value="<%=GetFieldValue(dtFormsData, "VeicoliPrenotazioni_DataInizio")%>" placeholder="Data Inizio">
     </div>
     <div class="large-2 medium-2 small-4 cell">
-      <label for="VeicoliPrenotazioni_DataFine" class="large-text-right small-text-left middle">Data Fine <i class="fa-duotone fa-calendar fa-fw"></i></label>
+      <label for="VeicoliPrenotazioni_DataFine" class="large-text-right small-text-left middle">Data Fine concessione <i class="fa-duotone fa-calendar fa-fw"></i></label>
     </div>
     <div class="large-2 medium-2 small-8 cell">
       <input type="text" class="datetimepicker" name="VeicoliPrenotazioni_DataFine" id="VeicoliPrenotazioni_DataFine" value="<%=GetFieldValue(dtFormsData, "VeicoliPrenotazioni_DataFine")%>" placeholder="Data Fine">

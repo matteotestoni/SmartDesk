@@ -30,17 +30,13 @@ public partial class _Default : System.Web.UI.Page
     public string strH1 = "Attivit&agrave; da fare per stato";
     public string strWHERENet="";
     public string strORDERNet = "";
-    
     public int intNumeroColonne = 0;
     public int intNumeroColonneResponsive = 0;
     public int intNumeroAttivita = 0;
 
     protected void Page_Load(object sender, EventArgs e)
     {
-
-      
       if (Context.Request.Cookies["rswcrm"]!=null){
-		  
         dtLogin = Smartdesk.Data.Read("Utenti_Vw","Utenti_Ky", Smartdesk.Session.CurrentUser.ToString());
         boolAdmin=(dtLogin.Rows[0]["Utenti_Admin"]).Equals(true);
 		    strH1="Attivit&agrave; da fare per stato";
@@ -51,19 +47,19 @@ public partial class _Default : System.Web.UI.Page
   			dtUtenti = new DataTable("Utenti");
   			dtUtenti = Smartdesk.Sql.getTablePage(strFROMNet, null, "Utenti_Ky", strWHERENet, strORDERNet, 1,2000,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
 
-            strFROMNet = "AttivitaStati";
-            strWHERENet = "AttivitaStati_Aperta=1";
-            strORDERNet = "AttivitaStati_Ordine";
-            dtAttivitaStati = new DataTable("AttivitaStati");
-            dtAttivitaStati = Smartdesk.Sql.getTablePage(strFROMNet, null, "AttivitaStati_Ky", strWHERENet, strORDERNet, 1, 2000,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
+        strFROMNet = "AttivitaStati";
+        strWHERENet = "AttivitaStati_Aperta=1";
+        strORDERNet = "AttivitaStati_Ordine";
+        dtAttivitaStati = new DataTable("AttivitaStati");
+        dtAttivitaStati = Smartdesk.Sql.getTablePage(strFROMNet, null, "AttivitaStati_Ky", strWHERENet, strORDERNet, 1, 2000,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
 
 
-            strFROMNet = "Attivita_Vw";
-			strWHERENet= getWhere(4);
-			//Response.Write(strWHERENet);
-			strORDERNet = "Attivita_Scadenza,Anagrafiche_RagioneSociale ASC";
-			dtDaFareScaduti = new DataTable("scaduti");
-			dtDaFareScaduti = Smartdesk.Sql.getTablePage(strFROMNet, null, "Attivita_Ky", strWHERENet, strORDERNet, 1,2000,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
+        strFROMNet = "Attivita_Vw";
+  			strWHERENet= getWhere(4);
+  			//Response.Write(strWHERENet);
+  			strORDERNet = "Attivita_Scadenza,Anagrafiche_RagioneSociale ASC";
+  			dtDaFareScaduti = new DataTable("scaduti");
+  			dtDaFareScaduti = Smartdesk.Sql.getTablePage(strFROMNet, null, "Attivita_Ky", strWHERENet, strORDERNet, 1,2000,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
 
             strFROMNet = "Attivita_Vw";
 			strWHERENet= getWhere(3);
@@ -74,12 +70,14 @@ public partial class _Default : System.Web.UI.Page
 			
 			strFROMNet = "Attivita_Vw";
 			strWHERENet= getWhere(1);
+			//Response.Write(strWHERENet);
 			strORDERNet = "Attivita_Scadenza,Anagrafiche_RagioneSociale ASC";
 			dtDaFareProssimi = new DataTable("prossimi");
 			dtDaFareProssimi = Smartdesk.Sql.getTablePage(strFROMNet, null, "Attivita_Ky", strWHERENet, strORDERNet, 1,2000,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
 			
 			strFROMNet = "Attivita_Vw";
 			strWHERENet= getWhere(2);
+			//Response.Write(strWHERENet);
 			strORDERNet = "Attivita_Scadenza,Anagrafiche_RagioneSociale ASC";
 			dtDaFareFuturi = new DataTable("futuri");
 			dtDaFareFuturi = Smartdesk.Sql.getTablePage(strFROMNet, null, "Attivita_Ky", strWHERENet, strORDERNet, 1,2000,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
@@ -95,7 +93,8 @@ public partial class _Default : System.Web.UI.Page
         strReturn += "<div class=\"card-section\">";
         strReturn += "<div class=\"grid-x\"><div class=\"large-11 medium-10 small-10 cell\">";
         strReturn += "<div><i class=\"fa-duotone " + dtAttivita["AttivitaTipo_Icona"].ToString() + " fa-fw \"></i><small>" + dtAttivita["Attivita_Descrizione"].ToString() + "</small></div>\n";
-        strReturn += "<i class=\"fa-duotone fa-clock fa-fw\"></i>Ore:</i>" + dtAttivita["Attivita_Ore"].ToString() + "\n";
+        strReturn += "<i class=\"fa-duotone fa-clock fa-fw\"></i>Ore:</i>" + dtAttivita["Attivita_Ore"].ToString() + "<br>\n";
+        strReturn += "<span style=\"color:" + dtAttivita["Utenti_Colore"].ToString() + "\"><i class=\"fa-duotone fa-user fa-fw\"></i></i>" + dtAttivita["Utenti_Nominativo"].ToString() + "</span>\n";
         strReturn += "<div style=\"float:left;width:120px\"><i class=\"fa-duotone fa-calendar-days fa-fw\"></i>" + dtAttivita["Attivita_Scadenza_IT"].ToString() + "</div>\n";
         strReturn += "<div style=\"float:left;width:60px\">" + Smartdesk.Functions.getGGDaFare(dtAttivita["ggTrascorsi"].ToString()) + "</div>\n";
         strReturn += "<div style=\"float:left;overflow:hidden\"><a href=\"/admin/goto-form.aspx?CoreEntities_Ky=162&Anagrafiche_Ky=" + dtAttivita["Anagrafiche_Ky"].ToString() + "&sorgente=prospetto\" class=\"funzione\"><i class=\"fa-duotone fa-user fa-fw\"></i>" + dtAttivita["Anagrafiche_RagioneSociale"].ToString() + "</a></div>\n";
@@ -119,8 +118,12 @@ public partial class _Default : System.Web.UI.Page
         string strValue="";
 
         strWHERE="(Utenti_Attivo=1)";
-        strValue = Smartdesk.Current.Request("Utenti_Ky");
-        if (strValue != null && strValue != ""){
+        if (Request.Cookies["attivitautente"]!=null){
+          strValue=Request.Cookies["attivitautente"].Value;
+        }else{
+          strValue="";
+        }
+        if (strValue != null && strValue != "" && strValue.Length>0){
             strWHERE = strWHERE + " AND (Utenti_Ky=" + strValue + ")";
         }else{
             strWHERE = strWHERE + " AND (Utenti_Ky=" + dtLogin.Rows[0]["Utenti_Ky"].ToString() + ")";
@@ -168,8 +171,12 @@ public partial class _Default : System.Web.UI.Page
 		        strWHERE="(Attivita_Completo='no') AND (Attivita_Scadenza<=GETDATE()-30)";
 						break;
 				}
-        strValue = Request["Utenti_Ky"];
-        if (strValue != null && strValue != ""){
+        if (Request.Cookies["attivitautente"]!=null){
+          strValue=Request.Cookies["attivitautente"].Value;
+        }else{
+          strValue="";
+        }
+        if (strValue != null && strValue != "" && strValue.Length>0){
             strWHERE = strWHERE + " AND (Utenti_Ky=" + strValue + ")";
         }else{
             strWHERE = strWHERE + " AND (Utenti_Ky=" + dtLogin.Rows[0]["Utenti_Ky"].ToString() + ")";

@@ -20,8 +20,8 @@
           <div class="large-8 medium-7 small-12 cell float-right align-middle">
         			<div class="stacked-for-small button-group small float-right">
         				<a href="/admin/app/attivita/elenco-attivita.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreGrids_Ky=62" class="tiny button clear"><i class="fa-duotone fa-table fa-fw"></i>Elenco attivit&agrave;</a>
-        				<a href="/admin/app/attivita/attivita-da-fare.aspx?attivita-scadute=1&prossime-scadenze=1&scadenze-future=1" class="tiny button clear"><i class="fa-duotone fa-columns fa-fw"></i>Prospetto attivit&agrave; per scadenza</a>
-        				<a href="/admin/app/attivita/attivita-da-fare-stato.aspx?attivita-scadute=1&prossime-scadenze=1&scadenze-future=1" class="tiny button clear"><i class="fa-duotone fa-columns fa-fw"></i>Prospetto attivit&agrave; per stato</a>
+        				<a href="/admin/app/attivita/attivita-da-fare.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreGrids_Ky=276&attivita-scadute=1&prossime-scadenze=1&scadenze-future=1" class="tiny button clear"><i class="fa-duotone fa-columns fa-fw"></i>Prospetto attivit&agrave; per scadenza</a>
+        				<a href="/admin/app/attivita/attivita-da-fare-stato.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreGrids_Ky=276&attivita-scadute=1&prossime-scadenze=1&scadenze-future=1" class="tiny button clear"><i class="fa-duotone fa-columns fa-fw"></i>Prospetto attivit&agrave; per stato</a>
                 <a class="button dropdown" data-toggle="nuovo-dropdown"><i class="fa-duotone fa-square-plus fa-fw"></i>Nuova</a>
                 <div class="dropdown-pane" id="nuovo-dropdown" data-dropdown data-auto-focus="true">
           				<a href="/admin/form.aspx?CoreModules_Ky=22&CoreEntities_Ky=39&CoreForms_Ky=106&azione=new" class="clear"><i class="fa-duotone fa-square-plus fa-fw"></i>Nuova assenza</a><br>
@@ -45,14 +45,14 @@
   		            <li><i class="fa-duotone fa-user fa-fw"></i><a href="/admin/app/calendario/calendario.aspx">Tutti</a><div style="width:12px;height:12px;float:right;background-color:#ff0000;"></div></li>
   		            <li><i class="fa-duotone fa-user fa-fw"></i><a href="#">Festa</a> <div style="width:12px;height:12px;float:right;background-color:#ff0000;"></div></li>
   		            <li><hr></li>
-		            <%  for (int i = 0; i < dtPersone.Rows.Count; i++){ %>
+		            <%  for (int i = 0; i < dtUtenti.Rows.Count; i++){ %>
   		            <li class="align-middle">
-                    <% if (dtPersone.Rows[i]["Persone_Foto"].ToString().Length>0){
-                    Response.Write("<img src=\"" + dtPersone.Rows[i]["Persone_Foto"].ToString() + "\" width=\"24\" height=\"24\" style=\"border-radius:50%\" loading=\"lazy\">");
+                    <% if (dtUtenti.Rows[i]["Utenti_Logo"].ToString().Length>0){
+                    Response.Write("<img src=\"" + dtUtenti.Rows[i]["Utenti_Logo"].ToString() + "\" width=\"24\" height=\"24\" style=\"border-radius:50%\" loading=\"lazy\">");
                     }else{
-                    Response.Write("<i class=\"fa-duotone fa-user fa-fw\" style=\"color:" + dtPersone.Rows[i]["Persone_Colore"].ToString() + "\"></i>");
+                    Response.Write("<i class=\"fa-duotone fa-user fa-fw\" style=\"color:" + dtUtenti.Rows[i]["Utenti_Colore"].ToString() + "\"></i>");
                     } %>
-                    <a href="/admin/app/calendario/calendario.aspx?Persone_Ky=<%=dtPersone.Rows[i]["Persone_Ky"].ToString()%>&amp;sorgente=calendario"><%=dtPersone.Rows[i]["Persone_Nome"].ToString()%> <%=dtPersone.Rows[i]["Persone_Cognome"].ToString()%></a> <div style="width:12px;height:12px;float:right;background-color:<%=dtPersone.Rows[i]["Persone_Colore"].ToString()%>"></div></li>
+                    <a href="/admin/app/calendario/calendario.aspx?Utenti_Ky=<%=dtUtenti.Rows[i]["Utenti_Ky"].ToString()%>&amp;sorgente=calendario"><%=dtUtenti.Rows[i]["Utenti_Nome"].ToString()%> <%=dtUtenti.Rows[i]["Utenti_Cognome"].ToString()%></a> <div style="width:12px;height:12px;float:right;background-color:<%=dtUtenti.Rows[i]["Utenti_Colore"].ToString()%>"></div></li>
 		            <% } %>
 	            </ul>
   		  	</div>

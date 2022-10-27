@@ -42,8 +42,7 @@ public partial class _Default : System.Web.UI.Page
       
 	  
       if (Smartdesk.Login.Verify){
-          dtLogin = Smartdesk.Data.Read("Utenti_Vw","Utenti_Ky", Smartdesk.Session.CurrentUser.ToString());          if (dtLogin.Rows.Count>0){
-            
+          dtLogin = Smartdesk.Data.Read("Utenti_Vw","Utenti_Ky", Smartdesk.Session.CurrentUser.ToString());          
             strAzione = Request["azione"];
             strPeriodo=Request["periodo"];
             strTipo=Request["tipo"];
@@ -75,7 +74,7 @@ public partial class _Default : System.Web.UI.Page
                 strORDERNet = "Attivita_Chiusura DESC";
                 strFROMNet = "Attivita_Vw";
                 dtAttivita = new DataTable("Attivita");
-                dtAttivita = Smartdesk.Sql.getTablePage(strFROMNet, null, "Attivita_Ky", strWHERENet, strORDERNet, 1, 100,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
+                dtAttivita = Smartdesk.Sql.getTablePage(strFROMNet, null, "Attivita_Ky", strWHERENet, strORDERNet, 1, 1000,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
               }            
               //documenti
               if (dtLogin.Rows[0]["UtentiGruppi_Vendite"].Equals(true)){
@@ -83,12 +82,9 @@ public partial class _Default : System.Web.UI.Page
                 strORDERNet = "Documenti_Ky DESC";
                 strFROMNet = "Documenti_Vw";
                 dtDocumenti = new DataTable("Documenti");
-                dtDocumenti = Smartdesk.Sql.getTablePage(strFROMNet, null, "Documenti_Ky", strWHERENet, strORDERNet, 1, 100,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
+                dtDocumenti = Smartdesk.Sql.getTablePage(strFROMNet, null, "Documenti_Ky", strWHERENet, strORDERNet, 1, 1000,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
               }            
 	          }
-          }else{
-            Response.Redirect("default.aspx");
-          }
       }else{
             Response.Redirect("default.aspx");
       }

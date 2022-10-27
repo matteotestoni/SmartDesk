@@ -158,7 +158,8 @@ function salvaAnagraficaQuickEdit(){
     	jQuery.ajax({
     		type: "POST",
     		url: $strAction,
-    		data: $data
+      	data: $data,
+        contentType: "application/json"
     	})
     	.done(function( data ) {
         console.log(data);

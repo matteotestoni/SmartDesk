@@ -105,7 +105,8 @@ function saveOrderCoreFormsFieldset(intCoreFormsFieldset_Ky, intRow){
 	jQuery.ajax({
 		type: "POST",
 		url: $url,
-		data: $data
+  	data: $data,
+    contentType: "application/json"
 	})
 	.done(function( data ) {
     	jQuery($orderfield).css('border-color', "green");
@@ -123,7 +124,8 @@ function saveTabCoreFormsFieldset(selectObject, intCoreFormsFieldset_Ky){
 	jQuery.ajax({
 		type: "POST",
 		url: $url,
-		data: $data
+  	data: $data,
+    contentType: "application/json"
 	})
 	.done(function( data ) {
     	$field="#";

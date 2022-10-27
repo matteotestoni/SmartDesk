@@ -32,8 +32,9 @@
           <tr>
   	        <th class="text-left" width="130">Codice Marca</th>
   	        <th class="text-left">Marca</th>
-  	        <th class="large-text-right small-text-left">Numero Lead</th>
-  	        <th></th>
+  	        <th width="120" class="large-text-right small-text-left">Numero Lead</th>
+  	        <th width="150">Vedi Lead</th>
+  	        <th width="150">Vedi Marca</th>
           </tr>
   		</thead>
   	   <tbody>
@@ -43,6 +44,7 @@
   				<td><a href="/admin/app/commerciale/prospetto-lead-veicolimodello.aspx?VeicoliMarca_Ky=<%=dtProspettoLead.Rows[i]["VeicoliMarca_Ky"].ToString()%>"><%=dtProspettoLead.Rows[i]["VeicoliMarca_Titolo"].ToString()%></a></td>
   				<td class="large-text-right small-text-left"><strong></strong><%=dtProspettoLead.Rows[i]["Conteggio"].ToString()%></strong></td>
   				<td><a href="/admin/view.aspx?CoreModules_Ky=20&CoreEntities_Ky=185&CoreGrids_Ky=175&VeicoliMarca_Ky=<%=dtProspettoLead.Rows[i]["VeicoliMarca_Ky"].ToString()%>">Vedi lead <i class="fa-duotone fa-angle-right fa-fw"></i></a></td>
+  				<td><a href="/admin/app/commerciale/prospetto-lead-veicolimodello.aspx?VeicoliMarca_Ky=<%=dtProspettoLead.Rows[i]["VeicoliMarca_Ky"].ToString()%>">Dettaglio marca <i class="fa-duotone fa-angle-right fa-fw"></i></a></td>
         </tr>
   			<% 
   				intTotLead=intTotLead+((int)dtProspettoLead.Rows[i]["conteggio"]);
@@ -50,8 +52,9 @@
   		 </tbody>
   		 <tfoot>
           <tr>
-  	        <td colspan="3"></td>
-  	        <td class="large-text-right small-text-left">Totale Lead: <%=intTotLead.ToString("N0", ciit)%></td>
+  	        <td colspan="2" class="text-right">Totale Lead: </td>
+  	        <td class="large-text-right small-text-left"><%=intTotLead.ToString("N0", ciit)%></td>
+  	        <td colspan="2"></td>
           </tr>
   		 </tfoot>
   		</table>

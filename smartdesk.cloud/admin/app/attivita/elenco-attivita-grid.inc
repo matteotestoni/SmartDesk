@@ -73,8 +73,8 @@
                 </div>
 							</td>
               <td class="large-text-right small-text-left"><i class="fa-duotone fa-clock fa-fw"></i><%=dtGridData.Rows[iAttivita]["Attivita_Ore"].ToString()%></td>
-							<td class="text-right show-for-medium-up"><i class="fa-duotone fa-user-secret fa-fw"></i><%=dtGridData.Rows[iAttivita]["Utenti_Iniziali"].ToString()%></td>
-		          <td><a href="/admin/app/attivita/crud/elimina-trasferta.aspx?azione=delete&Attivita_Ky=<%=dtGridData.Rows[iAttivita]["Attivita_Ky"].ToString()%>&Utenti_Ky=<%=dtGridData.Rows[iAttivita]["Utenti_Ky"].ToString()%>" title="elimina" class="delete"><i class="fa-duotone fa-trash-can fa-fw"></i></a></td>
+							<td class="text-right show-for-medium-up"><span style="color:<%=dtGridData.Rows[iAttivita]["Utenti_Colore"].ToString()%>"><i class="fa-duotone fa-user-secret fa-fw"></i><%=dtGridData.Rows[iAttivita]["Utenti_Iniziali"].ToString()%></span></td>
+		          <td><a href="/admin/app/attivita/crud/elimina-attivita.aspx?sorgente=elenco-attivita&azione=delete&Attivita_Ky=<%=dtGridData.Rows[iAttivita]["Attivita_Ky"].ToString()%>&Utenti_Ky=<%=dtGridData.Rows[iAttivita]["Utenti_Ky"].ToString()%>" title="elimina" class="delete"><i class="fa-duotone fa-trash-can fa-fw"></i></a></td>
 		        </tr>
 			    <%			
 					} %>

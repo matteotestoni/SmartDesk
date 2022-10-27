@@ -252,7 +252,7 @@
   			<% if (dtLogin.Rows[0]["UtentiGruppi_PreventiviAuto"].Equals(true)){ %>
         	<li><a href="/admin/view.aspx?CoreModules_Ky=35&CoreEntities_Ky=249&CoreGrids_Ky=270">Preventivi auto</a></li>
     		<% } %>
-        <li><a href="/admin/app/attivita/attivita-da-fare.aspx?AttivitaSettore_Ky=2&attivita-scadute=1&prossime-scadenze=1&scadenze-future=1">Prospetto attivit&agrave;</a></li>
+        <li><a href="/admin/app/attivita/attivita-da-fare.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreGrids_Ky=276&AttivitaSettore_Ky=2&attivita-scadute=1&prossime-scadenze=1&scadenze-future=1">Prospetto attivit&agrave;</a></li>
         <% if (dtLogin.Rows[0]["UtentiGruppi_Rapporti"].Equals(true)){ %>
         <li><a href="#Rapporticommerciale" title="Rapporticommerciale">Rapporti</a>
             <ul class="submenu menu vertical" data-submenu>
@@ -260,7 +260,7 @@
               <li><a href="/admin/app/commerciale/prospetto-lead-veicolimodello.aspx">Per modello</a></li>
               <li><a href="/admin/app/commerciale/prospetto-lead-utm_source.aspx">Per utm source</a></li>
               <li><a href="/admin/app/commerciale/prospetto-lead-utm_medium.aspx">Per utm medium</a></li>
-              <li><a href="/admin/app/commerciale/prospetto-lead-campagna.aspx">Per utm campaign</a></li>
+              <li><a href="/admin/app/commerciale/prospetto-lead-utm_campaign.aspx">Per utm campaign</a></li>
               <li><a href="/admin/app/commerciale/prospetto-lead-lead-orario.aspx">Per orario arrivo lead</a></li>
               <li><a href="/admin/app/commerciale/prospetto-lead-leadcategorie.aspx">Per categoria lead</a></li>
               <li><a href="/admin/app/commerciale/prospetto-lead-leadsorgenti.aspx">Per sorgente lead</a></li>
@@ -302,8 +302,8 @@
         <li><a href="/admin/app/progetti/elenco-commesse.aspx?CommesseStato_Ky=4&CoreModules_Ky=24&CoreEntities_Ky=107&CoreGrids_Ky=118&custom=1"><i class="fa-duotone fa-building fa-fw"></i>Progetti e Contratti</a></li>
   		<% } %>
       <% if (dtLogin.Rows[0]["UtentiGruppi_Attivita"].Equals(true)){ %>
-        <li><a href="/admin/app/attivita/attivita-da-fare.aspx?attivita-scadute=1&prossime-scadenze=1&scadenze-future=1"><i class="fa-duotone fa-calendar-days fa-fw"></i>Prospetto per scadenza</a></li>
-        <li><a href="/admin/app/attivita/attivita-da-fare-stato.aspx?attivita-scadute=1&prossime-scadenze=1&scadenze-future=1"><i class="fa-duotone fa-square-kanban fa-fw"></i>Prospetto per stato</a></li>
+        <li><a href="/admin/app/attivita/attivita-da-fare.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreGrids_Ky=276&attivita-scadute=1&prossime-scadenze=1&scadenze-future=1"><i class="fa-duotone fa-calendar-days fa-fw"></i>Prospetto per scadenza</a></li>
+        <li><a href="/admin/app/attivita/attivita-da-fare-stato.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreGrids_Ky=276&attivita-scadute=1&prossime-scadenze=1&scadenze-future=1"><i class="fa-duotone fa-square-kanban fa-fw"></i>Prospetto per stato</a></li>
         <li><a href="/admin/app/attivita/elenco-attivita.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreGrids_Ky=62"><i class="fa-duotone fa-calendar-days fa-fw"></i>Tutte le attivit&agrave;</a></li>
   		<% } %>
 

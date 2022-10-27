@@ -5,7 +5,6 @@ using System.Data.SqlClient;
 using System.Collections.Specialized;
 public partial class _Default : System.Web.UI.Page 
 {
-    
     public int intNumRecords = 0;
     public int i = 0;
     public System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("it-IT");
@@ -27,7 +26,6 @@ public partial class _Default : System.Web.UI.Page
     public decimal decTot=0; 
     public decimal decTotServizi=0; 
     public decimal decTotIVA=0; 
-    
     public int intRecxPag = 50;
     public int intPage = 0;
     public string strWHERENet="";
@@ -42,8 +40,8 @@ public partial class _Default : System.Web.UI.Page
       
 			
       if (Smartdesk.Login.Verify){
-          dtLogin = Smartdesk.Data.Read("Utenti_Vw","Utenti_Ky", Smartdesk.Session.CurrentUser.ToString());          if (dtLogin.Rows.Count>0){
-            
+          dtLogin = Smartdesk.Data.Read("Utenti_Vw","Utenti_Ky", Smartdesk.Session.CurrentUser.ToString());          
+          if (dtLogin.Rows.Count>0){
             boolAdmin=(dtLogin.Rows[0]["Utenti_Admin"]).Equals(true);
             checkPermessi();
 			       strPage = Request["page"];

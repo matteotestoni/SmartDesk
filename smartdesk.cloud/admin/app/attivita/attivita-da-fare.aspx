@@ -4,6 +4,10 @@
 <head>
 	<title>Attivit&agrave; > Attivit&agrave; da fare per scadenza</title>
 	<!--#include file="/admin/inc-head.aspx"-->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js" integrity="sha256-0H3Nuz3aug3afVbUlsu12Puxva3CP4EhJtPExqs54Vg=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
   <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
   <script>
     function dragMoveListener (event) {
@@ -57,7 +61,8 @@
     	jQuery.ajax({
     		type: "POST",
     		url: $strUrl,
-    		data: $data
+    		data: $data,
+        contentType: "application/json"
     	})
     	.done(function( data ) {
         window.location.reload();
@@ -99,13 +104,14 @@
           <!--#include file=/admin/app/attivita/elenco-attivita-where.aspx -->
   </div>
   <div class="large-10 medium-9 small-12 cell">
-      <ul class="horizontal tabs" data-tabs id="attivita-tabs">
+      <ul class="horizontal tabs" id="attivita-tabs">
         <li class="tabs-title"><a href="/admin/app/attivita/elenco-attivita.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreGrids_Ky=276" aria-selected="true"><i class="fa-duotone fa-calendar fa-fw"></i>Elenco attivit&agrave;</a></li>
-        <li class="tabs-title is-active"><a href="#panel2"><i class="fa-duotone fa-square-kanban fa-fw"></i>Prospetto per scadenza</a></li>
-        <li class="tabs-title"><a href="/admin/app/attivita/attivita-da-fare-stato.aspx?attivita-scadute=1&prossime-scadenze=1&scadenze-future=1"><i class="fa-duotone fa-square-kanban fa-fw"></i>Prospetto per stato</a></li>
-        <li class="tabs-title"><a href="/admin/app/attivita/calendario.aspx?attivita-scadute=1&prossime-scadenze=1&scadenze-future=1"><i class="fa-duotone fa-calendar-days fa-fw"></i>Calendario</a></li>
+        <li class="tabs-title is-active"><a data-tabs-target="panel2" href="#panel2" aria-selected="true"><i class="fa-duotone fa-square-kanban fa-fw"></i>Prospetto per scadenza</a></li>
+        <li class="tabs-title"><a href="/admin/app/attivita/attivita-da-fare-stato.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreGrids_Ky=276&attivita-scadute=1&prossime-scadenze=1&scadenze-future=1"><i class="fa-duotone fa-square-kanban fa-fw"></i>Prospetto per stato</a></li>
+        <li class="tabs-title"><a href="/admin/app/attivita/calendario.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreGrids_Ky=276&attivita-scadute=1&prossime-scadenze=1&scadenze-future=1"><i class="fa-duotone fa-calendar-days fa-fw"></i>Calendario</a></li>
       </ul>		  
       <div class="tabs-content" data-tabs-content="attivita-tabs" style="background-color:transparent">
+  			<asp:Label ID="PaginaSotto" runat="server" class="paginazione hide"></asp:Label>
         <div class="tabs-panel is-active" id="panel2">
             <div class="grid-x grid-padding-x">
               <div class="auto cell">

@@ -1,4 +1,22 @@
 //javascript
+
+jQuery.fn.serializeObject = function(){
+  var o = {};
+  var a = this.serializeArray();
+  a.push({name: "ajax", value: true});
+  jQuery.each(a, function() {
+      if (o[this.name] !== undefined) {
+          if (!o[this.name].push) {
+              o[this.name] = [o[this.name]];
+          }
+          o[this.name].push(this.value || '');
+      } else {
+          o[this.name] = this.value || '';
+      }
+  });
+  return o;
+};
+
 function gotoSchedaAnagrafica(){
   $strAnagrafiche_Ky=jQuery("#Anagrafiche_Ky").val();
   $strUrl="/admin/form.aspx?CoreModules_Ky=1&CoreEntities_Ky=162&CoreGrids_Ky=198&CoreForms_Ky=197&custom=0&azione=edit&sorgente=scheda-preventiviauto&Anagrafiche_Ky=" + $strAnagrafiche_Ky;
@@ -40,7 +58,8 @@ function salvaAnagraficaQuickEdit(){
     	jQuery.ajax({
     		type: "POST",
     		url: $strAction,
-    		data: $data
+    		data: $data,
+        contentType: "application/json"
     	})
     	.done(function( data ) {
         console.log(data);
@@ -103,6 +122,20 @@ function salvaAccessorio(){
 
 
 function stampaDocumento(){
+  var $strAzione=jQuery("#form-preventiviauto input[name=azione]").val();
+  var $data = jQuery('#form-preventiviauto').serializeObject();
+  //console.log($data);
+  $strAction=jQuery("#form-preventiviauto input[name=formaction]").val();
+  //console.log($strAction);
+	jQuery.ajax({
+		type: "POST",
+		url: $strAction,
+		data: $data
+	})
+	.done(function( $data ) {
+    //console.log($data);
+    const $datajson = JSON.parse($data);
+  });	
   var $strPreventiviAuto_Ky=jQuery("#PreventiviAuto_Ky").val();
   var $strUrl = "/admin/app/automotive/report/rpt-preventiviauto.aspx?PreventiviAuto_Ky=" + $strPreventiviAuto_Ky;
   var win=window.open($strUrl, '_blank');
@@ -141,6 +174,5 @@ function AnagraficheTipologia_Ky_Change(selectObject){
       jQuery("#formQuickEditAnagrafiche #lblAnagrafiche_RagioneSocialeForm").show();
       break;
   }
-  console.log($AnagraficheTipologia_Ky);
 }
 

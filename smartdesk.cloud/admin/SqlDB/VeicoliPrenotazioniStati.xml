@@ -1,0 +1,37 @@
+<SqlTable>
+  <Tables Catalog="" Schema="dbo" Name="VeicoliPrenotazioniStati" Type="TABLE">
+    <Keys>
+      <Key Column="VeicoliPrenotazioniStati_Ky" Type="PRIMARY KEY" />
+    </Keys>
+    <Fields>
+      <Field Column="VeicoliPrenotazioniStati_Ky" IsNull="N" Type="smallint" />
+      <Field Column="VeicoliPrenotazioniStati_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliPrenotazioniStati_Colore" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="VeicoliPrenotazioniStati_Default" IsNull="Y" Type="bit" />
+      <Field Column="VeicoliPrenotazioniStati_Icona" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="VeicoliPrenotazioniStati_Ordine" IsNull="Y" Type="smallint" />
+      <Field Column="VeicoliPrenotazioniStati_UserInsert" IsNull="Y" Type="int" />
+      <Field Column="VeicoliPrenotazioniStati_UserUpdate" IsNull="Y" Type="int" />
+      <Field Column="VeicoliPrenotazioniStati_UserDelete" IsNull="Y" Type="int" />
+      <Field Column="VeicoliPrenotazioniStati_DateInsert" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliPrenotazioniStati_DateUpdate" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliPrenotazioniStati_DateDelete" IsNull="Y" Type="datetime" />
+    </Fields>
+  </Tables>
+  <SqlScriptCreate>
+CREATE TABLE [dbo].[VeicoliPrenotazioniStati] (
+  [VeicoliPrenotazioniStati_Ky] smallint IDENTITY(1,1) NOT NULL , 
+  [VeicoliPrenotazioniStati_Titolo] varchar(200)  NULL , 
+  [VeicoliPrenotazioniStati_Colore] varchar(50)  NULL , 
+  [VeicoliPrenotazioniStati_Default] bit  NULL , 
+  [VeicoliPrenotazioniStati_Icona] varchar(MAX)  NULL , 
+  [VeicoliPrenotazioniStati_Ordine] smallint  NULL , 
+  [VeicoliPrenotazioniStati_UserInsert] int  NULL , 
+  [VeicoliPrenotazioniStati_UserUpdate] int  NULL , 
+  [VeicoliPrenotazioniStati_UserDelete] int  NULL , 
+  [VeicoliPrenotazioniStati_DateInsert] datetime  NULL , 
+  [VeicoliPrenotazioniStati_DateUpdate] datetime  NULL , 
+  [VeicoliPrenotazioniStati_DateDelete] datetime  NULL  )
+ALTER TABLE [dbo].[VeicoliPrenotazioniStati] ADD CONSTRAINT PK_VeicoliPrenotazioniStati PRIMARY KEY  ([VeicoliPrenotazioniStati_Ky])
+</SqlScriptCreate>
+</SqlTable>

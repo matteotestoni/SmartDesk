@@ -41,6 +41,7 @@ public partial class _Default : System.Web.UI.Page
     public string strUtentiGruppi_Ky = "";
     public string strDeleteAction = "";
     public string strCaret = "";
+    public string strLinkOrder = "";
 
     protected void Page_Load(object sender, EventArgs e)
     {

@@ -72,7 +72,7 @@ public partial class _Default : System.Web.UI.Page
                     Response.Redirect("/admin/app/attivita/scheda-attivita.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreForms_Ky=129&salvato=salvato&Anagrafiche_Ky=" + strAnagrafiche_Ky + "&Attivita_Ky=" + strAttivita_Ky + "&Utenti_Ky=" + strUtenti_Ky + "#attivita");
                     break;
                 case "prospetto":
-                    Response.Redirect("/admin/app/attivita/attivita-da-fare.aspx?attivita-scadute=1&prossime-scadenze=1&scadenze-future=1&salvato=salvato&Attivita_Ky=" + strAttivita_Ky + "&Utenti_Ky=" + strUtenti_Ky + "#attivita");
+                    Response.Redirect("/admin/app/attivita/attivita-da-fare.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreGrids_Ky=276&attivita-scadute=1&prossime-scadenze=1&scadenze-future=1&salvato=salvato&Attivita_Ky=" + strAttivita_Ky + "&Utenti_Ky=" + strUtenti_Ky + "#attivita");
                     break;
                 case "scheda-anagrafiche":
                     Response.Redirect("/admin/goto-form.aspx?CoreEntities_Ky=162&salvato=salvato&Anagrafiche_Ky=" + strAnagrafiche_Ky + "#attivita");

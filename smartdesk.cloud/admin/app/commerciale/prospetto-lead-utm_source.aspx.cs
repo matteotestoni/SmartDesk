@@ -40,6 +40,7 @@ public partial class _Default : System.Web.UI.Page
             strH1="Commerciale > Prospetto lead per utm_source";
 			      strAnno=Request["anno"];
 			      strMese=Request["mese"];
+            dtProspettoLead = new DataTable("Lead_Prospetto_utm_source_Vw");
             if (Request.Cookies["reportdatarangestart"]!=null){
               strReportdatarangestart=Request.Cookies["reportdatarangestart"].Value;
             }
@@ -61,11 +62,25 @@ public partial class _Default : System.Web.UI.Page
             if (strMese==null || strMese==""){
               strMese=intMonth.ToString();
             }
+            
+            conn = new SqlConnection(Smartdesk.Config.Sql.ConnectionReadOnly);
+            conn.Open();
+            strSQL="SELECT MAX(Lead_Ky) AS Lead_Ky, COUNT(Lead_Ky) AS conteggio, utm_source";
+            strSQL+=" FROM Lead";
+            strSQL+=" WHERE (Lead.Lead_Data >= CONVERT(DATETIME, '" + strReportdatarangestart + "', 102)) AND (Lead.Lead_Data <= CONVERT(DATETIME, '" + strReportdatarangeend + "', 102))";
+            strSQL+=" GROUP BY utm_source";
+            //Response.Write(strSQL);
+            //strSQL="SELECT * FROM Lead_Prospetto_VeicoliMarca_Vw WHERE VeicoliMarca_Ky Is Not Null AND Anno=" + strAnno + " AND mese=" + strMese + " ORDER BY Anno, Mese, VeicoliMarca_Titolo";
+            cmd = new SqlCommand(strSQL, conn);
+            dtProspettoLead.Load(cmd.ExecuteReader());
+
+            /*
             strWHERENet="Anno=" + strAnno + " AND mese=" + strMese;
 	          strFROMNet = "Lead_Prospetto_Utm_source_Vw";
             strORDERNet = "Anno, Mese, utm_source";
             dtProspettoLead = new DataTable("Lead_Prospetto_Utm_source_Vw");
-            dtProspettoLead = Smartdesk.Sql.getTablePage(strFROMNet, null, "Lead_Ky", strWHERENet, strORDERNet, 1,1000,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);         
+            dtProspettoLead = Smartdesk.Sql.getTablePage(strFROMNet, null, "Lead_Ky", strWHERENet, strORDERNet, 1,1000,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
+            */         
       }else{
             Response.Redirect(Smartdesk.Current.LoginPageRoot);
       }

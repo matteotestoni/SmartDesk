@@ -22,24 +22,28 @@
       strSQLLead = "SELECT COUNT(Lead_Ky) AS NumeroLead, CONVERT(DATE, Lead_Data) AS Lead_Data, MAX(Lead_Ky) AS Lead_Ky FROM Lead";
       strSQLLead+= " WHERE Lead_Data>=GETDATE()-90";
       strSQLLead+= " GROUP BY CONVERT(DATE, Lead_Data)";
+      strSQLLead+= " ORDER BY CONVERT(DATE, Lead_Data)";
       break;
     case 2:
       //Lead
       strSQLLead = "SELECT COUNT(Lead_Ky) AS NumeroLead, CONVERT(DATE, Lead_Data) AS Lead_Data, MAX(Lead_Ky) AS Lead_Ky FROM Lead INNER JOIN Utenti ON Lead.Utenti_Ky = Utenti.Utenti_Ky";
       strSQLLead+= " WHERE (Lead_Data>=GETDATE()-90) AND (Utenti.UtentiGruppi_Ky = " + dtLogin.Rows[0]["UtentiGruppi_Ky"].ToString() + ")";
       strSQLLead+= " GROUP BY CONVERT(DATE, Lead_Data)";
+      strSQLLead+= " ORDER BY CONVERT(DATE, Lead_Data)";
       break;
     case 3:
       //Lead
       strSQLLead = "SELECT COUNT(Lead_Ky) AS NumeroLead, CONVERT(DATE, Lead_Data) AS Lead_Data, MAX(Lead_Ky) AS Lead_Ky FROM Lead";
       strSQLLead+= " WHERE Lead_Data>=GETDATE()-90 AND Utenti_Ky=" + dtLogin.Rows[0]["Utenti_Ky"].ToString();
       strSQLLead+= " GROUP BY CONVERT(DATE, Lead_Data)";
+      strSQLLead+= " ORDER BY CONVERT(DATE, Lead_Data)";
       break;
     default:
       //Lead
       strSQLLead = "SELECT COUNT(Lead_Ky) AS NumeroLead, CONVERT(DATE, Lead_Data) AS Lead_Data, MAX(Lead_Ky) AS Lead_Ky FROM Lead";
       strSQLLead+= " WHERE Lead_Data>=GETDATE()-90";
       strSQLLead+= " GROUP BY CONVERT(DATE, Lead_Data)";
+      strSQLLead+= " ORDER BY CONVERT(DATE, Lead_Data)";
       break;
   }
   cmdLead = new System.Data.SqlClient.SqlCommand(strSQLLead, connLead);
@@ -107,14 +111,17 @@
           <div class="large-4 medium-4 small-12 cell align-middle">
 	   	       <div id="graficoleadutmsource" style="width:100%;height:500px;margin: 0 auto;"></div>    
              <hr>
+             <div class="text-center"><a href="/admin/app/commerciale/prospetto-lead-utm_source.aspx" class="button small warning">Vai al dettaglio <i class="fa-duotone fa-angle-right fa-fw"></i></a></div>  
           </div> 
           <div class="large-4 medium-4 small-12 cell align-middle">
 	   	       <div id="graficoleadutmmedium" style="width:100%;height:500px;margin: 0 auto;"></div>    
              <hr>
+             <div class="text-center"><a href="/admin/app/commerciale/prospetto-lead-utm_medium.aspx" class="button small warning">Vai al dettaglio <i class="fa-duotone fa-angle-right fa-fw"></i></a></div>  
           </div> 
           <div class="large-4 medium-4 small-12 cell align-middle">
 	   	       <div id="graficoleadutmcampaign" style="width:100%;height:500px;margin: 0 auto;"></div>    
              <hr>
+             <div class="text-center"><a href="/admin/app/commerciale/prospetto-lead-utm_campaign.aspx" class="button small warning">Vai al dettaglio <i class="fa-duotone fa-angle-right fa-fw"></i></a></div>  
           </div> 
         </div> 
 	  </div>

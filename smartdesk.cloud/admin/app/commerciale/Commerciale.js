@@ -8,7 +8,8 @@
     	jQuery.ajax({
     		type: "POST",
     		url: $url,
-    		data: $data
+    		data: $data,
+        contentType: "application/json"
     	})
     	.done(function( data ) {
         jQuery("#trLead" + intLead_Ky).remove();

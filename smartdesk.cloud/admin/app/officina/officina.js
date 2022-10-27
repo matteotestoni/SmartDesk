@@ -58,7 +58,8 @@ function dapreparare(){
 	jQuery.ajax({
 		type: "POST",
 		url: $url,
-		data: $data
+		data: $data,
+    contentType: "application/json"
 	})
 	.done(function( data ) {
     jQuery('input:radio[name="OfficinaStati_Ky"]').filter('[value="'+ strValue + '"]').attr('checked', false);
@@ -81,7 +82,8 @@ function consegnata(){
 	jQuery.ajax({
 		type: "POST",
 		url: $url,
-		data: $data
+		data: $data,
+    contentType: "application/json"
 	})
 	.done(function( data ) {
     jQuery('input:radio[name="OfficinaStati_Ky"]').filter('[value="'+ strValue + '"]').attr('checked', false);
@@ -101,7 +103,8 @@ function inlavorazione(){
 	jQuery.ajax({
 		type: "POST",
 		url: $url,
-		data: $data
+		data: $data,
+    contentType: "application/json"
 	})
 	.done(function( data ) {
     jQuery('input:radio[name="OfficinaStati_Ky"]').filter('[value="'+ strValue + '"]').attr('checked', false);
@@ -121,7 +124,8 @@ function pronta(){
 	jQuery.ajax({
 		type: "POST",
 		url: $url,
-		data: $data
+		data: $data,
+    contentType: "application/json"
 	})
 	.done(function( data ) {
     jQuery('input:radio[name="OfficinaStati_Ky"]').filter('[value="'+ strValue + '"]').attr('checked', false);

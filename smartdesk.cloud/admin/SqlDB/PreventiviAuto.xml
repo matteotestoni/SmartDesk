@@ -37,6 +37,12 @@
       <Field Column="PreventiviAuto_NotePagamento" IsNull="Y" Type="varchar" Lenght="-1" />
       <Field Column="PreventiviAuto_AccessoriExtra" IsNull="Y" Type="varchar" Lenght="-1" />
       <Field Column="PreventiviAutoStati_Ky" IsNull="Y" Type="int" />
+      <Field Column="utm_source" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_medium" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_campaign" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_term" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_content" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Lead_Ky" IsNull="Y" Type="int" />
     </Fields>
   </Tables>
   <SqlScriptCreate>
@@ -73,7 +79,13 @@ CREATE TABLE [dbo].[PreventiviAuto] (
   [PagamentiMetodo_Ky] smallint  NULL , 
   [PreventiviAuto_NotePagamento] varchar(MAX)  NULL , 
   [PreventiviAuto_AccessoriExtra] varchar(MAX)  NULL , 
-  [PreventiviAutoStati_Ky] int  NULL  )
+  [PreventiviAutoStati_Ky] int  NULL , 
+  [utm_source] varchar(MAX)  NULL , 
+  [utm_medium] varchar(MAX)  NULL , 
+  [utm_campaign] varchar(MAX)  NULL , 
+  [utm_term] varchar(MAX)  NULL , 
+  [utm_content] varchar(MAX)  NULL , 
+  [Lead_Ky] int  NULL  )
 ALTER TABLE [dbo].[PreventiviAuto] ADD CONSTRAINT PK_PreventiviAuto PRIMARY KEY  ([PreventiviAuto_Ky])
 </SqlScriptCreate>
 </SqlTable>

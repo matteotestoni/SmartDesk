@@ -78,7 +78,7 @@ public partial class _Default : System.Web.UI.Page
                 strORDERNet = "Documenti_Ky DESC";
                 strFROMNet = "Documenti_Vw";
                 dtDocumenti = new DataTable("Documenti");
-                dtDocumenti = Smartdesk.Sql.getTablePage(strFROMNet, null, "Documenti_Ky", strWHERENet, strORDERNet, 1, 100,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
+                dtDocumenti = Smartdesk.Sql.getTablePage(strFROMNet, null, "Documenti_Ky", strWHERENet, strORDERNet, 1, 1000,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
               }            
 	          }
           }else{

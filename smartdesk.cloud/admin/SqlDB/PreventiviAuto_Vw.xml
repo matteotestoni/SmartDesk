@@ -56,6 +56,12 @@
       <Field Column="Utenti_Nome" IsNull="Y" Type="varchar" Lenght="200" />
       <Field Column="Anagrafiche_Indirizzo" IsNull="Y" Type="varchar" Lenght="50" />
       <Field Column="Anagrafiche_CAP" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="utm_source" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_medium" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_campaign" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_term" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="utm_content" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="Expr1" IsNull="Y" Type="int" />
     </Fields>
   </Tables>
   <SqlScriptCreate>CREATE VIEW [dbo].[PreventiviAuto_Vw]
@@ -71,7 +77,8 @@ SELECT        dbo.Opportunita.Opportunita_Titolo, dbo.PreventiviAuto.PreventiviA
                          dbo.PagamentiMetodo.PagamentiMetodo_Titolo, dbo.PreventiviAuto.PreventiviAuto_NotePagamento, dbo.PreventiviAuto.PreventiviAuto_AccessoriExtra, dbo.Anagrafiche.Anagrafiche_Nome, 
                          dbo.Anagrafiche.Anagrafiche_Cognome, dbo.PreventiviAutoStati.PreventiviAutoStati_Titolo, dbo.PreventiviAutoStati.PreventiviAutoStati_Colore, dbo.PreventiviAutoStati.PreventiviAutoStati_Icona, 
                          dbo.PreventiviAuto.PreventiviAutoStati_Ky, dbo.Anagrafiche.Anagrafiche_Privacy, dbo.Anagrafiche.AnagraficheTipologia_Ky, dbo.Opportunita.Lead_Ky, dbo.Utenti.Utenti_Colore, dbo.Utenti.Utenti_Cognome, 
-                         dbo.Utenti.Utenti_Nome, dbo.Anagrafiche.Anagrafiche_Indirizzo, dbo.Anagrafiche.Anagrafiche_CAP
+                         dbo.Utenti.Utenti_Nome, dbo.Anagrafiche.Anagrafiche_Indirizzo, dbo.Anagrafiche.Anagrafiche_CAP, dbo.PreventiviAuto.utm_source, dbo.PreventiviAuto.utm_medium, dbo.PreventiviAuto.utm_campaign, 
+                         dbo.PreventiviAuto.utm_term, dbo.PreventiviAuto.utm_content, dbo.PreventiviAuto.Lead_Ky AS Expr1
 FROM            dbo.PreventiviAuto LEFT OUTER JOIN
                          dbo.PreventiviAutoStati ON dbo.PreventiviAuto.PreventiviAutoStati_Ky = dbo.PreventiviAutoStati.PreventiviAutoStati_Ky LEFT OUTER JOIN
                          dbo.PagamentiMetodo ON dbo.PreventiviAuto.PagamentiMetodo_Ky = dbo.PagamentiMetodo.PagamentiMetodo_Ky LEFT OUTER JOIN

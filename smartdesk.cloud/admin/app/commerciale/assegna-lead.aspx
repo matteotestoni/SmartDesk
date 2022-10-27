@@ -82,7 +82,7 @@
               
               </td>
 		          <td class="text-center nowrap">
-								<a href="/admin/app/commerciale/crud/elimina-lead.aspx?azione=delete&Lead_Ky=<%=dtLead.Rows[i]["Lead_Ky"].ToString()%>" title="elimina" class="delete"><i class="fa-duotone fa-trash-can fa-fw"></i>Elimina</a>
+								<a href="/admin/app/commerciale/crud/elimina-lead.aspx?sorgente=assegna-lead&azione=delete&Lead_Ky=<%=dtLead.Rows[i]["Lead_Ky"].ToString()%>" title="elimina" class="delete"><i class="fa-duotone fa-trash-can fa-fw"></i>Elimina</a>
 		          	<a href="/admin/app/commerciale/actions/lead-cambiastato.aspx?azione=update&Lead_Ky=<%=dtLead.Rows[i]["Lead_Ky"].ToString()%>&LeadStato_Ky=1&sorgente=assegna-lead" title="Segna come chiuso"><i class="fa-duotone fa-check fa-fw"></i>Fallito</a>
 							</td>
 		        </tr>

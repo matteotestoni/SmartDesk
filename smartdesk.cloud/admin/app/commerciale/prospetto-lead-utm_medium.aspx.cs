@@ -42,6 +42,7 @@ public partial class _Default : System.Web.UI.Page
 			      strUtm_medium=Request["utm_medium"];
 			      strUtm_campaign=Request["utm_campaign"];
             strH1="Commerciale > Prospetto lead per utm_medium";
+            dtProspettoLead = new DataTable("Lead_Prospetto_utm_medium_Vw");
             if (Request.Cookies["reportdatarangestart"]!=null){
               strReportdatarangestart=Request.Cookies["reportdatarangestart"].Value;
             }
@@ -54,11 +55,25 @@ public partial class _Default : System.Web.UI.Page
             if (strReportdatarangeend==null || strReportdatarangeend==""){
               strReportdatarangeend=DateTime.Now.ToString("MM-dd-yyyy");
             }
+
+            conn = new SqlConnection(Smartdesk.Config.Sql.ConnectionReadOnly);
+            conn.Open();
+            strSQL="SELECT MAX(Lead.Lead_Ky) AS Lead_Ky, COUNT(Lead.Lead_Ky) AS conteggio, Lead.LeadCategorie_Ky, LeadCategorie.LeadCategorie_Titolo, Lead.utm_medium";
+            strSQL+=" FROM Lead LEFT OUTER JOIN LeadCategorie ON Lead.LeadCategorie_Ky = LeadCategorie.LeadCategorie_Ky";
+            strSQL+=" WHERE (Lead.Lead_Data >= CONVERT(DATETIME, '" + strReportdatarangestart + "', 102)) AND (Lead.Lead_Data <= CONVERT(DATETIME, '" + strReportdatarangeend + "', 102))";
+            strSQL+=" GROUP BY Lead.LeadCategorie_Ky,LeadCategorie.LeadCategorie_Titolo, Lead.utm_medium";
+            
+            //Response.Write(strSQL);
+            cmd = new SqlCommand(strSQL, conn);
+            dtProspettoLead.Load(cmd.ExecuteReader());
+
+            /*
             strWHERENet=getWhere();
 	          strFROMNet = "Lead_Prospetto_utm_medium_Vw";
             strORDERNet = "Anno, Mese, utm_medium";
             dtProspettoLead = new DataTable("Lead_Prospetto_utm_medium_Vw");
-            dtProspettoLead = Smartdesk.Sql.getTablePage(strFROMNet, null, "Lead_Ky", strWHERENet, strORDERNet, 1,1000,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);         
+            dtProspettoLead = Smartdesk.Sql.getTablePage(strFROMNet, null, "Lead_Ky", strWHERENet, strORDERNet, 1,1000,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
+            */         
       }else{
             Response.Redirect(Smartdesk.Current.LoginPageRoot);
       }

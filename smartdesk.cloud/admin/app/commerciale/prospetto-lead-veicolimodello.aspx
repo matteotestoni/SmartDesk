@@ -41,7 +41,7 @@
   		  <% for (int i = 0; i < dtProspettoLead.Rows.Count; i++){ %>
         <tr>
   				<td><%=dtProspettoLead.Rows[i]["VeicoliMarca_Titolo"].ToString()%></td>
-  				<td><a href="/admin/view.aspx?CoreModules_Ky=20&CoreEntities_Ky=185&CoreGrids_Ky=175&VeicoliModello_Ky=<%=dtProspettoLead.Rows[i]["VeicoliModello_Ky"].ToString()%>"><%=dtProspettoLead.Rows[i]["VeicoliModello_Titolo"].ToString()%></a></td>
+  				<td><%=dtProspettoLead.Rows[i]["VeicoliModello_Titolo"].ToString()%></td>
   				<td><%=dtProspettoLead.Rows[i]["LeadCategorie_Titolo"].ToString()%></td>
   				<td class="large-text-right small-text-left"><strong></strong><%=dtProspettoLead.Rows[i]["Conteggio"].ToString()%></strong></td>
   				<td><a href="/admin/view.aspx?CoreModules_Ky=20&CoreEntities_Ky=185&CoreGrids_Ky=175&VeicoliMarca_Ky=<%=dtProspettoLead.Rows[i]["VeicoliMarca_Ky"].ToString()%>&VeicoliModello_Ky=<%=dtProspettoLead.Rows[i]["VeicoliModello_Ky"].ToString()%>&LeadCategorie_Ky=<%=dtProspettoLead.Rows[i]["LeadCategorie_Ky"].ToString()%>">Vedi lead <i class="fa-duotone fa-angle-right fa-fw"></i></a></td>
@@ -52,8 +52,9 @@
   		 </tbody>
   		 <tfoot>
           <tr>
-  	        <td colspan="4"></td>
-  	        <td class="large-text-right small-text-left">Totale Lead: <%=intTotLead.ToString("N0", ciit)%></td>
+  	        <td colspan="3" class="text-right">Totale Lead: </td>
+  	        <td class="large-text-right small-text-left"><%=intTotLead.ToString("N0", ciit)%></td>
+  	        <td></td>
           </tr>
   		 </tfoot>
   		</table>

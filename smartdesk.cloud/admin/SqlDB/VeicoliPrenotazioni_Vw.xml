@@ -36,6 +36,10 @@
       <Field Column="VeicoliPrenotazioni_DateUpdate" IsNull="Y" Type="datetime" />
       <Field Column="VeicoliPrenotazioni_DateDelete" IsNull="Y" Type="datetime" />
       <Field Column="VeicoliPrenotazioni_DataRientroPrevista" IsNull="Y" Type="datetime" />
+      <Field Column="VeicoliPrenotazioniStati_Ky" IsNull="Y" Type="smallint" />
+      <Field Column="VeicoliPrenotazioniStati_Titolo" IsNull="Y" Type="varchar" Lenght="200" />
+      <Field Column="VeicoliPrenotazioniStati_Colore" IsNull="Y" Type="varchar" Lenght="50" />
+      <Field Column="VeicoliPrenotazioniStati_Icona" IsNull="Y" Type="varchar" Lenght="-1" />
     </Fields>
   </Tables>
   <SqlScriptCreate>CREATE VIEW [dbo].[VeicoliPrenotazioni_Vw]
@@ -48,10 +52,12 @@ SELECT        dbo.VeicoliPrenotazioni.VeicoliPrenotazioni_Ky, dbo.VeicoliPrenota
                          dbo.Anagrafiche.AnagraficheTipologia_Ky, dbo.Anagrafiche.Anagrafiche_Privacy, dbo.VeicoliPrenotazioni.VeicoliPrenotazioni_gg, dbo.VeicoliPrenotazioni.VeicoliPrenotazioni_UserInsert, 
                          dbo.VeicoliPrenotazioni.VeicoliPrenotazioni_UserUpdate, dbo.VeicoliPrenotazioni.VeicoliPrenotazioni_UserDelete, dbo.VeicoliPrenotazioni.VeicoliPrenotazioni_DateInsert, 
                          dbo.VeicoliPrenotazioni.VeicoliPrenotazioni_DateUpdate, dbo.VeicoliPrenotazioni.VeicoliPrenotazioni_DateDelete, 
-                         dbo.VeicoliPrenotazioni.VeicoliPrenotazioni_DataInizio + dbo.VeicoliPrenotazioni.VeicoliPrenotazioni_gg AS VeicoliPrenotazioni_DataRientroPrevista
-FROM            dbo.Comuni RIGHT OUTER JOIN
-                         dbo.Anagrafiche ON dbo.Comuni.Comuni_Ky = dbo.Anagrafiche.Comuni_Ky RIGHT OUTER JOIN
-                         dbo.VeicoliPrenotazioni LEFT OUTER JOIN
-                         dbo.Veicoli ON dbo.VeicoliPrenotazioni.Veicoli_Ky = dbo.Veicoli.Veicoli_Ky LEFT OUTER JOIN
-                         dbo.Utenti ON dbo.VeicoliPrenotazioni.Utenti_Ky = dbo.Utenti.Utenti_Ky ON dbo.Anagrafiche.Anagrafiche_Ky = dbo.VeicoliPrenotazioni.Anagrafiche_Ky</SqlScriptCreate>
+                         dbo.VeicoliPrenotazioni.VeicoliPrenotazioni_DataInizio + dbo.VeicoliPrenotazioni.VeicoliPrenotazioni_gg AS VeicoliPrenotazioni_DataRientroPrevista, dbo.VeicoliPrenotazioni.VeicoliPrenotazioniStati_Ky, 
+                         dbo.VeicoliPrenotazioniStati.VeicoliPrenotazioniStati_Titolo, dbo.VeicoliPrenotazioniStati.VeicoliPrenotazioniStati_Colore, dbo.VeicoliPrenotazioniStati.VeicoliPrenotazioniStati_Icona
+FROM            dbo.Utenti RIGHT OUTER JOIN
+                         dbo.VeicoliPrenotazioni INNER JOIN
+                         dbo.VeicoliPrenotazioniStati ON dbo.VeicoliPrenotazioni.VeicoliPrenotazioniStati_Ky = dbo.VeicoliPrenotazioniStati.VeicoliPrenotazioniStati_Ky LEFT OUTER JOIN
+                         dbo.Veicoli ON dbo.VeicoliPrenotazioni.Veicoli_Ky = dbo.Veicoli.Veicoli_Ky ON dbo.Utenti.Utenti_Ky = dbo.VeicoliPrenotazioni.Utenti_Ky LEFT OUTER JOIN
+                         dbo.Comuni RIGHT OUTER JOIN
+                         dbo.Anagrafiche ON dbo.Comuni.Comuni_Ky = dbo.Anagrafiche.Comuni_Ky ON dbo.VeicoliPrenotazioni.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky</SqlScriptCreate>
 </SqlTable>

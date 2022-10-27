@@ -7,10 +7,8 @@ public partial class _Default : System.Web.UI.Page
 {
     public int intNumRecords = 0;
     public DataTable dtLogin;
-    public DataTable dtPersone;
     public DataTable dtCoreGrids;
     public bool boolAdmin = false;
-    public string strPersone_Ky="";
     public string strH1="";
     public string strTipoCalendario="1";
     public string strCoreGrids_Ky="247";
@@ -24,8 +22,6 @@ public partial class _Default : System.Web.UI.Page
       string strORDERNet = "";
       DataTable dtCoreModulesOptionsValue;
 
-      
-	  
       if (Smartdesk.Login.Verify){
         dtLogin = Smartdesk.Data.Read("Utenti_Vw","Utenti_Ky", Smartdesk.Session.CurrentUser.ToString());          
         boolAdmin=(dtLogin.Rows[0]["Utenti_Admin"]).Equals(true);
@@ -40,18 +36,6 @@ public partial class _Default : System.Web.UI.Page
         if (dtCoreModulesOptionsValue.Rows.Count>0){
             boolWeekend=Convert.ToBoolean(dtCoreModulesOptionsValue.Rows[0]["CoreModulesOptionsValue_Value"]);
         }       
-
-
-        strWHERENet = "Persone_Attivo=1";
-        strORDERNet = "Persone_Ky";
-        strFROMNet = "Persone";
-        dtPersone = new DataTable("Login");
-        dtPersone = Smartdesk.Sql.getTablePage(strFROMNet, null, "Persone_Ky", strWHERENet, strORDERNet, 1, 100,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
-        strPersone_Ky=Smartdesk.Current.Request("Persone_Ky");
-        //Response.Write("persone" + strPersone_Ky);
-				if (strPersone_Ky==null || strPersone_Ky.Length<1){
-					strPersone_Ky=dtLogin.Rows[0]["Persone_Ky"].ToString();
-				}
         
         //griglia per utente corrente
         //accettazione 3

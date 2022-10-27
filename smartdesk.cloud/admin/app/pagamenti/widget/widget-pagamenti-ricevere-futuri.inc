@@ -5,7 +5,7 @@
 			<a href="/admin/app/pagamenti/elenco-pagamenti.aspx" class="button small clear"><i class="fa-duotone fa-eye fa-fw fa-lg"></i> Visualizza tutti</a>
 	</div>
 </div>
-<div class="card-section">
+<div class="card-section" style="height:450px;max-height:450px;overflow:auto;">
 	<div class="divgridcard">
 	<table class="grid hover scroll" border="0" width="100%">
 	<thead>
@@ -54,15 +54,11 @@
         decTot+=Convert.ToDecimal(dtPagamentiFuturi.Rows[i]["Pagamenti_Importo"]);
         intAnagrafiche_Ky=Convert.ToInt32(dtPagamentiFuturi.Rows[i]["Anagrafiche_Ky"].ToString());
       } %>
-     	<tfoot>
-        <tr class="totale">
-          <td bgcolor="#ffffff" colspan="3"></td>
-					<td colspan="2" class="text-right">Totale: <strong>&euro; <%=decTot.ToString("N2", ci)%></strong></td>
-          <td bgcolor="#ffffff"></td>
-        </tr>
-     	</tfoot>
     	</table>
     	</div>
     	<% } %>
 	</div>
+  <div class="card-divider">
+    <div class="text-right" style="width:100%;padding-right:4rem;">Totale: <strong>&euro; <%=decTot.ToString("N2", ci)%></strong></div>
+  </div>
 </div>

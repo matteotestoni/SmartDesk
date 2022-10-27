@@ -85,7 +85,8 @@
   	jQuery.ajax({
   		type: "POST",
   		url: $url,
-  		data: $data
+    	data: $data,
+      contentType: "application/json"
   	})
   	.done(function( data ) {
       	jQuery($field).css('border-color', "green");
@@ -102,7 +103,8 @@
   	jQuery.ajax({
   		type: "POST",
   		url: $url,
-  		data: $data
+    	data: $data,
+      contentType: "application/json"
   	})
   	.done(function( data ) {
       	jQuery($field).css('border-color', "green");
@@ -119,7 +121,8 @@
   	jQuery.ajax({
   		type: "POST",
   		url: $url,
-  		data: $data
+    	data: $data,
+      contentType: "application/json"
   	})
   	.done(function( data ) {
       	jQuery($field).css('border-color', "green");
@@ -136,7 +139,8 @@
   	jQuery.ajax({
   		type: "POST",
   		url: $url,
-  		data: $data
+    	data: $data,
+      contentType: "application/json"
   	})
   	.done(function( data ) {
       	jQuery($field).css('border-color', "green");

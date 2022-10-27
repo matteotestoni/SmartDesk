@@ -32,7 +32,7 @@ public partial class _Default : System.Web.UI.Page
     public int intDocumenti_Ky = 0;
     public string strPeriodo = "";
     public string strTipo = "";
-    public int intColonne = 5;
+    public int intColonne = 4;
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -43,7 +43,6 @@ public partial class _Default : System.Web.UI.Page
             strAzione = Request["azione"];
             strPeriodo=Request["periodo"];
             strTipo=Request["tipo"];
-            if (strAzione!="new"){
 	            strWHERENet="Commesse_Ky=" + Smartdesk.Current.Request("Commesse_Ky");
 	            strORDERNet = "Commesse_Ky";
 	            strFROMNet = "Commesse_Vw";
@@ -90,7 +89,7 @@ public partial class _Default : System.Web.UI.Page
                 }
                 strFROMNet = "Attivita_Vw";
                 dtAttivita = new DataTable("Attivita");
-                dtAttivita = Smartdesk.Sql.getTablePage(strFROMNet, null, "Attivita_Ky", strWHERENet, strORDERNet, 1, 100,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
+                dtAttivita = Smartdesk.Sql.getTablePage(strFROMNet, null, "Attivita_Ky", strWHERENet, strORDERNet, 1, 10000,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
               }            
               //documenti
               if (dtLogin.Rows[0]["UtentiGruppi_Vendite"].Equals(true)){
@@ -98,9 +97,8 @@ public partial class _Default : System.Web.UI.Page
                 strORDERNet = "Documenti_Ky DESC";
                 strFROMNet = "Documenti_Vw";
                 dtDocumenti = new DataTable("Documenti");
-                dtDocumenti = Smartdesk.Sql.getTablePage(strFROMNet, null, "Documenti_Ky", strWHERENet, strORDERNet, 1, 100,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
+                dtDocumenti = Smartdesk.Sql.getTablePage(strFROMNet, null, "Documenti_Ky", strWHERENet, strORDERNet, 1, 10000,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
               }            
-	          }
       }else{
             Response.Redirect("default.aspx");
       }

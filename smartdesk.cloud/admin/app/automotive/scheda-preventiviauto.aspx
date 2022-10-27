@@ -46,6 +46,7 @@
     <div class="large-12 medium-12 small-12 cell">
       <div class="divform">
         <input type="hidden" name="sorgente" id="sorgente" value="<%=strSorgente%>">
+        <input type="hidden" name="formaction" value="/admin/app/automotive/crud/salva-preventiviauto.aspx">
         <input type="hidden" name="azione" id="azione" value="<%=strAzione%>">
         <input type="hidden" name="PreventiviAuto_Ky" id="PreventiviAuto_Ky" value="<%=GetFieldValue(dtPreventiviAuto, "PreventiviAuto_Ky")%>">
         <!--#include file=/admin/forms_messaggi.inc -->

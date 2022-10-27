@@ -47,7 +47,12 @@
 	<h1 style="text-align:center;text-transform:uppercase">Concessione in comodato di AUTOVETTURA</h1>
     <fieldset class="fieldset">
       <legend><i class="fa-duotone fa-user fa-fw"></i>Dati anagrafica</legend>
-    	      <div class="ragionesociale"><%=dtAnagrafiche.Rows[0]["Anagrafiche_RagioneSociale"].ToString()%><br>
+    	      <div class="ragionesociale">
+            <%
+            if (dtAnagrafiche.Rows[0]["AnagraficheTipologia_Ky"].ToString()!="1"){
+              Response.Write(dtAnagrafiche.Rows[0]["Anagrafiche_RagioneSociale"].ToString() + "<br>");
+            }
+            %>
     	      <% if (dtAnagrafiche.Rows[0]["Anagrafiche_Cognome"].ToString().Length>0){ %>
     	       <%=dtAnagrafiche.Rows[0]["Anagrafiche_Cognome"].ToString()%> 
     	      <% } %>
@@ -92,19 +97,15 @@
             </table>
     </fieldset>
     <fieldset class="fieldset">
-      <legend><i class="fa-duotone fa-calendar fa-fw"></i>Prenotazione</legend>
+      <legend><i class="fa-duotone fa-calendar-days fa-fw"></i>Comodato d'uso</legend>
       	<table border="0" style="width:100%" class="corpo">
           <tr>
-            <td class="labelField" width="110">Prenotazione del <i class="fa-duotone fa-calendar-days fa-fw"></i></td>
-            <td class="ValueField">
-              <%=Smartdesk.Data.Field(dtVeicoliPrenotazioni, "VeicoliPrenotazioni_Data")%>
-            </td>
-            <td class="labelField" width="40">Dal <i class="fa-duotone fa-calendar-days fa-fw"></i></td>
-            <td class="ValueField">
+            <td class="labelField" width="120">Data inizio concessione <i class="fa-duotone fa-calendar-days fa-fw"></i></td>
+            <td class="ValueField" width="150" style="border-bottom:1px solid #000000;">
               <%=Smartdesk.Data.Field(dtVeicoliPrenotazioni, "VeicoliPrenotazioni_DataInizio")%>
             </td>
-            <td class="labelField" width="40">Al <i class="fa-duotone fa-calendar-days fa-fw"></i></td>
-            <td class="ValueField">
+            <td class="labelField" width="120">Data fine concessione <i class="fa-duotone fa-calendar-days fa-fw"></i></td>
+            <td class="ValueField" width="150" style="border-bottom:1px solid #000000;">
               <%=Smartdesk.Data.Field(dtVeicoliPrenotazioni, "VeicoliPrenotazioni_DataFine")%>
             </td>
           </tr>

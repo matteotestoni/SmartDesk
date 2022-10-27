@@ -9,7 +9,7 @@ namespace Smartdesk{
 		public static string getWhere(NameValueCollection coll){
 	  	string strWHEREGrid="";
 			foreach (String key in coll.AllKeys){
-			  if (key!="page" && key!="cerca" && key!="sorgente" && key!="azione" && key!="debug" && key!="salvato" && key!="custom" && key != "CoreModules_Ky" && key != "CoreEntities_Ky" && key != "CoreGrids_Ky" && key != "CoreForms_Ky" && coll[key]!="" && coll[key]!="custom" && coll[key]!="debug"){
+			  if (key!="page" && key!="orderby" && key!="cerca" && key!="sorgente" && key!="azione" && key!="debug" && key!="salvato" && key!="custom" && key != "CoreModules_Ky" && key != "CoreEntities_Ky" && key != "CoreGrids_Ky" && key != "CoreForms_Ky" && coll[key]!="" && coll[key]!="custom" && coll[key]!="debug"){
 				    if (strWHEREGrid.Length>0 || strWHEREGrid!=""){
 					    strWHEREGrid+=" AND ";					
 				    } 

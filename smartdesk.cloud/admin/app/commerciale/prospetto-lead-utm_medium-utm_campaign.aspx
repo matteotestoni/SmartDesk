@@ -41,7 +41,7 @@
   		  <% for (int i = 0; i < dtProspettoLead.Rows.Count; i++){ %>
   	      <tr>
     				<td><a href="/admin/app/commerciale/prospetto-lead-utm_medium-utm_campaign.aspx?utm_medium=<%=dtProspettoLead.Rows[i]["utm_medium"].ToString()%>"><%=dtProspettoLead.Rows[i]["utm_medium"].ToString()%></a></td>
-    				<td><a href="/admin/app/commerciale/prospetto-lead-utm_medium-utm_campaign.aspx?utm_campaign=<%=dtProspettoLead.Rows[i]["utm_campaign"].ToString()%>"><%=dtProspettoLead.Rows[i]["utm_campaign"].ToString()%></a></td>
+    				<td><a href="/admin/app/commerciale/prospetto-lead-utm_campaign.aspx?utm_campaign=<%=dtProspettoLead.Rows[i]["utm_campaign"].ToString()%>"><%=dtProspettoLead.Rows[i]["utm_campaign"].ToString()%></a></td>
     				<td><%=dtProspettoLead.Rows[i]["utm_source"].ToString()%></td>
     				<td class="large-text-right small-text-left"><strong></strong><%=dtProspettoLead.Rows[i]["Conteggio"].ToString()%></strong></td>
     				<td><a href="/admin/view.aspx?CoreModules_Ky=20&CoreEntities_Ky=185&CoreGrids_Ky=175&utm_medium=<%=dtProspettoLead.Rows[i]["utm_medium"].ToString()%>&utm_campaign=<%=dtProspettoLead.Rows[i]["utm_campaign"].ToString()%>">Vedi lead<i class="fa-duotone fa-angle-right fa-fw"></i></a></td>

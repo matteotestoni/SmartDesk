@@ -48,6 +48,7 @@
       <Field Column="VeicoliRicerche_Ky" IsNull="Y" Type="int" />
       <Field Column="Lead_Link" IsNull="Y" Type="varchar" Lenght="-1" />
       <Field Column="Lead_EmailSorgente" IsNull="Y" Type="varchar" Lenght="-1" />
+      <Field Column="PreventiviAuto_Ky" IsNull="Y" Type="int" />
     </Fields>
   </Tables>
   <SqlScriptCreate>
@@ -95,7 +96,8 @@ CREATE TABLE [dbo].[Lead] (
   [LeadCategorie_Ky] int  NULL , 
   [VeicoliRicerche_Ky] int  NULL , 
   [Lead_Link] varchar(MAX)  NULL , 
-  [Lead_EmailSorgente] varchar(MAX)  NULL  )
+  [Lead_EmailSorgente] varchar(MAX)  NULL , 
+  [PreventiviAuto_Ky] int  NULL  )
 ALTER TABLE [dbo].[Lead] ADD CONSTRAINT PK_Lead PRIMARY KEY  ([Lead_Ky])
 </SqlScriptCreate>
 </SqlTable>

@@ -6,7 +6,6 @@ using System.Collections.Specialized;
 
 public partial class _Default : System.Web.UI.Page 
 {
-    
     public int intNumRecords = 0;
     public int i = 0;
     public System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("it-IT");
@@ -16,7 +15,6 @@ public partial class _Default : System.Web.UI.Page
     public DataTable dtLead;
     public DataTable dtLeadStato;
     public string strH1 = "";
-    
     public decimal decTotValoreMin=0; 
     public decimal decTotValoreMax=0; 
     public DataTable dtStatistiche;
@@ -34,8 +32,6 @@ public partial class _Default : System.Web.UI.Page
       string strPage="";
       int intPage = 0;
 
-      
-	  
       if (Smartdesk.Login.Verify){
           dtLogin = Smartdesk.Data.Read("Utenti_Vw","Utenti_Ky", Smartdesk.Session.CurrentUser.ToString());          
             boolAdmin=(dtLogin.Rows[0]["Utenti_Admin"]).Equals(true);

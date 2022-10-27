@@ -94,7 +94,8 @@ function saveOrder(intCoreEntities_ky, intRow){
 	jQuery.ajax({
 		type: "POST",
 		url: $url,
-		data: $data
+  	data: $data,
+    contentType: "application/json"
 	})
 	.done(function( data ) {
     	jQuery($orderfield).css('border-color', "green");

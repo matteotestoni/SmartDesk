@@ -14,8 +14,16 @@ public partial class _Default : System.Web.UI.Page
             }else{
                 Smartdesk.Functions.SqlDeleteKey("Lead");
             }
-            strRedirect="/admin/view.aspx?CoreModules_Ky=20&CoreEntities_Ky=185&CoreGrids_Ky=175";
-        	Response.Redirect(strRedirect);
+						switch (strSorgente)
+            {
+                case "assegna-lead":
+                    strRedirect = "/admin/app/commerciale/assegna-lead.aspx?CoreModules_Ky=1&CoreEntities_Ky=162&CoreGrids_Ky=198";
+                    break;
+                default:
+                    strRedirect="/admin/view.aspx?CoreModules_Ky=20&CoreEntities_Ky=185&CoreGrids_Ky=175";
+                    break;
+            }
+        	  Response.Redirect(strRedirect);
         }else{
             Response.Redirect(Smartdesk.Current.LoginPageRoot);
         }

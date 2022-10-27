@@ -22,6 +22,7 @@
       <Field Column="VeicoliPrenotazioni_Polizzarc" IsNull="Y" Type="bit" />
       <Field Column="VeicoliPrenotazioni_Collisione" IsNull="Y" Type="bit" />
       <Field Column="VeicoliPrenotazioni_gg" IsNull="Y" Type="int" />
+      <Field Column="VeicoliPrenotazioniStati_Ky" IsNull="Y" Type="smallint" />
     </Fields>
   </Tables>
   <SqlScriptCreate>
@@ -43,7 +44,8 @@ CREATE TABLE [dbo].[VeicoliPrenotazioni] (
   [VeicoliPrenotazioni_Infortuniconducente] bit  NULL DEFAULT ((1)), 
   [VeicoliPrenotazioni_Polizzarc] bit  NULL DEFAULT ((1)), 
   [VeicoliPrenotazioni_Collisione] bit  NULL DEFAULT ((0)), 
-  [VeicoliPrenotazioni_gg] int  NULL DEFAULT ((0)) )
+  [VeicoliPrenotazioni_gg] int  NULL DEFAULT ((0)), 
+  [VeicoliPrenotazioniStati_Ky] smallint  NULL  )
 ALTER TABLE [dbo].[VeicoliPrenotazioni] ADD CONSTRAINT PK_VeicoliPrenotazioni PRIMARY KEY  ([VeicoliPrenotazioni_Ky])
 </SqlScriptCreate>
 </SqlTable>

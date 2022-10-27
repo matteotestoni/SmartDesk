@@ -23,6 +23,7 @@ public partial class _Default : System.Web.UI.Page
     public string strWHERENet = "";
     public string strORDERNet = "";
     public string strSelected = "";
+    public DataTable dtVeicoliPrenotazioniStati;
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -42,7 +43,12 @@ public partial class _Default : System.Web.UI.Page
           dtVeicoli = new DataTable ("Veicoli");
           dtVeicoli = Smartdesk.Sql.getTablePage(strFROMNet, null, "Veicoli_Ky", strWHERENet, strORDERNet, 1, 2000, Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
 
-          
+          strWHERENet = "";
+          strFROMNet = "VeicoliPrenotazioniStati";
+          strORDERNet = "VeicoliPrenotazioniStati_Ordine";
+          dtVeicoliPrenotazioniStati = new DataTable ("VeicoliPrenotazioniStati");
+          dtVeicoliPrenotazioniStati = Smartdesk.Sql.getTablePage(strFROMNet, null, "VeicoliPrenotazioniStati_Ky", strWHERENet, strORDERNet, 1, 2000, Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
+
       }else{
             Response.Redirect(Smartdesk.Current.LoginPageRoot);
       }

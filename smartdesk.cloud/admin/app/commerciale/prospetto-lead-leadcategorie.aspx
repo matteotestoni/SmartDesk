@@ -21,7 +21,7 @@
 	                type: 'column'
 	            },
 	            title: {
-	                text: 'Prospetto lead per categoria <%=Smartdesk.Functions.GetMese(strMese)%> <%=strAnno%>' 
+	                text: 'Prospetto lead per categoria' 
 	            },
 	            xAxis: {
                   min: 0,
@@ -96,7 +96,7 @@
                           name: '<%=dtLeadCategorie.Rows[i]["LeadCategorie_Titolo"].ToString()%>',
                           data: [
                           <% for (int j = 1; j <= intGiorni; j++){
-                              strWHERENet="LeadCategorie_Ky=" + dtLeadCategorie.Rows[i]["LeadCategorie_Ky"].ToString() + " AND YEAR(Lead_Data)=" + strAnno + " AND MONTH(Lead_Data)=" + strMese + " AND DAY(Lead_Data)=" + j;
+                              strWHERENet="LeadCategorie_Ky=" + dtLeadCategorie.Rows[i]["LeadCategorie_Ky"].ToString() + " AND (Lead.Lead_Data >= CONVERT(DATETIME, '" + strReportdatarangestart + "', 102)) AND (Lead.Lead_Data <= CONVERT(DATETIME, '" + strReportdatarangeend + "', 102)) AND DAY(Lead_Data)=" + j;
                   	          strFROMNet = "Lead";
                               strORDERNet = "Lead_Ky DESC";
                               dtConteggioLead = Smartdesk.Sql.getTablePage(strFROMNet, null, "Lead_Ky", strWHERENet, strORDERNet, 1,1000,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);         
@@ -248,23 +248,12 @@
 
 <div class="grid-x grid-padding-x">
   <div class="large-12 medium-12 small-12 cell">
-		
-    <div class="divgridfilter">
-    	<% for (int i = intYear-1; i <= intYear; i++){ %>
-    		<div class="stacked-for-small button-group tiny hide-for-print">
-    		<% for (int j = 1; j <= 12; j++){ %>		
-    			<a href="/admin/app/commerciale/prospetto-lead-leadcategorie.aspx?anno=<%=i%>&mese=<%=j%>" class="tiny button secondary"><i class="fa-duotone fa-calendar-days fa-fw"></i><%=Smartdesk.Functions.GetMese(j.ToString())%>/<%=i%></a>
-    		<% } %>
-    		</div>
-    	<% } %>
-    </div>
 		<div class="divgrid">
-		<h2>Prospetto lead per Categoria <%=Smartdesk.Functions.GetMese(strMese)%> <%=strAnno%></h2>
+		<h2>Prospetto lead per Categoria</h2>
 		<table id="grid1" class="grid">
 		<thead>
         <tr>
 	        <th class="text-left">Categoria</th>
-	        <th class="text-left">Periodo</th>
 	        <th class="large-text-right small-text-left">Numero Lead</th>
 	        <th></th>
         </tr>
@@ -273,7 +262,6 @@
 		  <% for (int i = 0; i < dtProspettoLead.Rows.Count; i++){ %>
 	     <tr>
 				<td><a href="/admin/view.aspx?CoreModules_Ky=20&CoreEntities_Ky=185&CoreGrids_Ky=175&LeadCategorie_Ky=<%=dtProspettoLead.Rows[i]["LeadCategorie_Ky"].ToString()%>"><%=dtProspettoLead.Rows[i]["LeadCategorie_Titolo"].ToString()%></a></td>
-				<td><%=Smartdesk.Functions.GetMese(dtProspettoLead.Rows[i]["Mese"].ToString())%> / <%=dtProspettoLead.Rows[i]["Anno"].ToString()%></td>
 				<td class="large-text-right small-text-left"><strong></strong><%=dtProspettoLead.Rows[i]["Conteggio"].ToString()%></strong></td>
 				<td><a href="/admin/view.aspx?CoreModules_Ky=20&CoreEntities_Ky=185&CoreGrids_Ky=175&LeadCategorie_Ky=<%=dtProspettoLead.Rows[i]["LeadCategorie_Ky"].ToString()%>&Year(Lead_Data)=<%=strAnno%>&Month(Lead_Data)=<%=strMese%>">Vedi lead<i class="fa-duotone fa-angle-right fa-fw"></i></a></td>
       </tr>
@@ -283,8 +271,9 @@
 		 </tbody>
 		 <tfoot>
         <tr>
-	        <td colspan="3"></td>
-	        <td class="large-text-right small-text-left">Totale Lead: <%=intTotLead.ToString("N0", ciit)%></td>
+	        <td class="text-right">Totale Lead:</td>
+	        <td class="large-text-right small-text-left"><%=intTotLead.ToString("N0", ciit)%></td>
+	        <td class="text-right"></td>
         </tr>
 		 </tfoot>
 		</table>

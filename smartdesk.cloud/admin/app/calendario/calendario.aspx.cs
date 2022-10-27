@@ -5,13 +5,11 @@ using System.Data;
 
 public partial class _Default : System.Web.UI.Page
 {
-    
     public int intNumRecords = 0;
-	  
     public DataTable dtLogin;
-    public DataTable dtPersone;
+    public DataTable dtUtenti;
     public bool boolAdmin = false;
-    public string strPersone_Ky="";
+    public string strUtenti_Ky="";
     public string strH1="";
     public string strTipoCalendario="1";
 
@@ -20,8 +18,6 @@ public partial class _Default : System.Web.UI.Page
       string strWHERENet="";
       string strFROMNet = "";
       string strORDERNet = "";
-
-      
 	  
       if (Smartdesk.Login.Verify){
           dtLogin = Smartdesk.Data.Read("Utenti_Vw","Utenti_Ky", Smartdesk.Session.CurrentUser.ToString());          
@@ -29,15 +25,15 @@ public partial class _Default : System.Web.UI.Page
             checkPermessi();
             strH1="Calendario";
 			      strTipoCalendario=dtLogin.Rows[0]["Utenti_TipoCalendario"].ToString();
-	          strWHERENet = "Persone_Attivo=1";
-	          strORDERNet = "Persone_Ky";
-	          strFROMNet = "Persone";
-	          dtPersone = new DataTable("Login");
-	          dtPersone = Smartdesk.Sql.getTablePage(strFROMNet, null, "Persone_Ky", strWHERENet, strORDERNet, 1, 100,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
-	          strPersone_Ky=Smartdesk.Current.Request("Persone_Ky");
-	          //Response.Write("persone" + strPersone_Ky);
-						if (strPersone_Ky==null || strPersone_Ky.Length<1){
-							strPersone_Ky=dtLogin.Rows[0]["Persone_Ky"].ToString();
+	          strWHERENet = "Utenti_Attivo=1";
+	          strORDERNet = "Utenti_Ky";
+	          strFROMNet = "Utenti";
+	          dtUtenti = new DataTable("Utenti");
+	          dtUtenti = Smartdesk.Sql.getTablePage(strFROMNet, null, "Utenti_Ky", strWHERENet, strORDERNet, 1, 100,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
+	          strUtenti_Ky=Smartdesk.Current.Request("Utenti_Ky");
+	          //Response.Write("persone" + strUtenti_Ky);
+						if (strUtenti_Ky==null || strUtenti_Ky.Length<1){
+							strUtenti_Ky=dtLogin.Rows[0]["Utenti_Ky"].ToString();
 						}
     	}else{
             Response.Redirect(Smartdesk.Current.LoginPageRoot);

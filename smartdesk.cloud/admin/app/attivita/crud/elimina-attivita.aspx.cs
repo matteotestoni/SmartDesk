@@ -79,6 +79,9 @@ public partial class _Default : System.Web.UI.Page
                     case "scheda-ticket":
                         strRedirect="/admin/form.aspx?CoreModules_Ky=32&CoreEntities_Ky=221&CoreGrids_Ky=231&CoreForms_Ky=147&salvato=salvato&Ticket_Ky=" + strTicket_Ky + "#attivita";
                         break;
+                    case "elenco-attivita":
+                        strRedirect="/admin/app/attivita/elenco-attivita.aspx?CoreModules_Ky=6&CoreEntities_Ky=79&CoreGrids_Ky=62";
+                        break;
                 }
 	        	Response.Redirect(strRedirect);
         }

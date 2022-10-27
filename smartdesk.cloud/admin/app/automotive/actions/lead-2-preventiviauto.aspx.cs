@@ -3,7 +3,6 @@ using System.Data;
 
   public partial class _Default : System.Web.UI.Page 
 	{
-    
     public int intNumRecords = 0;
     public int i = 0;
     public System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("it-IT");
@@ -11,11 +10,11 @@ using System.Data;
     public string strLead_Ky = "";
     public DataTable dtLead;
     public DataTable dtOpportunita;
-
-
     public DataTable dtOpportunitaStati;    
+    public DataTable dtPreventiviauto;
     public string strAnagrafiche_Ky="";
     public string strOpportunita_Ky="";
+    public string strPreventiviauto_Ky="";
     public string strAttivitaTipo_Ky="";
     public string strSorgente="";
     public string strAttivita_Descrizione="";
@@ -29,8 +28,6 @@ using System.Data;
       string strORDERNet = "";
       string strFROMNet = "";
       
-      
-	  
       if (Smartdesk.Login.Verify){
         dtLogin = Smartdesk.Data.Read("Utenti_Vw", "Utenti_Ky", Smartdesk.Session.CurrentUser.ToString());
 		    strLead_Ky=Smartdesk.Current.Request("Lead_Ky");
@@ -54,7 +51,17 @@ using System.Data;
           new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
           strOpportunita_Ky = dtOpportunita.Rows[0]["Opportunita_Ky"].ToString();
         }
-        Response.Redirect("/admin/app/commerciale/scheda-opportunita.aspx?Opportunita_Ky=" + strOpportunita_Ky);
+        //creato il preventivo auto
+        creaPreventiviauto();
+        strWHERENet = "Lead_Ky=" + strLead_Ky;
+        strORDERNet = "Preventiviauto_Ky DESC";
+        strFROMNet = "Preventiviauto";
+        dtPreventiviauto = new DataTable("Preventiviauto");
+        dtPreventiviauto = Smartdesk.Sql.getTablePage(strFROMNet, null, "Preventiviauto_Ky", strWHERENet, strORDERNet, 1, 1,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);
+        strPreventiviauto_Ky = dtPreventiviauto.Rows[0]["Preventiviauto_Ky"].ToString();
+        strSQL = "UPDATE Lead SET PreventiviAuto_Ky=" + strPreventiviauto_Ky + " WHERE Lead_Ky=" + strLead_Ky;
+        new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
+        Response.Redirect("/admin/app/automotive/scheda-PreventiviAuto.aspx?custom=1&CoreModules_Ky=35&CoreEntities_Ky=249&CoreGrids_Ky=270&CoreForms_Ky=196&azione=edit&sorgente=scheda-lead&PreventiviAuto_Ky=" + strPreventiviauto_Ky);
       }else{
         Response.Redirect(Smartdesk.Current.LoginPageRoot);
       }
@@ -77,6 +84,29 @@ using System.Data;
         strSQL += "utm_medium,";
         strSQL += "utm_campaign,";
         strSQL += "Prodotti_Ky, Annunci_Ky, Cantieri_Ky, Veicoli_Ky, Immobili_Ky, Servizi_Ky, Aste_Ky, Commesse_Ky, Spese_Ky, Documenti_Ky, Note_Ky,";
+        strSQL += Smartdesk.Session.CurrentUser.ToString() + ",";
+        strSQL += "GETDATE()";
+        strSQL += " FROM Lead";
+        strSQL += " WHERE Lead_Ky=" + strLead_Ky;
+        new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
+        return true;
+    } 
+    
+    public bool creaPreventiviauto(){
+        string strSQL="";
+	    strSQL = "INSERT INTO Preventiviauto";
+        strSQL += " (Lead_Ky, PreventiviautoStati_Ky, Anagrafiche_Ky, Preventiviauto_Data, Utenti_Ky, Preventiviauto_Note, utm_source, utm_medium, utm_campaign, Opportunita_Ky, Preventiviauto_UserInsert, Preventiviauto_DateInsert)";
+        strSQL += " SELECT ";
+        strSQL += strLead_Ky + ",";
+        strSQL += "4,";
+        strSQL += "Anagrafiche_Ky,";
+        strSQL += "GETDATE(),";
+        strSQL += Smartdesk.Session.CurrentUser.ToString() + ",";
+        strSQL += "Lead_Note,";
+        strSQL += "utm_source,";
+        strSQL += "utm_medium,";
+        strSQL += "utm_campaign,";
+        strSQL += strOpportunita_Ky + ",";
         strSQL += Smartdesk.Session.CurrentUser.ToString() + ",";
         strSQL += "GETDATE()";
         strSQL += " FROM Lead";

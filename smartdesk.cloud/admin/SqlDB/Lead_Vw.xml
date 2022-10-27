@@ -78,22 +78,23 @@
       <Field Column="Anagrafiche_Cognome" IsNull="Y" Type="varchar" Lenght="100" />
       <Field Column="Anagrafiche_Telefono" IsNull="Y" Type="varchar" Lenght="100" />
       <Field Column="UtentiGruppi_Ky" IsNull="Y" Type="int" />
+      <Field Column="PreventiviAuto_Ky" IsNull="Y" Type="int" />
     </Fields>
   </Tables>
-  <SqlScriptCreate>CREATE VIEW dbo.Lead_Vw
+  <SqlScriptCreate>CREATE VIEW [dbo].[Lead_Vw]
 AS
 SELECT        dbo.Lead.LeadTipo_Ky, dbo.Lead.LeadStato_Ky, dbo.Lead.Lead_Ky, dbo.Lead.LeadSorgenti_Ky, dbo.Lead.LeadSedi_Ky, dbo.Lead.Anagrafiche_Ky, dbo.Lead.LeadFormulaAcquisto_Ky, dbo.Lead.Utenti_Ky, 
                          dbo.Lead.Lead_Note, dbo.Lead.Immobili_Ky, dbo.Lead.Veicoli_Ky, dbo.Lead.Prodotti_Ky, dbo.Lead.Servizi_Ky, dbo.Lead.Cantieri_Ky, dbo.Lead.Annunci_Ky, dbo.Lead.Aste_Ky, dbo.Lead.Commesse_Ky, 
                          dbo.Lead.Documenti_Ky, dbo.Lead.Spese_Ky, dbo.Lead.Note_Ky, dbo.Lead.utm_source, dbo.Lead.utm_medium, dbo.Lead.utm_campaign, dbo.Lead.utm_term, dbo.Lead.utm_content, 
                          dbo.Anagrafiche.Anagrafiche_RagioneSociale, dbo.LeadFormulaAcquisto.LeadFormulaAcquisto_Titolo, dbo.LeadSedi.LeadSedi_Titolo, dbo.LeadTipo.LeadTipo_Titolo, dbo.LeadSorgenti.LeadSorgenti_Titolo, 
-                         dbo.LeadStato.LeadStato_Titolo, dbo.Lead.Lead_Data, dbo.Lead.Lead_Titolo, dbo.LeadStato.LeadStato_Icona, dbo.LeadStato.LeadStato_Aperta, dbo.LeadStato.LeadStato_Chiusa, 
-                         dbo.LeadStato.LeadStato_Probabilita, dbo.Anagrafiche.Anagrafiche_SitoWeb, dbo.Utenti.Utenti_Nominativo, dbo.Utenti.Utenti_Email, dbo.Utenti.Utenti_Colore, dbo.Utenti.Utenti_Nome, dbo.Utenti.Utenti_Cognome, 
-                         CONVERT(varchar, dbo.Lead.Lead_Data, 105) AS Lead_Data_IT, dbo.LeadSorgenti.LeadSorgenti_Icona, dbo.Lead.Campagne_Ky, dbo.Campagne.Campagne_Titolo, dbo.Lead.RicambiVeicoli_Ky, 
-                         dbo.Lead.VeicoliMarca_Ky, dbo.Lead.VeicoliModello_Ky, dbo.Lead.Produttori_Ky, dbo.Lead.Opportunita_Ky, dbo.Veicoli.Veicoli_Riferimento, dbo.VeicoliModello.VeicoliModello_Titolo, 
-                         dbo.VeicoliMarca.VeicoliMarca_Titolo, dbo.Lead.Lead_UserInsert, dbo.Lead.Lead_UserUpdate, dbo.Lead.Lead_UserDelete, dbo.Lead.Lead_DateInsert, dbo.Lead.Lead_DateUpdate, dbo.Lead.Lead_DateDelete, 
-                         dbo.Lead.Lead_Tags, dbo.LeadCategorie.LeadCategorie_Titolo, dbo.Lead.LeadCategorie_Ky, dbo.Lead.VeicoliRicerche_Ky, dbo.VeicoliRicerche.VeicoliRicerche_Messaggio, dbo.Lead.Lead_Link, 
-                         dbo.Lead.Lead_EmailSorgente, dbo.Opportunita.Opportunita_Titolo, dbo.LeadStato.LeadStato_Colore, dbo.Anagrafiche.Anagrafiche_EmailContatti, dbo.Veicoli.Veicoli_Targa, dbo.Anagrafiche.Anagrafiche_Nome, 
-                         dbo.Anagrafiche.Anagrafiche_Cognome, dbo.Anagrafiche.Anagrafiche_Telefono, dbo.Utenti.UtentiGruppi_Ky
+                         dbo.LeadStato.LeadStato_Titolo, dbo.Lead.Lead_Data, dbo.Lead.Lead_Titolo, dbo.LeadStato.LeadStato_Icona, dbo.LeadStato.LeadStato_Aperta, dbo.LeadStato.LeadStato_Chiusa, dbo.LeadStato.LeadStato_Probabilita, 
+                         dbo.Anagrafiche.Anagrafiche_SitoWeb, dbo.Utenti.Utenti_Nominativo, dbo.Utenti.Utenti_Email, dbo.Utenti.Utenti_Colore, dbo.Utenti.Utenti_Nome, dbo.Utenti.Utenti_Cognome, CONVERT(varchar, dbo.Lead.Lead_Data, 105) 
+                         AS Lead_Data_IT, dbo.LeadSorgenti.LeadSorgenti_Icona, dbo.Lead.Campagne_Ky, dbo.Campagne.Campagne_Titolo, dbo.Lead.RicambiVeicoli_Ky, dbo.Lead.VeicoliMarca_Ky, dbo.Lead.VeicoliModello_Ky, 
+                         dbo.Lead.Produttori_Ky, dbo.Lead.Opportunita_Ky, dbo.Veicoli.Veicoli_Riferimento, dbo.VeicoliModello.VeicoliModello_Titolo, dbo.VeicoliMarca.VeicoliMarca_Titolo, dbo.Lead.Lead_UserInsert, dbo.Lead.Lead_UserUpdate, 
+                         dbo.Lead.Lead_UserDelete, dbo.Lead.Lead_DateInsert, dbo.Lead.Lead_DateUpdate, dbo.Lead.Lead_DateDelete, dbo.Lead.Lead_Tags, dbo.LeadCategorie.LeadCategorie_Titolo, dbo.Lead.LeadCategorie_Ky, 
+                         dbo.Lead.VeicoliRicerche_Ky, dbo.VeicoliRicerche.VeicoliRicerche_Messaggio, dbo.Lead.Lead_Link, dbo.Lead.Lead_EmailSorgente, dbo.Opportunita.Opportunita_Titolo, dbo.LeadStato.LeadStato_Colore, 
+                         dbo.Anagrafiche.Anagrafiche_EmailContatti, dbo.Veicoli.Veicoli_Targa, dbo.Anagrafiche.Anagrafiche_Nome, dbo.Anagrafiche.Anagrafiche_Cognome, dbo.Anagrafiche.Anagrafiche_Telefono, dbo.Utenti.UtentiGruppi_Ky, 
+                         dbo.Lead.PreventiviAuto_Ky
 FROM            dbo.Lead LEFT OUTER JOIN
                          dbo.Opportunita ON dbo.Lead.Opportunita_Ky = dbo.Opportunita.Opportunita_Ky LEFT OUTER JOIN
                          dbo.VeicoliRicerche ON dbo.Lead.VeicoliRicerche_Ky = dbo.VeicoliRicerche.VeicoliRicerche_Ky LEFT OUTER JOIN
@@ -108,6 +109,5 @@ FROM            dbo.Lead LEFT OUTER JOIN
                          dbo.LeadTipo ON dbo.Lead.LeadTipo_Ky = dbo.LeadTipo.LeadTipo_Ky LEFT OUTER JOIN
                          dbo.LeadSedi ON dbo.Lead.LeadSedi_Ky = dbo.LeadSedi.LeadSedi_Ky LEFT OUTER JOIN
                          dbo.LeadFormulaAcquisto ON dbo.Lead.LeadFormulaAcquisto_Ky = dbo.LeadFormulaAcquisto.LeadFormulaAcquisto_Ky LEFT OUTER JOIN
-                         dbo.Anagrafiche ON dbo.Lead.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky
-</SqlScriptCreate>
+                         dbo.Anagrafiche ON dbo.Lead.Anagrafiche_Ky = dbo.Anagrafiche.Anagrafiche_Ky</SqlScriptCreate>
 </SqlTable>

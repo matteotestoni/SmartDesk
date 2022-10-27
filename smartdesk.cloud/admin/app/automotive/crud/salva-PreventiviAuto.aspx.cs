@@ -5,7 +5,6 @@ using System.Data.SqlClient;
 
 public partial class _Default : System.Web.UI.Page
 {
-    
     public DataTable dtPreventiviAuto;
     public DataTable dtPreventiviAutoStati;
     public DataTable dtOpportunita;
@@ -20,10 +19,12 @@ public partial class _Default : System.Web.UI.Page
       string strFROMNet = "";
       string strWHERENet="";
       string strORDERNet = "";
+      bool boolAjax = false;
+      string strJson = "";
 
-      
       if (Smartdesk.Login.Verify)
       {
+        boolAjax = Convert.ToBoolean(Request["ajax"]);
         Dictionary<string, object> frm = new Dictionary<string, object>();
         if (Smartdesk.Current.Request("PreventiviAuto_Voltura") == "") frm.Add("PreventiviAuto_Voltura", false);
         if (Smartdesk.Current.Request("PreventiviAuto_Immatricolazione") == "") frm.Add("PreventiviAuto_Immatricolazione", false);
@@ -83,8 +84,13 @@ public partial class _Default : System.Web.UI.Page
     				new Smartdesk.Sql().SQLScriptExecuteNonQuery(strSQL);
           }
         }
-        strRedirect = "/admin/app/automotive/scheda-PreventiviAuto.aspx?custom=1&CoreModules_Ky=35&CoreEntities_Ky=249&CoreGrids_Ky=270&CoreForms_Ky=196&azione=edit&sorgente=scheda-preventiviauto&PreventiviAuto_Ky=" + strKy;
-        Response.Redirect(strRedirect);
+        if (boolAjax){
+          strJson="{\"PreventiviAuto_Ky\": " + strKy + "}";
+          Response.Write(strJson);
+        }else{
+          strRedirect = "/admin/app/automotive/scheda-PreventiviAuto.aspx?custom=1&CoreModules_Ky=35&CoreEntities_Ky=249&CoreGrids_Ky=270&CoreForms_Ky=196&azione=edit&sorgente=scheda-preventiviauto&PreventiviAuto_Ky=" + strKy;
+          Response.Redirect(strRedirect);
+        }
       }
       //Response.Redirect(strRedirect);
   }

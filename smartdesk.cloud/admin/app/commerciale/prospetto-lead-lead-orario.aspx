@@ -96,7 +96,7 @@
                           name: '<%=dtLeadCategorie.Rows[i]["LeadCategorie_Titolo"].ToString()%>',
                           data: [
                           <% for (int j = 0; j <= 23; j++){
-                              strWHERENet="LeadCategorie_Ky=" + dtLeadCategorie.Rows[i]["LeadCategorie_Ky"].ToString() + " AND YEAR(Lead_Data)=" + strAnno + " AND MONTH(Lead_Data)=" + strMese + " AND DATEPART(hour,Lead_Data)=" + j;
+                              strWHERENet="LeadCategorie_Ky=" + dtLeadCategorie.Rows[i]["LeadCategorie_Ky"].ToString() + " AND (Lead.Lead_Data >= CONVERT(DATETIME, '" + strReportdatarangestart + "', 102)) AND (Lead.Lead_Data <= CONVERT(DATETIME, '" + strReportdatarangeend + "', 102)) AND DATEPART(hour,Lead_Data)=" + j;
                   	          strFROMNet = "Lead";
                               strORDERNet = "Lead_Ky DESC";
                               dtConteggioLead = Smartdesk.Sql.getTablePage(strFROMNet, null, "Lead_Ky", strWHERENet, strORDERNet, 1,1000,Smartdesk.Config.Sql.ConnectionReadOnly, out this.intNumRecords);         
@@ -236,17 +236,7 @@
 </div>
 
 <div class="grid-x grid-padding-x">
-  <div class="large-12 medium-12 small-12 cell">
-		
-    <div class="divgridfilter">
-    	<% for (int i = intYear-1; i <= intYear; i++){ %>
-    		<div class="stacked-for-small button-group tiny hide-for-print">
-    		<% for (int j = 1; j <= 12; j++){ %>		
-    			<a href="/admin/app/commerciale/prospetto-lead-lead-orario.aspx?anno=<%=i%>&mese=<%=j%>" class="tiny button secondary"><i class="fa-duotone fa-calendar-days fa-fw"></i><%=Smartdesk.Functions.GetMese(j.ToString())%>/<%=i%></a>
-    		<% } %>
-    		</div>
-    	<% } %>
-    </div>
+  <div class="large-12 medium-12 small-12 cell">		
 		<div class="divgrid">
   		<div class="grid-x grid-padding-x">
   		  <div class="small-12 medium-12 large-12 cell">
